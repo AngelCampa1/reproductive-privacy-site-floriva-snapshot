@@ -1,0 +1,79 @@
+---
+title: "Period Tracking Without the Cloud: How On-Device Apps Work"
+description: "How period tracker apps work with no server component. What on-device storage means technically and what you give up compared to cloud-based trackers."
+ogImage: "/og/guides/period-tracking-without-cloud.png"
+tags:
+  - "guide"
+publishedAt: "2026-03-31"
+updatedAt: "2026-03-31"
+buyerStage: "tofu"
+targetPersona:
+  - "flo-refugee"
+bluf: "Period tracking does not require cloud storage or a server connection. Cycle prediction is a local calculation based on your cycle history. On-device trackers store your data in encrypted local storage, run predictions on your phone, and never transmit data to a server. The trade-offs are no automatic cloud backup and no features that depend on aggregated data."
+definitions:
+  - term: "Local Storage"
+    definition: "Data stored on your phone's internal storage in encrypted form. The app reads and writes this data directly, with no network transmission. On-device trackers use local storage for all cycle data."
+  - term: "Cycle Prediction Algorithm"
+    definition: "A calculation that estimates your next period date and fertile window based on your historical cycle lengths. The algorithm runs on your device using your own data. It does not require comparison against other users' cycles to function."
+  - term: "Encrypted Backup File"
+    definition: "A file the app creates that holds your data, locked with a passphrase you choose. You move the file to a new phone yourself, by hand, and unlock it with your passphrase there. This is not sync: nothing transmits automatically, and the app maker never sees the passphrase or the unlocked data. Floriva works this way."
+  - term: "Zero-Knowledge Architecture"
+    definition: "An app design where the developer has no access to your data, even if compelled by a court. On-device apps are zero-knowledge by default, because no data reaches the developer's servers."
+answers:
+  - question: "How does cycle prediction work without a cloud connection"
+    answer: "Cycle prediction is arithmetic: the algorithm calculates your average cycle length from your recorded cycle dates and projects forward. This calculation runs entirely on your device. The more cycle data you have recorded, the more accurate the average, but the calculation itself does not require a network connection. Apps like Flo use large population datasets to provide additional predictive context, which requires cloud infrastructure. On-device apps work from your personal history alone."
+  - question: "What does period tracking actually need from a server"
+    answer: "Nothing essential. Core period tracking needs: a place to store cycle dates and symptoms (local storage handles this), a calculation engine for predictions (runs on the device), and a notification system for reminders (the operating system handles this). Server-side infrastructure enables: cross-device sync, population-level health insights, community features, and cloud backup. These are conveniences, not requirements."
+  - question: "Can on-device trackers predict ovulation and fertile windows"
+    answer: "Yes. Calendar-based ovulation and fertile window prediction uses the same arithmetic as period prediction and runs locally. Temperature-based methods like Natural Cycles require daily measurement data, which can also be stored locally. The limitation of on-device fertile window prediction is that it is based on your historical cycle patterns. It is not more or less accurate than cloud-based calendar prediction; both use the same algorithm. Temperature-based methods are more precise regardless of where the data is stored."
+  - question: "What happens to my tracking data if I lose my phone"
+    answer: "Without cloud backup, you lose your tracking history if you lose your phone and do not have a backup. This is the main practical trade-off of on-device storage. Floriva lets you make an encrypted backup file, locked with your own passphrase, that you can move to a new phone yourself. Euki and Drip require manual data re-entry when switching devices, since neither offers a backup file."
+faqs:
+  - q: "Is on-device period tracking less accurate than cloud-based tracking"
+    a: "For calendar-based cycle prediction, accuracy is the same: both use your cycle history to calculate averages. The difference is the size of the comparison dataset. Cloud-based apps like Flo can compare your cycle patterns against millions of other users to provide additional context. On-device apps work from your personal history only. After 6-12 months of recorded cycles, personal history is usually sufficient for accurate prediction."
+  - q: "Can I use two devices with an on-device tracker"
+    a: "Not at the same time, and not automatically, with any of the on-device trackers covered here. None of them sync. Floriva lets you export an encrypted backup file from one device and import it on another, which moves your history over but does not keep two devices updated together in real time. Euki and Drip have no export at all, so switching devices means re-entering your history by hand."
+  - q: "Does airplane mode prove my period tracker is not sending data"
+    a: "It is a useful test. An on-device tracker should work fully in airplane mode after initial setup. If the app requires internet access for basic tracking functions, data is being transmitted. Airplane mode testing does not catch all transmission, for example some apps sync when connectivity returns, but it identifies whether the core tracking function requires a network connection."
+  - q: "How do on-device apps handle backups when you upgrade your phone"
+    a: "This depends on the app. Floriva lets you export an encrypted backup file, locked with your own passphrase, and import it on a new device yourself. Euki and Drip have no export at all, so switching phones means re-entering your history. On-device apps that support standard device backup mechanisms (iOS iCloud backup, Android backup) may include app data in device backups, but this means your data goes into the cloud backup, which reintroduces server-side exposure. Floriva excludes its database from Android's system backup. On iOS it currently follows Apple's standard device backup, so check current app settings if you want to exclude it there."
+relatedPages:
+  - "/resources/guides/how-to-audit-period-app-privacy"
+  - "/resources/guides/switching-from-flo-complete-guide"
+  - "/resources/best/best-offline-period-trackers"
+  - "/resources/best/best-period-trackers-no-data-sharing"
+---
+
+## How Cloud-Based Period Trackers Work
+
+Mainstream period apps like Flo and Clue work by sending your data to their servers. When you log a period start date, that entry is transmitted to the company's cloud infrastructure where it is stored, processed, and backed up. The prediction algorithm may run on the server rather than on your device.
+
+This architecture enables cross-device sync, community features, AI health insights built from population data, and automatic cloud backup. It also means your data exists on the company's servers, accessible to the company, potentially accessible to courts via subpoena, and exposed to any breach of those servers.
+
+## How On-Device Period Trackers Work
+
+On-device trackers use the same core functions (cycle logging, prediction calculation, symptom tracking, reminders) but run them entirely on your phone.
+
+When you log a period start date, it is written to encrypted local storage on your device. When you open the app the next day, the prediction algorithm reads your stored cycle history and calculates your next period date. When a reminder fires, the operating system's notification system delivers it. No part of this process requires a network connection.
+
+The encrypted local storage on modern smartphones is well-protected. Both iOS and Android use hardware-backed encryption for local storage. This means the data is protected even if someone obtains your physical device and attempts to extract it without your unlock credentials.
+
+## What On-Device Apps Cannot Do
+
+On-device architecture has genuine limitations worth understanding.
+
+**Population-level insights**: Flo's AI health chat and cycle health insights draw on aggregated data from millions of users to identify patterns. This requires a large dataset that no on-device tracker has. The trade-off is real for users who actively use these features.
+
+**Automatic cloud backup**: If you lose your phone, you lose your data unless you made a Floriva backup file ahead of time, or did a manual export.
+
+**Cross-device access without explicit sync**: Logging on your phone and viewing on your tablet requires sync. None of the on-device trackers here offer it. Your data exists only on the device where you logged it.
+
+**Collaborative features**: Partner tracking and health sharing features require a shared server to sync state between users.
+
+## The Sync Question
+
+Cross-device sync is the sticking point for most users considering an on-device tracker. One technical solution is end-to-end encrypted sync: your data is encrypted on your device before leaving, transmitted in encrypted form to a server, and decrypted only on other devices you control. The server operator cannot read the data.
+
+Floriva does not do this. It has no sync, full stop, and no server of any kind. What it offers instead is an encrypted backup file: you export your data, protected by a passphrase you set, and move that file to a new device yourself. It solves the "I got a new phone" problem, not the "I want two phones staying in sync" problem. Euki and Drip offer neither sync nor a backup file.
+
+A true end-to-end encrypted sync feature is not the same as cloud storage, because the server holds data the server operator cannot decrypt. Floriva's backup file goes further: there's no server involved at all. The file only exists wherever you choose to put it.

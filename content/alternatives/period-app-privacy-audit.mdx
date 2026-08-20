@@ -1,0 +1,136 @@
+---
+title: "How to Audit Any Period Tracker App for Real Privacy"
+description: "A practical checklist for evaluating period tracker privacy: what questions to ask, what answers reveal, and what red flags mean in plain terms."
+ogImage: "/og/alternatives/period-app-privacy-audit.png"
+tags:
+  - "guide"
+publishedAt: "2026-04-28"
+updatedAt: "2026-04-28"
+buyerStage: "bofu"
+targetPersona:
+  - "flo-refugee"
+  - "post-roe-tracker"
+  - "privacy-conscious-user"
+bluf: "Most period tracker privacy claims are marketing, not architecture. This guide gives you the specific questions to ask, where to find the answers, and what each answer means for your actual exposure: data broker sales, subpoena risk, and what happens to your data if the company is acquired."
+answers:
+  - q: "What does it mean for a period tracker to be truly private?"
+    a: "True privacy means the data is stored only on your device. No server copy exists. This is different from a company promising not to sell your data, which is a policy claim that can change. On-device storage means there is nothing on a server to sell, subpoena, or breach."
+  - q: "Is GDPR compliance enough to trust a period tracker?"
+    a: "GDPR compliance means the company follows rules about how cloud data is handled. It does not eliminate the cloud data itself. A GDPR-compliant tracker still stores data on servers that can be subpoenaed, breached, or acquired. GDPR limits what companies can do with your data. On-device storage removes the data from company control entirely."
+  - q: "What red flags should I look for in a period tracker privacy policy?"
+    a: "Key red flags: the policy permits sharing with 'advertising partners' or 'analytics providers'; the policy includes a 'we may share with third parties for business purposes' clause; data retention periods are vague or undefined; the company is US-based with no mention of CCPA rights; the policy was recently changed without user notification."
+faqs:
+  - q: "What does a period app privacy audit actually check?"
+    a: "A thorough audit checks five things: where the data is stored (device vs. server), what the privacy policy permits for sharing and analytics, whether there is enforcement or class action history, whether the data deletion process works, and what happens to your data in an acquisition. The most important check is storage architecture. On-device apps cannot transmit your data to advertisers or hand it over in response to a subpoena, regardless of what the privacy policy says."
+  - q: "How long does a period app privacy audit take?"
+    a: "A basic audit, checking account requirements, offline functionality, and skimming the privacy policy for key sections, takes about 20 to 30 minutes. A thorough audit including an FTC enforcement search, deletion test, and policy comparison takes 30 to 60 minutes. The deletion test (create an account, log a few entries, delete the account, verify it worked) can take 24 to 48 hours because you need to wait for deletion to process before confirming."
+  - q: "Does HIPAA protect my period tracker data?"
+    a: "No. HIPAA applies to covered entities: hospitals, insurance companies, healthcare providers, and their business associates. Consumer period tracking apps are not covered entities. The FTC enforcement action against Flo in 2021 was a consumer protection case, not a HIPAA violation. Your cycle data in an app is governed by that app's privacy policy and consumer protection law."
+  - q: "What happened with the Flo FTC enforcement action?"
+    a: "In 2021, the FTC took enforcement action against Flo Health for sharing reproductive health data, including period dates, pregnancy status, and health symptoms, with Facebook, Google, and Flurry, without disclosing this to users or getting meaningful consent. The sharing happened through embedded SDKs that sent data automatically, regardless of device ad-tracking settings. A $59.5M class action settlement followed in September 2025. The FTC case is documented at ftc.gov/cases-proceedings/192-3133-flo-health-inc."
+relatedPages:
+  - /resources/guides/how-period-tracker-apps-collect-data
+  - /resources/guides/on-device-storage-period-tracker
+  - /resources/guides/can-police-access-period-tracker-data
+  - /resources/guides/period-tracker-hipaa
+  - /resources/guides/does-flo-sell-your-data
+  - /resources/best/best-private-period-tracker-apps
+---
+
+## Why privacy claims are not privacy guarantees
+
+When Flo was sharing period data with Facebook and Google, its privacy policy promised to protect user data. When the FTC took enforcement action in 2021, Flo's marketing still described the app as safe and private. The settlement came four years later.
+
+Privacy claims are easy to write. Architecture is harder to fake. This guide focuses on auditing the architecture, not the marketing.
+
+The audit below takes 30-60 minutes for a thorough review of any period tracking app. You can do it before you download, before you enter data, or before you decide to leave an app you're already using.
+
+## Section 1: Where is the data stored
+
+This is the most important question. Everything else is downstream of it.
+
+**The question to ask:** Does the app require an account? Is internet access required for the app to work? Does the privacy policy reference "our servers" or "cloud storage"?
+
+**What the answers mean:**
+
+- **Requires account + internet connection:** Data is stored server-side. The app cannot function without syncing your data to the company's servers. This is the default architecture for most mainstream period trackers.
+
+- **No account required, works offline:** Data is stored on your device. The company has no copy unless you explicitly share it. This is the architecture of on-device trackers like Floriva, Euki, and Drip.
+
+- **Optional account for backup/sync:** A hybrid model. Some trackers offer on-device storage with optional cloud backup. If you don't create an account or enable sync, your data stays local. The risk is accidentally opting into sync.
+
+**How to verify:** Open the app without internet access. If it shows you your data, the data is on your device. If it shows an error or forces you to log in, the data lives on a server.
+
+## Section 2: Read the privacy policy, specifically these sections
+
+Most privacy policies are long enough to discourage reading. You do not need to read all of it. Read these four sections:
+
+**"Data we collect" or "Information we collect"**
+Look for: reproductive health data, menstrual dates, symptom logs, location data. Note whether these are described as "sensitive" or given any special handling distinction. If they are listed alongside name and email with no differentiation, that's a signal.
+
+**"How we share your information" or "Disclosure of data"**
+Red flags: "advertising partners," "analytics providers," "third-party services," "business purposes." These phrases cover the data-sharing practices that landed Flo in FTC proceedings. A policy that says "we do not sell your data" but permits sharing with analytics providers for "product improvement" is not as protective as it sounds.
+
+**"Data retention"**
+Look for specific timeframes. Vague retention language ("we keep your data as long as needed") means the company can hold your data indefinitely. Specific language ("deleted within 90 days of account deletion") is a commitment.
+
+**"Legal requests" or "Law enforcement"**
+This section tells you what happens when police or prosecutors ask for your data. Red flags: "we comply with all valid legal requests" without any mention of challenging them or notifying users. Stronger language: "we will notify you of requests unless prohibited" or "we will challenge requests we believe are overbroad."
+
+For more on what HIPAA does and doesn't cover in period app data, see our [period tracker HIPAA explainer](/resources/guides/period-tracker-hipaa).
+
+## Section 3: Check the enforcement history
+
+Search the FTC's case database at ftc.gov/cases-proceedings for the app name and company name. The FTC has published enforcement actions against Flo Health (2021) and Easy Healthcare/Premom (2023) for sharing reproductive health data without consent.
+
+Search for the company name in court records using PACER (federal) or state court search tools. Class action settlements are public records.
+
+Check Wired, The Markup, Consumer Reports, and EFF (Electronic Frontier Foundation) for technical analyses. These outlets have done data-flow testing on period apps that reveals what APIs the apps call and what data they transmit, analysis that goes beyond what privacy policies say.
+
+**What enforcement history means:**
+- A documented enforcement action does not mean the app is currently doing something wrong. It means the company has a documented history of data practices that regulators found problematic.
+- No enforcement history does not mean the app is safe. It means no regulator has investigated and found a violation yet.
+
+For documented cases: [Flo's data sharing history](/resources/guides/does-flo-sell-your-data) and [Premom's FTC action](/resources/guides/premom-data-sharing-ftc).
+
+## Section 4: Test the data deletion process
+
+Request deletion before you commit to the app for long-term use, or test with a separate email address. Here's the audit:
+
+1. Create a test account
+2. Log a few entries
+3. Initiate account deletion through the in-app settings
+4. Wait 48 hours
+5. Attempt to log in with the same credentials
+
+If login fails, the deletion processed. If login succeeds, the deletion was not completed despite your request, a significant red flag about how seriously the company takes data removal.
+
+Also check: does the app have a data export option before deletion? A company that does not let you export your data before account deletion forces you to choose between privacy and keeping your own history.
+
+## Section 5: Evaluate acquisition risk
+
+Period tracker apps get acquired. Ovia was acquired by Labcorp. Glow has taken investment from healthcare data companies. Any app you use today may be owned by a different entity in two years.
+
+**What to look for in the privacy policy:**
+- Is there an "acquisition or merger" clause?
+- Does it say user data "may be transferred as a business asset"? (This is standard language that means your data goes to the acquirer.)
+- Does it say users will be notified before such a transfer?
+
+An app with good values today can be acquired by a company with different values tomorrow. Architecture is the more durable protection: if the data is on your device, an acquisition doesn't transfer it.
+
+## The audit summary checklist
+
+Before using or continuing to use any period tracker, work through this list:
+
+- [ ] Does the app work without an account or internet connection?
+- [ ] Does the privacy policy permit sharing with advertising or analytics partners?
+- [ ] Is there a specific data retention timeline (not vague language)?
+- [ ] Does the law enforcement section mention notifying users or challenging requests?
+- [ ] Is there an enforcement action or class action in the company's history?
+- [ ] Does the policy address what happens to data in an acquisition?
+- [ ] Can you export your data before deleting the account?
+- [ ] Did the app work in offline mode during your test?
+
+An app that passes all eight checks with clear affirmative answers has earned more trust than one that passes some on policy claims and fails others. The most reliable version of any single check is the offline test, it is the one that is hardest to fake.
+
+For a list of trackers that pass the architecture test, no readable central copy by design, see our [private period tracker roundup](/resources/best/best-private-period-tracker-apps).

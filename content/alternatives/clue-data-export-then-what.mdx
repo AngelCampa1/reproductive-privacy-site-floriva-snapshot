@@ -1,0 +1,118 @@
+---
+title: "After You Export Your Clue Data: What To Do Next"
+description: "You have your Clue CSV, but your data is still on their servers. Delete the account, file a GDPR request, and move to an on-device tracker."
+ogImage: "/og/alternatives/clue-data-export-then-what.png"
+tags:
+  - "guide"
+publishedAt: "2026-04-28"
+updatedAt: "2026-04-28"
+buyerStage: "bofu"
+targetPersona:
+  - "post-roe-tracker"
+  - "privacy-conscious-user"
+bluf: "Exporting your Clue data is the right first step, but it's not the finish line. The export does not delete your Clue account, and your data remains on Clue's servers until you take several more steps. Here's what comes next, deleting the account, filing a GDPR erasure request, reading the CSV, and getting your history into a tracker that stores it on-device."
+steps:
+  - title: "Read your Clue CSV"
+    content: "Open the exported ZIP. Inside you'll find a CSV with columns for date, cycle phase, and logged entries (period, symptoms, mood, etc.). Open it in any spreadsheet app. The cycle_start rows are what you need for the migration. Sort by date descending and note the last 3-6 cycle start dates."
+  - title: "Delete your Clue account"
+    content: "Open Clue, tap the menu icon (three lines), then Settings, then Privacy, then Delete Account. Clue's GDPR-compliant flow requires explicit confirmation at each step. Complete all steps, the account is not queued for deletion until you finish the confirmation sequence."
+  - title: "Submit a GDPR erasure request"
+    content: "Email data-requests@helloclue.com. Subject: 'GDPR Article 17 Erasure Request.' State your Clue account email and invoke your right under GDPR Article 17 (right to erasure). Ask for confirmation that backups and derived datasets are also purged. Clue has 30 days to respond under GDPR, 45 days under CCPA."
+  - title: "Verify deletion"
+    content: "Wait 48 hours, then attempt to log in with your old Clue credentials. An 'account not found' or 'invalid credentials' error confirms deletion. If you can still log in, the deletion did not complete, repeat the account deletion step or contact Clue support."
+  - title: "Seed your new on-device tracker"
+    content: "Enter your last 3-6 cycle start dates from the Clue CSV into your new tracker during onboarding. Most trackers ask for cycle history during setup. This seeds the prediction algorithm. After 2-3 new cycles are recorded, prediction accuracy returns to baseline."
+  - title: "Secure and then delete the Clue CSV"
+    content: "Keep the Clue CSV encrypted in a secure location until you're satisfied the new tracker has enough history to be useful. Once it does, delete the CSV. The data you wanted off a server should not sit in an unsecured local folder."
+answers:
+  - q: "Does exporting my Clue data delete it from their servers?"
+    a: "No. Exporting creates a copy for you to keep. Your original data remains on Clue's servers. You need to delete the account separately, and then submit a GDPR or CCPA erasure request to compel deletion of backup copies."
+  - q: "What format is the Clue data export?"
+    a: "Clue exports a ZIP file containing one or more CSV files. The main CSV includes columns for date, cycle phase, and logged categories. You can open it in Google Sheets, Excel, or any text editor. The cycle_start entries are what you need to seed a new tracker."
+  - q: "How long does Clue take to delete my account?"
+    a: "In-app account deletion typically processes within a few hours. GDPR erasure requests for backup copies must be responded to within 30 days. Keep the confirmation email from both steps as your paper trail."
+faqs:
+  - q: "Does exporting Clue data delete it from their servers?"
+    a: "No. Exporting creates a local copy for you. Your original data remains on Clue's servers in Berlin until you delete the account separately and submit a GDPR Article 17 erasure request. The export is step one. Account deletion and the formal erasure request are what actually remove your data from Clue's systems."
+  - q: "Will I lose my Clue data when I switch to a new tracker?"
+    a: "Not if you export before you delete. The Clue CSV export includes your cycle start dates, symptom logs, and account history. You only need the cycle start dates to seed a new tracker. Most trackers ask for 3-6 historical dates during setup. If you delete your account before exporting, recovery is harder but possible via healthcare provider records or calendar reconstruction."
+  - q: "How long does it take to switch from Clue to a new period tracker?"
+    a: "The export, account deletion, and new tracker setup take 30-60 minutes total. The GDPR erasure request takes about five minutes to write. Your new tracker will have less precise predictions for 2-3 cycles while its algorithm calibrates, but the practical impact on daily use is minimal."
+  - q: "Is Clue GDPR-compliant and what does that mean for data deletion?"
+    a: "Yes, Clue is a German company and GDPR-compliant. GDPR gives you the right to erasure under Article 17, which compels deletion of backup copies within 30 days. This means Clue has more rigorous data governance than US-only companies subject only to CCPA. However, GDPR governs how cloud data is handled. It does not eliminate the cloud copy. Your data still lives on Clue servers until you complete the deletion steps."
+relatedPages:
+  - /compare/alternatives/clue-alternative-no-cloud
+  - /resources/guides/on-device-storage-period-tracker
+  - /resources/guides/can-police-access-period-tracker-data
+  - /compare/alternatives/rebuild-period-history-after-switching-apps
+  - /resources/best/best-private-period-tracker-apps
+  - /resources/privacy-in-practice/period-tracker-data-portability-export
+---
+
+## You exported. Here is what that actually did, and did not do.
+
+Exporting your Clue data is the right first step. It is also frequently where people stop. They assume that having their own copy means the Clue copy is gone. It is not.
+
+Exporting creates a copy for you. The original data remains on Clue's servers in Berlin. Your account is active. Your cycle history is still in their system. If Clue receives a subpoena, your data is still there to produce.
+
+The export is step zero. The actual migration involves five more steps. This guide picks up where the export download left off.
+
+For context on Clue's privacy posture and why some users are leaving despite Clue's clean record, see our [Clue alternative overview](/compare/alternatives/clue-alternative-no-cloud).
+
+## Step 1: Read and parse the Clue CSV
+
+Open the ZIP Clue emailed you. Inside is a CSV (sometimes named something like `data.csv` or your account email). Open it in Google Sheets, Excel, or Numbers.
+
+The CSV includes columns for date, cycle phase, and logged entries for each day you tracked. Look for rows marked as `period` or `cycle_start`. These are the data points you need to seed a new tracker.
+
+Sort the file by date, descending. Note the most recent 3-6 rows where period or cycle start is logged. Write them down or keep the file open. You will enter them into your new tracker in step 5.
+
+Everything else in the CSV (symptoms, mood, energy, flow intensity) is yours to keep for reference. But cycle start dates are all the new app needs for the migration.
+
+## Step 2: Delete your Clue account
+
+Open Clue and tap the menu icon (three horizontal lines) in the top-left corner. Go to Settings, then Privacy, then Delete Account.
+
+Clue is GDPR-native, which means the deletion flow involves explicit confirmation steps. Read each prompt and complete each step. The account is not queued for deletion until you reach the final confirmation. Don't close the app partway through.
+
+Deleting the Clue app from your phone is not the same as deleting the account. The app can be uninstalled at any point, but the account and its data remain on Clue's servers until you complete this in-app deletion process.
+
+## Step 3: File a GDPR Article 17 erasure request
+
+This is the step most migration guides skip. It matters most for backup deletion.
+
+Email data-requests@helloclue.com with the subject "GDPR Article 17 Erasure Request." In the body:
+
+1. State the email address tied to your Clue account
+2. Invoke your right to erasure under GDPR Article 17 (or CCPA Section 1798.105 if you are a California resident)
+3. Request explicit confirmation that your data is deleted from active systems, backups, and any derived datasets
+
+Clue has 30 days to respond under GDPR and 45 days under CCPA. Keep the email and any response. This is the legal mechanism that compels purging from backup systems. In-app account deletion alone does not guarantee that backup copies are wiped.
+
+## Step 4: Verify the deletion
+
+Wait 48 hours after completing step 2. Open the Clue app or go to helloclue.com and try to log in with your old credentials. A successfully deleted account returns an "account not found" or "invalid credentials" error.
+
+If you can still log in, the deletion did not complete. Return to Settings, then Privacy, then Delete Account and go through the confirmation sequence again. If the problem persists, contact Clue support and reference the date you initiated the deletion.
+
+## Step 5: Seed your new on-device tracker
+
+Open the new tracker and go through its onboarding. When it asks for cycle history, enter the last 3-6 cycle start dates from your Clue CSV.
+
+Three on-device trackers cover the Clue migration well:
+
+**Floriva** is paid, local-first, and polished. Cycle data stays on your phone. There is no sync, so nothing leaves the device unless you export or back it up yourself. Check current Floriva onboarding for import options before assuming a Clue CSV can be imported directly.
+
+**Euki** is free and maintained by a reproductive health nonprofit. No account, no sync, no server.
+
+**Drip** is free, open-source, and community-maintained. Available on Android.
+
+All three are compared in our [private period tracker roundup](/resources/best/best-private-period-tracker-apps). For a detailed guide on rebuilding your history after switching apps, see our [period history rebuild guide](/compare/alternatives/rebuild-period-history-after-switching-apps).
+
+## Step 6: Secure the CSV, then delete it
+
+While your new tracker is accumulating history, keep the Clue CSV encrypted in a secure location, a password-protected folder or an encrypted app like Signal's note storage. Do not leave it in your Downloads folder.
+
+Once your new tracker has 2-3 recorded cycles and predictions are stabilizing, you can delete the CSV. The data you wanted off a server should not sit unprotected on a local drive indefinitely. Your phone's file manager or Finder can locate and delete the file.
+
+For more on what on-device storage means architecturally and why it changes the subpoena equation, see our [on-device storage explainer](/resources/guides/on-device-storage-period-tracker) and our [guide on data portability across period trackers](/resources/privacy-in-practice/period-tracker-data-portability-export).

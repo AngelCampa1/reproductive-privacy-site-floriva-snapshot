@@ -1,0 +1,113 @@
+---
+title: "Floriva vs Premom: Privacy Architecture After the FTC Enforcement"
+description: "Floriva vs Premom compared on privacy and data handling. Premom faced FTC enforcement in 2023 for sharing health data without consent. Floriva keeps core records local-first."
+ogImage: "/og/comparisons/floriva-vs-premom.png"
+tags:
+  - "comparison"
+  - "premom"
+  - "floriva"
+  - "privacy"
+  - "FTC"
+publishedAt: "2026-05-01"
+updatedAt: "2026-05-01"
+buyerStage: "mofu"
+targetPersona:
+  - "privacy-conscious-user"
+  - "premom-refugee"
+bluf: "The FTC took enforcement action against Premom in 2023 for sharing users' sensitive health data with third parties without consent. Premom is cloud-based and requires an account. Floriva keeps core records on your device. There is no sync, so nothing is transmitted. If you're evaluating Premom after the FTC action, the question is whether policy changes fix an architectural problem."
+tableData:
+  name: "Floriva vs Premom Comparison"
+  columns: ["Factor", "Floriva", "Premom"]
+  rows:
+    - ["Data location", "On-device only", "Cloud servers"]
+    - ["Account required", "No", "Yes"]
+    - ["Price", "Paid app (no free tier)", "Free / Premium"]
+    - ["Platform", "iOS + Android", "iOS + Android"]
+    - ["Subpoenable", "No", "Yes"]
+    - ["FTC enforcement", "None", "2023, sharing data without consent"]
+    - ["Connected hardware", "None", "Ovulation test reader"]
+    - ["Data sharing history", "None", "Third-party sharing found by FTC"]
+proscons:
+  - subject: "Floriva"
+    pros:
+      - "Local-first core records, no readable central cycle database"
+      - "No account required for core tracking"
+      - "No history of FTC enforcement"
+      - "No ad-SDK health-event sharing by architecture"
+    cons:
+      - "Paid subscription required"
+      - "No connected hardware integration"
+      - "Smaller prediction dataset"
+  - subject: "Premom"
+    pros:
+      - "Connected ovulation test strip reader"
+      - "Free tier available"
+      - "Detailed fertility-specific features"
+      - "LH surge tracking with hardware"
+    cons:
+      - "FTC enforcement action in 2023 for sharing health data without consent"
+      - "Cloud-based, data stored on company servers"
+      - "Account required"
+      - "Data can be subpoenaed"
+faqs:
+  - q: "What did the FTC find about Premom?"
+    a: "In 2023, the FTC took enforcement action against Easy Healthcare Corporation, the maker of Premom, for sharing users' sensitive health data, including fertility and pregnancy information, with third-party companies including AppsFlyer, Google, and others without adequate user consent. The FTC found this violated promises Premom made about data privacy."
+  - q: "Is Premom safe to use after the FTC action?"
+    a: "Premom has stated it made changes in response to the FTC enforcement action. However, the underlying architecture remains cloud-based. Your data exists on Premom's servers. Policy changes don't change architecture. A cloud-based app can always change its data sharing practices again. An on-device app can't share what it doesn't have."
+  - q: "Does Floriva work with ovulation test strips?"
+    a: "No. Floriva does not have connected hardware features. Premom's ovulation test strip reader is a genuine feature advantage for users doing LH surge tracking. If connected hardware is essential to your fertility tracking, Premom offers something Floriva doesn't."
+answers:
+  - q: "Did Premom share user data without consent?"
+    a: "Yes. The FTC found in 2023 that Easy Healthcare Corporation (Premom's parent company) shared users' sensitive reproductive health data with third-party companies without adequate consent. The data shared included fertility and pregnancy information. The FTC enforcement action resulted in restrictions on Premom's data practices and requirements for data deletion."
+  - q: "What is a private alternative to Premom?"
+    a: "Floriva keeps core records on your phone. There is no sync, so nothing leaves your phone unless you export it yourself. Floriva is a paid app with no free tier and requires no account for core tracking. Other local-only options include Euki (free, nonprofit) and Drip (free, open-source, Android-only)."
+relatedPages:
+  - "/compare/alternatives/premom-app-alternative"
+  - "/resources/best/best-private-period-tracker-apps"
+  - "/resources/guides/what-is-zero-knowledge-period-tracker"
+  - "/resources/guides/how-period-tracker-apps-collect-data"
+---
+
+In 2023, the FTC found that Premom shared users' fertility and pregnancy data with third-party companies, including AppsFlyer and Google, without adequate consent. This was not a breach. It was a business practice. The company chose to share your reproductive health data, got caught, and faced enforcement.
+
+Floriva keeps core records on your device. There is no readable central cycle database to share from, no third-party SDK receiving your cycle data, and no comparable health-event sharing practice to discover through an FTC investigation.
+
+## The Core Difference
+
+Premom's privacy failure was not a bug. It was a feature of cloud-based architecture combined with an ad-tech business model. When your data exists on a company's servers, the company can share it. Whether they will depends on policy, incentives, and oversight. The FTC found that Premom's incentives won.
+
+Floriva's architecture reduces that readable-data sharing risk. Core records stay on your device. There is no readable central cycle copy to share with AppsFlyer or Google.
+
+## Data Architecture
+
+**Premom** requires an account and stores data on cloud servers. The FTC enforcement action revealed that the app included third-party SDKs that received user health data. This is a common pattern in free apps: analytics and advertising SDKs embedded in the app send data to third parties as part of normal operation. Users had no meaningful way to know this was happening.
+
+After enforcement, Premom stated it changed its practices. The architecture (cloud-based, account-required, server-stored) has not changed. The third-party SDKs may have been modified, but the capability to share data server-side remains built into the architecture.
+
+**Floriva** keeps core records local-first. No account is required for core tracking. No third-party SDKs receive health events. There is no sync, so no cycle data is transmitted at all.
+
+## Features
+
+Premom's strongest feature is its connected ovulation test strip reader. You photograph a test strip, Premom reads the result, and logs your LH levels automatically. For users doing active fertility tracking with ovulation tests, this hardware integration is valuable and not available from on-device competitors.
+
+Premom also offers detailed fertility charting, community features, and pregnancy content. It is purpose-built for trying to conceive.
+
+Floriva tracks cycles, symptoms, and patterns without connected hardware. It does not read ovulation test strips. If hardware integration is core to your fertility tracking workflow, this is a meaningful gap.
+
+## Pricing
+
+**Premom:** Free tier with premium subscription. The free tier's economics should be understood in light of the FTC enforcement. Free apps need revenue sources, and Premom's included sharing user data with third parties.
+
+**Floriva:** Paid subscription, no free tier. The subscription is the revenue model. When the user pays, the user is the customer. When the app is free, the data is often the product. The FTC confirmed that pattern with Premom.
+
+## Who Should Choose Floriva vs Premom
+
+**Choose Premom if:** connected ovulation test reading is essential to your fertility tracking and you are comfortable with cloud-based storage after the FTC enforcement. Premom's hardware integration is genuinely useful for LH surge tracking.
+
+**Choose Floriva if:** the FTC enforcement against Premom concerns you, you want architectural privacy rather than policy-based privacy, or you do not need connected hardware. See [how period tracker apps collect data](/resources/guides/how-period-tracker-apps-collect-data) to understand the broader data-sharing patterns that Premom exemplified.
+
+## The Privacy Bottom Line
+
+Premom showed what can happen when a cloud-based health app decides to monetize your data. The FTC had to intervene because users had no way to know and no way to stop it. Policy changes after enforcement do not change the underlying architecture. Premom can still share your data. They have promised not to, again.
+
+Floriva reduces company-side sharing risk with architecture, not only promises. Core records stay on your device. There is no sync, so nothing is transmitted. Website, billing, support, backups, and exports are separate risks.

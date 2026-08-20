@@ -1,0 +1,102 @@
+---
+title: "Flo Anonymous Mode Explained: What It Actually Protects"
+description: "Flo launched Anonymous Mode in 2022 after Dobbs. It removes your name from server data but doesn't change where data lives. Here's what it covers."
+ogImage: "/og/guides/flo-anonymous-mode-explained.png"
+tags:
+  - "guide"
+publishedAt: "2026-04-16"
+updatedAt: "2026-04-16"
+buyerStage: "tofu"
+targetPersona:
+  - "flo-refugee"
+  - "post-roe-tracker"
+  - "privacy-conscious-user"
+bluf: "Anonymous Mode removes your name and email from cycle data Flo stores on its servers. It does not move the data off Flo's servers, does not cover data collected before you enabled it, and does not prevent re-identification. Flo paid a $59.5M class action settlement after Anonymous Mode launched. On-device storage solves the same problem structurally without asking you to trust an anonymization claim."
+definitions:
+  - term: "Anonymous Mode"
+    definition: "A Flo feature that removes a user's name and email from cycle data stored on Flo's servers. Data still lives on Flo's infrastructure. Launched in September 2022, three months after the Supreme Court's Dobbs decision."
+  - term: "Pseudonymization"
+    definition: "Replacing direct identifiers like name or email with a pseudonym or random ID. Does not prevent re-identification when pseudonymized records can be combined with other data points like device ID, IP address, or behavioral patterns."
+  - term: "Re-identification risk"
+    definition: "The probability that pseudonymized data can be traced back to a specific person using other data points (IP address, advertising ID, device fingerprint, app usage timing). Research on pseudonymized datasets consistently shows re-identification is possible with a small number of auxiliary data points."
+answers:
+  - q: "What is Flo Anonymous Mode?"
+    a: "Anonymous Mode is a Flo feature launched in September 2022 that removes your name and email from the cycle data Flo stores on its servers. Flo describes it as a way to use the app without your health data being linked to your identity. It does not move data off Flo's servers, does not cover data collected before you turned it on, and does not prevent government agencies from subpoenaing the pseudonymized records."
+  - q: "Does Flo Anonymous Mode protect against subpoenas?"
+    a: "No. Anonymous Mode removes your name and email from cycle data, but the records still sit on Flo's servers. A subpoena or court order can compel Flo to produce the underlying records regardless of whether a name is attached. If the subpoena targets a specific device, IP address, account, or advertising ID, those identifiers can often be linked back to cycle data through other logs Flo holds."
+  - q: "Is Flo Anonymous Mode actually anonymous?"
+    a: "Not in the strict sense. Removing a name and email is pseudonymization, not anonymization. The data still exists, it still sits on company servers, and it can often be re-identified through other data points. JHU information security expert Anton Dahbura has noted that anonymous mode may lure people into a false sense of security."
+  - q: "Did Anonymous Mode change anything about Flo's data practices?"
+    a: "It changed what identifiers are stored alongside cycle data for users who opt in. It did not change the underlying architecture. Flo is still a cloud-based app. Your data still leaves your phone and lives on Flo's servers. The $59.5M class action settlement that closed in September 2025 covered conduct from 2016 to 2019, before Anonymous Mode existed, but the lawsuit itself was litigated through 2025 while Anonymous Mode was live."
+faqs:
+  - q: "When did Flo launch Anonymous Mode?"
+    a: "Flo launched Anonymous Mode in September 2022, three months after the Supreme Court's Dobbs decision overturned Roe v. Wade on June 24, 2022. The feature was positioned as a direct response to user concern about reproductive data being accessed by law enforcement."
+  - q: "Does Anonymous Mode prevent Flo from selling data?"
+    a: "Flo's post-FTC privacy policy states the company does not sell user data. Anonymous Mode does not change that policy. What Anonymous Mode changes is whether cycle records on Flo's servers are stored alongside your name and email for users who opt in. Any restrictions on data sharing come from the FTC consent order and Flo's current policy, not from Anonymous Mode itself."
+  - q: "Is Anonymous Mode free on Flo?"
+    a: "As of the FTC consent order period, Anonymous Mode was only available to Flo Premium subscribers. Flo has adjusted premium feature gating over time, so check the current Flo app for the active pricing. The point remains: Anonymous Mode is a product feature layered on top of cloud architecture, not a structural change to where data lives."
+  - q: "Does Anonymous Mode protect data collected before I enabled it?"
+    a: "No. Anonymous Mode applies from the point you turn it on forward. Any cycle data, pregnancy data, symptoms, or behavioral data Flo already stored on its servers before Anonymous Mode was enabled is unaffected by the feature."
+  - q: "Can Flo re-identify Anonymous Mode data?"
+    a: "Flo states that Anonymous Mode decouples cycle data from direct identifiers. Pseudonymized data is generally considered re-identifiable when combined with device IDs, IP addresses, or other logs. Flo has not published a technical architecture document that third parties can audit to verify what re-identification is or is not possible."
+expertQuotes:
+  - quote: "Apps like Flo shared users' most intimate data with companies like Facebook and Google. Users had every reason to expect that information would remain private."
+    personName: "Floriva Editorial Team"
+    jobTitle: "Privacy Research"
+    organization: "Floriva"
+relatedPages:
+  - /compare/alternatives/flo-app-alternative/
+  - /resources/guides/does-flo-sell-your-data/
+  - /resources/guides/flo-period-tracker-lawsuit-settlement/
+  - /resources/guides/is-flo-safe-to-use/
+  - /compare/pricing/flo-premium-pricing-worth-privacy-risk/
+  - /resources/guides/on-device-storage-period-tracker/
+---
+
+[Flo](/compare/alternatives/flo-app-alternative/) launched Anonymous Mode in September 2022, three months after the Supreme Court's Dobbs decision overturned Roe v. Wade. The feature arrived at a moment when users were actively asking whether a period tracker could be used as evidence in a state investigation. Flo's answer was Anonymous Mode.
+
+We built Floriva because we kept finding the same gap when we read through how Anonymous Mode actually works. It does one specific thing. It does not do several other things that its name suggests. And the distinction between those two categories is exactly the distinction between policy-based privacy and architectural privacy.
+
+## What Anonymous Mode actually changes
+
+Anonymous Mode removes your name and email from the cycle data stored on Flo's servers. For users who opt in, period dates, symptoms, and pregnancy data are stored on Flo's infrastructure without the direct identifiers Flo would otherwise hold alongside them.
+
+That is the full scope of the change. It is a server-side labeling change. Flo's engineering team stops attaching your name and email to the records your app uploads.
+
+Flo positions Anonymous Mode as a response to the post-Dobbs risk environment. The feature description emphasizes that cycle data is no longer linked to a user profile. Users looking for a signal that Flo took the post-Roe risk seriously often point to Anonymous Mode as evidence.
+
+## What Anonymous Mode does not change
+
+Flo is still a cloud-based app. Your cycle data still leaves your phone. It still travels to Flo's servers. It still sits in a database that Flo operates.
+
+Anonymous Mode does not cover data Flo already collected. If you used Flo for a year and then turned on Anonymous Mode, the year of prior data stays in Flo's systems under its original identifiers. The feature only applies forward.
+
+Anonymous Mode does not prevent a [subpoena](/resources/guides/can-police-access-period-tracker-data/) from reaching Flo's servers. A court order targeting Flo's records can compel the company to produce whatever it holds. If the subpoena specifies a device, an account, or an IP address range, the pseudonymized cycle data can often be linked back to a person through other logs Flo retains.
+
+Anonymous Mode does not prevent third-party SDKs from receiving data. Flo tightened SDK usage after the FTC action, but the feature itself does not block SDK data flows. Any privacy gains from reduced SDK sharing come from Flo's current policy and the FTC consent order, not from Anonymous Mode.
+
+## Why pseudonymization is not the same as privacy
+
+Removing a name from a record is not the same as making the record anonymous. Pseudonymization is a technical step that strips direct identifiers. Re-identification is the known limitation of that step.
+
+Academic research on pseudonymized datasets has repeatedly shown that a small number of auxiliary data points is often enough to match a pseudonymized record to a specific person. Four timestamped location points are enough to uniquely identify most people in a mobility dataset. The same structural problem applies to cycle data. A device ID, an IP address, an app install date, or a billing record can link pseudonymized cycle data back to the original user.
+
+Flo has not published a technical architecture document that third-party security researchers can audit to verify what re-identification is or is not possible inside its Anonymous Mode pipeline. Users are asked to trust the claim.
+
+JHU information security expert Anton Dahbura has noted that anonymous mode and other attempts to protect user health data may lure people into a false sense of security.
+
+## The $59.5M settlement happened with Anonymous Mode enabled
+
+Flo launched Anonymous Mode in September 2022. The class action against Flo Health, Google, Meta, and Flurry was actively litigated through 2025 while Anonymous Mode was live. The [$59.5M settlement](/resources/guides/flo-period-tracker-lawsuit-settlement/) that closed in September 2025 covered conduct from 2016 to 2019, but the point stands: Anonymous Mode did not prevent Flo from being a defendant. It did not prevent the company from paying out. It did not retroactively clean up the data Flo had already shared.
+
+A feature that decouples identifiers going forward cannot undo conduct that already happened. A feature that removes a name from a record cannot take a record off a server that law enforcement can reach.
+
+Source: Reuters reported the combined settlement on September 25, 2025. ClassAction.org confirmed the same figure.
+
+## What on-device storage solves that Anonymous Mode doesn't
+
+The structural alternative to Anonymous Mode is [on-device storage](/resources/guides/on-device-storage-period-tracker/). On-device trackers store cycle data only on your phone. The data never reaches a company server. There is no database to pseudonymize, no record to subpoena, no employee who can be compelled to produce the data.
+
+The difference matters because it removes the trust requirement. Anonymous Mode asks you to trust that Flo's internal pipeline actually decouples your identity from your cycle data, that pseudonymization holds against re-identification, and that future policy changes will not reattach identifiers. On-device storage requires none of that trust. The absence of a server-side copy is verifiable in a way that internal data handling is not.
+
+Floriva stores all cycle data on your device using encrypted local storage. No Floriva server holds your reproductive health data. There is no server-side mode to opt into and no anonymization claim to audit, because there is no readable central copy in the first place.

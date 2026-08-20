@@ -1,0 +1,116 @@
+---
+title: "Is Flo Safe to Use What Changed and What Didn't"
+description: "Flo's privacy improved post-FTC, but your data still sits on their servers. Anonymous Mode is paid-only and doesn't fix the architecture."
+ogImage: "/og/guides/is-flo-safe-to-use.png"
+tags:
+  - "guide"
+publishedAt: "2026-04-01"
+updatedAt: "2026-04-01"
+buyerStage: "tofu"
+targetPersona:
+  - "flo-refugee"
+  - "post-roe-tracker"
+  - "privacy-conscious-user"
+  - "paper-tracker"
+bluf: "Flo improved its privacy practices after the 2021 FTC enforcement action, but its core architecture hasn't changed. Your data is still stored on Flo's servers, which can be subpoenaed. Anonymous Mode requires a paid subscription and does not change where data is stored. On-device alternatives eliminate the server-side risk entirely."
+definitions:
+  - term: "Anonymous Mode"
+    definition: "A feature Flo launched after the 2021 FTC enforcement action that claims to decouple cycle data from user identity. It requires a paid Flo Premium subscription. Anonymous Mode is a policy layer. It does not change the underlying cloud architecture. Flo's servers still hold cycle data, and that data remains subject to legal process."
+  - term: "On-device storage"
+    definition: "A data architecture where all user information is stored locally on the user's phone, never transmitted to company servers. Apps using on-device storage cannot be compelled to produce user data because no readable central copy exists. Floriva, Euki, and Drip use on-device storage."
+  - term: "Subpoena"
+    definition: "A legal order compelling a person or company to produce documents, records, or testimony. When reproductive health data is stored on a company's server, that company can be subpoenaed to hand it over. In states with abortion restrictions, law enforcement has sought health app data through subpoenas and court orders."
+  - term: "Zero-knowledge architecture"
+    definition: "A system design where the service provider has no access to user data. In the context of period trackers, zero-knowledge means the company cannot read, share, or be compelled to produce your cycle data because it never possesses it. This differs from encryption-at-rest, where the company holds the decryption keys."
+answers:
+  - q: "Is Flo safe to use in 2026"
+    a: "Flo is safer than it was before 2021, but the core risk remains. The FTC consent order required Flo to implement a privacy program and obtain consent before sharing data with third parties. However, Flo still stores cycle data on its servers. That data can be accessed via subpoena or court order. Anonymous Mode is available only to paid subscribers and does not change the server-based architecture. If you want to eliminate the server-side risk, on-device trackers like Floriva, Euki, or Drip store data only on your phone."
+  - q: "Does Flo's Anonymous Mode protect my data"
+    a: "Anonymous Mode claims to decouple your cycle data from your identity within Flo's systems. Two limitations: first, it requires a paid Flo Premium subscription (basic privacy costs extra). Second, and more fundamentally, your data still resides on Flo's servers. Anonymous Mode is a policy control, not an architectural one. A server that holds data can be compelled to produce it regardless of how that data is labeled internally. Information security researchers have warned that anonymous mode and similar features may give users a false sense of security without changing the underlying risk."
+  - q: "Can police access my Flo data"
+    a: "Yes. Any data stored on a company's server can be obtained through legal process, subpoenas, court orders, or warrants. Flo stores cycle data on its servers. In states with abortion restrictions, law enforcement agencies have sought health app data as evidence. The FTC's own 2024 research paper found that 'period tracking apps' data practices can be used to detect pregnancy and abortion, hence putting women at risk of being prosecuted.' Local-first trackers reduce this company-side risk because no readable central copy exists."
+  - q: "What's safer than Flo for period tracking"
+    a: "Trackers that keep readable records away from company databases are structurally safer. Floriva keeps core records on your device with encrypted local storage and has no sync of any kind. Euki (free, built by nonprofit Ibis Reproductive Health) and Drip (free, open source, Android only) use local-only storage. Among server-based apps, Clue is the strongest option due to GDPR compliance under EU law and no advertising business model."
+faqs:
+  - q: "What changed at Flo after the FTC action"
+    a: "Flo introduced Anonymous Mode, updated its privacy policy, notified affected users about the prior data sharing, and directed Facebook, Google, and Flurry to delete improperly shared data. These changes address the specific conduct the FTC identified. They do not change the underlying cloud-based architecture that stores your data on Flo's servers."
+  - q: "What didn't change at Flo after the FTC action"
+    a: "The data architecture. Flo still stores cycle data on its servers. The servers still run in a jurisdiction subject to US legal process. Data on those servers can still be accessed via subpoena or court order. The consent order added procedural requirements, consent, notification, privacy program, but procedural controls can be violated or overridden. Architectural controls cannot."
+  - q: "Is Flo's Anonymous Mode free"
+    a: "No. Anonymous Mode requires a Flo Premium subscription. This means basic privacy is a paid feature. Users on the free tier track their cycles on Flo's servers without the identity-decoupling that Anonymous Mode claims to provide."
+  - q: "Should I delete Flo after the lawsuit"
+    a: "Deleting the app removes it from your phone but does not immediately erase your data from Flo's servers. To request data deletion, go to Profile > Settings > Privacy > Delete Account before uninstalling. Note that data shared with third-party SDKs before the FTC action may already have been retained by those parties. If you want a tracker where deleting the app deletes all data, use an on-device tracker, there are no readable central records to persist."
+relatedPages:
+  - "/resources/guides/flo-period-tracker-lawsuit-settlement"
+  - "/compare/alternatives/flo-app-alternative"
+  - "/resources/guides/period-tracker-safe-after-roe-v-wade"
+  - "/resources/best/best-private-period-tracker-apps"
+---
+
+Flo improved its privacy practices after the 2021 FTC enforcement action, but its core architecture hasn't changed. Your data is still stored on Flo's servers, which can be subpoenaed.
+
+## What Flo Changed After the FTC Action
+
+The FTC consent order required Flo to take specific corrective steps. Flo:
+
+- Notified affected users that their health data had been shared with Facebook, Google, and Flurry
+- Directed those companies to delete the improperly shared data
+- Updated its privacy policy
+- Launched Anonymous Mode, which claims to decouple cycle data from user identity
+- Implemented a privacy program as required by the consent order
+
+These are real changes. They address the specific conduct the FTC found deceptive, sharing data with third-party SDKs while claiming not to.
+
+Source: [FTC consent order, June 2021](https://www.ftc.gov/news-events/news/press-releases/2021/06/ftc-finalizes-order-flo-health-fertility-tracking-app-shared-sensitive-health-data-facebook-google)
+
+## What Didn't Change
+
+The data architecture. Flo is still a cloud-based app. Your cycle data, period dates, symptoms, pregnancy status, is stored on Flo's servers. That has not changed.
+
+This matters because:
+
+**Servers can be subpoenaed.** Any data a company holds on its servers can be obtained through legal process. In states with abortion restrictions, law enforcement has sought digital health data as evidence. The FTC's 2024 research paper found that "period tracking apps' data practices can be used to detect pregnancy and abortion, hence putting women at risk of being prosecuted."
+
+Source: [FTC research paper, 2024](https://www.ftc.gov/system/files/ftc_gov/pdf/10-Laabadli-Understanding-Womens-Privacy-Concerns-Toward-Period-Tracking-Apps-in-the-Post-Roe-v-Wade-Era.pdf)
+
+**Policy controls can fail.** The original FTC action proves this point. Flo had a privacy policy that said it wouldn't share data. It shared data anyway. Policy controls depend on a company keeping its promises. The consent order adds oversight, but oversight is not infallibility.
+
+**A $59.5M settlement happened despite the privacy policy.** The combined settlement across Flurry ($3.5M), Google+Flo ($56M), and the Meta jury verdict resolved claims from conduct that Flo's own policy prohibited.
+
+Source: [Reuters, September 2025](https://www.reuters.com/sustainability/boards-policy-regulation/google-flo-health-pay-56-million-period-tracking-app-privacy-case-2025-09-25/)
+
+## Anonymous Mode Limitations
+
+Flo's Anonymous Mode is the company's primary post-FTC privacy feature. Two limitations:
+
+**It requires a paid subscription.** Anonymous Mode is only available to Flo Premium subscribers. Free-tier users track their cycles without the identity-decoupling that Anonymous Mode claims to provide. Basic privacy is a paid feature.
+
+**It doesn't change the architecture.** Anonymous Mode claims to remove identifying information from cycle data within Flo's systems. But the data is still on Flo's servers. Information security researchers have warned that features like Anonymous Mode may give users a false sense of security without changing the underlying risk.
+
+Source: [JHU Information Security Institute, July 2022](https://isi.jhu.edu/2022/07/19/deleting-your-period-tracker-wont-keep-your-health-data-private/)
+
+## Post-Roe Implications
+
+The Dobbs decision overturning Roe v. Wade in 2022 changed the risk calculation for period tracker data. In states with abortion restrictions, cycle data showing a missed period followed by a return to regular cycles could be interpreted as evidence of a terminated pregnancy.
+
+NPR reported in 2022 that privacy experts warned period app data "could potentially be used to penalize anyone" in a post-Roe environment. Forbes reported in 2024 that "femtech apps that share data with third parties can put your reproductive privacy at risk."
+
+Source: [NPR, May 2022](https://www.npr.org/2022/05/10/1097482967/roe-v-wade-supreme-court-abortion-period-apps); [Forbes, November 2024](https://www.forbes.com/sites/abigaildubiniecki/2024/11/14/post-roe-your-period-app-data-could-be-used-against-you/)
+
+The University of Maryland Law Journal's 2025 analysis "examines the legal and policy implications of law enforcement's access to data collected by period tracking apps."
+
+Source: [University of Maryland Law Journal, 2025](https://digitalcommons.law.umaryland.edu/jhclp/vol28/iss2/2/)
+
+## How On-Device Alternatives Differ
+
+The difference between Flo and on-device trackers is architectural, not just policy.
+
+On-device trackers store all data locally on your phone. No company server holds a copy. There is no database to breach, no server to subpoena, no employee who can be compelled to produce records.
+
+On-device storage removes the structural possibility of data exposure. No trust required.
+
+Floriva stores all cycle data on your device using encrypted local storage. There is no sync, so nothing is transmitted. If you want your history on a new phone, you export an encrypted backup file yourself. Floriva has no server that holds decryptable reproductive health data.
+
+Other on-device options include Euki (free, nonprofit) and Drip (free, open source, Android only). Consumer Reports recommended Drip, Euki, and Periodical as apps that "store data locally and don't allow third-party tracking."
+
+Source: [Consumer Reports, August 2022](https://www.consumerreports.org/health/health-privacy/period-tracker-apps-privacy-a2278134145/)

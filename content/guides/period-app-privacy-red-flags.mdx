@@ -1,0 +1,123 @@
+---
+title: "Period App Privacy Red Flags: 5 Signs Your App Is Sharing Your Data"
+description: "Five things in a period app's privacy policy or app store listing that signal high data-sharing risk, including third-party partner language, missing no-sell commitments, and analytics SDKs."
+ogImage: "/og/guides/period-app-privacy-red-flags.png"
+publishedAt: "2026-04-29"
+updatedAt: "2026-04-29"
+buyerStage: "mofu"
+targetPersona:
+  - "privacy-conscious"
+  - "data-sensitive"
+bluf: "Five red flags in a period app's privacy policy signal significant data-sharing risk: (1) 'third-party partners' language without naming them, (2) no explicit no-sell commitment for health data, (3) required account with email tied to your health data, (4) analytics SDKs listed or detectable in the app, (5) US-based company with no reproductive-data-specific protection in a high-enforcement-risk state. Flo's FTC action in 2021 was triggered specifically by analytics SDK data sharing that violated its stated privacy commitments."
+tags:
+  - period app privacy
+  - privacy red flags
+  - data sharing
+  - FTC
+  - period tracker
+  - health data
+relatedPages:
+  - /resources/guides/does-apple-health-share-period-data
+  - /resources/guides/google-fit-menstrual-data-privacy
+  - /resources/guides/period-tracker-data-minimization-guide
+  - /resources/privacy-in-practice/lock-down-period-data-on-your-phone
+  - /resources/privacy-in-practice/who-can-legally-get-your-period-data
+answers:
+  - q: "How can I tell if a period app is sharing my data"
+    a: "Read the privacy policy and look for five signals: vague 'third-party partners' language without names, absence of an explicit no-sell commitment for health data, a required account (email linked to health data), analytics SDKs listed in the privacy policy, and US jurisdiction without state-level reproductive health data protection. If an app has 3+ of these, treat it as high-sharing-risk regardless of marketing claims."
+  - q: "What happened with Flo and the FTC"
+    a: "In January 2021, the Federal Trade Commission charged Flo Health with sharing health data with third-party analytics firms, including Facebook Analytics, AppsFlyer, and Google Analytics, despite claiming 'we will never sell your personal data.' The data shared included declared health conditions and pregnancy status, transmitted via SDK events that fired when users interacted with health-specific features. Flo settled and was required to notify users and obtain express consent for future third-party health data sharing. The case illustrates the gap between privacy policy language and actual SDK behavior."
+  - q: "What is an analytics SDK and why does it matter for period apps"
+    a: "An analytics SDK (Software Development Kit) is code embedded in an app that automatically transmits behavioral data to an analytics service, commonly Firebase Analytics, Mixpanel, Amplitude, Facebook SDK, AppsFlyer, or similar. SDKs fire events when users take specific actions in the app. In a period app, SDK events may include health-related interactions: entering period dates, selecting a health condition, viewing pregnancy tracking. The problem is that these events can carry health context to analytics servers regardless of the app's stated data-sharing policy."
+  - q: "Does requiring an account make a period app less private"
+    a: "Yes. A required account creates a linkage between your identity (email address or phone number) and your health data on the company's server. This linkage means: the data can be associated with you specifically (not anonymized), it can be produced in response to legal requests targeting you specifically, and if the company is breached, your health data is tied to an identifiable account. Anonymous or no-account-required tracking avoids this association."
+definitions:
+  - term: "Data broker"
+    definition: "A company that collects personal data from various sources and sells it to third parties. Health data brokers exist specifically to aggregate and sell sensitive health information, including mental health, reproductive health, and chronic condition data, for use in targeted advertising, insurance risk assessment, and credit decisions. The FTC has documented period app data appearing in data broker databases. No federal law currently prohibits selling health data collected by non-HIPAA-covered entities."
+  - term: "No-sell commitment"
+    definition: "A privacy policy statement explicitly committing not to sell personal data to third parties. California's CCPA/CPRA defines 'selling' broadly and requires opt-out rights; Virginia, Colorado, and other states have similar provisions. A no-sell commitment is only meaningful if: (1) 'sharing for commercial purposes' is also addressed (some companies avoid selling while still sharing for advertising), and (2) the commitment specifically covers health data, not just generic personal data."
+---
+
+Privacy policies exist primarily to protect companies, not users. They are written to be technically accurate while being practically unreadable, which means a period app can share your data in several significant ways while having a privacy policy that doesn't technically say "we share your data."
+
+Here are five specific things to check before trusting any period app with your cycle data.
+
+## Red Flag 1: "Third-Party Partners" Without Names
+
+The most common obfuscation in health app privacy policies is generic references to "third parties," "service providers," "business partners," or "affiliates" without naming them.
+
+A privacy policy that says *"We may share your information with third-party service providers who assist us in providing the Services"* is telling you that your data is shared, but not with whom, under what conditions, or for what purpose.
+
+**What to look for instead:** Named third parties, or a list of categories of third parties with specific examples. Explicit statements about what data is shared with each category. Opt-out rights for each type of sharing.
+
+**The Flo case illustration:** Flo's privacy policy at the time of the FTC action stated that Flo would "never sell your personal data." What the policy didn't address clearly: SDK integrations. Flo had integrated Facebook SDK, AppsFlyer, and Google Analytics, each of which received behavioral event data that included health context. These integrations were arguably "service providers" rather than "buyers," so the no-sell statement wasn't technically violated, but the data still flowed to Facebook and Google's ad infrastructure.
+
+## Red Flag 2: No Explicit No-Sell Commitment for Health Data
+
+A general privacy policy might say "we don't sell personal data", but health data is a specific, higher-risk category that warrants an explicit commitment.
+
+Look for language specifically addressing:
+- Health data or reproductive health data (not just "personal data")
+- An explicit statement that this category of data is not sold or shared for commercial purposes
+- A definition of "sell" that includes sharing for targeted advertising purposes
+
+Absence of this explicit language doesn't mean they're selling your data, but it means there's no stated commitment against it.
+
+**Check also:** Whether the privacy policy distinguishes between "selling" and "sharing for commercial purposes." Some companies avoid selling data directly while sharing it with advertising networks in ways that are functionally equivalent.
+
+## Red Flag 3: Required Account With Email
+
+An account requirement creates a hard linkage between your identity and your health data on the company's servers. This has three specific privacy implications:
+
+**1. Identity linkage makes data personally identifiable.** "A user who logged period dates on these days" is much less sensitive than "Jane Smith, identified by email jane@example.com, logged period dates on these days." The account email is what turns health records into medical records about a specific named person.
+
+**2. Legal requests can target you specifically.** Law enforcement seeking data about a specific person can serve a subpoena naming you to the company. Without an account, there's nothing to link cycle records to you. With an account, there is.
+
+**3. Breach exposure is greater.** Account credentials can be targeted in credential stuffing attacks. A period app breach that exposes account data exposes the linkage between email addresses and health histories.
+
+**What to look for:** Does the app work without creating an account? Can you use it with a pseudonymous or anonymous identifier? Does it explicitly offer anonymous tracking?
+
+## Red Flag 4: Analytics SDKs in the App
+
+Many apps list the SDKs they use either in the privacy policy (under "analytics partners" or "technology partners") or in the app store listing. Common high-risk SDKs for period apps:
+
+- **Facebook SDK / Meta Pixel:** Transmits behavioral events to Facebook's advertising infrastructure. If a period app fires a "health_event" when you enter a period, that event can reach Facebook's systems.
+- **AppsFlyer, Adjust, Kochava:** Mobile marketing attribution SDKs. Their purpose is to track which ads caused app installs and in-app purchases, which requires transmitting user behavior data.
+- **Firebase Analytics (Google):** Collects in-app behavioral data by default. Transmitted to Google's servers.
+
+**How to check:**
+1. Read the privacy policy for an "Analytics and Tracking" or "Technology Partners" section
+2. Check the app's App Store or Google Play listing (some privacy labels list data types collected, though not always SDK names)
+3. Tools like [Exodus Privacy](https://exodus-privacy.eu.org/) can detect SDKs in Android APKs, their database lists period apps specifically
+
+An app that includes advertising attribution SDKs has a business model that depends on user tracking, regardless of what its privacy policy says.
+
+## Red Flag 5: US-Based Company, No Reproductive Data Protections
+
+Under US federal law, period app data collected by non-healthcare entities is not covered by HIPAA. The FTC has health data authority (as demonstrated by the Flo action), but enforcement is complaint-driven and reactive.
+
+State-level protections exist but are uneven. As of 2025-2026:
+- **Washington** (My Health MY Data Act): Specifically covers reproductive health data; private right of action
+- **California** (CPRA): Covers health data with opt-out rights; broad but not reproductive-specific
+- **Nevada** (SB 370): Covers reproductive health data specifically
+- Several other states have HIPAA-equivalent or broader health privacy laws
+
+In states without these protections, period app data has no specific legal shield against law enforcement requests, civil subpoenas, or commercial use.
+
+**The practical risk:** If an app is incorporated in a state with restrictive abortion laws and no health data protections, and law enforcement in that state serves a legal request, the company's legal compliance team may produce your data without notification to you and without the ability to refuse.
+
+## The Checklist
+
+Before using any period app for sensitive data:
+
+- [ ] Privacy policy names specific third parties (not just "partners")
+- [ ] Explicit no-sell commitment for health and reproductive data specifically
+- [ ] App functions without required email/account
+- [ ] Privacy policy or Exodus Privacy shows no advertising attribution SDKs
+- [ ] Company has stated legal protections for reproductive health data, or is based in a state with those protections
+
+An app that passes all five has meaningfully lower risk than one that fails three.
+
+## What This Means for Floriva Users
+
+Floriva's design answers each of these red flags by architecture: no required account for core tracking means less identity linkage, local-first storage means no readable central cycle database, and no advertising SDK means no behavioral data flowing to advertising networks. Privacy claims backed by architecture are more meaningful than policy commitments that could be technically complied with while sharing data in other ways.

@@ -1,0 +1,116 @@
+---
+title: "How Much Data Have You Shared with Your Period Tracker?"
+description: "A self-audit to estimate how much personal and reproductive health data your period tracking app has collected and potentially shared with third parties."
+ogImage: "/og/questionnaires/how-much-data-have-you-shared.png"
+tags:
+  - "quiz"
+  - "data exposure"
+  - "privacy"
+publishedAt: "2026-05-01"
+updatedAt: "2026-05-01"
+buyerStage: "mofu"
+targetPersona:
+  - "privacy-seeker"
+  - "flo-refugee"
+schema: "Article"
+bluf: "You've been logging data for months or years. This audit helps you understand what your app knows about you and who else might have access to it."
+answers:
+  - q: "What data do period trackers collect?"
+    a: "Beyond cycle dates, many trackers collect device identifiers, location, age, sexual activity logs, pregnancy intentions, mood and mental health data, and usage patterns -- all tied to your account."
+faqs:
+  - q: "Can I find out what data my app has on me?"
+    a: "Under GDPR, you can submit a Data Subject Access Request (DSAR). In the US, data access rights vary by state. Some apps offer in-app data download features."
+  - q: "Is anonymous mode actually anonymous?"
+    a: "Anonymous mode features (like Flo's post-FTC addition) limit data collection going forward but may not erase previously collected data. Read the specific terms."
+definitions:
+  - term: "Data Subject Access Request (DSAR)"
+    definition: "A formal request to a company asking them to provide all personal data they hold about you. Required under GDPR; some US state laws offer similar rights."
+  - term: "Device identifier"
+    definition: "A unique code assigned to your phone (IDFA on iOS, GAID on Android) that allows advertising networks to track your behavior across apps."
+relatedPages:
+  - "/resources/best/best-private-period-tracker-apps"
+  - "/tools/quiz/how-private-is-your-period-tracker"
+  - "/app-guides/floriva-data-deletion-guide"
+  - "/resources/guides/data-brokers-reproductive-health"
+---
+
+Every time you open your period tracker, you're creating data. Some of it is what you deliberately enter. Some is collected automatically. And some of it has been shared with companies you've never heard of.
+
+This audit walks you through the categories of data your app may have collected so you can estimate your total exposure.
+
+## Question 1: How Long Have You Been Using Your App?
+
+**Time equals data volume.**
+
+- **Option A: Less than three months.** Limited history. Your exposure is relatively small, but the data collection infrastructure has been active since day one.
+- **Option B: Three months to one year.** Enough data for a detailed cycle profile, seasonal patterns, and behavioral patterns around your period.
+- **Option C: More than one year.** A comprehensive reproductive health profile. Multi-year data reveals fertility patterns, health changes, and long-term trends.
+
+Duration matters. Even if the app collects limited data per session, accumulation over months builds a detailed picture.
+
+## Question 2: What Have You Manually Entered?
+
+**Check your app for which data fields you've used. Common categories include:**
+
+- **Option A: Period dates only.** Minimum manual input. Still reveals cycle length, regularity, and predictability.
+- **Option B: Period dates plus symptoms (mood, pain, flow, energy).** You've shared a health profile that goes beyond menstruation into mental health and pain patterns.
+- **Option C: Fertility data (BBT, cervical mucus, sexual activity, pregnancy tests).** You've shared reproductive intentions. This category is the most sensitive in states with restrictions.
+- **Option D: All of the above plus notes, medications, and custom fields.** The app holds a near-complete health journal.
+
+Sexual activity logs and pregnancy test results are the most sensitive data points in a reproductive health context. If you've logged these in a server-stored app, that data exists on the company's servers.
+
+## Question 3: What Has the App Collected Automatically?
+
+**Beyond what you type in, apps collect device and usage data.**
+
+- **Option A: I granted location permissions.** The app knows where you are when you use it. Combined with cycle data, this places your reproductive health in a geographic and legal context.
+- **Option B: I signed in with Google, Apple, or Facebook.** Your cycle data is linked to your broader digital identity. The sign-in provider may also receive data about your app usage.
+- **Option C: I allowed notifications.** Notification interactions reveal usage patterns and engagement data.
+- **Option D: I'm not sure what permissions I granted.** Check your phone's settings under the app's permissions page. You may be sharing more than you realized.
+
+Automatic data collection often exceeds manual input in volume. Device IDs, IP addresses, session timestamps, and app usage patterns are collected without any action from you.
+
+## Question 4: Has the App Asked You Survey or Onboarding Questions?
+
+**Many apps ask profile questions during setup.**
+
+- **Option A: Yes -- age, weight, health conditions, birth control method, pregnancy goals.** This is structured demographic and health data. It's stored on the company's servers as part of your profile.
+- **Option B: I skipped most onboarding questions.** Less profile data, but the app still collected what you did answer.
+- **Option C: The app didn't ask any personal questions.** Unusual for mainstream apps. Privacy-focused apps skip this because they don't need it.
+
+Onboarding data is often the most directly identifiable information you provide. Age plus location plus cycle data is a near-unique fingerprint.
+
+## Question 5: Do You Use Connected Features?
+
+**Some apps connect to other services or devices.**
+
+- **Option A: I connected a wearable (Apple Watch, Fitbit, Oura).** Health data from the wearable flows into the app. The app now has data it didn't generate itself.
+- **Option B: I use community features (forums, Q&A, social sharing).** Posts and interactions are additional data points, often publicly visible.
+- **Option C: I've used in-app purchases, telehealth, or partner services.** Transaction data links your identity to your cycle data through payment records.
+- **Option D: I don't use any connected features.** Least additional exposure beyond the core app.
+
+Each connection is a data-sharing channel. Wearable integrations are especially expansive because they share continuous biometric data.
+
+## Question 6: Has Your App Been Documented Sharing Data?
+
+**Check whether your specific app has been named in data-sharing investigations.**
+
+- **Option A: Yes.** If your app has been named by the FTC, the Norwegian Consumer Council, Privacy International, Mozilla, or investigative journalists for data sharing, assume your data was included. The sharing happened to active users during the documented period.
+- **Option B: Not that I've found.** Absence of documentation isn't proof of clean practices, but it's a better signal than a confirmed incident.
+- **Option C: I use an app that structurally cannot share because it doesn't collect data.** On-device apps have nothing to share.
+
+Documented sharing means your data left the app company and went to advertising networks, analytics companies, or data brokers. Once shared, it cannot be recalled.
+
+## Your Results
+
+**Estimate your exposure level:**
+
+**Minimal exposure (mostly A answers, less than 3 months, on-device app):** Your data footprint is small. Maintain this by staying with on-device storage and limiting manual input to what you actually use.
+
+**Moderate exposure (mix of answers, 3-12 months, some sensitive fields):** You've shared a meaningful health profile. Consider [exporting your data](/app-guides/floriva-data-export-guide), deleting your account, and switching to an on-device app. Your past data exposure cannot be undone, but you can stop adding to it.
+
+**Significant exposure (mostly C/D answers, over a year, fertility and sexual activity data, documented sharing):** The app holds a comprehensive, identifiable reproductive health profile that may have been shared with third parties. Take these steps now: export your data, submit a [DSAR](/resources/guides/data-brokers-reproductive-health) if under GDPR, delete your account, and move to a [private tracker](/resources/best/best-private-period-tracker-apps).
+
+**Unknown exposure (multiple D/"not sure" answers):** You can't manage what you don't understand. Check your app's permissions in your phone settings. Read the privacy policy. Run the [privacy audit quiz](/tools/quiz/how-private-is-your-period-tracker). Then retake this assessment.
+
+Data already shared cannot be unshared. The goal now is to stop the accumulation and choose tools that don't collect what they don't need.

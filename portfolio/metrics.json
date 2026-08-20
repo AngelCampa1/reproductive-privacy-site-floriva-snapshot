@@ -1,0 +1,143 @@
+{
+  "generatedAt": "2026-08-07T23:04:45.291Z",
+  "rev": null,
+  "gitStatus": "clean",
+  "trackedFiles": 1281,
+  "code": {
+    "config": {
+      "files": 24,
+      "lines": 9691
+    },
+    "other": {
+      "files": 12,
+      "lines": 1264
+    },
+    "docs": {
+      "files": 50,
+      "lines": 18976,
+      "note": "Hand-corrected 2026-08-18 after a direct recount against this file's own classifier found 5 files added since the 2026-08-07 measurement (docs/goal-portfolio-public/LEDGER.md, docs/qa/prod-e2e-bug-report-2026-05-06.md, portfolio/README.md, portfolio/ENGINEERING-LOG.md, portfolio/SECURITY.md). Every other field in this file is untouched and still reflects the 2026-08-07 run; see portfolio/METRICS.md and README.md's 'By the numbers' caveat."
+    },
+    "contentMdx": {
+      "files": 446,
+      "lines": 61599
+    },
+    "binary": {
+      "files": 75,
+      "lines": 0
+    },
+    "generatedData": {
+      "files": 5,
+      "lines": 15250
+    },
+    "appSource": {
+      "files": 75,
+      "lines": 12185
+    },
+    "tests": {
+      "files": 63,
+      "lines": 9659
+    },
+    "sql": {
+      "files": 15,
+      "lines": 231
+    },
+    "generated": {
+      "files": 453,
+      "lines": 126073
+    },
+    "tooling": {
+      "files": 53,
+      "lines": 16444
+    },
+    "styles": {
+      "files": 15,
+      "lines": 3565
+    }
+  },
+  "tests": {
+    "files": 61,
+    "declaredCases": 436,
+    "suites": 82,
+    "parameterised": 3
+  },
+  "coverage": {
+    "measured": true,
+    "measuredAt": "2026-08-07",
+    "rev": null,
+    "filesMeasured": 71,
+    "lines": {
+      "total": 9574,
+      "covered": 8636,
+      "skipped": 0,
+      "pct": 90.2
+    },
+    "statements": {
+      "total": 9574,
+      "covered": 8636,
+      "skipped": 0,
+      "pct": 90.2
+    },
+    "branches": {
+      "total": 1246,
+      "covered": 1006,
+      "skipped": 0,
+      "pct": 80.73
+    },
+    "functions": {
+      "total": 734,
+      "covered": 259,
+      "skipped": 0,
+      "pct": 35.28
+    },
+    "functionsExcludingGlobThunks": {
+      "covered": 238,
+      "total": 280,
+      "excludedThunks": 454,
+      "pct": 85
+    }
+  },
+  "routes": {
+    "indexed": 444,
+    "noindex": 26,
+    "total": 470
+  },
+  "content": {
+    "documents": 446,
+    "collections": 15,
+    "byCollection": {
+      "privacy-in-practice": 9,
+      "listicles": 42,
+      "lead-magnets": 35,
+      "app-guides": 30,
+      "guides": 66,
+      "questionnaires": 13,
+      "symptom-guides": 41,
+      "life-stage-guides": 16,
+      "reproductive-privacy-state-pages": 51,
+      "alternatives": 29,
+      "comparisons": 35,
+      "condition-guides": 24,
+      "hormone-guides": 20,
+      "pricing-breakdowns": 15,
+      "wellness-guides": 20
+    }
+  },
+  "surfaces": {
+    "npmScripts": 66,
+    "verificationGates": 41,
+    "migrations": 15,
+    "d1Tables": 12,
+    "edgeRouteHandlers": 9,
+    "edgeSharedModules": 11,
+    "reactComponents": 23
+  },
+  "git": {
+    "commits": 1,
+    "snapshot": true,
+    "rev": null,
+    "firstCommit": "2026-08-07",
+    "lastCommit": "2026-08-07",
+    "contributors": 1,
+    "dirty": false
+  }
+}

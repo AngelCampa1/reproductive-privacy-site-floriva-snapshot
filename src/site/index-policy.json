@@ -1,0 +1,31 @@
+{
+  "$comment": "Generated from artifacts/index-status-ledger-2026-07-18.csv. See src/site/index-policy.ts.",
+  "noindexRoutePaths": [
+    "/free/abnormal-bleeding-log",
+    "/free/biopsy-result-visit-notes",
+    "/free/birth-control-tracking-kit",
+    "/free/cycle-syncing-food-workout-planner",
+    "/free/delete-period-data-guide",
+    "/free/emergency-contraception-log",
+    "/free/endometriosis-tracking-kit",
+    "/free/fibroid-tracking-kit",
+    "/free/heavy-period-clot-tracker",
+    "/free/late-missed-period-log",
+    "/free/ovarian-cyst-tracking-kit",
+    "/free/ovulation-fertility-awareness-kit",
+    "/free/pcos-tracking-kit",
+    "/free/period-app-privacy-audit-kit",
+    "/free/period-at-college-dorm-kit",
+    "/free/period-away-from-home-kit",
+    "/free/period-blood-stain-removal-guide",
+    "/free/period-leak-and-product-kit",
+    "/free/period-pain-cramp-diary",
+    "/free/period-sleep-log",
+    "/free/personal-cycle-health-record",
+    "/free/pmdd-tracking-kit",
+    "/free/reproductive-visit-prep-kit",
+    "/free/thyroid-hormone-lab-organizer",
+    "/free/uti-urinary-symptom-tracker",
+    "/free/vaginal-discharge-odor-checklist"
+  ]
+}

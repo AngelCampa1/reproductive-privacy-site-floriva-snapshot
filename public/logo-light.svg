@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" fill="none">
+  <!-- 3-petal glyph: three overlapping rounded shapes forming a bloom -->
+  <circle cx="12" cy="20" r="7" fill="#923030" opacity="0.9"/>
+  <circle cx="19" cy="12" r="7" fill="#923030" opacity="0.75"/>
+  <circle cx="19" cy="28" r="7" fill="#923030" opacity="0.75"/>
+  <!-- Wordmark -->
+  <text x="34" y="26" font-family="Newsreader, Georgia, serif" font-size="18" font-weight="600" fill="#1A1410" letter-spacing="-0.3">floriva</text>
+</svg>

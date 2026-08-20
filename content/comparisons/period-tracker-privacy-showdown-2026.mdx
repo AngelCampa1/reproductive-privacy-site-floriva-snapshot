@@ -1,0 +1,148 @@
+---
+title: "The Privacy-First Period Tracker Showdown: Floriva vs Euki vs Drip vs Periodical (2026)"
+description: "The most private period trackers of 2026 compared. Floriva, Euki, Drip, and Periodical all store data on-device, here's how they differ on features, platforms, and tradeoffs."
+ogImage: "/og/comparisons/period-tracker-privacy-showdown-2026.png"
+tags:
+  - "comparison"
+  - "privacy"
+  - "roundup"
+  - "2026"
+  - "on-device"
+publishedAt: "2026-05-01"
+updatedAt: "2026-05-01"
+buyerStage: "mofu"
+targetPersona:
+  - "privacy-conscious-user"
+  - "post-roe-tracker"
+  - "privacy-maximalist"
+bluf: "Four period trackers keep sensitive records away from readable company databases: Floriva (iOS + Android, paid app with no free tier, no sync, encrypted backup file), Euki (iOS + Android, free, decoy screen), Drip (Android-only, free, open source), and Periodical (Android-only, free, open source, minimal). None of them sync. The differences are platform support, features, pricing, and development pace."
+tableData:
+  name: "On-Device Period Trackers Compared (2026)"
+  columns: ["Factor", "Floriva", "Euki", "Drip", "Periodical"]
+  rows:
+    - ["Data location", "Local-first", "On-device", "On-device", "On-device"]
+    - ["Account required", "No", "No", "No", "No"]
+    - ["Price", "Paid app (no free tier)", "Free", "Free", "Free"]
+    - ["Platform", "iOS + Android", "iOS + Android", "Android", "Android"]
+    - ["Company-held readable records", "No central cycle database", "No readable central records", "No readable central records", "No readable central records"]
+    - ["Open source", "No", "No", "Yes", "Yes"]
+    - ["Cross-device sync", "None", "None", "None", "None"]
+    - ["Move data to a new phone", "Encrypted backup file (manual)", "No, re-enter by hand", "No, re-enter by hand", "No, re-enter by hand"]
+    - ["Decoy screen", "No", "Yes", "No", "No"]
+    - ["Development pace", "Active", "Moderate", "Slow", "Minimal"]
+proscons:
+  - subject: "Floriva"
+    pros:
+      - "iOS and Android support"
+      - "Encrypted backup file for moving to a new phone"
+      - "Active development"
+    cons:
+      - "Only paid option, no free tier"
+      - "Closed source"
+      - "Newer app"
+  - subject: "Euki"
+    pros:
+      - "Free"
+      - "iOS and Android"
+      - "Decoy screen"
+      - "Sexual health resources"
+    cons:
+      - "No backup, no way to carry data to a new phone"
+      - "Slower updates"
+  - subject: "Drip"
+    pros:
+      - "Free and open-source"
+      - "Verifiable privacy via code"
+    cons:
+      - "Android only"
+      - "Minimal UI"
+      - "No backup"
+  - subject: "Periodical"
+    pros:
+      - "Free and open-source"
+      - "Extremely minimal, does one thing"
+    cons:
+      - "Android only"
+      - "Bare-minimum features"
+      - "Very small development community"
+faqs:
+  - q: "Which on-device period tracker is best for iPhone"
+    a: "For iPhone users, the on-device options are Floriva (paid, no free tier, with an encrypted backup file for switching phones) and Euki (free, no backup at all). Drip and Periodical are Android-only. If moving your history to a new phone someday matters, Floriva is the only option among these four apps that offers a way to do it. If cost matters, Euki is free."
+  - q: "Can any of these companies produce readable cycle records"
+    a: "These apps reduce that company-held record. All four store data on-device only and make no network calls. Floriva's encrypted backup file lives only where you put it. Floriva never sees it. Law enforcement can still seek access to a physical device."
+  - q: "What is the most private period tracker"
+    a: "From a verifiability standpoint, Drip and Periodical are the most private because they're open-source, anyone can audit the code. From a practical standpoint, all four apps in this comparison achieve the same privacy outcome: no server data, no account, no subpoena surface. The choice between them is about features and platform, not privacy level."
+answers:
+  - q: "What is the most private period tracker app in 2026"
+    a: "The most private period tracker apps in 2026 are those that avoid readable company databases: Floriva (iOS + Android, paid app with no free tier, no sync, encrypted backup file), Euki (iOS + Android, free, nonprofit-backed), Drip (Android-only, free, open source), and Periodical (Android-only, free, open source). For verifiable privacy, the open-source options (Drip, Periodical) let anyone audit the code. For cross-platform support, Floriva and Euki cover both iOS and Android."
+  - q: "What period tracker has no company-held cycle database"
+    a: "Euki, Drip, and Periodical store data on-device only. Floriva keeps core tracking local and does not hold readable synced cycle records. Cloud-based apps like Flo, Clue, Glow, and Ovia store data on servers that can be compelled to produce records through legal process."
+relatedPages:
+  - "/compare/versus/floriva-vs-euki"
+  - "/compare/versus/floriva-vs-drip"
+  - "/resources/best/best-private-period-tracker-apps"
+  - "/resources/guides/what-is-zero-knowledge-period-tracker"
+  - "/compare/versus/cloud-vs-local-period-trackers"
+---
+
+Four period trackers have earned the right to call themselves private. Not because of privacy policies or compliance certifications. Because of architecture. All four are built around device-held records, and none of them sync.
+
+This comparison is about the differences between them, because on privacy, they're all in the same category.
+
+## The Shared Foundation
+
+Every app in this comparison reduces the company-held record. All four store data on-device only and have no readable central records. This is what [zero-knowledge architecture](/resources/guides/what-is-zero-knowledge-period-tracker) means in practice.
+
+This puts all four apps in a different category from cloud-based trackers like Flo, Clue, Glow, Natural Cycles, or Ovia. The [cloud vs local architecture comparison](/compare/versus/cloud-vs-local-period-trackers) covers why this distinction matters.
+
+## Floriva: The Cross-Platform Option
+
+Floriva is the only on-device tracker in this list with both iOS and Android support and a structured way to carry your history to a new phone. It has no sync, but it lets you export an encrypted backup file, protected by a passphrase you set, and restore it on a new device yourself. That is a manual step, not automatic sync, and it still means a phone upgrade does not have to mean starting over.
+
+Floriva is a paid app with no free tier, making it the only paid app in this group. The closed-source code means you trust the company's claims rather than verifying them through code inspection. Active development means regular updates and feature additions.
+
+**Best for:** users who need iOS support with a real way to move data to a new phone, or who want the most polished experience and are willing to pay.
+
+## Euki: The Free Cross-Platform Option
+
+Euki is backed by the International Planned Parenthood Federation. It's free, works on iOS and Android, and includes a decoy screen that shows fake content if someone opens your app. Beyond period tracking, Euki includes sexual health resources on contraception, STIs, and abortion.
+
+Euki has no backup and no export. Lose your phone, lose your data. Development pace is moderate, updates happen but not frequently.
+
+**Best for:** users who want free, cross-platform, on-device tracking with physical device privacy (decoy screen) and broader sexual health resources.
+
+## Drip: The Verifiable Option
+
+Drip is open-source under GPLv3. The code is on GitHub. If you want to confirm that the app doesn't phone home, send analytics, or leak data, you can read the source code. This is the highest standard of privacy assurance, you don't trust anyone, you verify.
+
+Android-only. Minimal interface. Small volunteer development team. The app works, but it's built for privacy-first users, not mainstream consumers.
+
+**Best for:** Android users who want provable, auditable privacy and don't need a polished UI or iOS support.
+
+## Periodical: The Minimal Option
+
+Periodical is the simplest app in this comparison. Open-source, Android-only, focused entirely on basic period tracking. It does one thing: track your periods on your device. No symptom logging. No fertility features. No content.
+
+The minimalism is a feature for some users, less code means less attack surface, and the app does exactly what it claims.
+
+**Best for:** Android users who want the absolute simplest possible tracker with open-source verification.
+
+## How to Choose
+
+The decision tree is straightforward:
+
+**iPhone user?** Floriva or Euki. Drip and Periodical aren't available.
+
+**Want a way to move data to a new phone?** Floriva. It's the only on-device tracker here with an encrypted backup file. None of the four apps sync.
+
+**Want free?** Euki (iOS + Android), Drip (Android), or Periodical (Android).
+
+**Want verifiable code?** Drip or Periodical. Both are open-source.
+
+**Want a decoy screen?** Euki. No other app in this comparison offers it.
+
+Check the complete [best private period tracker apps](/resources/best/best-private-period-tracker-apps) list for context on how these compare to the broader market.
+
+## The Privacy Bottom Line
+
+All four apps are private by architecture. The competition between them is about everything except privacy: cost, platform, features, polish, and development sustainability. That is the right kind of competition for a period tracker. It is about UX, not about who leaks less of your reproductive health data.

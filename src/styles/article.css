@@ -1,0 +1,637 @@
+/* Article template: hero, layout grid, prose, table of contents, sidebar
+   cards, sources, and breadcrumbs. Bone & Berry editorial retheme — flat
+   paper cards, hairline rules, Newsreader display type, mono for
+   dates/numbers/citations. */
+
+.article-hero {
+  display: grid;
+  gap: var(--space-7);
+  /* `padding-block`, not the `padding` shorthand: the shorthand's `0` for the
+     inline axis overrode `.shell`'s mobile `padding-inline`, leaving every
+     article hero flush against both screen edges on a phone. */
+  padding-block: clamp(4rem, 7vw, 7rem) var(--space-8);
+  grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.7fr);
+  align-items: start;
+  border-bottom: 1px solid var(--rule);
+}
+
+.article-hero--single {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 56rem;
+}
+
+.article-hero h1 {
+  font-family: var(--font-display);
+  font-weight: 480;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(2.2rem, 3.2vw, 3.2rem);
+  max-width: 26ch;
+}
+
+.article-hero__dek {
+  color: var(--ink-soft);
+  font-size: 1.15rem;
+  line-height: 1.75;
+}
+
+.article-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1.2rem;
+}
+
+.article-hero__meta span:first-child {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--berry);
+}
+
+.article-hero__meta span:not(:first-child) {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-mute);
+}
+
+.breadcrumbs {
+  margin-bottom: 1rem;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.2rem 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-mute);
+}
+
+.breadcrumbs__item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.breadcrumbs__item a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  color: var(--ink-mute);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color var(--duration-fast), border-color var(--duration-fast);
+}
+
+.breadcrumbs__item a:hover,
+.breadcrumbs__item a:focus {
+  color: var(--berry);
+  border-color: currentColor;
+}
+
+.breadcrumbs__sep {
+  color: var(--rule);
+  user-select: none;
+}
+
+.bluf-card {
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem 1.25rem 1.4rem;
+  border-radius: var(--radius-card);
+  background: var(--berry-soft);
+  border: none;
+  border-left: 3px solid var(--berry);
+  color: var(--ink);
+  line-height: 1.7;
+}
+
+.article-aside {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.article-layout {
+  display: grid;
+  gap: 2.4rem;
+  grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.7fr);
+  align-items: start;
+}
+
+.article-layout__main {
+  position: relative;
+}
+
+.article-layout__sidebar {
+  position: relative;
+  display: grid;
+  gap: 2rem;
+}
+
+.article-toc {
+  position: sticky;
+  top: 5rem;
+  display: grid;
+  gap: 0.7rem;
+  padding-left: 1.1rem;
+  border-left: 2px solid var(--rule);
+}
+
+.article-toc ol {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: toc;
+}
+
+.article-toc li {
+  counter-increment: toc;
+  line-height: 1.4;
+}
+
+.article-toc li::before {
+  content: counter(toc, decimal-leading-zero) "  ";
+  font-family: var(--font-mono);
+  color: var(--ink-mute);
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+  margin-right: 0.4rem;
+}
+
+.article-toc a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 0.92rem;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.article-toc a:hover {
+  color: var(--ink);
+}
+
+.article-toc__item--active a {
+  color: var(--berry);
+  font-weight: 700;
+}
+
+.meta-list {
+  display: grid;
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.meta-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.meta-list--stacked li {
+  display: block;
+}
+
+.aside-card .meta-list li span:last-child {
+  padding: 0.2em 0.7em;
+  border-radius: var(--radius-pill);
+  background: var(--canvas-deep);
+  color: var(--ink-soft);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.article-prose {
+  display: grid;
+  /* The implicit column of an `auto` track resolves to MAX-CONTENT, so a wide
+     table would size the track past the container no matter what constraints
+     the table itself carries. Pinning the column to `minmax(0, 1fr)` keeps the
+     track at the container width and lets wide children scroll inside it. */
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.1rem;
+  max-width: 68ch;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+.article-prose h2,
+.article-prose h3 {
+  font-family: var(--font-display);
+  font-weight: 450;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.article-prose h2 {
+  margin: 2.5rem 0 0.6rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--rule);
+  font-size: 1.6rem;
+}
+
+.article-prose h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.article-prose h3 {
+  margin: 1.75rem 0 0.3rem;
+  font-size: 1.25rem;
+}
+
+.article-prose p,
+.article-prose li,
+.article-prose blockquote {
+  max-width: 68ch;
+}
+
+.article-prose ul,
+.article-prose ol {
+  display: grid;
+  gap: 0.7rem;
+  padding-left: 1.1rem;
+}
+
+.article-prose ul {
+  list-style: disc;
+}
+
+.article-prose ul > li::marker {
+  color: var(--berry);
+}
+
+.article-prose ol > li::marker {
+  color: var(--berry);
+  font-family: var(--font-mono);
+}
+
+.article-prose a {
+  color: var(--berry);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.14em;
+}
+
+.article-prose blockquote {
+  margin: 0.5rem 0;
+  padding: 0.1rem 0 0.1rem 1.35rem;
+  border-left: 3px solid var(--berry);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.article-prose strong {
+  color: var(--ink);
+}
+
+/* Markdown code blocks carry fill-in-the-blank templates ("My top concerns
+   are ______"), not code. They are prose, so wrap rather than scroll — a
+   scrollbar would hide the end of a sentence. Unstyled <pre> does neither and
+   simply overflowed the column, where .app-shell clipped it away. */
+.article-prose pre {
+  min-width: 0;
+  max-width: 100%;
+  margin: 0.5rem 0;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-card);
+  background: var(--paper);
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+.article-prose pre code {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+.article-prose table {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+  /* `.article-prose` is a grid, so this table is a grid item whose automatic
+     minimum size is its MIN-CONTENT width — and min-width beats max-width in
+     the used-width calculation. Without `min-width: 0` the table ignores the
+     max-width, grows to its content, and the overflow-x above never engages. */
+  min-width: 0;
+  max-width: 100%;
+  margin: 0.5rem 0;
+  border-collapse: collapse;
+  background: var(--paper);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--rule);
+}
+
+.article-prose th,
+.article-prose td {
+  padding: 0.85rem 1.1rem;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.article-prose thead {
+  background: var(--canvas-deep);
+}
+
+.article-prose th {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+.article-prose td {
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.article-prose tbody tr + tr td {
+  border-top: 1px solid var(--rule);
+}
+
+.definition-list,
+.stat-list,
+.law-list,
+.answer-grid {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* The open answers and the collapsed FAQs share one section now, so the two
+   lists need a gap between them where they used to have a section boundary. */
+.answer-grid + .faq-list {
+  margin-top: 1rem;
+}
+
+.pros-cons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.pros-cons h3 {
+  margin: 0 0 0.65rem;
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.pros-cons ul {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--ink-soft);
+}
+
+.aside-card,
+.stat-card,
+.definition-card,
+.answer-card {
+  position: relative;
+  padding: 1.5rem;
+  border-radius: var(--radius-card);
+  background: var(--paper);
+  border: none;
+  box-shadow: none;
+}
+
+.quote-card {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem 1.75rem;
+  border-radius: var(--radius-card);
+  background: var(--paper);
+  border: none;
+  border-left: 3px solid var(--berry);
+  box-shadow: none;
+}
+
+.quote-card p {
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.quote-card footer {
+  display: grid;
+  gap: 0.2rem;
+  color: var(--ink-mute);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+
+.sidebar-block {
+  display: grid;
+  gap: 1rem;
+}
+
+.sources-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0;
+  counter-reset: source;
+  border-top: 1px solid var(--rule);
+}
+
+.sources-list__item {
+  display: grid;
+  /* Citation text can carry long unbreakable URLs, so floor the text track. */
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: 0.65rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--rule);
+  background: none;
+}
+
+.sources-list__index {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-mute);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.sources-list__body {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.sources-list__claim {
+  margin: 0;
+  color: var(--ink);
+  line-height: 1.55;
+}
+
+.sources-list__meta {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--ink-mute);
+}
+
+.sources-list__link {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  word-break: break-word;
+}
+
+.sources-list__link:hover {
+  text-decoration-thickness: 2px;
+}
+
+.answer-card {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.answer-card h3 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 450;
+  line-height: 1.08;
+}
+
+.answer-card p {
+  margin: 0;
+}
+
+.stat-card strong {
+  display: block;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 450;
+  line-height: 1.35;
+}
+
+.definition-card h3 {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 450;
+  line-height: 1.1;
+}
+
+.stat-card p,
+.definition-card p {
+  margin: 0.5rem 0 0;
+}
+
+.stat-card a,
+.definition-card a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  margin-top: 0.8rem;
+  color: var(--berry);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+}
+
+@media (max-width: 1024px) {
+  /* `minmax(0, 1fr)` rather than `1fr`: a grid item's automatic minimum size
+     is its MIN-CONTENT size, so a single wide table would otherwise blow the
+     whole column past the viewport — taking every paragraph with it — where
+     `.app-shell { overflow: clip }` cuts it off with no way to scroll to it. */
+  .article-hero,
+  .article-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 960px) {
+  .article-toc {
+    position: static;
+  }
+
+  /* Static TOC renders inline as a dense list of ~18px rows. Desktop keeps
+     its tighter density; touch needs a real 44px target.
+
+     The row has to become a flex line for this to work. The item number is
+     inline content on `li::before`, so a block-level anchor after it forces an
+     anonymous block break and drops the number onto its own line (22px + 44px
+     = 66px rows). Making the `li` a flex container puts the number and the
+     link back on one line, and `flex: 1` then lets the anchor claim the whole
+     remaining row — a full-width target rather than one sized to its label,
+     which for a short heading is under 44px wide. */
+  .article-toc li {
+    display: flex;
+    align-items: center;
+  }
+
+  .article-toc a {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-height: 44px;
+  }
+
+  .article-toc ol {
+    gap: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .article-hero__meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.45rem;
+  }
+
+  .meta-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .pros-cons {
+    grid-template-columns: 1fr;
+  }
+
+  .article-prose blockquote {
+    font-size: 1.1rem;
+  }
+}

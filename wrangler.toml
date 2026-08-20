@@ -1,0 +1,25 @@
+name = "floriva-web"
+compatibility_date = "2026-04-21"
+pages_build_output_dir = "./dist"
+
+[vars]
+STORE_URL_IOS = "https://apps.apple.com/us/app/floriva-private-period-tracker/id6762630858"
+STORE_URL_ANDROID = "https://play.google.com/store/apps/details?id=app.floriva"
+
+[[d1_databases]]
+binding = "LEAD_MAGNET_DB"
+database_name = "floriva-db"
+database_id = "1d694584-7b01-479a-bba7-b67d303b13cd"
+
+[[r2_buckets]]
+binding = "LEAD_MAGNET_BUCKET"
+bucket_name = "floriva-lead-magnets"
+
+# Service binding to the floriva-email Worker (which owns the Cloudflare Email
+# Service send binding + nurture cron). This is a config-as-code Pages project, so
+# this entry IS the production binding — `wrangler pages deploy` applies it (the
+# dashboard binding view is read-only). It also lets `wrangler pages dev` resolve
+# the binding against a locally running Worker.
+[[services]]
+binding = "EMAIL_WORKER"
+service = "floriva-email"

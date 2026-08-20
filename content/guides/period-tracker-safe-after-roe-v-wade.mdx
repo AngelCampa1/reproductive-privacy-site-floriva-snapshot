@@ -1,0 +1,89 @@
+---
+title: "Is It Safe to Use a Period Tracker After Roe v. Wade"
+description: "After Dobbs, period tracker data can be subpoenaed. Which apps are safe, which aren't, and what on-device storage actually protects you from."
+ogImage: "/og/guides/period-tracker-safe-after-roe-v-wade.png"
+tags:
+  - "guide"
+publishedAt: "2026-03-21"
+updatedAt: "2026-03-21"
+buyerStage: "tofu"
+targetPersona:
+  - "flo-refugee"
+  - "post-roe-tracker"
+  - "paper-tracker"
+  - "privacy-conscious-user"
+bluf: "In states with abortion bans, period tracker data can be subpoenaed and used as evidence. Cloud-based apps such as Flo, Clue, and Natural Cycles store your data on their servers. On-device apps such as Floriva, Euki, and Drip store data only on your phone, so there is nothing to subpoena from the company."
+definitions:
+  - term: "Dobbs v. Jackson Women's Health Organization"
+    definition: "The 2022 Supreme Court decision that overturned Roe v. Wade, holding that there is no federal constitutional right to abortion. The decision returned abortion regulation to individual states, creating a patchwork of laws ranging from near-total bans to constitutional protections."
+  - term: "Subpoena"
+    definition: "A legal order compelling a person or organization to produce documents or data. App companies that receive valid subpoenas from prosecutors are generally required to comply and turn over user data they hold. Apps that do not hold readable company records have less to produce."
+  - term: "On-device storage"
+    definition: "A data architecture in which user information is stored exclusively on the user's physical device, phone or tablet, and never transmitted to company servers. Apps using on-device storage cannot be compelled by subpoena to provide user data because they possess none."
+steps:
+  - title: "Check if your app stores data on-device or in the cloud"
+    content: "Open your period tracker's settings and look for 'data storage', 'privacy', or 'backup' options. If you see a 'sync to cloud', 'backup to account', or 'sign in required' feature, your data is being sent to company servers. Apps with true on-device-only storage typically state this explicitly in their privacy policy or app description."
+  - title: "Check the privacy policy for third-party sharing clauses"
+    content: "Search the privacy policy for 'law enforcement', 'legal requests', 'third parties', and 'government'. Cloud-based apps must comply with valid legal requests. If the policy says 'we may share data in response to legal process', this means prosecutors can obtain your data."
+  - title: "Verify whether an account is required"
+    content: "Requiring an account means your cycle data is linked to an identity on company servers. Apps that work without an account cannot tie your reproductive health data to your name, email, or phone number in their systems."
+  - title: "Check the app's state of incorporation and data jurisdiction"
+    content: "Where a company is incorporated affects which laws govern it. California-based apps face AB 1242, which limits compliance with out-of-state abortion-related subpoenas. An app incorporated in a state with an abortion ban has no such protection."
+  - title: "Delete your data from cloud-based apps before switching"
+    content: "Go to the app's account settings and request data deletion before uninstalling. Most apps provide a CCPA or GDPR data deletion mechanism. Deleting your account does not delete data already shared with third-party SDKs, but it removes your data from the app company's servers going forward."
+answers:
+  - q: "Can my period tracker data be used as evidence in an abortion case?"
+    a: "Yes, if your period tracker stores data on company servers. Prosecutors in states with abortion restrictions have used digital evidence, including search histories and location data, in abortion-related investigations. Period tracker data showing pregnancy logs, missed periods, or fertility tracking could be relevant to such investigations. Apps that store data only on your device have less company-held data to produce."
+  - q: "Which period trackers are safe to use after Roe v. Wade?"
+    a: "Apps that use on-device-only storage provide structural protection: Floriva, Euki (iOS and Android), and Drip (Android only). These apps never transmit cycle data to company servers, so there is nothing to subpoena. Cloud-based apps such as Flo, Clue, Natural Cycles, Glow, and Ovia can be legally compelled to produce user data by prosecutors with a valid court order."
+  - q: "Is Flo safe to use in a state with an abortion ban?"
+    a: "Flo stores cycle data on its servers. Prosecutors can subpoena Flo's servers for user data with a valid court order. Flo's Anonymous Mode, which requires a premium subscription, aims to reduce identifiability, but the data still exists on Flo's servers. If you live in a state with abortion restrictions, on-device-only storage provides more meaningful protection than Anonymous Mode."
+faqs:
+  - q: "Has period tracker data ever been used in a legal case?"
+    a: "Law enforcement agencies in states with abortion restrictions have sought digital evidence in abortion-related investigations. While few cases have made period tracker data specifically central to a prosecution, digital evidence including search history, text messages, and location data have been used. The risk is structural: any data stored on company servers can be obtained through legal process."
+  - q: "Does deleting Flo protect me?"
+    a: "Deleting the app from your phone does not delete data stored on Flo's servers. You must submit a data deletion request through Flo's account settings. Even after deletion, data previously shared with third-party analytics firms may remain with those companies. For ongoing protection, switching to an on-device tracker and deleting your cloud-based account is the more complete approach."
+  - q: "Does using a VPN protect my period tracker data?"
+    a: "A VPN encrypts your internet traffic and hides your IP address. It does not prevent the period tracker app itself from transmitting data to company servers. The VPN only protects the connection between your phone and the internet. If the app sends your cycle data to its servers, the data still arrives there regardless of VPN use."
+relatedPages:
+  - /resources/best/best-private-period-tracker-apps
+  - /compare/alternatives/flo-app-alternative
+  - /resources/guides/can-police-access-period-tracker-data
+  - /resources/guides/period-tracker-hipaa
+  - /period-tracker-privacy/reproductive-data-privacy-laws-texas
+  - /period-tracker-privacy/reproductive-data-privacy-laws-alabama
+  - /resources/guides/period-tracker-usage-after-dobbs
+---
+
+## Why Roe v. Wade Changed the Risk Calculus
+
+Before the Supreme Court's 2022 Dobbs decision, period tracker privacy was mainly a consumer data protection issue: advertising, data brokers, and app revenue models. After Dobbs, it became a legal safety issue.
+
+When abortion is criminalized at the state level, evidence of a pregnancy (its beginning or its end) can become relevant to a criminal investigation. Period trackers record exactly this kind of information. Apps that hold this data on their servers can be subpoenaed.
+
+Most period tracker users in restrictive states will never face prosecution. The risk is structural: where data is stored determines whether it can be obtained, and that exposure exists regardless of how likely any individual prosecution is.
+
+## The Two Categories of Apps
+
+**Cloud-based apps** (Flo, Clue, Natural Cycles, Glow, Ovia, Stardust) store cycle data on company servers. When you log a period, a pregnancy, or a missed cycle, that information goes to a server the company controls. A prosecutor with a valid court order can require the company to produce that data.
+
+Flo's Anonymous Mode tries to separate cycle data from user identity, but the data still reaches Flo's servers. The separation is a policy layer on top of the same server-side architecture.
+
+**On-device apps** (Floriva, Euki, Drip on Android) store cycle data only on your phone. Nothing is sent to company servers. A subpoena to the app company produces nothing because the company holds nothing.
+
+A subpoena requires a company to produce data it holds. On-device storage means there is no data to compel.
+
+## What State You Live in Matters
+
+The legal risk is not uniform. California's AB 1242 prohibits California-based companies from complying with out-of-state abortion subpoenas. States like Colorado and Washington have passed reproductive health data protection laws.
+
+Texas, Alabama, Georgia, Mississippi, and Idaho have near-total abortion bans and weak or absent data privacy laws, making them the highest-risk environments for cloud-based tracker users.
+
+For state-specific breakdowns, see our [state privacy pages](/period-tracker-privacy/reproductive-data-privacy-laws-california).
+
+## Practical Steps
+
+1. Switch to an app with on-device-only storage.
+2. Delete your account from any cloud-based tracker you currently use. Uninstalling the app leaves server-side data intact.
+3. Check whether your new app requires an account for basic tracking. If it does, your data is linked to your identity on their servers.
+4. Avoid apps that require location access if you travel to access care.

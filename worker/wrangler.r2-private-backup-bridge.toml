@@ -1,0 +1,13 @@
+name = "floriva-private-backup-r2-local-bridge"
+main = "src/private-backup-r2-bridge.mjs"
+compatibility_date = "2026-04-21"
+workers_dev = false
+send_metrics = false
+
+[vars]
+EXPECTED_BUCKET = "floriva-seo-private-backups"
+
+[[r2_buckets]]
+binding = "PRIVATE_BACKUPS"
+bucket_name = "floriva-seo-private-backups"
+remote = true

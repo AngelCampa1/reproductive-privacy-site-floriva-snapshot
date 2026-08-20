@@ -1,0 +1,105 @@
+---
+title: "Data Brokers and Your Reproductive Health Information"
+description: "Data brokers buy and sell reproductive health information derived from period trackers, location data, and purchase history. Here is how they get it, what they do with it, and how to opt out."
+ogImage: "/og/guides/data-brokers-reproductive-health.png"
+tags:
+  - "guide"
+  - "data-brokers"
+  - "privacy"
+publishedAt: "2026-05-01"
+updatedAt: "2026-05-01"
+buyerStage: "tofu"
+targetPersona:
+  - "privacy-conscious-user"
+  - "post-roe-tracker"
+schema: "Article"
+bluf: "Data brokers trade in reproductive health information assembled from app data, location tracking, purchase records, and web browsing. Documented cases include brokers selling location data from visits to reproductive health clinics. The data broker industry operates largely outside health privacy law because brokers are not HIPAA-covered entities."
+definitions:
+  - term: "Data broker"
+    definition: "A company that collects personal information from multiple sources, including app SDKs, public records, purchase history, and location data, and sells compiled profiles to advertisers, insurers, employers, or other buyers. Data brokers typically have no direct relationship with the individuals whose data they trade."
+  - term: "Inference"
+    definition: "A conclusion drawn from combining multiple data points. A data broker may infer pregnancy status from purchase patterns (prenatal vitamins, maternity clothing), app usage (switching from period tracking to pregnancy mode), and search history. The inference can be accurate without ever accessing direct health records."
+  - term: "Location data broker"
+    definition: "A subset of data brokers that specialize in collecting and selling mobile device location data. This data is typically sourced from apps that request location permissions, and it can reveal visits to reproductive health clinics, OB-GYN offices, and pharmacies."
+answers:
+  - q: "Do data brokers sell reproductive health data?"
+    a: "Yes. Data brokers sell data categories that include reproductive health information, both through direct health-adjacent data (pregnancy status, fertility indicators) and through location data that reveals visits to reproductive health facilities. Documented reporting has shown brokers offering location data showing visits to abortion clinics and reproductive health centers."
+  - q: "How do data brokers get period tracker data?"
+    a: "Data brokers obtain reproductive health information through several channels: third-party SDKs embedded in apps that transmit usage data, purchase of location data from apps with location permissions, public records and consumer surveys, purchase history from retailers, and web browsing data from advertising networks. They combine these sources to build reproductive health profiles without directly accessing any medical record."
+faqs:
+  - q: "Can I find out if a data broker has my reproductive data?"
+    a: "Some data brokers offer consumer lookup tools where you can search for your own records. Major brokers like Acxiom (LiveRamp), Oracle Data Cloud, and others have opt-out pages. California residents can demand disclosure under CCPA. The challenge is that hundreds of data brokers exist, and there is no single registry."
+  - q: "How do I opt out of data broker profiles?"
+    a: "Submit opt-out requests to major data brokers individually. Start with the largest: Acxiom, Oracle, Experian's marketing division, and any brokers identified through a search of your name. Services like DeleteMe automate some of this process. Opting out is ongoing, brokers re-acquire data over time."
+  - q: "Does data broker activity violate any laws?"
+    a: "In most US states, data broker activity is legal. Vermont and California require data brokers to register with the state. California's CCPA gives consumers rights to opt out of data sales. Some states have proposed bills restricting the sale of location data near healthcare facilities. Federal regulation of data brokers remains limited. This is not legal advice."
+relatedPages:
+  - "/resources/guides/how-period-tracker-apps-collect-data"
+  - "/resources/guides/how-sdks-leak-period-data"
+  - "/resources/best/best-private-period-tracker-apps"
+  - "/resources/guides/hipaa-period-tracker-deep-dive"
+  - "/resources/guides/insurance-reproductive-data"
+---
+
+## How Reproductive Data Enters the Broker Ecosystem
+
+Data brokers do not hack period trackers. They do not need to. Reproductive health information reaches them through legitimate-looking commercial channels that operate in the open.
+
+**App SDK data**: When a period tracker embeds third-party SDKs. Facebook, Google Analytics, advertising networks, those SDKs transmit usage data to their parent companies. That data enters the broader digital advertising ecosystem, where brokers can access it through data exchanges, advertising partnerships, and direct purchase agreements. The [FTC's enforcement actions](/resources/guides/how-sdks-leak-period-data) against Flo and Premom documented exactly this pipeline.
+
+**Location data**: Apps that request location permissions, weather apps, navigation apps, games, social media, sell location data to brokers either directly or through intermediary data exchanges. A broker receiving precise GPS coordinates can identify visits to OB-GYN offices, fertility clinics, Planned Parenthood locations, and pharmacies. Reporting by news organizations and investigative journalists has documented brokers offering datasets that included location data from visits to reproductive health facilities.
+
+**Purchase data**: Retailers, both online and offline, share purchase data with data brokers. Buying prenatal vitamins, pregnancy tests, maternity clothes, or baby products creates a purchase trail that brokers use to infer pregnancy status and timing.
+
+**Web browsing and search data**: Advertising networks track web browsing through cookies and tracking pixels. Searching for pregnancy symptoms, fertility treatments, or abortion options creates behavioral signals that enter advertising profiles and, through them, broker databases.
+
+## What Brokers Build
+
+A data broker does not need your Flo login to know you are pregnant. By combining location visits (OB-GYN appointment), purchase data (prenatal vitamins from Amazon), browsing behavior (pregnancy content engagement), and app usage signals (fertility app session frequency increase), a broker can construct a reproductive health profile with high confidence.
+
+These profiles are categorized using health-adjacent labels that avoid triggering health data regulations. Instead of "pregnant," a profile might be tagged "expectant parent" or "prenatal interested." Instead of "fertility treatment," the label might be "family planning active." The data is the same; the labeling avoids regulatory categories.
+
+Broker profiles are sold to:
+
+- **Advertisers**: Companies selling baby products, maternity wear, and fertility services purchase profiles of likely pregnant or fertility-seeking consumers.
+- **Insurance data analytics firms**: While health insurers face restrictions on using certain data for underwriting, the flow of broker data into insurance-adjacent analytics is poorly regulated and difficult to audit.
+- **Political campaigns and advocacy organizations**: Reproductive health profiles can be used for targeted political messaging.
+- **Law enforcement and investigative services**: Some brokers have sold data to law enforcement agencies, and location data near reproductive health facilities has been identified as a specific risk category since the Dobbs decision.
+
+## Documented Cases
+
+Investigative reporting has documented specific instances of broker activity involving reproductive health data:
+
+Reporting revealed that a location data company had sold data showing device visits to abortion clinics across multiple states. The data was granular enough to track individual devices from their home addresses to clinic locations. After public pressure, the company stated it would stop selling this category of data.
+
+Separately, news organizations have reported on data brokers offering "pregnancy likelihood" scores and "expected due date" data segments for marketing purposes. These data products are assembled from the combined signals described above, not from direct access to medical records.
+
+The FTC has taken some enforcement actions in this space. It has issued orders banning certain data companies from selling sensitive location data, including data revealing visits to healthcare facilities. However, enforcement is case-by-case and does not address the structural incentives that make this data valuable and tradeable.
+
+## The Regulatory Gap
+
+Data brokers exploit a specific gap in US law. [HIPAA does not apply](/resources/guides/hipaa-period-tracker-deep-dive) to entities that are not healthcare providers, insurers, or clearinghouses. Data brokers are none of these. They collect health-adjacent data from commercial sources, not from medical records. The fact that their inferences about your reproductive health may be medically accurate does not bring them under HIPAA's umbrella.
+
+**State registration requirements**: Vermont and California require data brokers to register with the state, providing some transparency about who operates in this space. Registration does not restrict what data they can collect or sell.
+
+**CCPA opt-out rights**: California residents can demand that businesses stop selling their personal information. This applies to data brokers, but exercising this right requires identifying each broker individually and submitting separate opt-out requests.
+
+**Proposed federal legislation**: Various bills have been proposed in Congress to regulate data brokers, restrict the sale of health-related data, or create a federal privacy law. None have been enacted as of this writing.
+
+## How to Reduce Your Broker Exposure
+
+**Limit location permissions**: Review every app on your phone that has location access. Revoke location permissions from any app that does not require your precise location to function. Weather apps do not need GPS precision. Games do not need background location.
+
+**Opt out of major brokers**: Submit opt-out requests to major data brokers. This is tedious but effective for the largest brokers. Key targets include Acxiom (LiveRamp), Oracle Data Cloud, Experian Marketing Services, and any broker you can identify through a search of your name or address.
+
+**Use privacy-focused browsing**: A browser with tracker blocking reduces the web browsing signals that feed broker profiles. Privacy-focused DNS services can block connections to known data collection domains.
+
+**Separate your period tracker from the data ecosystem**: An on-device-only period tracker with no [third-party SDKs](/resources/guides/how-sdks-leak-period-data) generates no data that can reach brokers through app channels. Combined with limited location permissions and browser privacy tools, this significantly reduces the reproductive health signals available to the broker ecosystem.
+
+**Monitor and repeat**: Data brokers continuously acquire new data. Opt-out requests must be renewed periodically. This is a maintenance task, not a one-time fix.
+
+## What Remains Unknown
+
+The data broker industry is deliberately opaque. The total number of companies trading in reproductive health-adjacent data is unknown. The complete list of buyers for these data products is unknown. The specific inferences drawn and their accuracy rates are proprietary. Regulatory oversight is minimal and enforcement resources are limited.
+
+What is known is that the data flows exist, they include reproductive health information, and the only reliable way to keep your data out of the broker ecosystem is to prevent it from entering in the first place.

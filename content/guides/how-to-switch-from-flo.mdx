@@ -1,0 +1,105 @@
+---
+title: "How to Switch from Flo to a Private Period Tracker"
+description: "Step-by-step migration from Flo to an on-device tracker. Export cycle history, delete the account, file a CCPA/GDPR request, verify deletion."
+ogImage: "/og/guides/how-to-switch-from-flo.png"
+tags:
+  - "guide"
+  - "migration"
+publishedAt: "2026-04-16"
+updatedAt: "2026-04-16"
+buyerStage: "mofu"
+targetPersona:
+  - "flo-refugee"
+  - "privacy-conscious-user"
+bluf: "Deleting the Flo app doesn't delete your Flo data. After the $59.5M settlement, here's how to actually remove your cycle history and switch to a tracker that stores data on-device."
+steps:
+  - title: "Export your cycle history"
+    content: "Open Flo, tap the profile icon in the top-left, then Settings, then Privacy, then Request My Data. Flo emails a download link within a few days. The export is a ZIP with your cycle log, symptom entries, and account metadata."
+  - title: "Delete your account (not just the app)"
+    content: "Back in Settings, go to Account, then Delete Account. Confirm with the email verification link Flo sends. Uninstalling the app alone does nothing to the data on Flo's servers."
+  - title: "Verify deletion"
+    content: "Wait 24 hours, then try to log in with your Flo credentials. A deleted account should return an invalid-credentials error. If login succeeds, the deletion did not process and you need to repeat step 2."
+  - title: "Submit a CCPA/GDPR data deletion request"
+    content: "Email privacy@flo.health with subject line 'CCPA/GDPR Data Deletion Request.' Include the email address tied to your Flo account and state that you want all personal data removed from active systems and backups under CCPA (if you are in California) or GDPR (if you are in the EU or UK). Flo must respond within 45 days (CCPA) or 30 days (GDPR)."
+  - title: "Choose your replacement tracker"
+    content: "For fully free and on-device: Euki. For on-device with a paid privacy guarantee: Floriva. Both keep cycle data on your phone rather than on a company server where it can be subpoenaed or sold."
+  - title: "Start logging in the new app"
+    content: "Enter your last 3-6 cycle start dates from the Flo export. Most tracking algorithms need 2-3 recorded cycles to stabilize predictions. Keep the Flo export file encrypted locally until you are satisfied the new app has enough history."
+timeEstimate: "30 minutes"
+difficulty: "beginner"
+definitions:
+  - term: "Account deletion vs. app deletion"
+    definition: "Deleting the app removes it from your phone. Deleting the account removes your data from the company's servers. These are different actions."
+  - term: "CCPA/GDPR deletion request"
+    definition: "Legal right to request complete deletion of your personal data from a company. Applies in California (CCPA) and the EU/UK (GDPR)."
+answers:
+  - q: "How do I switch from Flo without losing my cycle history"
+    a: "Export your data from Flo (Settings, Privacy, Request My Data) before deleting the account. The export file includes your cycle history. Enter the last 3-6 cycle start dates into the new app to seed prediction."
+  - q: "Does uninstalling Flo delete my data"
+    a: "No. Uninstalling only removes the app from your device. Your data remains on Flo's servers until you delete the account and submit a deletion request."
+  - q: "What's the best replacement for Flo"
+    a: "For free and on-device storage, Euki is the most common choice. For a paid on-device tracker, Floriva keeps data on your phone rather than on a company server. The right pick depends on whether you value zero cost or a more polished interface."
+faqs:
+  - q: "Will my data still be in Flo's backups after I delete my account"
+    a: "Flo's privacy policy states that backups may retain deleted account data for up to 90 days. A CCPA or GDPR deletion request is the mechanism that compels Flo to purge backup copies as well. Filing the request in step 4 is what accelerates the backup purge."
+  - q: "What about data Flo already shared with Facebook before the FTC action"
+    a: "That data is outside Flo's control. The 2021 FTC enforcement action documented Flo sharing user data with Facebook, Google, and Flurry through embedded SDKs. Deleting your Flo account does not recall data that third parties already received. This is one of the reasons users cite for switching to an on-device tracker."
+  - q: "Do I need to be in California or the EU to file a deletion request"
+    a: "You have stronger legal rights if you are. Flo typically processes deletion requests from any jurisdiction, but CCPA and GDPR give you an enforceable legal remedy if Flo does not comply. If you are outside those jurisdictions, the deletion request is a good-faith ask that Flo usually honors."
+relatedPages:
+  - /compare/alternatives/flo-app-alternative/
+  - /resources/guides/delete-flo-account-keep-data/
+  - /resources/guides/what-happens-period-data-delete-app/
+  - /resources/best/best-private-period-tracker-apps/
+  - /resources/guides/on-device-storage-period-tracker/
+---
+
+## Why switch from Flo
+
+In September 2025, Flo settled a class action for $59.5M over claims that it shared intimate health data with Facebook, Google, and Flurry through embedded SDKs. That followed a 2021 FTC enforcement action documenting the same behavior. The settlement does not undo the data sharing. It confirms it happened.
+
+If you are looking at Flo after the settlement and wondering whether your cycle history is still on their servers, the answer is yes until you explicitly delete it. Uninstalling the app does nothing on Flo's end. The account persists, the data persists, and the next time Flo receives a subpoena or updates its privacy policy, your data is part of that.
+
+Switching is the response most privacy-conscious users land on after reading through the settlement documents. The goal of this guide is to make the switch clean: get your history out, get your data off Flo's servers, and start fresh in a tracker that does not need a server in the first place.
+
+For a deeper read on what Flo did and why the settlement matters, see our [Flo app alternative overview](/compare/alternatives/flo-app-alternative/).
+
+## Step 1: Export your cycle history
+
+In Flo, tap the profile icon in the top-left, then Settings, then Privacy, then Request My Data. Flo emails a download link within a few days. The export arrives as a ZIP containing your cycle log, symptom entries, and account information.
+
+Save the file somewhere you control. You will use it to seed your new tracker in step 6. Do not skip this step. Once the account is deleted, recovering the history requires re-creating it from memory.
+
+## Step 2: Delete your account
+
+Go back to Settings, then Account, then Delete Account. Flo requires email confirmation, so check your inbox for the verification link and click it. The deletion typically processes within a few minutes.
+
+A full walkthrough with screenshots and edge cases is in our [Flo account deletion guide](/resources/guides/delete-flo-account-keep-data/).
+
+## Step 3: Submit a CCPA/GDPR data request
+
+Email privacy@flo.health with the subject "CCPA/GDPR Data Deletion Request." In the body, state your Flo account email and say you are invoking your rights under CCPA (if you are a California resident) or GDPR (if you are in the EU or UK) to request complete deletion of your personal data, including any copies in backups or derivative datasets.
+
+Flo has 45 days to respond under CCPA and 30 days under GDPR. Keep a copy of the email and any response. This is the legal lever that compels Flo to purge backups, which the in-app deletion alone does not guarantee.
+
+## Step 4: Verify deletion
+
+Wait 24 hours after step 2. Then try to log in with your old Flo credentials. A successful deletion returns an "invalid credentials" or "account not found" error. If login still works, the deletion did not process and you should repeat step 2.
+
+Our [guide to what actually happens when you delete a period app](/resources/guides/what-happens-period-data-delete-app/) covers what "deletion" means in practice across different app policies.
+
+## Step 5: Choose your replacement
+
+The two replacements most Flo refugees land on:
+
+**Euki** is free, on-device, and maintained by a reproductive health nonprofit. No account, no sync, no server. The interface is less polished than Flo, but the data architecture is what you are switching for.
+
+**Floriva** is paid, local-first, and focused on polish plus privacy guarantees. Core records stay on your phone. There is no sync, so nothing is transmitted. Pricing is a simple annual fee.
+
+Both sit in our [roundup of private period trackers](/resources/best/best-private-period-tracker-apps/). The right pick depends on whether you want zero cost or a more refined day-to-day experience.
+
+## Step 6: Start fresh in the new app
+
+Open your Flo export file and pull out your last 3-6 cycle start dates. Enter them into your new tracker when it asks for history. Prediction algorithms need 2-3 recorded cycles to stabilize, so seeding the history avoids a month or two of less-accurate forecasts.
+
+Once the new tracker has enough history to feel useful, delete the Flo export file. The data you did not want on Flo's servers should not sit on your hard drive either.

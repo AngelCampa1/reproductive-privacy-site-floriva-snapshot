@@ -1,0 +1,108 @@
+---
+title: "Best Subpoena-Resistant Period Tracking Apps"
+description: "We compared 5 period trackers based on company-side legal exposure. Ranked by data architecture, not policy promises."
+ogImage: "/og/listicles/best-period-apps-data-cant-be-subpoenaed.png"
+tags:
+  - "comparison"
+publishedAt: "2026-03-30"
+updatedAt: "2026-03-30"
+buyerStage: "mofu"
+targetPersona:
+  - "post-roe-tracker"
+bluf: "Local-first period trackers reduce company-side legal exposure because core records stay off readable company databases. Clue and Flo store data on company infrastructure where records can be requested by legal process. If legal safety in a post-Dobbs landscape matters to you, architecture matters more than policy language."
+category: "Period Trackers"
+qualifier: "Subpoena-Resistant"
+tools:
+  - name: "Floriva"
+    summary: "Local-first period tracker with no readable central cycle database. No account is required for core tracking."
+    pros: ["Local-first core records", "No account or email required for core tracking", "No ad-SDK health events", "Reduced readable company-side data"]
+    cons: ["Newer app", "Device backups need separate review", "Lose local data if phone is lost and not backed up"]
+    pricing: "Free (premium features planned)"
+    verdict: "Strong company-side protection. Floriva has no readable central cycle database to produce, while device access, backups, exports, billing, support, and legal process remain separate risks."
+  - name: "Drip"
+    summary: "Open-source on-device tracker. Verifiable privacy through public code."
+    pros: ["Open-source (auditable code)", "On-device only", "No account needed", "Free"]
+    cons: ["Android and web only (no iOS)", "Basic predictions", "Small team", "Minimal features"]
+    pricing: "Free"
+    verdict: "Good for users who want to verify privacy claims themselves. Platform limitations exclude iPhone users."
+  - name: "Euki"
+    summary: "On-device tracker by International Planned Parenthood Federation."
+    pros: ["On-device storage", "Health nonprofit backing", "Includes contraception info", "Free"]
+    cons: ["Basic interface", "Infrequent updates", "Limited prediction accuracy"]
+    pricing: "Free"
+    verdict: "Credible option backed by a trusted health organization. Features are basic compared to commercial trackers."
+  - name: "Clue"
+    summary: "Server-based tracker. Data stored on company infrastructure in Germany."
+    pros: ["GDPR jurisdiction", "Research partnerships", "Good predictions", "Polished app"]
+    cons: ["Data on company servers", "Account required", "Third-party SDKs", "International data requests possible"]
+    pricing: "Free / $10/month (Plus)"
+    verdict: "GDPR provides stronger protections than US law, but international legal cooperation agreements mean US prosecutors can still request data from German companies."
+  - name: "Flo"
+    summary: "Largest period tracker. Server-based with documented history of data sharing."
+    pros: ["Most popular app", "Feature-rich", "Good predictions"]
+    cons: ["$59.5M FTC settlement for data selling", "Data on company servers", "Account required", "Third-party SDK history"]
+    pricing: "Free (ads) / $50/year (Premium)"
+    verdict: "Not recommended. Documented history of sharing health data with advertisers. Server-based architecture creates readable company-side records."
+tableData:
+  name: "Period Tracker Subpoena Resistance"
+  description: "Legal exposure comparison based on data architecture"
+  columns:
+    - "App"
+    - "Data Location"
+    - "Readable Company-Side Data"
+    - "Legal Protection Level"
+  rows:
+    - ["Floriva", "Local-first core records", "No readable central cycle database", "Highest"]
+    - ["Drip", "Your phone only", "No readable company database", "Highest"]
+    - ["Euki", "Your phone only", "No readable company database", "Highest"]
+    - ["Clue", "German servers", "Yes", "Moderate"]
+    - ["Flo", "US/company servers", "Yes", "Low"]
+answers:
+  - question: "Which period tracker is safest from law enforcement access?"
+    answer: "Trackers with local-first or on-device core records, such as Floriva, Drip, or Euki, reduce company-side legal exposure. They have no readable central cycle database to produce. Device access, backups, exports, screenshots, billing, support, and legal process remain separate risks."
+  - question: "Can a VPN or encryption make a server-based tracker safe?"
+    answer: "No. A VPN hides your IP address from the app company. Encryption protects data in transit. Neither prevents the company from having your decrypted data on their servers, which is what gets subpoenaed. End-to-end encryption where the company cannot decrypt your data would help, but no major period tracker currently implements this for cycle data."
+  - question: "Does Clue's German location protect US users?"
+    answer: "Partially. GDPR provides stronger baseline protections than US law. However, the US and EU have mutual legal assistance treaties that allow cross-border data requests. A US prosecutor can work through diplomatic channels to compel a German company to produce data. It is harder and slower than a domestic subpoena, but not impossible."
+faqs:
+  - q: "What if police seize my phone with Floriva on it?"
+    a: "If your phone is seized and unlocked, local data is accessible. This requires a warrant, physical possession of your device, and the ability to unlock it. This is a much higher bar than subpoenaing a company database. Use a strong passcode rather than biometrics, as courts have ruled that suspects can be compelled to provide fingerprints but not passcodes in some jurisdictions."
+  - q: "Should I stop tracking my period entirely?"
+    a: "That is a personal decision. The risk is not period tracking itself but where the data is stored. On-device tracking with a strong device passcode provides reasonable protection while maintaining the health benefits of cycle awareness."
+  - q: "Can my phone's operating system track my period without the app?"
+    a: "Apple Health can store cycle data with end-to-end encrypted iCloud backup. Google has access to data stored in Google Fit. If you use an on-device tracker, also check whether your phone's built-in health features are separately collecting cycle data."
+pricingStats:
+  - stat: "Flo Health paid a $59.5M combined settlement for sharing reproductive health data without user consent"
+    source: "Reuters / FTC, September 2025"
+    sourceUrl: "https://www.reuters.com/technology/flo-health-google-flurry-settle-privacy-lawsuit-595-million-2025-09-25/"
+  - stat: "Euki and Drip are free on-device trackers with low company-side legal exposure"
+    source: "Euki and Drip app pages"
+    sourceUrl: "https://www.eukiapp.com/"
+relatedPages:
+  - "/resources/guides/period-tracking-legal-safety-guide"
+  - "/resources/guides/can-police-access-period-tracker-data"
+  - "/compare/alternatives/clue-alternative-no-cloud"
+  - "/compare/alternatives/stardust-alternative-local-storage"
+---
+
+## How We Evaluated
+
+We evaluated each app on one question: how much readable cycle data does the company hold? Privacy policies, encryption in transit, and corporate promises matter less than the basic question of data location.
+
+We did not weight features, prediction accuracy, or interface design heavily. When the evaluation criterion is legal protection, architecture is the only factor that matters.
+
+## Understanding the Legal Mechanism
+
+A subpoena is a legal order requiring a person or company to produce documents or testify. In the context of period trackers, a prosecutor investigating a suspected abortion violation can issue a subpoena to the company requesting all data associated with a specific user account, email address, or device ID.
+
+The company can challenge the subpoena in court, but this costs money and takes time. Most app companies are not equipped or willing to fight subpoenas on behalf of individual users. Flo's privacy policy says it will challenge overbroad requests, but this is a policy commitment, not a structural guarantee.
+
+On-device trackers eliminate this entire process. There is no data to subpoena. The company's answer to any request is short: "We don't have the data you're requesting."
+
+## The Architecture Matters More Than the Policy
+
+After the Dobbs decision, several period tracker companies updated their privacy policies to promise stronger data protections. Flo launched "Anonymous Mode." Clue published statements about GDPR protections. These are policy responses to a structural problem.
+
+A privacy policy is a document that can be changed at any time, violated without users knowing (as Flo demonstrated), or overridden by legal process. On-device storage is an architectural decision that cannot be overridden by a policy change, a court order, or a corporate decision to monetize data.
+
+We built Floriva with on-device storage because the post-Dobbs landscape requires architectural solutions. When the stakes include potential criminal prosecution, "we promise not to" is not enough.

@@ -1,0 +1,235 @@
+---
+title: "Post-Dobbs Digital Safety and State Risk Kit"
+description: "A full post-Dobbs digital safety kit: a browser, messaging, period app, location, and financial checklist, a state-by-state risk framework, Florida, Georgia, Texas, and Louisiana profiles, and a subpoena first-hour checklist."
+publishedAt: "2026-07-06"
+updatedAt: "2026-07-06"
+buyerStage: "tofu"
+targetPersona:
+  - "privacy-conscious"
+  - "post-dobbs-worried"
+  - "data-sensitive"
+tags:
+  - post-dobbs privacy
+  - digital safety
+  - state risk
+  - subpoena
+  - lead magnet
+schema: "Article"
+route: "/free/post-dobbs-digital-safety-kit-hub"
+bluf: "Digital evidence has already appeared in reproductive health cases: search history, messages, and location data. This kit covers the five main digital trails, a framework for how state law shapes period tracker risk, specific profiles for Florida, Georgia, Texas, and Louisiana, and what to do in the first hour if you receive a subpoena. It is not legal advice."
+answers:
+  - q: "What digital evidence has been used in reproductive health cases?"
+    a: "In the Burgess case (Nebraska, 2022), prosecutors obtained Facebook Messenger messages discussing abortion pills, which led to a 90-day jail sentence and 2-year prison sentence. The evidence came from a Meta response to a search warrant. Location data showing clinic visits has been sought in multiple cases. No prosecutor has yet subpoenaed period tracker app data in a documented case, but search history, messaging, and location have all been used."
+  - q: "What makes a state higher or lower risk for period tracker data?"
+    a: "Three factors: whether the state has a criminal abortion ban, whether it has a data privacy law that specifically covers reproductive or health data, and whether it has a shield law blocking out-of-state enforcement. States with a ban, no data privacy law, and no shield law carry the highest risk for data held on a company's servers."
+  - q: "What should I do in the first hour after receiving a subpoena?"
+    a: "Do not respond to it on your own, do not delete any data, and do not discuss it except with a lawyer. Write down when and how you received it, then call a free legal helpline such as the Repro Legal Helpline (844-868-2812) right away."
+  - q: "Does using a local-only period tracker eliminate legal risk?"
+    a: "No. It removes one specific exposure: a company-held, readable cycle database that can be subpoenaed. It does not protect against a warrant served on your physical device, and it is not a substitute for legal advice about your specific situation."
+faqs:
+  - q: "Is this kit legal advice?"
+    a: "No. It is a technical and organizational checklist. Call a lawyer or a free legal helpline for advice about your specific situation."
+  - q: "Can private or incognito browsing protect my search history?"
+    a: "Only partly. It stops the browser from saving local history. It does not stop your ISP, network administrator, or the search engine itself from seeing your queries."
+  - q: "Is Signal messaging fully private?"
+    a: "Signal encrypts message content end-to-end and says it does not store message content, contacts, or message timing on its servers, so it can only produce limited account metadata if served with a legal order. If your phone itself is seized and unlocked, message content on the device can still be read."
+  - q: "Does Floriva remove all risk for someone in a high-risk state?"
+    a: "No app can promise that. Floriva keeps core cycle records on-device, so it has no readable central cycle database to produce for a subpoena. It cannot protect against a warrant served directly on your device, and it does not replace legal advice."
+definitions:
+  - term: "Threat model"
+    definition: "A structured way of identifying what you are trying to protect, from whom, and how likely different risks are. For reproductive privacy, this can include in-state law enforcement, out-of-state law enforcement, civil plaintiffs under bounty laws, and data brokers selling location or behavioral data."
+  - term: "Metadata"
+    definition: "Data about data, such as who messaged whom and when, without the message content. Metadata is often available to law enforcement without a warrant even when content is encrypted."
+  - term: "Shield law"
+    definition: "A state law blocking state officials from cooperating with out-of-state law enforcement investigating activity that is legal within the shield state. It limits one avenue of data access but does not eliminate subpoena risk from in-state legal proceedings."
+  - term: "Civil bounty system"
+    definition: "A legal mechanism allowing private citizens to sue other private citizens over specified activity and collect a financial reward. Civil plaintiffs can seek discovery, including digital data, separately from criminal prosecutors."
+  - term: "Subpoena duces tecum"
+    definition: "A court order requiring production of specific documents or records, the type most likely used to seek digital data such as messages or app records."
+  - term: "Motion to quash"
+    definition: "A legal motion asking a court to invalidate or limit a subpoena before compliance is required. A lawyer typically files this on your behalf."
+relatedPages:
+  - /free/period-app-privacy-audit-kit
+  - /free/delete-period-data-guide
+  - /resources/privacy-in-practice/lock-down-period-data-on-your-phone
+  - /resources/guides/can-police-access-period-tracker-data
+  - /resources/guides/does-flo-sell-your-data
+---
+
+Digital evidence in reproductive health cases has not been hypothetical since at least 2022. Text messages, search history, location data, and purchase records have all been documented in prosecutions.
+
+This kit does not cover legal strategy. Call a lawyer for that. It covers a technical and organizational question: which of your digital activities creates records, where those records live, and what you can do to reduce unnecessary exposure. It also covers what state law does and does not change, and what to do if you are ever served with a subpoena.
+
+It is not legal advice.
+
+## Part 1: The digital safety checklist
+
+Work through each section. Some steps are quick changes. Others mean switching a tool you have used for years.
+
+### Browser and search
+
+Your search history is one of the most direct records of what you were researching.
+
+- [ ] Switch your default search engine to DuckDuckGo or Brave Search for sensitive queries. Neither logs searches by IP address.
+- [ ] For the most sensitive searches, use Tor Browser, which routes traffic through multiple encrypted relays.
+- [ ] Avoid searching sensitive topics on Google while signed into a Google account. Signed-in history is stored and reachable through Google's own tools, subpoena, or a breach.
+- [ ] Clear existing search history in Google My Activity (myactivity.google.com) if you have searched while signed in.
+- [ ] Set your browser to delete cookies and site data on close.
+- [ ] Use Firefox or Brave rather than Chrome for sensitive browsing.
+- [ ] Do not rely on private or incognito mode as your main protection. It stops local history, not server-side logging. Your ISP still sees which domains you visited, search engines still see your query, and sites you visit still log your IP.
+
+### Messaging
+
+Messages are often the most direct evidence in prosecutions because they can contain explicit content about decisions and plans.
+
+- [ ] Use Signal (signal.org, free, iOS and Android) for sensitive conversations.
+- [ ] Turn on disappearing messages for sensitive threads.
+- [ ] Turn on "sealed sender" in Signal settings to reduce metadata exposure.
+- [ ] Do not use Signal's "Note to Self" to store sensitive documents; your phone can be physically seized.
+- [ ] Avoid sensitive topics in Facebook Messenger, Instagram DMs, or WhatsApp. Meta has responded to government legal process in reproductive health cases.
+- [ ] Be careful with iMessage. If one party has iMessage off, messages fall back to unencrypted SMS or MMS with no warning.
+- [ ] Do not use email for sensitive discussions; most providers can produce content in response to a warrant.
+- [ ] If you cannot switch off iMessage, turn on Advanced Data Protection for iCloud so message backups are end-to-end encrypted. Without it, iCloud message backups are readable by Apple and can be produced under legal process.
+
+Signal's content is end-to-end encrypted. Even served with a government order, Signal says it can only produce account registration and last-active metadata, not message content, contacts, or message timing, since it says it does not store those on its servers. That said, a warrant served on an unlocked phone can still expose message content directly from the device.
+
+### Period apps
+
+This is often the largest unmanaged exposure.
+
+- [ ] If you use a cloud-based tracker (Flo, Clue, Natural Cycles, Glow, Ovia, or similar), export your data before making changes. See the [delete and move your period data guide](/free/delete-period-data-guide) for app-specific steps.
+- [ ] Review the app's law enforcement policy: does it require a warrant, or will it comply with a subpoena? The answer is almost always subpoena.
+- [ ] Check whether your current app has faced regulatory action. Flo, Premom, Glow, and Natural Cycles have all faced FTC actions, state AG settlements, or class actions at various points; check current status before assuming any figure is current.
+- [ ] Consider a local-first tracker, which reduces the readable server-side data available to request, because the company has less to produce when it does not hold readable records. Euki (nonprofit, iOS and Android) and Drip (Android, open source) are frequently referenced local-only free options. Floriva is built on-device, with no sync at all, no required account, and no advertising SDKs.
+- [ ] Paper tracking cannot be remotely subpoenaed. The trade-off is physical seizure risk instead of remote legal process risk. Weigh this against your own situation.
+
+Use the [period app privacy audit kit](/free/period-app-privacy-audit-kit) to check any app, old or new, against a full checklist before you trust it with health data.
+
+### Location
+
+Location data can tell a detailed story. If your phone has been near a reproductive health clinic, that record may exist in your phone's own history, your carrier's records, Google or Apple location services, and data broker databases built from app location permissions.
+
+- [ ] Turn off "Precise Location" for any app that does not need it. Period trackers, in particular, have no need for GPS coordinates.
+- [ ] Review which apps have "Always On" location and revoke it where that level of access is not clearly necessary.
+- [ ] On iOS: Settings > Privacy & Security > Location Services, and review each app.
+- [ ] On Android: Settings > Privacy > Permission Manager > Location.
+- [ ] Delete Google Maps Timeline history at myaccount.google.com/data-and-privacy and turn off "Location History" if signed in to Google.
+- [ ] Review Apple's Significant Locations (Settings > Privacy > Location Services > System Services > Significant Locations). This is stored on-device and encrypted, but is producible if the device is seized and unlocked.
+- [ ] Reset your advertising ID (iOS: Settings > Privacy & Security > Tracking; Android: Settings > Privacy > Ads).
+- [ ] Opt out of major data broker databases where you can find your record. Search "[broker name] opt out" for current instructions.
+
+### Purchases and financial records
+
+- [ ] Cash or prepaid cards leave no financial trail linked to your identity for a given purchase.
+- [ ] Standard debit and credit cards create bank records that are accessible through subpoena or court order under the Right to Financial Privacy Act with a valid legal order.
+- [ ] HSA and FSA transactions are tied to your employer and financial institution and are logged.
+- [ ] Pharmacy records are accessible through subpoena in all states and are not protected by HIPAA when obtained through legal process directed at the pharmacy. See the [pharmacy and reproductive health privacy checklist section](/free/period-app-privacy-audit-kit) of the audit kit for the pharmacy-specific walkthrough.
+
+### Putting it together
+
+No single step makes you fully protected. The combination that removes the largest exposure: Signal for sensitive messaging, a local-only period tracker, a location permission audit, and DuckDuckGo or Tor for sensitive searches. Work through these in priority order based on your state's legal environment, covered next.
+
+## Part 2: How state law shapes your risk
+
+Period tracker data risk varies by state. Each state can be understood through three factors:
+
+1. **Abortion law status** -- banned, restricted, legal access, or protected.
+2. **Data privacy protections** -- whether the state has a law that specifically protects reproductive or health data.
+3. **Shield law** -- whether the state blocks interstate enforcement of abortion-related legal process.
+
+States with a criminal ban and no data privacy law have the strongest motivation and fewest legal barriers to reaching reproductive health data. A prosecutor there can subpoena period tracker records from an app company, purchase location data from brokers showing clinic visits, and obtain search history from ISPs, often without the target's knowledge.
+
+States with gestational-limit bans (commonly around six weeks) but less developed criminal enforcement infrastructure carry a somewhat lower but still real risk: the same data pathway (company holds data, receives valid legal order, complies) still applies.
+
+States with shield laws block interstate enforcement of abortion-related legal process, but do not block the state's own law enforcement if state law changes, and do not stop the company from holding the data in the first place. Shield laws have also faced constitutional challenge from state attorneys general on federal Full Faith and Credit and Extradition Clause grounds.
+
+A small number of states have specific reproductive- or health-data privacy laws (for example Washington's My Health My Data Act, which has no size threshold, a geofencing ban near healthcare facilities, and a private right of action). These are the strongest protections currently in place, but they still coexist with company-held data that could be reached if the legal landscape shifts.
+
+**The federal picture:** there is no federal law protecting period tracker data specifically. HIPAA does not cover period tracker apps for most users. The HIPAA Reproductive Privacy Rule was vacated by a federal court on June 18, 2025, and HHS declined to appeal.
+
+**What this means for your tracker choice:** in states with a ban, no data privacy law, and no shield law, the storage architecture of your period tracker is one of the few things fully in your control. Apps that store data on company servers can be compelled to produce it through a valid subpoena regardless of their privacy policy. On-device-only storage removes that specific exposure at the source, though it does not protect against a warrant served on your physical device.
+
+## Part 3: Florida and Georgia
+
+### Florida
+
+Florida's six-week abortion ban (HB 5) took effect in May 2024, after an earlier 15-week ban. Criminal penalties apply to providers under current Florida law. No documented case of Florida prosecutors subpoenaing period tracker data has been publicly reported as of early 2026, but the legal basis for such a request exists.
+
+Florida's Digital Bill of Rights (FDBR), enacted in 2023, only applies to companies with at least $1 billion in annual global revenue that derive at least 50% of that revenue from online advertising. This threshold excludes most period tracker companies. Even where it applies, the FDBR does not name reproductive health data as a protected category and does not restrict law enforcement access -- it functions as a general consumer rights law, not a reproductive-data shield.
+
+Florida has not enacted a reproductive health shield law, so there is no state-level barrier to interstate enforcement actions targeting Florida-based data.
+
+**What Florida users should do:** check whether your tracker stores data on company servers; review its law enforcement response policy; consider switching to a local-only tracker; audit location permissions, since commercial location data faces no Florida-specific protection; and review messaging practices for sensitive conversations.
+
+### Georgia
+
+Georgia's LIFE Act, effective July 2022, prohibits most abortions after detectable cardiac activity, typically around six weeks, often before someone knows they are pregnant. The law creates criminal liability for providers. A 2023 Georgia grand jury indicted a physician (the Dreher case) for performing an abortion past the gestational limit, showing the law is being actively enforced.
+
+Georgia has no comprehensive consumer data privacy law, so there is no state-level restriction on how companies collect, share, or sell personal data, and no state agency with enforcement authority over period tracker data practices. Georgia also has not enacted a shield law.
+
+**What Georgia users should do:** export data from any cloud-based tracker you use; request formal deletion; switch to a local-only tracker; run a location data audit; and review messaging practices, particularly around conversations about out-of-state travel or reproductive decisions.
+
+Both states carry meaningful risk. Georgia's enforcement history is somewhat more developed given the documented prosecution; Florida's enforcement has been more limited so far, but neither state's data privacy framework offers protection against a valid subpoena served on a cloud-based app company.
+
+## Part 4: Texas and Louisiana
+
+### Texas
+
+Texas has had a near-total criminal abortion ban in effect since 2022, with penalties applying to providers, not patients, under current law.
+
+Texas's SB 8 (2021) and HB 7 (effective December 2025) added a distinct civil layer: HB 7 set a $100,000 minimum bounty for a successful civil suit against anyone who performed, aided, or abetted a medication abortion in violation of Texas law, with the first such suit filed in February 2026. This matters for data exposure because civil plaintiffs, not only prosecutors, can use civil discovery to seek relevant data from app companies during active litigation, broadening who can seek your data.
+
+The Texas Data Privacy and Security Act (TDPSA), effective July 2024, is a general consumer privacy law with a law enforcement exception, so it does not block prosecutors or civil plaintiffs from seeking data through subpoenas, and it does not create a private right of action for individuals. Texas has not enacted a shield law.
+
+**What Texas users should do:** audit your current tracker; if it is cloud-based, export your data and request deletion; switch to a local-only tracker; complete a location permission audit; and review messaging practices -- in the Burgess case, it was Facebook Messenger content, not period tracker data, that became the evidence that mattered.
+
+### Louisiana
+
+Louisiana's total criminal abortion ban (Act 545) took effect in June 2022 and criminalizes performing an abortion, not having one. Louisiana has no comprehensive consumer data privacy law and no shield law, meaning there is no state-level barrier to interstate sharing of reproductive health data or to standard subpoenas, court orders, or data broker purchases.
+
+**What Louisiana users should do:** the same steps as Texas users, with the added note that Louisiana has fewer backstop protections at any level -- no state privacy law to cite in challenging a data request and no shield law creating delay.
+
+Both states combine a criminal ban with no data privacy law and no shield law, which is why period tracker storage architecture matters most in exactly these environments: a company's privacy policy cannot override a valid subpoena for data it actually holds.
+
+## Part 5: If you are subpoenaed
+
+This section is not legal advice. It is a practical guide to the first hour and a set of questions to bring to a lawyer.
+
+**The single most important action: call a lawyer before doing anything else.**
+
+**Immediate, within minutes:**
+
+- [ ] Do not respond to the subpoena on your own.
+- [ ] Do not delete any data -- doing so after receiving a subpoena is obstruction of justice and can be charged separately from whatever the original subpoena concerned.
+- [ ] Do not call the issuing authority or law enforcement to discuss it.
+- [ ] Do not post about it on social media or discuss it with anyone except a lawyer.
+- [ ] Write down when and how you received it: date, time, method of delivery, who delivered it.
+
+**Within the first hour:**
+
+- [ ] Call the Repro Legal Helpline: 844-868-2812 (free, confidential, available in any state).
+- [ ] Photograph or scan the subpoena.
+- [ ] Note the compliance deadline stated on the subpoena.
+- [ ] Contact the ACLU in your state if the helpline cannot immediately connect you with counsel.
+- [ ] Contact a state-specific reproductive rights legal aid organization if one exists near you.
+
+**Free legal resources:**
+
+- Repro Legal Helpline -- 844-868-2812, reprolegalhelpline.org.
+- If/When/How: Lawyering for Reproductive Justice -- ifwhenhow.org.
+- ACLU Reproductive Freedom Project -- aclu.org/reproductive-freedom.
+- National Lawyers Guild -- nlg.org.
+
+**Who needs a lawyer:** Subpoenas are often served on third parties, such as app companies, phone carriers, email providers, or people who communicated with someone under investigation. If you are a third party rather than the investigation target, the same rules apply: do not respond without a lawyer, and reproductive rights legal organizations do assist third parties.
+
+**What a subpoena should specify:** the issuing court or authority, what you are asked to produce (specific categories and time ranges), the compliance deadline, and contact information for the issuing attorney or court. A subpoena missing required elements may itself be challengeable -- a lawyer files a motion to quash, which can pause the compliance deadline while a court considers it.
+
+**What data minimization can and cannot do at this point:** it is most effective before legal process begins. After a subpoena arrives, do not delete anything. But understanding what data exists and where can be useful context for your lawyer, for example to challenge production of data held in a shield-law state when sought by a non-shield state, or data covered by a specific state reproductive privacy law. Data you voluntarily shared with someone else, data a company already produced under its own legal process, and data purchased by investigators from brokers (which does not require a subpoena) generally cannot be challenged on privacy grounds alone.
+
+## Floriva note
+
+If you use Floriva, core cycle records stay on your device. Floriva has no readable central cycle database to produce in response to a subpoena, because it has no sync at all. A subpoena served on Floriva would receive a truthful response: no readable cycle records exist for that user.
+
+This does not make your phone unreachable. Device access is a separate legal path involving physical access to a device, with different rules than a subpoena served on a company. It is targeted and resource-intensive for law enforcement, compared with a company-side database that could affect every user who used the app during a relevant period.
+
+For app-by-app export and deletion steps, use the [delete and move your period data guide](/free/delete-period-data-guide). For a full app privacy checklist, use the [period app privacy audit kit](/free/period-app-privacy-audit-kit).

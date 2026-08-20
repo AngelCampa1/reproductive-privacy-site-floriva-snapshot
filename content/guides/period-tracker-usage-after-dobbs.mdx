@@ -1,0 +1,102 @@
+---
+title: "Period Tracker Usage Actually Increased 20% After Dobbs"
+description: "Despite viral delete calls, usage rose from 37.4% to 45.2% post-Dobbs. Only 3% stopped and 91% never used any privacy mitigation. What the research shows."
+ogImage: "/og/guides/period-tracker-usage-after-dobbs.png"
+tags:
+  - "guide"
+publishedAt: "2026-04-02"
+updatedAt: "2026-04-02"
+buyerStage: "tofu"
+targetPersona:
+  - "post-roe-tracker"
+  - "privacy-conscious-user"
+schema: "Article"
+bluf: "Period tracker usage increased 20% after Dobbs (37.4% to 45.2%), based on the largest study to date (Neiman et al., Contraception, January 2025, n=23,000). Only 3% of users stopped due to the Roe overturn. 91% never used any privacy mitigation strategy. Privacy marketing captured demand that privacy engineering did not: Stardust surged 4,400% in downloads despite sharing data with Mixpanel, while genuinely private apps like Euki remained too small for analytics firms to track."
+definitions:
+  - term: "Dobbs v. Jackson Women's Health Organization"
+    definition: "The 2022 Supreme Court decision that overturned Roe v. Wade, eliminating the federal constitutional right to abortion. The ruling returned abortion regulation to individual states, triggering immediate bans in multiple states and raising concerns about digital surveillance of reproductive decisions."
+  - term: "Intention-action gap"
+    definition: "The documented disconnect between what people say they will do about privacy and what they actually do. After Dobbs, 60% of period tracker users said they were concerned about data privacy, but 91% never took any protective action."
+  - term: "Willingness to pay (WTP)"
+    definition: "The maximum price a consumer will pay for a product or feature. No study has directly measured WTP for a privacy-first period tracker, though cross-domain research on health apps suggests a range of $3-$23 for privacy features."
+answers:
+  - q: "Did people actually delete their period trackers after Dobbs?"
+    a: "Almost no one did. The Duke/ACM CHI '24 study (May 2024) found that only 3% of users (5 of 183) stopped using their period tracker because of the Roe overturn. 91% never used any privacy mitigation strategy. That means no setting change, no app switch, no data deletion. 60% said Dobbs impacted their perceived concerns, but awareness did not translate to action."
+  - q: "Which period tracker apps saw the biggest download surge after Dobbs?"
+    a: "Stardust surged 4,400% in daily downloads, reaching #1 in the US App Store on June 25, 2022. 82% of its 400,000+ lifetime installs came in two days. Clue saw a 2,200% install increase, reaching #15 overall (its all-time high) before dropping to #93 by Monday. Flo moved modestly from #197 to #180, holding 47% US market share with 48 million MAU. TechCrunch later found Stardust was sharing phone numbers with Mixpanel. The privacy-marketed app was not actually private."
+  - q: "Will people pay for a private period tracker?"
+    a: "No study directly measures willingness to pay for a privacy-first period tracker. Cross-domain research suggests $3-$23 marginal willingness to pay for privacy in health apps (Xie, Liu, Or 2023, n=561). 58.9% of users are willing to pay for health apps at a median of approximately $6.50 (Liu, Xie, Or 2024, n=577). 75% of consumers say they will not purchase from organizations they do not trust with their data (Cisco 2024, n=2,600+). The market irony: the most private apps (Euki, Drip) are free, while data-collecting apps charge premiums (Flo $9.99/mo, Natural Cycles $14.99-$16.99/mo, Clue ~$8/mo)."
+faqs:
+  - q: "How reliable is the data showing usage increased?"
+    a: "The primary study (Neiman et al., Contraception, January 2025) surveyed approximately 23,000 women aged 18-44 across five states (Arizona, Iowa, New Jersey, Ohio, Wisconsin). The adjusted prevalence ratio was 1.20 with a 95% confidence interval of 1.15-1.26. One counterpoint: Willis et al. (2024, PRESTO cohort, n=1,832) found a 27-percentage-point reduction in fertility app engagement in states with banned or restricted abortion. The discrepancy may reflect different populations: general users versus those actively trying to conceive."
+  - q: "Did privacy-marketed apps actually protect user data?"
+    a: "Not always. Stardust marketed itself as privacy-first after Dobbs and saw a large download surge. TechCrunch subsequently found that Stardust was sharing phone numbers with Mixpanel, a third-party analytics service. Privacy branding captured demand. Privacy architecture did not follow. Genuinely private apps like Euki, Drip, and Periodical remained too small for any analytics firm (Sensor Tower, Apptopia, data.ai, AppMagic) to even track."
+  - q: "Why did 91% of users take no privacy action despite being concerned?"
+    a: "This is the intention-action gap documented across privacy research. People express concern but do not change behavior. Possible explanations: the cost of switching is immediate and concrete (losing cycle history, learning a new app), while the privacy risk feels abstract and uncertain. Additionally, 81% of Americans wrongly believe HIPAA covers health apps, which may create a false sense of protection."
+relatedPages:
+  - /resources/best/best-period-apps-after-roe
+  - /resources/guides/period-tracker-safe-after-roe-v-wade
+  - /compare/alternatives/flo-app-alternative
+  - /resources/guides/femtech-data-monetization
+  - /resources/best/best-privacy-first-period-trackers
+---
+
+In the days after the Dobbs decision leaked in May 2022, "delete your period tracker" went viral. The assumption was that millions of women would abandon apps that stored reproductive data on servers accessible to law enforcement.
+
+That is not what happened.
+
+## Usage Increased, Not Decreased
+
+The largest study on post-Dobbs period tracker behavior (Neiman et al., Contraception, January 2025) surveyed approximately 23,000 women aged 18-44 across five states: Arizona, Iowa, New Jersey, Ohio, and Wisconsin.
+
+Period tracker usage rose from 37.4% to 45.2% (adjusted prevalence ratio 1.20; 95% CI 1.15-1.26). In Ohio, usage increased from 34.2% to 44%.
+
+The only measurable shift in tracking purpose was a modest decrease in tracking for the goal of becoming pregnant (aPR 0.85). Women in states with abortion restrictions became slightly less likely to use a tracker for fertility planning, but overall usage grew.
+
+A separate study (Duke/ACM CHI '24, May 2024) surveyed 183 period tracker users and found that only 3% stopped using their tracker because of the Roe overturn. 91% never used any privacy mitigation strategy. No setting changes. No app switches. No data deletion. 60% said the Dobbs decision impacted their perceived concerns about data privacy, but awareness did not translate to action.
+
+One counterpoint deserves mention. Willis et al. (2024, PRESTO cohort, n=1,832) found a 27-percentage-point reduction in fertility app engagement in states with banned or restricted abortion. The PRESTO cohort consists of women actively trying to conceive, a population with different risk calculations than general period tracker users. Women tracking fertility in ban states may have had more concrete reasons to disengage.
+
+## Privacy Marketing Beat Privacy Engineering
+
+The post-Dobbs download data tells a story about branding, not security.
+
+**Stardust** surged 4,400% in daily downloads, hitting #1 in the US App Store on June 25, 2022. 82% of its 400,000+ lifetime installs came in two days. Stardust marketed itself as privacy-first, with messaging about end-to-end encryption and data protection.
+
+TechCrunch later found Stardust was sharing phone numbers with Mixpanel, a third-party analytics service. The privacy-marketed app was not actually private.
+
+**Clue** saw a 2,200% install increase, reaching #15 overall (its all-time high). Downloads dropped to #93 by Monday. Clue stores data on servers in Germany and is subject to GDPR, which provides stronger protections than US law but does not prevent government access via legal process.
+
+**Flo** moved modestly from #197 to #180 despite the privacy backlash. The company held 47% US market share with 48 million monthly active users. Flo's installed base was so large that the viral "delete Flo" campaign produced no measurable impact on its market position.
+
+**Euki, Drip, and Periodical**, the apps that store data only on-device, had no public download data available. They were too small for any analytics firm (Sensor Tower, Apptopia, data.ai, AppMagic) to track. The apps with the strongest privacy architecture got the least attention.
+
+## Willingness to Pay Exists but Is Untested for Period Trackers
+
+No study directly measures willingness to pay for a privacy-first period tracker. This is the biggest data gap in the market.
+
+Cross-domain research provides bounds. A study of health app users in Hong Kong (Xie, Liu, Or 2023, mHealth, n=561) found marginal willingness to pay of HK$25-183 (approximately $3-$23) for privacy features. A follow-up study (Liu, Xie, Or 2024, SAGE Digital Health, n=577) found 58.9% of respondents willing to pay for health apps, with a median willingness of approximately $6.50.
+
+Cisco's 2024 Consumer Privacy Survey (n=2,600+) found that 75% of consumers say they will not purchase from organizations they do not trust with their data. Trust is a purchase factor, even if consumers do not always act on it.
+
+The most private period tracker apps (Euki, Drip, Periodical) are free. The apps that collect the most data charge the highest premiums: Flo at $9.99/month, Natural Cycles at $14.99-$16.99/month, Clue at approximately $8/month. The current market rewards data collection, not data protection.
+
+## The Intention-Action Gap
+
+The pattern in period tracker behavior mirrors broader privacy research.
+
+72% of Americans want more government regulation of how companies use personal data (Pew Research Center, May 2023, n=5,101). 56% always click "agree" on privacy policies without reading them.
+
+Trust in health technology companies dropped from 25% to 14% between 2020 and 2023 (Rock Health annual survey). Fewer than 48% of Americans believe the benefits of health technology outweigh privacy concerns (Deloitte 2025). That is the lowest figure since tracking began.
+
+People are more concerned than ever. They are not acting on that concern. The 91% figure from the Duke study is consistent with decades of privacy research showing that stated preferences and actual behavior diverge sharply.
+
+This gap is not irrational. Switching costs are immediate and concrete: you lose your cycle history, you learn a new interface, your predictions reset. Privacy risks are abstract, probabilistic, and deferred. The calculus favors inertia until something forces the issue: a data breach notification, a news story about someone you identify with, or a law enforcement action in your state.
+
+## What This Means
+
+The post-Dobbs period tracker market rewarded privacy messaging, not privacy architecture. Users did not delete their apps. They did not switch to on-device alternatives. They downloaded whichever app said the right words about privacy, regardless of whether the technology matched the marketing.
+
+The 91% who took no privacy action are not careless. They responded rationally to a market that had not given them a credible, usable alternative that makes privacy the default rather than an afterthought.
+
+Floriva keeps core records on your device. No account is required for core tracking, and there is no sync, so cycle records never leave your device on their own. Privacy is the architecture, not a marketing claim.

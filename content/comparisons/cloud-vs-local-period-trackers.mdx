@@ -1,0 +1,142 @@
+---
+title: "Cloud vs Local Period Trackers: Why Architecture Decides Privacy"
+description: "Cloud period trackers vs local on-device trackers, an architectural comparison explaining why storage location matters more than privacy policies for reproductive health data."
+ogImage: "/og/comparisons/cloud-vs-local-period-trackers.png"
+tags:
+  - "comparison"
+  - "privacy"
+  - "architecture"
+  - "cloud"
+  - "local storage"
+publishedAt: "2026-05-01"
+updatedAt: "2026-05-01"
+buyerStage: "mofu"
+targetPersona:
+  - "privacy-conscious-user"
+  - "post-roe-tracker"
+  - "privacy-researcher"
+bluf: "Cloud period trackers (Flo, Clue, Natural Cycles, Glow, Ovia) store your data on company servers. Local-first trackers (Floriva, Euki, Drip) keep core records on your device. The difference is structural. Cloud data can be subpoenaed, breached, shared, or sold. Local data reduces what a company can produce. Privacy policies are promises. Architecture is a constraint."
+tableData:
+  name: "Cloud vs Local Architecture Comparison"
+  columns: ["Factor", "Cloud Apps", "Local Apps"]
+  rows:
+    - ["Data location", "Company servers", "Your device only"]
+    - ["Account required", "Yes (typically)", "No"]
+    - ["Subpoena risk", "Company can be compelled to produce records", "No readable central records to produce"]
+    - ["Breach risk", "Server-side breaches expose all users", "No central database to breach"]
+    - ["Data sharing", "Possible, depends on policy", "Impossible, data doesn't exist on servers"]
+    - ["Backup", "Automatic cloud backup", "Manual encrypted backup file only"]
+    - ["Cross-device", "Cloud sync", "Device-only, no sync"]
+    - ["Data survives phone loss", "Yes", "Only with manual backup"]
+proscons:
+  - subject: "Cloud Architecture"
+    pros:
+      - "Automatic backup, data survives device loss"
+      - "Automatic multi-device sync"
+      - "Larger datasets can improve predictions"
+      - "Often free (funded by data or ads)"
+    cons:
+      - "Data can be subpoenaed from company servers"
+      - "Server breaches expose user data"
+      - "Company can change data-sharing practices"
+      - "Data exists beyond user control"
+  - subject: "Local Architecture"
+    pros:
+      - "No server data to subpoena, breach, or share"
+      - "User has complete data control"
+      - "Privacy is architectural, not policy-based"
+      - "No account creation required"
+    cons:
+      - "Phone loss can mean data loss without a manual backup"
+      - "No cross-device sync of any kind"
+      - "Smaller datasets for predictions"
+      - "Often paid (no data-driven revenue)"
+faqs:
+  - q: "Can cloud period tracker data be subpoenaed?"
+    a: "Yes. When a period tracker stores your data on company servers, that data can be subpoenaed through legal process. Law enforcement serves a subpoena or court order to the company, and the company must produce records or face contempt. This has become a specific concern for reproductive health data in states with abortion restrictions."
+  - q: "Can local period tracker data be subpoenaed?"
+    a: "A subpoena to the app company can produce less when no readable server record exists. Device access follows a separate legal path with different rules and device-encryption issues."
+  - q: "Are cloud period trackers always bad for privacy?"
+    a: "No. Some cloud trackers have strong privacy practices. Clue, for example, is GDPR-regulated in Germany and has stated it would resist law enforcement requests. The distinction is between policy-based privacy (we promise not to share) and architectural privacy (we can't share because we don't have it). Policy can change. Architecture is structural."
+answers:
+  - q: "What is the difference between cloud and local period trackers?"
+    a: "Cloud period trackers (Flo, Clue, Natural Cycles, Glow) store your cycle data on company servers. Your data exists on infrastructure controlled by the company, where it can be subpoenaed, breached, or shared. Local-first trackers like Floriva keep core records on your device and have no sync at all. Euki and Drip are local-only options too. This architectural difference determines whether your privacy depends on a company's promises or on what readable data the company holds."
+  - q: "Why does period tracker data storage location matter?"
+    a: "After the Dobbs decision, period tracker data became legally relevant in states with abortion restrictions. Prosecutors can subpoena cloud-stored cycle data as evidence. Apps that store data on-device only have no readable central records to produce. The storage location determines whether your reproductive health data can be accessed through legal process directed at the app company."
+relatedPages:
+  - "/compare/versus/period-tracker-privacy-showdown-2026"
+  - "/resources/best/best-private-period-tracker-apps"
+  - "/resources/guides/what-is-zero-knowledge-period-tracker"
+  - "/resources/guides/how-period-tracker-apps-collect-data"
+  - "/compare/versus/flo-vs-floriva-data-comparison"
+---
+
+Every period tracker privacy debate comes back to one question: where is the data? On a company's server, or on your phone? Everything else (privacy policies, encryption claims, GDPR compliance, data minimization promises) is secondary to that architectural decision.
+
+## The Core Difference
+
+**Cloud architecture:** Your data travels from your phone to a company's servers. It's stored in a database alongside data from other users. The company has access to it. Third parties may receive it through SDKs, analytics, or business partnerships. Law enforcement can obtain it through subpoena.
+
+**Local architecture:** Your data stays on your phone. No copy exists on any server. The company that made the app cannot access your data. There is nothing to subpoena, less company-held data to breach, nothing to share.
+
+This isn't a spectrum. An app either stores your data on a server or it doesn't. A [zero-knowledge tracker](/resources/guides/what-is-zero-knowledge-period-tracker) is one where the company has zero knowledge of your data, because it architecturally cannot.
+
+## Why Policies Don't Replace Architecture
+
+Cloud apps frequently promise privacy. Flo promised privacy and shared data with Facebook, the FTC took enforcement action. Premom promised privacy and shared data with third parties, the FTC took enforcement action again. These weren't rogue employees or hackers. These were business decisions enabled by having access to the data.
+
+A privacy policy is a promise. An on-device architecture is a constraint. Promises can be broken by new management, new investors, new business pressures, or simple negligence. Constraints hold regardless of who runs the company.
+
+Clue is a strong example of a cloud app with good privacy practices. GDPR-regulated, German-incorporated, public commitments to resist law enforcement requests. Even so, the data exists on servers. Future leadership could change the policy. A MLAT request could compel production. GDPR protections slow the process but don't make it impossible.
+
+## The Subpoena Question
+
+After the Dobbs decision overturned federal abortion protections, period tracker data became legally relevant evidence. A missed period, a cycle irregularity, a fertility test: data points that could indicate pregnancy and termination.
+
+**Cloud apps:** Law enforcement serves a subpoena to the company. The company must produce records or face contempt. The user may not be notified. The data is already on the company's servers in a queryable format.
+
+**Local apps:** Law enforcement serves a subpoena to the company. The company can say it does not hold a readable cycle record. Device access follows a separate legal path with different rules and device-encryption issues.
+
+This is not theoretical. The distinction between a subpoena directed at a company (easy, scalable, often secret) and a warrant for a personal device (requires probable cause, often requires user cooperation for encryption) is the practical difference between mass surveillance and targeted investigation.
+
+## The Breach Question
+
+Cloud databases are targets. When a company stores health data for thousands or millions of users, that database is valuable to attackers. Consumer Reports disclosed vulnerabilities in Glow in 2016. A breach of a cloud period tracker exposes every user simultaneously.
+
+Local apps have no central database to breach. An attacker would need physical access to individual devices. This doesn't scale. There's no single point of failure that exposes all users at once.
+
+## The Tradeoffs
+
+Cloud architecture has real advantages. Automatic backup means a lost phone doesn't mean lost data. Multi-device sync works automatically. Larger aggregated datasets can improve cycle predictions. Free pricing is sustainable when data or advertising funds the business.
+
+Local architecture has real costs. Phone loss can mean data loss, unless you made a manual encrypted backup file ahead of time, as Floriva lets you do. Predictions may be based on smaller datasets. The app typically costs money because there's no data-driven revenue source.
+
+The question is whether those convenience tradeoffs are worth storing your reproductive health data on someone else's server. For [the best private period tracker apps](/resources/best/best-private-period-tracker-apps), the answer is to keep data local and solve the convenience problems through engineering, encrypted backup files, on-device prediction models, subscription funding.
+
+## The Cloud Apps
+
+**Flo:** Cloud-based. FTC enforcement action 2021 for data sharing. $59.5M class action settlement 2025. Anonymous Mode available only on premium tier.
+
+**Clue:** Cloud-based. GDPR-regulated in Germany. Stronger-than-average privacy practices. Data still exists on servers subject to MLAT requests.
+
+**Natural Cycles:** Cloud-based. FDA-cleared contraceptive. Requires account and stores data server-side.
+
+**Glow:** Cloud-based. 2016 Consumer Reports security vulnerability disclosure. Fertility-focused with partner sharing.
+
+**Ovia:** Cloud-based. Employer-sponsored. Aggregate data reports go to employers.
+
+## The Local Apps
+
+**Floriva:** On-device. iOS + Android. Paid app (no free tier). No sync. Encrypted backup file for switching phones. Closed source.
+
+**Euki:** On-device. iOS + Android. Free (IPPF-funded). Decoy screen. No sync.
+
+**Drip:** On-device. Android only. Free. Open-source (GPLv3). Minimal UI.
+
+**Periodical:** On-device. Android only. Free. Open-source. Bare minimum features.
+
+## The Privacy Bottom Line
+
+Privacy policies are written by lawyers and can be rewritten by lawyers. Architecture is built by engineers and can only be changed by rebuilding the product. When a period tracker stores your data on-device only, the privacy guarantee survives management changes, acquisitions, regulatory shifts, and business pressure.
+
+When choosing a period tracker, ask one question first: where is my data? If the answer is "on a company's server," every other privacy feature is a mitigation. If the answer is "on my device only," privacy is the default.

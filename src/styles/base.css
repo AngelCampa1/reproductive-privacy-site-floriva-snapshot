@@ -1,0 +1,754 @@
+/* Global resets, typography defaults, and cross-template shared components. */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* TOC links (`href="#heading"`) and any other in-page anchor jump land the
+   target flush under the sticky header without this. `--header-h` is
+   defined in tokens.css and zeroed out below at the same 720px breakpoint
+   where header-footer.css drops the header out of `position: sticky`. */
+:target,
+h1[id],
+h2[id],
+h3[id],
+h4[id],
+h5[id],
+h6[id] {
+  scroll-margin-top: calc(var(--header-h) + 1rem);
+}
+
+/* Wrapping safety net. The content set is full of long unbreakable terms
+   ("Perimenopause", "Massachusetts", "Endometriosis") and the usable width at
+   390px is ~355px, so a single long word in a display heading would otherwise
+   push past the viewport edge.
+
+   Scope note: `break-word` breaks a word that would overflow its own line box,
+   but per CSS Text it does NOT reduce the element's min-content contribution —
+   only `anywhere` / `break-all` do. So this protects normal block layout and
+   nothing more. Grid and flex tracks need `minmax(0, 1fr)` / `min-width: 0`
+   instead; those are applied at each container, not here. */
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+dt,
+dd,
+figcaption,
+blockquote {
+  overflow-wrap: break-word;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  font-family: var(--font-body);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--ink);
+  background: var(--canvas);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+summary {
+  list-style: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  border: 0;
+}
+
+#root {
+  min-height: 100vh;
+  /* `dvh` tracks the visible area as mobile browser chrome hides and shows;
+     `vh` always reports the tallest state and leaves a phantom scroll. */
+  min-height: 100dvh;
+}
+
+/* The prerendered shell that `scripts/prerender-html.mjs` writes into every
+   built HTML file, replaced wholesale once React hydrates. It had no rule
+   anywhere in the stylesheet, so the first paint on every hub and content
+   route was an unstyled dump of stacked inline links at browser defaults.
+   These rules are deliberately minimal — this markup only has to be readable
+   for the moment before hydration, and for anything that never runs JS. */
+.prerendered-page {
+  width: min(1180px, calc(100vw - 2rem));
+  margin-inline: auto;
+  padding-block: var(--space-7);
+  display: grid;
+  gap: var(--space-5);
+}
+
+.prerendered-page h1 {
+  font-family: var(--font-display);
+  font-weight: 450;
+  font-size: clamp(2rem, 3.4vw, 2.8rem);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.prerendered-page h2 {
+  font-family: var(--font-display);
+  font-weight: 450;
+  margin: 0;
+}
+
+.prerendered-page p {
+  margin: 0;
+  max-width: 68ch;
+  color: var(--ink-soft);
+}
+
+.prerendered-page nav {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.prerendered-page a {
+  color: var(--berry);
+  text-underline-offset: 0.16em;
+}
+
+.shell {
+  width: min(1180px, calc(100vw - 2rem));
+  margin-inline: auto;
+}
+
+.app-shell {
+  position: relative;
+  overflow: clip;
+}
+
+.app-main {
+  padding-bottom: var(--space-9);
+}
+
+.skip-link {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 40;
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-pill);
+  background: var(--paper);
+  color: var(--berry);
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-160%);
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+/* The skip link is the one focusable with a berry fill (header-footer.css
+   repaints it), and that same rule re-declares `box-shadow`, which wipes the
+   zero-specificity halo below. Without this the first stop in the tab order
+   draws a berry ring on berry. Restate both shadows here — this selector
+   outranks the plain `.skip-link` rule regardless of import order. */
+.skip-link:focus-visible {
+  transform: translateY(0);
+  box-shadow:
+    0 0 0 3px var(--focus-halo),
+    var(--shadow-soft);
+}
+
+/* --focus is the brand berry, which disappears against a berry-filled
+   button. The box-shadow halo is a bone ring sitting in the outline-offset
+   gap, so the berry outline always has contrast to sit on top of — on bone
+   surfaces the halo is invisible against the page and nothing changes. */
+:where(a, button, input, summary):focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px var(--focus-halo);
+}
+
+/* Eyebrow micro-label, shared by content cards, statement cards, and section
+   headings across every template. */
+.section-eyebrow,
+.content-card__label,
+.statement-card__eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--berry);
+  margin: 0 0 0.75rem;
+}
+
+/* `minmax(0, 1fr)` rather than the implicit `auto` track: an `auto` track sizes
+   to max-content, so a single long unbreakable word in a heading would push the
+   whole column past the viewport — and `.app-shell { overflow: clip }` would cut
+   it off silently rather than letting anyone scroll to it. Note that the
+   `overflow-wrap: break-word` above does NOT protect against this: per CSS Text,
+   only `anywhere` / `break-all` reduce an element's min-content contribution. */
+.section-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.8rem;
+  margin-bottom: 1.8rem;
+  max-width: 50rem;
+}
+
+.section-heading h2 {
+  font-family: var(--font-display);
+  font-weight: 450;
+  letter-spacing: 0;
+  line-height: 0.96;
+  margin: 0;
+  color: var(--ink);
+}
+
+.section-heading p {
+  color: var(--ink-soft);
+  line-height: 1.75;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  min-height: 2.75rem;
+  color: var(--berry);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-out);
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* .page-hero is shared connective chrome across the article, hub, and static
+   templates — only the grid scaffolding lives here; each template supplies
+   its own hero content styling. */
+.page-hero {
+  display: grid;
+  /* See .section-heading: floor the track minimum so one long word cannot
+     stretch the hero past the viewport on a phone. */
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-7);
+  /* See .article-hero — the `padding` shorthand would zero the inline axis
+     and cancel `.shell`'s mobile gutter. */
+  padding-block: clamp(4rem, 7vw, 7rem) var(--space-8);
+}
+
+.page-hero--compact {
+  gap: var(--space-5);
+  padding-bottom: var(--space-6);
+}
+
+.page-hero h1 {
+  font-family: var(--font-display);
+  font-weight: 450;
+  letter-spacing: -0.02em;
+  line-height: 0.96;
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(2.5rem, 4.5vw, 4.25rem);
+  max-width: 20ch;
+}
+
+.page-hero p {
+  color: var(--ink-soft);
+  line-height: 1.75;
+}
+
+/* Card grids shared by the homepage, hub, and article templates. */
+.section-grid,
+.card-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.section-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.card-grid--states {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.collection-preview,
+.faq-band {
+  padding-block: var(--space-8) 0;
+}
+
+/* Shared card-hover language for every "paper card" surface: a 4px lift,
+   escalation to --shadow-strong, and one duration/easing pair. Component
+   rules below (guided-entry-card, bento-cell) apply the same recipe; only
+   the accent (e.g. guided-entry-card's berry border) varies per surface. */
+.content-card,
+.statement-card,
+.faq-item {
+  position: relative;
+  border-radius: var(--radius-card);
+  background: var(--paper);
+  border: 1px solid transparent;
+  box-shadow: var(--shadow-soft);
+  transition:
+    transform var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out);
+}
+
+.content-card,
+.statement-card {
+  padding: 1.5rem;
+}
+
+.faq-item {
+  padding: 0;
+}
+
+.content-card h2,
+.content-card h3,
+.statement-card h2,
+.statement-card h3 {
+  font-family: var(--font-display);
+  font-weight: 450;
+  letter-spacing: 0;
+  line-height: 0.96;
+  margin: 0;
+  color: var(--ink);
+}
+
+.content-card p,
+.statement-card p,
+.faq-item p {
+  color: var(--ink-soft);
+  line-height: 1.75;
+}
+
+.content-card {
+  display: grid;
+  gap: 0.85rem;
+  min-height: 100%;
+}
+
+.content-card:hover,
+.statement-card:hover,
+.faq-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--rule);
+  box-shadow: var(--shadow-strong);
+}
+
+.content-card--compact {
+  align-content: start;
+}
+
+.content-card--state {
+  background: var(--paper);
+}
+
+.content-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  color: var(--ink-mute);
+  font-size: 0.88rem;
+}
+
+.content-card__excerpt {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.content-card__verdict {
+  color: var(--berry);
+  font-weight: 700;
+}
+
+.statement-card {
+  min-height: 100%;
+}
+
+/* FAQ family — shared by the homepage and article templates. */
+.faq-list {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.4rem 1.5rem;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.faq-item summary::after {
+  content: "+";
+  flex: none;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: var(--berry);
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item p {
+  margin: 0;
+  padding: 0 1.5rem 1.4rem;
+}
+
+/* Next-step chrome — shared by the article and hub templates. Class names
+   are frozen; Playwright verifiers depend on them. */
+.next-step-band {
+  padding-block: var(--space-8) 0;
+}
+
+/* The related-pages grid now lives inside the next-step band rather than in a
+   section of its own, so it needs its own internal rhythm instead of the
+   section gap it used to get for free. */
+.next-step-related {
+  display: grid;
+  gap: var(--space-4);
+  margin-top: var(--space-7);
+}
+
+.next-step-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.next-step-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.76rem 1rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-pill);
+  background: var(--paper);
+  color: var(--berry);
+  font-weight: 700;
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+}
+
+.next-step-link:hover {
+  border-color: var(--berry);
+  background: var(--berry-soft);
+  transform: translateY(-2px);
+}
+
+/* Guided-entry cards — shared by the homepage and hub templates. Class name
+   is frozen; Playwright verifiers depend on it. */
+.guided-entry {
+  padding-top: var(--space-8);
+}
+
+.guided-entry__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.guided-entry__grid--compact {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.guided-entry-card {
+  display: grid;
+  gap: 0.75rem;
+  min-height: 100%;
+  padding: 1.35rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-md);
+  background: var(--paper);
+  box-shadow: var(--shadow-soft);
+  transition:
+    transform var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out);
+}
+
+.guided-entry-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--berry);
+  box-shadow: var(--shadow-strong);
+}
+
+.guided-entry-card h3 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2.2vw, 2rem);
+  font-weight: 450;
+  line-height: 1.08;
+}
+
+.guided-entry-card p:not(.section-eyebrow) {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+.guided-entry-card span {
+  align-self: end;
+  color: var(--berry);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+}
+
+.guided-entry-card--compact {
+  padding: 1.15rem;
+}
+
+/* Orphaned utility class kept for backward compatibility; no current
+   template renders it, so it lives here as the ambiguous/shared default. */
+.link-column {
+  position: relative;
+  padding: 1.5rem;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-soft);
+}
+
+.link-column h3 {
+  font-family: var(--font-display);
+  font-weight: 450;
+  letter-spacing: 0;
+  line-height: 0.96;
+  margin: 0;
+  color: var(--ink);
+}
+
+.link-column p {
+  color: var(--ink-soft);
+  line-height: 1.75;
+}
+
+/* Comparison tables — currently rendered only on article pages, but kept
+   here as shared chrome so pricing/static pages can reuse it without a
+   duplicate definition. */
+.comparison-table {
+  overflow-x: auto;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--rule);
+  background-color: var(--paper);
+  box-shadow: var(--shadow-soft);
+  /* Scroll affordance: the two `local` gradients sit on the content and slide
+     away as you scroll; the two `scroll` shadows stay pinned to the edges. The
+     net effect is a shadow that appears only on the side with more to see —
+     otherwise a 640px-min-width table on a 390px screen gives no hint that it
+     scrolls at all. */
+  background-image:
+    linear-gradient(to right, var(--paper) 30%, rgba(251, 245, 235, 0)),
+    linear-gradient(to left, var(--paper) 30%, rgba(251, 245, 235, 0)),
+    radial-gradient(farthest-side at 0 50%, rgba(26, 20, 16, 0.16), rgba(26, 20, 16, 0)),
+    radial-gradient(farthest-side at 100% 50%, rgba(26, 20, 16, 0.16), rgba(26, 20, 16, 0));
+  background-position: left center, right center, left center, right center;
+  background-repeat: no-repeat;
+  background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
+  background-attachment: local, local, scroll, scroll;
+}
+
+.comparison-table table {
+  width: 100%;
+  min-width: 40rem;
+  border-collapse: collapse;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 1rem 1.2rem;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.comparison-table thead {
+  background: var(--canvas-deep);
+}
+
+.comparison-table th {
+  color: var(--ink);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.comparison-table tbody tr + tr td {
+  border-top: 1px solid var(--rule);
+}
+
+.comparison-table td {
+  color: var(--ink-soft);
+}
+
+@media (max-width: 1024px) {
+  .section-grid,
+  .card-grid,
+  .card-grid--states,
+  .guided-entry__grid,
+  .guided-entry__grid--compact {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  /* header-footer.css drops .site-header out of `position: sticky` at this
+     same breakpoint, so nothing needs clearing under an anchor jump — only
+     the base 1rem of breathing room from the scroll-margin-top rule above
+     remains. */
+  :root {
+    --header-h: 0px;
+  }
+
+  .shell {
+    width: 100%;
+    max-width: 1180px;
+    padding-inline: 1.15rem;
+  }
+
+  .section-grid,
+  .card-grid,
+  .card-grid--states,
+  .guided-entry__grid,
+  .guided-entry__grid--compact {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    /* Reveal injects `transitionDelay` inline (reveal.tsx), which beats this
+       stylesheet on specificity alone — but `!important` still wins over an
+       inline style regardless of specificity, so this reset actually
+       reaches it. Without it, a staggered Reveal stayed invisible for its
+       full delay even with reduced motion on. */
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media print {
+  /* Drop site chrome that has no place on paper. */
+  .skip-link,
+  .site-header,
+  .resources-megamenu,
+  .lead-magnet-modal {
+    display: none !important;
+  }
+
+  /* Scroll-reveal content defaults to opacity 0 until it animates in.
+     Anything below the fold would print blank, so force it visible. */
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .app-shell {
+    background: #fff !important;
+  }
+
+  body,
+  .app-shell {
+    color: #1a1a1a !important;
+  }
+
+  /* Save ink: no heavy gradients, shadows, or backdrop blur on paper. */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    backdrop-filter: none !important;
+  }
+
+  main {
+    padding-top: 0 !important;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  /* Keep headings with their content and avoid splitting short blocks. */
+  h1,
+  h2,
+  h3,
+  h4 {
+    page-break-after: avoid;
+  }
+
+  p,
+  li,
+  blockquote,
+  figure {
+    page-break-inside: avoid;
+  }
+}

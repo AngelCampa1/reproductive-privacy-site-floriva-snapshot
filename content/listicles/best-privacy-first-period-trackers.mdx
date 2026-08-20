@@ -1,0 +1,109 @@
+---
+title: "Best Privacy-First Period Trackers for Tech-Savvy Users"
+description: "We compared 5 period trackers on architecture, not marketing claims. Evaluated SDK footprint, data storage, and network behavior."
+ogImage: "/og/listicles/best-privacy-first-period-trackers.png"
+tags:
+  - "comparison"
+publishedAt: "2026-03-30"
+updatedAt: "2026-03-30"
+buyerStage: "mofu"
+targetPersona:
+  - "privacy-conscious-user"
+bluf: "For users who evaluate privacy by architecture rather than policy, Floriva is the strongest overall choice: on-device storage, no server-side cycle record, and no third-party SDKs. Drip is the open-source Android fallback. Euki is on-device but not auditable. Clue is GDPR-compliant but server-based. Flo has a documented track record of data misuse."
+category: "Period Trackers"
+qualifier: "Privacy Architecture"
+tools:
+  - name: "Floriva"
+    summary: "On-device tracker with zero third-party SDKs. No analytics, no account, no network health data transmission."
+    pros: ["On-device only, works in airplane mode", "Zero third-party SDKs (no Firebase, no Meta, no analytics)", "No account or email", "Device-level encryption via OS"]
+    cons: ["Closed-source (not auditable)", "No cloud backup or sync", "Newer app"]
+    pricing: "Free (premium features planned)"
+    verdict: "Strongest privacy architecture of any closed-source period tracker. Zero SDKs and zero server communication for health data."
+  - name: "Drip"
+    summary: "Open-source on-device tracker. Full code audit possible."
+    pros: ["Open-source (GitHub)", "On-device only", "No SDKs", "Fully auditable"]
+    cons: ["No iOS app", "Basic interface and predictions", "Small volunteer team", "Infrequent releases"]
+    pricing: "Free"
+    verdict: "Best for users who will not trust a privacy claim they cannot verify in source code. Platform limitations are the main drawback."
+  - name: "Euki"
+    summary: "On-device tracker by IPPF. No server storage but closed-source."
+    pros: ["On-device storage", "Nonprofit backing (IPPF)", "No account", "Free"]
+    cons: ["Closed-source", "SDK footprint not independently verified", "Basic features", "Infrequent updates"]
+    pricing: "Free"
+    verdict: "On-device architecture is good. Closed-source without independent SDK audits means you are trusting the nonprofit's claims."
+  - name: "Clue"
+    summary: "Server-based tracker with GDPR compliance. Strong policy, weak architecture for privacy."
+    pros: ["GDPR jurisdiction (Berlin)", "Transparent data practices documentation", "Good app quality", "Active development"]
+    cons: ["Data on company servers", "Account required", "Third-party SDKs present", "Subscription for full features"]
+    pricing: "Free / $10/month (Plus)"
+    verdict: "Best server-based option from a policy standpoint. Still fundamentally stores your data on infrastructure they control."
+  - name: "Flo"
+    summary: "Largest period tracker. Server-based with documented policy violations."
+    pros: ["Largest user base (network effects for research)", "Feature-rich", "Good predictions"]
+    cons: ["$59.5M combined settlement", "Shared data with Facebook/Google", "Server-based", "Ad-supported model"]
+    pricing: "Free (ads) / $50/year"
+    verdict: "Documented evidence of privacy policy violations. Server-based architecture means the violations were technically trivial to execute."
+tableData:
+  name: "Period Tracker Technical Privacy Comparison"
+  description: "Architecture-level privacy comparison"
+  columns:
+    - "App"
+    - "Data Storage"
+    - "Third-Party SDKs"
+    - "Open Source"
+    - "Works Offline"
+  rows:
+    - ["Floriva", "On-device", "None", "No", "Yes"]
+    - ["Drip", "On-device", "None", "Yes", "Yes"]
+    - ["Euki", "On-device", "Unverified", "No", "Yes"]
+    - ["Clue", "German servers", "Yes", "No", "No"]
+    - ["Flo", "Company servers", "Yes (documented)", "No", "No"]
+answers:
+  - question: "Which period tracker has the smallest attack surface for data exposure"
+    answer: "Drip, because it is on-device and open-source. The code is auditable, there are no SDKs, and no server component exists. Floriva has equivalent architecture but is closed-source, so you trust our claims rather than verifying them. Both have zero server-side attack surface."
+  - question: "Can I monitor what data a period tracker sends over the network"
+    answer: "Yes. Use a network proxy like Charles Proxy (macOS/iOS) or mitmproxy (Android/any) to intercept HTTPS traffic from the app. On-device apps like Floriva will show zero health data in network requests. Server-based apps like Clue and Flo will show API calls containing your cycle data."
+  - question: "How does Apple's App Privacy Nutrition Label help evaluate these apps"
+    answer: "Apple requires apps to self-report data collection in the App Store. Check the 'Data Linked to You' and 'Data Used to Track You' sections. On-device apps should show minimal collection. However, these labels are self-reported and Apple does not independently verify them. Network monitoring is more reliable."
+faqs:
+  - q: "Should I choose open-source over closed-source for a period tracker"
+    a: "If you have the technical ability to read code or trust community auditors, open-source (Drip) provides the strongest verifiable privacy guarantee. If you value a polished experience and are willing to trust architecture claims verified by network monitoring, closed-source on-device apps (Floriva) are reasonable."
+  - q: "Is Floriva planning to become open-source"
+    a: "We are evaluating it. Open-sourcing the client would allow community audits of our privacy claims. The core architecture decision, on-device storage with no server component, is verifiable via network monitoring regardless of source availability."
+  - q: "What about browser-based period trackers"
+    a: "Web apps that store data in localStorage or IndexedDB are technically on-device. However, any JavaScript on the page can access this data, and browser extensions can read it. A native app with OS-level sandboxing provides stronger isolation than a browser-based tracker."
+pricingStats:
+  - stat: "Flo Health paid a $59.5M combined settlement for sharing reproductive health data without user consent"
+    source: "Reuters / FTC, September 2025"
+    sourceUrl: "https://www.reuters.com/technology/flo-health-google-flurry-settle-privacy-lawsuit-595-million-2025-09-25/"
+  - stat: "Drip is free and open source, the only auditable on-device period tracker"
+    source: "Drip app (open source, GitLab)"
+    sourceUrl: "https://bloodyhealth.gitlab.io/"
+  - stat: "Floriva is a paid app with zero third-party SDKs and no readable cycle-data transmission for core tracking"
+    source: "Floriva pricing"
+    sourceUrl: "https://floriva.app/get"
+relatedPages:
+  - "/resources/guides/period-app-privacy-architecture-guide"
+  - "/resources/guides/end-to-end-encryption-period-tracker"
+  - "/compare/alternatives/clue-alternative-no-cloud"
+---
+
+## How We Evaluated
+
+This is not a feature comparison. We evaluated each app's privacy architecture using four technical criteria: data storage location, third-party SDK presence, account requirements, and offline functionality. We gave zero weight to privacy policy language because policy and architecture are independent variables, as Flo's FTC settlement demonstrated.
+
+For each app, we tested offline functionality (airplane mode), reviewed publicly available information about SDK inclusion, checked account requirements, and reviewed data storage documentation. For Drip, we also reviewed source code.
+
+## The SDK Problem Most Reviews Ignore
+
+Most "privacy-focused" period tracker reviews evaluate privacy policies. They do not check what third-party code is running inside the app. A period tracker can have a perfect privacy policy while embedding Firebase Analytics (Google), Adjust (mobile attribution), or Facebook SDK. Each of these independently collects device data and usage patterns.
+
+These SDKs create data flows that bypass the app's own privacy controls. The app developer may not even fully understand what data the SDKs collect, because SDK behavior is controlled by the SDK provider and can change with updates.
+
+Drip (open source, so anyone can audit the code) and Floriva (verifiable by monitoring network traffic) are the only trackers in this comparison that claim zero third-party SDKs. For us this is an active architectural choice that costs us analytics data we could use to improve the product.
+
+## Trust Models
+
+Every privacy claim ultimately rests on a trust model. With open-source on-device apps (Drip), you trust the code you can read. With closed-source on-device apps (Floriva), you trust the architecture claim verified by network monitoring. With server-based GDPR apps (Clue), you trust a legal framework enforced by regulators. With server-based US apps (Flo), you trust a privacy policy enforced by the FTC after the fact.
+
+Each step up in that chain adds a layer of indirect trust. We built Floriva to minimize the trust required: no server to trust, no SDKs to trust, no policy to trust. The remaining trust is in the app binary on your phone, which is verifiable via network monitoring.

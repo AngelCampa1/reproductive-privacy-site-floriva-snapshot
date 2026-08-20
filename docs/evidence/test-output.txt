@@ -1,0 +1,255 @@
+
+> floriva-web@0.0.0 pretypecheck <repo>
+> pnpm generate:content && pnpm generate:knowledge
+
+
+> floriva-web@0.0.0 generate:content <repo>
+> node scripts/build-content-data.mjs
+
+
+> floriva-web@0.0.0 generate:knowledge <repo>
+> node scripts/build-public-knowledge.mjs
+
+
+> floriva-web@0.0.0 typecheck <repo>
+> tsc -b
+
+### TESTS ###
+
+> floriva-web@0.0.0 test:coverage <repo>
+> vitest run --coverage --exclude=.floriva-private/**
+
+
+ RUN  v3.2.4 <repo>
+      Coverage enabled with v8
+
+ ✓ src/components/on-device-diagram.test.tsx (5 tests) 177ms
+ ✓ src/components/device-frame.test.tsx (6 tests) 122ms
+ ✓ src/components/site-shell.test.tsx (3 tests) 183ms
+ ✓ src/components/store-buttons.test.tsx (2 tests) 161ms
+ ✓ worker/test/private-backup-r2-bridge.test.ts (12 tests) 488ms
+ ✓ src/components/download-cta.test.tsx (1 test) 218ms
+ ✓ worker/src/sequence-runner.test.ts (10 tests) 33ms
+ ✓ scripts/html-replace.test.ts (11 tests) 2122ms
+   ✓ prerender-html route selection > exits non-zero when PRERENDER_ROUTES is set but empty  2109ms
+ ✓ functions/api/lead-magnet/subscribe.test.ts (8 tests) 135ms
+ ✓ scripts/external-seo-evidence.test.ts (18 tests) 117ms
+ ✓ src/components/article-body.test.tsx (4 tests) 251ms
+ ✓ functions/api/lead-magnet/download.test.ts (5 tests) 217ms
+ ✓ functions/_middleware.test.ts (27 tests) 189ms
+ ✓ src/components/exit-intent-lead-magnet.test.tsx (1 test) 304ms
+   ✓ ExitIntentLeadMagnet > keeps the successful email-only signup copy limited to delivery  302ms
+ ✓ src/components/bento-journey.test.tsx (8 tests) 262ms
+ ✓ src/pages/home-page.fallbacks.test.tsx (1 test) 294ms
+ ✓ src/pages/static-pages.test.tsx (1 test) 250ms
+ ✓ src/pages/home-page.test.tsx (1 test) 275ms
+ ✓ src/components/site-header-footer.test.tsx (4 tests) 592ms
+ ✓ src/pages/hub-page.test.tsx (6 tests) 1596ms
+   ✓ HubPage > renders a non-pillar hub as a card grid with its own authored guide cards  344ms
+   ✓ HubPage > renders with lead-magnet download variant  309ms
+ ✓ src/pages/content-page.test.tsx (18 tests) 3163ms
+   ✓ ContentPage > renders an inline request form for lead magnet pages  469ms
+   ✓ ContentPage > renders pricing-breakdowns page with tiers, hiddenCosts, tableData, pricingStats (eve-app-pricing)  319ms
+   ✓ ContentPage > renders guides page with faqs block (data-brokers-reproductive-health)  380ms
+ ✓ src/site/store-targets.test.ts (7 tests) 21ms
+ ✓ functions/_lib/lead-magnet-subscription.test.ts (4 tests) 21ms
+ ✓ functions/_lib/sentry.test.ts (3 tests) 29ms
+ ✓ functions/_lib/lead-magnet-email.test.ts (2 tests) 10ms
+ ✓ functions/downloads/lead-magnets/[file].test.ts (1 test) 18ms
+ ✓ functions/_lib/lead-magnet-download.test.ts (3 tests) 46ms
+ ✓ functions/api/store/[target].test.ts (4 tests) 27ms
+ ✓ src/site/app-screens.test.ts (4 tests) 145ms
+ ✓ src/site/structured-data.test.ts (14 tests) 25ms
+ ✓ functions/api/health.test.ts (2 tests) 20ms
+ ✓ worker/src/index.test.ts (8 tests) 29ms
+ ✓ functions/api/lead-magnet/unsubscribe.test.ts (2 tests) 26ms
+ ✓ src/site/page-meta.test.ts (17 tests) 26ms
+ ✓ src/site/lead-magnets.test.ts (6 tests) 49ms
+ ✓ src/components/breadcrumbs.test.ts (5 tests) 46ms
+ ✓ functions/_lib/lead-magnet-store.test.ts (7 tests) 20ms
+ ✓ src/site/content.test.ts (12 tests) 270ms
+ ✓ src/site/hub-guide-links.test.ts (4 tests) 18ms
+ ✓ src/site/knowledge/knowledge.test.ts (9 tests) 211ms
+ ✓ src/site/route-inventory.test.ts (4 tests) 593ms
+   ✓ site route inventory > keeps every canonical route reachable from another internal page  559ms
+ ✓ src/site/internal-links.test.ts (10 tests) 859ms
+   ✓ funnel-aware internal links > keeps supplemental related links resolvable for every content page  740ms
+ ✓ functions/_lib/lead-magnet-abuse.test.ts (3 tests) 15ms
+ ✓ functions/_lib/http.test.ts (1 test) 15ms
+ ✓ scripts/third-party-widget-contract.test.ts (1 test) 6ms
+ ✓ functions/ph/[[path]].test.ts (1 test) 14ms
+ ✓ worker/src/internal-send.test.ts (6 tests) 8ms
+ ✓ worker/src/send-email.test.ts (7 tests) 14ms
+ ✓ functions/_lib/email-service.test.ts (3 tests) 14ms
+ ✓ src/components/store-buttons-pill-canon.test.ts (5 tests) 7ms
+ ✓ scripts/prerender-hub-copy.test.ts (3 tests) 13ms
+ ✓ src/site/lead-magnet-popup.test.ts (4 tests) 6ms
+ ✓ src/site/funnel-contract.test.ts (3 tests) 19ms
+ ✓ functions/_lib/bindings.test.ts (1 test) 5ms
+ ✓ src/site/format.test.ts (1 test) 5ms
+ ✓ scripts/backup-private-seo-evidence.test.ts (30 tests) 15790ms
+   ✓ encrypts rollback and raw evidence then restores and revalidates without original paths  13728ms
+   ✓ rejects rollback files that are absent from the descriptor manifest before upload  699ms
+   ✓ supports monotonic crash recovery from every partial replacement state  325ms
+ ✓ scripts/claim-remediation.test.ts (34 tests | 1 skipped) 17340ms
+   ✓ claim baseline freezer > rejects a row when sentence expansion leaves only the scanner token  792ms
+   ✓ claim baseline freezer > uses the complete table row when a structured cell is only the scanner token  514ms
+   ✓ claim baseline freezer > refuses to overwrite any existing immutable output  706ms
+   ✓ claim baseline freezer > requires copyBase to equal the current repository HEAD  2013ms
+   ↓ claim baseline freezer > regenerates 1,010 immutable rows whose complete AST locators resolve [frozen base f204145a4859897407278af1876bbdf1992edcb3 is not present in this repository, so the per-row locator walk cannot read frozen sources. Run this in the full-history repository to exercise it.]
+   ✓ content batch manifest safety > rejects NTFS alternate data stream syntax in rules, changes, entries, and output without base or temp leftovers  1166ms
+   ✓ content batch manifest safety > integrates with real porcelain for untracked names, deterministic hashes, HEAD, and prefix boundaries  3956ms
+   ✓ content batch manifest safety > rejects real Git renames/copies and empty diffs  4797ms
+   ✓ content batch manifest safety > never truncates an existing manifest output  2270ms
+ ✓ scripts/portfolio-metrics.test.ts (5 tests) 20096ms
+ ✓ scripts/generated-surfaces.test.ts (29 tests) 59654ms
+   ✓ generated content surfaces > generates llms.txt sections for every non-empty content collection  1200ms
+   ✓ generated content surfaces > does not emit common mojibake markers in llms.txt  794ms
+   ✓ generated content surfaces > keeps llms.txt compact with bounded representative links  943ms
+   ✓ generated content surfaces > keeps the prerendered JSON-LD in step with the edge/SPA builder  2558ms
+   ✓ generated content surfaces > serves noindex in prerendered HTML for the tier and only for the tier  30053ms
+   ✓ generated content surfaces > loads lead magnet PDF boilerplate from the public knowledge artifact  1452ms
+   ✓ generated content surfaces > prerenders representative routes with body content inside the root  5467ms
+   ✓ generated content surfaces > preserves semantic Markdown in prerendered raw HTML without adding another h1  3757ms
+   ✓ generated content surfaces > prerenders the homepage with crawlable funnel links  2114ms
+   ✓ generated content surfaces > prerenders pillar hubs with crawlable attached content links  1879ms
+   ✓ generated content surfaces > keeps every sitemap route linked in raw HTML and every raw internal link resolvable  9013ms
+ ✓ scripts/prepare-pages-rollback.test.ts (14 tests | 1 skipped) 149822ms
+   ✓ prepareRollbackBundle > combines retained exact static bytes with reconstructed precompiled Functions  6937ms
+   ✓ prepareRollbackBundle > writes a complete, hash-valid downloaded rollback descriptor by same-volume rename  80565ms
+   ✓ prepareRollbackBundle > writes a complete, hash-valid reconstructed rollback descriptor by same-volume rename  61758ms
+   ✓ prepareRollbackBundle > prefers a matching live release marker over legacy route comparison  419ms
+
+ Test Files  60 passed (60)
+      Tests  429 passed | 2 skipped (431)
+   Start at  17:55:27
+   Duration  162.93s (transform 44.82s, setup 0ms, collect 170.11s, tests 276.50s, environment 266.97s, prepare 59.39s)
+
+ % Coverage report from v8
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |    90.2 |    80.73 |   35.28 |    90.2 |                   
+ functions         |   82.33 |    83.33 |      76 |   82.33 |                   
+  [[path]].ts      |       0 |        0 |       0 |       0 | 1-5               
+  _middleware.ts   |   82.86 |    84.33 |   79.16 |   82.86 | ...20,824,847-848 
+ functions/_lib    |   88.19 |    72.22 |    91.3 |   88.19 |                   
+  bindings.ts      |      50 |    76.92 |   71.42 |      50 | ...91-116,119-126 
+  email-service.ts |      88 |    55.55 |     100 |      88 | 46-49             
+  http.ts          |   71.79 |    85.71 |   57.14 |   71.79 | ...42,76-81,84-89 
+  ...gnet-abuse.ts |     100 |    85.71 |     100 |     100 | 36,45             
+  ...t-download.ts |    92.3 |    70.37 |     100 |    92.3 | ...,94-95,100-101 
+  ...gnet-email.ts |   88.19 |     62.5 |    90.9 |   88.19 | ...28-229,234-235 
+  ...gnet-store.ts |   99.25 |    77.77 |     100 |   99.25 | 196-197           
+  ...bscription.ts |   87.27 |    80.95 |     100 |   87.27 | ...25-26,39-40,76 
+  sentry.ts        |    88.6 |    52.63 |     100 |    88.6 | 18-19,57-59,89-92 
+  store.ts         |     100 |       90 |     100 |     100 | 14                
+  turnstile.ts     |      86 |     64.7 |     100 |      86 | ...59,67-68,74-75 
+ functions/api     |   95.23 |       40 |     100 |   95.23 |                   
+  health.ts        |   95.23 |       40 |     100 |   95.23 | 33-34             
+ ...pi/lead-magnet |   82.19 |    63.33 |     100 |   82.19 |                   
+  download.ts      |   77.61 |    66.66 |     100 |   77.61 | ...48,60-61,81-83 
+  subscribe.ts     |   83.85 |    65.62 |     100 |   83.85 | ...92-193,197-203 
+  unsubscribe.ts   |   82.81 |       50 |     100 |   82.81 | ...,72-73,104-106 
+ ...ions/api/store |      75 |     62.5 |     100 |      75 |                   
+  [target].ts      |      75 |     62.5 |     100 |      75 | 14-15,24-25,48-55 
+ ...s/lead-magnets |   81.81 |    33.33 |     100 |   81.81 |                   
+  [file].ts        |   81.81 |    33.33 |     100 |   81.81 | 6-7               
+ functions/ph      |     100 |      100 |     100 |     100 |                   
+  [[path]].ts      |     100 |      100 |     100 |     100 |                   
+ src               |       0 |        0 |       0 |       0 |                   
+  app.tsx          |       0 |        0 |       0 |       0 | 1-21              
+  router.tsx       |       0 |        0 |       0 |       0 | 1-153             
+ src/components    |   84.19 |       79 |   73.68 |   84.19 |                   
+  article-body.tsx |   95.45 |    88.88 |     100 |   95.45 | 55-56             
+  article-toc.tsx  |   83.33 |    76.19 |   66.66 |   83.33 | 21-23,51-57       
+  bento-grid.tsx   |     100 |      100 |     100 |     100 |                   
+  ...umbs-utils.ts |     100 |      100 |     100 |     100 |                   
+  breadcrumbs.tsx  |    91.3 |    85.71 |     100 |    91.3 | 13-14             
+  device-frame.tsx |     100 |      100 |     100 |     100 |                   
+  download-cta.tsx |     100 |      100 |     100 |     100 |                   
+  ...ad-magnet.tsx |   70.69 |    59.37 |   66.66 |   70.69 | ...12-215,261-263 
+  ...y-section.tsx |     100 |      100 |     100 |     100 |                   
+  json-ld.tsx      |   84.84 |     62.5 |     100 |   84.84 | 29-30,39-41       
+  ...line-form.tsx |   89.87 |       50 |   66.66 |   89.87 | 42-43,47-49,90-92 
+  ...e-diagram.tsx |     100 |      100 |     100 |     100 |                   
+  reveal.tsx       |   61.81 |       60 |      50 |   61.81 | ...43,49-50,57-72 
+  site-footer.tsx  |     100 |      100 |     100 |     100 |                   
+  site-header.tsx  |   80.18 |     90.9 |   42.85 |   80.18 | ...29,31-35,76-79 
+  site-shell.tsx   |     100 |      100 |     100 |     100 |                   
+  sources.tsx      |   96.22 |    82.35 |     100 |   96.22 | 17-18             
+  ...e-buttons.tsx |     100 |      100 |     100 |     100 |                   
+  ...ile-config.ts |      50 |        0 |       0 |      50 | 4-5               
+  ...le-widget.tsx |   24.56 |       40 |   33.33 |   24.56 | 27-38,49-86,93-94 
+ src/lib           |     100 |      100 |     100 |     100 |                   
+  slugify.ts       |     100 |      100 |     100 |     100 |                   
+ src/pages         |   89.52 |    80.42 |      80 |   89.52 |                   
+  content-page.tsx |   96.92 |       80 |     100 |   96.92 | ...22,272,468,481 
+  home-page.tsx    |     100 |    81.81 |     100 |     100 | 22,99             
+  hub-page.tsx     |   98.31 |     82.6 |     100 |   98.31 | 75-76,228,254     
+  static-pages.tsx |      42 |    73.33 |   44.44 |      42 | ...41-148,151-185 
+ src/site          |   92.14 |    85.32 |    14.2 |   92.14 |                   
+  config.ts        |     100 |      100 |     100 |     100 |                   
+  content.ts       |   93.84 |    84.61 |    4.62 |   93.84 | 145-146,176-177   
+  format.ts        |   73.33 |      100 |   66.66 |   73.33 | 28-37             
+  ...l-contract.ts |     100 |      100 |     100 |     100 |                   
+  index-policy.ts  |     100 |    85.71 |     100 |     100 | 40                
+  ...rnal-links.ts |   72.11 |     79.1 |      60 |   72.11 | ...53-258,339-340 
+  ...gnet-popup.ts |     100 |     87.5 |     100 |     100 | 21,42             
+  lead-magnets.ts  |     100 |      100 |     100 |     100 |                   
+  ...ting-links.ts |     100 |       50 |     100 |     100 | 40                
+  meta.tsx         |     100 |       90 |     100 |     100 | 60                
+  page-meta.ts     |    94.7 |    93.54 |     100 |    94.7 | 215-224           
+  pillar-hubs.ts   |     100 |      100 |     100 |     100 |                   
+  ...-inventory.ts |   90.25 |    78.43 |     100 |   90.25 | ...,86-90,215-217 
+  sentry.ts        |       0 |        0 |       0 |       0 | 1-18              
+  seo.ts           |     100 |      100 |     100 |     100 |                   
+  site-routes.ts   |     100 |      100 |     100 |     100 |                   
+  store-targets.ts |   88.04 |    83.33 |     100 |   88.04 | ...02-103,124-129 
+  ...tured-data.ts |     100 |      100 |     100 |     100 |                   
+ ...site/knowledge |   99.86 |     97.8 |     100 |   99.86 |                   
+  index.ts         |     100 |      100 |     100 |     100 |                   
+  ...email-data.ts |   99.76 |    97.33 |     100 |   99.76 | ...1663,1721-1722 
+ worker/src        |   94.54 |    89.74 |     100 |   94.54 |                   
+  index.ts         |   92.06 |      100 |     100 |   92.06 | 48-52             
+  internal-send.ts |     100 |      100 |     100 |     100 |                   
+  send-email.ts    |   97.43 |       75 |     100 |   97.43 | 52-53             
+  ...nce-runner.ts |   93.18 |    83.33 |     100 |   93.18 | 165-175,276-277   
+-------------------|---------|----------|---------|---------|-------------------
+FINAL_EXIT=0
+
+
+===== pnpm test:scripts (node:test) =====
+
+
+> floriva-web@0.0.0 test:scripts <repo>
+> node --test scripts/*.test.mjs
+
+TAP version 13
+# Subtest: derives campaign shape and posts directory from --schedule-grid
+ok 1 - derives campaign shape and posts directory from --schedule-grid
+  ---
+  duration_ms: 535.761
+  type: 'test'
+  ...
+# Subtest: rejects schedule metadata that disagrees with its slots
+ok 2 - rejects schedule metadata that disagrees with its slots
+  ---
+  duration_ms: 1483.5213
+  type: 'test'
+  ...
+# Subtest: accepts v2 localDate, UTC date, assetKind, topic, and sourceKeys fields
+ok 3 - accepts v2 localDate, UTC date, assetKind, topic, and sourceKeys fields
+  ---
+  duration_ms: 2109.6521
+  type: 'test'
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 3
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4784.4916

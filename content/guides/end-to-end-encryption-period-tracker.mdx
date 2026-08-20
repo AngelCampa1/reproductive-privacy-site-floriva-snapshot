@@ -1,0 +1,90 @@
+---
+title: "End-to-End Encryption in Period Trackers: What It Means"
+description: "End-to-end encryption and zero-knowledge architecture are not the same thing. This guide explains the difference and what each actually protects you from."
+ogImage: "/og/guides/end-to-end-encryption-period-tracker.png"
+tags:
+  - "guide"
+publishedAt: "2026-03-21"
+updatedAt: "2026-03-21"
+buyerStage: "tofu"
+targetPersona:
+  - "flo-refugee"
+  - "post-roe-tracker"
+  - "paper-tracker"
+  - "privacy-conscious-user"
+bluf: "End-to-end encryption means data is encrypted before it leaves your device and can only be decrypted by the intended recipient. In period tracking, where you are usually the only recipient, E2EE is meaningful, but it is not the same as zero-knowledge. A server can hold E2EE data, and courts can compel companies to attempt decryption."
+definitions:
+  - term: "End-to-end encryption (E2EE)"
+    definition: "A method of data transmission where data is encrypted on the sender's device and can only be decrypted by the recipient's device. No intermediate party, including the service provider, can read the data in transit. In period tracking, this typically means data is encrypted on your phone before any transmission occurs."
+  - term: "Server-side encryption"
+    definition: "Encryption applied to data after it reaches the company's servers. The company encrypts the stored data, but they hold the encryption keys. This protects against some types of breaches but does not prevent the company from accessing your data or producing it in response to legal demands."
+  - term: "Zero-knowledge architecture"
+    definition: "A system design where the service provider has no ability to access user data, because they never receive it in decryptable form, or do not receive it at all. True zero-knowledge means the company cannot comply with a court order to produce your data because they cannot decrypt it. On-device-only storage is the strongest form of this."
+tableData:
+  name: "Encryption Approach Comparison for Period Trackers"
+  description: "What each encryption method protects, who holds the keys, and what a subpoena can compel"
+  columns: ["Encryption Type", "Where Data Lives", "Who Holds Keys", "Company Can Read", "Subpoena Yields", "Example"]
+  rows:
+    - ["In-transit only (SSL/TLS)", "Company servers (unencrypted at rest)", "Company", "Yes", "Full readable data", "Standard web apps"]
+    - ["Server-side (at-rest)", "Company servers (encrypted)", "Company", "Yes", "Full readable data", "Most cloud apps"]
+    - ["End-to-end encrypted", "Company servers (encrypted)", "User only", "No", "Encrypted blob only", "Apple Health iCloud"]
+    - ["On-device (no transmission)", "User's device only", "N/A, no server", "No", "Nothing (no readable central copy)", "Floriva, Drip, Euki"]
+answers:
+  - q: "Does Clue use end-to-end encryption?"
+    a: "Clue uses encryption for data in transit and at rest, but does not describe its architecture as zero-knowledge. Clue stores data on its servers and can access it to provide its service. As a GDPR-regulated company, Clue has significant legal obligations around data handling, but E2EE in the technical sense, where Clue's servers cannot read your data, does not appear to be part of its described architecture."
+  - q: "What is the difference between E2EE and encrypted storage?"
+    a: "Encrypted storage (often called server-side or at-rest encryption) protects data that is stored on the company's servers from some types of unauthorized access. The company holds the keys and can read the data. E2EE means the data is encrypted with keys the company does not hold, so even if they wanted to read it, they could not. The practical difference: with server-side encryption, a court order to a company can produce your data. With true E2EE, the company has less company-held data to produce."
+  - q: "Is E2EE enough to protect period data?"
+    a: "E2EE is a meaningful privacy improvement over no encryption or server-side-only encryption. It protects data from being read by employees or during certain types of breaches. Whether it is enough depends on your threat model. If your primary concern is advertising use or data brokers, E2EE with a privacy-respecting company may be sufficient. If your concern includes legal compulsion or jurisdiction risk, on-device storage with no server component provides stronger protection."
+faqs:
+  - q: "Can an encrypted period tracker be subpoenaed?"
+    a: "Yes, if data exists on company servers, even in encrypted form. Courts can compel companies to produce data. If the company holds the decryption keys, they may be compelled to decrypt and produce it. If the company truly does not hold keys (a rare, genuinely zero-knowledge design), they cannot produce decrypted data, but they can be ordered to produce the encrypted data, which a well-resourced party may attempt to crack."
+  - q: "How can I tell if an app uses E2EE vs. server-side encryption?"
+    a: "Look for specific technical language in the privacy policy or security documentation. Server-side encryption is often described as 'data encrypted at rest.' E2EE is usually explicitly labeled as 'end-to-end encryption.' A key test: does the company have a password recovery option If they can reset your password, they have some form of key access, which suggests their encryption is not fully E2EE."
+  - q: "Is open-source code necessary to verify E2EE claims?"
+    a: "Not strictly necessary, but very useful. Closed-source apps can claim E2EE without independent verification. Open-source code allows security researchers to review the implementation and confirm that the encryption is applied correctly and that no backdoors exist. For apps making strong privacy claims, open-source code is the best available form of verification."
+relatedPages:
+  - /resources/best/best-private-period-tracker-apps
+  - /resources/best/best-period-tracker-apps-no-data-selling
+  - /resources/guides/what-is-zero-knowledge-period-tracker
+  - /resources/guides/on-device-storage-period-tracker
+  - /compare/alternatives/euki-app-alternative
+  - /resources/guides/open-source-period-tracker-explained
+---
+
+## The Difference That Matters
+
+Encryption is not a single thing. Period tracker companies use the word in ways that describe very different levels of protection:
+
+### In-transit encryption
+
+Data is scrambled as it travels between your phone and the company's servers. Standard practice, almost all apps do this. Protects against network interception but not against what happens at the server end.
+
+### Server-side (at-rest) encryption
+
+Data stored on the company's servers is encrypted. The company holds the keys. Protects against some breach scenarios. The company can still read your data.
+
+### End-to-end encryption
+
+Data is encrypted before it leaves your device, using keys the company does not hold. The company receives encrypted data they cannot read. Protects against company-side access and, depending on the legal specifics, against court orders targeting the company.
+
+### On-device storage (no transmission)
+
+Data never leaves your device at all. There is no readable central copy, encrypted or otherwise. Strongest protection.
+
+## Why E2EE Does Not Equal Zero-Knowledge
+
+True E2EE means the company cannot read your data. But the data still exists on their servers, encrypted. A court order can compel them to produce it, encrypted. A sufficiently resourced party may attempt to break the encryption. The company may be required to change their software to undermine future E2EE. (Courts have attempted this in other contexts, though outcomes vary.)
+
+Zero-knowledge means the company has less company-held data to produce. On-device-only storage is the practical implementation of this for period tracking: no server, no encrypted blob, no legal lever against the company.
+
+## How to Evaluate an App's Claims
+
+When an app says "your data is encrypted," ask:
+
+1. Encrypted where: in transit only, on their servers, or from your device using keys they do not hold?
+2. Who holds the encryption keys?
+3. Can company employees access your data? (If customer support can view your cycle data to help you, they hold access.)
+4. Is the code open source for verification?
+
+The answers to these questions distinguish meaningful E2EE from marketing language that sounds similar but provides much weaker protection.

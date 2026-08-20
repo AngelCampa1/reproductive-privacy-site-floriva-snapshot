@@ -1,0 +1,109 @@
+# Floriva
+
+> Floriva is a privacy-first period tracker and research property for people comparing cloud-first period apps, reproductive-data privacy risks, and local-first alternatives. The site is organized around three user intents: compare trackers, understand the legal and technical framing, and map reproductive-data risk by state.
+
+Site: https://floriva.app
+Sitemap: https://floriva.app/sitemap.xml
+Structured knowledge (JSON): https://floriva.app/public-knowledge.json
+
+Core positioning:
+- Local-first architecture - core cycle data is stored on the user's device, not in a readable Floriva server database.
+- Public claims cite documented privacy failures and source routes rather than unsupported marketing copy.
+- Content pages preserve structured payloads such as relevantLaws, keyFacts, tiers, hiddenCosts, and faqs for E-E-A-T signal.
+
+## Hubs
+
+- [Compare](https://floriva.app/compare): Alternatives, versus pages, and pricing breakdowns for people actively switching trackers.
+- [Resources](https://floriva.app/resources): Guides on architecture, HIPAA gaps, subpoenas, and practical privacy.
+- [Free downloads](https://floriva.app/free): Free resources: data deletion requests, subpoena response, state scorecards.
+- [Period tracker privacy by state](https://floriva.app/period-tracker-privacy): State-by-state reproductive-data risk profiles.
+
+## Alternatives
+
+- [After You Export Your Clue Data: What To Do Next](https://floriva.app/compare/alternatives/clue-data-export-then-what): You have your Clue CSV, but your data is still on their servers. Delete the account, file a GDPR request, and move to an on-device tracker.
+- [Clue Alternative: Period Trackers Without Cloud Storage](https://floriva.app/compare/alternatives/clue-alternative-no-cloud): Clue stores cycle data server-side. If you want a tracker that keeps everything on-device with no mandatory account, here are the alternatives.
+- [Cycles Period Tracker Alternative: Private Period Trackers That Keep Data on Your Device](https://floriva.app/compare/alternatives/cycles-app-alternative): Looking for a Cycles period tracker alternative? Cycles shares your cycle data with a partner via company servers. Here's the privacy cost of couple-sharing and which trackers keep data on your device.
+
+## App Guides
+
+- [Floriva Features That Matter for Endometriosis Patients](https://floriva.app/app-guides/floriva-features-endometriosis): How Floriva's symptom logging and pain tracking support endometriosis patients who need detailed records without putting data on a server.
+- [Floriva for Perimenopause: What to Track](https://floriva.app/app-guides/floriva-for-perimenopause): How to use Floriva's on-device symptom and cycle logging to make sense of perimenopause irregularity without putting sensitive health data on a server.
+- [Floriva for Postpartum Recovery: Track Your Period's Return](https://floriva.app/app-guides/floriva-for-postpartum-recovery): How to track lochia, postpartum bleeding, and your period's return in Floriva, and why on-device storage matters for postpartum health data.
+
+## Head-to-Head Comparisons
+
+- [Best Period Tracker After the Flo Settlement: 4 Alternatives Compared](https://floriva.app/compare/versus/best-period-tracker-after-flo-settlement): After Flo's $59.5M class action settlement, here are the best period tracker alternatives compared. Floriva, Euki, Drip, and Clue evaluated on privacy, features, and data architecture.
+- [Best Period Tracker Apps for Fertility Awareness Method (FAM): Ranked 2026](https://floriva.app/compare/versus/fertility-awareness-method-apps-ranked): FAM requires BBT charting, cervical mucus logging, and rules-based fertility interpretation. Here's how Kindara, Natural Cycles, Read Your Body, Clue, and Floriva compare for FAM practitioners.
+- [Best Period Tracker for PCOS: Feature Comparison 2026](https://floriva.app/compare/versus/best-period-tracker-pcos-comparison): PCOS requires period apps that handle irregular cycles, support ovulation detection for variable timing, and track androgen symptoms. Here's how top apps compare on PCOS-specific features.
+
+## Condition Guides
+
+- [Anovulatory Cycle: Causes, Symptoms, and How to Identify One](https://floriva.app/resources/condition-guides/anovulatory-cycle-what-it-means): An anovulatory cycle occurs when no egg is released, causing irregular bleeding and fertility impact. Learn the signs and how to identify one at home.
+- [Endometriosis and Fertility Treatment: What Data to Track](https://floriva.app/resources/condition-guides/endometriosis-fertility-treatment): Endometriosis affects fertility through several mechanisms. Here's what cycle and symptom data to track before, during, and between fertility treatments.
+- [Endometriosis and HRT After Menopause: What to Track](https://floriva.app/resources/condition-guides/endometriosis-hrt-menopause): Endometriosis does not always resolve at menopause. HRT can reactivate it, and the formulation matters. Tracking symptoms helps detect problems early.
+
+## Guides
+
+- [Are Period Tracker Apps Covered by HIPAA](https://floriva.app/resources/guides/period-tracker-hipaa): Most period tracker apps are not covered by HIPAA. Explains which law governs consumer health apps, what the gap means, and what the FTC can do.
+- [Can Health Insurers Access Your Period Tracker Data?](https://floriva.app/resources/guides/insurance-reproductive-data): Health insurers face legal restrictions on using period tracker data for coverage decisions, but data flows between wellness programs, data brokers, and insurance analytics create risks that current law does not fully address.
+- [Can Police Access Your Period Tracker Data](https://floriva.app/resources/guides/can-police-access-period-tracker-data): In states with abortion bans, police can subpoena period tracker data from cloud apps. Device-first apps reduce what a company can produce.
+
+## Hormone Guides
+
+- [Cortisol and the Menstrual Cycle: How Stress Disrupts Your Hormones](https://floriva.app/resources/hormone-guides/cortisol-and-menstrual-cycle): Chronic cortisol elevation suppresses the HPG axis, disrupts ovulation, and shortens the luteal phase. Here's the mechanism and what cycle tracking reveals about stress-hormone disruption.
+- [Estrogen and Mood: How Hormones Shape Mental State Through Your Cycle](https://floriva.app/resources/hormone-guides/estrogen-and-mood-cycle): Estrogen amplifies serotonin and dopamine signaling. Understanding how it rises and falls explains why mood changes across the menstrual cycle are physiological, not just psychological.
+- [Estrogen Dominance Diet: Foods That Support Hormone Clearance](https://floriva.app/resources/hormone-guides/estrogen-dominance-diet): The estrogen dominance diet focuses on foods that support liver estrogen metabolism and gut excretion: cruciferous vegetables, fiber, omega-3s, and reduced alcohol.
+
+## Free Resources
+
+- [Adenomyosis Tracking Kit](https://floriva.app/free/adenomyosis-tracking-kit): A full adenomyosis tracking kit for belly pressure, bleeding and clots, pain flares, symptom checks, imaging visits, treatment questions, and telling adenomyosis apart from endometriosis or fibroids.
+- [Cycle Length and Period Calculator Kit](https://floriva.app/free/cycle-length-calculator-kit): A plain kit for counting cycle days, finding your cycle length range, estimating your next period date, and planning supplies without exact-date promises.
+- [First Period Starter Kit](https://floriva.app/free/first-period-starter-kit): A full first period starter kit: body sign notes, a school kit checklist, an emergency bag plan, a parent conversation script, a six-cycle tracking sheet, an app boundary script, and a teen tracker setup card.
+
+## Life Stage Guides
+
+- [Birth Control and Period Changes: What Each Type Does](https://floriva.app/resources/life-stage-guides/birth-control-period-changes): Every hormonal contraceptive changes your period differently. Learn what to expect from the pill, patch, IUD, implant, and injectable, and what to flag.
+- [Birth Control Implant Bleeding Log](https://floriva.app/resources/life-stage-guides/birth-control-implant-bleeding-log): A practical log for tracking spotting, bleeding days, flow changes, symptoms, and clinician questions while using the birth control implant.
+- [Breastfeeding and Your Period: When It Returns](https://floriva.app/resources/life-stage-guides/breastfeeding-and-periods): Breastfeeding suppresses ovulation but not reliably. Learn when to expect your period back after nursing, why ovulation returns first, and what to track.
+
+## Ranked Lists
+
+- [5 Best Period Tracker Apps for Endometriosis (Private, 2026)](https://floriva.app/resources/best/best-period-tracker-for-endometriosis): Endometriosis tracking needs detailed pain and symptom logs. We ranked 5 apps on symptom depth, export options, and whether your data stays private.
+- [5 Best Period Tracker Apps for PCOS (Private, 2026)](https://floriva.app/resources/best/best-period-tracker-pcos): PCOS needs years of cycle and BBT history. Flo shared reproductive health data with Facebook before the FTC intervened. We ranked 5 apps for PCOS, two with on-device storage.
+- [5 Free Period Trackers That Don't Sell Your Data (2026)](https://floriva.app/resources/best/best-free-period-tracker-no-subscription): Flo paid $59.5M for sharing cycle data with Facebook. We ranked 5 free trackers with no subscription and no account. Two store data on-device only.
+
+## Pricing Breakdowns
+
+- [Clue Plus Pricing: What $9.99/mo Gets You](https://floriva.app/compare/pricing/clue-plus-pricing-vs-privacy-cost): Clue Plus costs $9.99/mo, one of the pricier period tracker subscriptions. Here is what the price includes, the privacy trade-offs, and how it compares.
+- [Drip Period App Cost: Free and Open Source, But Android Only](https://floriva.app/compare/pricing/drip-period-app-cost): Drip is free, open-source, and on-device for Android. We cover what 'free and open source' means in practice, the iOS gap, and how Floriva compares.
+- [Euki App Cost: Is Free Really Free for Privacy](https://floriva.app/compare/pricing/euki-app-cost): Euki is free with strong on-device privacy. We cover what the $0 price means in practice, the funding model risk, and what Floriva adds.
+
+## Privacy in Practice
+
+- [How to Export Your Period Tracker Data](https://floriva.app/resources/privacy-in-practice/period-tracker-data-portability-export): Most period trackers let you export your data. Here's what the export actually contains, how to use it, and what changes when you switch apps.
+- [Lock Down Period Data on Your Phone](https://floriva.app/resources/privacy-in-practice/lock-down-period-data-on-your-phone): One checklist for iPhone and Android. Find every copy of your cycle data, cut app permissions, hide alerts, and fix backups and shared accounts.
+- [Partner Access to Your Period Data: How It Works in Each App](https://floriva.app/resources/privacy-in-practice/partner-access-period-tracker-data): Period tracker partner sharing features vary. Some give read-only access; others let a partner modify data. Here's what each major app actually does.
+
+## Quizzes & self-checks
+
+- [Cloud or Local Period Tracker Quiz](https://floriva.app/tools/quiz/cloud-or-local-period-tracker-quiz): Answer this quiz to decide whether cloud sync or local storage is a better fit for your period tracking data.
+- [Cloud vs. Local Storage: Where Should Your Cycle Data Live?](https://floriva.app/tools/quiz/cloud-vs-local-storage-quiz): Assess whether cloud-synced or on-device storage is the right fit for your period tracking based on your privacy needs, device habits, and risk tolerance.
+- [Cycle Tracking Method Finder](https://floriva.app/tools/quiz/cycle-tracking-method-finder): Match your lifestyle, goals, and tolerance for daily logging to the right cycle tracking method -- from simple calendar counting to full sympto-thermal charting.
+
+## Privacy by State
+
+- [Alabama Period Tracker Privacy Laws (2026)](https://floriva.app/period-tracker-privacy/reproductive-data-privacy-laws-alabama): Alabama bans abortion and has no reproductive data privacy law. Period tracker data can be subpoenaed. Here's what Alabama users should know.
+- [Alaska Period Tracker Privacy Laws (2026)](https://floriva.app/period-tracker-privacy/reproductive-data-privacy-laws-alaska): Alaska has strong reproductive privacy protections. But period tracker data still has gaps. Full 2026 legal breakdown.
+- [Arizona Period Tracker Privacy Laws (2026)](https://floriva.app/period-tracker-privacy/reproductive-data-privacy-laws-arizona): Arizona's data protections leave gaps for period tracker privacy. Here's the 2026 legal status and what it means for your cycle data.
+
+## Symptom Guides
+
+- [Basal Body Temperature Throughout the Menstrual Cycle: What to Expect](https://floriva.app/resources/symptom-guides/basal-body-temperature-during-cycle): Basal body temperature rises 0.2-0.5°C after ovulation due to progesterone. It confirms ovulation happened, it doesn't predict it. Here's how to track it correctly.
+- [Bleeding After Sex Without Pain: What to Track](https://floriva.app/resources/symptom-guides/bleeding-after-sex-no-pain): Painless bleeding after sex can have several causes. Recurring bleeding is worth a pelvic exam and clear notes.
+- [Bleeding Between Periods: What Causes It and How to Track It](https://floriva.app/resources/symptom-guides/bleeding-between-periods): Intermenstrual bleeding has distinct causes by timing and appearance. Learn to identify the pattern and when to seek clinical evaluation.
+
+## Wellness Guides
+
+- [Adenomyosis Diet: Foods That Help and Foods That Make It Worse](https://floriva.app/resources/wellness-guides/adenomyosis-diet-food-guide): An adenomyosis diet guide - anti-inflammatory eating, estrogen-clearing foods, alcohol reduction, and what the limited evidence says about managing adenomyosis through diet.
+- [Anti-Inflammatory Diet for Periods: How Food Affects Cycle Pain and Hormones](https://floriva.app/resources/wellness-guides/anti-inflammatory-diet-for-periods): An anti-inflammatory diet for periods targets prostaglandin production - the mechanism behind cramping and heavy bleeding. Here's what to eat, what to reduce, and the evidence behind each recommendation.
+- [Cycle Syncing Food Chart: What to Eat in Each Phase](https://floriva.app/resources/wellness-guides/cycle-syncing-food-chart): A practical cycle syncing food chart by menstrual phase - what foods support each hormonal environment, with the evidence behind each recommendation.

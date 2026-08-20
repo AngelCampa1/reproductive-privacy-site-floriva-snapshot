@@ -1,0 +1,302 @@
+---
+title: "Who Can Legally Get Your Period Data"
+description: "Police, courts, ex-partners, employers, insurers, data brokers, and border agents. What each one can actually reach, and what stops them."
+publishedAt: "2026-07-31"
+updatedAt: "2026-07-31"
+buyerStage: "mofu"
+targetPersona:
+  - "privacy-conscious-user"
+  - "post-roe-tracker"
+tags:
+  - privacy
+  - legal
+  - law enforcement
+  - data brokers
+  - safety
+schema: "Article"
+bluf: "A subpoena, a divorce lawyer, an insurer, and a data broker all reach your cycle data by different routes. But they share one bottleneck. They can only get what somebody stores. If a company keeps your logs on its servers, a valid legal order gets them. If the company keeps nothing, there is nothing to hand over."
+answers:
+  - q: "Can police get my period tracker data?"
+    a: "They can ask a company for it through a subpoena, a court order, or a search warrant. Each has a different legal standard. What the company can hand over depends on what it stores. A company that keeps cycle logs on its servers can produce them. A company that keeps nothing on its servers has no health data to produce."
+  - q: "Does HIPAA protect my period app?"
+    a: "Usually no. HIPAA covers health plans, health care clearinghouses, and health care providers that send health data electronically for covered transactions. It also covers their business associates. Most period tracker companies are consumer tech companies, so HIPAA does not apply to them."
+  - q: "Can my ex get my period data in a divorce?"
+    a: "Through the discovery process, an attorney can ask you to produce records, or can subpoena the app company directly if the company stores your data. Courts can limit how the data is used through a protective order. Ask your attorney about one early."
+faqs:
+  - q: "Can my employer log into my period app?"
+    a: "No. There is no mechanism that gives an employer your personal app account. The realistic paths are indirect: an employer wellness platform you signed up for, claims data if your employer self-insures, or commercial data brokers."
+  - q: "Can a health insurer raise my premium over cycle data?"
+    a: "For ACA-compliant health plans, medical underwriting based on health status is prohibited. Life, disability, and long-term care insurance are different. Those are medically underwritten, and health information can factor into their decisions."
+  - q: "Does a private app stop a warrant?"
+    a: "No. It changes who has to be asked. Data on a company's server can often be reached with a subpoena served on the company. Data on your device generally needs a search warrant, which requires probable cause, and device encryption adds a practical barrier."
+  - q: "Is this legal advice?"
+    a: "No. Legal process and reproductive health law vary by place and are changing. Talk to an attorney in your jurisdiction about your own situation."
+definitions:
+  - term: "Subpoena"
+    definition: "A legal order to produce documents or records. The legal standard is relevance to an investigation, which is lower than probable cause."
+  - term: "Court order"
+    definition: "A directive from a judge. It carries more authority than a subpoena and can compel broader production."
+  - term: "Search warrant"
+    definition: "Issued by a judge on a finding of probable cause. It authorizes a search and seizure, including digital records."
+  - term: "Discovery"
+    definition: "The civil court process where each side can request relevant documents from the other, and where outside parties can be subpoenaed for records."
+  - term: "Protective order"
+    definition: "A court order limiting how produced data can be viewed, copied, filed, or used."
+  - term: "Data broker"
+    definition: "A company that buys, combines, and sells information about people, often sorted into interest or behavior segments."
+relatedPages:
+  - /resources/privacy-in-practice/lock-down-period-data-on-your-phone
+  - /resources/privacy-in-practice/your-medical-records-and-period-data
+  - /resources/privacy-in-practice/period-tracker-immigration-risk
+  - /resources/privacy-in-practice/partner-access-period-tracker-data
+  - /resources/privacy-in-practice/period-tracker-data-portability-export
+  - /resources/privacy-in-practice/reset-ad-id-after-period-apps
+sources:
+  - id: "ftc-flo-2021"
+    claim: "The FTC alleged that Flo shared users' health data with Facebook, Google, and analytics providers after telling users it would keep that data private."
+    url: "https://www.ftc.gov/news-events/news/press-releases/2021/01/developer-popular-womens-fertility-tracking-app-settles-ftc-allegations-it-misled-consumers-about"
+    publisher: "Federal Trade Commission"
+    publishedAt: "2021-01-13"
+    accessedAt: "2026-07-31"
+    primary: true
+  - id: "ftc-mobile-health-app-best-practices-2026"
+    claim: "The FTC says mobile health app developers should limit data collection, protect data, and be clear about privacy and security practices."
+    url: "https://www.ftc.gov/business-guidance/resources/mobile-health-app-developers-ftc-best-practices"
+    publisher: "Federal Trade Commission"
+    accessedAt: "2026-07-31"
+    primary: true
+  - id: "hhs-health-apps-context-2026"
+    claim: "HHS says mobile health apps may be subject to different laws depending on what the app does and who offers it."
+    url: "https://www.hhs.gov/hipaa/for-professionals/special-topics/health-apps/index.html"
+    publisher: "U.S. Department of Health and Human Services"
+    accessedAt: "2026-07-31"
+    primary: true
+  - id: "hhs-hipaa-privacy-rule-2026"
+    claim: "HHS says the HIPAA Privacy Rule applies to health plans, health care clearinghouses, and certain health care providers that transmit health information electronically for covered transactions."
+    url: "https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html"
+    publisher: "U.S. Department of Health and Human Services"
+    accessedAt: "2026-07-31"
+    primary: true
+  - id: "hhs-hipaa-consumer-rights-2026"
+    claim: "HHS says HIPAA applies to covered entities and business associates, and many organizations with health information do not have to follow HIPAA privacy and security rules."
+    url: "https://www.hhs.gov/hipaa/for-individuals/guidance-materials-for-consumers/index.html"
+    publisher: "U.S. Department of Health and Human Services"
+    publishedAt: "2025-05-30"
+    accessedAt: "2026-07-31"
+    primary: true
+  - id: "hotline-tech-safety-2026"
+    claim: "The National Domestic Violence Hotline warns that devices and accounts can be monitored and urges people to use a safer device when seeking help."
+    url: "https://www.thehotline.org/plan-for-safety/internet-safety/"
+    publisher: "National Domestic Violence Hotline"
+    accessedAt: "2026-07-31"
+    primary: false
+  - id: "nnedv-safety-net-2026"
+    claim: "NNEDV's Safety Net project offers survivor resources for safer technology use and digital safety planning."
+    url: "https://www.techsafety.org/resources-survivors"
+    publisher: "NNEDV Safety Net"
+    accessedAt: "2026-07-31"
+    primary: false
+  - id: "cdc-travelers-health-2026"
+    claim: "CDC Travelers' Health gives destination and travel prep information for people planning trips."
+    url: "https://wwwnc.cdc.gov/travel"
+    publisher: "Centers for Disease Control and Prevention"
+    accessedAt: "2026-07-31"
+    primary: true
+---
+
+People worry about the wrong step. They ask whether an app company would hand over their data. That is rarely the question.
+
+The question is whether the data exists on somebody's server. If it does, a valid legal order reaches it. A privacy policy does not override a court order. Marketing language does not either.
+
+Below, each group that might come looking: the route it uses, and what actually stops it.
+
+None of this is legal advice. Law varies by place and keeps changing. If you have a real legal question, talk to an attorney where you live.
+
+## First, the rule that decides everything
+
+Most people assume medical privacy law covers their period app. It usually does not.
+
+HHS says the HIPAA Privacy Rule applies to health plans and health care clearinghouses. It also applies to certain health care providers. Those are the ones that send health information electronically for covered transactions. Their business associates are covered too. HHS then says something plainer. Many organizations holding health information do not have to follow HIPAA rules at all.
+
+Most period tracker companies are consumer tech companies. They are not providers. They do not bill insurance. So your notes at your gynecologist's office are covered. Your account with a consumer app is not.
+
+What governs that account instead:
+
+- The app's privacy policy, which is a contract the company can change.
+- The FTC Act, which bars deceptive practices. That is how the FTC acted against Flo. The FTC alleged Flo shared users' health data with Facebook, Google, and analytics providers, despite privacy promises.
+- State consumer privacy laws, where they apply.
+- Any state health data law that covers consumer apps.
+
+HHS also notes that which laws apply to a health app depends on what the app does and who offers it. So "it's a health app" tells you nothing on its own.
+
+## Police and prosecutors
+
+Law enforcement uses three main tools, and they are not interchangeable.
+
+| Tool | What it takes | What it reaches |
+|---|---|---|
+| Subpoena | Relevance to an investigation | Company records, often account and log data |
+| Court order | A judge finds the data relevant and material | Broader production than a subpoena |
+| Search warrant | Probable cause, found by a judge | The most, including a physical device |
+
+For records held by a company, the Stored Communications Act sets out how these work. A court order can compel non-content records. Those include registration details, connection logs, and IP addresses. It takes a showing of specific and articulable facts. That is a lower bar than probable cause. For content, a warrant is typically required.
+
+A request to an app company usually names one user and asks for:
+
+- **Account information.** Name, email, phone number, date of birth, billing details.
+- **Cycle data.** Period start and end dates, cycle lengths, ovulation predictions, fertile window calculations.
+- **Symptom logs.** Pain scores, mood entries, sexual activity records, temperature readings.
+- **Pregnancy entries.** Pregnancy mode dates, test result entries, due dates, loss logging.
+- **Usage metadata.** Login IP addresses, device identifiers, timestamps, app version.
+- **Free text.** Anything you typed into a notes field.
+
+A company can fight an order. It can file a motion to quash and argue the request is too broad. But a properly scoped order for one user over one date range will usually be filled.
+
+Two legal ideas matter here. Under the third-party doctrine, drawn from Smith v. Maryland in 1979, information you hand to a third party gets less Fourth Amendment protection. Carpenter v. United States in 2018 carved out cell site location data and required a warrant, because of how full a picture that data paints. Whether the same reasoning covers period tracking data, which also builds a full picture of a person, has not been settled.
+
+This is not hypothetical. In 2022, Nebraska law enforcement investigated a teenager and her mother over a medication abortion. Investigators obtained Facebook message records by subpoenaing Meta. Meta complied.
+
+State health privacy laws help some. Washington's My Health My Data Act and California's rules place obligations on companies. They are state civil laws. They do not remove federal criminal process.
+
+**What changes the outcome.** If the company holds nothing, the order returns nothing. Not out of defiance. There are simply no responsive records. Data on your own phone generally requires a warrant instead, and device encryption adds a real barrier.
+
+| Where the data is | Reachable by subpoena to a company | Reachable by warrant for the device |
+|---|---|---|
+| Company servers | Yes | Not applicable |
+| Your encrypted phone | No | Yes, with the warrant plus your passcode or key |
+| Phone backup in iCloud or Google | Yes, that backup sits on a company's servers | Yes, with the warrant |
+| Encrypted backup drive | No | Yes, with the warrant plus the device plus the passphrase |
+| Paper | No | Yes, with the warrant plus physical access |
+
+## Divorce, custody, and civil court
+
+Civil cases use a different process with a lower bar than criminal work.
+
+Discovery lets each side request relevant documents from the other, and lets either side subpoena outside parties. That creates two routes to your cycle data.
+
+**Route one: they ask you.** Your spouse's attorney serves a request for production. You are asked to produce exports, screenshots, or app records yourself.
+
+**Route two: they ask the company.** If the app stores your data on its servers, the attorney can subpoena the company directly. That route goes around you entirely.
+
+What attorneys tend to ask for in these cases:
+
+- Cycle dates, missed period entries, pregnancy mode activation, and test results.
+- Sexual activity logs and contraceptive entries.
+- Mood and symptom entries, which can be turned into arguments about fitness in a custody dispute.
+- Notes and free text, which are discoverable like anything else.
+
+You have some protection available. Ask your attorney about a protective order early. Common terms include:
+
+- **Attorneys' eyes only.** Only counsel sees the produced data, not the parties.
+- **Sealing.** Filings containing the data stay out of the public record.
+- **Limited use.** The data is used only for the issue it was requested for.
+- **No copying or sharing.** Recipients cannot photograph or pass along the material.
+
+If a case has already started, do not delete anything. Talk to your lawyer first. You likely have a duty to keep records. Deleting after you learn of a case can count as spoliation. That is the legal word for destroying evidence.
+
+One note on clinic records. Fertility clinic records are protected by medical privacy law. HIPAA still allows disclosure to law enforcement with a court order. App data on a company server usually is not protected the same way, because the company is not a covered entity.
+
+## Employers
+
+Start with what is not true. An employer cannot log into your period app. There is no mechanism for that.
+
+There are three indirect paths.
+
+**Employer wellness platforms.** Some benefits packages include cycle or fertility tracking. Ask one question. Does the service share individual data with your employer, or only totals? Good ones run a firewall. The employer sees how many people used a benefit, not who or what they logged. Read the service's own policy rather than assuming.
+
+**Self-insured plans.** Some employers pay claims directly instead of buying a group policy. Those employers can reach claims data through their third-party administrator. Claims carry procedure and diagnosis codes for every visit on that plan. HIPAA has a firewall rule meant to keep claims data away from the employment side. That is a paperwork control, not a technical one. Exposure in smaller self-insured pools is a known problem.
+
+**Data brokers.** Covered in the next section.
+
+Using reproductive health status in employment decisions is illegal under federal law, through the Pregnancy Discrimination Act, and in most states. Enforcement still requires the employee to know the data was used, which is very hard to prove.
+
+## Insurers
+
+Split this by product, because the rules differ.
+
+**ACA-compliant health insurance.** Medical underwriting based on health status is prohibited. Insurers in the individual and small group markets cannot deny coverage or charge more for pre-existing conditions, including pregnancy.
+
+**Plans the ACA does not cover.** Short-term health plans do not follow those rules. They can charge you more if you are sick. They can also turn you down. Health sharing ministries are not insurance. Those rules do not reach them either. If you have one of these plans, the protection above does not apply.
+
+**Life, disability, and long-term care insurance.** These are not covered by that prohibition. They are medically underwritten, and health information does factor into decisions. Conditions logged in a tracker, such as PCOS, endometriosis, or PMDD, are the kind of thing an underwriter would weigh.
+
+The realistic path from your app to an insurer is not a direct sale. It runs through brokers, described next.
+
+## Data brokers
+
+Health data reaches brokers through several doors at once:
+
+- **Advertising and analytics kits inside apps.** When an app embeds an advertising or analytics kit, that kit sends usage signals to the network: app opens, screen views, feature use.
+- **Purchases.** Buying pregnancy tests, prenatal vitamins, or fertility supplements at a retailer that shares purchase data creates a record.
+- **Browsing.** Reading about symptoms, or visiting a clinic website, gets tracked by advertising cookies and sold on.
+- **Install signals.** Ad networks can detect that you installed a period app. That happens at the device level, even when the app itself shares nothing.
+
+Brokers sort people into segments. Reproductive-health-adjacent segments that have been documented include expectant parent, new parent, fertility, prenatal vitamin purchaser, and baby product shopper.
+
+You can chip away at this. It is slow, and it is never complete.
+
+- **Acxiom, now LiveRamp.** View and edit your profile through its consumer portal.
+- **Oracle Data Cloud.** Submit a data access request through Oracle's privacy portal.
+- **LexisNexis.** Request your consumer disclosure report.
+- **Experian consumer services.** Request your marketing profile through its privacy portal.
+- **Permission Slip from Consumer Reports.** A free tool that sends access and deletion requests to major brokers for you.
+- **DeleteMe, Privacy Duck, Kanary.** Paid services that keep sending opt-out requests. Coverage differs between them.
+
+Also check people-search sites separately. Spokeo, BeenVerified, WhitePages, and PeopleFinder each run their own opt-out.
+
+Law enforcement agencies have bought broker databases to look into people without a warrant. The FTC has taken action against brokers selling sensitive location data. The practice has not stopped.
+
+## Stalking, abuse, and shared accounts
+
+This section is different from the rest. The others are about legal process. This one is about someone who is already close to you.
+
+Common access routes:
+
+- The account was created with their email, or under their name.
+- You share an Apple Account or Google account, or you are on their family plan.
+- They know the password from when the relationship was fine.
+- They watched you type it.
+- Push alerts appear on a lock screen they can see.
+- The app syncs to a tablet or watch they can reach.
+- Credentials from an unrelated breach were reused and tried against this account.
+
+Someone with account access can see a lot. Current predictions. Your full cycle history. Logged symptoms, and sexual activity if you log it. Fertile window predictions. Anything you typed. Cycle history also shows routine and schedule. That matters in a stalking case.
+
+If this is your situation, change the order of operations. The National Domestic Violence Hotline warns that devices and accounts can be monitored. It advises using a safer device when you look for help. NNEDV's Safety Net project publishes survivor resources on safer technology use and digital safety planning.
+
+Do not start by changing settings on a monitored phone. A sudden change can tip someone off. Talk to an advocate first and plan the order of steps together. Safety comes before tidiness.
+
+## Travel and borders
+
+Border inspection of electronic devices is allowed in many countries, including the United States. US Customs and Border Protection can search devices at entry points without a warrant.
+
+Routine travelers are not having period apps inspected. The risk is real for a narrower set of situations. Travel to places actively enforcing laws against reproductive health care. Travel where gender or sexuality is politically charged. Or return travel, if you fall into a profile that gets attention.
+
+Practical steps before a trip like that:
+
+- Decide what needs to be on the device you carry.
+- Export and store what you want to keep, somewhere the device does not reach.
+- Sign out of accounts you do not need on the trip.
+- Turn off lock screen previews.
+
+CDC Travelers' Health has destination and preparation information worth checking as part of the same planning.
+
+## The part you can control
+
+You cannot change the legal process. You can change what exists to collect.
+
+**Know where your data lives.** Does the app require an account? Does it keep cycle data on company servers? Does it publish anything about legal requests it receives?
+
+**Log with intent.** Free text, pregnancy test entries, and detailed symptom notes each become a record. That happens once they sit on a company server. Decide what you actually need to keep there.
+
+**Move sensitive detail off the server.** The FTC tells health app developers to limit collection and be clear about it. You can apply the same rule to yourself. Track the pattern in an app. Keep the rest somewhere narrower.
+
+**Do not delete data once a case starts.** You may have a duty to keep records. Lawyers call that a preservation duty. If you know a legal case is coming, deleting records can count as spoliation. That is the legal word for destroying evidence. Ask your lawyer what you must keep. Do that before you remove anything.
+
+**Get real advice for a real problem.** If you are facing a subpoena, a custody case, or a safety situation, this page is not enough. Talk to an attorney or an advocate.
+
+## What Floriva changes
+
+Floriva is designed so that a request to the company does not return your cycle history. Basic tracking works without a cloud account, and the data stays on your device.
+
+That is one lever, not a shield. Your phone, your backups, your photos, and your shared accounts still matter. Read [how our data handling works](/privacy-features), then work through [locking down period data on your phone](/resources/privacy-in-practice/lock-down-period-data-on-your-phone).

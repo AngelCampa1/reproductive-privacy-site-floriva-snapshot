@@ -1,0 +1,120 @@
+---
+title: "How to Export Your Period Tracker Data"
+description: "Most period trackers let you export your data. Here's what the export actually contains, how to use it, and what changes when you switch apps."
+ogImage: "/og/privacy-in-practice/period-tracker-data-portability-export.png"
+tags:
+  - "guide"
+publishedAt: "2026-04-28"
+updatedAt: "2026-04-28"
+buyerStage: "mofu"
+targetPersona:
+  - "flo-refugee"
+  - "privacy-conscious-user"
+bluf: "Period tracker exports are useful for switching apps, sharing data with a doctor, or keeping a personal health archive. What you get varies significantly by app. Some give structured CSV files you can open in a spreadsheet; others give a PDF summary that's hard to import anywhere. Knowing what your export contains before you delete an account saves you from losing years of cycle history."
+answers:
+  - q: "Can I export my period data from Flo?"
+    a: "Yes. In Flo: Profile, then Settings, then Privacy, then Export Data. Flo generates a PDF report summarizing your cycle history. The PDF is human-readable but not easily machine-parseable. It's designed for printing or sharing with a doctor, not for importing into another app. If you want your data in a format another app can read, you may need to manually re-enter key dates."
+  - q: "Can I export my data from Clue?"
+    a: "Yes. Clue provides a CSV export accessible through account settings. CSV is a structured format that can be opened in a spreadsheet and in principle imported by other apps (though app-to-app import compatibility varies). Clue's export is more technically useful than Flo's PDF format."
+  - q: "What data is typically included in a period tracker export?"
+    a: "Exports usually include: period start and end dates, cycle lengths, symptom logs by date, notes, and any custom tags you've added. BBT data is included if your app tracks it. What's often excluded or incomplete: predictions and forecasts (these are computed, not stored raw data), partner sharing history, and in-app messaging. Always review the export before deleting your account."
+  - q: "How do I import period tracker data into a new app?"
+    a: "App-to-app import is limited in the period tracking space. Apple Health can act as an intermediary for some apps. If your current app exports to Apple Health and your new app imports from it, you get partial continuity. Floriva imports from Apple Health. Full CSV import from one period tracker to another requires the receiving app to support that format, which most don't. Manual entry of key cycle start dates is the most reliable method for a clean switch."
+faqs:
+  - q: "Will I lose my cycle history if I delete Flo or Clue after exporting?"
+    a: "If you export before deleting, you keep a personal copy. The export file lives wherever you save it: your phone's downloads folder, a computer, a cloud storage service you control. After deletion, the company's server copy is removed (subject to their retention policy). Your personal export file is separate and yours."
+  - q: "How do I back up Floriva data?"
+    a: "Floriva stores data on-device. Back it up the same way you back up your phone: iCloud backup on iOS, Google One or local backup on Android. Because Floriva has no server-side account, there's no separate Floriva cloud backup. Your data is part of your device backup. If you lose your phone without a backup, you lose your Floriva history."
+  - q: "Can I use my exported data as medical documentation?"
+    a: "A CSV or PDF export can be shown to a doctor as supporting information. For formal documentation (insurance appeals, disability claims), data goes through your medical record, where a provider interprets and documents it. An app export can inform that conversation but isn't a substitute for clinical documentation."
+relatedPages:
+  - /resources/guides/on-device-storage-period-tracker
+  - /resources/guides/how-period-tracker-apps-collect-data
+  - /compare/alternatives/flo-app-alternative
+  - /compare/alternatives/clue-alternative-no-cloud
+  - /resources/privacy-in-practice/your-medical-records-and-period-data
+  - /resources/privacy-in-practice/who-can-legally-get-your-period-data
+---
+
+## What a Period Tracker Export Actually Contains
+
+Period tracker exports vary more than you'd expect. Before you trust an export as a complete record of your health history, it's worth knowing what's in it.
+
+**Cycle start and end dates.** This is the core data and every export should include it. The first day of each period, tagged by date. If you can verify this is in your export, you have your fundamental cycle history.
+
+**Cycle length calculations.** Usually derived from the start dates above. May or may not be included as a separate column. If not explicitly included, you can calculate it yourself: count the days from one period start to the next.
+
+**Symptom logs.** Whatever symptoms you tagged on each day, pain levels, mood, energy, physical symptoms, notes. This is where export quality diverges sharply. Flo's PDF export summarizes symptoms without always giving day-by-day granularity. Clue's CSV gives more granular per-day data. Drip's export (open-source app) gives a structured JSON file that's comprehensive.
+
+**Custom notes.** Free-text notes you added. Usually included in exports but may be truncated in summary formats.
+
+**BBT data.** If you logged basal body temperature, this should appear as a date plus temperature value series. This is among the harder data to re-enter manually, so make sure your export includes it if you've been charting.
+
+**What's typically NOT in an export:**
+- Predictions and cycle forecasts (these are computed on the fly, not stored raw)
+- Partner sharing history
+- In-app community or messaging content
+- App-level settings and preferences
+
+## How to Export From Each Major App
+
+**Flo:**
+- Path: Profile, then Settings, then Privacy, then Export Data
+- Format: PDF
+- What you get: A summary document organized by month. Human-readable, suitable for showing a doctor, not easily importable into another app.
+- Limitation: PDF doesn't give you a row-per-day spreadsheet. If you need that format, you'll need to manually extract dates.
+
+**Clue:**
+- Path: Account, then Settings, then Data Export (on iOS: Profile, then Settings, then Export Data)
+- Format: CSV (comma-separated values)
+- What you get: A spreadsheet with date, category, and value columns. Can be opened in Excel, Google Sheets, or Numbers. More technically useful than Flo's export.
+- Note: GDPR gives EU users a legal right to data portability, and Clue's CSV export reflects this.
+
+**Natural Cycles:**
+- Path: Settings, then Privacy, then Download My Data
+- Format: CSV
+- What you get: Cycle data including temperature readings if you've been using a thermometer. Structured format.
+
+**Apple Health:**
+- Path: Health app, then Profile picture, then Export All Health Data
+- Format: XML (a structured data file)
+- What you get: All health data synced to Apple Health, including any cycle data logged directly or synced from an app. XML is parseable with technical tools; less user-friendly than CSV.
+
+**Floriva:**
+- Data is on-device. Back up your phone (iCloud or equivalent) to preserve the data. There is no in-app account export because there's no account. Your device backup is your data backup.
+
+## Using Your Export When Switching Apps
+
+The main reason most people export is switching. Here's the realistic picture of what carries over:
+
+**What usually carries over cleanly:**
+- Period start dates (the most important thing)
+- Cycle lengths (derivable from start dates)
+- This is enough to get accurate cycle predictions in a new app right away
+
+**What usually doesn't transfer automatically:**
+- Symptom logs (different apps use different tagging systems)
+- Custom notes
+- BBT charts
+
+**The practical approach for switching:**
+1. Export before you do anything else
+2. Review the export to confirm your key cycle start dates are there
+3. Identify your most recent 6-12 months of start dates
+4. In your new app, either import via Apple Health (if the app supports it) or manually enter the cycle start dates for that period. That's usually enough to seed accurate predictions.
+5. Keep the full export file somewhere safe (personal computer or a cloud drive you control) as your long-term archive
+
+Don't delete your old account until you've confirmed the data you need is in the export. Account deletion on server-based apps typically triggers a deletion process that takes 30-90 days to complete. Request deletion and keep the app installed (but stop using it) until you confirm your new app has what you need.
+
+## Your Export File Is Sensitive Health Data
+
+This point is easy to overlook: the file you download contains years of reproductive health history. Where you store it matters.
+
+Saving a Flo export PDF to Google Drive moves it from Flo's servers to Google's servers. Emailing it to yourself puts it in your email provider's infrastructure. Storing it on an unencrypted thumb drive creates a physical data vulnerability.
+
+Sensible options:
+- Store on your personal computer in an encrypted folder
+- Use a cloud storage provider with end-to-end encryption (such as Proton Drive)
+- If you need to email it to a doctor, use a secure messaging platform the clinic provides rather than regular email
+
+The export is a record of your reproductive health history. Treat it with the same care you'd give any medical document.

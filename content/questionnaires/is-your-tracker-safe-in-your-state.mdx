@@ -1,0 +1,113 @@
+---
+title: "Is Your Period Tracker Safe in Your State?"
+description: "Assess whether your current period tracking app creates legal exposure based on your state's reproductive health laws and the app's data architecture."
+ogImage: "/og/questionnaires/is-your-tracker-safe-in-your-state.png"
+tags:
+  - "quiz"
+  - "privacy"
+  - "state law"
+publishedAt: "2026-05-01"
+updatedAt: "2026-05-01"
+buyerStage: "mofu"
+targetPersona:
+  - "privacy-seeker"
+  - "flo-refugee"
+schema: "Article"
+bluf: "Your period tracker's risk level depends on two things: where your data is stored and where you live. This assessment helps you evaluate both."
+answers:
+  - q: "Can law enforcement access my period tracker data?"
+    a: "If your app stores data on company servers, that data can be subpoenaed. If your app stores data only on your device, law enforcement would need physical access to your phone."
+faqs:
+  - q: "Has period tracker data ever been used in a legal case?"
+    a: "Search warrant requests for digital health data have increased since Dobbs v. Jackson (2022). The structural risk is well-documented even where specific tracker cases remain limited."
+  - q: "Does deleting the app delete my data?"
+    a: "Not necessarily. If the app stores data on its servers, uninstalling the app does not delete your server-side account. You need to request account deletion separately."
+definitions:
+  - term: "Server-side storage"
+    definition: "Data held on computers operated by the app company, accessible to the company and potentially to anyone who serves the company with a valid legal order."
+  - term: "On-device storage"
+    definition: "Data that exists only on your physical phone. The app company has no copy and cannot produce it in response to legal requests."
+relatedPages:
+  - "/period-tracker-privacy/reproductive-data-privacy-laws-texas"
+  - "/resources/best/best-private-period-tracker-apps"
+  - "/resources/guides/what-is-zero-knowledge-period-tracker"
+  - "/tools/quiz/should-you-switch-period-trackers"
+---
+
+The safety of your period tracker isn't just about the app. It's about the combination of the app's data architecture and the laws in your state. A server-stored tracker that's low-risk in one state creates real legal exposure in another.
+
+This assessment evaluates your specific combination of app and location.
+
+## Question 1: Where Does Your App Store Data?
+
+**Check your app's privacy policy or settings page.**
+
+- **Option A: On the company's servers.** Flo, Clue, Ovia, Glow, and most mainstream apps use server storage. The company has a copy of your data.
+- **Option B: On my device only.** Floriva, Drip, and some smaller apps keep data local. The company never receives it.
+- **Option C: I use cloud sync (iCloud, Google Drive).** Your data exists on Apple's or Google's servers, not the app company's. Different legal pathway, similar exposure.
+- **Option D: I don't know.** Find out before continuing. This is the most important variable.
+
+Server-stored data can be obtained through subpoenas served on the company. On-device data requires a warrant for your specific phone.
+
+## Question 2: Does Your State Restrict Reproductive Healthcare?
+
+**Check [privacy by state](/period-tracker-privacy) for current information on your state.**
+
+- **Option A: Yes, my state has enacted restrictions.** Your data architecture choice has legal consequences. Server-stored cycle data is a discoverable record.
+- **Option B: My state currently protects reproductive rights.** Lower immediate risk, but legal landscapes change. Architecture-level privacy protects against future changes.
+- **Option C: I travel to or through restrictive states.** The relevant jurisdiction may be where you are, not where you live. Location data from your phone can establish your presence.
+- **Option D: I'm outside the US.** GDPR and equivalent frameworks provide legal protections, but server-stored data remains server-stored data.
+
+This assessment avoids naming specific restricted states because the legal situation shifts. Check the [state-by-state guide](/period-tracker-privacy) for current status.
+
+## Question 3: Does Your App Require an Account?
+
+**Did you sign up with an email, phone number, or social login?**
+
+- **Option A: Yes.** Your cycle data is linked to your identity on the company's servers. A subpoena targeting you can request this specific data.
+- **Option B: No, the app works without an account.** Your data is not linked to a company-held identity, which limits targeted legal requests.
+
+Account-linked data is individually identifiable. Anonymous data requires more effort to attribute to a specific person.
+
+## Question 4: Does Your App Include Location Data?
+
+**Does the app request or have access to your location?**
+
+- **Option A: Yes, or I'm not sure.** Location permissions can place you in a specific state at a specific time. Combined with cycle data, this creates a more detailed record.
+- **Option B: No, I denied location access.** One fewer data point. But your phone's other apps and your carrier still have location records.
+
+Location data is the link between reproductive health data and jurisdiction. Even if your tracker doesn't collect location, your phone does.
+
+## Question 5: Has Your App Been Involved in Data Sharing?
+
+**Has the app company been documented sharing data with third parties?**
+
+- **Option A: Yes, or the company has a history of data incidents.** Third-party data sharing multiplies the number of entities that hold your information. Each entity is a subpoena target.
+- **Option B: No known incidents.** Better, but read the privacy policy for what's permitted, not just what's happened.
+- **Option C: The app structurally cannot share data because it doesn't have it.** On-device apps with no analytics SDKs fall here.
+
+The question is not whether the company is trustworthy. The question is whether the data exists on servers that can receive legal orders.
+
+## Question 6: Can You Delete Your Data Right Now?
+
+**If you wanted to erase your cycle history from the company's servers today, could you?**
+
+- **Option A: Yes, the app has a clear account deletion process.** Good. Test it. Read [data deletion guides](/app-guides/floriva-data-deletion-guide) for specifics.
+- **Option B: I can delete the app but I'm not sure about server data.** Deleting the app does not delete your account. The data stays on the company's servers.
+- **Option C: There's nothing to delete because the data never left my phone.** This is the safest position architecturally.
+
+The ability to delete matters less than preventing data from ever being collected. But if data already exists on servers, deletion is your retroactive option.
+
+## Your Results
+
+**Combine your answers to assess your risk level:**
+
+**Low risk (mostly B/C answers):** Your app stores data on-device without account requirements. Your state risk is low or your data architecture provides structural protection regardless. Verify by reading the [zero-knowledge explainer](/resources/guides/what-is-zero-knowledge-period-tracker).
+
+**Moderate risk (mix of A and B answers):** You have some exposure through server storage or account linkage, but mitigating factors exist (protective state, limited data sharing). Consider migrating to an on-device app or at minimum [exporting your data](/app-guides/floriva-data-export-guide) and reviewing deletion options.
+
+**High risk (mostly A answers, especially A on Questions 1, 2, and 3):** You have identifiable, server-stored cycle data in a state with reproductive health restrictions. This is the combination that creates legal exposure. Take three steps: export your data, delete your account from the current app, and [switch to an on-device tracker](/tools/quiz/should-you-switch-period-trackers).
+
+**Unknown risk (any D answers):** You can't assess risk if you don't know where your data is. Find out. Read your app's privacy policy, check your [state's status](/period-tracker-privacy), and take this assessment again.
+
+Architecture beats policy. A company that promises not to share your data is making a policy commitment. A company that never has your data is providing a structural guarantee.

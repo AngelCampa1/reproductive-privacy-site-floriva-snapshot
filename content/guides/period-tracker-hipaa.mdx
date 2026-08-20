@@ -1,0 +1,100 @@
+---
+title: "Are Period Tracker Apps Covered by HIPAA"
+description: "Most period tracker apps are not covered by HIPAA. Explains which law governs consumer health apps, what the gap means, and what the FTC can do."
+ogImage: "/og/guides/period-tracker-hipaa.png"
+tags:
+  - "guide"
+publishedAt: "2026-03-21"
+updatedAt: "2026-04-02"
+buyerStage: "tofu"
+targetPersona:
+  - "flo-refugee"
+  - "post-roe-tracker"
+  - "paper-tracker"
+  - "privacy-conscious-user"
+bluf: "Consumer period tracker apps are generally not covered by HIPAA. HIPAA applies to healthcare providers, insurers, and their business partners, not to standalone consumer apps. A ClearDATA/Harris Poll survey (May 2023, n=2,053) found 81% of Americans wrongly believe their health app data is HIPAA-protected. The primary law governing period tracker privacy in the US is FTC Section 5, which prohibits unfair and deceptive practices. That is a weaker standard, as the Flo enforcement action showed."
+definitions:
+  - term: "HIPAA"
+    definition: "The Health Insurance Portability and Accountability Act, a US federal law that sets privacy and security standards for protected health information. HIPAA applies specifically to covered entities (healthcare providers, health plans, healthcare clearinghouses) and their business associates. Consumer health apps not connected to a healthcare provider are generally not covered."
+  - term: "Covered entity"
+    definition: "An organization that must comply with HIPAA: health plans, healthcare clearinghouses, and healthcare providers that transmit health information electronically. A period tracker app that operates independently and is not affiliated with a healthcare provider or insurer is not a covered entity."
+  - term: "Business associate"
+    definition: "A person or company that performs services for a HIPAA covered entity that involve access to protected health information. A software vendor serving a hospital, for example, is a business associate. A consumer app sold directly to the public is not."
+  - term: "FTC Section 5"
+    definition: "The section of the Federal Trade Commission Act that prohibits unfair or deceptive acts or practices in commerce. This is the primary federal law applied to consumer health app privacy violations. The FTC's enforcement actions against Flo (2021) and Premom (2023) were brought under Section 5."
+tableData:
+  name: "Legal Protection Comparison: Period Tracker Apps vs. HIPAA-Covered Entities"
+  description: "What legal protections apply to different types of health data handlers"
+  columns: ["Entity Type", "HIPAA Applies", "Governing Law", "Law Enforcement Access", "User Deletion Rights", "Example"]
+  rows:
+    - ["Hospital / health plan", "Yes", "HIPAA", "Warrant or subpoena + HIPAA restrictions", "Yes. HIPAA access rights", "Mayo Clinic, Aetna"]
+    - ["Consumer period tracker (cloud)", "No", "FTC Section 5", "Subpoena (no HIPAA shield)", "Voluntary or CCPA/GDPR", "Flo, Clue, Glow"]
+    - ["Consumer period tracker (on-device)", "No", "FTC Section 5", "No server data to subpoena", "Delete app = delete data", "Floriva, Drip, Euki"]
+    - ["Data broker", "No", "FTC Section 5 (limited)", "Purchase, no court order needed", "Varies by state law", "SafeGraph, Babel Street"]
+answers:
+  - q: "Is Flo HIPAA compliant?"
+    a: "Flo is not a HIPAA covered entity and is not required to be HIPAA compliant in the way a hospital or insurer is. Flo may voluntarily use some HIPAA-aligned security practices, but the legal protections HIPAA provides (specific breach notification rules, minimum necessary standards, and individual rights) do not apply to Flo's relationship with its users. The law the FTC used against Flo was Section 5 of the FTC Act, not HIPAA."
+  - q: "Do period tracker apps have to follow HIPAA?"
+    a: "Generally no. HIPAA covers healthcare providers, health plans, and their business associates. A standalone consumer period tracker app that you download from an app store and use independently is not a covered entity. If a period tracker were integrated into a healthcare provider's patient portal or offered by a health plan, those specific integrations might bring it into HIPAA scope. But the consumer app itself typically does not qualify."
+  - q: "If not HIPAA, what law protects my period data?"
+    a: "In the US, the primary federal protection is FTC Section 5 (unfair and deceptive practices). Some states add protections: CCPA covers California residents, and several states have passed health data privacy laws. No federal law specifically designed for consumer health app data exists at the time of writing. The gap between HIPAA's strong protections and the weaker FTC standard is a recognized policy problem."
+  - q: "Does HIPAA protect period tracker app data?"
+    a: "No. Period tracker apps are not covered entities under HIPAA. They do not provide healthcare services or operate as health plans. A ClearDATA/Harris Poll survey (May 2023, n=2,053) found 81% of Americans mistakenly believe their health app data is HIPAA-protected. The HIPAA Reproductive Privacy Rule, which would have added some protections, was vacated by a federal court on June 18, 2025 in Purl v. HHS. There is currently no federal health data protection for consumer period tracker apps."
+faqs:
+  - q: "Can a period tracker company sell my health data?"
+    a: "Under current federal law, there is no outright ban on consumer health app companies selling health data, as long as the privacy policy discloses it. The FTC enforcement actions against Flo and Premom targeted companies that shared data without adequate disclosure or contrary to their stated policies, not the act of sharing itself."
+  - q: "Does the FTC have the power to fine period tracker companies for privacy violations?"
+    a: "Yes, though the structure varies. The FTC can seek civil penalties in some cases and require injunctive relief (consent orders requiring specific changes). The $59.5M total settlement involving Flo, Google, and Flurry came through a class action lawsuit (Reuters, September 25, 2025), not the FTC action itself. FTC consent orders can require companies to change practices and submit to audits, but the FTC's civil penalty authority for first-time violations is limited."
+  - q: "Are health data privacy laws getting stricter?"
+    a: "At the state level, yes. Several states have passed laws addressing consumer health data. At the federal level, protections have moved backward. The HIPAA Reproductive Privacy Rule was vacated in June 2025. Executive Orders 14076 and 14079/14101 directing HHS and FTC action on reproductive health data were revoked on January 24, 2025. The My Body My Data Act (H.R. 3916 / S. 2029) has a 2% chance of clearing committee per GovTrack. The most protective approach is to use an app that collects no readable central cycle database at all, rather than relying on laws that may change."
+relatedPages:
+  - /resources/best/best-private-period-tracker-apps
+  - /resources/best/best-period-tracker-apps-no-data-selling
+  - /compare/alternatives/flo-app-alternative
+  - /resources/guides/how-period-tracker-apps-collect-data
+  - /period-tracker-privacy/reproductive-data-privacy-laws-california
+  - /period-tracker-privacy/reproductive-data-privacy-laws-texas
+  - /resources/guides/hipaa-reproductive-privacy-rule-vacated
+---
+
+## The HIPAA Misconception
+
+A ClearDATA/Harris Poll survey (May 2023, n=2,053) found that 81% of Americans wrongly believe their health app data is protected by HIPAA. The same survey found 58% of Americans who use digital health apps have never considered where their data is shared.
+
+Both numbers point to the same gap: people assume the healthcare privacy framework extends to consumer apps. It does not.
+
+HIPAA was designed for the healthcare system: hospitals, clinics, insurers, and the companies that serve them. When you share health information with your doctor, HIPAA governs how that information can be used and disclosed. When you enter the same information into a consumer app, HIPAA does not apply.
+
+This is not a loophole. It is an intentional scope limit. HIPAA was enacted in 1996, long before consumer health apps existed. Congress has not updated the law to cover them.
+
+## What FTC Section 5 Actually Provides
+
+The FTC's authority under Section 5 covers unfair and deceptive practices. Applied to period trackers, this means:
+
+- A company that says it will not share your data and then shares it can face an FTC enforcement action (as Flo did in 2021)
+- A company that shares data in ways users would not reasonably expect may face enforcement
+- A company that accurately discloses in its privacy policy that it shares data with advertisers is, from the FTC's perspective, not being deceptive
+
+The standard is not "protect health data." The standard is "do not lie about what you do with health data." That is a weaker bar.
+
+## State Laws: A Mix of Protections
+
+California's CCPA gives residents the right to know what data is collected, opt out of sale, and request deletion. Washington's My Health MY Data Act (effective March 2024) created specific protections for consumer health data. Texas and other states have enacted their own frameworks.
+
+If you are a California, Washington, or similarly covered resident, your state law provides more specific health data protections than federal law. If you are not, your protections depend mainly on the FTC's enforcement posture and the app's voluntary commitments.
+
+## Federal Protections Have Moved Backward
+
+The few federal-level protections that existed or were pending have been weakened or eliminated.
+
+**HIPAA Reproductive Privacy Rule vacated.** HHS finalized a rule on April 22, 2024 that would have prohibited disclosure of protected health information for the purpose of investigating lawful reproductive healthcare. On June 18, 2025, Judge Matthew Kacsmaryk vacated the rule nationwide in Purl v. U.S. Department of Health and Human Services (N.D. Tex., No. 2:24-cv-00228-Z). The court held that HHS exceeded its statutory authority and invoked the major questions doctrine. HHS declined to appeal by the August 2025 deadline.
+
+**Executive orders revoked.** Executive Orders 14076 and 14079/14101, which directed HHS and FTC to take action protecting reproductive health data, were revoked by President Trump on January 24, 2025.
+
+**My Body My Data Act stalled.** The bill exists as H.R. 3916 and S. 2029 in the 119th Congress with 99 House and 19 Senate co-sponsors. GovTrack estimates a 2% chance of clearing committee and a 0% chance of enactment.
+
+**Health Breach Notification Rule updated but enforcement uncertain.** The FTC updated this rule in July 2024 to explicitly cover health apps and define "breach" to include unauthorized disclosures (not just cyberattacks), covering fertility, sexual health, and inferred health data. Under FTC Chair Andrew Ferguson, the enforcement posture has shifted.
+
+## The Architectural Alternative to Legal Protection
+
+Legal protections depend on companies complying, regulators enforcing, and laws keeping pace with technology. Using an app that never sends your data to a server does not depend on any of these. It works regardless of the legal environment because there is no data at the company end to protect, misuse, or produce.

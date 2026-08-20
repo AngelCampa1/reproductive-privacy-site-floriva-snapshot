@@ -1,0 +1,109 @@
+---
+title: "How SDKs Leak Your Period Tracker Data"
+description: "Third-party SDKs embedded in period tracker apps send your cycle, fertility, and symptom data to Facebook, Google, and analytics firms without your knowledge. Here is how SDK data sharing works technically."
+ogImage: "/og/guides/how-sdks-leak-period-data.png"
+tags:
+  - "guide"
+  - "sdk-privacy"
+publishedAt: "2026-05-01"
+updatedAt: "2026-05-01"
+buyerStage: "tofu"
+targetPersona:
+  - "privacy-conscious-user"
+  - "technical-user"
+schema: "Article"
+bluf: "Third-party SDKs are code libraries that app developers embed to handle analytics, advertising, and crash reporting. These SDKs transmit data directly from your device to their parent companies. The FTC enforcement actions against Flo and Premom both centered on SDK data transmission that users never consented to."
+definitions:
+  - term: "SDK (Software Development Kit)"
+    definition: "A package of pre-written code that app developers embed in their apps to add functionality like analytics, advertising, or crash reporting. Each SDK typically opens its own connection to external servers and transmits device and usage data independently of the app developer's own servers."
+  - term: "Device fingerprint"
+    definition: "A combination of hardware identifiers, software versions, screen resolution, language settings, and other device attributes that uniquely identify a specific phone. SDKs collect these to link user activity across apps even without a login."
+  - term: "Callback event"
+    definition: "A data packet sent from an SDK to its parent server when a user takes a specific action in the app, such as opening a screen, logging a symptom, or completing a purchase. These events include timestamps, device IDs, and often the content of what was logged."
+answers:
+  - q: "How do SDKs in period tracker apps share your data?"
+    a: "SDKs embedded in period tracker apps open direct network connections from your device to third-party servers like Facebook, Google, or analytics firms. When you log a period date or symptom, the SDK captures that event along with your device identifier and transmits it independently. The app developer may not fully control or even audit what data each SDK sends."
+  - q: "Which SDKs were found in period tracker apps by the FTC?"
+    a: "The FTC's 2021 action against Flo found the app contained Facebook SDK, Google Analytics, and Flurry (a Yahoo analytics platform), all of which received health data including pregnancy status. The 2023 action against Premom found the app transmitted data to Umeng and Jiguang, two Chinese analytics firms."
+faqs:
+  - q: "Can I block SDKs from sending my data?"
+    a: "You cannot selectively block individual SDKs within an app. Your options are to use a privacy-focused DNS service that blocks known tracker domains, use an app that contains no third-party SDKs, or use a firewall app that monitors outgoing connections. None of these are foolproof except choosing an app with no SDKs."
+  - q: "How can I check which SDKs are in my period tracker?"
+    a: "For Android, the Exodus Privacy tool scans APK files and lists every embedded tracker. For iOS, Apple's App Privacy Report (Settings > Privacy & Security > App Privacy Report) shows which domains an app contacts. Both methods reveal SDK network activity."
+  - q: "Do all free period trackers contain advertising SDKs?"
+    a: "Most free, cloud-based period trackers contain some form of analytics or advertising SDK. This is how free apps generate revenue. However, free apps that store data only on-device and contain no third-party SDKs do exist. The business model matters more than the price tag."
+relatedPages:
+  - "/resources/guides/how-period-tracker-apps-collect-data"
+  - "/resources/guides/what-is-zero-knowledge-period-tracker"
+  - "/resources/best/best-private-period-tracker-apps"
+  - "/resources/guides/period-app-privacy-red-flags"
+  - "/resources/guides/hipaa-period-tracker-deep-dive"
+---
+
+## What SDKs Are and Why Period Trackers Use Them
+
+When you install a period tracking app, you are installing not just one company's code but a bundle of third-party libraries. Each library, called an SDK, handles a specific function: Facebook SDK manages social login and ad targeting, Google Analytics tracks usage patterns, Flurry collects behavioral metrics, AppsFlyer or Adjust track which ad campaign brought you to the app.
+
+These SDKs are not passive. Each one opens its own network connection to its parent company's servers. Each one collects data from your device independently. The app developer integrates these SDKs because building analytics, advertising, and crash reporting from scratch is expensive. The cost is that multiple companies receive data about your activity in the app.
+
+For a weather app, this is a minor privacy trade-off. For a period tracker, where logged data includes cycle dates, fertility windows, pregnancy attempts, sexual activity, and symptoms, the privacy stakes are much higher.
+
+## The Technical Mechanism
+
+Here is what happens when you log a period start date in a typical cloud-based tracker that contains the Facebook SDK:
+
+1. You tap "Period started" in the app.
+2. The app records the event in its own database.
+3. The Facebook SDK, running in the same app process, detects the event via a callback hook.
+4. The SDK packages the event name (e.g., `log_period_start`), your Facebook advertising ID, device model, OS version, timestamp, and the app's unique identifier.
+5. This packet is transmitted over HTTPS to Facebook's Graph API endpoint.
+6. Facebook associates the event with your advertising profile, which is linked to your Facebook account if you have one, or to a shadow profile built from your device ID if you do not.
+
+This entire sequence completes in milliseconds. The app developer may have configured the SDK to send only certain events, but many developers use default configurations that transmit all app events. The FTC's findings in the Flo case indicated that Flo's integration sent health-related events to Facebook that Flo's own privacy policy said would not be shared.
+
+## The Documented Cases
+
+### Flo Health. FTC 2021
+
+The FTC's complaint against Flo Health established that the app shared user health data, including period dates and pregnancy status, with Facebook and Google through their embedded SDKs. Flo's privacy policy told users their data would not be shared with third parties. The FTC found this to be a deceptive practice under Section 5 of the FTC Act and entered a [consent order](/resources/guides/flo-period-tracker-lawsuit-settlement) requiring Flo to obtain affirmative consent before any future sharing.
+
+### Premom. FTC 2023
+
+The FTC's action against Premom, an ovulation tracking app owned by Easy Healthcare, found that the app transmitted sensitive health data to Umeng (owned by Alibaba) and Jiguang, two Chinese analytics firms. Users had no way to know their fertility data was being sent to these companies. The FTC ordered Premom to stop sharing health data with third parties for advertising and to delete previously collected data.
+
+### What Both Cases Reveal
+
+Neither Flo nor Premom was hacked. No breach occurred. The data transmission was functioning exactly as the SDKs were designed to function. The violation was that users were told their data was private when it was being routinely transmitted to advertising and analytics companies.
+
+## What SDKs Can Infer
+
+Raw cycle data becomes more revealing when combined with the behavioral data SDKs also collect. An SDK does not just see that you logged a period. It also sees:
+
+- **Session frequency changes**: Opening the app more often can indicate you are actively trying to conceive or monitoring a concerning symptom.
+- **Feature usage patterns**: Switching from period tracking to fertility mode signals a life change.
+- **Search and content engagement**: Tapping on articles about pregnancy symptoms or fertility treatments reveals intent.
+- **Time-of-day patterns**: When you open the app can correlate with anxiety, sleep disruption, or hormone-related behavior changes.
+
+Advertising networks combine this with data from other apps on your device. The result is a reproductive health profile assembled from fragments no single app developer intended to expose.
+
+## How to Audit Your App's SDK Footprint
+
+**Android users**: Visit [Exodus Privacy](https://exodus-privacy.eu.org/) and search for your period tracker. The tool lists every embedded tracker by name and category. An app with zero trackers is rare; an app with ten or more is a red flag.
+
+**iOS users**: Enable App Privacy Report in Settings > Privacy & Security. After a few days of normal use, review which domains your period tracker has contacted. Domains like `graph.facebook.com`, `analytics.google.com`, or `umeng.com` indicate active SDK data transmission.
+
+**Both platforms**: Read the app's privacy policy and search for "third party," "partners," and "service providers." Compare the companies listed there against what the audit tools find. SDKs present in the app that are not disclosed in the policy were exactly what triggered FTC enforcement.
+
+## The Architecture Alternative
+
+The SDK problem disappears when there is no server-side component to integrate with. An app that stores all data only on your device has no reason to embed Facebook SDK, Google Analytics, or any advertising tracker. There is no user behavior to report to a server, no advertising profile to build, no analytics dashboard to populate.
+
+This is not a theoretical distinction. It is the difference between an app that transmits data to multiple companies every time you open it and an app that processes everything locally and sends nothing. [On-device-only architecture](/resources/guides/on-device-storage-period-tracker) removes the SDK problem entirely, not by blocking trackers, but by having no trackers to block.
+
+## What Remains Uncertain
+
+SDK behavior is difficult to audit comprehensively. Obfuscated code, encrypted payloads, and dynamic configuration changes mean that what an SDK sends today may differ from what it sends after a silent update. Privacy researchers have documented cases where SDKs activated data collection features after initial review periods ended.
+
+The FTC has limited bandwidth. Two enforcement actions across the entire period tracking industry does not mean only two apps had SDK problems. It means only two were investigated and brought to enforcement. The structural incentives, free app, advertising revenue, SDK-dependent analytics, remain in place across the market.
+
+*This guide is general information, not legal advice. Specific statutes, deadlines, and remedies vary by jurisdiction and change over time. For a specific situation, consult a qualified attorney.*

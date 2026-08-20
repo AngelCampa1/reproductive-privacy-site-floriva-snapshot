@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS pricing_clicks (
+  id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+  tier TEXT NOT NULL,
+  source_page TEXT NOT NULL,
+  session_id TEXT NOT NULL,
+  created_at TEXT NOT NULL
+);

@@ -1,0 +1,115 @@
+---
+title: "Floriva vs Clue: A Privacy Architecture Comparison"
+description: "Clue is server-backed with GDPR protection as a German company. Floriva is local-first with no readable central cycle database. Here's what those differences mean for subpoenas, breaches, and data use."
+ogImage: "/og/comparisons/floriva-vs-clue-privacy.png"
+publishedAt: "2026-04-29"
+updatedAt: "2026-04-29"
+buyerStage: "mofu"
+targetPersona:
+  - "privacy-conscious"
+  - "data-sensitive"
+bluf: "Clue is a German-incorporated period app with strong GDPR protections, one of the more privacy-respecting cloud-based options available. Floriva is local-first with no readable central cycle database. The distinction matters specifically for legal risk: Clue holds readable data on servers and must respond to valid legal process, albeit with EU procedural protections. Floriva has no readable central cycle database to compel. For most users, Clue's GDPR protections are strong. For users in legally sensitive reproductive health situations, the architecture difference is meaningful."
+tags:
+  - Clue
+  - Floriva
+  - comparison
+  - privacy
+  - GDPR
+  - period tracker
+relatedPages:
+  - /compare/versus/floriva-vs-natural-cycles
+  - /compare/versus/privacy-first-period-apps-2026-ranked
+  - /resources/guides/period-tracker-data-minimization-guide
+  - /resources/guides/state-health-privacy-laws-after-hipaa
+  - /resources/privacy-in-practice/who-can-legally-get-your-period-data
+answers:
+  - q: "Is Clue private?"
+    a: "Clue is one of the more privacy-respecting cloud-based period apps. It's incorporated in Germany and operates under GDPR, which provides stronger health data protections than US federal law. Clue states it doesn't sell personal data and doesn't use health data for advertising. It has faced some regulatory attention in Germany and has updated its practices over time. However, Clue does store data server-side and does hold the ability to respond to legal process, a US law enforcement request routed through MLAT (Mutual Legal Assistance Treaty) could theoretically reach Clue's records."
+  - q: "What is the difference between Clue's and Floriva's data storage?"
+    a: "Clue stores your cycle data on its servers in Germany, subject to GDPR. Your account links your identity to your health records on Clue's infrastructure. Floriva keeps core records on your device. There is no sync, so nothing is transmitted. In terms of legal exposure, a subpoena or MLAT request could theoretically require Clue to produce readable records. Floriva has no readable central cycle database to produce."
+  - q: "Has Clue had any privacy issues?"
+    a: "Clue has faced scrutiny from German regulators over its data practices, including investigations related to data sharing and analytics. Clue has updated its privacy practices multiple times in response to regulatory attention and user concerns. It made statements in the wake of the Dobbs decision affirming it would resist law enforcement requests for abortion-related data. For a cloud-based app, Clue has a reasonable track record, but it's still cloud-based, the data exists and can in principle be accessed through legal process."
+  - q: "For what use case is Clue better than Floriva?"
+    a: "Clue is better for users who want automatic multi-device sync, automatic cloud backup, and a feature-rich cloud app with a well-established product. Clue's GDPR protections are real and meaningful for most users. Floriva is better for users who specifically want no readable central cycle database, particularly those in legal contexts where reproductive health data could create risk, or those who simply want architectural privacy rather than policy-based privacy."
+definitions:
+  - term: "MLAT (Mutual Legal Assistance Treaty)"
+    definition: "A bilateral treaty between countries establishing procedures for one country's law enforcement to request evidence from another country. The US has MLATs with Germany and most EU countries. Under an MLAT, US law enforcement can request German authorities to obtain records from German companies (like Clue) on their behalf. MLAT requests are slower, more procedurally complex, and subject to the receiving country's legal standards, but they are a real mechanism for cross-border data access. GDPR provides additional procedural protections for EU residents."
+  - term: "GDPR special category data"
+    definition: "Under GDPR Article 9, health data, genetic data, and data concerning sex life or sexual orientation are 'special categories' requiring explicit consent for processing (not just general consent). Period tracking data falls into health data and potentially data concerning sex life, both special categories. Processing special category data without explicit consent is prohibited; and special category data requires additional security measures. This is why German-based period apps like Clue face stricter legal requirements than US-based apps under US law."
+---
+
+Clue is a reasonable choice if you want a cloud-based period app with stronger-than-average privacy practices. It is incorporated in Germany, operates under GDPR, and has updated its practices multiple times in response to regulatory and user pressure. That puts it in a different position than US-based apps operating under US federal law with no health-data-specific protections.
+
+This comparison explains what the architecture difference between Clue and Floriva means in practice.
+
+## What Clue Actually Does With Your Data
+
+**Storage:** Clue stores cycle data on servers in Germany. Your account links your email address to your health records. Data remains on Clue's servers as long as your account exists and for a period after deletion (stated in Clue's privacy policy).
+
+**GDPR compliance:** As a German company processing EU residents' health data (special category under GDPR), Clue must obtain explicit consent for health data processing, provide access and deletion rights, and cannot transfer data to third countries without adequate protections.
+
+**What Clue has stated:**
+- Does not sell user data
+- Does not use health data for advertising
+- Has stated it would contest law enforcement requests for user data in abortion-related investigations (post-Dobbs statement)
+- Has updated practices after German regulatory scrutiny
+
+**What Clue cannot commit to:**
+- That no future legal process could compel data production (MLAT mechanisms exist)
+- That their privacy practices won't change with ownership or financial changes
+- That the data won't be disclosed in any circumstances
+
+## What Floriva Does With Your Data
+
+Floriva keeps core cycle data locally on your device. There is no sync, so no cycle data is transmitted at all.
+
+**What this means:**
+- No subpoena to Floriva can produce your records (less company-held data to produce)
+- No Floriva data breach exposes your cycle history
+- No change in Floriva's privacy policy or ownership creates a readable central cycle database
+- No MLAT request routed through any country can retrieve readable cycle records from Floriva's servers
+
+**What this doesn't mean:**
+- Your device itself is not protected from direct device access (device encryption with a strong passcode provides that protection)
+- Floriva does not sync or back up your data on its own. On iOS, standard iCloud device backup currently includes Floriva's data if you have it turned on. Android's device backup deliberately excludes it. Either way, Floriva's own encrypted backup file, which you export and store yourself, is the reliable way to move your history to a new phone.
+
+## Feature Comparison
+
+| Feature | Clue | Floriva |
+|---------|------|---------|
+| Storage | Cloud (Germany, GDPR) | Local device only |
+| Account required | Yes (email) | No |
+| Multi-device sync | Yes | No |
+| Data backup | Yes (automatic cloud) | Encrypted backup file, exported by you |
+| GDPR protection | Yes (German company) | N/A, no readable central records |
+| US subpoena exposure | Via MLAT (procedurally complex) | None (no records) |
+| Breach exposure | Server-side records at risk | No readable central records |
+| Privacy after company sale | Depends on new ownership | Unaffected |
+| Subscription price | Clue Plus ~$59.99/year | Paid app (no free tier) |
+| Offline functionality | Limited (requires account) | Full offline |
+
+## When Clue's GDPR Protections Are Sufficient
+
+For the majority of users, Clue's GDPR protections are meaningful and real. The procedural complexity of a foreign government obtaining EU health data through MLAT is significant. A US state's law enforcement cannot simply subpoena Clue the same way they can subpoena a US company.
+
+If your concern is primarily:
+- Ad targeting based on your cycle data
+- Data broker sales
+- Casual corporate misuse
+
+Clue's GDPR-based protections address these reasonably well.
+
+## When Architecture Matters More Than Policy
+
+The architecture difference (local storage vs. server storage) matters specifically in scenarios where legal process is a genuine concern:
+
+- You live in a US state with restrictive abortion laws
+- You are tracking for reproductive purposes that could have legal implications
+- Your immigration status creates legal risk (see the [immigration risk guide](/resources/privacy-in-practice/period-tracker-immigration-risk))
+- Your personal safety situation makes data trail minimization important (see [domestic violence safety guide](/resources/privacy-in-practice/who-can-legally-get-your-period-data))
+
+In these scenarios, the question is not whether Clue's practices are good (they are above average for cloud apps). The question is whether any server-side record should exist at all. Floriva's answer is no.
+
+## What This Means for Floriva Users
+
+If privacy policy is sufficient protection for your situation, Clue is a reasonable option with above-average practices. If you need architectural privacy with no readable central cycle database, Clue's GDPR protections do not change the fundamental fact that your data exists on their servers. Floriva's local-first design does.

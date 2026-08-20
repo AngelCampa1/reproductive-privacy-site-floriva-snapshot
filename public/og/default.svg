@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Floriva">
+  <rect width="1200" height="630" fill="#F4ECE0"/>
+  <circle cx="220" cy="180" r="92" fill="#923030" opacity=".9"/>
+  <circle cx="1010" cy="500" r="130" fill="#6E8E6B" opacity=".75"/>
+  <text x="96" y="330" fill="#1A1410" font-family="Newsreader, Georgia, serif" font-size="104">Floriva</text>
+  <text x="104" y="408" fill="#7A6A5E" font-family="Inter Tight, Arial, sans-serif" font-size="38">Privacy-first period tracking</text>
+</svg>

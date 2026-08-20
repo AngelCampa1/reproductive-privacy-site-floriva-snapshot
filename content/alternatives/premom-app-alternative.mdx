@@ -1,0 +1,84 @@
+---
+title: "Premom Alternative: Period Trackers Without FTC Violations"
+description: "The FTC took action against Premom in 2023 for sharing user health data with Chinese analytics firms. Here's what happened and what to use instead."
+ogImage: "/og/alternatives/premom-app-alternative.png"
+tags:
+  - "alternative"
+  - "premom"
+publishedAt: "2026-03-21"
+updatedAt: "2026-04-02"
+buyerStage: "bofu"
+targetPersona:
+  - "flo-refugee"
+  - "post-roe-tracker"
+  - "paper-tracker"
+  - "privacy-conscious-user"
+schema: "Article"
+bluf: "The FTC took enforcement action against Easy Healthcare (Premom) in 2023 for sharing precise location and health data with two Chinese analytics firms, alleging deceptive privacy practices and Health Breach Notification Rule violations. Floriva stores data on-device and has no analytics integrations."
+competitor:
+  name: "Premom"
+  slug: "premom"
+  pricing: "Free / subscription"
+  weakness: "FTC 2023 enforcement action for sharing user health data with Chinese analytics firms (Umeng and Jiguang/JPush) without adequate notice or consent"
+  pros:
+    - "LH test strip reader integration with ovulation prediction"
+    - "BBT tracking with algorithm"
+    - "Fertility-focused features for users trying to conceive"
+    - "Available on iOS and Android"
+  cons:
+    - "FTC's second-ever Health Breach Notification Rule enforcement (Case 1:23-cv-03107, N.D. Illinois, May 17, 2023)"
+    - "Shared menstrual cycle and fertility data with Google and AppsFlyer via descriptive custom events"
+    - "Shared device identifiers and precise geolocation with two Chinese companies: Umeng (Alibaba subsidiary) and Jiguang/Aurora Mobile, from 2018 through 2020"
+    - "$100,000 federal civil penalty plus $100,000 to state AGs in Connecticut, Oregon, and D.C."
+    - "Permanently banned from sharing health data for advertising"
+    - "Required to directly notify affected users"
+    - "Cloud-based"
+    - "Account required"
+pricingStats: []
+proscons:
+  - subject: "Premom"
+    pros:
+      - "LH test strip integration"
+      - "Fertility-focused features"
+      - "BBT tracking algorithm"
+    cons:
+      - "FTC's second-ever Health Breach Notification Rule case (2023)"
+      - "Fertility data shared with Google, AppsFlyer, Umeng, and Jiguang"
+      - "$200K total penalties ($100K federal + $100K state AGs)"
+      - "Permanently banned from health data advertising"
+      - "Cloud-based"
+faqs:
+  - q: "What did Premom do with user data?"
+    a: "The FTC filed an enforcement action against Easy Healthcare Corporation (Premom) in May 2023, alleging the company shared users' precise location and sensitive health data with two Chinese analytics firms, Umeng and Jiguang (also known as JPush), without adequate notice or consent. The case was brought under FTC consumer protection authority and the Health Breach Notification Rule, not HIPAA."
+  - q: "Is Premom safe to use now?"
+    a: "Following the FTC action, Easy Healthcare reached a settlement with the FTC. Whether the underlying architecture has changed is unclear. Premom remains cloud-based. For users concerned about third-party data sharing, on-device apps remove the risk regardless of policy changes."
+answers:
+  - q: "What happened with Premom and the FTC?"
+    a: "On May 17, 2023, the FTC filed its second-ever Health Breach Notification Rule enforcement action against Easy Healthcare Corporation (Case 1:23-cv-03107, N.D. Illinois). The complaint established that Premom shared menstrual cycle and fertility data with Google and AppsFlyer through descriptive custom events. From 2018 through 2020, Premom also shared device identifiers and precise geolocation with two Chinese companies: Umeng, an Alibaba subsidiary, and Jiguang (also known as Aurora Mobile). The settlement imposed a $100,000 federal civil penalty and $100,000 to state AGs in Connecticut, Oregon, and D.C. Easy Healthcare was permanently banned from sharing health data for advertising and required to notify affected users directly."
+relatedPages:
+  - "/resources/guides/how-period-tracker-apps-collect-data"
+  - "/resources/best/best-private-period-tracker-apps"
+  - "/resources/guides/femtech-data-monetization"
+---
+
+## What the FTC Found
+
+On May 17, 2023, the FTC filed its second-ever Health Breach Notification Rule enforcement action against Easy Healthcare Corporation, the company behind the Premom ovulation tracking app (Case 1:23-cv-03107, N.D. Illinois).
+
+The complaint established specific data flows. Premom shared menstrual cycle and fertility data with Google and AppsFlyer through descriptive custom events, meaning the analytics payloads contained explicit health information, not just anonymized usage metrics. From 2018 through 2020, Premom also shared device identifiers and precise geolocation with two Chinese companies: Umeng, an Alibaba subsidiary, and Jiguang, also known as Aurora Mobile.
+
+The settlement imposed a $100,000 federal civil penalty and an additional $100,000 to state attorneys general in Connecticut, Oregon, and D.C. Easy Healthcare was permanently banned from sharing health data for advertising purposes and required to directly notify affected users of the data sharing.
+
+Premom is a fertility-focused app that integrates with LH test strips for ovulation detection and offers BBT tracking with a prediction algorithm. These are useful features for users trying to conceive. The FTC action was not about the features. It was about what happened to the health data those features collected.
+
+## The Analytics Integration Problem
+
+The mechanism behind the FTC complaint was analytics SDK integration. Premom had embedded third-party analytics tools that transmitted user data to external firms. This is the same category of problem the FTC identified with Flo: embedding analytics software that sends health data to third parties as a side effect of standard app instrumentation.
+
+The distinction with Premom is the specificity: the custom events sent to Google and AppsFlyer were descriptive enough to identify what health data users were entering. The Chinese company data sharing added geolocation, meaning a third party could associate a specific device at a specific location with fertility tracking behavior.
+
+The core issue is structural. Cloud-based apps that use third-party analytics tools create data flows that may not be visible to users, or even fully understood by the developers who set them up. Sensitive health data passes through code the app developer did not write and may not fully audit.
+
+## How Floriva Compares
+
+Floriva has no third-party analytics integrations. Core records stay on your device. There is no sync, so nothing is transmitted. There is no analytics SDK to create unintended data flows and no readable central cycle database. For users who found Premom's fertility features valuable but were concerned by the FTC enforcement action, Floriva offers cycle and ovulation tracking without the Premom ad-tech data path.

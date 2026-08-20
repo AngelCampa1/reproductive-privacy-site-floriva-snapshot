@@ -1,0 +1,260 @@
+/* Homepage-only surfaces for the Bone & Berry app-showcase redesign: a
+   typography-led hero, the JourneySection / BentoGrid / OnDeviceDiagram
+   wrappers, the store CTA band with its desktop-only QR block, and the
+   FAQ hairline list. The homepage sells the app only — it intentionally
+   does not link into the SEO compare/resources/state-page funnel. */
+
+/* ---------- Hero ---------- */
+
+.home-hero {
+  display: grid;
+  gap: var(--space-7);
+  padding-block: clamp(4rem, 8vw, 8rem) var(--space-8);
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+}
+
+.home-hero__text {
+  display: grid;
+  /* See .section-heading in base.css — floor the track minimum. */
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-4);
+  max-width: 34rem;
+}
+
+.home-hero__headline {
+  font-family: var(--font-display);
+  font-weight: 450;
+  letter-spacing: -0.015em;
+  line-height: 1.02;
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(2.6rem, 5.4vw, 4.2rem);
+}
+
+.home-hero__headline em {
+  font-style: italic;
+  color: var(--berry);
+}
+
+.home-hero__dek {
+  color: var(--ink-soft);
+  line-height: 1.75;
+  margin: 0;
+  max-width: 32ch;
+}
+
+.home-hero__trust {
+  margin: 0.4rem 0 0;
+  color: var(--ink-mute);
+  font-size: 0.9rem;
+}
+
+.home-hero__device {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.home-hero__ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  width: min(420px, 92%);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.home-hero__ring::before {
+  content: "";
+  position: absolute;
+  inset: 14%;
+  border: 1px solid var(--berry-soft);
+  border-radius: 50%;
+}
+
+.home-hero__device .device-frame {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Journey intro ---------- */
+
+.home-journey {
+  padding-block: var(--space-8) 0;
+}
+
+/* ---------- Bento ---------- */
+
+.home-bento {
+  padding-block: var(--space-8) 0;
+}
+
+/* ---------- Privacy ---------- */
+
+.home-privacy {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+  padding-block: var(--space-8) 0;
+}
+
+.home-privacy__diagram {
+  display: flex;
+  justify-content: center;
+}
+
+.home-privacy__text {
+  display: grid;
+  gap: 1rem;
+  max-width: 34rem;
+}
+
+.home-privacy__text h2 {
+  font-family: var(--font-display);
+  font-weight: 450;
+  letter-spacing: -0.01em;
+  line-height: 1.08;
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.9rem, 3.4vw, 2.75rem);
+}
+
+.home-privacy__text h2 em {
+  font-style: italic;
+  color: var(--berry);
+}
+
+.home-privacy__text p:not(.section-eyebrow) {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+/* ---------- Store CTA band ---------- */
+
+.home-store-cta {
+  padding-block: var(--space-8) 0;
+}
+
+.home-store-cta__card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  padding: clamp(2rem, 4vw, 3rem);
+  border-radius: var(--radius-card);
+  background: var(--paper);
+  box-shadow: var(--shadow-soft);
+}
+
+.home-store-cta__content {
+  display: grid;
+  gap: 0.9rem;
+  max-width: 32rem;
+}
+
+.home-store-cta__content h2 {
+  font-family: var(--font-display);
+  font-weight: 450;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+}
+
+.home-store-cta__content p {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.home-store-cta__qr {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.home-store-cta__qr img {
+  border-radius: var(--radius-md);
+  background: var(--canvas);
+  padding: 0.6rem;
+}
+
+.home-store-cta__qr-caption {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+/* ---------- FAQ: hairline list instead of card grid ---------- */
+
+.home-faq {
+  padding-block: var(--space-8) var(--space-8);
+}
+
+.home-faq .faq-list {
+  gap: 0;
+}
+
+.home-faq .faq-item {
+  background: transparent;
+  border: none;
+  border-top: 1px solid var(--rule);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.home-faq .faq-item:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.home-faq .faq-item:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+@media (min-width: 1025px) {
+  .home-store-cta__qr {
+    display: flex;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* `minmax(0, 1fr)`, not `1fr`: a grid item's automatic minimum size is its
+     min-content size, so bare `1fr` lets one wide child stretch the column
+     past the viewport. Same fix as .article-layout in article.css. */
+  .home-hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-hero__text {
+    max-width: none;
+  }
+
+  .home-privacy {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-privacy__text {
+    max-width: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .home-store-cta__card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

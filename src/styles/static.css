@@ -1,0 +1,187 @@
+/* Static template surfaces: get-the-app, privacy, support, terms, and 404.
+   Bone & Berry editorial design: flat editorial, hairline rules, paper cards
+   where appropriate, tracked-uppercase eyebrows, pill buttons. */
+
+/* Shared layout for all static pages. */
+.static-page-body {
+  max-width: 68ch;
+}
+
+/* 404 specific styling. */
+.page-hero--compact .section-eyebrow {
+  font-size: 0.75rem;
+}
+
+.page-hero--compact h1 {
+  font-family: var(--font-display);
+  font-weight: 450;
+  letter-spacing: -0.02em;
+  line-height: 0.96;
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(2.5rem, 4.5vw, 4.25rem);
+  max-width: 20ch;
+}
+
+/* 404 link buttons: pill style, flat with hairline rules. */
+.not-found-links {
+  display: grid;
+  gap: 0.6rem;
+  margin: 1.4rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.not-found-links li {
+  margin: 0;
+}
+
+.not-found-links .text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  padding: 0.76rem 1rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-pill);
+  background: var(--paper);
+  color: var(--berry);
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: 0;
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+}
+
+.not-found-links .text-link:hover {
+  border-color: var(--berry);
+  background: var(--berry-soft);
+  transform: translateY(-2px);
+}
+
+/* Article prose for long-form content (privacy, terms, support).
+   Calm reading experience with Newsreader h2s and hairline section rules.
+
+   Scoped under `.static-page-body`: this class name collides with
+   article.css's `.article-prose` (the article template's reading column,
+   17px/1.7), and because static.css imports after article.css in index.css
+   an unscoped rule here would silently win everywhere, including on real
+   articles. Scoping keeps this one static-pages-only. */
+.static-page-body .article-prose {
+  display: grid;
+  gap: 1.1rem;
+  font-size: 1.02rem;
+  line-height: 1.85;
+  color: var(--ink-soft);
+  max-width: 68ch;
+}
+
+.static-page-body .article-prose h2 {
+  font-family: var(--font-display);
+  font-weight: 450;
+  color: var(--ink);
+  line-height: 1.08;
+  margin: 2rem 0 0.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: clamp(1.6rem, 2.5vw, 2rem);
+}
+
+.static-page-body .article-prose h2:first-child {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.static-page-body .article-prose h3 {
+  font-family: var(--font-display);
+  font-weight: 450;
+  color: var(--ink);
+  line-height: 1.08;
+  margin: 1.5rem 0 0.5rem;
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+}
+
+.static-page-body .article-prose p {
+  margin: 0;
+  max-width: 68ch;
+}
+
+.static-page-body .article-prose ul,
+.static-page-body .article-prose ol {
+  display: grid;
+  gap: 0.7rem;
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.static-page-body .article-prose li {
+  color: var(--ink-soft);
+  line-height: 1.85;
+}
+
+.static-page-body .article-prose a {
+  color: var(--berry);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.14em;
+}
+
+.static-page-body .article-prose strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* Support page: paper cards for contact paths. */
+.support-contact-card {
+  padding: 1.5rem;
+  border-radius: var(--radius-card);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  box-shadow: var(--shadow-soft);
+}
+
+.support-contact-card h3 {
+  font-family: var(--font-display);
+  font-weight: 450;
+  letter-spacing: 0;
+  line-height: 0.96;
+  margin: 0 0 0.75rem;
+  color: var(--ink);
+}
+
+.support-contact-card p {
+  margin: 0 0 1rem;
+  color: var(--ink-soft);
+  line-height: 1.75;
+}
+
+/* Responsive adjustments. */
+@media (max-width: 720px) {
+  .static-page-body .article-prose h2 {
+    margin: 1.5rem 0 0.5rem;
+    padding-top: 1rem;
+    font-size: 1.4rem;
+  }
+
+  .static-page-body .article-prose h3 {
+    margin: 1.25rem 0 0.4rem;
+    font-size: 1.1rem;
+  }
+
+  .not-found-links .text-link {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* `.text-link` (base.css) has no transition of its own to cancel — only
+   `.not-found-links .text-link` does — so this used to be a dead override
+   for the bare class. */
+@media (prefers-reduced-motion: reduce) {
+  .not-found-links .text-link {
+    transition: none !important;
+  }
+}

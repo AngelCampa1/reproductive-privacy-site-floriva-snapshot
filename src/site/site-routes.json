@@ -1,0 +1,30 @@
+{
+  "static": [
+    { "path": "/", "label": "Home" },
+    { "path": "/get", "label": "Get the app" },
+    { "path": "/privacy", "label": "Privacy" },
+    { "path": "/privacy-features", "label": "Privacy Features" },
+    { "path": "/support", "label": "Support" },
+    { "path": "/terms", "label": "Terms" }
+  ],
+  "hubs": [
+    { "path": "/compare", "label": "Compare period trackers" },
+    { "path": "/compare/alternatives", "label": "Private alternatives" },
+    { "path": "/compare/versus", "label": "Versus comparisons" },
+    { "path": "/compare/pricing", "label": "Pricing breakdowns" },
+    { "path": "/resources", "label": "Privacy resources" },
+    { "path": "/resources/best", "label": "Ranked lists" },
+    { "path": "/resources/guides", "label": "Privacy guides" },
+    { "path": "/resources/health", "label": "Health tracking resources" },
+    { "path": "/resources/symptom-guides", "label": "Symptom guides" },
+    { "path": "/resources/condition-guides", "label": "Condition guides" },
+    { "path": "/resources/hormone-guides", "label": "Hormone guides" },
+    { "path": "/resources/life-stage-guides", "label": "Life stage guides" },
+    { "path": "/resources/privacy-in-practice", "label": "Privacy in practice" },
+    { "path": "/resources/wellness-guides", "label": "Wellness guides" },
+    { "path": "/app-guides", "label": "App guides" },
+    { "path": "/period-tracker-privacy", "label": "Privacy by state" },
+    { "path": "/free", "label": "Free downloads" },
+    { "path": "/tools/quiz", "label": "Quizzes & self-checks" }
+  ]
+}

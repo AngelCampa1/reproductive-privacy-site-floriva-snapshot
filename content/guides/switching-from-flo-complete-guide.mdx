@@ -1,0 +1,112 @@
+---
+title: "Switching From Flo: A Complete Step-by-Step Guide"
+description: "Everything you need to leave Flo for a privacy-first period tracker. Export your data, pick a replacement, migrate your history, and delete your account."
+ogImage: "/og/guides/switching-from-flo-complete-guide.png"
+tags:
+  - "guide"
+publishedAt: "2026-03-31"
+updatedAt: "2026-03-31"
+buyerStage: "tofu"
+targetPersona:
+  - "flo-refugee"
+  - "post-roe-tracker"
+  - "paper-tracker"
+  - "privacy-conscious-user"
+bluf: "Switching from Flo takes four steps: export your cycle history, pick a replacement tracker, enter your recent cycle dates in the new app, then delete your Flo account. The most important step many users skip is account deletion. Uninstalling the app does not remove your data from Flo's servers."
+definitions:
+  - term: "On-Device Tracker"
+    definition: "A period tracker that stores cycle data primarily in local storage on your device. Floriva keeps core records local-first and has no readable central cycle database. Euki and Drip are local-only options. Device access remains a separate legal path."
+  - term: "Data Export"
+    definition: "A copy of your Flo data in a portable file format. Flo provides this under GDPR and CCPA. It contains your cycle history, symptom logs, and account information. You need this before deleting your account if you want to preserve your history."
+  - term: "Cycle Calibration"
+    definition: "The process a new period tracker uses to calculate your average cycle length from your cycle history. Most on-device trackers calibrate over 2-3 cycles. Entering your recent cycle start dates from your Flo export accelerates this."
+  - term: "Data Broker"
+    definition: "A company that buys and sells personal data, including health data, to advertisers, insurers, and other third parties. The FTC found that Flo shared user health data with companies like Google and Facebook for targeted advertising despite promising not to."
+  - term: "Zero-Knowledge Architecture"
+    definition: "An app design where the developer cannot access your data even if compelled by a court order or hacked. The app works entirely on your device. The developer has no servers storing your information and no encryption keys to decrypt it."
+answers:
+  - question: "How do I export my Flo data"
+    answer: "Open Flo, go to Settings (gear icon), then Privacy, then Request My Data. Flo will email a download link within a few days. The export includes your full cycle history and symptom logs. Save this file before deleting your account."
+  - question: "What should I look for in a privacy-first period tracker"
+    answer: "Three things: on-device storage (no cloud sync), no account or email required to use the app, and no third-party analytics SDKs embedded in the code. If an app asks for your email during setup, it is collecting identifiable data. If it includes Facebook SDK or Google Analytics, it is sharing usage data with those companies regardless of what the privacy policy says."
+  - question: "How do I choose a replacement period tracker"
+    answer: "For privacy, the key question is whether the tracker stores data on your device or on company servers. On-device options: Floriva (iOS and Android, paid app with no free tier, more features), Euki (iOS and Android, free, nonprofit), Drip (Android only, free, open source). None of them sync. If a way to carry your history to a new phone matters to you, Floriva is the only on-device option with an encrypted backup file. If free is the priority, Euki (iOS and Android) or Drip (Android) are the choices."
+  - question: "How do I delete my Flo account after switching"
+    answer: "In Flo, go to Settings, then Account, then Delete Account. Complete all confirmation steps. This initiates removal of your data from Flo's active systems. Backups may retain data for up to 90 days. Uninstalling the app is not the same as deleting your account."
+  - question: "What features will I lose when I leave Flo"
+    answer: "Flo's community forums, AI health chat, and detailed health reports rely on cloud infrastructure that on-device trackers do not have. Core period tracking, symptom logging, and reminders are available in all alternatives. If you regularly used Flo's health insights or community features, expect to give those up. Most users primarily use cycle prediction and reminders, which all alternatives cover."
+faqs:
+  - q: "Is Flo safe to use after the FTC settlement?"
+    a: "The FTC settlement requires Flo to get user consent before sharing data and to notify affected users. However, the app still collects data on their servers and still includes third-party SDKs. The business model has not fundamentally changed. If privacy is your primary concern, a tracker that never collects your data in the first place is structurally safer than one that promises not to misuse it again."
+  - q: "How long does it take to switch from Flo?"
+    a: "The active work is about 30 minutes: requesting your data export (5 minutes), installing your new tracker and entering recent cycle dates (10 minutes), and deleting your Flo account once you have the export (10 minutes). The data export from Flo may take a few days to arrive, so request it before you start the rest."
+  - q: "Will predictions be accurate immediately in my new tracker?"
+    a: "No. The new app needs 2 to 3 cycles to calibrate. If you enter your last 3 to 6 cycle start dates from your Flo export, the initial prediction will be reasonable. Accuracy improves with each cycle you record. This calibration period is the main functional disruption when switching."
+  - q: "Should I delete Flo or just stop using it?"
+    a: "Delete the account, not just the app. Stopping use and uninstalling the app leaves your complete cycle history and health data on Flo's servers indefinitely. Account deletion requests that Flo remove your data. If you are switching for privacy reasons, uninstalling without account deletion defeats part of the purpose."
+  - q: "Can I switch back to Flo if I do not like the alternative?"
+    a: "Yes, unless you deleted your account. If you deleted your account, your history on Flo is gone. You would start fresh with a new account. If you are uncertain about the switch, export your data first and keep a backup before deleting your account."
+relatedPages:
+  - "/resources/guides/delete-flo-account-keep-data"
+  - "/resources/best/best-period-trackers-no-data-sharing"
+  - "/compare/pricing/flo-premium-pricing-worth-privacy-risk"
+---
+
+## Why People Are Leaving Flo
+
+In January 2021, the FTC took enforcement action against Flo Health for sharing user health data, including period dates and pregnancy status, with Facebook, Google, and Flurry through embedded analytics code. Flo's privacy policy at the time stated it would not share this information with third parties.
+
+In September 2025, a $59.5M class action settlement resolved claims from millions of affected users. The settlement required Flo to maintain improved data practices, but did not change the underlying architecture: Flo remains a cloud-based app that stores your cycle data on its servers.
+
+For users who are concerned about where their data lives and who can access it, switching to an on-device tracker removes the structural exposure.
+
+## Before You Start: Evaluate What You Actually Need
+
+Most Flo users use three features: cycle predictions, symptom logging, and reminders. Everything else (the community forums, health articles, and AI chat) is content designed to increase engagement. When evaluating alternatives, focus on the core tracking functionality.
+
+The privacy-critical questions are: Where is my data stored? Does the app require an account? What third-party code is embedded in the app? A tracker that stores data only on your device, requires no login, and includes no analytics SDKs cannot share your data because it never has access to it in the first place.
+
+## Step 1: Request Your Data Export
+
+This needs to happen first, before you do anything else, because Flo takes a few days to process the request.
+
+In Flo, open Settings (the gear icon), go to Privacy, then Request My Data. You will receive an email with a download link. The file contains your full cycle history and symptom logs. Download it and save it somewhere you can access it, not in the cloud, if you are going to the trouble of leaving Flo for privacy reasons.
+
+## Step 2: Choose Your Replacement
+
+The decision tree is straightforward.
+
+If you want iOS and Android support with more features than free alternatives: Floriva, a paid app with no free tier, on-device storage with no sync but an encrypted backup file for switching phones.
+
+If you want free and do not mind Android-only: Drip. Open source, no data collection, independently verifiable.
+
+If you want free and need iOS or Android: Euki. Nonprofit developer, on-device, no account required.
+
+If you use Flo specifically as a contraceptive method (temperature-based or symptom-thermal methods): switching apps changes your contraceptive method. Consult your healthcare provider before switching in that context.
+
+## Step 3: Set Up Your New Tracker
+
+Install the replacement app. During setup, enter your last 3-6 cycle start dates from your Flo export. This gives the algorithm your recent cycle length history to work with. Set up your reminders and symptom categories.
+
+Do a quick check: does the app work in airplane mode For on-device trackers, it should. If it requires internet access for basic tracking functions, the data is going somewhere.
+
+## Step 4: Delete Your Flo Account
+
+After your new tracker is working and you have your Flo export saved, go back to Flo and delete your account.
+
+Settings, then Account, then Delete Account. Follow all confirmation prompts. Flo may ask for a reason. Complete the process to the end.
+
+Verify: try to log back into Flo with your credentials. If you can still log in, the deletion did not complete.
+
+## Step 5: After Switching
+
+After account deletion, your Flo data will remain in their backup systems for up to 90 days. This is a standard retention period for deleted account data. You cannot accelerate it through any user-facing mechanism.
+
+Data that Flo shared with third parties before your account deletion cannot be recalled by deleting your account. That data is in the hands of the companies Flo shared it with. Account deletion covers data on Flo's own systems.
+
+Your new tracker will take 2-3 cycles to fully calibrate its predictions. Expect some imprecision in the first month. After that, cycle prediction accuracy should be comparable to what you had in Flo.
+
+## What Changes After Switching
+
+The biggest difference is what does not happen: no targeted ads based on your cycle phase, no data broker receiving your reproductive health information, no risk of a future investigation revealing undisclosed data sharing. The trade-off is that you lose cloud backup. If you lose your phone, you lose your data. For many former Flo users, that trade-off is the point.
+

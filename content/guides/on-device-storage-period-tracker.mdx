@@ -1,0 +1,69 @@
+---
+title: "What Is On-Device Storage in a Period Tracker"
+description: "On-device storage means health core records stay on your phone. What that means technically, why it matters, and how it compares to cloud-backed storage."
+ogImage: "/og/guides/on-device-storage-period-tracker.png"
+tags:
+  - "guide"
+publishedAt: "2026-03-21"
+updatedAt: "2026-03-21"
+buyerStage: "tofu"
+targetPersona:
+  - "flo-refugee"
+  - "post-roe-tracker"
+  - "paper-tracker"
+  - "privacy-conscious-user"
+bluf: "On-device storage means all your period data is kept on your phone, not uploaded to any company's servers. If there is no readable central copy, there is less company-held data to breach, sell, or hand over to law enforcement. This is an architectural protection, not a policy one."
+definitions:
+  - term: "On-device storage"
+    definition: "A data storage model in which information is saved exclusively to the local storage of the user's device, phone, tablet, or computer. No copy is transmitted to or stored on external servers. The data exists only where the user's device exists."
+  - term: "Cloud sync"
+    definition: "A feature that copies data from a device to remote servers so it can be accessed from multiple devices. Cloud sync is convenient but means data exists in at least two places: your device and the company's servers. The server copy is subject to the company's data practices and legal jurisdiction."
+  - term: "Device-local encryption"
+    definition: "Encryption applied to data stored on a device using keys that are generated and held on that device. Even if someone physically accesses the device's storage, the data is unreadable without the key. This is distinct from server-side encryption, where the company holds the encryption keys."
+answers:
+  - q: "What does on-device storage mean in practice"
+    a: "It means core cycle dates, symptoms, mood logs, and health notes you enter stay local-first on your phone. When you open the app, it reads from local storage. When you close it, core records stay there. Encrypted backup files, device backups, exports, billing, support, and anti-abuse records are separate."
+  - q: "Can on-device period data be subpoenaed"
+    a: "A subpoena or court order can compel a company to produce data it holds. If a period tracker stores data on its servers, a subpoena to that company can produce your health records. If the app stores data only on your device, the company has less company-held data to produce. There is no data in their custody. Law enforcement would need to separately obtain and access your physical device, which requires a warrant and involves different legal procedures."
+  - q: "What is the trade-off with on-device storage"
+    a: "On-device storage means no cross-device sync and no server-side backup. If you get a new phone, your tracking history does not automatically transfer. If you lose your phone without a local backup, your data is gone. For users who prioritize privacy, this trade-off is acceptable or even desirable. For users who want cross-device access or are concerned about losing their data, it is a real limitation."
+faqs:
+  - q: "Does on-device storage mean the app works offline"
+    a: "Yes, apps that store data only on-device have no reason to require an internet connection for core functionality. Data entry, cycle predictions, and viewing history all work without connectivity. The app may still connect to the internet for updates or non-personalized content, but your health data should not be among the transmissions."
+  - q: "How can I verify an app actually uses on-device storage"
+    a: "Three approaches: (1) Read the technical section of the privacy policy, look for explicit statements that no health data is transmitted to servers. (2) Check whether the app requires an account. If no account is needed, there is no server identity to link data to. (3) Use a network monitoring tool or check the app's permissions, an on-device app should not require network access for its core features."
+  - q: "Is on-device storage the same as airplane mode testing"
+    a: "Not exactly, but airplane mode is a useful informal test. Enable airplane mode, then use the app for data entry and see if it functions normally. If it does, that is a strong indicator that the core functionality does not require a server connection. It does not definitively prove that no data is ever transmitted (the app could queue transmissions and send them when connectivity returns), but it is a practical first check."
+relatedPages:
+  - /resources/best/best-private-period-tracker-apps
+  - /resources/best/best-period-tracker-apps-no-data-selling
+  - /resources/guides/what-is-zero-knowledge-period-tracker
+  - /resources/guides/end-to-end-encryption-period-tracker
+  - /compare/alternatives/euki-app-alternative
+---
+
+## Why Where Data Is Stored Matters
+
+For most apps, where data is stored is an invisible technical detail. For period tracking, it determines who can access your health information without your knowledge or consent.
+
+Data stored on a company's servers is under the company's control. They can analyze it, share it with partners, or produce it in response to a court order. Their security practices determine whether it is breached. Their corporate decisions determine whether it is sold.
+
+Data stored only on your device is under your control. You decide who sees it. You decide when to delete it. A breach of the company's servers has no effect on data that was never on those servers.
+
+## The Subpoena Problem
+
+Following the Dobbs v. Jackson Women's Health Organization decision in 2022, privacy advocates raised concerns about reproductive health data being used in legal proceedings. The specific concern: in states where certain reproductive health decisions have legal consequences, period tracking data could theoretically be sought by prosecutors to establish facts about a person's cycle.
+
+A company that holds your data on its servers can be compelled to produce it. A company that never received your data cannot be compelled to produce what it does not have. This is the concrete legal relevance of on-device storage. It removes the company as a potential point of legal compulsion.
+
+## On-Device vs. Encrypted Cloud Storage
+
+These are different things, and the distinction matters.
+
+Encrypted cloud storage means your data is scrambled before or during upload, but it lives on the company's servers in encrypted form. The company may hold the encryption keys. A court order can potentially compel the company to decrypt and produce the data.
+
+On-device storage means the data was never uploaded. There is no encrypted blob on a server to decrypt. The only copy is on your device.
+
+## What to Look for When Choosing an App
+
+Look for: no account required, explicit privacy policy statement that health data is not transmitted to servers, offline functionality for core features, and ideally open-source code that allows independent verification. Apps meeting all four criteria provide the strongest available on-device storage guarantee.

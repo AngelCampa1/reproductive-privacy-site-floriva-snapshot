@@ -1,0 +1,183 @@
+---
+title: "What to Do If Your Period App Is Breached or Involved in a Privacy Incident"
+description: "Step-by-step guide for when your period app is breached: confirm scope, revoke access, request data under CCPA/GDPR, delete your account, and switch to a safer app."
+ogImage: "/og/guides/what-to-do-if-your-period-app-is-breached.png"
+publishedAt: "2026-04-29"
+updatedAt: "2026-04-29"
+buyerStage: "mofu"
+targetPersona:
+  - "privacy-conscious"
+bluf: "When a period app sends a breach notification, or is named in a news report, most users don't know what data was actually exposed or what to do first. The correct sequence: confirm the scope, change credentials, revoke connected service access, request account deletion with a confirmation paper trail, and check what data was exposed via CCPA/GDPR access request."
+tags:
+  - data-breach
+  - privacy-response
+  - account-security
+  - CCPA
+  - GDPR
+  - period-app-safety
+relatedPages:
+  - /resources/privacy-in-practice/lock-down-period-data-on-your-phone
+  - /resources/guides/period-app-account-security
+  - /resources/guides/period-app-privacy-red-flags
+  - /compare/versus/period-tracker-data-breach-history
+answers:
+  - q: "What do I do if my period app is hacked?"
+    a: "The first step is confirming the scope: check haveibeenpwned.com with the email you used for the account. Then read the breach notification carefully. It should specify what category of data was exposed. Change your password immediately using a password manager, revoke any social login (Google/Apple/Facebook) connections to the app, and revoke any Apple Health or Google Health Connect permissions the app holds. Then submit a CCPA or GDPR data access request to understand exactly what was exposed before submitting a deletion request."
+  - q: "How do I delete my Flo data?"
+    a: "In Flo: Settings, then Account, then Delete account. Before deleting, submit a data access request under CCPA (if you're in California) or GDPR (if you're in the EU). You have a right to receive a copy of your data before it's deleted, and this gives you a record of what was held. Flo must respond within 30 days under CCPA and 30 days under GDPR. Screenshot your deletion confirmation. Note that Flo's privacy policy specifies some data may be retained for legal compliance purposes even after deletion."
+  - q: "What information does a period app breach expose?"
+    a: "App-level security breaches (unauthorized external access) typically expose: email address, hashed password, device identifiers, IP address history, cycle logs, symptom logs, condition disclosures, and sometimes payment information. SDK/analytics incidents, like the Flo FTC case, expose behavioral health data to advertising infrastructure rather than to external hackers. These are different incidents: the first is an access control failure, the second is a data flow that was happening continuously."
+  - q: "Can I request my period app data before deleting?"
+    a: "Yes, and you should. Under the California Consumer Privacy Act (CCPA), California residents can submit a data access request requiring the company to disclose all personal information it holds on you, the categories, specific pieces of data, and third parties it has shared data with. GDPR provides equivalent rights to EU residents. Submit the access request first, wait for the response (up to 30 days), then submit the deletion request separately. This creates a paper trail of what existed."
+  - q: "Does deleting a period app remove your data?"
+    a: "Deleting the app from your phone does not remove data from the company's servers. You must submit an account deletion request through the app or the company's privacy portal to request server-side deletion. Even then, most privacy policies reserve the right to retain data for legal compliance, fraud prevention, or regulatory purposes for specified time periods. CCPA and GDPR deletion rights are real but not absolute. They have carve-outs. Requesting deletion creates a legal obligation to comply, but some data may remain."
+definitions:
+  - term: "CCPA data access request"
+    definition: "A formal request under the California Consumer Privacy Act requiring a business to disclose the categories and specific pieces of personal information it has collected about you, the sources it collected from, the business purpose for collecting it, and the categories of third parties it has shared it with. California residents can submit one access request per 12-month period. Companies must respond within 45 days (with one 45-day extension allowed)."
+  - term: "Health Connect (Android) / Apple Health"
+    definition: "Operating-system-level health data repositories. Apple Health (iOS) and Health Connect (Android 14+) store health data from multiple apps in a centralized location. Period apps that request permission to read or write to these repositories can access or contribute data beyond their own logs. Revoking an app's access to these repositories stops future data sharing but does not affect data already copied to the app's own servers."
+---
+
+A period app breach notification lands in your inbox. Or you see a news headline. Or a friend texts you a link to an FTC press release. You've been using this app for two years and it has your full cycle history, your symptom logs, and whatever you disclosed when it asked about health conditions.
+
+What you do in the next 24 hours matters. Here's the correct sequence.
+
+---
+
+## Step 1: Confirm the incident and understand what type it is
+
+Not all privacy incidents are the same, and the risk profile differs by type.
+
+**Check Have I Been Pwned.** Go to [haveibeenpwned.com](https://haveibeenpwned.com) and enter the email address you used for the app. This database aggregates known credential breaches and will tell you if your email appears in leaked credential sets. This is a baseline check, it confirms whether external attackers obtained login credentials.
+
+**Read the breach notification carefully.** The language matters. "Unauthorized access to our systems" means an external party broke into company infrastructure, your data may have been exfiltrated. "Inadvertent disclosure to third-party partners" or "sharing with analytics providers" means an SDK data flow incident, your health data was transmitted to advertising or analytics infrastructure, continuously, as a feature of how the app worked. The Flo FTC case and the Premom FTC case were the second type: not a hack, but ongoing transmission of health data to third parties.
+
+These are different incidents with different risk profiles. An external breach means your credentials and stored data may be in someone's hands right now. An SDK disclosure means your health data has been in advertising infrastructure for months or years, used to build behavioral profiles, not typically exposed to individual bad actors but integrated into advertising targeting systems.
+
+**Find the company's official statement.** Look for it on the company's website, not just in an email. Phishing emails mimicking breach notifications are common. Verify the domain before clicking any links.
+
+---
+
+## Step 2: Understand what was exposed
+
+The scope of a period app breach depends on what the app stored and how it stored it.
+
+**What app-level breaches typically expose:**
+
+- Email address (plaintext)
+- Password (hashed, quality of hashing matters; bcrypt is strong, MD5 is crackable)
+- Device identifiers (IDFA, Android advertising ID)
+- IP address history (can be used to approximate location over time)
+- Cycle logs: start dates, cycle lengths, period duration
+- Symptom logs: pain levels, mood, specific conditions disclosed
+- Condition disclosures: if the app asked about PCOS, endometriosis, or other conditions and you answered
+- Fertility intent markers: whether you indicated trying to conceive, using the app for contraception, or postpartum tracking
+- In some apps: payment information (typically tokenized, not raw card numbers)
+
+**What SDK/analytics incidents expose:**
+
+Behavioral health events in real time: every time you logged a period, tracked a symptom, or changed your fertility status, that event may have been transmitted to advertising infrastructure. This is not a one-time exposure, it is a continuous data flow that was happening since you installed the app.
+
+The data ends up in advertising platforms where it contributes to behavioral targeting profiles. It is not typically visible to individual bad actors, but it is used by advertising systems and potentially accessible to data brokers.
+
+---
+
+## Step 3: Change your credentials immediately
+
+**Change the password on the period app account.** Use a password manager (1Password, Bitwarden, or the built-in Apple/Google password manager) to generate a strong, unique password. Do not reuse a password you use anywhere else.
+
+**Check for password reuse.** If you used the same password for this app and any other account, change those other accounts too. Credential stuffing, using leaked credentials from one breach to access other accounts, is the most common follow-on attack.
+
+**Revoke social login connections.** If you signed into the period app using Google, Apple, or Facebook credentials, revoke that connection:
+
+- **Apple:** Settings → [Your Name] → Password & Security → Apps Using Apple ID → find the app → Stop Using Apple ID
+- **Google:** myaccount.google.com → Security → Third-party apps with account access → find the app → Remove Access
+- **Facebook:** facebook.com → Settings → Security and Login → Apps and Websites → find the app → Remove
+
+Revoking the social login does not delete your account or data with the period app, it only severs the authentication connection. You still need to take the deletion steps below.
+
+---
+
+## Step 4: Revoke Apple Health and Google Health Connect permissions
+
+Period apps that requested access to Apple Health or Google Health Connect have been reading or writing data from those repositories. Revoking the permission stops future access, it does not retrieve data already copied to the app's servers.
+
+**iOS. Apple Health:**
+Settings → Privacy & Security → Health → [App Name] → turn off all permissions
+
+Or: Health app → Browse → Sources → [App Name] → turn off categories
+
+**Android. Google Health Connect:**
+Settings → Apps → Health Connect → App permissions → [App Name] → turn off all permissions
+
+This is a meaningful step even if the app is not breached. It limits the surface area going forward. But be clear on what it does not do: data already transmitted to the app's servers remains there until you submit a deletion request.
+
+---
+
+## Step 5: Request your data before deleting your account
+
+This step is counterintuitive but important: request a copy of your data before you delete your account. Once you delete, you lose the ability to know exactly what was held.
+
+**Under CCPA (California residents):** You have the right to request the specific pieces of personal information a business has collected about you. Submit the request through the company's privacy portal or by emailing their designated privacy contact (required to be disclosed in their privacy policy). Companies must respond within 45 days.
+
+**Under GDPR (EU/UK residents):** You have the right of access under Article 15 GDPR, the company must provide a copy of all personal data it holds about you. Companies must respond within 30 days.
+
+**What to request specifically:** Ask for the categories of data collected, the specific pieces of data in each category, the third parties the data has been shared with, and the retention periods. The response is your record of what existed.
+
+Submit the access request. Wait for the response. Then submit the deletion request.
+
+---
+
+## Step 6: Submit the account deletion request
+
+Account deletion requests are distinct from deleting the app from your phone. Uninstalling the app removes it from your device but does nothing to server-side data.
+
+Find the deletion mechanism:
+
+- In-app: look for Settings → Account → Delete Account
+- Privacy portal: most apps required to comply with CCPA or GDPR must maintain a "Do Not Sell / Delete My Data" portal, search "[App Name] privacy request" or "[App Name] data deletion"
+- Email: if no portal exists, email the privacy contact address listed in the privacy policy
+
+State your request explicitly: "I am requesting deletion of all personal data associated with this account under [CCPA/GDPR], including cycle logs, symptom data, fertility intent markers, and any derived data."
+
+**What to expect:** The company must respond within 45 days under CCPA (with a possible 45-day extension). Under GDPR, 30 days. Most privacy policies include carve-outs for data retention for legal compliance, fraud prevention, or regulatory purposes, some data may remain even after a valid deletion request.
+
+Screenshot the deletion confirmation. Save the confirmation email. This is your paper trail.
+
+---
+
+## Step 7: Document everything
+
+If you are in any situation where your reproductive health data could have legal relevance (for example, you live in a state with abortion restrictions, you are involved in a custody dispute, or you work in a field with security clearances), documentation of your response matters.
+
+Save:
+
+- The original breach notification (screenshot or forward to a personal secure email)
+- The timestamp of your password change
+- Confirmation emails from social login revocations
+- Your data access request submission and the company's response
+- Your deletion request submission and the company's confirmation
+
+Legal relevance: if you ever need to demonstrate that you took steps to limit data exposure after learning of an incident, this documentation establishes the timeline.
+
+---
+
+## Step 8: Choose a replacement app with architectural privacy
+
+The most durable protection is not responding faster to the next breach notification. It is using an app that cannot produce the same incident.
+
+The incidents in the documented breach history had a structural cause: apps that store cycle data on servers, integrate advertising and analytics SDKs, and can be acquired by other companies. Each of those conditions is architectural, not a policy choice.
+
+A local-first period app that keeps core records on your device reduces server-side breach risk for cycle data because there is less readable company-side data. It also reduces analytics SDK and acquisition exposure when health events are not sent into company data systems.
+
+Switching after an incident is reactive. Switching to local-first architecture before the next incident is the structural fix.
+
+## What this means for Floriva users
+
+Floriva users reading this guide in the context of another app's incident face a specific situation: core Floriva records are local-first, so they are not exposed by a breach of another app's cloud database.
+
+Floriva's local-first architecture keeps core cycle logs and symptom data on your device. There is no readable central cycle database for those core records, no broad health-event analytics pipeline, and less company-side data that could transfer if Floriva is acquired.
+
+If you are moving from a cloud-based period app to Floriva following a privacy incident, the steps above still apply to your old app. Complete the access request, get the deletion confirmation, and revoke the health data permissions. That cleans up the existing exposure.
+
+What you're moving toward, a local-first app, is the architectural condition that makes most of this guide unnecessary from day one.

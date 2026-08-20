@@ -1,0 +1,56 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+coverage
+dist
+dist-ssr
+drafts
+*.local
+.wrangler
+.wrangler-functions-build
+.wrangler-pages-functions.mjs
+
+# Generated audit artifacts (regenerated on each run).
+# The whole tree is ignored: local runs reach multiple GB (32 mobile-audit runs
+# alone hit 3.6 GB). A hand-picked, representative subset lives in docs/evidence/.
+scripts/claims-audit-report.json
+scripts/claims-audit-report.csv
+scripts/link-audit-report.json
+artifacts/
+
+# Local secrets and agent/tooling scratch (never commit).
+# The .env rules are belt-and-braces: nothing matching them has ever been
+# committed (verified across all history), and this keeps it that way.
+.env
+.env.*
+!.env.example
+.dev.vars
+.playwright-mcp/
+.worktrees/
+.claude/
+.floriva-private/
+tmp/
+
+# Scratch files at the repo root only. The leading slash keeps public/**
+# and docs/assets/** tracking normally.
+/*.png
+/*.jpg
+resources-mobile-fixed.png
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

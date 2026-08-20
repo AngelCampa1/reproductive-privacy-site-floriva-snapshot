@@ -1,0 +1,36 @@
+{
+  "/compare": ["alternatives", "comparisons", "pricing-breakdowns", "listicles"],
+  "/compare/alternatives": ["alternatives"],
+  "/compare/versus": ["comparisons"],
+  "/compare/pricing": ["pricing-breakdowns"],
+  "/resources": [
+    "guides",
+    "listicles",
+    "lead-magnets",
+    "symptom-guides",
+    "condition-guides",
+    "hormone-guides",
+    "life-stage-guides",
+    "privacy-in-practice",
+    "wellness-guides"
+  ],
+  "/resources/best": ["listicles"],
+  "/resources/guides": ["guides", "privacy-in-practice"],
+  "/resources/health": [
+    "symptom-guides",
+    "condition-guides",
+    "hormone-guides",
+    "wellness-guides",
+    "life-stage-guides"
+  ],
+  "/resources/symptom-guides": ["symptom-guides"],
+  "/resources/condition-guides": ["condition-guides"],
+  "/resources/hormone-guides": ["hormone-guides"],
+  "/resources/life-stage-guides": ["life-stage-guides"],
+  "/resources/privacy-in-practice": ["privacy-in-practice"],
+  "/resources/wellness-guides": ["wellness-guides"],
+  "/app-guides": ["app-guides"],
+  "/period-tracker-privacy": ["reproductive-privacy-state-pages"],
+  "/free": ["lead-magnets"],
+  "/tools/quiz": ["questionnaires"]
+}

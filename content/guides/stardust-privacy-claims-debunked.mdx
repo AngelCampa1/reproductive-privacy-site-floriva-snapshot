@@ -1,0 +1,102 @@
+---
+title: "Stardust's E2E Encryption Claims Were Debunked in 72 Hours"
+description: "Stardust surged to #1 after claiming E2E encryption on Dobbs day. TechCrunch found it sharing data with Mixpanel. What this means for tracker privacy."
+ogImage: "/og/guides/stardust-privacy-claims-debunked.png"
+tags:
+  - "guide"
+publishedAt: "2026-04-02"
+updatedAt: "2026-04-02"
+buyerStage: "tofu"
+targetPersona:
+  - "post-roe-tracker"
+  - "flo-refugee"
+  - "privacy-conscious-user"
+schema: "Article"
+bluf: "On June 24, 2022, the day the Supreme Court issued Dobbs, Stardust claimed to be the first period tracker with end-to-end encryption. Downloads surged 4,400%, from 3,000 to 200,000 per day. Within 72 hours, TechCrunch found Stardust sharing phone numbers with Mixpanel, Vice found a clause volunteering data to law enforcement 'whether or not legally required,' and a follow-up analysis found encryption keys uploaded to Stardust's own servers. The company silently changed its privacy policy and removed all E2E claims."
+definitions:
+  - term: "End-to-end encryption"
+    definition: "A system where data is encrypted on the sender's device and can only be decrypted by the intended recipient. The service provider cannot read the data, even if compelled by law enforcement. For a period tracker, true E2E encryption means the app company cannot access your cycle data on its servers. Stardust claimed this but did not implement it."
+  - term: "SSL/TLS"
+    definition: "Transport Layer Security encrypts data while it travels between your device and a server. Once the data arrives at the server, the company can read it. SSL/TLS protects against interception in transit but does not prevent the company from accessing your data. This is what Stardust actually had when it claimed end-to-end encryption."
+  - term: "AES-256"
+    definition: "A standard encryption algorithm used to protect data stored on a server (encryption at rest). AES-256 prevents unauthorized access to the server's storage, but the company holding the encryption keys can still decrypt and read the data. AES-256 at rest plus the company holding the keys is not end-to-end encryption."
+expertQuotes:
+  - quote: "Stardust is the first period tracker to implement end-to-end encryption."
+    personName: "Rachel Moranis"
+    jobTitle: "CEO"
+    organization: "Stardust"
+answers:
+  - q: "Did Stardust actually have end-to-end encryption"
+    a: "No. When TechCrunch pressed CEO Rachel Moranis on the encryption claim, she described standard SSL in transit and AES-256 at rest. These are baseline security measures, not end-to-end encryption. A follow-up analysis by TechCrunch security editor Zack Whittaker found that the app uploaded locally generated encryption keys to Stardust's own servers, meaning the company could decrypt all user data. Stardust removed all E2E encryption references from its privacy policy after the investigations."
+  - q: "Did Stardust share user data with third parties"
+    a: "Yes. TechCrunch's network traffic analysis found Stardust sharing users' phone numbers with Mixpanel, a third-party analytics service, when users logged in via phone number. Privacy International separately identified at least six third-party services processing Stardust user data: Rownd, Firebase, Mixpanel, OneSignal, RevenueCat, and Cloudflare. The privacy policy named only AppsFlyer."
+  - q: "Did Stardust face any regulatory consequences"
+    a: "No FTC enforcement action has been filed against Stardust for its false encryption claims or undisclosed data sharing. Milberg LLC investigated potential Federal Wiretap Act violations, but no public lawsuit resulted. Stardust remains operational with over one million users and no longer claims end-to-end encryption."
+faqs:
+  - q: "Is Stardust safe to use now"
+    a: "Stardust partnered with Rownd to separate identity data from health data, but all data remains stored on company servers. Without end-to-end encryption or on-device-only storage, Stardust can access your cycle data and must comply with valid legal process. The company's willingness to make false encryption claims and silently revise its privacy policy under scrutiny raises questions about the reliability of its current privacy representations."
+  - q: "How can I tell if a period tracker actually has end-to-end encryption"
+    a: "True end-to-end encryption means the company cannot read your data even if it wants to. Ask three questions: Does the company hold encryption keys Can customer support access your cycle data Can the company comply with a subpoena for your health data If the answer to any of these is yes, the app does not have end-to-end encryption regardless of what its marketing claims."
+relatedPages:
+  - /compare/alternatives/stardust-alternative-local-storage
+  - /resources/best/best-period-apps-after-roe
+  - /resources/guides/end-to-end-encryption-period-tracker
+  - /resources/guides/what-is-zero-knowledge-period-tracker
+  - /compare/alternatives/flo-app-alternative
+---
+
+## Day 0: June 24, 2022 (Dobbs Day)
+
+The Supreme Court issued its decision in Dobbs v. Jackson Women's Health Organization on June 24, 2022, overturning Roe v. Wade. Within hours, millions of people began searching for private alternatives to their period tracking apps.
+
+Stardust CEO Rachel Moranis posted a TikTok that day claiming Stardust was "the first period tracker to implement end-to-end encryption." The timing was calculated. Fear about reproductive data privacy was at its peak, and Stardust positioned itself as the answer.
+
+The response was immediate. Stardust's daily downloads jumped from approximately 3,000 per day to 200,000 on June 25, a 4,400% surge. The app reached #1 on the US App Store, surpassing TikTok, Instagram, and YouTube. According to Sensor Tower, 82% of Stardust's total 400,000+ lifetime installs occurred in just two days: June 25 and 26.
+
+Stardust had found an enormous market overnight. The only problem: the encryption claim was false.
+
+## Day 3: June 27, TechCrunch Investigation
+
+Sarah Perez and security editor Zack Whittaker at TechCrunch ran a network traffic analysis on the Stardust app. They found that Stardust shared users' phone numbers with Mixpanel, a third-party analytics service, when users logged in via phone number.
+
+When TechCrunch contacted Moranis about the end-to-end encryption claim, her description of the actual implementation revealed standard SSL encryption in transit and AES-256 encryption at rest. SSL protects data while it moves between your phone and the server. AES-256 at rest protects data stored on the server from unauthorized access to the server itself. Neither prevents the company from reading your data. Neither is end-to-end encryption.
+
+End-to-end encryption means data is encrypted on your device with keys that only you hold, so the company cannot decrypt it even under legal compulsion. What Stardust described was the baseline security that any competent web service should have.
+
+After the TechCrunch report published, Stardust silently removed all references to "end-to-end encryption" from its privacy policy.
+
+## Day 3: June 27, Vice/Motherboard Investigation
+
+On the same day, Samantha Cole at Vice's Motherboard discovered a clause in Stardust's privacy policy stating that user data may be disclosed "whether or not legally required." This was not a standard legal compliance clause. Standard language says a company will share data "when required by law." Stardust's language meant the company reserved the right to volunteer user data to law enforcement even when no legal obligation existed.
+
+For an app that had just attracted 200,000 downloads by promising privacy protection in the post-Dobbs environment, this clause was the opposite of what users expected.
+
+After Motherboard contacted Stardust at approximately 4:00 PM EST, the clause was changed within hours to read "when legally required." The company did not acknowledge the change or explain why the original language existed.
+
+## Day 6: June 30, Follow-Up Analysis
+
+Whittaker analyzed the updated version of the Stardust app three days later. He found that locally generated encryption keys were being uploaded to Stardust's own servers. This is the technical proof that end-to-end encryption did not exist: if the company holds your encryption keys, the company can decrypt your data. The entire point of end-to-end encryption is that the service provider never has access to the keys.
+
+With the keys on its servers, Stardust could read all user data. It could comply with any subpoena. It could share data with partners. The encryption existed in name only.
+
+## Privacy International Findings
+
+Privacy International conducted a separate analysis of Stardust and identified at least six third-party services processing user data: Rownd, Firebase, Mixpanel, OneSignal, RevenueCat, and Cloudflare. None of these were disclosed in Stardust's privacy policy at the time of the investigation. The only third-party service named in the privacy policy was AppsFlyer.
+
+Six undisclosed third-party data processors is not a minor oversight. Each one represents a company receiving user data that users did not consent to share with that specific entity. For an app marketing itself on privacy, the gap between the marketing and the reality was comprehensive.
+
+## Aftermath
+
+No FTC enforcement action has been filed against Stardust for its false encryption claims or undisclosed data sharing. This stands in contrast to the FTC's $59.5 million settlement with Flo for sharing health data with third parties without consent.
+
+Milberg LLC investigated potential Federal Wiretap Act violations related to Stardust's undisclosed data sharing. No public lawsuit has resulted.
+
+Stardust remains operational with over one million users. It no longer claims end-to-end encryption. The company partnered with Rownd to separate identity data from health data, but all data remains stored on company servers. There is no on-device-only storage option. Stardust can access user data and must comply with valid legal process.
+
+The Stardust episode shows how privacy claims work in the period tracker market. A company made a specific, testable technical claim. Three independent investigations debunked it within a week. The company quietly revised its marketing. No regulatory consequence followed. Over one million people still use the app.
+
+## What Floriva Does Differently
+
+Floriva stores all cycle data in encrypted local storage on your device. No readable cycle data is transmitted for core tracking. There is no sync, so no cycle data is transmitted at all. There are no encryption keys on Floriva's servers because there is no data on Floriva's servers. This is not a marketing claim that can be silently revised. It is a verifiable architectural choice: run a network traffic analysis on Floriva and you will find no readable reproductive-health data leaving for core tracking.
+
+The difference between Stardust's approach and Floriva's approach is the difference between a privacy policy and a privacy architecture. Policies can be changed with a text edit. Architecture determines what is technically possible.

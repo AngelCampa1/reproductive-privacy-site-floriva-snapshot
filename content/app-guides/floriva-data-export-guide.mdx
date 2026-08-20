@@ -1,0 +1,94 @@
+---
+title: "How to Export Your Data From Floriva (and Why That Matters)"
+description: "How to export your Floriva cycle data, what the export contains, and how to store it safely. Data portability explained for on-device apps."
+ogImage: "/og/app-guides/floriva-data-export-guide.png"
+tags:
+  - "guide"
+publishedAt: "2026-04-28"
+updatedAt: "2026-04-28"
+buyerStage: "bofu"
+targetPersona:
+  - "privacy-conscious-user"
+  - "flo-refugee"
+bluf: "Floriva's export function gives you a local copy of your cycle data in a format you control. Because data lives on-device, the export is your own data, not a corporate data request that takes 30 days and may exclude third-party disclosures."
+steps:
+  - title: "Open Floriva and go to Settings"
+    content: "From the main screen, go to the settings menu. The export option is typically under Data or Privacy settings. Look for 'Export Data,' 'Download My Data,' or similar."
+  - title: "Choose your export format"
+    content: "Floriva exports your data in a portable format such as CSV or JSON. CSV is the most useful for opening in a spreadsheet application. JSON is more complete and is useful if you are moving to another app or archiving for technical purposes."
+  - title: "Save the export file to a location you control"
+    content: "When prompted to save or share the file, choose your device's local storage, an encrypted folder, or a USB drive. Avoid saving it to a cloud service if your goal is to keep cycle data off of external servers. Your device's Files app on iOS or file manager on Android can store it locally."
+  - title: "Store the file securely"
+    content: "If you keep the export file long-term, treat it as sensitive health data. On a computer, store it in an encrypted folder. On your phone, the Files app protects it behind your device's lock screen. Do not email it unencrypted or upload it to a general cloud storage service."
+  - title: "Use the export to seed a new app or back up your history"
+    content: "If you are switching apps, open the export file and find your last 6 cycle start dates. Enter those into the new app when it asks for history. If you are exporting as a backup, label the file with the date and keep it alongside other important documents."
+answers:
+  - q: "What does the Floriva export file contain?"
+    a: "The export includes your logged cycle start and end dates, flow intensity entries, symptom logs, and any notes you have added. It does not contain data you did not enter, because Floriva only stores what you log on-device."
+  - q: "How is exporting from Floriva different from exporting from Flo?"
+    a: "Exporting from Flo is a formal data request. You ask Flo for a copy of what they hold on their servers, and they email you a link within a few days. Exporting from Floriva is a local operation: your data is on your device, and you are simply packaging it into a file. No request to a company, no waiting period."
+  - q: "Should I export my Floriva data regularly?"
+    a: "If you want a backup of your cycle history, exporting every 3-6 months is reasonable. Floriva's on-device storage means data is as safe as your device. If your phone is lost or damaged without a backup, your Floriva data is gone. A periodic export to a secure local location protects against that."
+relatedPages:
+  - /resources/guides/on-device-storage-period-tracker
+  - /resources/guides/how-period-tracker-apps-collect-data
+  - /app-guides/floriva-data-deletion-guide
+  - /resources/guides/how-to-switch-from-flo
+  - /resources/guides/end-to-end-encryption-period-tracker
+  - /resources/best/best-private-period-tracker-apps
+faqs:
+  - q: "Can I export my data from Floriva?"
+    a: "Yes. Floriva includes a data export function that lets you download your records at any time. Your data is yours. No request to a company, no waiting period. The export is a local operation because your data is already on your device."
+  - q: "What format does the Floriva export use?"
+    a: "Floriva exports data as CSV or JSON. CSV is the most useful for opening in a spreadsheet. JSON is more complete and useful for archiving or moving to another app. Save the file to local device storage rather than a cloud service to keep cycle data off external servers."
+  - q: "Does Floriva store data on my device only?"
+    a: "Yes. Floriva uses local-first storage. The export function packages your local data into a portable file. Floriva has no readable central cycle database to request."
+  - q: "Should I export my Floriva data regularly?"
+    a: "Exporting every 3-6 months is reasonable if you want a backup. Because data lives only on your device, losing your phone without a backup means losing your Floriva history. A periodic export to a secure local location protects against that."
+---
+
+## Why data export matters for an on-device app
+
+When a period tracker stores data on a server, the company has a copy regardless of what you do. Your data exists in their infrastructure, under their retention policies, subject to their legal obligations. If you want a copy, you submit a request. If you want it deleted, you submit a different request and wait.
+
+Floriva's on-device storage flips this. Your data exists only on your phone. The export function is not a way to get your data from a company. It is a way to package your own data into a portable file that you can move, store, or delete on your own terms.
+
+This matters for two practical reasons: data portability (moving to another app without losing history) and data security (protecting against device loss or damage).
+
+## What the export contains
+
+Floriva's export includes the data you have logged: cycle start and end dates, flow intensity, symptom entries, and any notes. Because Floriva only stores what you enter on your device, the export reflects exactly what you put in. There is no behavioral metadata, no inferred data from usage patterns, and no third-party data appended.
+
+This is different from data exports from cloud-based apps, which may include account metadata, device identifiers, inferred health insights, and records of which features you used. Floriva has none of that to export.
+
+## How to export and where to save the file
+
+The export walkthrough is in the steps above. The key decision is where you save the file. Options from most to least private:
+
+**Device local storage (most private):** Saving to your phone's local storage keeps the data off any cloud service. Your device's lock screen protects it. The risk is device loss, if your phone is damaged or stolen and you have no device backup, the export file goes with it.
+
+**Encrypted folder on a computer:** Transfer the file to a computer and store it in an encrypted folder (FileVault on Mac, BitLocker on Windows, or an encrypted ZIP file). This is the right choice for long-term archiving.
+
+**USB drive:** A completely offline storage option. No network, no cloud, no third party. Effective but requires you to keep track of physical media.
+
+**Avoid:** General cloud storage services (Google Drive, Dropbox, iCloud) unless you are specifically comfortable with that provider holding health data. Most cloud storage terms permit the provider to access files for service operation, and cloud accounts can be compromised.
+
+## Using the export to move to a new app
+
+If you are switching from Floriva to another period tracker, the export file is your migration tool. Open the file and locate your cycle start dates. These are the most important historical data for seeding a new tracker's algorithm.
+
+Enter your last 6 cycle start dates manually in the new app when it asks for history. That is typically enough for a prediction algorithm to calculate your average cycle length and generate a reasonable first forecast. After 2-3 cycles with the new app, predictions stabilize.
+
+If the new app accepts CSV import, check whether Floriva's export format matches what it expects. Most apps that accept import are looking for a column of cycle start dates; the exact format varies.
+
+## Using the export for medical purposes
+
+If you need to share cycle data with a clinician, the export file is one way to do it. A CSV file opened in a spreadsheet and printed or emailed gives a clinician a structured record without requiring them to have access to your phone or your app.
+
+For medical sharing, include a date range in your description of the data so the clinician understands the time period covered. A month-by-month table of cycle lengths and symptom frequency, derived from your export, is typically more readable in an appointment than a raw data file.
+
+## What happens if you lose your phone without an export
+
+If your device is lost or damaged and you have not exported your Floriva data, and you do not have a device-level backup that includes app data, your Floriva history is gone. This is the tradeoff of on-device storage: the data is maximally private because no one else holds it, but that also means there is no server to restore from.
+
+Regular exports, every 3-6 months, protect against this scenario. Treat Floriva exports the same way you treat other irreplaceable files.

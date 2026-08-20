@@ -1,0 +1,615 @@
+---
+title: "Delete and Move Your Period Data Guide"
+description: "A full guide to exporting, deleting, and moving period app data: per-app steps for Flo, Clue, Natural Cycles, and Glow, request templates, a receipt tracker, data broker opt-out, and a digital will."
+publishedAt: "2026-07-06"
+updatedAt: "2026-07-06"
+buyerStage: "mofu"
+targetPersona:
+  - "privacy-conscious"
+  - "post-dobbs-worried"
+  - "data-sensitive"
+  - "switching-apps"
+tags:
+  - data deletion
+  - period app migration
+  - data export
+  - privacy
+  - lead magnet
+schema: "Article"
+route: "/free/delete-period-data-guide"
+bluf: "Deleting an app is not the same as deleting your data. Export first, then request deletion the right way, track each reply, and decide what moves to a new tracker. This guide covers Flo, Clue, Natural Cycles, and Glow, plus templates, a receipt tracker, and a digital will."
+answers:
+  - q: "Does deleting a period app account delete my data?"
+    a: "Not automatically. Most period apps keep data in server backups, analytics pipelines, and third-party systems after account deletion. Under GDPR (for EU users) and several US state privacy laws including CCPA, companies must delete data upon a verified request, with some exceptions for legal retention obligations."
+  - q: "Should I export my data before I request deletion?"
+    a: "Yes. Get a copy of your cycle dates, symptoms, notes, and fertility or pregnancy tracking data before deletion, since deletion is usually permanent and cannot be undone once backups clear."
+  - q: "How do I prove I asked a company to delete my data?"
+    a: "Save the request, the date sent, the account email, every reply, and any confirmation number or screenshot. Also save any notes about data the company says it must keep, and for how long."
+  - q: "Can I opt out of data brokers that may hold reproductive health signals?"
+    a: "You can opt out of some brokers one at a time. There is no single universal opt-out. Start with your phone's location and ad ID settings, then send requests to brokers you can name."
+faqs:
+  - q: "Is uninstalling the app enough?"
+    a: "No. Uninstalling removes the app from your phone. It does not prove that server-side account data was deleted."
+  - q: "What if the company says deletion is done but gives no detail?"
+    a: "Ask directly whether account data, health data, device data, analytics data, service-provider data, and backups were all included. Vague replies are a reason to ask again."
+  - q: "Can Floriart or Floriva read my old export file for me?"
+    a: "Floriva is not a file reader for other apps' exports. Use the worksheets in this guide to pick the dates and notes you want to enter by hand."
+  - q: "What happens to my period data if I lose my phone or become unable to manage it myself?"
+    a: "If your data lives only on your device, it is gone unless you exported a backup. A short digital will can tell a trusted person where your data lives and how to access, export, or delete it."
+definitions:
+  - term: "Deletion receipt"
+    definition: "The email, message, screenshot, or case note that shows a company received or finished your deletion request."
+  - term: "Data export"
+    definition: "A copy of the personal data an app has about you, often as a CSV, PDF, JSON, or ZIP file."
+  - term: "CCPA"
+    definition: "California Consumer Privacy Act. Gives California residents the right to know what personal data a business collects, the right to delete it, and the right to opt out of its sale. Businesses must respond to deletion requests within 45 calendar days, with a possible 45-day extension if they notify the consumer."
+  - term: "GDPR right to erasure"
+    definition: "Also called the right to be forgotten. Under EU GDPR Article 17, people can request deletion of personal data. The company must comply unless it has a legitimate legal basis to retain the data."
+  - term: "Data broker"
+    definition: "A company that collects personal data from many sources and sells or shares profiles, lists, scores, or segments, sometimes including inferred health interests."
+  - term: "Digital estate"
+    definition: "All digital assets, accounts, and data belonging to a person, including app accounts, cloud storage, and locally stored files."
+relatedPages:
+  - /free/period-app-privacy-audit-kit
+  - /free/post-dobbs-digital-safety-kit-hub
+  - /resources/privacy-in-practice/lock-down-period-data-on-your-phone
+  - /resources/guides/delete-flo-account-keep-data
+  - /resources/guides/does-flo-sell-your-data
+sources:
+  - id: "clue-copy-data-2025"
+    claim: "Clue's support page says users can request a copy of tracked data by email, download a password-protected file, and receive tracked data and app settings in JSON format."
+    url: "https://support.helloclue.com/hc/en-us/articles/17320910724125-How-do-I-get-a-copy-of-my-Clue-data"
+    publisher: "Clue Support"
+    accessedAt: "2026-07-01"
+    primary: true
+  - id: "clue-manage-data-2025"
+    claim: "Clue's data management page points users to paths for changing tracked health data, deleting a Clue account, getting a copy of data, and requesting access information."
+    url: "https://support.helloclue.com/hc/en-us/articles/360000757786-In-what-ways-can-I-manage-my-Clue-data"
+    publisher: "Clue Support"
+    accessedAt: "2026-07-01"
+    primary: true
+  - id: "clue-delete-account-2026"
+    claim: "Clue's delete account page says a deleted account cannot be reactivated and tracked health data cannot be recovered."
+    url: "https://support.helloclue.com/hc/en-us/articles/4415640538004-How-can-I-delete-my-Clue-account"
+    publisher: "Clue Support"
+    accessedAt: "2026-07-01"
+    primary: true
+  - id: "clue-import-data-2025"
+    claim: "Clue's import help page says there is no direct way to import data from other period tracking or health apps into Clue, but users can manually enter up to one year of data."
+    url: "https://support.helloclue.com/hc/en-us/articles/21540631889181-Can-I-import-my-data-to-the-Clue-app"
+    publisher: "Clue Support"
+    accessedAt: "2026-07-01"
+    primary: true
+  - id: "ftc-health-app-breach-2024"
+    claim: "The FTC says its updated Health Breach Notification Rule makes clear that health apps and similar technologies can be covered."
+    url: "https://www.ftc.gov/business-guidance/blog/2024/04/updated-ftc-health-breach-notification-rule-puts-new-provisions-place-protect-users-health-apps"
+    publisher: "Federal Trade Commission"
+    publishedAt: "2024-04-26"
+    accessedAt: "2026-07-01"
+    primary: true
+  - id: "ftc-flo-2021"
+    claim: "The FTC alleged that Flo shared users' health data with Facebook, Google, and outside firms after telling users it would keep that data private."
+    url: "https://www.ftc.gov/news-events/news/press-releases/2021/01/developer-popular-womens-fertility-tracking-app-settles-ftc-allegations-it-misled-consumers-about"
+    publisher: "Federal Trade Commission"
+    publishedAt: "2021-01-13"
+    accessedAt: "2026-06-30"
+    primary: true
+  - id: "ftc-flo-final-order-2021"
+    claim: "The FTC finalized an order after alleging that Flo shared sensitive health data with marketing and analytics firms after promising to keep users' health data private."
+    url: "https://www.ftc.gov/news-events/news/press-releases/2021/06/ftc-finalizes-order-flo-health-fertility-tracking-app-shared-sensitive-health-data-facebook-google"
+    publisher: "Federal Trade Commission"
+    publishedAt: "2021-06-22"
+    accessedAt: "2026-07-01"
+    primary: true
+  - id: "ftc-premom-2023"
+    claim: "The FTC case page for Premom's developer says the final order bars the company from sharing health data for advertising."
+    url: "https://www.ftc.gov/legal-library/browse/cases-proceedings/202-3186-easy-healthcare-corporation-us-v"
+    publisher: "Federal Trade Commission"
+    publishedAt: "2023-06-26"
+    accessedAt: "2026-06-30"
+    primary: true
+  - id: "ftc-consumer-privacy-identity"
+    claim: "The FTC gives consumers broad privacy and identity guidance, including steps for data and account cleanup."
+    url: "https://consumer.ftc.gov/identity-theft-and-online-security/online-privacy-and-security"
+    publisher: "Federal Trade Commission"
+    accessedAt: "2026-06-30"
+    primary: true
+  - id: "flo-privacy-policy-2026"
+    claim: "Flo's current privacy policy says users can request access, copies, deletion, and portability of personal data, and can use Flo's chatbot, website, email, or current app settings for privacy rights."
+    url: "https://flo.health/privacy-policy"
+    publisher: "Flo Health"
+    accessedAt: "2026-07-01"
+    primary: true
+  - id: "flo-privacy-portal-2026"
+    claim: "Flo's privacy portal says users can request a data copy, delete account data, export data, control data collection, and use Anonymous Mode."
+    url: "https://flo.health/privacy-portal"
+    publisher: "Flo Health"
+    accessedAt: "2026-07-01"
+    primary: true
+  - id: "california-ccpa-delete-2026"
+    claim: "California's CCPA page says businesses must respond to deletion requests within 45 calendar days and may extend by another 45 days if they notify the consumer."
+    url: "https://oag.ca.gov/privacy/ccpa"
+    publisher: "California Department of Justice"
+    accessedAt: "2026-07-01"
+    primary: true
+  - id: "european-commission-erasure-2026"
+    claim: "The European Commission says GDPR gives people the right to ask for deletion, but some exceptions can let an organization keep data."
+    url: "https://commission.europa.eu/law/law-topic/data-protection/rules-business-and-organisations/dealing-citizens/do-we-always-have-delete-personal-data-if-person-asks_en"
+    publisher: "European Commission"
+    accessedAt: "2026-07-01"
+    primary: true
+  - id: "apple-health-cycle-delete-2026"
+    claim: "Apple Support explains that users can delete Cycle Tracking items in the Health app."
+    url: "https://support.apple.com/en-us/120356"
+    publisher: "Apple Support"
+    accessedAt: "2026-07-01"
+    primary: true
+  - id: "android-health-connect-2026"
+    claim: "Android Help says Health Connect lets users manage app permissions and data, and connected apps may keep a copy of data they shared with Health Connect."
+    url: "https://support.google.com/android/answer/12201227?hl=en"
+    publisher: "Google Android Help"
+    accessedAt: "2026-07-01"
+    primary: true
+  - id: "ftc-kochava-2022"
+    claim: "The FTC sued Kochava and alleged that it sold location data that could track people to reproductive health clinics and other sensitive places."
+    url: "https://www.ftc.gov/news-events/news/press-releases/2022/08/ftc-sues-kochava-selling-data-tracks-people-reproductive-health-clinics-places-worship-other"
+    publisher: "Federal Trade Commission"
+    publishedAt: "2022-08-29"
+    accessedAt: "2026-06-30"
+    primary: true
+  - id: "ftc-outlogic-2024"
+    claim: "The FTC finalized an order prohibiting Outlogic, formerly X-Mode, from sharing or selling sensitive location data."
+    url: "https://www.ftc.gov/news-events/news/press-releases/2024/04/ftc-finalizes-order-x-mode-successor-outlogic-prohibiting-it-sharing-or-selling-sensitive-location"
+    publisher: "Federal Trade Commission"
+    publishedAt: "2024-04-11"
+    accessedAt: "2026-06-30"
+    primary: true
+  - id: "ftc-inmarket-2024"
+    claim: "The FTC finalized an order prohibiting InMarket from selling or sharing precise location data."
+    url: "https://www.ftc.gov/news-events/news/press-releases/2024/05/ftc-finalizes-order-inmarket-prohibiting-it-selling-or-sharing-precise-location-data"
+    publisher: "Federal Trade Commission"
+    publishedAt: "2024-05-01"
+    accessedAt: "2026-06-30"
+    primary: true
+  - id: "ftc-mobilewalla-2025"
+    claim: "The FTC finalized an order banning Mobilewalla from selling sensitive location data."
+    url: "https://www.ftc.gov/news-events/news/press-releases/2025/01/ftc-finalizes-order-banning-mobilewalla-selling-sensitive-location-data"
+    publisher: "Federal Trade Commission"
+    publishedAt: "2025-01-14"
+    accessedAt: "2026-06-30"
+    primary: true
+  - id: "ftc-look-behind-screens"
+    claim: "The FTC examined data practices of social media and video streaming services, including data collection and advertising uses."
+    url: "https://www.ftc.gov/reports/look-behind-screens-examining-data-practices-social-media-video-streaming-services"
+    publisher: "Federal Trade Commission"
+    accessedAt: "2026-06-30"
+    primary: true
+  - id: "acog-menstrual-cycle-vital-sign-2015"
+    claim: "ACOG says asking a patient to chart menses may help when menstrual history is vague or inaccurate."
+    url: "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2015/12/menstruation-in-girls-and-adolescents-using-the-menstrual-cycle-as-a-vital-sign"
+    publisher: "American College of Obstetricians and Gynecologists"
+    publishedAt: "2015-12-01"
+    accessedAt: "2026-07-01"
+    primary: true
+---
+
+Deleting an account is not the same as deleting your data.
+
+This guide walks through export, deletion, receipts, and moving to a new tracker without losing the history you still need.
+
+It is not legal advice.
+
+## Step 1: Export before you touch anything else
+
+Deletion is usually permanent. Get a copy of everything the app has on you first. You may have a legal right to this data under GDPR (Article 20) or CCPA (Section 1798.100).
+
+What to export:
+
+- Cycle start and end dates.
+- Symptom logs.
+- Notes or journal entries.
+- Pregnancy or fertility tracking data.
+- Account profile information.
+
+General steps:
+
+1. Open the app and go to Settings or Profile.
+2. Look for "Export Data," "Download My Data," or "Data Portability."
+3. Request a portable format. CSV or JSON is best. PDF is acceptable.
+4. Wait for the export to arrive by email or in-app download.
+5. Save the file somewhere you control: local storage, a USB drive, or an encrypted folder.
+6. Open the file and spot-check that your real dates and notes are inside.
+
+Do not request deletion until the export is confirmed and saved.
+
+## Step 2: Review the export before you move it anywhere
+
+A raw export can hold old notes, settings, and health details you no longer want to carry into a new app.
+
+| Field | Your notes |
+|---|---|
+| Date requested | |
+| Email used | |
+| File saved where | |
+| Password saved where (if the file is password protected) | |
+| Backup copy made | |
+
+Open the file with a text editor or JSON viewer. Search it for: period, cycle, bleeding, flow, pain, symptom, sex, pregnancy, ovulation, medicine, note. Mark what you find:
+
+| Data type | Found | Keep | Clean | Delete from working copy |
+|---|---|---|---|---|
+| Period start dates | | | | |
+| Period end dates | | | | |
+| Flow levels | | | | |
+| Pain notes | | | | |
+| Mood notes | | | | |
+| Sex or intimacy notes | | | | |
+| Pregnancy notes | | | | |
+| Fertility notes | | | | |
+| Medicine notes | | | | |
+| Free text notes | | | | |
+
+Then clean sensitive notes you no longer need before entering anything into a new app: names of partners, doctors, clinics, schools, or workplaces; exact locations; conflict or safety notes; and details you no longer need for care or your own records. Replace long notes with plain facts, for example "Bad fight after clinic visit near work" becomes "Stress high. Pain 6."
+
+Clue's support page confirms users can request a copy of tracked data by email as a password-protected JSON file, and Clue's account deletion page states a deleted account cannot be reactivated and tracked health data cannot be recovered -- so review the export before you delete anything.
+
+## Step 3: App-specific export and deletion steps
+
+Check the current app menus before following these steps exactly. Menus change over time.
+
+### Flo
+
+Flo faced a 2021 FTC consent order requiring it to get affirmative consent before sharing users' health data, after the FTC alleged Flo shared health data with Facebook and Google analytics through embedded SDKs.
+
+- **Export:** Open Flo, tap your profile icon, go to Settings, then "Data and Privacy," then "Request My Data" or "Download My Data." Flo emails a file, typically within a few days.
+- **Delete:** In Settings, go to "Data and Privacy," tap "Delete Account," and confirm.
+- **What Flo retains:** Flo's policy allows retaining de-identified or aggregated data, and data required by law. Flo's current privacy policy and privacy portal say users can request access, copies, deletion, and portability through the chatbot, website, email, or app settings, and mention Anonymous Mode as a data-control option.
+- **If in-app deletion does not work:** Email privacy@flo.health with a formal written request.
+
+### Clue
+
+Clue is based in Berlin and operates under GDPR by default, which gives users stronger rights than many US-based apps.
+
+- **Export:** Settings (gear icon), then "Account," then "Export my data." The file is sent to your registered email.
+- **Delete:** Settings, then "Account," then "Delete account," then confirm. Clue processes deletion within 30 days under GDPR.
+- **Import:** Clue's import help page says there is no direct way to import data from other period or health apps into Clue, but users can manually enter up to one year of past data.
+- **If in-app deletion does not work:** Email support@helloclue.com or use Clue's GDPR data request form.
+
+### Natural Cycles
+
+Natural Cycles is an FDA-cleared fertility awareness app, so it may retain certain records for regulatory compliance.
+
+- **Export:** Profile, then "Data Export" or "Download My Data." The export typically includes temperature readings, cycle data, and LH test results.
+- **Delete:** Contact support@naturalcycles.com and specifically request deletion of all data, not just account deactivation.
+- **Also cancel any subscription** through Apple or Google alongside the deletion request to avoid continued charges.
+
+### Glow
+
+Glow operates several related apps (Glow, Nurture, Baby, Eve). If you used more than one, request deletion across all of them.
+
+- **Export:** Settings, then "My Data" or "Data Export." If no in-app option exists, email support requesting a data portability package.
+- **Delete:** Settings, then "Delete Account." If unavailable in-app, email support@glowing.com and name every Glow app you used, including community or forum content.
+- **What Glow retains:** Community or forum posts may remain after account deletion unless you request their removal explicitly.
+
+## Step 4: Send a formal deletion request
+
+Use these if in-app deletion is unavailable, incomplete, or you want a documented paper trail.
+
+**General request (any app):**
+
+```text
+Subject: Data deletion request
+
+Hello,
+
+I am asking you to delete the personal data tied to this account:
+
+Email: [your email]
+Username, if any: [your username]
+Phone number, if any: [your phone]
+
+Please delete my account data, period and cycle data, symptom logs, notes, device data, analytics data, and data shared with service providers when your policy allows it.
+
+If you must keep any data, please tell me:
+
+1. What data you are keeping.
+2. Why you are keeping it.
+3. How long you plan to keep it.
+4. Whether it is in backups or vendor systems.
+
+Please confirm when the deletion is complete.
+
+Thank you,
+[your name]
+```
+
+**GDPR deletion request (EU-based companies, or if you are in the EU):**
+
+```text
+Subject: Data Erasure Request Under GDPR Article 17
+
+To the Data Protection Officer,
+
+I am exercising my right to erasure under Article 17 of the General Data Protection Regulation (GDPR). I request that you delete all personal data you hold about me, including but not limited to:
+
+- Account profile information
+- Cycle and period tracking data
+- Symptom and health logs
+- Usage analytics and behavioral data
+- Data shared with or collected by third-party SDKs integrated in your app
+- Backup copies of the above data
+
+My account details: [your email address associated with the account]
+
+Please confirm deletion within 30 days as required by Article 12(3) of the GDPR. If you are unable to fully comply, please specify the legal basis for retaining any data and the categories of data retained.
+
+Regards,
+[Your name]
+```
+
+**CCPA deletion request (California residents):**
+
+```text
+Subject: Data Deletion Request Under CCPA
+
+I am a California resident exercising my right to deletion under the California Consumer Privacy Act (CCPA), Civil Code Section 1798.105. I request that you delete all personal information you have collected about me, including:
+
+- Account and profile data
+- Health and cycle tracking data
+- Usage data and analytics
+- Data shared with third parties
+
+My account is associated with: [your email address]
+
+Please confirm deletion within 45 days as required by the CCPA. If you deny this request in whole or in part, please explain the basis for denial.
+
+Regards,
+[Your name]
+```
+
+California's CCPA page states businesses must respond to deletion requests within 45 calendar days, with a possible 45-day extension if the business notifies the consumer. The European Commission says GDPR gives people the right to ask for deletion, though organizations may keep data for specific exceptions such as legal duties.
+
+## Step 5: Follow-up templates
+
+**No reply after a week:**
+
+```text
+Subject: Follow-up on data deletion request
+
+Hello,
+
+I sent a data deletion request on [date].
+
+I am following up because I have not received a reply.
+
+Account email: [your email]
+App: [app name]
+
+Please confirm that you received the request. Please also tell me the expected response date.
+
+Thank you,
+[your name]
+```
+
+**Vague "done" reply, asking for detail:**
+
+```text
+Subject: Please clarify deletion confirmation
+
+Hello,
+
+Thank you for your reply.
+
+Can you confirm whether the deletion included:
+
+1. Account profile data.
+2. Period and cycle data.
+3. Symptom logs.
+4. Notes or journal text.
+5. Device IDs.
+6. Analytics data.
+7. Data held by service providers when deletion is allowed.
+8. Backup copies, or the expected backup deletion date.
+
+If any data was kept, please tell me the data type, reason, and retention period.
+
+Thank you,
+[your name]
+```
+
+**If the company asks for extra verification:**
+
+```text
+Subject: Verification question for my privacy request
+
+Hello,
+
+I can help verify my account.
+
+Before I send more information, please tell me what specific information you need and why it is needed for verification.
+
+Please use any verification data only for this privacy request.
+
+Account email: [your email]
+App: [app name]
+
+Thank you,
+[your name]
+```
+
+Send only what is needed to verify you. Keep every reply.
+
+## Step 6: Track the receipt
+
+Use one row per app or per reply. Save screenshots, email headers if you know how, and any case number.
+
+| App | Request sent | Reply due | Export saved | Deletion confirmed | Data kept | Follow-up needed |
+|---|---|---|---|---|---|---|
+| | | | | | | |
+| | | | | | | |
+| | | | | | | |
+
+Follow-up dates to mark:
+
+| Follow-up | Date |
+|---|---|
+| 7 days after request | |
+| 30 days after request (GDPR) | |
+| 45 days after request (CCPA) | |
+| 90 days after request, if backups are mentioned | |
+
+Name your saved files with dates, for example `2026-07-01-app-name-deletion-request.txt` and `2026-07-30-app-name-confirmation.pdf`.
+
+## Step 7: Verify deletion actually happened
+
+- Try to log in with your old credentials. If the account is accessible, deletion did not happen.
+- Try "forgot password." If it recognizes your email, the account data still exists.
+- If cloud sync was on, check whether synced data still exists in your own iCloud or Google backups -- the app company cannot delete data from your personal cloud storage, so remove it separately. Apple Support explains that Cycle Tracking items can be deleted directly in the Health app, and Android Help says Health Connect lets you manage connected apps' data permissions, though connected apps may keep their own copy of data already shared with Health Connect.
+- If deletion was not completed, file a complaint: GDPR with your national Data Protection Authority, or CCPA with the California Attorney General's office at oag.ca.gov.
+
+## Step 8: Find every old app you forgot about
+
+- [ ] Your phone's current app list.
+- [ ] App Store or Google Play purchase history.
+- [ ] Old email receipts and login messages.
+- [ ] Password manager entries.
+- [ ] Email searches for "period," "cycle," "ovulation," "fertility," and "pregnancy."
+- [ ] Old exports saved in Drive, iCloud, Dropbox, or your computer.
+
+| App name | Email used | Still installed | Account found | Notes |
+|---|---|---|---|---|
+| | | | | |
+| | | | | |
+
+For each one still installed and in use, run the [period app privacy audit kit](/free/period-app-privacy-audit-kit) before adding more data. For each one you no longer use, export what you need, then send the deletion request above.
+
+## Step 9: Clean up your phone
+
+- [ ] Cancel subscriptions through Apple or Google, not only inside the app.
+- [ ] Remove old widgets and app permissions.
+- [ ] Check Apple Health Cycle Tracking data and Health Connect permissions if you synced there.
+- [ ] Delete old screenshots and exports from shared albums or drives you no longer need.
+- [ ] Remove saved passwords you no longer need.
+- [ ] Reset your advertising ID.
+
+## Step 10: Reduce data broker exposure
+
+Data broker cleanup has no single switch. Start with what you control today, then send opt-out requests where you can find a broker record.
+
+The FTC has brought several cases over sensitive location data that can reveal clinic visits: it sued Kochava, alleging it sold location data that could track people to reproductive health clinics and other sensitive places; it finalized an order prohibiting Outlogic (formerly X-Mode) from sharing or selling sensitive location data; it finalized an order prohibiting InMarket from selling or sharing precise location data; and it finalized an order banning Mobilewalla from selling sensitive location data. The FTC has also examined broader data practices at social media and video streaming services.
+
+**Cut off new signals first:**
+
+- [ ] Turn off precise location for apps that do not need it.
+- [ ] Turn off background location for weather, shopping, games, and social apps.
+- [ ] Reset your advertising ID.
+- [ ] Turn off app tracking where your phone allows it.
+
+**Then send opt-out requests to brokers you can name:**
+
+```text
+Subject: Opt-out and deletion request
+
+Hello,
+
+I am asking to opt out of the sale, sharing, profiling, and use of my personal data where the law gives me that right.
+
+Please search for records tied to:
+
+Name: [your name]
+Email: [your email]
+Phone: [your phone]
+Address: [your current address]
+Past address, if needed: [old address]
+
+Please delete or suppress my personal data from your products when allowed. This includes location data, advertising IDs, health interest segments, inferred reproductive health interests, and any profile tied to the identifiers above.
+
+If you cannot delete a record, please tell me:
+
+1. What data you will keep.
+2. Why you will keep it.
+3. Whether it is sold, shared, or used for ads.
+4. How I can appeal or limit its use.
+
+Please confirm when the opt-out is complete.
+
+Thank you,
+[your name]
+```
+
+Track replies, since brokers may reacquire data later and need a repeat check:
+
+| Broker | Date sent | ID required | Data found | Removed or suppressed | Data kept | Next check |
+|---|---|---|---|---|---|---|
+| | | | | | | |
+
+## Step 11: Move your history into a new tracker
+
+Do not start the new app first. Start from your saved export.
+
+**Make a key date summary** rather than moving every old entry:
+
+| Cycle | Period start | Period end | Cycle length | Heavy days | Pain 0 to 10 | Notes to move |
+|---|---|---|---:|---|---:|---|
+| 1 | | | | | | |
+| 2 | | | | | | |
+| 3 | | | | | | |
+
+Add rows if you track for PCOS, endometriosis, PMDD, fertility, perimenopause, or a specific care plan. ACOG notes that charting can help when menstrual history is vague or hard to recall, so a short, accurate summary can matter more than a full raw export.
+
+**Decide what actually moves:**
+
+| Move now | Move later if needed | Leave in archive |
+|---|---|---|
+| Recent period start dates | Older cycles | Full raw export |
+| Recent period end dates | Old mood or symptom tags | Old app settings |
+| Heavy bleeding days | Fertility signs | Old free text |
+| Pain patterns | Doctor notes | Screenshots, receipts, support emails |
+| Current medicines | | |
+
+If the new app cannot import your old file, enter the summary by hand. That is slower, but it lets you leave old sensitive notes behind.
+
+**Before deleting the old account, check the new record:**
+
+- [ ] Last period start date matches.
+- [ ] Recent cycle lengths look right.
+- [ ] Heavy days are marked.
+- [ ] Current symptoms and medicines are entered.
+- [ ] Sensitive old notes stayed out.
+- [ ] You know how to export from the new app later.
+
+## Step 12: A short digital will for your cycle data
+
+Physical health records sit with your doctor, covered by rules you understand. Digital health data is scattered across apps, phones, and export files with no single access plan. Fill this out once and store it securely.
+
+**App inventory** (repeat for each app):
+
+- App name: _______
+- What data it contains: _______
+- Storage: [ ] On device only [ ] Company servers [ ] Both
+- Account email: _______
+- Password location (never write the actual password): _______
+- Last export date and file location: _______
+- Deletion contact or method: _______
+
+**Device information:**
+
+- Primary phone and backup method (iCloud / Google / local / none): _______
+- Does the backup include health app data? [ ] Yes [ ] No [ ] Unknown
+
+**Designated person:**
+
+- Name and relationship: _______
+- What they should do if you lose your phone: _______
+- What they should do in a medical emergency: _______
+- What they should do after your death: _______
+
+**Keep it secure.** Print it and store it in a sealed envelope with your other important documents, or keep a digital copy in a password manager's secure notes or an encrypted file. Never write actual passwords in the document itself -- reference where they are stored instead. Review it once a year: check that listed apps are still in use, add any new ones, and confirm your designated person's contact details are current.
+
+This template is not a legal document. It does not replace a will, healthcare directive, or power of attorney.
+
+## Floriva note
+
+Floriva is not a universal file reader or converter for other apps' exports. Use the worksheets above to choose what you enter by hand.
+
+Floriva should pass the same export, deletion, and privacy checks as any other app. Use the [period app privacy audit kit](/free/period-app-privacy-audit-kit) to check it, and any tracker you consider next, before you add health notes.

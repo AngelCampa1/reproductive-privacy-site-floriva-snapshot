@@ -1,0 +1,279 @@
+/* Hub-page-only surfaces: search field, filter chips, state tiers, and the
+   hub guide intro. Everything here is scoped under .hub-page so it only
+   touches the ~20 listing routes rendered by src/pages/hub-page.tsx and
+   never reaches into src/styles/base.css's shared card-grid/content-card/
+   guided-entry-card/page-hero rules used by other templates. */
+
+/* ---------------------------------------------------------------------- */
+/* Hero: smaller, tighter serif hero for a listing page than a landing page. */
+
+.hub-page .page-hero h1 {
+  font-size: clamp(2rem, 3.4vw, 2.8rem);
+  max-width: 26ch;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Pillar sections: a grouped preview plus a handoff to the hub that owns the
+   full list. `/resources` used to render all 273 of its entries in one
+   ungrouped grid; sections cap at a preview and link onward instead. */
+
+.hub-page .pillar-section {
+  padding-block: var(--space-7) 0;
+}
+
+.hub-page .pillar-section__see-all {
+  justify-self: start;
+  margin-top: var(--space-5);
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Search field: pill input, hairline border, berry focus ring. */
+
+.search-field {
+  position: relative;
+  display: grid;
+  gap: 0.6rem;
+  max-width: 28rem;
+  padding: 1.5rem;
+  border-radius: var(--radius-card);
+  background: var(--paper);
+  border: 1px solid transparent;
+  box-shadow: var(--shadow-soft);
+}
+
+.search-field span {
+  color: var(--ink-soft);
+  font-weight: 700;
+}
+
+.search-field input {
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--rule);
+  padding: 0.95rem 1.35rem;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.search-field input:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Info chips: pills for collection labels + a mono readout for the entry
+   count, so the chip row reads as directory metadata, not decoration. */
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.info-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-pill);
+  background: var(--canvas-deep);
+  border: 1px solid var(--rule);
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.info-chip--soft {
+  background: var(--paper);
+  color: var(--ink-mute);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  box-shadow: var(--shadow-soft);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Hub guide intro + a subtle mono index number on each "choose your path"
+   card, echoing the article table-of-contents numbering elsewhere on the
+   site without touching the frozen .guided-entry-card class itself. */
+
+.hub-guide {
+  padding-block: var(--space-6) var(--space-7);
+}
+
+.hub-guide h2 {
+  font-family: var(--font-display);
+  font-weight: 450;
+  letter-spacing: 0;
+  line-height: 1;
+  margin: 0;
+  color: var(--ink);
+}
+
+.hub-page .guided-entry__grid {
+  counter-reset: hub-path;
+}
+
+.hub-page .guided-entry-card {
+  position: relative;
+  counter-increment: hub-path;
+}
+
+.hub-page .guided-entry-card::before {
+  content: counter(hub-path, decimal-leading-zero);
+  position: absolute;
+  top: 1.15rem;
+  right: 1.2rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-mute);
+}
+
+/* ---------------------------------------------------------------------- */
+/* State risk-tier group headers: tracked-caps hairline section breaks, with
+   a calm (not alarmist) chip for the tier label instead of berry-only text. */
+
+.state-tier {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.state-tier__heading {
+  max-width: 60ch;
+}
+
+.state-tier + .state-tier .state-tier__heading {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+.state-tier__chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-pill);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.state-tier__chip--warm {
+  background: var(--berry-soft);
+}
+
+.state-tier__chip--calm {
+  background: var(--moss-soft);
+}
+
+.state-tier__chip--neutral {
+  background: var(--canvas-deep);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Editorial index card walls. Reveal always wraps a single .content-card,
+   so ":first-child" on the Reveal wrapper reliably targets the first entry
+   of every grid (default grid, each pillar-hub section, each state tier)
+   without any TSX index bookkeeping. The lead entry keeps card chrome and
+   gets a larger serif title; the rest collapse into hairline list rows. */
+
+.hub-page .card-grid {
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.hub-page .card-grid > .reveal {
+  grid-column: 1 / -1;
+}
+
+.hub-page .card-grid > .reveal:first-child {
+  margin-bottom: 1.4rem;
+}
+
+.hub-page .card-grid > .reveal:first-child .content-card {
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.hub-page .card-grid > .reveal:first-child .content-card h2 {
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  max-width: 32ch;
+}
+
+.hub-page .card-grid > .reveal:first-child .content-card__excerpt {
+  max-width: 60ch;
+}
+
+.hub-page .card-grid > .reveal:not(:first-child) .content-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 1.5rem;
+  row-gap: 0.25rem;
+  min-height: 0;
+  padding: 1.1rem 0.2rem;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid var(--rule);
+  background: transparent;
+  box-shadow: none;
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+}
+
+/* Nudges right on hover, same as the padding-left version it replaces, but
+   `transform` composites on its own layer instead of forcing a layout
+   recalculation on every animation frame. */
+.hub-page .card-grid > .reveal:not(:first-child) .content-card:hover {
+  transform: translateX(0.7rem);
+  box-shadow: none;
+  border-color: var(--berry);
+  background: var(--canvas-deep);
+}
+
+.hub-page .card-grid > .reveal:last-child .content-card {
+  border-bottom: none;
+}
+
+.hub-page .card-grid > .reveal:not(:first-child) .content-card__label {
+  order: 1;
+  flex: 1 1 100%;
+  margin: 0;
+}
+
+.hub-page .card-grid > .reveal:not(:first-child) .content-card h2 {
+  order: 2;
+  flex: 1 1 auto;
+  min-width: 12rem;
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  line-height: 1.2;
+}
+
+.hub-page .card-grid > .reveal:not(:first-child) .content-card__meta {
+  order: 3;
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+.hub-page .card-grid > .reveal:not(:first-child) .content-card__excerpt {
+  order: 4;
+  flex: 1 1 100%;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  color: var(--ink-mute);
+  font-size: 0.92rem;
+}
+
+.hub-page .content-card__meta {
+  font-family: var(--font-mono);
+  color: var(--ink-mute);
+  font-size: 0.78rem;
+}
+
+.hub-page .content-card--state .content-card__label {
+  font-family: var(--font-mono);
+  letter-spacing: 0.06em;
+}

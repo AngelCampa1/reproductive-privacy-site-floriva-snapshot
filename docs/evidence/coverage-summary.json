@@ -1,0 +1,1880 @@
+{
+  "total": {
+    "lines": {
+      "total": 9574,
+      "covered": 8636,
+      "skipped": 0,
+      "pct": 90.2
+    },
+    "statements": {
+      "total": 9574,
+      "covered": 8636,
+      "skipped": 0,
+      "pct": 90.2
+    },
+    "functions": {
+      "total": 734,
+      "covered": 259,
+      "skipped": 0,
+      "pct": 35.28
+    },
+    "branches": {
+      "total": 1246,
+      "covered": 1006,
+      "skipped": 0,
+      "pct": 80.73
+    },
+    "branchesTrue": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "functions/[[path]].ts": {
+    "lines": {
+      "total": 5,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    },
+    "functions": {
+      "total": 1,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    },
+    "statements": {
+      "total": 5,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    },
+    "branches": {
+      "total": 1,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    }
+  },
+  "functions/_middleware.ts": {
+    "lines": {
+      "total": 782,
+      "covered": 648,
+      "skipped": 0,
+      "pct": 82.86
+    },
+    "functions": {
+      "total": 24,
+      "covered": 19,
+      "skipped": 0,
+      "pct": 79.16
+    },
+    "statements": {
+      "total": 782,
+      "covered": 648,
+      "skipped": 0,
+      "pct": 82.86
+    },
+    "branches": {
+      "total": 83,
+      "covered": 70,
+      "skipped": 0,
+      "pct": 84.33
+    }
+  },
+  "functions/_lib/bindings.ts": {
+    "lines": {
+      "total": 72,
+      "covered": 36,
+      "skipped": 0,
+      "pct": 50
+    },
+    "functions": {
+      "total": 7,
+      "covered": 5,
+      "skipped": 0,
+      "pct": 71.42
+    },
+    "statements": {
+      "total": 72,
+      "covered": 36,
+      "skipped": 0,
+      "pct": 50
+    },
+    "branches": {
+      "total": 13,
+      "covered": 10,
+      "skipped": 0,
+      "pct": 76.92
+    }
+  },
+  "functions/_lib/email-service.ts": {
+    "lines": {
+      "total": 25,
+      "covered": 22,
+      "skipped": 0,
+      "pct": 88
+    },
+    "functions": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 25,
+      "covered": 22,
+      "skipped": 0,
+      "pct": 88
+    },
+    "branches": {
+      "total": 9,
+      "covered": 5,
+      "skipped": 0,
+      "pct": 55.55
+    }
+  },
+  "functions/_lib/http.ts": {
+    "lines": {
+      "total": 78,
+      "covered": 56,
+      "skipped": 0,
+      "pct": 71.79
+    },
+    "functions": {
+      "total": 7,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 57.14
+    },
+    "statements": {
+      "total": 78,
+      "covered": 56,
+      "skipped": 0,
+      "pct": 71.79
+    },
+    "branches": {
+      "total": 7,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 85.71
+    }
+  },
+  "functions/_lib/lead-magnet-abuse.ts": {
+    "lines": {
+      "total": 45,
+      "covered": 45,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 4,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 45,
+      "covered": 45,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 14,
+      "covered": 12,
+      "skipped": 0,
+      "pct": 85.71
+    }
+  },
+  "functions/_lib/lead-magnet-download.ts": {
+    "lines": {
+      "total": 78,
+      "covered": 72,
+      "skipped": 0,
+      "pct": 92.3
+    },
+    "functions": {
+      "total": 6,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 78,
+      "covered": 72,
+      "skipped": 0,
+      "pct": 92.3
+    },
+    "branches": {
+      "total": 27,
+      "covered": 19,
+      "skipped": 0,
+      "pct": 70.37
+    }
+  },
+  "functions/_lib/lead-magnet-email.ts": {
+    "lines": {
+      "total": 161,
+      "covered": 142,
+      "skipped": 0,
+      "pct": 88.19
+    },
+    "functions": {
+      "total": 11,
+      "covered": 10,
+      "skipped": 0,
+      "pct": 90.9
+    },
+    "statements": {
+      "total": 161,
+      "covered": 142,
+      "skipped": 0,
+      "pct": 88.19
+    },
+    "branches": {
+      "total": 16,
+      "covered": 10,
+      "skipped": 0,
+      "pct": 62.5
+    }
+  },
+  "functions/_lib/lead-magnet-store.ts": {
+    "lines": {
+      "total": 267,
+      "covered": 265,
+      "skipped": 0,
+      "pct": 99.25
+    },
+    "functions": {
+      "total": 16,
+      "covered": 16,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 267,
+      "covered": 265,
+      "skipped": 0,
+      "pct": 99.25
+    },
+    "branches": {
+      "total": 27,
+      "covered": 21,
+      "skipped": 0,
+      "pct": 77.77
+    }
+  },
+  "functions/_lib/lead-magnet-subscription.ts": {
+    "lines": {
+      "total": 55,
+      "covered": 48,
+      "skipped": 0,
+      "pct": 87.27
+    },
+    "functions": {
+      "total": 6,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 55,
+      "covered": 48,
+      "skipped": 0,
+      "pct": 87.27
+    },
+    "branches": {
+      "total": 21,
+      "covered": 17,
+      "skipped": 0,
+      "pct": 80.95
+    }
+  },
+  "functions/_lib/sentry.ts": {
+    "lines": {
+      "total": 79,
+      "covered": 70,
+      "skipped": 0,
+      "pct": 88.6
+    },
+    "functions": {
+      "total": 6,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 79,
+      "covered": 70,
+      "skipped": 0,
+      "pct": 88.6
+    },
+    "branches": {
+      "total": 19,
+      "covered": 10,
+      "skipped": 0,
+      "pct": 52.63
+    }
+  },
+  "functions/_lib/store.ts": {
+    "lines": {
+      "total": 30,
+      "covered": 30,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 30,
+      "covered": 30,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 10,
+      "covered": 9,
+      "skipped": 0,
+      "pct": 90
+    }
+  },
+  "functions/_lib/turnstile.ts": {
+    "lines": {
+      "total": 50,
+      "covered": 43,
+      "skipped": 0,
+      "pct": 86
+    },
+    "functions": {
+      "total": 3,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 50,
+      "covered": 43,
+      "skipped": 0,
+      "pct": 86
+    },
+    "branches": {
+      "total": 17,
+      "covered": 11,
+      "skipped": 0,
+      "pct": 64.7
+    }
+  },
+  "functions/api/health.ts": {
+    "lines": {
+      "total": 42,
+      "covered": 40,
+      "skipped": 0,
+      "pct": 95.23
+    },
+    "functions": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 42,
+      "covered": 40,
+      "skipped": 0,
+      "pct": 95.23
+    },
+    "branches": {
+      "total": 10,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 40
+    }
+  },
+  "functions/api/lead-magnet/download.ts": {
+    "lines": {
+      "total": 67,
+      "covered": 52,
+      "skipped": 0,
+      "pct": 77.61
+    },
+    "functions": {
+      "total": 3,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 67,
+      "covered": 52,
+      "skipped": 0,
+      "pct": 77.61
+    },
+    "branches": {
+      "total": 18,
+      "covered": 12,
+      "skipped": 0,
+      "pct": 66.66
+    }
+  },
+  "functions/api/lead-magnet/subscribe.ts": {
+    "lines": {
+      "total": 161,
+      "covered": 135,
+      "skipped": 0,
+      "pct": 83.85
+    },
+    "functions": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 161,
+      "covered": 135,
+      "skipped": 0,
+      "pct": 83.85
+    },
+    "branches": {
+      "total": 32,
+      "covered": 21,
+      "skipped": 0,
+      "pct": 65.62
+    }
+  },
+  "functions/api/lead-magnet/unsubscribe.ts": {
+    "lines": {
+      "total": 64,
+      "covered": 53,
+      "skipped": 0,
+      "pct": 82.81
+    },
+    "functions": {
+      "total": 3,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 64,
+      "covered": 53,
+      "skipped": 0,
+      "pct": 82.81
+    },
+    "branches": {
+      "total": 10,
+      "covered": 5,
+      "skipped": 0,
+      "pct": 50
+    }
+  },
+  "functions/api/store/[target].ts": {
+    "lines": {
+      "total": 44,
+      "covered": 33,
+      "skipped": 0,
+      "pct": 75
+    },
+    "functions": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 44,
+      "covered": 33,
+      "skipped": 0,
+      "pct": 75
+    },
+    "branches": {
+      "total": 8,
+      "covered": 5,
+      "skipped": 0,
+      "pct": 62.5
+    }
+  },
+  "functions/downloads/lead-magnets/[file].ts": {
+    "lines": {
+      "total": 11,
+      "covered": 9,
+      "skipped": 0,
+      "pct": 81.81
+    },
+    "functions": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 11,
+      "covered": 9,
+      "skipped": 0,
+      "pct": 81.81
+    },
+    "branches": {
+      "total": 3,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 33.33
+    }
+  },
+  "functions/ph/[[path]].ts": {
+    "lines": {
+      "total": 12,
+      "covered": 12,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 12,
+      "covered": 12,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "src/app.tsx": {
+    "lines": {
+      "total": 17,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    },
+    "functions": {
+      "total": 1,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    },
+    "statements": {
+      "total": 17,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    },
+    "branches": {
+      "total": 1,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    }
+  },
+  "src/router.tsx": {
+    "lines": {
+      "total": 146,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    },
+    "functions": {
+      "total": 1,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    },
+    "statements": {
+      "total": 146,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    },
+    "branches": {
+      "total": 1,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    }
+  },
+  "src/components/article-body.tsx": {
+    "lines": {
+      "total": 44,
+      "covered": 42,
+      "skipped": 0,
+      "pct": 95.45
+    },
+    "functions": {
+      "total": 4,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 44,
+      "covered": 42,
+      "skipped": 0,
+      "pct": 95.45
+    },
+    "branches": {
+      "total": 18,
+      "covered": 16,
+      "skipped": 0,
+      "pct": 88.88
+    }
+  },
+  "src/components/article-toc.tsx": {
+    "lines": {
+      "total": 60,
+      "covered": 50,
+      "skipped": 0,
+      "pct": 83.33
+    },
+    "functions": {
+      "total": 3,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 66.66
+    },
+    "statements": {
+      "total": 60,
+      "covered": 50,
+      "skipped": 0,
+      "pct": 83.33
+    },
+    "branches": {
+      "total": 21,
+      "covered": 16,
+      "skipped": 0,
+      "pct": 76.19
+    }
+  },
+  "src/components/bento-grid.tsx": {
+    "lines": {
+      "total": 34,
+      "covered": 34,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 34,
+      "covered": 34,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 8,
+      "covered": 8,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "src/components/breadcrumbs-utils.ts": {
+    "lines": {
+      "total": 21,
+      "covered": 21,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 21,
+      "covered": 21,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 12,
+      "covered": 12,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "src/components/breadcrumbs.tsx": {
+    "lines": {
+      "total": 23,
+      "covered": 21,
+      "skipped": 0,
+      "pct": 91.3
+    },
+    "functions": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 23,
+      "covered": 21,
+      "skipped": 0,
+      "pct": 91.3
+    },
+    "branches": {
+      "total": 7,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 85.71
+    }
+  },
+  "src/components/device-frame.tsx": {
+    "lines": {
+      "total": 37,
+      "covered": 37,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 37,
+      "covered": 37,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 7,
+      "covered": 7,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "src/components/download-cta.tsx": {
+    "lines": {
+      "total": 35,
+      "covered": 35,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 35,
+      "covered": 35,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "src/components/exit-intent-lead-magnet.tsx": {
+    "lines": {
+      "total": 215,
+      "covered": 152,
+      "skipped": 0,
+      "pct": 70.69
+    },
+    "functions": {
+      "total": 12,
+      "covered": 8,
+      "skipped": 0,
+      "pct": 66.66
+    },
+    "statements": {
+      "total": 215,
+      "covered": 152,
+      "skipped": 0,
+      "pct": 70.69
+    },
+    "branches": {
+      "total": 32,
+      "covered": 19,
+      "skipped": 0,
+      "pct": 59.37
+    }
+  },
+  "src/components/journey-section.tsx": {
+    "lines": {
+      "total": 34,
+      "covered": 34,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 34,
+      "covered": 34,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 6,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "src/components/json-ld.tsx": {
+    "lines": {
+      "total": 33,
+      "covered": 28,
+      "skipped": 0,
+      "pct": 84.84
+    },
+    "functions": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 33,
+      "covered": 28,
+      "skipped": 0,
+      "pct": 84.84
+    },
+    "branches": {
+      "total": 8,
+      "covered": 5,
+      "skipped": 0,
+      "pct": 62.5
+    }
+  },
+  "src/components/lead-magnet-inline-form.tsx": {
+    "lines": {
+      "total": 79,
+      "covered": 71,
+      "skipped": 0,
+      "pct": 89.87
+    },
+    "functions": {
+      "total": 3,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 66.66
+    },
+    "statements": {
+      "total": 79,
+      "covered": 71,
+      "skipped": 0,
+      "pct": 89.87
+    },
+    "branches": {
+      "total": 12,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 50
+    }
+  },
+  "src/components/on-device-diagram.tsx": {
+    "lines": {
+      "total": 69,
+      "covered": 69,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 69,
+      "covered": 69,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 3,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "src/components/reveal.tsx": {
+    "lines": {
+      "total": 55,
+      "covered": 34,
+      "skipped": 0,
+      "pct": 61.81
+    },
+    "functions": {
+      "total": 4,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 50
+    },
+    "statements": {
+      "total": 55,
+      "covered": 34,
+      "skipped": 0,
+      "pct": 61.81
+    },
+    "branches": {
+      "total": 10,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 60
+    }
+  },
+  "src/components/site-footer.tsx": {
+    "lines": {
+      "total": 43,
+      "covered": 43,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 43,
+      "covered": 43,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 4,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "src/components/site-header.tsx": {
+    "lines": {
+      "total": 111,
+      "covered": 89,
+      "skipped": 0,
+      "pct": 80.18
+    },
+    "functions": {
+      "total": 7,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 42.85
+    },
+    "statements": {
+      "total": 111,
+      "covered": 89,
+      "skipped": 0,
+      "pct": 80.18
+    },
+    "branches": {
+      "total": 11,
+      "covered": 10,
+      "skipped": 0,
+      "pct": 90.9
+    }
+  },
+  "src/components/site-shell.tsx": {
+    "lines": {
+      "total": 29,
+      "covered": 29,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 29,
+      "covered": 29,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 4,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "src/components/sources.tsx": {
+    "lines": {
+      "total": 53,
+      "covered": 51,
+      "skipped": 0,
+      "pct": 96.22
+    },
+    "functions": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 53,
+      "covered": 51,
+      "skipped": 0,
+      "pct": 96.22
+    },
+    "branches": {
+      "total": 17,
+      "covered": 14,
+      "skipped": 0,
+      "pct": 82.35
+    }
+  },
+  "src/components/store-buttons.tsx": {
+    "lines": {
+      "total": 103,
+      "covered": 103,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 4,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 103,
+      "covered": 103,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 13,
+      "covered": 13,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "src/components/turnstile-config.ts": {
+    "lines": {
+      "total": 4,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 50
+    },
+    "functions": {
+      "total": 1,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    },
+    "statements": {
+      "total": 4,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 50
+    },
+    "branches": {
+      "total": 1,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    }
+  },
+  "src/components/turnstile-widget.tsx": {
+    "lines": {
+      "total": 57,
+      "covered": 14,
+      "skipped": 0,
+      "pct": 24.56
+    },
+    "functions": {
+      "total": 3,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 33.33
+    },
+    "statements": {
+      "total": 57,
+      "covered": 14,
+      "skipped": 0,
+      "pct": 24.56
+    },
+    "branches": {
+      "total": 5,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 40
+    }
+  },
+  "src/lib/slugify.ts": {
+    "lines": {
+      "total": 8,
+      "covered": 8,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 8,
+      "covered": 8,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "src/pages/content-page.tsx": {
+    "lines": {
+      "total": 456,
+      "covered": 442,
+      "skipped": 0,
+      "pct": 96.92
+    },
+    "functions": {
+      "total": 5,
+      "covered": 5,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 456,
+      "covered": 442,
+      "skipped": 0,
+      "pct": 96.92
+    },
+    "branches": {
+      "total": 140,
+      "covered": 112,
+      "skipped": 0,
+      "pct": 80
+    }
+  },
+  "src/pages/home-page.tsx": {
+    "lines": {
+      "total": 158,
+      "covered": 158,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 158,
+      "covered": 158,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 11,
+      "covered": 9,
+      "skipped": 0,
+      "pct": 81.81
+    }
+  },
+  "src/pages/hub-page.tsx": {
+    "lines": {
+      "total": 238,
+      "covered": 234,
+      "skipped": 0,
+      "pct": 98.31
+    },
+    "functions": {
+      "total": 9,
+      "covered": 9,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 238,
+      "covered": 234,
+      "skipped": 0,
+      "pct": 98.31
+    },
+    "branches": {
+      "total": 69,
+      "covered": 57,
+      "skipped": 0,
+      "pct": 82.6
+    }
+  },
+  "src/pages/static-pages.tsx": {
+    "lines": {
+      "total": 150,
+      "covered": 63,
+      "skipped": 0,
+      "pct": 42
+    },
+    "functions": {
+      "total": 9,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 44.44
+    },
+    "statements": {
+      "total": 150,
+      "covered": 63,
+      "skipped": 0,
+      "pct": 42
+    },
+    "branches": {
+      "total": 15,
+      "covered": 11,
+      "skipped": 0,
+      "pct": 73.33
+    }
+  },
+  "src/site/config.ts": {
+    "lines": {
+      "total": 144,
+      "covered": 144,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 144,
+      "covered": 144,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "src/site/content.ts": {
+    "lines": {
+      "total": 65,
+      "covered": 61,
+      "skipped": 0,
+      "pct": 93.84
+    },
+    "functions": {
+      "total": 454,
+      "covered": 21,
+      "skipped": 0,
+      "pct": 4.62
+    },
+    "statements": {
+      "total": 65,
+      "covered": 61,
+      "skipped": 0,
+      "pct": 93.84
+    },
+    "branches": {
+      "total": 39,
+      "covered": 33,
+      "skipped": 0,
+      "pct": 84.61
+    }
+  },
+  "src/site/format.ts": {
+    "lines": {
+      "total": 30,
+      "covered": 22,
+      "skipped": 0,
+      "pct": 73.33
+    },
+    "functions": {
+      "total": 3,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 66.66
+    },
+    "statements": {
+      "total": 30,
+      "covered": 22,
+      "skipped": 0,
+      "pct": 73.33
+    },
+    "branches": {
+      "total": 7,
+      "covered": 7,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "src/site/funnel-contract.ts": {
+    "lines": {
+      "total": 125,
+      "covered": 125,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 125,
+      "covered": 125,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "src/site/index-policy.ts": {
+    "lines": {
+      "total": 11,
+      "covered": 11,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 11,
+      "covered": 11,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 7,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 85.71
+    }
+  },
+  "src/site/internal-links.ts": {
+    "lines": {
+      "total": 312,
+      "covered": 225,
+      "skipped": 0,
+      "pct": 72.11
+    },
+    "functions": {
+      "total": 15,
+      "covered": 9,
+      "skipped": 0,
+      "pct": 60
+    },
+    "statements": {
+      "total": 312,
+      "covered": 225,
+      "skipped": 0,
+      "pct": 72.11
+    },
+    "branches": {
+      "total": 67,
+      "covered": 53,
+      "skipped": 0,
+      "pct": 79.1
+    }
+  },
+  "src/site/lead-magnet-popup.ts": {
+    "lines": {
+      "total": 30,
+      "covered": 30,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 3,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 30,
+      "covered": 30,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 16,
+      "covered": 14,
+      "skipped": 0,
+      "pct": 87.5
+    }
+  },
+  "src/site/lead-magnets.ts": {
+    "lines": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 1,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "src/site/marketing-links.ts": {
+    "lines": {
+      "total": 344,
+      "covered": 344,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 344,
+      "covered": 344,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 2,
+      "covered": 1,
+      "skipped": 0,
+      "pct": 50
+    }
+  },
+  "src/site/meta.tsx": {
+    "lines": {
+      "total": 67,
+      "covered": 67,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 3,
+      "covered": 3,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 67,
+      "covered": 67,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 10,
+      "covered": 9,
+      "skipped": 0,
+      "pct": 90
+    }
+  },
+  "src/site/page-meta.ts": {
+    "lines": {
+      "total": 189,
+      "covered": 179,
+      "skipped": 0,
+      "pct": 94.7
+    },
+    "functions": {
+      "total": 6,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 189,
+      "covered": 179,
+      "skipped": 0,
+      "pct": 94.7
+    },
+    "branches": {
+      "total": 31,
+      "covered": 29,
+      "skipped": 0,
+      "pct": 93.54
+    }
+  },
+  "src/site/pillar-hubs.ts": {
+    "lines": {
+      "total": 187,
+      "covered": 187,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 187,
+      "covered": 187,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 4,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "src/site/route-inventory.ts": {
+    "lines": {
+      "total": 154,
+      "covered": 139,
+      "skipped": 0,
+      "pct": 90.25
+    },
+    "functions": {
+      "total": 7,
+      "covered": 7,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 154,
+      "covered": 139,
+      "skipped": 0,
+      "pct": 90.25
+    },
+    "branches": {
+      "total": 51,
+      "covered": 40,
+      "skipped": 0,
+      "pct": 78.43
+    }
+  },
+  "src/site/sentry.ts": {
+    "lines": {
+      "total": 15,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    },
+    "functions": {
+      "total": 1,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    },
+    "statements": {
+      "total": 15,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    },
+    "branches": {
+      "total": 1,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 0
+    }
+  },
+  "src/site/seo.ts": {
+    "lines": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "src/site/site-routes.ts": {
+    "lines": {
+      "total": 18,
+      "covered": 18,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 18,
+      "covered": 18,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 5,
+      "covered": 5,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "src/site/store-targets.ts": {
+    "lines": {
+      "total": 92,
+      "covered": 81,
+      "skipped": 0,
+      "pct": 88.04
+    },
+    "functions": {
+      "total": 8,
+      "covered": 8,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 92,
+      "covered": 81,
+      "skipped": 0,
+      "pct": 88.04
+    },
+    "branches": {
+      "total": 24,
+      "covered": 20,
+      "skipped": 0,
+      "pct": 83.33
+    }
+  },
+  "src/site/structured-data.ts": {
+    "lines": {
+      "total": 123,
+      "covered": 123,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 8,
+      "covered": 8,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 123,
+      "covered": 123,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 28,
+      "covered": 28,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "src/site/knowledge/index.ts": {
+    "lines": {
+      "total": 1184,
+      "covered": 1184,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 5,
+      "covered": 5,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 1184,
+      "covered": 1184,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 16,
+      "covered": 16,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "src/site/knowledge/lead-magnet-email-data.ts": {
+    "lines": {
+      "total": 1693,
+      "covered": 1689,
+      "skipped": 0,
+      "pct": 99.76
+    },
+    "functions": {
+      "total": 4,
+      "covered": 4,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 1693,
+      "covered": 1689,
+      "skipped": 0,
+      "pct": 99.76
+    },
+    "branches": {
+      "total": 75,
+      "covered": 73,
+      "skipped": 0,
+      "pct": 97.33
+    }
+  },
+  "worker/src/index.ts": {
+    "lines": {
+      "total": 63,
+      "covered": 58,
+      "skipped": 0,
+      "pct": 92.06
+    },
+    "functions": {
+      "total": 5,
+      "covered": 5,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 63,
+      "covered": 58,
+      "skipped": 0,
+      "pct": 92.06
+    },
+    "branches": {
+      "total": 20,
+      "covered": 20,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "worker/src/internal-send.ts": {
+    "lines": {
+      "total": 31,
+      "covered": 31,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 2,
+      "covered": 2,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 31,
+      "covered": 31,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 18,
+      "covered": 18,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "worker/src/send-email.ts": {
+    "lines": {
+      "total": 78,
+      "covered": 76,
+      "skipped": 0,
+      "pct": 97.43
+    },
+    "functions": {
+      "total": 7,
+      "covered": 7,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 78,
+      "covered": 76,
+      "skipped": 0,
+      "pct": 97.43
+    },
+    "branches": {
+      "total": 16,
+      "covered": 12,
+      "skipped": 0,
+      "pct": 75
+    }
+  },
+  "worker/src/sequence-runner.ts": {
+    "lines": {
+      "total": 176,
+      "covered": 164,
+      "skipped": 0,
+      "pct": 93.18
+    },
+    "functions": {
+      "total": 6,
+      "covered": 6,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 176,
+      "covered": 164,
+      "skipped": 0,
+      "pct": 93.18
+    },
+    "branches": {
+      "total": 24,
+      "covered": 20,
+      "skipped": 0,
+      "pct": 83.33
+    }
+  }
+}

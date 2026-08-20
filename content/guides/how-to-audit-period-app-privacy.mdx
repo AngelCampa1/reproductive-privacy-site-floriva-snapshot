@@ -1,0 +1,85 @@
+---
+title: "How to Audit Any Period App's Privacy Before Trusting It"
+description: "A practical framework for evaluating period tracker privacy beyond marketing claims. What to look for in privacy policies, permissions, and SDK behavior."
+ogImage: "/og/guides/how-to-audit-period-app-privacy.png"
+tags:
+  - "guide"
+publishedAt: "2026-03-31"
+updatedAt: "2026-03-31"
+buyerStage: "tofu"
+targetPersona:
+  - "flo-refugee"
+bluf: "Period app privacy claims are not self-certifying. Flo had privacy policy claims that the FTC found contradicted by actual behavior. Evaluate apps on four criteria: where data is stored (device vs server), whether account creation is required, what permissions the app requests, and whether it embeds third-party analytics SDKs. Policy language is useful context but not sufficient on its own."
+definitions:
+  - term: "On-Device Storage"
+    definition: "All cycle data is stored in encrypted local storage on your phone and never transmitted to the app developer's servers. The developer cannot access your data. Law enforcement cannot subpoena it from the developer."
+  - term: "Third-Party SDK"
+    definition: "Software Development Kit code from another company embedded in the app. Common examples include Facebook's analytics SDK and Google Firebase Analytics. SDKs can transmit user behavior and device data to the SDK company independent of what the app's privacy policy says. The FTC found that Flo's embedded SDKs transmitted health data to Facebook and Google."
+  - term: "Data Minimization"
+    definition: "The privacy principle of collecting only the data necessary for the app's stated function. A period tracker that collects location data is not practicing data minimization. A period tracker that collects cycle dates and symptoms to provide predictions is closer to minimization."
+  - term: "Consent Management Platform"
+    definition: "A system that manages user consent for data processing. Often presented as a cookie banner or privacy consent screen. Meaningful consent management gives users real choices with real consequences, not just a 'I agree' button that enables all processing."
+answers:
+  - question: "How do I find out where a period app stores my data"
+    answer: "Read the privacy policy's data storage section. Look for phrases like 'our servers,' 'cloud-based storage,' or 'transmitted to our systems,' which indicate server-side storage. Also look for what happens when you delete the app or account. Remote deletion can mean the app stores at least some records on company infrastructure. Local-first apps should state what stays on device and what, if anything, is synced, backed up, or handled separately."
+  - question: "How can I tell if a period app has third-party analytics SDKs"
+    answer: "For most users, the privacy policy's 'third-party services' or 'analytics' section is the most accessible source. Look for mentions of Facebook Analytics, Google Firebase, Amplitude, Mixpanel, or similar services. More technically, tools like Exodus Privacy (Android) and Trackers from the AppPrivacyInsights project can scan apps for embedded tracking code without requiring you to read source code."
+  - question: "What app permissions should a period tracker need"
+    answer: "A period tracker should need minimal permissions: notifications (for reminders), possibly health app integration (iOS Health or Google Fit, optional). A period tracker that requests location access, contacts, microphone, or camera access is requesting permissions beyond what cycle tracking requires. Permissions can be reviewed in your phone's Settings under the app listing."
+  - question: "What does the Flo FTC case tell us about evaluating period apps"
+    answer: "It tells us that a company's privacy policy is not sufficient evidence of its data practices. Flo's privacy policy stated it would not share health data with third parties. The FTC found that embedded SDKs transmitted health data to Facebook and Google despite this. The policy was not a lie in the traditional sense, the SDKs operated outside the policy. Evaluation should include what third-party code is embedded in the app, not just what the company says about its own practices."
+faqs:
+  - q: "Is there a simple way to check if a period app is safe?"
+    a: "Three questions cover most of what matters: Does the app require creating an account? If yes, your data is linked to your identity on their servers. Does the app work completely offline after setup? If it requires internet for basic functions, it is transmitting data somewhere. Does the privacy policy mention third-party analytics partners? If yes, data is being shared with those partners per their terms. Apps that fail all three questions have structural data exposure regardless of their privacy marketing."
+  - q: "Can I trust a period app that says it does not sell data?"
+    a: "The phrase 'we do not sell your data' has a narrow meaning. It typically means the company does not sell your raw data to data brokers in a direct transaction. It does not cover sharing data with analytics partners, sharing data for 'service improvement,' or the behavior of embedded third-party SDKs. Flo did not technically sell data in the way the phrase implies, but the FTC found it shared data with advertising platforms. Look at the full data handling picture, not just the 'sell' language."
+  - q: "Does an app need my real name or email to track my period?"
+    a: "No. A period tracker only needs cycle dates and whatever symptoms you choose to log to perform its core function. Requiring an email or name is a choice to tie your identity to your health data for account management, marketing, and data linking purposes. Apps that do not require an account, like Floriva, Euki, and Drip, demonstrate that account creation is not technically necessary for period tracking."
+relatedPages:
+  - "/resources/guides/understanding-period-app-data-policies"
+  - "/resources/guides/switching-from-flo-complete-guide"
+  - "/resources/best/best-period-trackers-no-data-sharing"
+  - "/resources/best/best-privacy-first-health-apps"
+---
+
+## Why Privacy Policy Language Is Not Enough
+
+In January 2021, the FTC took enforcement action against Flo Health based on a finding that the company shared user health data with Facebook and Google via embedded analytics SDKs. Flo's own privacy policy stated it would not share health information with third parties.
+
+The discrepancy was not that Flo deliberately lied. The SDKs did what analytics SDKs do: they transmitted user behavior and device data, which in this case included health information, to the SDK providers. Flo's privacy policy was written about Flo's own data handling practices, not about the third-party code embedded in the app.
+
+This case illustrates why reading a privacy policy is necessary but not sufficient. You also need to know what third-party code is in the app and what that code does.
+
+## The Four-Part Audit Framework
+
+**1. Where is the data stored**
+
+Read the privacy policy's storage and retention section. Look for "our servers," "cloud-based storage," or "transmitted to our systems." If you see any of these, the data lives on the company's infrastructure and can be accessed by the company, subpoenaed by courts, or exposed in a breach.
+
+Apps with genuine local-first storage should clearly state what stays on device and what, if anything, is synced or backed up. The absence of this statement, or vague language about "local processing," is a yellow flag.
+
+**2. Is an account required**
+
+If an app requires you to create an account with an email address, your cycle data is linked to your identity on their servers. This makes the data more linkable if it is ever accessed by third parties.
+
+Account creation is not technically necessary for period tracking. Apps that require it are making a product choice, not a technical necessity.
+
+**3. What permissions does the app request**
+
+On iOS, go to Settings, then the app name, to see all permissions the app has requested. On Android, go to Settings, then Apps, then the app name, then Permissions. A period tracker needs notifications for reminders. It may optionally integrate with the health platform. It does not need location, camera, contacts, or microphone access. Permissions beyond what is needed for tracking are data collection opportunities.
+
+**4. What third-party code is embedded**
+
+This is harder to evaluate without technical tools. For Android, the Exodus Privacy project (exodus-privacy.eu.org) scans apps for known trackers and provides publicly accessible reports. For iOS, the App Store privacy labels (App Privacy section on each app's store page) disclose third-party data collection categories, though they are self-reported.
+
+Look specifically for advertising networks (Facebook, Google, etc.) and analytics providers. These SDKs may transmit health-context data to their parent companies regardless of the app developer's privacy policy.
+
+## What Good Looks Like
+
+An app with strong privacy architecture will: state explicitly that no data leaves your device, require no account creation, request only notification permissions, and either have no third-party SDKs embedded or only open-source ones with auditable behavior.
+
+Floriva, Euki, and Drip meet these criteria. Clue meets most of them but uses server-side storage. No mainstream app with advertising revenue meets all four.
+
+## The Practical Takeaway
+
+You cannot fully audit an app's privacy without technical tools. What you can do is ask the right questions and treat vague answers as warning signs. Apps that cannot clearly answer "where is my data stored" and "what third-party code is in your app" may have something to hide, even if only by omission.

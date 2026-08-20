@@ -1,0 +1,201 @@
+/* Lead-magnet modal, inline form, exit-intent overlay, and Turnstile
+   widget styling. */
+
+/* The exit-intent modal only mounts once it's open (see
+   exit-intent-lead-magnet.tsx — it returns null while closed), so a plain
+   `animation` that plays once on mount is enough; there's no open/close
+   state to key off. base.css's global `prefers-reduced-motion` block already
+   forces every animation-duration to 0.01ms, so this needs no separate
+   override here. */
+@keyframes lead-magnet-scrim-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes lead-magnet-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+.lead-magnet-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(26, 20, 16, 0.45);
+  backdrop-filter: blur(10px);
+  animation: lead-magnet-scrim-in var(--duration-base) var(--ease-out);
+}
+
+.lead-magnet-modal__panel {
+  position: relative;
+  width: min(34rem, 100%);
+  max-height: min(90vh, 42rem);
+  max-height: min(90dvh, 42rem);
+  overflow-y: auto;
+  padding: clamp(1.4rem, 4vw, 2.2rem);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-card);
+  background: var(--paper);
+  box-shadow: var(--shadow-soft);
+  animation: lead-magnet-panel-in var(--duration-base) var(--ease-out);
+}
+
+/* Inline lead-magnet form — same paper-panel treatment as the modal so the
+   two surfaces feel like one family. */
+.lead-magnet-inline {
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1.8rem, 4vw, 3rem);
+  margin-block: var(--space-6);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-card);
+  background: var(--paper);
+  box-shadow: var(--shadow-soft);
+}
+
+.lead-magnet-modal__panel h2 {
+  margin: 0;
+  max-width: 28rem;
+  color: var(--berry);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 450;
+  line-height: 1.02;
+}
+
+.lead-magnet-modal__panel > p:not(.section-eyebrow),
+.lead-magnet-modal__consent,
+.lead-magnet-modal__success p {
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+.lead-magnet-modal__close {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  display: inline-grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  color: var(--ink-soft);
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  transition:
+    transform var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+.lead-magnet-modal__close:hover {
+  transform: translateY(-1px);
+  background: var(--canvas-deep);
+  color: var(--ink);
+}
+
+.lead-magnet-modal__form,
+.lead-magnet-modal__success {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1.4rem;
+}
+
+.lead-magnet-modal__form label {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.lead-magnet-modal__form input {
+  width: 100%;
+  min-height: 3.1rem;
+  padding: 0.8rem 1.35rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-pill);
+  background: var(--paper);
+  color: var(--ink);
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+
+.lead-magnet-modal__form input::placeholder {
+  color: var(--ink-mute);
+}
+
+.lead-magnet-modal__form input:focus-visible {
+  border-color: var(--berry);
+  outline-offset: 2px;
+}
+
+.lead-magnet-modal__form button {
+  min-height: 3.1rem;
+  border-radius: var(--radius-pill);
+  background: var(--berry);
+  color: var(--on-berry);
+  cursor: pointer;
+  font-weight: 700;
+  transition:
+    transform var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out),
+    opacity var(--duration-fast) var(--ease-out);
+}
+
+.lead-magnet-modal__form button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-soft);
+}
+
+.lead-magnet-modal__form button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.lead-magnet-modal__honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.lead-magnet-modal__turnstile {
+  min-height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.2rem 0;
+}
+
+.lead-magnet-modal__consent {
+  margin: 0;
+  font-size: 0.88rem;
+}
+
+.lead-magnet-modal__error {
+  margin: 0;
+  color: var(--berry);
+  font-weight: 700;
+}
+
+.lead-magnet-modal__success {
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--moss);
+  border-radius: var(--radius-md);
+  background: var(--moss-soft);
+}
+
+.lead-magnet-modal__success h3 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 450;
+}

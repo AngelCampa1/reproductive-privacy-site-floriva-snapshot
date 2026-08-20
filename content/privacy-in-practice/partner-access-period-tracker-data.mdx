@@ -1,0 +1,91 @@
+---
+title: "Partner Access to Your Period Data: How It Works in Each App"
+description: "Period tracker partner sharing features vary. Some give read-only access; others let a partner modify data. Here's what each major app actually does."
+ogImage: "/og/privacy-in-practice/partner-access-period-tracker-data.png"
+tags:
+  - "guide"
+publishedAt: "2026-04-28"
+updatedAt: "2026-04-28"
+buyerStage: "mofu"
+targetPersona:
+  - "flo-refugee"
+  - "privacy-conscious-user"
+bluf: "Partner sharing features in period trackers range from useful to potentially coercive. Apps that require a shared account, share login credentials, or store data on servers accessible to a partner create risks that outlast the relationship. On-device apps where core records stay on your phone give you unilateral control over who sees what and when."
+answers:
+  - q: "Can my partner see my period tracker data without my knowledge?"
+    a: "If you share your account credentials or use a shared device, yes. If your partner has installed a tracking or monitoring app on your phone, potentially yes. If you use separate accounts on a server-based app, your partner cannot access your data through normal app functions, but if you are logged into a shared device and do not log out, they can read the app directly. On-device apps store data only on the device they are installed on, so a partner on a different phone cannot access it."
+  - q: "How does Flo's partner sharing work?"
+    a: "Flo has a Partner Mode feature available on premium subscriptions. It shares cycle predictions and select data with a connected partner's Flo account. The partner receives notifications about cycle phases. The share is controlled by the primary account holder and can be revoked. However, all data is on Flo's servers. The partner access question is separate from the question of who else (advertisers, law enforcement) can reach that server."
+  - q: "How does Clue's partner sharing work?"
+    a: "Clue does not have a built-in partner sharing feature in its current design. Users who want to share data with a partner typically do so by showing their screen or manually sharing screenshots. This keeps sharing intentional and bounded rather than creating a persistent connected account relationship."
+  - q: "What's the difference between showing my partner the app and adding them as a connected account?"
+    a: "Showing your phone is temporary. They see what you choose to show, when you choose to show it, and nothing more. A connected partner account creates a persistent data link on the company's servers: your data is continuously shared with their account, you may not control what is shared, and revoking access requires action in the app. In a relationship that becomes coercive or ends, that persistent connection is harder to manage than a screen you stopped showing."
+faqs:
+  - q: "Can a controlling partner use a period tracker to monitor me?"
+    a: "Yes, in several ways: by insisting on sharing an account or knowing your login, by installing device monitoring software on your phone, by accessing your device directly when you are not present, or by using a partner-connected account to track your cycle patterns. If you are concerned about this, use an app that does not require account sign-in (Floriva, Euki, Drip), keep your phone locked, and do not share login credentials."
+  - q: "How do I revoke partner access in Flo?"
+    a: "Go to Profile > Partner Mode and disconnect the partner account. This ends the data share going forward. It does not delete data the partner's app already received or cached locally on their device."
+  - q: "Does Floriva have partner sharing?"
+    a: "No. Floriva has no partner sharing feature. Core tracking does not require an account, so there is no built-in partner account to connect. Sharing means showing your screen or choosing to share a screenshot, both of which are under your direct control."
+relatedPages:
+  - /resources/guides/on-device-storage-period-tracker
+  - /resources/guides/how-period-tracker-apps-collect-data
+  - /resources/privacy-in-practice/who-can-legally-get-your-period-data
+  - /resources/privacy-in-practice/period-tracker-data-portability-export
+  - /compare/alternatives/flo-app-alternative
+  - /compare/alternatives/clue-alternative-no-cloud
+---
+
+## What Partner Sharing Features Actually Do
+
+Period tracker apps have added partner-facing features over the past several years: notifications, cycle phase views, and connected accounts that let partners see fertility windows. The marketing frames these as intimacy tools. The mechanics are worth understanding before you use them.
+
+**Persistent account linking** is the most common model. You connect your account to a partner's account through an invite. The partner app shows them a curated view of your data, usually cycle phase, fertile window, and whatever symptom categories you have opted to share. This connection lives on the company's servers. Revoking it requires action in both apps. What the partner's app cached before revocation may persist on their device.
+
+**Notification sharing** is a lighter version: the partner's phone receives cycle-phase notifications ("Your partner's period may start in 3 days"). No app browsing required. Still server-connected and still persistent until revoked.
+
+**Credential sharing** is informal, not a built-in feature. Some couples share a login so a partner can read the full app as the primary user. There is no revoke button. It ends when you change your password.
+
+**Screen sharing** is not a feature; it is showing your phone. The partner sees whatever you show them, for as long as you allow. No persistent connection, no server-side link, nothing to revoke.
+
+The privacy gap between these options is significant, and it becomes most relevant when a relationship changes.
+
+## The Coercive Control Scenario
+
+Digital reproductive coercion, using technology to monitor or control a partner's reproductive choices, is a documented pattern. Period tracker data is a specific vector: knowing when someone is fertile, when their period is late, or when cycle patterns change gives a controlling partner information they can use to pressure reproductive decisions.
+
+The features that make partner sharing easy also make coercive access easier if the relationship dynamic is unhealthy. An insistence on account sharing, demanding login credentials, or installing device monitoring software on a partner's phone are all mechanisms that period tracker design choices either enable or foreclose.
+
+Apps that do not require an account for core tracking (Floriva, Euki, Drip) reduce partner account risk because there may be no built-in partner account to connect. A partner on a separate phone has less direct access unless you share a screen, screenshot, export, sync access, or device passcode. This is a consequence of local-first architecture, not a marketed safety feature.
+
+Apps that require accounts and offer partner features (Flo, Glow) create a persistent connection that the primary user must actively manage. That is fine in a healthy relationship. In one that becomes coercive, the burden falls on the person being monitored to work through the revocation process.
+
+## Specific App Partner Access Models
+
+**Flo:** Partner Mode connects two Flo accounts. The primary user controls what is shared. A premium subscription is required. Data is on Flo's servers. The partner access question is separate from whether Flo's servers can be reached by law enforcement or advertising SDKs. To revoke: Profile > Partner Mode > disconnect.
+
+**Clue:** No built-in partner sharing feature in current design. Sharing is intentional and screen-level. Data is on Clue's servers (Berlin, GDPR-compliant), accessible only to the logged-in account through normal app functions.
+
+**Natural Cycles:** Includes a Partner section and allows sharing fertility status. Account-connected, server-based. To revoke: Settings > Partner Sharing.
+
+**Glow:** Partner feature with two-account linking. Data synced to Glow's servers. Revoking requires disconnecting accounts through the app.
+
+**Floriva:** No partner sharing feature. Core tracking does not require an account. Sharing requires deliberate action on the primary user's phone: showing the screen, taking a screenshot, exporting data, or describing something verbally.
+
+**Euki:** No account, no partner sharing. On-device storage. Same model as Floriva.
+
+**Drip:** Open-source, no account, on-device. Same model.
+
+## What to Do If You're Concerned About a Past Partner's Access
+
+If you used a connected partner sharing feature and the relationship has ended, or if you are concerned a former partner had access to your tracking data:
+
+1. Revoke the partner connection in the app if one exists
+2. Change your account password immediately
+3. Check whether your account email address is one only you control
+4. Review whether any shared or family plan subscriptions still have the former partner as an account member
+5. Check your phone for monitoring apps (unfamiliar apps with location or accessibility permissions) if you suspect device-level access
+
+Data that was already shared with a partner's device, including cycle history and notifications received, may persist on their device after you revoke access. Most apps do not have the ability to delete data from a former partner's phone. The revocation stops future sharing; it does not retrieve what was already transmitted.
+
+For people who want a clean break: switching to a local-first tracker and starting fresh can remove a partner account connection. Review sync, backup, and device access settings too. The tracking history is safest when it stays on a phone you control.

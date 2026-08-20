@@ -1,0 +1,118 @@
+---
+title: "How We Rank Period Trackers: Our Methodology (2026)"
+description: "Our ranking criteria for period tracker privacy. Architecture beats policy because structure is verifiable and promises are not."
+ogImage: "/og/guides/how-we-rank-period-trackers.png"
+tags:
+  - "guide"
+  - "methodology"
+publishedAt: "2026-04-16"
+updatedAt: "2026-04-16"
+buyerStage: "tofu"
+targetPersona:
+  - "privacy-conscious-user"
+  - "flo-refugee"
+  - "post-roe-tracker"
+bluf: "We rank period trackers by data architecture first, enforcement history second, and policy claims last. Architecture is structural; policy is marketing."
+definitions:
+  - term: "Data architecture"
+    definition: "How and where an app stores, transmits, and processes user data. Structural, so it doesn't depend on policy claims or promises."
+  - term: "Enforcement history"
+    definition: "Documented record of FTC actions, class action settlements, data breaches, and regulatory findings against a company."
+  - term: "Privacy theater"
+    definition: "Features or statements that create the appearance of privacy protection without changing the underlying data architecture."
+answers:
+  - question: "How do you rank period tracker apps"
+    answer: "We score apps across five criteria in priority order: data architecture, enforcement history, policy claims, feature completeness, and price transparency. Architecture carries the most weight because it determines what the company is structurally able to do with your data, independent of what the policy says. Enforcement history comes second because it shows documented behavior rather than promises. Policy language is weighted last because policies can be changed unilaterally with little notice."
+  - question: "Why is architecture more important than privacy policy"
+    answer: "A policy describes what a company promises to do with data it has already collected. Architecture determines what a company can do in the first place. On-device storage means the data is not on the company's servers, so it cannot be sold, breached at scale, subpoenaed, or shared with third-party SDKs regardless of what any policy says. Flo's 2021 FTC settlement turned on exactly this gap: the policy said one thing, the embedded Facebook and Google SDKs did another. Architecture closes that gap by removing the option."
+  - question: "How do you verify privacy claims"
+    answer: "We read the full privacy policy, not the marketing page. We check the FTC's press release archive for enforcement actions. We search PACER and major class action trackers for lawsuits. We review news investigations from Consumer Reports, The Markup, Privacy International, and the Mozilla *Privacy Not Included* database. When possible, we check network traffic behavior and use tools like Exodus Privacy to see what third-party SDKs are embedded. Self-certified App Store privacy labels are a data point, not proof."
+faqs:
+  - q: "Do you accept sponsorships from the apps you rank"
+    a: "No. Floriva is a product, not a review site. We rank apps we compete with. Our bias is transparent: we believe on-device beats cloud. But we rank Clue above Flo on privacy because Clue earns it."
+  - q: "How often do you update rankings"
+    a: "We review rankings whenever a covered app announces a material change (policy update, ownership change, new SDK integration, security incident) and we do a full re-rank at least twice a year. Each page shows the last updated date in the frontmatter and in the visible header."
+  - q: "What would change our ranking"
+    a: "Moving from cloud to on-device or verified end-to-end encrypted storage improves an app's rank meaningfully. Removing advertising and third-party analytics SDKs also moves the needle. On the other side, an FTC consent order, a class action settlement, a documented breach, or adoption of behavioral advertising lowers the rank. A redesigned privacy policy without a matching architecture change does not."
+proscons:
+  - subject: "Architecture-first ranking"
+    pros:
+      - "Structural, so it doesn't require trusting policy claims"
+      - "Subpoena-resistance is determinable from architecture"
+      - "Independent of company promises or marketing"
+    cons:
+      - "Rewards feature-minimal apps if they have better architecture"
+      - "Harder to evaluate without technical inspection"
+expertQuotes:
+  - quote: "These apps promised users privacy while systematically routing reproductive health data to third-party advertising networks. Policy claims were never backed by architecture."
+    personName: "Floriva Editorial Team"
+    jobTitle: "Privacy Research"
+    organization: "Floriva"
+relatedPages:
+  - /resources/guides/how-to-audit-period-app-privacy/
+  - /resources/guides/how-to-read-period-tracker-privacy-policy/
+  - /resources/guides/period-app-privacy-architecture-guide/
+  - /compare/versus/period-trackers-ranked-by-privacy/
+  - /resources/best/best-privacy-first-period-trackers/
+---
+
+## Our five ranking criteria
+
+Every comparison, listicle, and alternative page on Floriva uses the same five criteria in the same priority order. We publish the methodology so readers can audit our ranking and apply it to apps we have not covered.
+
+**1. Data architecture.** Where does cycle data live The ranking runs from strongest to weakest: on-device only, end-to-end encrypted cloud (where the company cannot decrypt stored data), encrypted cloud (company holds the keys), plain cloud. On-device storage means the company cannot breach, sell, subpoena-respond, or SDK-leak data it never received. Every tier below that adds exposure.
+
+**2. Enforcement history.** Has the company faced FTC actions, class action settlements, or documented breaches Flo Health's January 2021 FTC consent order over sharing health data with Facebook and Google is the canonical example. The September 2025 $59.5M class action settlement (reported by Reuters and ClassAction.org on 2025-09-25) is the follow-through. Zero incidents ranks above minor issues; both rank above a company under an active consent order.
+
+**3. Policy claims.** What does the privacy policy actually permit, not what does the marketing page promise A policy that restricts sharing to strict service-provider contracts ranks above one that reserves the right to share with advertising partners, analytics providers, or affiliates for "product improvement." This is the weakest of the three trust signals because companies change policies unilaterally. The only requirement is notice, and notice is typically a version number bump.
+
+**4. Feature completeness.** Cycle tracking, basal body temperature logging, PCOS and endometriosis flows, fertility windows, and partner sharing. Privacy is the lead criterion, but an app that cannot do what users need is not a real alternative. We note feature gaps honestly.
+
+**5. Price transparency.** Straightforward pricing ranks above hidden upsells, cancellation traps, and auto-renew dark patterns. Clear cancellation paths matter. Pre-checked consent boxes on upgrade screens matter.
+
+## Why architecture beats policy
+
+A privacy policy is a promise. Architecture is a constraint.
+
+Flo's pre-2021 policy said health data would not be shared with third parties. Meanwhile, the app had Facebook and Google analytics SDKs embedded, and those SDKs transmitted event data including cycle-related behavior. The policy described what Flo *intended* to do. The architecture determined what actually happened, and the architecture won. The FTC case and the 2025 class action settlement both trace back to the same mismatch.
+
+On-device storage removes that gap. If cycle data never leaves the phone, no SDK can transmit it, no subpoena can reach it through the company, no breach of the company's servers can expose it, and no policy change can reinterpret who gets access. For a deeper walkthrough of why this matters, see our [privacy architecture](/resources/guides/period-app-privacy-architecture-guide/) guide.
+
+This is also why we do not rely on "we do not sell your data" language. The phrase is narrowly technical: it describes a direct sale to a data broker. It does not cover SDK transmissions, analytics partners, "service improvement" sharing, or affiliate relationships. Architecture closes those loopholes. Policy language rarely does.
+
+## How we verify enforcement history
+
+We check four sources for every app we rank:
+
+- **FTC press releases and consent orders.** The FTC publishes every settlement and its operative order. For health apps, we specifically check the health breach notification rule actions and unfair-practices settlements. Flo's January 2021 order is public and cites the specific SDKs involved.
+- **Court filings and class action trackers.** We search ClassAction.org, Top Class Actions, and PACER for named-plaintiff suits. The 2025 $59.5M Flo settlement was indexed across major trackers within 24 hours of the announcement.
+- **News investigations.** Consumer Reports, The Markup, Privacy International, The Wall Street Journal, and Wired have all run technical investigations into period apps. These often surface behavior that never becomes enforcement but is still documented and reproducible.
+- **Academic and nonprofit databases.** Mozilla's *Privacy Not Included* guide, the Exodus Privacy project for Android, and academic papers from Consumer Reports Digital Lab provide independent tracker audits.
+
+We do not count unverified user complaints, social media anecdotes, or competitor-funded research. If we cite an enforcement finding, you can follow the citation. For the step-by-step version, see our [how to audit period app privacy](/resources/guides/how-to-audit-period-app-privacy/) guide.
+
+## What we don't weight
+
+We don't rank on download counts, App Store rating averages, design polish, press coverage volume, or celebrity endorsements. A 4.8-star rating tells us nothing about where cycle data is stored. Glossy onboarding tells us nothing about what SDKs the app loaded during that onboarding. Podcast sponsorships tell us nothing about policy restrictions.
+
+We also don't weight "AI features" separately. If an app uses cycle data to train a machine learning model, that's a data-flow question answered by the architecture and policy tiers. It's not a bonus.
+
+## Our bias, stated up front
+
+Floriva is a product. We are building a privacy-first period tracker with on-device storage. That means every app we rank is a competitor or a potential alternative in a user's decision set.
+
+Our bias is architectural: we think on-device and end-to-end encryption are the right answer, and we rank accordingly. What we try not to do is let the commercial angle distort specific findings. When Clue's restricted server-side policy outranks Flo's cloud-plus-advertising stack, we say so, because the criteria say so. When a privacy-branded app has third-party SDKs, we note it regardless of whether it competes with us directly.
+
+If you think our criteria are wrong, the fix is to disagree with the criteria. The criteria are published here so that disagreement is possible. A methodology you can't read is not a methodology.
+
+## How to apply this methodology yourself
+
+You can run the same five-criteria test on any period app in about 30 minutes:
+
+1. Open the app's privacy policy and [read it end to end](/resources/guides/how-to-read-period-tracker-privacy-policy/). Look for where data is stored, whether third parties receive it, and what "partners" is doing in the text.
+2. Search "[app name] FTC" and "[app name] class action" and "[app name] data breach" on Google News. Read the actual filings, not the summaries.
+3. Check Exodus Privacy (Android) or the App Store privacy labels (iOS) for embedded trackers.
+4. List the app's features against your actual needs. Privacy-first apps often drop partner sharing and cloud backup. Decide whether that trade-off is acceptable for you.
+5. Check the pricing page, the cancellation flow, and any auto-renewal terms before you sign up.
+
+If the app fails criterion 1 or 2, the other criteria matter less. A feature-rich tracker with a consent order is still an app with a consent order. For the full ranked list using exactly this methodology, see our [period trackers ranked](/compare/versus/period-trackers-ranked-by-privacy/) page.

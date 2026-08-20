@@ -1,0 +1,2968 @@
+# SEO400 ledger
+
+## Status
+
+- Branch: `feat/seo-400-icp-library`
+- Started: 2026-06-30
+- Existing content count before rollout: 448 MDX files
+- Target net-new count: 400 MDX files
+- Required final artifact: `artifacts/floriva-seo400-prod-urls.txt`
+- Rollout status: final SEO400 build, deploy, production browser checks, and production URL export were recorded as complete on 2026-07-01. The checklist below is kept as the operational closeout record.
+
+## 2026-07-31 consolidation (Stage 1)
+
+94 pages below were merged into 5 consolidated pages and 301'd. Route paths
+recorded in this ledger before this date are historical and no longer resolve
+directly; they redirect. This section is appended rather than rewritten so the
+publication record stays intact.
+
+- 93 `privacy-in-practice` pages -> 5 pages (device hardening, legal/threat,
+  medical records, teens/students, symptom & condition data)
+- 1 duplicate listicle -> `/resources/best/best-period-tracker-apps-2026`
+
+Rationale and evidence: `artifacts/seo-2026-07-31/consolidation-plan.md`.
+Redirect table: `functions/_middleware.ts` `legacyExactRedirects`.
+Live routes 559 -> 470; sitemap 533 -> 444.
+
+## Sources of truth
+
+- Plan: `docs/seo-400/PLAN.md`
+- Plan review: `docs/seo-400/PLAN-REVIEW.md`
+- Net-new route path list: `docs/seo-400/net-new-paths.txt`
+- Topic backlog: `docs/seo-400/topic-backlog.csv`
+- Production URL artifact: `artifacts/floriva-seo400-prod-urls.txt`
+
+## Gate checklist
+
+- [x] Topic backlog has 400 non-duplicate briefs.
+- [x] Topic backlog reviewed for ICP fit and adjacent-intent value.
+- [x] Topic backlog reviewed for source feasibility and stale-risk claims.
+- [x] `pnpm verify:seo400-backlog -- --min 400` passes.
+- [x] Batch 1 content written and reviewed.
+- [x] Batch 2 content written and reviewed.
+- [x] Batch 3 content written and reviewed.
+- [x] Batch 4 content written and reviewed.
+- [x] `docs/seo-400/net-new-paths.txt` contains 400 local route paths.
+- [x] `pnpm generate:content` passes.
+- [x] `pnpm generate:knowledge` passes.
+- [x] `pnpm verify:seo400-content` passes.
+- [x] `pnpm verify:product-alignment` passes.
+- [x] `node scripts/audit-claims.mjs` reviewed and high-risk findings fixed or documented.
+- [x] `node scripts/verify-sources.mjs` reviewed.
+- [x] `pnpm typecheck` passes.
+- [x] `pnpm test` passes.
+- [x] `pnpm lint` passes.
+- [x] `pnpm build` passes.
+- [x] `pnpm verify:prerendered-content -- --min 400` passes.
+- [x] `pnpm verify:prerendered-content -- --all-sitemap --min 872` passes after all 400 pages are in the sitemap.
+- [x] `pnpm check:links` passes.
+- [x] Local preview SEO verification passes.
+- [x] Local browser checks pass for all 400 net-new pages on desktop and mobile.
+- [x] Deploy completed.
+- [x] Production `pnpm verify:seo` passes.
+- [x] Production browser checks pass for all 400 net-new pages on desktop and mobile.
+- [x] Final production URL `.txt` contains 400 net-new URLs found in the live sitemap.
+
+## Batch notes
+
+### Batch 0: planning and gates
+
+- `git pull` run before work; repository was already up to date.
+- Branch created: `feat/seo-400-icp-library`.
+- DFS keyword checks started for seed terms including `period tracker app`, `best period tracker app`, `ovulation tracker app`, `safe period tracker app`, `private period tracker app`, `fertility awareness method chart`, and `perimenopause period tracker`.
+- DFS checks on direct privacy terms showed low-volume but high-fit trust queries such as `period tracker data privacy`, `is flo safe`, and `period app selling data`; these should anchor trust pages, not define the whole library.
+- DFS checks on adjacent ICP jobs showed much larger demand around `perimenopause symptoms`, `implantation bleeding`, `birth control side effects`, `irregular periods`, `ovulation pain`, `fertility awareness method`, `basal body temperature chart`, and `cervical mucus chart`. These need health-source review and careful non-diagnostic copy, but they are legitimate SEO400 targets when the page value is a practical tracker/checklist/template and Floriva is a soft privacy plug.
+- Sub-agent exploration completed for content architecture, audience/source boundaries, and QA gates.
+- Added `scripts/export-prod-indexer-urls.mjs` and `pnpm export:prod-urls` for the final indexer artifact.
+- Added `scripts/verify-seo400-backlog.mjs` and `pnpm verify:seo400-backlog` to catch invalid collections, duplicate paths, existing-content collisions, and dead internal links before drafting.
+- Verified the backlog validator against the empty scaffold: `node scripts/verify-seo400-backlog.mjs`.
+- Verified the production URL exporter can fetch the live sitemap with an empty net-new path list.
+- Planning review recorded in `docs/seo-400/PLAN-REVIEW.md`; current blockers are backlog normalization, live internal-link validation, and fresh source checks for volatile claims.
+
+### Pilot batch: 3 HTML-native resources
+
+- Drafted 3 net-new pages:
+  - `/resources/privacy-in-practice/audit-period-data-on-iphone`
+  - `/resources/privacy-in-practice/audit-period-data-on-android`
+  - `/tools/quiz/is-my-period-app-asking-too-much-quiz`
+- Updated `docs/seo-400/topic-backlog.csv` with 3 `drafted-pilot` rows.
+- Updated `docs/seo-400/net-new-paths.txt` with 3 route paths.
+- Review cycle 1 found source, product-claim, and quiz-score-label issues.
+- Fixed review cycle 1 issues:
+  - Added FTC Flo and FTC Premom context into the page bodies.
+  - Added Apple Support and Google Android Help sources for platform permission steps.
+  - Softened Floriva product claims around account/sync behavior.
+  - Reframed quiz results as practical action levels, not a validated risk model.
+- Passed `pnpm generate:content`.
+- Passed `pnpm verify:seo400-backlog`.
+- Passed `pnpm check:links` with 0 broken internal links and 0 orphan routes.
+- Ran `node scripts/audit-claims.mjs`; only new-page hits were low-confidence `FTC` acronym detections in frontmatter/source metadata.
+- Passed `pnpm typecheck`.
+- Review cycle 2 cleared the iPhone and Android pages and found one remaining quiz issue: FTC source claims were not visible in the rendered body.
+- Fixed the quiz by adding visible FTC Flo and FTC Premom context in the opening body.
+- Matched the iPhone Floriva close to the Android caveat around optional sync/account features.
+- Re-ran `pnpm generate:content`, `pnpm verify:seo400-backlog`, `pnpm check:links`, `node scripts/audit-claims.mjs`, and `pnpm typecheck`.
+- Current claim-audit findings for pilot pages are low `FTC` acronym detections tied to sourced FTC claims; reviewed as non-blocking.
+- Pilot status: 3 drafted pages, 3 internal-link clean, 3 ready to count after full build/SEO gate.
+- Passed `pnpm build`; build prerendered 475 HTML routes.
+- Ran `pnpm verify:seo` without `SEO_VERIFY_ORIGIN`; this verified the current production site, not the pilot build. Local preview SEO verification still required.
+- Local preview served the three pilot routes with HTTP 200.
+- Local preview `pnpm verify:seo` still fails on hub route `/compare` because Vite preview does not serve `dist/compare/index.html` for the clean URL the same way production does.
+- Found a real SEO risk while investigating local preview: content-route prerender files had route bodies but generic homepage head metadata.
+- Fixed `scripts/prerender-html.mjs` to inject route-specific title, description, canonical, OG/Twitter metadata, and JSON-LD into prerendered static files.
+- Rebuilt and verified static files for existing content and the 3 pilot routes now have correct route-specific title, canonical, H1, and one JSON-LD script.
+- Added `scripts/verify-prerendered-content.mjs` and `pnpm verify:prerendered-content` so future SEO400 batches fail if prerendered route files have missing/static homepage head metadata, missing canonicals, missing H1s, or missing JSON-LD.
+- Passed `pnpm verify:prerendered-content -- --min 3` against the pilot routes.
+- Stopped the local preview server on port 4173.
+
+### Gate hardening after review
+
+- Sub-agent script review found false-confidence risks in the production URL exporter, backlog internal-link warnings, all-sitemap static route handling, and no-JS body coverage.
+- Fixed `scripts/export-prod-indexer-urls.mjs` so final indexer export now:
+  - refuses non-production origins by default,
+  - asserts sitemap URL origins match the fetched production origin,
+  - verifies every exported page with live HTTP 2xx, HTML content type, expected canonical, non-homepage title, expected H1, and generated content marker.
+- Fixed `scripts/verify-seo400-backlog.mjs` so missing internal links are errors for `drafted*` rows unless `--allow-warnings` is explicit.
+- Fixed `scripts/verify-prerendered-content.mjs` so `--all-sitemap` validates static/hub routes instead of failing when a route is absent from generated content data.
+- Fixed no-JS crawlability by changing `scripts/prerender-html.mjs` from a 1,200-character excerpt to the full stripped article body for content routes; `scripts/verify-prerendered-content.mjs` now samples body passages to catch missing body coverage.
+- Passed `pnpm build` after the prerender changes; build prerendered 475 routes.
+- Passed `pnpm verify:prerendered-content -- --min 3`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 475`.
+- Passed `pnpm verify:seo400-backlog`.
+- Passed `pnpm lint`.
+- Passed `pnpm typecheck`.
+- Passed `pnpm test` with 41 files and 197 tests.
+- Passed `pnpm check:links` with 0 broken internal links and 0 orphan routes.
+- Ran `node scripts/audit-claims.mjs`; pilot page findings remain only low-confidence `FTC` acronym detections tied to sourced FTC references.
+- Ran `node scripts/verify-sources.mjs`; wrote `docs/research/04-sources-verification-2026-06-30.md`.
+- Tested exporter safety:
+  - Empty production path list wrote 0 verified URLs to a temp artifact that was removed.
+  - Localhost origin was refused as non-production.
+  - Real SEO400 path export failed as expected because the 3 pilot routes are not yet in the production sitemap; `artifacts/floriva-seo400-prod-urls.txt` is intentionally not ready.
+
+### Next 10 candidate batch
+
+- Sub-agent proposed a read-only next-10 slate centered on practical privacy cleanup and HTML-native worksheets:
+  - `check-period-app-for-trackers`
+  - `turn-off-period-data-apple-health`
+  - `turn-off-period-data-health-connect`
+  - `old-period-app-cleanup-plan`
+  - `period-app-privacy-policy-worksheet`
+  - `period-tracking-on-shared-phone`
+  - `period-app-notification-privacy`
+  - `partner-sync-privacy-checklist`
+  - `period-data-broker-opt-out-starter`
+  - `cloud-or-local-period-tracker-quiz`
+- Risks for that batch: platform steps drift, named competitor policy/pricing/export claims need fresh checks, shared-phone and domestic-safety pages must avoid promising secrecy, and lead magnets should remain HTML-native unless the download pipeline is intentionally expanded.
+- Added those 10 candidates to `docs/seo-400/topic-backlog.csv` as `planned-batch-1` rows.
+- Passed `pnpm verify:seo400-backlog -- --min 13`; backlog now has 13 rows total: 3 drafted pilot pages and 10 planned Batch 1 briefs.
+
+### Batch 1: 10 privacy cleanup resources
+
+- Drafted 10 net-new pages by sub-agent workstream:
+  - `/resources/privacy-in-practice/check-period-app-for-trackers`
+  - `/resources/privacy-in-practice/turn-off-period-data-apple-health`
+  - `/resources/privacy-in-practice/turn-off-period-data-health-connect`
+  - `/free/old-period-app-cleanup-plan`
+  - `/free/period-app-privacy-policy-worksheet`
+  - `/resources/privacy-in-practice/period-tracking-on-shared-phone`
+  - `/resources/privacy-in-practice/period-app-notification-privacy`
+  - `/resources/privacy-in-practice/partner-sync-privacy-checklist`
+  - `/free/period-data-broker-opt-out-starter`
+  - `/tools/quiz/cloud-or-local-period-tracker-quiz`
+- Updated `docs/seo-400/topic-backlog.csv` statuses from `planned-batch-1` to `drafted-batch-1`.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 13 net-new route paths total.
+- Review cycle 1 found a stale source issue in the data-broker opt-out page: Outlogic, InMarket, and Mobilewalla FTC references used proposed/action wording where final orders now exist. Fixed the page to cite the final FTC order pages.
+- Review cycle 1 copy pass found bloated or overbroad wording in the partner sync checklist, shared phone page, data broker starter, tracker checking page, privacy policy worksheet, cleanup plan, and cloud/local quiz. Fixed the flagged lines to use simpler, narrower wording.
+- Review cycle 2 found stale Premom FTC wording in five pages. Fixed those pages to cite the FTC Easy Healthcare case page and final order date rather than proposed-order language.
+- Review cycle 2 copy pass found remaining unsupported comparative/safety phrasing. Fixed `least risky`, `safe enough`, `works best`, `safe text`, and `can only reduce` style wording.
+- Final focused sub-agent review cleared the patched files. Residual notes were non-blocking: "safe backup" means user-managed backup, and contextual "safer" phrasing remains caveated rather than a guarantee.
+- Passed `pnpm generate:content`.
+- Passed `pnpm verify:seo400-backlog -- --min 13`.
+- Passed `pnpm check:links` with 485 valid routes, 4,969 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,097 claim-shaped findings, and the Batch 1 rows were only low-confidence `FTC` acronym findings tied to sourced FTC references.
+- Ran `node scripts/verify-sources.mjs`; discovered 122 unique URLs across 296 references and wrote `docs/research/04-sources-verification-2026-06-30.md`.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests.
+- Passed `pnpm build`; build prerendered 485 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 13`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 485`.
+- Current status: 13 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Follow-up stale-source sweep found the same Premom proposed-order source metadata still present in two pilot pages and one Batch 1 worksheet. Fixed `audit-period-data-on-android`, `is-my-period-app-asking-too-much-quiz`, and `period-app-privacy-policy-worksheet` to cite the FTC Easy Healthcare case page and final-order date.
+- Re-ran `pnpm generate:content` and `node scripts/verify-sources.mjs` after that source fix.
+- Not yet done: remaining 387 pages, local browser E2E, deployment, production E2E, and final production URL artifact.
+
+### Batch 2: health tracking and clinical prep setup
+
+- DFS/keyword planning showed stronger adjacent demand around health-tracking jobs than direct privacy keywords. Relevant examples reviewed during planning included `spotting during ovulation`, `brown discharge before period`, `ovarian cyst symptoms`, `arm implant birth control`, and early pregnancy/signs terms.
+- Avoided broad duplicate articles where the repo already has coverage, such as PMDD, PCOS, perimenopause, cervical mucus, BBT, spotting, and ovulation guides.
+- Added 6 planned Batch 2 rows to `docs/seo-400/topic-backlog.csv` as practical templates/logs:
+  - `abnormal-bleeding-diary-doctor-visit`
+  - `heavy-period-visit-prep-checklist`
+  - `ovulation-spotting-tracker`
+  - `pmdd-two-cycle-symptom-tracker`
+  - `perimenopause-bleeding-pattern-log`
+  - `birth-control-implant-bleeding-log`
+- Fixed one planned internal-link prefix before drafting: `/resources/app-guides/floriva-for-pmdd-tracking` was corrected to `/app-guides/floriva-for-pmdd-tracking`.
+- Passed `pnpm verify:seo400-backlog -- --min 19 --allow-warnings` with 19 planned rows and no warnings after the link fix.
+- Spawned three worker sub-agents with disjoint write scopes to draft the six Batch 2 pages. Each worker was instructed to use official medical sources, avoid diagnosis/treatment promises, keep Floriva mentions soft, and only edit its assigned MDX files.
+- Drafted 6 Batch 2 pages:
+  - `/free/abnormal-bleeding-diary-doctor-visit`
+  - `/free/heavy-period-visit-prep-checklist`
+  - `/resources/symptom-guides/ovulation-spotting-tracker`
+  - `/free/pmdd-two-cycle-symptom-tracker`
+  - `/free/perimenopause-bleeding-pattern-log`
+  - `/resources/life-stage-guides/birth-control-implant-bleeding-log`
+- Updated `docs/seo-400/topic-backlog.csv` statuses from `planned-batch-2` to `drafted-batch-2`.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 19 net-new route paths total.
+- Normalized source metadata for `ovulation-spotting-tracker` and `pmdd-two-cycle-symptom-tracker` from loose title/URL source entries to claim-backed entries with publisher/access metadata.
+- Customer-facing copy review found blockers in the ovulation tracker and PMDD tracker:
+  - Overbroad Floriva privacy promise in the ovulation close.
+  - Salesy/private-note language in the PMDD close.
+  - Loaded "rage" wording in the PMDD safety section.
+  - One-row table usability issues in the ovulation and PMDD trackers.
+- Source/no-lies review found blockers in the PMDD crisis guidance and implant bleeding log:
+  - Crisis guidance made a trusted person sound like a substitute for emergency or crisis help.
+  - Implant placement guidance gave direct backup-birth-control advice without a precise source.
+  - Implant urgent symptom guidance needed softer framing.
+  - NCBI Bookshelf and MedlinePlus were marked `primary: true` even though they are secondary/reference sources.
+- Fixed the Batch 2 review blockers:
+  - PMDD crisis guidance now separates immediate danger from 988/crisis-line support.
+  - Implant placement language now says to contact a clinician and ask what to use until placement is checked.
+  - Implant urgent symptom line now frames examples as severe symptoms.
+  - NCBI Bookshelf and MedlinePlus are marked `primary: false`.
+  - Ovulation tracker now provides multiple fill rows.
+  - PMDD close now avoids unsupported "private notes" reassurance.
+- Final focused re-review found two remaining blockers, both fixed:
+  - Ovulation tracker needed actual additional rows, not only instruction text.
+  - PMDD close still used "private" reassurance.
+- Passed `pnpm generate:content`.
+- Passed `pnpm verify:seo400-backlog -- --min 19`.
+- Ran `node scripts/audit-claims.mjs`; Batch 2 pages did not appear in the claim-audit CSV.
+- Ran `node scripts/verify-sources.mjs`; discovered 137 unique URLs across 315 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests. Vitest printed the known `Port 24678 is already in use` WebSocket warning but exited 0.
+- Passed `pnpm build`; build prerendered 491 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 19`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 491`.
+- Passed `pnpm check:links` with 491 valid routes, 5,025 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Tested `node scripts/export-prod-indexer-urls.mjs --paths docs/seo-400/net-new-paths.txt --out artifacts/floriva-seo400-prod-urls.txt`; it failed as expected because the production sitemap is missing the 19 local net-new routes.
+- Current status: 19 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 381 pages, local browser E2E, deployment, production E2E, and final production URL artifact.
+
+### Batch 3: switching and data cleanup setup
+
+- DFS planning for direct privacy keywords showed low-volume but high-fit terms such as `period tracker app privacy`, `period tracking app privacy`, and `how to delete data from flo app`.
+- Broad DFS keyword ideas for `tracker` were noisy and mostly unrelated, so Batch 3 is built around exact switching/data-cleanup jobs rather than generic tracker volume.
+- Added 8 planned Batch 3 rows to `docs/seo-400/topic-backlog.csv`:
+  - `flo-data-deletion-receipt-checklist`
+  - `clue-data-export-review-worksheet`
+  - `period-app-location-permission-audit`
+  - `reset-ad-id-after-period-apps`
+  - `period-app-data-map-worksheet`
+  - `switch-period-trackers-without-losing-history`
+  - `app-store-privacy-label-period-apps`
+  - `period-app-deletion-follow-up-email-templates`
+- Passed `pnpm verify:seo400-backlog -- --min 27 --allow-warnings`; backlog now has 27 rows and no warnings.
+- Drafted 8 Batch 3 pages:
+  - `/free/flo-data-deletion-receipt-checklist`
+  - `/free/clue-data-export-review-worksheet`
+  - `/resources/privacy-in-practice/period-app-location-permission-audit`
+  - `/resources/privacy-in-practice/reset-ad-id-after-period-apps`
+  - `/free/period-app-data-map-worksheet`
+  - `/free/switch-period-trackers-without-losing-history`
+  - `/resources/privacy-in-practice/app-store-privacy-label-period-apps`
+  - `/free/period-app-deletion-follow-up-email-templates`
+- Updated `docs/seo-400/topic-backlog.csv` statuses from `planned-batch-3` to `drafted-batch-3`.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 27 net-new route paths total.
+- Initial source/no-lies review found two blockers:
+  - `period-app-data-map-worksheet` named Google Fit without a listed source.
+  - `period-app-location-permission-audit` named health hubs without Apple Health or Health Connect sources.
+- Initial copy guardrail review found two blockers and several wording improvements:
+  - `app-store-privacy-label-period-apps` used generic "privacy-first" marketing wording.
+  - `reset-ad-id-after-period-apps` used a salesy Floriva plug and an unsupported cloud-account architecture claim.
+  - Additional fixes replaced `Safer working note`, `panic`, `best map`, `export is safe`, and awkward Floriva soft-plug wording.
+- Fixed the Batch 3 review blockers:
+  - Removed unsupported Google Fit references from the data map worksheet.
+  - Added Apple Health and Health Connect source metadata to the location permission audit and removed Google Fit from that page.
+  - Rewrote Floriva mentions and safety/reassurance wording to be plainer and narrower.
+- Final focused sub-agent re-review cleared the patched files.
+- Passed `pnpm generate:content`.
+- Passed `pnpm verify:seo400-backlog -- --min 27`.
+- Passed `pnpm check:links` with 499 valid routes, 5,085 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,101 claim-shaped findings, and the Batch 3 rows were only low-confidence `FTC` acronym findings tied to sourced FTC references.
+- Ran `node scripts/verify-sources.mjs`; discovered 156 unique URLs across 357 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests.
+- Passed `pnpm build`; build prerendered 499 HTML routes. The existing chunk-size warning and `Port 24678 is already in use` WebSocket warning remain non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 27`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 499`.
+- Tested `node scripts/export-prod-indexer-urls.mjs --paths docs/seo-400/net-new-paths.txt --out artifacts/floriva-seo400-prod-urls.txt`; it failed as expected because the production sitemap is missing the 27 local net-new routes.
+- Current status: 27 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 373 pages, local browser E2E, deployment, production E2E, and final production URL artifact.
+
+### Batch 4: teen and parent privacy setup
+
+- DFS planning showed stronger demand for teen period tracking than the direct privacy cleanup terms:
+  - `period tracker for teens`: about 880 US monthly searches, LOW competition, keyword difficulty 13.
+  - `period tracker app for teens`: about 320 US monthly searches, LOW competition, keyword difficulty 7.
+  - `best period tracker for teens`: about 260 US monthly searches, LOW competition, keyword difficulty 34.
+  - `first period tracker`: about 170 US monthly searches, LOW competition, keyword difficulty 35.
+  - `how to talk to daughter about period`: about 70 US monthly searches, MEDIUM competition, keyword difficulty 2.
+- Existing broad teen coverage already exists in `teen-first-period-tracking`, `teen-safe-period-trackers-compared`, `floriva-for-teens`, and `best-period-tracker-for-teens`, so Batch 4 is planned as practical assets and checklists rather than duplicate ranking articles.
+- Added 8 planned Batch 4 rows to `docs/seo-400/topic-backlog.csv`:
+  - `teen-period-tracker-setup-card`
+  - `teen-period-app-privacy-checklist`
+  - `parent-teen-period-app-boundary-script`
+  - `first-period-tracking-starter-sheet`
+  - `shared-apple-id-period-privacy-checklist`
+  - `school-phone-period-tracking-privacy-checklist`
+  - `teen-period-symptoms-doctor-visit-sheet`
+  - `teen-period-app-notification-privacy-check`
+- Drafted 8 Batch 4 pages:
+  - `/free/teen-period-tracker-setup-card`
+  - `/resources/privacy-in-practice/teen-period-app-privacy-checklist`
+  - `/free/parent-teen-period-app-boundary-script`
+  - `/free/first-period-tracking-starter-sheet`
+  - `/resources/privacy-in-practice/shared-apple-id-period-privacy-checklist`
+  - `/resources/privacy-in-practice/school-phone-period-tracking-privacy-checklist`
+  - `/free/teen-period-symptoms-doctor-visit-sheet`
+  - `/resources/privacy-in-practice/teen-period-app-notification-privacy-check`
+- Updated `docs/seo-400/topic-backlog.csv` statuses from `planned-batch-4` to `drafted-batch-4`.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 35 net-new route paths total.
+- Initial source/no-lies review found five issues:
+  - `teen-period-tracker-setup-card` had an Android notification claim without an Android notification source.
+  - `school-phone-period-tracking-privacy-checklist` had Android/platform and private-browsing wording that needed source support or softer phrasing.
+  - `parent-teen-period-app-boundary-script` overstated app privacy.
+  - `shared-apple-id-period-privacy-checklist` used the Apple Account rename without a direct source.
+  - KidsHealth and AAP source `primary` flags needed normalization.
+- Initial copy guardrail review found two blockers and three wording fixes:
+  - `parent-teen-period-app-boundary-script` used absolute "safest note" wording and overpromised app privacy.
+  - `school-phone-period-tracking-privacy-checklist` used fear-heavy "Treat it as watched" wording.
+  - Smaller fixes softened `bad place`, the Floriva doctor-visit FAQ, and watch notification wording.
+- Fixed the Batch 4 review blockers:
+  - Added an Android notification source to `teen-period-tracker-setup-card`.
+  - Softened Android/school/private-browsing language in `school-phone-period-tracking-privacy-checklist`.
+  - Rewrote the parent/teen privacy note to say local/no-sharing design may lower exposure, not make an app private.
+  - Added an Apple Account source to `shared-apple-id-period-privacy-checklist`.
+  - Marked KidsHealth as secondary and the AAP publication as primary for its AAP endorsement claim.
+- Final focused sub-agent re-review cleared the patched files.
+- Passed `pnpm generate:content`.
+- Passed `pnpm verify:seo400-backlog -- --min 35`.
+- Passed `pnpm check:links` with 507 valid routes, 5,202 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,101 claim-shaped findings and Batch 4 pages did not appear in the targeted claim-audit scan.
+- Ran `node scripts/verify-sources.mjs`; discovered 170 unique URLs across 389 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests.
+- Passed `pnpm build`; build prerendered 507 HTML routes. The existing chunk-size warning and `Port 24678 is already in use` WebSocket warning remain non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 35`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 507`.
+- Tested `node scripts/export-prod-indexer-urls.mjs --paths docs/seo-400/net-new-paths.txt --out artifacts/floriva-seo400-prod-urls.txt`; it failed as expected because the production sitemap is missing the 35 local net-new routes.
+- Current status: 35 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 365 pages, local browser E2E, deployment, production E2E, and final production URL artifact.
+
+### Batch 5: fertility charting tools setup
+
+- DFS planning found a modest but useful fertility-charting utility slice:
+  - `fertility awareness method chart`: about 210 US monthly searches, LOW competition, keyword difficulty 1.
+  - `bbt chart printable`: about 90 US monthly searches, MEDIUM competition, keyword difficulty 1.
+  - `basal body temperature chart printable`: about 90 US monthly searches, MEDIUM competition, keyword difficulty 11.
+  - `cervical mucus tracking chart`: about 20 US monthly searches, LOW competition but high difficulty.
+  - `fertility chart template`: about 10 US monthly searches.
+- Existing broad fertility-awareness coverage already exists in app guides, quizzes, and symptom guides, so Batch 5 is planned as printable worksheets, trackers, and privacy handoff assets rather than another general FAM explainer.
+- Added 8 planned Batch 5 rows to `docs/seo-400/topic-backlog.csv`:
+  - `printable-bbt-chart-one-cycle`
+  - `bbt-disruption-log`
+  - `cervical-mucus-tracking-chart`
+  - `lh-test-strip-tracker`
+  - `fertility-awareness-chart-review-checklist`
+  - `paper-fertility-chart-to-app-checklist`
+  - `ovulation-symptoms-tracker`
+  - `fertility-data-privacy-handoff-sheet`
+- Drafted 8 Batch 5 pages:
+  - `/free/printable-bbt-chart-one-cycle`
+  - `/free/bbt-disruption-log`
+  - `/free/cervical-mucus-tracking-chart`
+  - `/free/lh-test-strip-tracker`
+  - `/free/fertility-awareness-chart-review-checklist`
+  - `/free/paper-fertility-chart-to-app-checklist`
+  - `/free/ovulation-symptoms-tracker`
+  - `/resources/privacy-in-practice/fertility-data-privacy-handoff-sheet`
+- Updated `docs/seo-400/topic-backlog.csv` statuses from `planned-batch-5` to `drafted-batch-5`.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 43 net-new route paths total.
+- Initial source/no-lies review found three issues:
+  - Several medical patient-education/reference sources were marked `primary: true` and needed `primary: false`; FDA stayed primary for the LH test source.
+  - `printable-bbt-chart-one-cycle` linked to itself in `relatedPages`.
+  - `paper-fertility-chart-to-app-checklist` made an absolute unsupported app-import claim.
+- Initial copy guardrail review found eight wording issues:
+  - BBT and ovulation symptom phrasing needed softer, less certain wording.
+  - Screenshot/privacy handoff wording sounded moralizing or overpromised post-share control.
+  - LH tracker Floriva note used vague "clean pattern" language.
+  - Mid-cycle pain guidance needed simpler direct wording.
+- Fixed the Batch 5 review blockers:
+  - Downgraded patient-education/reference medical sources to secondary while keeping FDA, FTC, and HHS primary where appropriate.
+  - Removed the self-link from `printable-bbt-chart-one-cycle`.
+  - Rewrote the paper-chart import answer to "Usually not" and preserved the app-specific check caveat.
+  - Softened BBT, LH, pain, screenshot, and data-handoff wording.
+  - Reworked the fertility handoff prompt from a fenced text block into normal checklist copy so prerendered body coverage can verify it.
+- Final focused sub-agent re-review cleared the patched files.
+- Passed `pnpm generate:content`.
+- Passed `pnpm verify:seo400-backlog -- --min 43`.
+- Passed `pnpm check:links` with 515 valid routes, 5,322 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,101 claim-shaped findings and Batch 5 pages did not appear in the targeted claim-audit scan.
+- Ran `node scripts/verify-sources.mjs`; discovered 178 unique URLs across 404 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests. Vitest printed the known `Port 24678 is already in use` WebSocket warning but exited 0.
+- Passed `pnpm build`; build prerendered 515 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 43`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 515`.
+- Tested `node scripts/export-prod-indexer-urls.mjs --paths docs/seo-400/net-new-paths.txt --out artifacts/floriva-seo400-prod-urls.txt`; it failed as expected because the production sitemap is missing the 43 local net-new routes.
+- Current status: 43 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 357 pages, local browser E2E, deployment, production E2E, and final production URL artifact.
+
+### Batch 6: PCOS practical tools setup
+
+- DFS planning found a useful PCOS utility slice, with stronger demand around meal-planning and checklist intent than around generic PCOS tracker duplication:
+  - `pcos meal planner`: about 1,600 US monthly searches, HIGH competition, keyword difficulty 5.
+  - `7-day pcos diet plan pdf`: about 1,600 US monthly searches, HIGH competition, low SERP result count in the sampled result.
+  - `pcos meal prep`: about 390 US monthly searches.
+  - `pcos meal plan pdf free`: about 90 US monthly searches.
+  - `pcos period tracker`: about 70 US monthly searches, MEDIUM competition, keyword difficulty 11.
+  - `pcos symptom tracker`: about 30 US monthly searches, keyword difficulty 2.
+  - Related checklist/quiz intent included `pcos quiz`, `pcos quiz no email`, `pcos self-assessment test free`, and `pcos checklist`.
+- Existing broad PCOS coverage already exists in `pcos-symptom-tracker`, `pcos-period-irregularity-tracking`, `period-tracking-pcos-guide`, `floriva-for-pcos-tracking`, and PCOS comparison/listicle pages, so Batch 6 is planned as practical worksheets and privacy handoff assets rather than another general PCOS explainer.
+- Added 8 planned Batch 6 rows to `docs/seo-400/topic-backlog.csv`:
+  - `pcos-meal-planner-template`
+  - `7-day-pcos-meal-planning-worksheet`
+  - `pcos-meal-prep-grocery-list`
+  - `pcos-doctor-appointment-question-list`
+  - `pcos-lab-results-tracker`
+  - `pcos-medication-supplement-change-log`
+  - `pcos-acne-hair-growth-photo-log`
+  - `pcos-data-sharing-privacy-checklist`
+- Passed `pnpm verify:seo400-backlog -- --min 51`; backlog now has 51 planned rows checked.
+- Drafted 8 Batch 6 pages:
+  - `/free/pcos-meal-planner-template`
+  - `/free/7-day-pcos-meal-planning-worksheet`
+  - `/free/pcos-meal-prep-grocery-list`
+  - `/free/pcos-doctor-appointment-question-list`
+  - `/free/pcos-lab-results-tracker`
+  - `/free/pcos-medication-supplement-change-log`
+  - `/free/pcos-acne-hair-growth-photo-log`
+  - `/resources/privacy-in-practice/pcos-data-sharing-privacy-checklist`
+- Updated `docs/seo-400/topic-backlog.csv` statuses from `planned-batch-6` to `drafted-batch-6`.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 51 net-new route paths total. The file has two comment lines above the route list.
+- Initial source/no-lies review found one class of issue:
+  - PCOS medical, nutrition, and patient-education sources needed secondary-source flags, while FTC and HHS privacy sources needed to remain primary.
+- Initial copy guardrail review found seven wording issues:
+  - The privacy checklist's legal-protection FAQ needed to avoid implying legal safety.
+  - The privacy checklist needed plainer language around shared data and HHS minimum-necessary sharing.
+  - The medication log needed simpler timing language around contacting a clinician.
+  - The 7-day meal worksheet needed less moralizing language around eating stress.
+  - The doctor appointment worksheet needed clearer clinician-context wording.
+  - The meal planner needed more concrete language than "better questions."
+- Fixed the Batch 6 review blockers:
+  - Marked PCOS medical/nutrition/patient-education sources as secondary.
+  - Kept FTC and HHS privacy sources as primary for the privacy checklist.
+  - Rewrote the legal-protection, sharing, HHS, medication, meal-planning, doctor-context, and question-quality lines.
+  - Corrected `buyerStage` to `mofu` where the backlog planned middle-funnel tools.
+  - Renamed the doctor tool to "PCOS Doctor Appointment Question List."
+- Final focused sub-agent re-review cleared the patched source flags and copy changes.
+- Passed `pnpm generate:content`.
+- Passed `pnpm verify:seo400-backlog -- --min 51`.
+- Passed `pnpm check:links` with 523 valid routes, 5,463 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 184 unique URLs across 428 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,102 claim-shaped findings. The only Batch 6 targeted row was a low-confidence `FTC` acronym flag in `pcos-data-sharing-privacy-checklist`.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests.
+- Passed `pnpm build`; build prerendered 523 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 51`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 523`.
+- Tested `node scripts/export-prod-indexer-urls.mjs --paths docs/seo-400/net-new-paths.txt --out artifacts/floriva-seo400-prod-urls.txt`; it failed as expected because the production sitemap is missing the 51 local net-new routes.
+- Current status: 51 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 349 pages, local browser E2E, deployment, production E2E, and final production URL artifact.
+
+### Batch 7: PMDD practical tools setup
+
+- DFS planning found a useful PMDD/PMS utility slice, with demand concentrated around self-check, tracker, chart, and DRSP-style intent:
+  - `pmdd quiz`: about 480 US monthly searches, LOW competition.
+  - `pmdd tracker`: about 390 US monthly searches, LOW competition, yearly trend up about 50%.
+  - `pmdd symptom tracker`: about 170 US monthly searches, MEDIUM competition.
+  - `daily record of severity of problems`: about 110 US monthly searches, LOW competition.
+  - `pmdd chart`: about 90 US monthly searches, LOW competition, keyword difficulty 2.
+  - `pmdd checklist`: about 70 US monthly searches, LOW competition.
+  - `pmdd mood tracker`: about 50 US monthly searches.
+  - `pmdd work accommodations`: about 30 US monthly searches, LOW competition.
+- SERP review for `pmdd tracker` showed IAPMD symptom tracker, PMDD chart PDFs, app pages, Reddit app discussions, and people-also-ask questions about PMDD apps, symptoms, how to track PMDD, and disability/accommodation questions.
+- Existing PMDD coverage already included `pmdd-two-cycle-symptom-tracker`, `pmdd-period-tracking-guide`, `pmdd-symptoms-vs-pms`, `pmdd-treatment-options`, and `floriva-for-pmdd-tracking`, so Batch 7 was planned as adjacent practical tools rather than another generic PMDD explainer.
+- Added 8 planned Batch 7 rows to `docs/seo-400/topic-backlog.csv`:
+  - `pmdd-quiz-no-email`
+  - `pmdd-drsp-daily-log`
+  - `pmdd-appointment-prep-checklist`
+  - `pmdd-treatment-response-tracker`
+  - `pmdd-work-school-planning-sheet`
+  - `pmdd-relationship-communication-script`
+  - `pmdd-safety-plan-template`
+  - `pmdd-data-privacy-checklist`
+- Passed `pnpm verify:seo400-backlog -- --min 59`; backlog now has 59 planned rows checked.
+- Drafted 8 Batch 7 pages:
+  - `/tools/quiz/pmdd-quiz-no-email`
+  - `/free/pmdd-drsp-daily-log`
+  - `/free/pmdd-appointment-prep-checklist`
+  - `/free/pmdd-treatment-response-tracker`
+  - `/free/pmdd-work-school-planning-sheet`
+  - `/free/pmdd-relationship-communication-script`
+  - `/free/pmdd-safety-plan-template`
+  - `/resources/privacy-in-practice/pmdd-data-privacy-checklist`
+- Updated `docs/seo-400/topic-backlog.csv` statuses from `planned-batch-7` to `drafted-batch-7`.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 59 net-new route paths total. The file has two comment lines above the route list.
+- Initial source/no-lies review found two issues:
+  - ACOG professional FAQ sources were marked `primary: true` in several Batch 7 pages and needed `primary: false`.
+  - `pmdd-quiz-no-email` made the two-cycle prospective tracking claim without listing the NCBI Bookshelf/Endotext source used elsewhere.
+- Initial copy guardrail review found five wording issues:
+  - `pmdd-safety-plan-template` used specific self-harm means language that was too vivid for a reader in crisis.
+  - `pmdd-data-privacy-checklist` used stark "staying alive" wording.
+  - `pmdd-treatment-response-tracker` used "scary" in a clinical/safety sentence where "worrying" is steadier.
+  - `pmdd-work-school-planning-sheet` used vague/body-moralizing phrasing around the body needing less.
+  - `pmdd-drsp-daily-log` used vague "move faster" visit-benefit language.
+- Fixed the Batch 7 review blockers:
+  - Marked ACOG professional FAQ sources as secondary.
+  - Added the NCBI Bookshelf PMDD source to `pmdd-quiz-no-email`.
+  - Rewrote the five flagged copy lines for safer, plainer language.
+- Final focused sub-agent re-review cleared the patched files.
+- Passed `pnpm generate:content`.
+- Passed `pnpm verify:seo400-backlog -- --min 59`.
+- Passed `pnpm check:links` with 531 valid routes, 5,552 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 188 unique URLs across 456 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,103 claim-shaped findings. The only Batch 7 targeted row was a low-confidence `FTC` acronym flag in `pmdd-data-privacy-checklist`.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests.
+- Passed `pnpm build`; build prerendered 531 HTML routes. The existing chunk-size warning and `Port 24678 is already in use` WebSocket warning remain non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 59`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 531`.
+- Tested `node scripts/export-prod-indexer-urls.mjs --paths docs/seo-400/net-new-paths.txt --out artifacts/floriva-seo400-prod-urls.txt`; it failed as expected because the production sitemap is missing the 59 local net-new routes.
+- Current status: 59 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 341 pages, local browser E2E, deployment, production E2E, and final production URL artifact.
+
+### Batch 8: Birth-control practical tools
+
+- DFS planning found a useful birth-control bleeding and side-effect documentation slice:
+  - `breakthrough bleeding birth control`: about 2,400 US monthly searches, LOW competition, with related queries around pill bleeding, constant bleeding, and when to worry.
+  - `iud bleeding after insertion` related set included IUD bleeding after years, what not to do after insertion, length of bleeding after insertion, and IUD bleeding/spotting.
+  - `depo shot bleeding`: about 1,000 US monthly searches, LOW competition, with related queries around prolonged Depo bleeding and care questions.
+- Existing repo coverage already included broad birth-control period-change, stopping-birth-control, IUD period-change, and implant bleeding pages, so Batch 8 was planned as practical logs/checklists rather than another generic explainer.
+- Added 8 planned Batch 8 rows to `docs/seo-400/topic-backlog.csv`:
+  - `breakthrough-bleeding-log`
+  - `birth-control-side-effect-tracker`
+  - `iud-bleeding-and-cramp-log`
+  - `iud-appointment-question-checklist`
+  - `depo-shot-bleeding-calendar`
+  - `birth-control-switch-checklist`
+  - `stopping-birth-control-cycle-return-tracker`
+  - `birth-control-data-privacy-checklist`
+- Drafted 8 Batch 8 pages:
+  - `/free/breakthrough-bleeding-log`
+  - `/free/birth-control-side-effect-tracker`
+  - `/free/iud-bleeding-and-cramp-log`
+  - `/free/iud-appointment-question-checklist`
+  - `/free/depo-shot-bleeding-calendar`
+  - `/free/birth-control-switch-checklist`
+  - `/free/stopping-birth-control-cycle-return-tracker`
+  - `/resources/privacy-in-practice/birth-control-data-privacy-checklist`
+- Sub-agent drafting:
+  - Breakthrough bleeding and birth-control side-effect pair drafted by worker sub-agent.
+  - IUD bleeding/cramp and IUD appointment pair drafted by worker sub-agent.
+  - Depo calendar and birth-control switch pair drafted by worker sub-agent.
+  - Stopping-birth-control tracker and birth-control privacy checklist drafted locally by orchestrator.
+- Updated `docs/seo-400/topic-backlog.csv` statuses from `planned-batch-8` to `drafted-batch-8`.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 67 net-new route paths total. The file has two comment lines above the route list.
+- Initial source/no-lies review removed Planned Parenthood citations from IUD pages because source reachability was flaky and CDC/ACOG covered the claims.
+- SEO review found four fixable issues:
+  - `depo-shot-bleeding-calendar` underdelivered on its promised 3-month calendar shape.
+  - `iud-appointment-question-checklist` and `birth-control-switch-checklist` frontmatter used `tofu` while the backlog planned `mofu`.
+  - Two sibling links were missing from `relatedPages`.
+  - Depo page linked to the implant bleeding log instead of the more relevant breakthrough bleeding log.
+- Fixed the SEO review issues:
+  - Added a 13-week by 7-day Depo calendar grid plus daily detail rows.
+  - Corrected the two `buyerStage` values to `mofu`.
+  - Added sibling links to `/free/iud-bleeding-and-cramp-log`, `/free/birth-control-side-effect-tracker`, and `/free/breakthrough-bleeding-log`.
+- Copy/no-lies guardrail review found one low source-support gap for a self-harm escalation line in `birth-control-side-effect-tracker`; patched with a direct 988 Lifeline source.
+- Passed `pnpm generate:content`.
+- Passed `pnpm verify:seo400-backlog -- --min 67`.
+- Passed `pnpm check:links` with 539 valid routes, 5,663 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 197 unique URLs across 477 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,104 claim-shaped findings. The only Batch 8 targeted row was a low-confidence sourced `FTC` acronym flag in `birth-control-data-privacy-checklist`.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests.
+- Passed `pnpm build`; build prerendered 539 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 67`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 539`.
+- Current status: 67 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 333 pages, local browser E2E, deployment, production E2E, and final production URL artifact.
+
+### Batch 9: Perimenopause symptom and visit tools
+
+- DFS planning found a perimenopause symptom utility slice with strong demand and a clear gap for practical tools:
+  - `what are the 34 symptoms of perimenopause`: about 8,100 US monthly searches.
+  - `100 symptoms of perimenopause`: about 1,900 US monthly searches, LOW competition.
+  - `horrible perimenopause symptoms`: about 1,900 US monthly searches, LOW competition.
+  - `perimenopause symptoms checklist`: about 880 US monthly searches, LOW competition, with checklist/PDF and symptom-count intent.
+  - `menopause symptom tracker`: about 140 US monthly searches.
+  - `perimenopause symptom tracker`: about 140 US monthly searches, keyword difficulty 8.
+  - `hot flash tracker`: about 40 US monthly searches, keyword difficulty 7.
+- Existing repo coverage already included broad perimenopause period changes, hormone-change tracking, and a bleeding-pattern log, so Batch 9 was planned as symptom, sleep, visit-prep, HRT-discussion, prioritization, and privacy tools.
+- Added 8 planned Batch 9 rows to `docs/seo-400/topic-backlog.csv`:
+  - `perimenopause-symptoms-checklist`
+  - `perimenopause-symptom-tracker`
+  - `hot-flash-night-sweat-log`
+  - `perimenopause-sleep-disruption-tracker`
+  - `perimenopause-appointment-prep-checklist`
+  - `hrt-discussion-question-list`
+  - `perimenopause-symptom-priority-sorter`
+  - `perimenopause-data-privacy-checklist`
+- Drafted 8 Batch 9 pages:
+  - `/free/perimenopause-symptoms-checklist`
+  - `/free/perimenopause-symptom-tracker`
+  - `/free/hot-flash-night-sweat-log`
+  - `/free/perimenopause-sleep-disruption-tracker`
+  - `/free/perimenopause-appointment-prep-checklist`
+  - `/free/hrt-discussion-question-list`
+  - `/free/perimenopause-symptom-priority-sorter`
+  - `/resources/privacy-in-practice/perimenopause-data-privacy-checklist`
+- Sub-agent drafting:
+  - Symptoms checklist and symptom tracker drafted by worker sub-agent.
+  - Hot flash/night sweat log and sleep disruption tracker drafted by worker sub-agent.
+  - Appointment prep and HRT discussion list drafted by worker sub-agent.
+  - Symptom priority sorter and perimenopause privacy checklist drafted locally by orchestrator.
+- Updated `docs/seo-400/topic-backlog.csv` statuses from `planned-batch-9` to `drafted-batch-9`.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 75 net-new route paths total. The file has two comment lines above the route list.
+- SEO review found five missing sibling-link opportunities across the Batch 9 cluster:
+  - Added reciprocal links between the symptoms checklist and symptom tracker.
+  - Added reciprocal links between the hot flash/night sweat log and sleep disruption tracker.
+  - Added the appointment prep checklist to the HRT discussion list.
+- Copy/no-lies guardrail review found three safety-copy issues:
+  - `perimenopause-sleep-disruption-tracker` framed bleeding after 12 months with no period as a loose question; changed it to "should be checked by a clinician."
+  - `perimenopause-symptoms-checklist` used self-harm wording without a 988 source; added a 988 source and clarified immediate danger versus crisis support.
+  - `perimenopause-symptom-priority-sorter` mixed 988 with local emergency support; clarified immediate danger versus 988 crisis support.
+- Passed `pnpm generate:content`.
+- Passed `pnpm verify:seo400-backlog -- --min 75`.
+- Passed `pnpm check:links` with 547 valid routes, 5,751 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 201 unique URLs across 500 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,105 claim-shaped findings. The only Batch 9 targeted row was a low-confidence sourced `FTC` acronym flag in `perimenopause-data-privacy-checklist`.
+- Passed `pnpm typecheck`; Vite printed the existing non-blocking `Port 24678 is already in use` WebSocket warning, but the command exited 0.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests.
+- Passed `pnpm build`; build prerendered 547 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 75`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 547`.
+- Current status: 75 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 325 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 10: Endometriosis practical tools
+
+- DFS planning found a useful endometriosis support-tool slice with strong search demand around diagnosis, bowel symptoms, fertility/treatment, diet, painful ovulation, ovarian-cyst comparisons, heat pads, and surgery recovery:
+  - `endometriosis and diagnosis`: about 8,100 US monthly searches, LOW competition.
+  - `endometriosis inside bowel`: about 8,100 US monthly searches, LOW competition, keyword difficulty 6.
+  - `endometriosis treatment and fertility`: about 6,600 US monthly searches, LOW competition, keyword difficulty 9.
+  - `endometriosis and diet`: about 4,400 US monthly searches, keyword difficulty 7.
+  - `endometriosis painful ovulation`: about 1,600 US monthly searches, LOW competition.
+  - `endometriosis or ovarian cyst`: about 1,600 US monthly searches, LOW competition, keyword difficulty 11.
+  - `endometriosis heating pad`: about 1,300 US monthly searches, MEDIUM competition, yearly trend up about 122%.
+  - `endometriosis surgery healing time`: about 1,300 US monthly searches, LOW competition.
+- Existing repo coverage already included broad endometriosis tracking, pain diary, diet, laparoscopy recovery, fertility treatment, stage 3 tracking, and privacy diagnosis pages, so Batch 10 was planned as practical checklists, logs, question lists, and privacy tools rather than generic explainers.
+- Added 8 planned Batch 10 rows to `docs/seo-400/topic-backlog.csv`:
+  - `endometriosis-symptom-checklist-no-quiz`
+  - `endometriosis-bowel-bladder-symptom-log`
+  - `endometriosis-appointment-prep-checklist`
+  - `endometriosis-ultrasound-question-list`
+  - `endometriosis-laparoscopy-recovery-log`
+  - `endometriosis-pain-relief-trial-log`
+  - `endometriosis-diet-symptom-trigger-log`
+  - `endometriosis-data-privacy-checklist`
+- Drafted 8 Batch 10 pages:
+  - `/free/endometriosis-symptom-checklist-no-quiz`
+  - `/free/endometriosis-bowel-bladder-symptom-log`
+  - `/free/endometriosis-appointment-prep-checklist`
+  - `/free/endometriosis-ultrasound-question-list`
+  - `/free/endometriosis-laparoscopy-recovery-log`
+  - `/free/endometriosis-pain-relief-trial-log`
+  - `/free/endometriosis-diet-symptom-trigger-log`
+  - `/resources/privacy-in-practice/endometriosis-data-privacy-checklist`
+- Sub-agent drafting:
+  - Symptom checklist and bowel/bladder log drafted by worker sub-agent.
+  - Appointment prep and ultrasound question list drafted by worker sub-agent.
+  - Laparoscopy recovery log and pain relief trial log drafted by worker sub-agent.
+  - Diet symptom trigger log and endometriosis data privacy checklist drafted by worker sub-agent.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 83 net-new route paths total. The file has two comment lines above the route list.
+- Initial integration found one schema issue:
+  - Removed two internal Floriva route entries from `sources` because source URLs must be absolute URLs.
+- Initial integration found one self-link:
+  - Replaced the ultrasound page's self-link in `relatedPages` with `/free/endometriosis-appointment-prep-checklist`.
+- Copy/no-lies guardrail review found only low-severity privacy wording issues:
+  - Replaced "keep safe" / "keep private" phrasing with "feels safest for your situation" and "best limits access."
+  - Replaced `Know when privacy is not enough` with `Know when privacy steps cannot help`.
+- SEO/value review found two medium issues and one low issue:
+  - Added stronger inbound links from sensitive Batch 10 tools to `/resources/privacy-in-practice/endometriosis-data-privacy-checklist`.
+  - Aligned `buyerStage` metadata with backlog intent for bowel/bladder, pain relief, and diet pages.
+  - Added `endometriosis-diagnosed` to the laparoscopy recovery page persona list.
+  - Sharpened the pain-relief page title, description, and BLUF around the heat-pad search intent.
+- Passed `pnpm generate:content`.
+- Passed `pnpm verify:seo400-backlog -- --min 83`.
+- Passed `pnpm check:links` with 555 valid routes, 5,870 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 210 unique URLs across 539 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,106 claim-shaped findings. The only Batch 10 targeted row was a low-confidence sourced `FTC` acronym flag in `endometriosis-data-privacy-checklist`.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests. Vitest printed the existing non-blocking `Port 24678 is already in use` WebSocket warning after completion, but exited 0.
+- Passed `pnpm build`; build prerendered 555 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 83`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 555`.
+- Current status: 83 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 317 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 11: Fibroid practical tools
+
+- DFS planning found broad fibroid demand and a practical-tool gap:
+  - `fibroids`: about 165,000 US monthly searches, LOW competition, keyword difficulty 61.
+  - `fibroid disease symptoms`: about 33,100 US monthly searches, LOW competition, keyword difficulty 47.
+  - `fibroid tumor on uterus symptoms`: about 27,100 US monthly searches, LOW competition, keyword difficulty 54.
+  - `fibroid drugs`, `fibroids medicine`, and `fibroid medicine`: about 22,200 US monthly searches with LOW competition.
+  - `fibroids in toilet`: about 8,100 US monthly searches, LOW competition.
+  - `fibroid cancer symptoms`: about 3,600 US monthly searches, LOW competition, keyword difficulty 2.
+  - `fibroids belly` and `fibroids stomach`: about 2,900 US monthly searches with LOW competition.
+  - `fibroids from birth control`: about 2,900 US monthly searches, LOW competition, yearly trend up about 1,025%.
+  - `fibroids and blood clots` / `fibroids clots`: about 2,400 US monthly searches, LOW competition.
+- Existing repo coverage already included broad fibroid explainers and heavy-bleeding guides, so Batch 11 was planned as checklists, logs, question lists, recovery support, and privacy tools rather than another generic fibroid explainer.
+- Added 8 planned Batch 11 rows to `docs/seo-400/topic-backlog.csv`:
+  - `fibroid-symptom-checklist-no-diagnosis`
+  - `fibroid-bleeding-and-clot-log`
+  - `fibroid-pressure-bladder-bowel-log`
+  - `fibroid-ultrasound-question-list`
+  - `fibroid-appointment-prep-checklist`
+  - `fibroid-treatment-decision-question-list`
+  - `myomectomy-recovery-log`
+  - `fibroid-data-privacy-checklist`
+- Drafted 8 Batch 11 pages:
+  - `/free/fibroid-symptom-checklist-no-diagnosis`
+  - `/free/fibroid-bleeding-and-clot-log`
+  - `/free/fibroid-pressure-bladder-bowel-log`
+  - `/free/fibroid-ultrasound-question-list`
+  - `/free/fibroid-appointment-prep-checklist`
+  - `/free/fibroid-treatment-decision-question-list`
+  - `/free/myomectomy-recovery-log`
+  - `/resources/privacy-in-practice/fibroid-data-privacy-checklist`
+- Sub-agent drafting:
+  - Symptom checklist and bleeding/clot log drafted by worker sub-agent.
+  - Pressure/bladder/bowel log and ultrasound question list drafted by worker sub-agent.
+  - Appointment prep checklist and treatment decision question list drafted by worker sub-agent.
+  - Myomectomy recovery log and fibroid data privacy checklist drafted by worker sub-agent.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 91 net-new route paths total. The file has two comment lines above the route list.
+- Initial integration aligned the bleeding/clot log `buyerStage` with the backlog.
+- SEO/value review found two medium issues and one low issue:
+  - Added stronger internal links from the symptom, bleeding, pressure, ultrasound, and appointment pages into `/free/fibroid-treatment-decision-question-list`.
+  - Added MedlinePlus recovery/discharge support sources to the myomectomy recovery page and added one practical help-planning note.
+  - Added privacy-page sibling links to `/free/fibroid-ultrasound-question-list` and `/free/myomectomy-recovery-log`.
+- Copy/no-lies guardrail review found one medium issue and three low issues:
+  - Tightened urgent symptom wording from "call/contact a clinician" to "seek urgent or emergency care" on high-risk bleeding, pain, pregnancy, fever, inability-to-pee, chest pain, and postmenopausal bleeding scenarios.
+  - Replaced unsupported "three recent cycles" / "last 3 period start dates" wording with "recent period dates."
+  - Replaced "privacy-limited export" with "short visit summary" on the appointment prep page.
+  - Rechecked `primary: true` source metadata; existing corpus convention already marks ACOG and NICE sources as primary, so no metadata change was made.
+- Passed `pnpm generate:content`.
+- Passed `pnpm verify:seo400-backlog -- --min 91`.
+- Passed `pnpm check:links` with 563 valid routes, 5,985 internal links checked before build, and 5,993 internal links checked after build, with 0 broken internal links and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 218 unique URLs across 578 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,106 claim-shaped findings. The targeted Batch 11 filter returned no rows.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests. Vitest printed the existing non-blocking `Port 24678 is already in use` WebSocket warning after completion, but exited 0.
+- Passed `pnpm build`; build prerendered 563 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 91`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 563`.
+- Current status: 91 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 309 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 12: Adenomyosis practical tools
+
+- DFS planning found a useful adenomyosis support-tool slice with demand around belly pressure, comparison, treatment, imaging, symptoms, pain, diet, bleeding, hysterectomy, and flare searches:
+  - `adenomyosis belly`: about 6,600 US monthly searches, LOW competition.
+  - `adenomyosis vs endometriosis`: clickstream estimate about 1,778 monthly searches, keyword difficulty 1.
+  - `adenomyosis treatment`: clickstream estimate about 889 monthly searches, keyword difficulty 27.
+  - `adenomyosis symptoms`: clickstream estimate about 679 monthly searches, keyword difficulty 31.
+  - `adenomyosis ultrasound`: clickstream estimate about 366 monthly searches, keyword difficulty 5.
+  - `adenomyosis diet`: about 260 US monthly searches, LOW competition.
+  - `adenomyosis vs fibroids`: clickstream estimate about 209 monthly searches.
+  - `adenomyosis pain`: clickstream estimate about 104 monthly searches, keyword difficulty 41.
+  - `adenomyosis bleeding`: about 70 US monthly searches, LOW competition, keyword difficulty 12.
+  - `adenomyosis hysterectomy`: clickstream estimate about 52 monthly searches, keyword difficulty 15.
+- Existing repo coverage already included `adenomyosis-period-tracking` and `adenomyosis-diet-food-guide`, so Batch 12 was planned as practical worksheets, logs, comparison aids, imaging questions, treatment questions, and privacy tools rather than another generic explainer.
+- Added 8 planned Batch 12 rows to `docs/seo-400/topic-backlog.csv`:
+  - `adenomyosis-symptom-checklist-no-diagnosis`
+  - `adenomyosis-bleeding-and-clot-log`
+  - `adenomyosis-pain-flare-log`
+  - `adenomyosis-belly-pressure-tracker`
+  - `adenomyosis-ultrasound-mri-question-list`
+  - `adenomyosis-vs-endometriosis-fibroids-checklist`
+  - `adenomyosis-treatment-decision-question-list`
+  - `adenomyosis-data-privacy-checklist`
+- Drafted 8 Batch 12 pages:
+  - `/free/adenomyosis-symptom-checklist-no-diagnosis`
+  - `/free/adenomyosis-bleeding-and-clot-log`
+  - `/free/adenomyosis-pain-flare-log`
+  - `/free/adenomyosis-belly-pressure-tracker`
+  - `/free/adenomyosis-ultrasound-mri-question-list`
+  - `/free/adenomyosis-vs-endometriosis-fibroids-checklist`
+  - `/free/adenomyosis-treatment-decision-question-list`
+  - `/resources/privacy-in-practice/adenomyosis-data-privacy-checklist`
+- Sub-agent drafting:
+  - Symptom checklist and bleeding/clot log drafted by worker sub-agent.
+  - Pain flare log and belly pressure tracker drafted by worker sub-agent.
+  - Ultrasound/MRI question list and adenomyosis vs endometriosis vs fibroids checklist drafted by worker sub-agent.
+  - Treatment decision question list and adenomyosis data privacy checklist drafted by worker sub-agent.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 99 net-new route paths total. The file has two comment lines above the route list.
+- Initial integration fixed a planned related-page typo from a non-existent appointment prep route to `/free/adenomyosis-treatment-decision-question-list`.
+- Initial integration added stronger sibling links across the adenomyosis cluster and replaced one questionable related route with `/resources/privacy-in-practice/adenomyosis-data-privacy-checklist`.
+- SEO/value review found two medium issues and one low issue:
+  - Added inbound links to `/free/adenomyosis-vs-endometriosis-fibroids-checklist` across the sibling cluster.
+  - Added a non-diagnostic side-by-side comparison table to better satisfy "adenomyosis vs endometriosis vs fibroids" search intent.
+  - Added contextual body links from the symptom, bleeding, and comparison pages into imaging, treatment, and privacy pages.
+- Copy/no-lies guardrail review found low issues only:
+  - Removed "fertility questions" from the symptom list and reframed pregnancy/fertility as optional visit questions.
+  - Replaced `Build a safer visit packet` with `Build a limited visit packet`.
+  - Shortened dense BLUF strings on the ultrasound/MRI, treatment decision, and privacy pages.
+- Passed `pnpm generate:content`.
+- Passed `pnpm verify:seo400-backlog -- --min 99`.
+- Passed `pnpm check:links` with 571 valid routes, 6,144 internal links checked before build, and 6,166 internal links checked after build, with 0 broken internal links and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 224 unique URLs across 618 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,107 claim-shaped findings. The only Batch 12 targeted row was a low-confidence sourced `FTC` acronym flag in `adenomyosis-data-privacy-checklist`.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests. Vitest printed the existing non-blocking `Port 24678 is already in use` WebSocket warning after completion, but exited 0.
+- Passed `pnpm build`; build prerendered 571 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 99`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 571`.
+- Current status: 99 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 301 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 13: Ovarian cyst practical tools
+
+- DFS planning found a useful ovarian-cyst support-tool slice with demand around symptoms, treatment, pain, rupture symptoms, ultrasound, surgery recovery, bloating, and comparison searches:
+  - `ovarian cyst symptoms`: clickstream estimate about 5,230 US monthly searches, keyword difficulty 57.
+  - `ovarian cyst treatment`: clickstream estimate about 993 monthly searches, keyword difficulty 49.
+  - `ovarian cyst pain`: clickstream estimate about 732 monthly searches, keyword difficulty 50.
+  - `ovarian cyst rupture symptoms`: clickstream estimate about 418 monthly searches, keyword difficulty 49.
+  - `ovarian cyst ultrasound`: clickstream estimate about 313 monthly searches, keyword difficulty 17.
+  - `ovarian cyst surgery recovery`: clickstream estimate about 104 monthly searches, keyword difficulty 30.
+  - `ovarian cyst bloating`: keyword difficulty 33, with visible monthly clickstream activity.
+  - `ovarian cyst vs endometriosis`: keyword difficulty 35, with visible monthly clickstream activity.
+- Existing repo coverage mentioned ovarian cysts in adjacent symptom and condition pages, but there were no dedicated ovarian-cyst practical tools, so Batch 13 was planned as logs, checklists, imaging questions, treatment questions, recovery notes, and privacy tools rather than a generic explainer.
+- Added 8 planned Batch 13 rows to `docs/seo-400/topic-backlog.csv`:
+  - `ovarian-cyst-symptom-checklist-no-diagnosis`
+  - `ovarian-cyst-pain-log`
+  - `ovarian-cyst-rupture-urgent-care-notes`
+  - `ovarian-cyst-ultrasound-question-list`
+  - `ovarian-cyst-period-change-tracker`
+  - `ovarian-cyst-treatment-decision-question-list`
+  - `ovarian-cyst-surgery-recovery-log`
+  - `ovarian-cyst-data-privacy-checklist`
+- Drafted 8 Batch 13 pages:
+  - `/free/ovarian-cyst-symptom-checklist-no-diagnosis`
+  - `/free/ovarian-cyst-pain-log`
+  - `/free/ovarian-cyst-rupture-urgent-care-notes`
+  - `/free/ovarian-cyst-ultrasound-question-list`
+  - `/free/ovarian-cyst-period-change-tracker`
+  - `/free/ovarian-cyst-treatment-decision-question-list`
+  - `/free/ovarian-cyst-surgery-recovery-log`
+  - `/resources/privacy-in-practice/ovarian-cyst-data-privacy-checklist`
+- Sub-agent drafting:
+  - Symptom checklist and pain log drafted by worker sub-agent.
+  - Rupture urgent-care notes and ultrasound question list drafted by worker sub-agent.
+  - Period change tracker and treatment decision question list drafted by worker sub-agent.
+  - Surgery recovery log and ovarian cyst data privacy checklist drafted by worker sub-agent.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 107 net-new route paths total. The file has two comment lines above the route list.
+- Integration removed unverified exact source `updatedAt` metadata from cited external source entries while keeping page `updatedAt` frontmatter intact.
+- Copy/no-lies guardrail review found no blocking issues and one medium issue:
+  - Tightened the period-change page's urgent-care wording so pregnancy concern is framed as information to tell the care team early, not as an ovarian-cyst-specific emergency trigger.
+  - Split long urgent-care sentences on symptom and pain pages into shorter source-aligned bullet lists.
+- SEO/value review found no blocking issues and two non-blocking issues:
+  - Added contextual inbound links from `ovulation-pain-vs-appendix`, `cramps-but-no-period`, and `period-bloating-patterns` into the ovarian-cyst cluster.
+  - Added `/app-guides/floriva-for-gynecologist-prep` to the treatment decision page's related pages.
+- Passed `pnpm generate:content`.
+- Passed `pnpm verify:seo400-backlog -- --min 107`.
+- Passed `pnpm check:links` with 579 valid routes, 6,296 internal links checked before build, and 6,312 internal links checked after build, with 0 broken internal links and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 231 unique URLs across 654 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,107 claim-shaped findings. The targeted ovarian-cyst filter returned no rows; the only edited-support-page matches were pre-existing rows in `cramps-but-no-period.mdx`.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests. Vitest printed the existing non-blocking `Port 24678 is already in use` WebSocket warning after completion, but exited 0.
+- Passed `pnpm build`; build prerendered 579 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 107`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 579`.
+- Current status: 107 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 293 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 14: Vaginal discharge practical tools
+
+- DFS planning found a high-demand discharge, BV, odor, yeast, and cervical-mucus support-tool slice:
+  - `discharge before period`: about 27,100 US monthly searches, LOW competition, keyword difficulty 7.
+  - `brown discharge before period`: about 22,200 US monthly searches, LOW competition, keyword difficulty 3.
+  - `discharge after period brown` / `brown discharge after period`: about 12,100 US monthly searches, LOW competition, keyword difficulty 1-3 depending variant.
+  - `discharge before period vs early pregnancy`: about 9,900 US monthly searches, LOW competition.
+  - `bv symptoms`: about 201,000 US monthly searches, MEDIUM competition, keyword difficulty 60.
+  - `bv symptoms women`: about 22,200 US monthly searches.
+  - `bacterial vaginosis symptoms`: keyword difficulty 44.
+  - `discharge color chart`: keyword difficulty 24.
+  - `fishy odor after period`: keyword difficulty 22.
+  - `vaginal odor after period`: keyword difficulty 25.
+  - `recurrent yeast infection`: keyword difficulty 38.
+  - `yeast infection symptoms`: keyword difficulty 51.
+- Existing repo coverage already included discharge explainers and cervical mucus guidance, so Batch 14 was planned as non-diagnostic logs, visit-prep checklists, comparison worksheets, and privacy tools rather than infection or treatment pages.
+- Source guardrails used CDC vaginal discharge, BV, and candidiasis guidance, ACOG vaginitis guidance, Cleveland Clinic vaginal discharge context, FTC Health Breach Notification Rule context, and HHS consumer-app privacy context. Pages avoid self-diagnosis, dosing, treatment protocols, pregnancy claims, and legal guarantees.
+- Added 8 planned Batch 14 rows to `docs/seo-400/topic-backlog.csv`:
+  - `vaginal-discharge-before-period-tracker`
+  - `vaginal-discharge-color-odor-checklist`
+  - `bv-symptom-visit-prep-checklist`
+  - `vaginal-odor-after-period-log`
+  - `yeast-infection-symptom-log-no-diagnosis`
+  - `recurrent-yeast-infection-appointment-prep`
+  - `vaginal-discharge-vs-cervical-mucus-checklist`
+  - `vaginal-discharge-data-privacy-checklist`
+- Drafted 8 Batch 14 pages:
+  - `/free/vaginal-discharge-before-period-tracker`
+  - `/free/vaginal-discharge-color-odor-checklist`
+  - `/free/bv-symptom-visit-prep-checklist`
+  - `/free/vaginal-odor-after-period-log`
+  - `/free/yeast-infection-symptom-log-no-diagnosis`
+  - `/free/recurrent-yeast-infection-appointment-prep`
+  - `/free/vaginal-discharge-vs-cervical-mucus-checklist`
+  - `/resources/privacy-in-practice/vaginal-discharge-data-privacy-checklist`
+- Sub-agent drafting:
+  - Vaginal discharge before period tracker and discharge color/odor checklist drafted by worker sub-agent.
+  - BV symptom visit prep checklist and vaginal odor after period log drafted by worker sub-agent.
+  - Yeast infection symptom log and recurrent yeast appointment prep drafted by worker sub-agent.
+  - Discharge vs cervical mucus checklist and vaginal discharge data privacy checklist drafted by worker sub-agent.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 115 net-new route paths total. The file has two comment lines above the route list.
+- Integration removed unverified exact source `updatedAt` metadata from cited external source entries while keeping page `updatedAt` frontmatter intact.
+- SEO/value review found no blockers and two improvement items:
+  - Added inbound links from `period-discharge-guide`, `discharge-before-period`, `discharge-after-period`, `how-to-track-cervical-mucus`, `period-tracker-data-minimization-guide`, and `floriva-for-gynecologist-prep` into the new cluster.
+  - Added a missing privacy link from the discharge vs cervical mucus checklist to `/resources/privacy-in-practice/vaginal-discharge-data-privacy-checklist`.
+- Copy/no-lies guardrail review found no blockers and two safety/copy issues:
+  - Softened urgent-care phrasing on BV, odor, and discharge-vs-cervical-mucus pages to source-aligned "contact a clinician promptly" language without implying a diagnosis.
+  - Replaced a broad privacy safety line in the recurrent yeast page with "Only share what is needed for care and what you are comfortable sharing."
+- Passed `pnpm generate:content`.
+- Passed `pnpm verify:seo400-backlog -- --min 115`.
+- Passed `pnpm check:links` with 587 valid routes, 6,465 internal links checked before build, and 6,481 internal links checked after build, with 0 broken internal links and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 239 unique URLs across 691 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,108 claim-shaped findings. The only Batch 14 targeted row was a low-confidence sourced `FTC` acronym flag in `vaginal-discharge-data-privacy-checklist`; edited support-page matches were pre-existing rows outside the new Batch 14 files.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests. Vitest printed the existing non-blocking `Port 24678 is already in use` WebSocket warning after completion, but exited 0.
+- Passed `pnpm build`; build prerendered 587 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 115`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 587`.
+- Current status: 115 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 285 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 15: Menstrual migraine practical tools
+
+- DFS planning found a useful menstrual-migraine support-tool slice around menstrual migraine, migraine before period, migraine diary, printable tracker, hormonal migraine, aura, medication response, trigger comparison, and perimenopause migraine searches:
+  - `hormonal migraine`: keyword difficulty 40.
+  - `menstrual migraine`: clickstream estimate about 261 US monthly searches, keyword difficulty 29.
+  - `migraine before period`: clickstream estimate about 209 US monthly searches, keyword difficulty 12.
+  - `migraine diary`: clickstream estimate about 209 US monthly searches, keyword difficulty 14.
+  - `migraine tracker app`: about 480 US monthly searches, LOW competition, keyword difficulty 32.
+  - `migraine tracker printable`: about 90 US monthly searches, keyword difficulty 3, with clickstream estimate about 418 monthly searches.
+  - `migraine during period`: keyword difficulty 38.
+  - `perimenopause migraine`: keyword difficulty 14.
+  - `period migraine`: clickstream estimate about 52 US monthly searches, keyword difficulty 30.
+- Existing repo coverage already included a menstrual migraine explainer, but there were no dedicated menstrual-migraine practical tools, so Batch 15 was planned as logs, visit-prep checklists, aura notes, medication-response notes, trigger comparison, perimenopause patterning, and privacy tools rather than another generic migraine explainer.
+- Source guardrails used American Migraine Foundation menstrual migraine and women's health resources, Mayo Clinic migraine symptom and diagnosis resources, Mayo Clinic aura/ocular migraine warning context, The Migraine Trust diary guidance, FTC Health Breach Notification Rule context, and HHS HIPAA/health-app context. Pages avoid diagnosis, treatment advice, dose guidance, HRT advice, causation claims, and legal/privacy guarantees.
+- Added 8 planned Batch 15 rows to `docs/seo-400/topic-backlog.csv`:
+  - `menstrual-migraine-cycle-log`
+  - `migraine-before-period-tracker`
+  - `menstrual-migraine-appointment-prep-checklist`
+  - `migraine-aura-cycle-notes`
+  - `migraine-medication-response-log`
+  - `migraine-trigger-and-cycle-comparison-log`
+  - `perimenopause-migraine-pattern-tracker`
+  - `menstrual-migraine-data-privacy-checklist`
+- Drafted 8 Batch 15 pages:
+  - `/free/menstrual-migraine-cycle-log`
+  - `/free/migraine-before-period-tracker`
+  - `/free/menstrual-migraine-appointment-prep-checklist`
+  - `/free/migraine-aura-cycle-notes`
+  - `/free/migraine-medication-response-log`
+  - `/free/migraine-trigger-and-cycle-comparison-log`
+  - `/free/perimenopause-migraine-pattern-tracker`
+  - `/resources/privacy-in-practice/menstrual-migraine-data-privacy-checklist`
+- Sub-agent drafting:
+  - Menstrual migraine cycle log and migraine before period tracker drafted by worker sub-agent.
+  - Appointment prep checklist and aura cycle notes drafted by worker sub-agent.
+  - Medication response log and trigger/cycle comparison log drafted by worker sub-agent.
+  - Perimenopause migraine pattern tracker and data privacy checklist drafted by worker sub-agent.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 123 net-new route paths total. The file has two comment lines above the route list.
+- Integration added strong sibling links across all eight Batch 15 pages and contextual inbound links from `menstrual-migraine-tracking`, `signs-your-period-is-coming`, `luteal-phase-symptoms`, `perimenopause-period-changes`, `perimenopause-hormone-changes-tracking`, `floriva-for-perimenopause`, and `floriva-for-gynecologist-prep`.
+- Integration tightened medication wording from dose-oriented phrasing to "amount from label or plan" and "do not use this page to choose a medicine or amount."
+- Copy/no-lies guardrail review found one medium issue and two low issues:
+  - Replaced unsupported "2 to 3 cycles / 8 to 12 weeks" tracking guidance with "about three months if you can; bring what you have."
+  - Replaced "private on-device tracking" with "on-device notes."
+  - Replaced "private files somewhere else" with "more sensitive files somewhere else."
+- SEO/value review found no material issues. It confirmed the eight pages map to the Batch 15 backlog, are not thin, have strong sibling links, are reachable from existing hub/support pages, are present in generated route surfaces, and keep product mentions restrained and caveated.
+- Passed `pnpm generate:content`.
+- Passed `pnpm verify:seo400-backlog -- --min 123`.
+- Passed `pnpm check:links` with 595 valid routes, 6,667 internal links checked before build, and 6,675 internal links checked after build, with 0 broken internal links and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 245 unique URLs across 722 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,108 claim-shaped findings. The targeted Batch 15 filter returned no rows; edited support-page matches were pre-existing FTC/settlement rows outside the new Batch 15 files.
+- Passed `pnpm typecheck`. The existing non-blocking `Port 24678 is already in use` WebSocket warning appeared, but the command exited 0.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests.
+- Passed `pnpm build`; build prerendered 595 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 123`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 595`.
+- Current status: 123 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 277 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 16: UTI and bladder practical tools
+
+- DFS planning found a high-demand UTI and bladder-support slice with strong ICP overlap and several low-difficulty long-tail opportunities:
+  - `uti symptoms women`: about 74,000 US monthly searches, MEDIUM competition, keyword difficulty 22, clickstream estimate about 2,824 monthly searches.
+  - `uti during period`: about 720 US monthly searches, LOW competition, normalized clickstream estimate about 681 monthly searches.
+  - `uti after sex symptoms`: about 720 US monthly searches, LOW competition, keyword difficulty 18.
+  - `uti vs yeast infection`: clickstream estimate about 366 monthly searches, keyword difficulty 5.
+  - `period cramps or uti`: about 90 US monthly searches, LOW competition.
+  - `uti vs period cramps`: about 50 US monthly searches, LOW competition.
+  - `frequent urination before period`: clickstream estimate about 52 monthly searches.
+  - `urinary urgency before period`: about 20 US monthly searches, LOW competition.
+  - `bladder pain before period`: keyword difficulty 14.
+  - `recurrent uti women`: keyword difficulty 11.
+  - `uti symptom tracker`: informational intent but no returned volume.
+- Existing repo coverage had endometriosis/fibroid bowel-bladder logs and incidental urinary mentions, but no standalone UTI/bladder-cycle practical tools, so Batch 16 was planned as non-diagnostic trackers, visit-prep checklists, comparison notes, urgency logs, and privacy tooling rather than treatment or generic infection explainers.
+- Source guardrails used Office on Women's Health UTI guidance, NIDDK bladder infection and bladder-control guidance, Mayo Clinic UTI/cystitis resources, CDC candidiasis guidance, ACOG vaginal-infection guidance, FTC Health Breach Notification Rule context, and HHS HIPAA/health-app context. Pages avoid diagnosis, antibiotic advice, dosing, prevention protocols, sex/period causation claims, and privacy or legal guarantees.
+- Added 8 planned Batch 16 rows to `docs/seo-400/topic-backlog.csv`:
+  - `uti-symptom-tracker-no-diagnosis`
+  - `uti-during-period-symptom-log`
+  - `uti-after-sex-visit-prep-checklist`
+  - `recurrent-uti-appointment-prep-checklist`
+  - `uti-vs-yeast-symptom-notes`
+  - `bladder-pain-before-period-tracker`
+  - `urinary-urgency-cycle-log`
+  - `uti-and-bladder-data-privacy-checklist`
+- Drafted 8 Batch 16 pages:
+  - `/free/uti-symptom-tracker-no-diagnosis`
+  - `/free/uti-during-period-symptom-log`
+  - `/free/uti-after-sex-visit-prep-checklist`
+  - `/free/recurrent-uti-appointment-prep-checklist`
+  - `/free/uti-vs-yeast-symptom-notes`
+  - `/free/bladder-pain-before-period-tracker`
+  - `/free/urinary-urgency-cycle-log`
+  - `/resources/privacy-in-practice/uti-and-bladder-data-privacy-checklist`
+- Sub-agent drafting:
+  - UTI symptom tracker and UTI during period symptom log drafted by worker sub-agent.
+  - UTI after sex visit prep checklist and recurrent UTI appointment prep checklist drafted by worker sub-agent.
+  - UTI vs yeast symptom notes and bladder pain before period tracker drafted by worker sub-agent.
+  - Urinary urgency cycle log and UTI/bladder data privacy checklist drafted by worker sub-agent.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 131 net-new route paths total. The file has two comment lines above the route list.
+- Integration added sibling links across all eight Batch 16 pages and contextual inbound links from `cramps-but-no-period`, `floriva-for-gynecologist-prep`, `endometriosis-bowel-bladder-symptom-log`, `fibroid-pressure-bladder-bowel-log`, and `period-tracker-data-minimization-guide`.
+- SEO/value review found four issues:
+  - Generated route surfaces were missing until `pnpm generate:content` ran.
+  - `uti-after-sex-visit-prep-checklist` had `buyerStage: "tofu"` but the backlog planned `mofu`; fixed to `mofu`.
+  - `uti-during-period-symptom-log` missed planned period-product and hydration prompts; added both fields.
+  - Backlog had stale `/free/uti-vs-period-cramps-notes`; replaced it with `/free/bladder-pain-before-period-tracker`.
+- Copy/no-lies guardrail review found no issues in the eight new Batch 16 pages and found older overbroad claims in edited inbound pages:
+  - Softened absolute privacy/legal claims in `cramps-but-no-period`, `period-tracker-data-minimization-guide`, and `floriva-for-gynecologist-prep`.
+  - Softened medical certainty in `cramps-but-no-period`, including the BLUF and ovulation/late-luteal explanations.
+  - Clarified that multi-cycle logging applies to non-urgent symptoms only.
+- Passed `pnpm generate:content`.
+- Passed `pnpm verify:seo400-backlog -- --min 131`.
+- Confirmed all eight Batch 16 slugs are present in `src/site/content-manifest.ts`, `src/site/generated/content-index.ts`, `src/site/generated/content-data.ts`, and generated body modules.
+- Passed `pnpm check:links` before build with 603 valid routes, 6,808 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 251 unique URLs across 753 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,109 claim-shaped findings. The only Batch 16 targeted row was a low-confidence sourced `FTC` acronym flag in `uti-and-bladder-data-privacy-checklist`.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests. Vitest printed the existing non-blocking `Port 24678 is already in use` WebSocket warning after completion, but exited 0.
+- Passed `pnpm build`; build prerendered 603 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed post-build `pnpm check:links` with 603 valid routes, 6,824 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Passed `pnpm verify:prerendered-content -- --min 131`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 603`.
+- Second-pass sub-agent review confirmed generated coverage, buyer stages, period-product/hydration fields, and stale-link cleanup, then found three remaining medium guardrail issues in edited older inbound pages:
+  - Softened legal-certainty wording in `period-tracker-data-minimization-guide` around server-side legal requests and cloud-sync exposure.
+  - Softened diagnostic-certainty wording in `cramps-but-no-period` around one-sided pain with possible pregnancy.
+  - Softened privacy/legal-risk wording in `cramps-but-no-period` around reproductive health data exposure.
+- After second-pass fixes, reran `pnpm generate:content`, a focused guardrail phrase scan, `pnpm verify:seo400-backlog -- --min 131`, `pnpm check:links`, `pnpm typecheck`, `pnpm build`, `pnpm verify:prerendered-content -- --min 131`, `pnpm verify:prerendered-content -- --all-sitemap --min 603`, and final post-build `pnpm check:links`; all passed.
+- Current status: 131 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 269 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 17: Digestive cycle practical tools
+
+- DFS planning found a high-demand digestive-cycle slice with strong ICP overlap and low-difficulty query coverage:
+  - `period poops`: about 14,800 US monthly searches, LOW competition, keyword difficulty 9, clickstream estimate about 1,883 searches.
+  - `period poop`: about 14,800 US monthly searches, keyword difficulty 9, clickstream estimate about 575 searches.
+  - `period diarrhea`: about 14,800 US monthly searches, LOW competition, clickstream estimate about 313 searches.
+  - `diarrhea during period`: about 14,800 US monthly searches, LOW competition, clickstream estimate about 52 searches.
+  - `diarrhea before period`: about 3,600 US monthly searches, LOW competition, clickstream estimate about 313 searches.
+  - `period constipation` and `constipation during period`: about 4,400 US monthly searches, LOW competition.
+  - `constipation before period`: about 3,600 US monthly searches, LOW competition, clickstream estimate about 209 searches.
+  - `period gas` and `gas before period`: about 1,600 US monthly searches, LOW competition.
+  - `pain during bowel movement on period` / `bowel pain during period`: small-volume but high-intent visit-prep terms.
+- Source guardrails used Office on Women's Health PMS, Mayo Clinic PMS, ACOG painful periods, Office on Women's Health endometriosis, ACOG endometriosis, Office on Women's Health IBS, NIDDK viral gastroenteritis, Mayo constipation red flags, Mayo gas/bloating red flags, FTC Health Breach Notification Rule context, and HHS HIPAA/consumer-app context. Pages avoid diagnosis, dosing, laxative advice, diet protocols, causation certainty, and privacy or legal guarantees.
+- Added 8 planned Batch 17 rows to `docs/seo-400/topic-backlog.csv`:
+  - `period-poops-tracker`
+  - `period-diarrhea-symptom-log`
+  - `diarrhea-before-period-tracker`
+  - `period-constipation-log`
+  - `constipation-before-period-tracker`
+  - `period-gas-and-bloating-log`
+  - `painful-bowel-movements-during-period-notes`
+  - `digestive-cycle-data-privacy-checklist`
+- Drafted 8 Batch 17 pages:
+  - `/free/period-poops-tracker`
+  - `/free/period-diarrhea-symptom-log`
+  - `/free/diarrhea-before-period-tracker`
+  - `/free/period-constipation-log`
+  - `/free/constipation-before-period-tracker`
+  - `/free/period-gas-and-bloating-log`
+  - `/free/painful-bowel-movements-during-period-notes`
+  - `/resources/privacy-in-practice/digestive-cycle-data-privacy-checklist`
+- Sub-agent drafting:
+  - `019f1be2-ed64-71c0-994b-cdb69b550a4a` (Avicenna the 2nd) drafted the period poops tracker and period diarrhea symptom log.
+  - `019f1be3-3bcc-7c83-9bd1-7f6f794e745c` (Volta the 2nd) drafted the diarrhea before period tracker and period constipation log.
+  - `019f1be3-8c32-7542-bece-d3f571351eb0` (Euler the 2nd) drafted the constipation before period tracker and period gas and bloating log.
+  - `019f1be3-e74c-7e21-b39e-8401b3d368a0` (Banach the 2nd) drafted painful bowel movements during period notes and the digestive cycle data privacy checklist.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 139 net-new route paths total. The file has two comment lines above the route list.
+- Integration added sibling links across all eight Batch 17 pages and contextual inbound links from `period-bloating-patterns`, `cramps-but-no-period`, `endometriosis-bowel-bladder-symptom-log`, `fibroid-pressure-bladder-bowel-log`, `period-tracker-data-minimization-guide`, `floriva-for-gynecologist-prep`, and `floriva-for-endometriosis-tracking`.
+- SEO/value review found generated-route and funnel issues:
+  - Generated route surfaces were missing until content, knowledge, sitemap, and llms outputs were rebuilt sequentially.
+  - Fixed three `relatedPages` mismatches across `diarrhea-before-period-tracker`, `constipation-before-period-tracker`, and `period-gas-and-bloating-log`.
+  - Softened an absolute FAQ answer in `period-diarrhea-symptom-log`.
+  - Fixed stale `clinical record` / `clinical use` language in `floriva-for-endometriosis-tracking` that was exposed through Batch 17 funnel links.
+- Medical/legal/copy guardrail review found overbroad claims in edited inbound/context pages, not in the eight new Batch 17 assets:
+  - Softened HIPAA/privacy, no-account, retention, and Flo/SDK language in `cramps-but-no-period` and `period-tracker-data-minimization-guide`.
+  - Softened medical certainty, diagnostic, and urgent-care phrasing in `cramps-but-no-period`, `period-bloating-patterns`, and `floriva-for-gynecologist-prep`.
+  - Replaced clinical-record wording with appointment-note / appointment-summary wording in `floriva-for-gynecologist-prep` and `floriva-for-endometriosis-tracking`.
+- Reviewer final passes:
+  - Medical/legal/privacy/copy reviewer `019f1bea-329e-7d31-b1e0-ae26c6367672` (Pascal the 2nd) returned `PASS`.
+  - SEO/value/internal-link reviewer `019f1be9-f1c5-7cc0-93ab-aa414fedd4fe` (Mencius the 2nd) returned `PASS` after the final `floriva-for-endometriosis-tracking` `bluf` fix.
+- Passed `pnpm generate:content`, `pnpm generate:knowledge`, `node scripts/build-sitemap.mjs`, and `node scripts/build-llms-txt.mjs` sequentially.
+- Passed focused guardrail phrase scans for the prior Batch 17 failure strings in scoped source files and `public/llms.txt`.
+- Passed `pnpm verify:seo400-backlog -- --min 139`.
+- Passed `pnpm check:links` before build with 611 valid routes, 7,008 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 258 unique URLs across 788 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,109 claim-shaped findings. Batch 17 review treated this as a repo-wide report and cleared the scoped Batch 17 blockers through sub-agent review and targeted phrase scans.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests.
+- Passed `pnpm build`; build prerendered 611 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed post-build `pnpm check:links` with 611 valid routes, 7,008 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Passed `pnpm verify:prerendered-content -- --min 139`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 611`.
+- Current status: 139 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 261 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 18: Post-sex bleeding and pain practical tools
+
+- DFS planning found a high-demand, low-competition symptom-prep slice with strong ICP overlap:
+  - `bleeding after sex`: about 33,100 US monthly searches, LOW competition, clickstream estimate about 2,092 searches.
+  - `bleeding after intercourse`: about 33,100 US monthly searches, LOW competition, clickstream estimate about 104 searches.
+  - `bleeding after sex no pain`: about 12,100 US monthly searches, LOW competition, keyword difficulty 3.
+  - `spotting after sex`: about 8,100 US monthly searches, LOW competition, keyword difficulty 1.
+  - `brown discharge after sex`: about 4,400 US monthly searches, LOW competition, keyword difficulty 3.
+  - `postcoital bleeding`: about 4,400 US monthly searches, LOW competition, keyword difficulty 8.
+  - `pain during sex`: about 9,900 US monthly searches, LOW competition, keyword difficulty 9.
+  - `pain after sex`: about 4,400 US monthly searches, LOW competition.
+  - Lower-volume long-tail targets included `bleeding after sex during ovulation`, `bleeding after sex before period`, `bleeding after sex on birth control`, and `pelvic pain after sex`.
+- Source guardrails used ACOG abnormal uterine bleeding, CDC cervicitis, CDC vaginal discharge, CDC contraception guidance, Mayo Clinic painful intercourse, Office on Women's Health endometriosis, ACOG endometriosis, FTC Health Breach Notification Rule context, and HHS HIPAA/consumer-app context. Pages avoid diagnosis, sex advice, contraception method advice, dosing advice, privacy guarantees, and legal guarantees.
+- Added 8 planned Batch 18 rows to `docs/seo-400/topic-backlog.csv`:
+  - `bleeding-after-sex-tracker`
+  - `spotting-after-sex-log`
+  - `brown-discharge-after-sex-notes`
+  - `bleeding-after-sex-before-period-tracker`
+  - `bleeding-after-sex-on-birth-control-notes`
+  - `pain-during-sex-symptom-notes`
+  - `pain-after-sex-pelvic-pain-log`
+  - `sex-pain-and-bleeding-data-privacy-checklist`
+- Drafted 8 Batch 18 pages:
+  - `/free/bleeding-after-sex-tracker`
+  - `/free/spotting-after-sex-log`
+  - `/free/brown-discharge-after-sex-notes`
+  - `/free/bleeding-after-sex-before-period-tracker`
+  - `/free/bleeding-after-sex-on-birth-control-notes`
+  - `/free/pain-during-sex-symptom-notes`
+  - `/free/pain-after-sex-pelvic-pain-log`
+  - `/resources/privacy-in-practice/sex-pain-and-bleeding-data-privacy-checklist`
+- Sub-agent drafting:
+  - `019f1bfc-085d-7d40-bcba-4d8e81f2eea7` (Wegener the 2nd) drafted the bleeding after sex tracker and spotting after sex log.
+  - `019f1bfc-20f6-7752-9d12-c13daebcee59` (Feynman the 2nd) drafted brown discharge after sex notes and the bleeding after sex before period tracker.
+  - `019f1bfc-3d2f-7cd3-bed6-0edee0178469` (Mendel the 2nd) drafted bleeding after sex on birth control notes and pain during sex symptom notes.
+  - `019f1bfc-57a1-71d3-b938-c39324186d35` (Ptolemy the 2nd) drafted the pain after sex pelvic pain log and sex pain and bleeding data privacy checklist.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 147 net-new route paths total. The file has two comment lines above the route list.
+- Integration added sibling links across all eight Batch 18 pages and contextual inbound links from `bleeding-after-sex-no-pain`, `vaginal-pain-during-period`, `breakthrough-bleeding-log`, `period-tracker-data-minimization-guide`, and `floriva-for-gynecologist-prep`.
+- Initial generation and backlog checks found two fixable issues:
+  - Fixed local source URLs in `bleeding-after-sex-tracker` and `spotting-after-sex-log` by using production Floriva URLs in `sources.url`.
+  - Updated Batch 18 backlog rows from `planned-batch-18` to `drafted-batch-18` after the files existed.
+- SEO/value/internal-link review initially failed because `pain-during-sex-symptom-notes` had `buyerStage: "mofu"` while the backlog required `tofu`. Fixed the metadata and reran generated-surface checks.
+- Medical/legal/privacy/copy review initially failed on older linked pages, not on the eight new assets:
+  - Softened diagnostic framing, treatment advice, product-choice advice, referral language, semicolon punctuation, and privacy guarantees in `vaginal-pain-during-period`.
+  - Replaced a semicolon in `period-tracker-data-minimization-guide`.
+  - Softened cervical dysplasia wording in `bleeding-after-sex-no-pain`.
+  - Removed source wording about partner/position from `sex-pain-and-bleeding-data-privacy-checklist` and `pain-after-sex-pelvic-pain-log`.
+  - Replaced `safer storage` / `feels safer` phrasing with storage-choice wording.
+- Reviewer final passes:
+  - SEO/value/internal-link reviewer `019f1c02-32e3-7100-9709-23beb649e62a` (Anscombe the 2nd) returned `PASS` after the buyer-stage fix and confirmed all eight routes in generated surfaces, sitemap, llms, manifest, and net-new paths.
+  - Medical/legal/privacy/copy reviewer `019f1c02-4ba6-7983-aa3a-78ae77a07175` (Gibbs the 2nd) returned `PASS` after scoped guardrail fixes.
+- Passed `pnpm generate:content`, `pnpm generate:knowledge`, `node scripts/build-sitemap.mjs`, and `node scripts/build-llms-txt.mjs`.
+- Passed focused guardrail phrase scans for the prior Batch 18 failure strings in scoped source files.
+- Passed `pnpm verify:seo400-backlog -- --min 147`.
+- Passed `pnpm check:links` before build with 619 valid routes, 7,157 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 262 unique URLs across 818 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,107 claim-shaped findings. Batch 18 review treated this as a repo-wide report and cleared the scoped Batch 18 blockers through sub-agent review and targeted phrase scans.
+- Passed `pnpm typecheck`. The command printed the existing non-blocking `Port 24678 is already in use` WebSocket warning but exited 0.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests.
+- Passed `pnpm build`; build prerendered 619 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed post-build `pnpm check:links` with 619 valid routes, 7,157 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Passed `pnpm verify:prerendered-content -- --min 147`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 619`.
+- Current status: 147 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 253 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 19: Period flu and sick-before-period practical tools
+
+- DFS planning found a high-demand, low-competition sick-before-period cluster with strong ICP overlap:
+  - `period flu`: about 14,800 US monthly searches, LOW competition, clickstream estimate about 2,301 searches, year-over-year trend up about 22%.
+  - `period flu symptoms`: about 4,400 US monthly searches, LOW competition, clickstream estimate about 261 searches, year-over-year trend up about 52%.
+  - `nausea before period`: about 8,100 US monthly searches, LOW competition, clickstream estimate about 209 searches.
+  - `dizziness during period`: about 4,400 US monthly searches, LOW competition, clickstream estimate about 104 searches.
+  - `period fever`: about 1,600 US monthly searches, LOW competition, keyword difficulty 8.
+  - `flu like symptoms before period`: about 1,000 US monthly searches, LOW competition, clickstream estimate about 104 searches.
+  - `body aches before period`: about 880 US monthly searches, LOW competition, clickstream estimate about 156 searches.
+  - `chills before period`: about 480 US monthly searches, LOW competition, keyword difficulty 6.
+  - Smaller long-tail evidence included `how long does period flu last`, `period flu sore throat`, `period flu or pregnant`, and `cold symptoms before period starts`.
+- Source guardrails used ACOG premenstrual syndrome, Mayo Clinic PMS, Mayo Clinic menstrual cramps visit-prep questions, Mayo Clinic heavy menstrual bleeding context where dizziness overlapped with heavy flow, Cleveland Clinic period flu, Cleveland Clinic influenza symptom context, FTC Health Breach Notification Rule context, and HHS HIPAA/consumer-app context. Pages avoid diagnosis, cure/treatment/dosing advice, fever reassurance, pregnancy advice, anemia diagnosis, and privacy or legal guarantees.
+- Added 8 planned Batch 19 rows to `docs/seo-400/topic-backlog.csv`:
+  - `period-flu-symptom-tracker`
+  - `flu-like-symptoms-before-period-log`
+  - `body-aches-before-period-log`
+  - `chills-before-period-tracker`
+  - `nausea-before-period-tracker`
+  - `dizziness-during-period-notes`
+  - `fever-and-period-symptom-notes`
+  - `period-flu-data-privacy-checklist`
+- Drafted 8 Batch 19 pages:
+  - `/free/period-flu-symptom-tracker`
+  - `/free/flu-like-symptoms-before-period-log`
+  - `/free/body-aches-before-period-log`
+  - `/free/chills-before-period-tracker`
+  - `/free/nausea-before-period-tracker`
+  - `/free/dizziness-during-period-notes`
+  - `/free/fever-and-period-symptom-notes`
+  - `/resources/privacy-in-practice/period-flu-data-privacy-checklist`
+- Sub-agent drafting:
+  - `019f1c0c-c108-79f3-a6c0-c0c45e883c09` (Hume the 2nd) drafted the period flu symptom tracker and flu-like symptoms before period log.
+  - `019f1c0c-d9d0-76b1-b700-34c189ea7ba5` (Curie the 2nd) drafted body aches before period log and chills before period tracker.
+  - `019f1c0c-f51f-75d3-aea5-7f555345cd65` (Godel the 2nd) drafted nausea before period tracker and dizziness during period notes.
+  - `019f1c0d-0fca-71e3-aee8-34abb336acdd` (Confucius the 2nd) drafted fever and period symptom notes and period flu data privacy checklist.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 155 net-new route paths total. The file has two comment lines above the route list.
+- Integration added sibling links across all eight Batch 19 pages and contextual inbound links from `luteal-phase-symptoms`, `period-tracker-data-minimization-guide`, and `floriva-for-gynecologist-prep`.
+- Initial integration checks found and fixed one stale route target:
+  - Replaced `/resources/symptom-guides/period-cramps-but-no-period` with `/resources/symptom-guides/cramps-but-no-period` in `body-aches-before-period-log` and the backlog row.
+- Copy/guardrail fixes made before final review:
+  - Replaced `hard poop` with `constipation`.
+  - Replaced `does not judge fever` with `does not explain fever away`.
+  - Replaced `fully safe` privacy wording with risk-reduction language.
+  - Softened older `luteal-phase-symptoms` privacy/legal wording to HHS/FTC-aligned consumer-app caveats.
+  - Replaced `safer storage` with `storage choices`.
+- Reviewer final passes:
+  - SEO/value/internal-link reviewer `019f1c16-6cd2-7a13-921a-a666f2d5f771` (Mill the 2nd) returned `PASS`.
+  - Medical/legal/privacy/copy reviewer `019f1c16-8588-71c1-8c59-69d448f72133` (Leibniz the 2nd) initially failed unsupported triage/pregnancy/privacy claims, then returned `PASS` after fixes.
+- Passed `pnpm generate:content`, `pnpm generate:knowledge`, `node scripts/build-sitemap.mjs`, and `node scripts/build-llms-txt.mjs`.
+- Passed focused guardrail phrase scans for the prior Batch 19 failure strings in scoped source files.
+- Passed `pnpm verify:seo400-backlog -- --min 155`.
+- Passed `pnpm check:links` before build with 627 valid routes, 7,274 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 267 unique URLs across 846 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,108 claim-shaped findings. Batch 19 review treated this as a repo-wide report and cleared the scoped Batch 19 blockers through sub-agent review and targeted phrase scans.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests. Vitest printed the existing non-blocking `Port 24678 is already in use` WebSocket warning after completion, but exited 0.
+- Passed `pnpm build`; build prerendered 627 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed post-build `pnpm check:links` with 627 valid routes, 7,274 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Passed `pnpm verify:prerendered-content -- --min 155`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 627`.
+- Current status: 155 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 245 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 20: PMS body, skin, appetite, and anger practical tools
+
+- DFS planning found a practical PMS cluster with strong ICP overlap and several low-difficulty opportunities:
+  - `breast tenderness before period`: about 6,600 US monthly searches, LOW competition, keyword difficulty 9, clickstream estimate about 313 searches.
+  - `sore breasts before period`: about 6,600 US monthly searches, LOW competition, keyword difficulty 26.
+  - `period cravings`: about 2,400 US monthly searches, LOW competition, keyword difficulty 13, clickstream estimate about 732 searches.
+  - `breast pain after period`: about 1,600 US monthly searches, LOW competition, keyword difficulty 7.
+  - `hungry before period`: about 880 US monthly searches, LOW competition, keyword difficulty 6.
+  - `food cravings before period`: about 480 US monthly searches, LOW competition, keyword difficulty 17.
+  - `anger before period`: about 170 US monthly searches, LOW competition, keyword difficulty 15.
+  - `acne before period`: clickstream estimate about 104 searches, informational intent, keyword difficulty 45.
+- Source guardrails used Mayo Clinic PMS, Office on Women's Health PMS, Cleveland Clinic PMS, Mayo Clinic breast pain guidance, American Academy of Dermatology acne guidance, FTC Health Breach Notification Rule context, and HHS HIPAA/consumer-app context. Pages avoid diagnosis, pregnancy advice, diet or weight-loss advice, supplement claims, acne treatment instructions, therapy advice, crisis-plan replacement, privacy guarantees, and legal guarantees.
+- Added 8 planned Batch 20 rows to `docs/seo-400/topic-backlog.csv`, then moved them to `drafted-batch-20`:
+  - `breast-tenderness-before-period-tracker`
+  - `breast-pain-after-period-notes`
+  - `period-cravings-tracker`
+  - `hungry-before-period-log`
+  - `food-cravings-before-period-notes`
+  - `acne-before-period-skin-log`
+  - `anger-before-period-notes`
+  - `pms-body-data-privacy-checklist`
+- Drafted 8 Batch 20 pages:
+  - `/free/breast-tenderness-before-period-tracker`
+  - `/free/breast-pain-after-period-notes`
+  - `/free/period-cravings-tracker`
+  - `/free/hungry-before-period-log`
+  - `/free/food-cravings-before-period-notes`
+  - `/free/acne-before-period-skin-log`
+  - `/free/anger-before-period-notes`
+  - `/resources/privacy-in-practice/pms-body-data-privacy-checklist`
+- Sub-agent drafting:
+  - `019f1c20-5af9-7142-881e-256889f17ff2` (Aquinas the 2nd) drafted the breast tenderness before period tracker and breast pain after period notes.
+  - `019f1c20-a57c-7790-a2d7-5ae280eeb74c` (Einstein the 2nd) drafted the period cravings tracker and hungry before period log.
+  - `019f1c20-f1a9-7e11-8ccf-1e8dc38b20c2` (Gauss the 2nd) drafted food cravings before period notes and acne before period skin log.
+  - `019f1c21-4262-70d0-a5f8-4bdd35b6dfe1` (Planck the 2nd) drafted anger before period notes and PMS body data privacy checklist.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 163 net-new route paths total. The file has two comment lines above the route list.
+- Integration added sibling links across the Batch 20 pages and contextual inbound links from `luteal-phase-symptoms`, `signs-your-period-is-coming`, `hormonal-acne-cycle-mapping`, `period-tracker-data-minimization-guide`, and `floriva-for-gynecologist-prep`.
+- Initial integration checks found and fixed one Batch 20 metadata issue:
+  - Added the now-existing `/free/period-cravings-tracker` related link back into `breast-tenderness-before-period-tracker`.
+- Medical/legal/privacy/copy review initially failed older hub content linked from Batch 20, not the new assets:
+  - Removed acne treatment-timing and medication-specific guidance from `hormonal-acne-cycle-mapping`.
+  - Added an AAD/Mayo source block to `hormonal-acne-cycle-mapping`.
+  - Rewrote `luteal-phase-symptoms` and `signs-your-period-is-coming` diet/exercise FAQ lines as neutral tracking context.
+  - Added Mayo, Office on Women's Health, FTC, and HHS source blocks to `luteal-phase-symptoms` and `signs-your-period-is-coming` for retained PMS and privacy claims.
+  - Removed scoped semicolons in `signs-your-period-is-coming` and `hormonal-acne-cycle-mapping`.
+- Reviewer final passes:
+  - SEO/value/internal-link reviewer `019f1c2b-4304-7982-9b86-2ddb9c7feeac` (Rawls the 2nd) returned `PASS`.
+  - Medical/legal/privacy/copy reviewer `019f1c2b-8f79-70c1-ad9b-bfe8088efa8e` (Hilbert the 2nd) initially returned `FAIL` on acne treatment guidance and missing sources.
+  - Focused medical/legal/privacy/copy reviewer `019f1c30-189e-7373-bf6f-1523003fd3b7` (Pauli the 2nd) then returned `FAIL` on older PMS hub lifestyle advice and missing FTC/HHS sources.
+  - Final focused medical/legal/privacy/copy reviewer `019f1c32-abc7-7192-8058-9f284c43f56c` (Ramanujan the 2nd) returned `PASS`.
+- Passed `pnpm generate:content`, `pnpm generate:knowledge`, `node scripts/build-sitemap.mjs`, and `node scripts/build-llms-txt.mjs`.
+- Passed focused guardrail phrase scans for the prior Batch 20 failure strings in scoped source files.
+- Passed `pnpm verify:seo400-backlog -- --min 163`.
+- Passed `pnpm check:links` before build with 635 valid routes, 7,413 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 272 unique URLs across 873 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,108 claim-shaped findings. Batch 20 review treated this as a repo-wide report and cleared the scoped Batch 20 blockers through sub-agent review and targeted phrase scans.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests.
+- Passed `pnpm build`; build prerendered 635 HTML routes. The existing chunk-size warning and non-blocking `Port 24678 is already in use` WebSocket warning remain.
+- Passed post-build `pnpm check:links` with 635 valid routes, 7,413 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Passed `pnpm verify:prerendered-content -- --min 163`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 635`.
+- Current status: 163 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 237 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 21: Vulvar itching, burning, rash, swelling, dryness, and privacy tools
+
+- DFS planning found a practical vulvar symptom cluster with strong health-tracker and doctor-prep intent:
+  - `vulvar itching`: about 14,800 US monthly searches, HIGH competition, keyword difficulty 37, informational intent.
+  - `vulvar burning`: about 9,900 US monthly searches, MEDIUM competition, keyword difficulty 8, informational intent.
+  - `vaginal itching before period`: about 2,900 US monthly searches, LOW competition, informational intent.
+  - `vaginal dryness before period`: about 880 US monthly searches, LOW competition, keyword difficulty 18.
+  - `vulvar irritation`: keyword difficulty 25.
+  - `vulvar rash`: clickstream estimate about 52 searches, keyword difficulty 31.
+  - `vulvar itching before period`: about 170 US monthly searches, LOW competition, keyword difficulty 9.
+- Source guardrails used ACOG vulvovaginal health, ACOG vulvar disorders, ACOG vaginitis, CDC vulvovaginal candidiasis guidance, Cleveland Clinic vulvitis context, MyHealth Alberta vulvar dermatitis context, Mayo Clinic Health System vulvar health context, FTC Health Breach Notification Rule context, and HHS HIPAA/consumer-app context. Pages avoid diagnosis, treatment protocols, OTC advice, product-to-use or product-to-stop instructions, sex advice, pregnancy advice, STI diagnosis, image diagnosis, reassurance guarantees, privacy guarantees, and legal guarantees.
+- Added 8 planned Batch 21 rows to `docs/seo-400/topic-backlog.csv`, then moved them to `drafted-batch-21`:
+  - `vulvar-itching-symptom-log`
+  - `vaginal-itching-before-period-tracker`
+  - `vulvar-burning-symptom-notes`
+  - `labia-swelling-visit-notes`
+  - `vulvar-irritation-product-exposure-log`
+  - `vulvar-rash-skin-change-notes`
+  - `vaginal-dryness-before-period-notes`
+  - `vulvar-symptom-data-privacy-checklist`
+- Drafted 8 Batch 21 pages:
+  - `/free/vulvar-itching-symptom-log`
+  - `/free/vaginal-itching-before-period-tracker`
+  - `/free/vulvar-burning-symptom-notes`
+  - `/free/labia-swelling-visit-notes`
+  - `/free/vulvar-irritation-product-exposure-log`
+  - `/free/vulvar-rash-skin-change-notes`
+  - `/free/vaginal-dryness-before-period-notes`
+  - `/resources/privacy-in-practice/vulvar-symptom-data-privacy-checklist`
+- Sub-agent drafting:
+  - `019f1c38-9950-7cd3-84ec-47d355aedf0b` (Herschel the 2nd) drafted the vulvar itching symptom log and vaginal itching before period tracker.
+  - `019f1c38-f36c-7072-b857-0a95b8c05f95` (Averroes the 2nd) drafted vulvar burning symptom notes and labia swelling visit notes.
+  - `019f1c39-50d6-7310-ad0f-835c94e91ac6` (Linnaeus the 2nd) drafted vulvar irritation product exposure log and vulvar rash skin change notes.
+  - `019f1c39-b75f-7622-9df3-b9c11dc99724` (Archimedes the 2nd) drafted vaginal dryness before period notes and vulvar symptom data privacy checklist.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 171 net-new route paths total. The file has two comment lines above the route list.
+- Integration added sibling links across the Batch 21 pages and contextual inbound links from `yeast-infection-symptom-log-no-diagnosis`, `vaginal-discharge-before-period-tracker`, `vaginal-discharge-color-odor-checklist`, `uti-vs-yeast-symptom-notes`, `vaginal-pain-during-period`, `period-tracker-data-minimization-guide`, and `floriva-for-gynecologist-prep`.
+- Initial SEO/value/internal-link review found a low inbound-link distribution issue for `vulvar-irritation-product-exposure-log` and `vulvar-rash-skin-change-notes`.
+  - Added both routes to `floriva-for-gynecologist-prep` related pages and body copy.
+  - Final SEO/value/internal-link reviewer `019f1c43-7626-70e3-a7b6-e9a538c174c5` (Bernoulli the 2nd) returned `PASS`.
+- Medical/legal/privacy/copy review initially failed older linked pages, not the new Batch 21 assets:
+  - Added ACOG, Mayo, and FDA source metadata to `vaginal-pain-during-period`.
+  - Rewrote a product-switch implication in `vaginal-pain-during-period` as retrospective note-taking.
+  - Added FTC and HHS source metadata to `period-tracker-data-minimization-guide`.
+  - Removed the `encrypted local database` wording from `period-tracker-data-minimization-guide`.
+  - Replaced `without the data leaving your phone` in `floriva-for-gynecologist-prep` with `core tracking stays on your device`.
+  - Replaced three `Symptoms feel unsafe` lines with `You feel very worried`.
+  - Final medical/legal/privacy/copy reviewer `019f1c43-c5a4-7f43-86e9-00c135b7405e` (Dewey the 2nd) returned `PASS`.
+- Passed scoped guardrail phrase scans for the prior Batch 21 failure strings in scoped source files.
+- Passed `pnpm generate:content`, `pnpm generate:knowledge`, `node scripts/build-sitemap.mjs`, and `node scripts/build-llms-txt.mjs`.
+- Passed `pnpm verify:seo400-backlog -- --min 171`.
+- Passed `pnpm check:links` before build with 643 valid routes, 7,612 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 280 unique URLs across 927 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,109 claim-shaped findings. Batch 21 review treated this as a repo-wide report and cleared the scoped Batch 21 blockers through sub-agent review and targeted phrase scans.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests.
+- Passed `pnpm build`; build prerendered 643 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed post-build `pnpm check:links` with 643 valid routes, 7,612 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Passed `pnpm verify:prerendered-content -- --min 171`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 643`.
+- Current status: 171 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 229 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 22: Period product irritation, pad rash, tampon pain, cup pain/leaks, and privacy tools
+
+- DFS planning found a practical period-product symptom cluster that was not already covered by existing content:
+  - `pad rash`: about 4,400 US monthly searches, LOW competition, informational intent.
+  - `pad rash during period`: about 390 US monthly searches, LOW competition, keyword difficulty 1.
+  - `menstrual pad rash`: keyword difficulty 1.
+  - `tampon pain`: about 210 US monthly searches, LOW competition, informational intent.
+  - `menstrual cup pain`: about 140 US monthly searches, LOW competition, informational intent.
+  - `menstrual cup leaks`: showed trend interest in the Batch 22 DFS trend run.
+- Source guardrails used ACOG vulvar disorders, Cleveland Clinic vulvar dermatitis, MedlinePlus vulvovaginitis, FDA tampon safety, MedlinePlus toxic shock syndrome, FTC Health Breach Notification Rule context, and HHS HIPAA/consumer-app context. Pages avoid diagnosis, treatment protocols, product recommendations, insertion/removal/fitting instructions, OTC or home-remedy advice, product-causation claims, reassurance guarantees, privacy guarantees, and legal guarantees.
+- Added 8 planned Batch 22 rows to `docs/seo-400/topic-backlog.csv`, then moved them to `drafted-batch-22`:
+  - `pad-rash-symptom-log`
+  - `pad-chafing-period-notes`
+  - `period-product-irritation-log`
+  - `tampon-pain-visit-notes`
+  - `menstrual-cup-pain-notes`
+  - `menstrual-cup-leak-log`
+  - `period-product-change-visit-summary`
+  - `period-product-symptom-data-privacy-checklist`
+- Drafted 8 Batch 22 pages:
+  - `/free/pad-rash-symptom-log`
+  - `/free/pad-chafing-period-notes`
+  - `/free/period-product-irritation-log`
+  - `/free/tampon-pain-visit-notes`
+  - `/free/menstrual-cup-pain-notes`
+  - `/free/menstrual-cup-leak-log`
+  - `/free/period-product-change-visit-summary`
+  - `/resources/privacy-in-practice/period-product-symptom-data-privacy-checklist`
+- Sub-agent drafting:
+  - `019f1c4f-8b15-7833-b640-fbe3a84d910b` (Russell the 2nd) drafted the pad rash symptom log and pad chafing period notes.
+  - `019f1c4f-dd09-70b0-a3aa-877f9d684269` (Sagan the 2nd) drafted period product irritation log and tampon pain visit notes.
+  - `019f1c50-2899-7440-b2e9-06fd057610fd` (Hooke the 2nd) drafted menstrual cup pain notes and menstrual cup leak log.
+  - `019f1c50-7f72-7792-b2e9-bdc858d50609` (Ampere the 2nd) drafted period product change visit summary and period product symptom data privacy checklist.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 179 net-new route paths total. The file has two comment lines above the route list.
+- Integration added sibling links across the Batch 22 pages and contextual inbound links from `floriva-for-gynecologist-prep`, `vulvar-irritation-product-exposure-log`, `vulvar-rash-skin-change-notes`, `vulvar-symptom-data-privacy-checklist`, and `period-tracker-data-minimization-guide`.
+- Initial orchestrator review fixed self-referential `relatedPages` in period product/cup pages and replaced an internal-only DataForSEO source URL with a normal DataForSEO URL so source verification could parse it.
+- SEO/value/internal-link reviewer `019f1c57-3416-7ea0-871f-6aa116daa802` (Plato the 2nd) returned `PASS`. It confirmed the pages are practical worksheets/checklists, not thin content; no self-referential `relatedPages`; no broken-looking internal links; route presence in `src/site/content-manifest.ts`, `public/sitemap.xml`, and `public/llms.txt`; and inbound hub edits.
+- Medical/legal/privacy/copy review required multiple fix loops:
+  - Reviewer `019f1c57-754c-7663-a002-c1fb678c294d` (Kuhn the 2nd) initially returned `FAIL` on older gynecologist prep and data minimization claims plus one too-directive cup export line.
+  - Focused reviewer `019f1c5c-cb91-7ee2-affb-ad1c4b3cecf4` (McClintock the 2nd) returned `FAIL` on remaining directive appointment/export/SDK and Batch 22 care-sharing phrasing.
+  - Focused reviewer `019f1c5f-7260-7311-b347-7d27279b3b94` (Pasteur the 2nd) returned `FAIL` on four remaining directive lines in gynecologist prep and the product-change summary FAQ.
+  - Focused reviewer `019f1c61-7ae2-7fb3-87b8-32ba5adaf36d` (Kierkegaard the 2nd) returned `FAIL` on six remaining privacy-tone lines.
+  - Final focused reviewer `019f1c63-c284-7a11-b105-807d163ed825` (Nietzsche the 2nd) returned `PASS`.
+- Review-driven fixes:
+  - Rewrote gynecologist prep copy to remove broad medical claims, unsupported timing claims, and directive logging/export language.
+  - Rewrote data minimization cloud sync and SDK language to use conditional wording and avoid absolute claims.
+  - Replaced acquisition-transfer and market-wide perfect-app claims with bounded tradeoff language.
+  - Softened Batch 22 closeout and privacy lines from directives such as `Then share...`, `Keep only...`, `Save only...`, or `Write only...` into optional, user-controlled language.
+  - Replaced `stop sharing in an export` with `What details can I leave out of an export while still giving you what you need?`.
+- Passed scoped phrase scans for all prior Batch 22 failure strings in scoped source files.
+- Passed `pnpm generate:content`, `pnpm generate:knowledge`, `node scripts/build-sitemap.mjs`, and `node scripts/build-llms-txt.mjs`.
+- Passed `pnpm verify:seo400-backlog -- --min 179`.
+- Passed `pnpm check:links` before and after build with 651 valid routes, 7,788 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 286 unique URLs across 958 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,110 claim-shaped findings. Batch 22 review treated this as a repo-wide report and cleared scoped Batch 22 blockers through sub-agent review and targeted phrase scans.
+- Passed `pnpm typecheck`; the known non-blocking `Port 24678 is already in use` WebSocket warning still appeared.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests.
+- Passed `pnpm build`; build prerendered 651 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed post-build `pnpm check:links` with 651 valid routes, 7,788 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Passed `pnpm verify:prerendered-content -- --min 179`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 651`.
+- Current status: 179 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 221 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 23: Sleep, fatigue, night sweats, visit prep, and sleep-cycle privacy tools
+
+- DFS planning validated a low-difficulty, intent-rich sleep/fatigue cluster:
+  - `period fatigue`: about 5,400 US monthly searches, LOW competition, keyword difficulty 6.
+  - `can't sleep before period`: about 260 US monthly searches, LOW competition, keyword difficulty 10.
+  - `insomnia before period`: keyword difficulty 5.
+  - `tired during period`: keyword difficulty 1.
+  - `sleep and period`: keyword difficulty 4.
+- Source guardrails used ACOG PMS, NHLBI Sleep Diary, Mayo Clinic PMS, Office on Women's Health PMDD/menopause context where needed, FTC Flo 2021, FTC Health Breach Notification Rule, and HHS HIPAA/health-app context. Pages avoid diagnosis, treatment protocols, supplement/medicine advice, iron/diet/exercise/sleep-hygiene instructions, pregnancy/perimenopause diagnosis, reassurance guarantees, privacy guarantees, and legal guarantees.
+- Added 8 planned Batch 23 rows to `docs/seo-400/topic-backlog.csv`, then moved them to `drafted-batch-23`:
+  - `insomnia-before-period-sleep-log`
+  - `cant-sleep-before-period-notes`
+  - `fatigue-before-period-tracker`
+  - `tired-during-period-energy-log`
+  - `night-sweats-before-period-notes`
+  - `sleep-and-period-symptom-summary`
+  - `period-sleep-disruption-visit-prep`
+  - `sleep-cycle-data-privacy-checklist`
+- Drafted 8 Batch 23 pages:
+  - `/free/insomnia-before-period-sleep-log`
+  - `/free/cant-sleep-before-period-notes`
+  - `/free/fatigue-before-period-tracker`
+  - `/free/tired-during-period-energy-log`
+  - `/free/night-sweats-before-period-notes`
+  - `/free/sleep-and-period-symptom-summary`
+  - `/free/period-sleep-disruption-visit-prep`
+  - `/resources/privacy-in-practice/sleep-cycle-data-privacy-checklist`
+- Sub-agent drafting:
+  - `019f1c69-32ff-77c1-9ebc-9b8f7a3a66c1` (Noether the 2nd) drafted insomnia before period sleep log and can't sleep before period notes.
+  - `019f1c69-8571-7e42-81ef-281ce89d0e0b` (Chandrasekhar the 2nd) drafted fatigue before period tracker and tired during period energy log.
+  - `019f1c69-c7a8-7933-ac8c-554f21f3c406` (Hypatia the 2nd) drafted night sweats before period notes and sleep and period symptom summary.
+  - `019f1c6a-19a9-7862-8859-5ff71629457a` (Kepler the 2nd) drafted period sleep disruption visit prep and sleep cycle data privacy checklist.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 187 net-new route paths total. The file has two comment lines above the route list.
+- Integration added sibling links across the Batch 23 pages and contextual inbound links from `period-sleep-disruption`, `cycle-fatigue-tracking`, `luteal-phase-symptoms`, `perimenopause-period-changes`, `floriva-for-gynecologist-prep`, and `pms-body-data-privacy-checklist`.
+- Initial generation review found invalid local `sources.url` entries in the two fatigue pages; those local source entries were removed because source URLs must be absolute. Local context remains in internal links and body copy.
+- SEO/value/internal-link reviewer `019f1c73-3db1-78a1-a8eb-7fe3e009608b` (Singer the 2nd) returned `PASS`.
+- Medical/privacy/copy reviewer `019f1c73-7ec8-7f93-9535-d23b3a9d314c` (Dirac the 2nd) returned `PASS`.
+- Passed `pnpm generate:content`, `pnpm generate:knowledge`, `node scripts/build-sitemap.mjs`, and `node scripts/build-llms-txt.mjs`.
+- Passed `pnpm verify:seo400-backlog -- --min 187`.
+- Passed `pnpm check:links` before and after build with 659 valid routes, 7,961 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 290 unique URLs across 983 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,112 claim-shaped findings. Batch 23 review treated this as a repo-wide report and cleared the scoped Batch 23 blockers through sub-agent review and targeted scans.
+- Passed `pnpm typecheck`; the known non-blocking `Port 24678 is already in use` WebSocket warning still appeared.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests.
+- Passed `pnpm build`; build prerendered 659 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 187`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 659`.
+- Current status: 187 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 213 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 24: Brain fog, focus, memory, work-school impact, ADHD-context notes, and focus-cycle privacy tools
+
+- DFS planning validated a focused cognition cluster that was not already covered by existing Floriva pages:
+  - `period brain fog`, `brain fog period`, and `period and brain fog`: about 720 US monthly searches, LOW competition, informational intent.
+  - `brain fog during period`: about 480 US monthly searches, LOW competition.
+  - `pms brain fog`: about 320 US monthly searches, LOW competition.
+  - `brain fog before period`: about 320 US monthly searches, LOW competition.
+  - `adhd and period` and `adhd and periods`: about 210 US monthly searches, LOW competition.
+- Source guardrails used ACOG PMS, Office on Women's Health PMDD, NIMH ADHD basics, FTC mobile health apps guidance, FTC app data collection guidance, HHS health app/HIPAA guidance, and DataForSEO planning data. Pages avoid diagnosis, treatment protocols, medication or supplement changes, diet/exercise/sleep-hygiene/productivity protocols, ADHD causation claims, legal advice, HR or school directives, accommodation guarantees, privacy guarantees, and HIPAA overclaims.
+- Added 8 planned Batch 24 rows to `docs/seo-400/topic-backlog.csv`, then moved them to `drafted-batch-24`:
+  - `brain-fog-before-period-tracker`
+  - `period-brain-fog-notes`
+  - `cant-focus-before-period-work-sheet`
+  - `forgetful-before-period-memory-log`
+  - `adhd-worse-before-period-notes`
+  - `work-school-before-period-impact-log`
+  - `cycle-focus-visit-summary`
+  - `focus-mood-cycle-data-privacy-checklist`
+- Drafted 8 Batch 24 pages:
+  - `/free/brain-fog-before-period-tracker`
+  - `/free/period-brain-fog-notes`
+  - `/free/cant-focus-before-period-work-sheet`
+  - `/free/forgetful-before-period-memory-log`
+  - `/free/adhd-worse-before-period-notes`
+  - `/free/work-school-before-period-impact-log`
+  - `/free/cycle-focus-visit-summary`
+  - `/resources/privacy-in-practice/focus-mood-cycle-data-privacy-checklist`
+- Sub-agent drafting:
+  - `019f1c7a-e006-7f22-9506-b6b25b7d3c0c` (Popper the 2nd) drafted brain fog before period tracker and period brain fog notes.
+  - `019f1c7b-379a-75a2-9403-058b86b6f18a` (Peirce the 2nd) drafted can't focus before period work sheet and forgetful before period memory log.
+  - `019f1c7b-878e-7781-bfe0-580de2db12c6` (Schrodinger the 2nd) drafted ADHD worse before period notes and work school before period impact log.
+  - `019f1c7b-d882-7121-a1ef-22c768e8c0fb` (Huygens the 2nd) drafted cycle focus visit summary and focus mood cycle data privacy checklist.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 195 net-new route paths total. The file has two comment lines above the route list.
+- Integration added sibling links across the Batch 24 pages and contextual inbound links from `signs-your-period-is-coming`, `luteal-phase-symptoms`, `floriva-for-gynecologist-prep`, `pms-body-data-privacy-checklist`, and `pmdd-work-school-planning-sheet`.
+- Initial orchestrator review softened wording around unsafe/safety, removed unnecessary food/water prompts, removed an unrelated ADHD source from the work-school impact page, and narrowed customer-facing SEO source claims.
+- SEO/value/internal-link reviewer `019f1c84-73f1-72a1-b96a-0950b8fd09fb` (Epicurus the 2nd) returned `PASS`.
+- Medical/privacy/copy reviewer `019f1c84-bc39-7e92-8159-2bcac664f4fe` (Hegel the 2nd) returned `PASS`.
+- Passed `pnpm generate:content`, `pnpm generate:knowledge`, `node scripts/build-sitemap.mjs`, and `node scripts/build-llms-txt.mjs`.
+- Passed `pnpm verify:seo400-backlog -- --min 195`.
+- Passed `pnpm check:links` before and after build with 667 valid routes, 8,099 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 292 unique URLs across 1,011 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,116 claim-shaped findings. Batch 24 review treated this as a repo-wide report and cleared scoped Batch 24 blockers through sub-agent review and targeted scans.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests.
+- Passed `pnpm build`; build prerendered 667 HTML routes. The known non-blocking `Port 24678 is already in use` WebSocket warning and existing chunk-size warning remain.
+- Passed `pnpm verify:prerendered-content -- --min 195`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 667`.
+- Current status: 195 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 205 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 25: Period pain location practical tools
+
+- DFS planning validated a focused pain-location cluster that was not already covered by generic Floriva pages:
+  - Back-pain period variants: about 5,400 US monthly searches, LOW competition, informational intent.
+  - Leg-pain period variants: about 4,400 US monthly searches, LOW competition, informational intent.
+  - Hip pain during period variants: about 1,900 US monthly searches, LOW competition, informational intent.
+  - Rectal pain with period: about 1,300 US monthly searches, LOW competition, informational intent.
+- Source guardrails used ACOG dysmenorrhea, MedlinePlus period pain, Mayo Clinic menstrual-cramps appointment prep, ACOG endometriosis, Office on Women's Health endometriosis, FTC Health Breach Notification Rule guidance, HHS health-app/HIPAA guidance, HHS HIPAA Privacy Rule guidance, and DataForSEO planning data. Pages avoid diagnosis, treatment or relief protocols, exercise advice, nerve/sciatica diagnosis, bowel-endometriosis diagnosis, legal advice, privacy guarantees, HIPAA overclaims, and instructions to wait for logs before care.
+- Added 8 planned Batch 25 rows to `docs/seo-400/topic-backlog.csv`, then moved them to `drafted-batch-25`:
+  - `period-back-pain-tracker`
+  - `lower-back-pain-during-period-log`
+  - `leg-pain-during-period-notes`
+  - `hip-pain-during-period-log`
+  - `rectal-pain-during-period-notes`
+  - `pain-down-leg-during-period-map`
+  - `period-pain-location-visit-summary`
+  - `period-pain-location-data-privacy-checklist`
+- Drafted 8 Batch 25 pages:
+  - `/free/period-back-pain-tracker`
+  - `/free/lower-back-pain-during-period-log`
+  - `/free/leg-pain-during-period-notes`
+  - `/free/hip-pain-during-period-log`
+  - `/free/rectal-pain-during-period-notes`
+  - `/free/pain-down-leg-during-period-map`
+  - `/free/period-pain-location-visit-summary`
+  - `/resources/privacy-in-practice/period-pain-location-data-privacy-checklist`
+- Sub-agent drafting:
+  - `019f1c8b-bcd4-7d51-b606-880b5aaab2c5` (Helmholtz the 2nd) drafted period back pain tracker and lower back pain during period log.
+  - `019f1c8c-0a1e-72d1-8592-fb5df2116467` (Dalton the 2nd) drafted leg pain during period notes and hip pain during period log.
+  - `019f1c8c-601e-7603-93d3-57e913514f7f` (Carson the 2nd) drafted rectal pain during period notes and pain down leg during period map.
+  - `019f1c8c-b41b-79f1-88de-f9270f4f220b` (Boole the 2nd) drafted period pain location visit summary and period pain location data privacy checklist.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 203 net-new route paths total. The file has two comment lines above the route list.
+- Integration added sibling links across the Batch 25 pages and contextual inbound links from `cramps-but-no-period`, `uterine-pain-guide`, `floriva-for-gynecologist-prep`, `period-tracking-endometriosis`, and `painful-bowel-movements-during-period-notes`.
+- Initial orchestrator review softened urgency wording, removed unnecessary sex/location privacy examples from leg and hip pages, and tightened yes/no FAQ language so worksheets stay optional and no-diagnosis.
+- SEO/value/internal-link reviewer `019f1c97-d5ae-7c22-a16d-f10f4ef8256a` (Carver the 2nd) found back-pain cannibalization risk, weak hip inbound links, missing hip and leg-map cluster links, and weak relatedPages ordering; those were fixed. Second SEO reviewer `019f1c9b-e869-7f52-b717-0bd948b06722` (Raman the 2nd) returned `PASS`.
+- Medical/privacy/copy reviewer `019f1c98-210a-77f3-8aa8-1a4f108bd8dd` (Galileo the 2nd) found a privacy overpromise and diagnostic/wait-for-logs wording in existing hub pages; those were fixed. Follow-up reviewers `019f1c9c-1554-7200-b4a4-3408b692e039` (Boyle the 2nd), `019f1c9f-3352-7470-b096-9102e66bc669` (Bacon the 2nd), `019f1ca1-6ed9-7c10-95cb-92dbfbd75979` (Fermat the 2nd), `019f1ca3-0119-7b32-aa74-653331c6e414` (Kant the 2nd), and `019f1ca4-aafc-72b2-a106-58a32596818c` (Ohm the 2nd) drove cleanup of older endometriosis-pain-diary diagnostic, lesion-location, surgical-prep, and referral framing. Final micro-reviewer `019f1ca6-4cd3-7d81-be02-ff315dfb2eae` (Laplace the 2nd) returned `PASS`.
+- Passed `pnpm generate:content`, `pnpm generate:knowledge`, `node scripts/build-sitemap.mjs`, and `node scripts/build-llms-txt.mjs`.
+- Passed `pnpm verify:seo400-backlog -- --min 203`.
+- Passed `pnpm check:links` before and after build with 675 valid routes, 8,261 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 293 unique URLs across 1,047 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,119 claim-shaped findings. Batch 25 review treated this as a repo-wide report and cleared scoped Batch 25 blockers through sub-agent review and targeted scans.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests.
+- Passed `pnpm build`; build prerendered 675 HTML routes. The existing chunk-size warning remains non-blocking. One earlier build showed the known non-blocking `Port 24678 is already in use` WebSocket warning; final builds did not block on it.
+- Passed `pnpm verify:prerendered-content -- --min 203`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 675`.
+- Current status: 203 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 197 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 26: Period flow timing practical tools
+
+- DFS planning validated a period-flow/timing cluster that was distinct from the existing spotting and birth-control bleeding pages:
+  - `period won't stop but light`: about 6,600 US monthly searches, LOW competition, informational intent.
+  - `light period`: about 2,900 US monthly searches, LOW competition, informational intent.
+  - `long periods` and long-period variants: about 1,600+ US monthly searches, informational intent.
+  - `spotting instead of period negative pregnancy test`: about 1,600 US monthly searches, LOW competition, informational intent.
+- Source guardrails used ACOG abnormal uterine bleeding, ACOG heavy menstrual bleeding, Office on Women's Health period problems and menstrual-cycle pages, Mayo Clinic menstrual-cycle tracking guidance, MedlinePlus abnormal uterine bleeding, MedlinePlus vaginal bleeding between periods, FTC Health Breach Notification Rule guidance, HHS health-app/HIPAA guidance, HHS HIPAA Privacy Rule guidance, and DataForSEO planning data. Pages avoid diagnosis, treatment advice, pregnancy diagnosis, emergency triage scripts, legal advice, privacy guarantees, HIPAA overclaims, and instructions to wait for logs before care.
+- Added 8 planned Batch 26 rows to `docs/seo-400/topic-backlog.csv`, then moved them to `drafted-batch-26`:
+  - `period-starts-and-stops-log`
+  - `one-day-period-notes`
+  - `light-period-tracker`
+  - `spotting-instead-of-period-notes`
+  - `long-period-bleeding-log`
+  - `period-wont-stop-visit-prep`
+  - `early-late-period-timing-log`
+  - `period-flow-change-data-privacy-checklist`
+- Drafted 8 Batch 26 pages:
+  - `/free/period-starts-and-stops-log`
+  - `/free/one-day-period-notes`
+  - `/free/light-period-tracker`
+  - `/free/spotting-instead-of-period-notes`
+  - `/free/long-period-bleeding-log`
+  - `/free/period-wont-stop-visit-prep`
+  - `/free/early-late-period-timing-log`
+  - `/resources/privacy-in-practice/period-flow-change-data-privacy-checklist`
+- Sub-agent drafting:
+  - `019f1cab-b355-78a0-a7bb-48ad96655aa0` (Goodall the 2nd) drafted period starts and stops log and one-day period notes.
+  - `019f1cab-ff37-7091-8888-cec5c280afb2` (Cicero the 2nd) drafted light period tracker and spotting instead of period notes.
+  - `019f1cac-48b2-7343-b6aa-a444a70f8c0f` (Zeno the 2nd) drafted long period bleeding log and period won't stop visit prep.
+  - `019f1cac-a035-7301-a0ac-72c3909f0dbc` (Nash the 2nd) drafted early late period timing log and period flow change data privacy checklist.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 211 net-new route paths total. The file has two comment lines above the route list.
+- Integration added sibling links across the Batch 26 pages and contextual links to `spotting-vs-period`, `bleeding-between-periods`, `irregular-periods-when-to-see-doctor`, `heavy-period-bleeding-causes`, `menorrhagia-heavy-periods-guide`, `why-is-my-period-late`, `period-twice-a-month`, `period-tracker-data-minimization-guide`, and `floriva-for-gynecologist-prep`.
+- Initial orchestrator review softened care-direction language, changed pregnancy-test instructions into care/testing questions, removed exact DataForSEO volume numbers from public metadata, and tightened the heavy-bleeding source language to match ACOG/OWH wording more closely.
+- Medical/privacy/copy reviewer `019f1cb5-9d9b-7b20-a66f-ce68666c330b` (Tesla the 2nd) found no blockers and two low-severity issues; exact DataForSEO volume metadata and a softened heavy-bleeding sentence were fixed.
+- Integration reviewer `019f1cb6-63f3-79c1-bd9b-e372b176a1b0` (Arendt the 2nd) found no blockers and four internal-link consistency warnings; missing backlog-intended related links and reciprocal body links were fixed.
+- Passed `pnpm generate:content` and `pnpm generate:knowledge`.
+- Passed `pnpm verify:seo400-backlog -- --min 211`.
+- Passed `pnpm check:links` after final fixes with 683 valid routes, 8,384 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 297 unique URLs across 1,088 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,121 claim-shaped findings. Scoped Batch 26 output only showed two LOW FTC-related detections on the cited privacy checklist, treated as non-blocking because the FTC claims are explicitly sourced and qualified.
+- Passed targeted Batch 26 copy-risk scan for exact public search-volume claims, `seek care now`, pregnancy-test instruction phrasing, TODO/TBD, internal production labels, and image placeholders.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests.
+- Passed `pnpm build`; build prerendered 683 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 211`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 683`.
+- Current status: 211 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 189 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 27: Travel, work, and school period readiness practical tools
+
+- DFS planning validated a travel/work/school readiness cluster distinct from the existing PMDD, sleep, product irritation, and flow-timing pages:
+  - `period emergency kit`: about 480 US monthly searches, high paid competition, mixed transactional/informational SERP with checklist intent.
+  - `period on vacation`: about 110 US monthly searches, informational intent.
+  - `period on a plane`: about 50 US monthly searches, informational intent.
+  - `period cramps at work`: about 90 US monthly searches, low competition, informational intent.
+  - `period kit for school` showed clickstream signal and parent/teen school-kit intent.
+- Source guardrails used TSA liquid-medication and medically necessary liquid screening guidance, CDC Travelers' Health, ACOG dysmenorrhea, MedlinePlus period pain, FTC mobile health app best practices, and HHS health-app/HIPAA context. Public pages avoid treatment advice, period-delay medication advice, pregnancy diagnosis, TSA or airline outcome promises, school/work accommodation guarantees, legal advice, privacy guarantees, and customer-facing DataForSEO volume claims.
+- Added 8 Batch 27 rows to `docs/seo-400/topic-backlog.csv`, then moved them to `drafted-batch-27`:
+  - `period-emergency-kit-checklist`
+  - `period-travel-checklist`
+  - `period-on-vacation-notes`
+  - `period-on-a-plane-notes`
+  - `period-cramps-at-work-log`
+  - `period-kit-for-school-checklist`
+  - `period-product-refill-plan`
+  - `travel-period-data-privacy-checklist`
+- Drafted 8 Batch 27 pages:
+  - `/free/period-emergency-kit-checklist`
+  - `/free/period-travel-checklist`
+  - `/free/period-on-vacation-notes`
+  - `/free/period-on-a-plane-notes`
+  - `/free/period-cramps-at-work-log`
+  - `/free/period-kit-for-school-checklist`
+  - `/free/period-product-refill-plan`
+  - `/resources/privacy-in-practice/travel-period-data-privacy-checklist`
+- Sub-agent drafting:
+  - `019f1cbe-fd5d-7072-851e-1364e7ccd355` (Beauvoir the 2nd) drafted period emergency kit checklist and period travel checklist.
+  - `019f1cbf-4c3e-7172-87ef-3585176b42c3` (Lovelace the 2nd) drafted period on vacation notes and period on a plane notes.
+  - `019f1cbf-9cb2-7b62-be0b-07a0cd4fa284` (Bohr the 2nd) drafted period cramps at work log and period kit for school checklist.
+  - `019f1cbf-e912-7043-a030-745ac1098492` (Hubble the 2nd) drafted period product refill plan and travel period data privacy checklist.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 219 net-new route paths total. The file has two comment lines above the route list.
+- Integration added sibling links across the Batch 27 pages and contextual links to `period-tracker-data-minimization-guide`, `period-app-location-permission-audit`, `teen-period-app-privacy-checklist`, `period-tracking-workplace-accommodation`, `work-school-before-period-impact-log`, `period-pain-location-visit-summary`, and `floriva-for-gynecologist-prep`.
+- Initial orchestrator review removed public DataForSEO planning copy, changed treatment-adjacent "what helped" wording, replaced a missing teen privacy route, and added route fields for consistency.
+- Copy/privacy reviewer `019f1cc5-a328-7b72-b215-cb7ca0a7bce6` (Sartre the 2nd) found eight wording issues around scary sharing language, privacy-outcome phrasing, meta teen copy, generic phrasing, TSA wording, and long CDC travel sentence. All were fixed.
+- SEO/source/internal-link reviewer `019f1cc5-d84e-7c03-bd21-95f74ecbc517` (Copernicus the 2nd) found planned statuses and route-field inconsistency. Both were fixed.
+- Passed `pnpm generate:content` and `pnpm generate:knowledge`.
+- Passed `pnpm verify:seo400-backlog -- --min 219`.
+- Passed `pnpm check:links` with 691 valid routes, 8,516 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 300 unique URLs across 1,112 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,121 claim-shaped findings. Scoped Batch 27 output was 0 findings after rewriting two LOW FTC body mentions.
+- Passed targeted Batch 27 copy-risk scan for internal DataForSEO volume copy, TSA or airline promises, privacy/legal safety promises, generic AI/promo phrasing, product superlatives, pregnancy diagnosis, treatment claims, and unresolved reviewer phrases. Remaining "cannot promise" and "does not decide what TSA allows" language is intentional guardrail copy.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests.
+- Passed `pnpm build`; build prerendered 691 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 219`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 691`.
+- Extra dist spot check confirmed all 8 Batch 27 route files exist in the extensionless prerender output.
+- Current status: 219 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 181 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 28: Special event period readiness practical tools
+
+- DFS planning validated a special-event readiness cluster distinct from the existing exercise, travel, work, school, PMDD, sleep, product irritation, and flow-timing pages:
+  - `period on wedding day`: about 260 US monthly searches, informational planning intent.
+  - `period at the beach`: about 140 US monthly searches, informational planning intent.
+  - `period at camp`: about 70 US monthly searches, teen/parent packing and privacy intent.
+  - `period at festival`: about 40 US monthly searches, event-logistics intent.
+  - `period at water park`: about 20 US monthly searches, water/event planning intent.
+  - `period at music festival` and `period on date night`: about 10 US monthly searches each, low-volume but high-fit practical planning intent.
+- Source guardrails used CDC Healthy Swimming, CDC Heat Health, ACOG dysmenorrhea, FTC mobile health app best practices, and HHS health-app/HIPAA context. Public pages avoid period-delay medication advice, product-use instructions for swimming, pregnancy diagnosis, treatment advice, venue/camp/school/park policy promises, legal advice, privacy guarantees, and customer-facing DataForSEO volume claims.
+- Added 8 Batch 28 rows to `docs/seo-400/topic-backlog.csv`, then moved them to `drafted-batch-28`:
+  - `period-on-wedding-day-plan`
+  - `period-at-beach-checklist`
+  - `period-at-water-park-notes`
+  - `period-at-camp-checklist`
+  - `period-at-music-festival-notes`
+  - `period-on-date-night-notes`
+  - `period-at-school-dance-checklist`
+  - `special-event-period-data-privacy-checklist`
+- Drafted 8 Batch 28 pages:
+  - `/free/period-on-wedding-day-plan`
+  - `/free/period-at-beach-checklist`
+  - `/free/period-at-water-park-notes`
+  - `/free/period-at-camp-checklist`
+  - `/free/period-at-music-festival-notes`
+  - `/free/period-on-date-night-notes`
+  - `/free/period-at-school-dance-checklist`
+  - `/resources/privacy-in-practice/special-event-period-data-privacy-checklist`
+- Sub-agent drafting:
+  - `019f1ccf-e001-72d3-884d-8ba746d72096` (Descartes the 2nd) drafted period on wedding day plan and period at beach checklist.
+  - `019f1cd0-2c45-7fa0-8aa2-dbbacf327442` (Harvey the 2nd) drafted period at water park notes and period at camp checklist.
+  - `019f1cd0-77e2-7ef1-8b0b-af295e49135c` (Halley the 2nd) drafted period at music festival notes and period on date night notes.
+  - `019f1cd0-c70d-7bb1-9184-96a98bd4c02d` (Maxwell the 2nd) drafted period at school dance checklist and special event period data privacy checklist.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 227 net-new route paths total. The file has two comment lines above the route list.
+- Integration added sibling links across the Batch 28 pages and contextual links to `period-emergency-kit-checklist`, `period-product-refill-plan`, `period-on-vacation-notes`, `period-travel-checklist`, `travel-period-data-privacy-checklist`, `teen-period-app-privacy-checklist`, `period-tracker-data-minimization-guide`, `period-tracking-for-partners`, and `floriva-for-gynecologist-prep`.
+- Initial orchestrator review softened clinical and privacy-outcome wording, removed direct FTC body phrasing that previously produced noisy claim detections, and tightened beach and festival body copy.
+- Copy/privacy reviewer `019f1cd7-64a0-7bb0-8531-a7e5816955d8` (Parfit the 2nd) found five wording/readability issues around privacy-safe phrasing, long metadata, and a list-heavy BLUF. All were fixed, plus a second `Privacy-safe note` label found by targeted scan.
+- SEO/source/internal-link reviewer `019f1cd7-9367-7aa1-8896-240368e57aaa` (Turing the 2nd) found planned backlog statuses and missing inbound links from the special-event privacy hub to date night, music festival, and water park pages. Both were fixed.
+- Passed `pnpm generate:content` and `pnpm generate:knowledge`.
+- Passed `pnpm verify:seo400-backlog -- --min 227`.
+- Passed `pnpm check:links` with 699 valid routes, 8,664 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 302 unique URLs across 1,135 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,121 claim-shaped findings. Scoped Batch 28 output was 0 findings.
+- Passed targeted Batch 28 copy-risk scan for internal DataForSEO volume copy, venue/camp/school/park promises, privacy/legal safety promises, generic AI/promo phrasing, product superlatives, treatment claims, and unresolved reviewer phrases. Remaining source-frontmatter FTC/CDC wording and "cannot promise" guardrail language is intentional.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests. Vitest printed a non-fatal WebSocket port warning for port 24678 but exited 0.
+- Passed `pnpm build`; build prerendered 699 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 227`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 699`.
+- Extra dist spot check confirmed all 8 Batch 28 route files exist in the extensionless prerender output and contain page metadata/body content.
+- Current status: 227 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 173 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 29: Period leaks, stains, and cleanup practical tools
+
+- DFS planning validated a practical leak/stain cleanup cluster distinct from existing travel, event, school-kit, discharge/odor, and flow-timing pages:
+  - `how to get period blood out of sheets`: about 2,400 US monthly searches, low paid competition, informational intent.
+  - `stain remover for period blood`: about 1,600 US monthly searches, transactional plus informational intent.
+  - `period stain removal`: about 480 US monthly searches.
+  - `period leak` and `period leaks`: about 320 US monthly searches.
+  - `period blood on mattress`: about 90 US monthly searches.
+  - `period stain on clothes`: about 50 US monthly searches.
+  - `period leak at work`: about 10 US monthly searches, low competition, high-fit practical intent.
+  - `period leak at school`, `period accident at school`, and `period leak overnight` showed informational intent or clickstream/related signal.
+- Source guardrails used American Cleaning Institute stain guidance and cold-water guidance, CDC bleach safety, CDC heavy menstrual bleeding context, FTC mobile health app best practices, and HHS health-app/HIPAA context. Public pages avoid guaranteed stain removal, product endorsements, medical diagnosis, treatment advice, privacy guarantees, legal advice, school/work policy promises, and customer-facing DataForSEO volume claims.
+- Added 8 Batch 29 rows to `docs/seo-400/topic-backlog.csv`, then moved them to `drafted-batch-29`:
+  - `period-leak-cleanup-plan`
+  - `period-blood-stain-removal-checklist`
+  - `period-blood-on-sheets-laundry-guide`
+  - `period-blood-on-mattress-notes`
+  - `period-leak-at-school-plan`
+  - `period-leak-at-work-plan`
+  - `overnight-period-leak-log`
+  - `period-leak-photo-location-privacy-checklist`
+- Drafted 8 Batch 29 pages:
+  - `/free/period-leak-cleanup-plan`
+  - `/free/period-blood-stain-removal-checklist`
+  - `/free/period-blood-on-sheets-laundry-guide`
+  - `/free/period-blood-on-mattress-notes`
+  - `/free/period-leak-at-school-plan`
+  - `/free/period-leak-at-work-plan`
+  - `/free/overnight-period-leak-log`
+  - `/resources/privacy-in-practice/period-leak-photo-location-privacy-checklist`
+- Sub-agent drafting:
+  - `019f1ce0-12d1-75d2-865e-d5714e3a9804` (Lagrange the 2nd) drafted period leak cleanup plan and period blood stain removal checklist.
+  - `019f1ce0-57bf-77d1-9c0f-1a1fef37d590` (Aristotle the 2nd) drafted period blood on sheets laundry guide and period blood on mattress notes.
+  - `019f1ce0-9abd-7a61-a36b-0c5c02614672` (Euclid the 2nd) drafted period leak at school plan and period leak at work plan.
+  - `019f1ce0-eb3d-7341-8b69-f1ea8dd817c5` (Locke the 2nd) drafted overnight period leak log and period leak photo location privacy checklist.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 235 net-new route paths total. The file has two comment lines above the route list.
+- Integration added sibling links across the Batch 29 pages and contextual links to `period-emergency-kit-checklist`, `period-product-refill-plan`, `period-kit-for-school-checklist`, `period-at-school-dance-checklist`, `period-cramps-at-work-log`, `work-school-before-period-impact-log`, `heavy-period-visit-prep-checklist`, `long-period-bleeding-log`, `period-tracker-data-minimization-guide`, `special-event-period-data-privacy-checklist`, `travel-period-data-privacy-checklist`, `period-tracking-workplace-accommodation`, `teen-period-app-privacy-checklist`, and `floriva-for-gynecologist-prep`.
+- Initial orchestrator review added stronger links to the new leak privacy hub, removed or softened directive FTC/CDC body wording, changed mattress guidance to care-label-based caution, and removed internal production labels from customer-facing headings.
+- Copy/privacy reviewer `019f1ce7-2721-7661-9248-79909de7741b` (Newton the 2nd) found 12 issues around absolute stain wording, over-directive care wording, "safe route" phrasing, legal-adjacent deletion advice, and internal `Batch 29` headings. All were fixed.
+- SEO/source/internal-link reviewer `019f1ce7-5f4a-7461-88c0-8ccb1343802e` (Faraday the 2nd) found work-page link relevance issues, weak FTC body/source ties, and mattress guidance needing softer sourcing. All were fixed.
+- Passed `pnpm generate:content` and `pnpm generate:knowledge`.
+- Passed `pnpm verify:seo400-backlog -- --min 235`.
+- Passed `pnpm check:links` with 707 valid routes, 8,858 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 305 unique URLs across 1,160 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,121 claim-shaped findings. Scoped Batch 29 output was 0 findings after adding inline FTC citations and softening stain/care wording.
+- Passed targeted Batch 29 copy-risk scan for internal DataForSEO volume copy, internal `Batch 29` labels, FTC source wording without inline support, stain guarantees, privacy/legal safety promises, generic AI/promo phrasing, product superlatives, treatment claims, and over-directive care phrases.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests. Vitest printed the existing non-fatal WebSocket port warning for port 24678 but exited 0.
+- Passed `pnpm build`; build prerendered 707 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 235`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 707`.
+- Extra dist spot check confirmed all 8 Batch 29 route files exist in the extensionless prerender output and contain H1/body content.
+- Current status: 235 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 165 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 30: Product-specific period leak troubleshooting tools
+
+- DFS planning validated a product-specific period leak cluster distinct from existing menstrual cup, irritation, refill, and cleanup pages:
+  - `menstrual disc leaking`: about 390 US monthly searches, low paid competition, informational intent.
+  - `why does my menstrual disc leak`: about 70 US monthly searches.
+  - `tampon leaking` and `tampon leaks`: about 260 US monthly searches.
+  - `why does my tampon leak`: about 170 US monthly searches.
+  - `period underwear leaking`: about 10 US monthly searches with high commercial competition.
+  - `pad leaks`, `pad leaking period`, `pad bunching period`, `pad shifts during period`, `period pad leaking at night`, and related queries fit the informational product-troubleshooting cluster even where overview volume was sparse.
+- Source guardrails used FDA tampon facts, FDA menstrual-product draft guidance where it fit pads/tampons/cups, PubMed/BMJ menstrual-product capacity research for disc context, CDC heavy menstrual bleeding context, CDC handwashing guidance, American Cleaning Institute blood-stain guidance, FTC mobile health app best practices, and HHS health-app/HIPAA context. Public pages avoid insertion/removal instructions, absorbency recommendations, TSS instructions, product rankings, product endorsements, leak-prevention promises, medical diagnosis, treatment advice, legal advice, privacy guarantees, and customer-facing DataForSEO volume claims.
+- Added 8 Batch 30 rows to `docs/seo-400/topic-backlog.csv`, then moved them to `drafted-batch-30`:
+  - `menstrual-disc-leak-notes`
+  - `tampon-leak-log`
+  - `pad-leak-and-shift-log`
+  - `period-underwear-leak-notes`
+  - `period-product-leak-comparison-sheet`
+  - `public-bathroom-period-product-change-plan`
+  - `period-product-backup-layer-planner`
+  - `reusable-period-product-data-privacy-checklist`
+- Drafted 8 Batch 30 pages:
+  - `/free/menstrual-disc-leak-notes`
+  - `/free/tampon-leak-log`
+  - `/free/pad-leak-and-shift-log`
+  - `/free/period-underwear-leak-notes`
+  - `/free/period-product-leak-comparison-sheet`
+  - `/free/public-bathroom-period-product-change-plan`
+  - `/free/period-product-backup-layer-planner`
+  - `/resources/privacy-in-practice/reusable-period-product-data-privacy-checklist`
+- Sub-agent drafting:
+  - `019f1cf1-af24-70d2-bf31-efd45b258147` (Meitner the 2nd) drafted menstrual disc leak notes and tampon leak log.
+  - `019f1cf1-fce5-7dd2-be4f-abc22a20fbc0` (Huygens the 3rd) drafted pad leak and shift log and period underwear leak notes.
+  - `019f1cf2-4c66-7261-bd1f-d3b6de497f4b` (Maxwell the 3rd) drafted period product leak comparison sheet and period product backup layer planner.
+  - `019f1cf2-acc0-7383-9a0e-cd1e925e16e3` (Nash the 3rd) drafted public bathroom period product change plan and reusable period product data privacy checklist.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 243 unique net-new route paths total. The file has two comment lines above the route list.
+- Integration added sibling links across the Batch 30 pages and contextual links to `menstrual-cup-leak-log`, `period-leak-cleanup-plan`, `period-blood-stain-removal-checklist`, `period-blood-on-sheets-laundry-guide`, `period-blood-on-mattress-notes`, `period-leak-at-school-plan`, `period-leak-at-work-plan`, `overnight-period-leak-log`, `period-product-irritation-log`, `period-product-refill-plan`, `period-emergency-kit-checklist`, `period-travel-checklist`, `heavy-period-visit-prep-checklist`, `period-product-symptom-data-privacy-checklist`, `period-leak-photo-location-privacy-checklist`, `reusable-period-product-data-privacy-checklist`, and `floriva-for-gynecologist-prep`.
+- Initial orchestrator review softened care and privacy wording, removed direct FTC-style body phrasing, added planned cross-links, and changed the disc page away from a cup-log duplicate by adding disc-specific public-bathroom, pressure, backup-layer, and low-detail privacy context.
+- Copy/privacy reviewer `019f1cf9-6955-71b2-82a8-251a6d5e2232` (Herschel the 3rd) found five issues around over-authoritative medical/hygiene body claims. All were fixed with softer wording or visible CDC context.
+- SEO/source/internal-link reviewer `019f1cfa-3dea-7633-bb10-ad299a2f528c` (Wegener the 3rd) found seven issues around disc source fit/thin duplication and planned internal-link omissions. All were fixed, including replacing the disc page's FDA source with PubMed/BMJ capacity research and adding planned hub links.
+- Passed `pnpm generate:content` and `pnpm generate:knowledge`.
+- Passed `pnpm verify:seo400-backlog -- --min 243`.
+- Passed `pnpm check:links` with 715 valid routes, 9,092 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 308 unique URLs across 1,187 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,121 claim-shaped findings. Scoped Batch 30 output was 0 findings after removing the body percent claim and softening care wording.
+- Passed targeted Batch 30 copy-risk scan for internal DataForSEO volume copy, privacy/legal safety promises, generic AI/promo phrasing, product superlatives, insertion/use instructions, absorbency recommendations, TSS instructions, treatment claims, and leak-prevention promises. Remaining matches were source-frontmatter URLs/claims and intentional "does not promise" guardrails.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests. Vitest printed the existing non-fatal WebSocket port warning for port 24678 but exited 0.
+- Passed `pnpm build`; build prerendered 715 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 243`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 715`.
+- Extra dist spot check confirmed all 8 Batch 30 route files exist in the extensionless prerender output and contain H1/body content.
+- Current status: 243 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 157 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 31: Period movement and workout planning tools
+
+- DFS planning validated a movement/workout cluster that complements the existing wellness-guide articles without duplicating them:
+  - `period workouts` and `period workout`: about 2,900 US monthly searches, low paid competition, informational intent.
+  - `during period exercise`: about 1,000 US monthly searches.
+  - `period friendly workout`: about 70 US monthly searches.
+  - `period day 1 workout`: about 10 US monthly searches.
+  - `period like cramps after workout`: about 10 US monthly searches plus clickstream signal.
+  - Swimming-related queries showed large commercial/informational demand, including `period swimwear`, `period cup swimming`, `on your period and swimming`, and `period underwear for swimming`; Batch 31 avoided product rankings and kept the output to planning worksheets.
+- Source guardrails used CDC adult physical activity guidance, ACOG painful-period guidance, CDC heat-health guidance, CDC heavy menstrual bleeding context, CDC clean-hands guidance, CDC healthy-swimming guidance, FTC mobile health app best practices, and HHS health-app/HIPAA context. Public pages avoid workout prescriptions, product endorsements, swim-product ranking, medical diagnosis, treatment advice, privacy guarantees, legal advice, and customer-facing DataForSEO volume claims.
+- Added 8 Batch 31 rows to `docs/seo-400/topic-backlog.csv`, then moved them to `drafted-batch-31`:
+  - `period-workout-intensity-planner`
+  - `exercise-during-period-symptom-log`
+  - `running-on-period-notes`
+  - `gym-period-kit-checklist`
+  - `sports-practice-period-plan`
+  - `swimming-on-period-plan`
+  - `period-cramps-after-workout-log`
+  - `fitness-app-period-data-privacy-checklist`
+- Drafted 8 Batch 31 pages:
+  - `/free/period-workout-intensity-planner`
+  - `/free/exercise-during-period-symptom-log`
+  - `/free/running-on-period-notes`
+  - `/free/gym-period-kit-checklist`
+  - `/free/sports-practice-period-plan`
+  - `/free/swimming-on-period-plan`
+  - `/free/period-cramps-after-workout-log`
+  - `/resources/privacy-in-practice/fitness-app-period-data-privacy-checklist`
+- Sub-agent drafting:
+  - `019f1d02-5672-75c1-b9f5-dcd530b17341` (Arendt the 3rd) drafted period workout intensity planner and exercise during period symptom log.
+  - `019f1d02-a6cb-7ec3-a459-e39780902ef8` (Franklin the 3rd) drafted running on period notes and period cramps after workout log.
+  - `019f1d03-01a3-77d2-aa6e-77933cd32b6c` (Hilbert the 3rd) drafted gym period kit checklist and sports practice period plan.
+  - `019f1d03-5654-76a3-b0a6-2e6b45c569f4` (Sartre the 3rd) drafted swimming on period plan and fitness app period data privacy checklist.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 251 unique net-new route paths total. The file has two comment lines above the route list.
+- Integration added sibling links across the Batch 31 pages and contextual links to `exercise-during-period`, `exercise-by-cycle-phase`, `cycle-syncing-workout-plan-by-phase`, `cycle-syncing-for-athletes`, `period-cramps-at-work-log`, `work-school-before-period-impact-log`, `period-emergency-kit-checklist`, `period-product-refill-plan`, `period-travel-checklist`, `period-at-beach-checklist`, `period-at-water-park-notes`, `menstrual-cup-leak-log`, `menstrual-disc-leak-notes`, `period-product-backup-layer-planner`, `heavy-period-visit-prep-checklist`, `period-pain-location-data-privacy-checklist`, `pms-body-data-privacy-checklist`, `travel-period-data-privacy-checklist`, and `floriva-for-gynecologist-prep`.
+- Initial orchestrator review corrected planned wellness-guide link paths, softened direct CDC/FTC body wording, removed workout-prescriptive examples, changed swim content from recommended actions to user-note planning, and aligned target-persona metadata to backlog rows.
+- Copy/privacy reviewer `019f1d0c-0b7f-7ed1-ae4c-77c6c0d44d63` (Copernicus the 3rd) found risk around over-directive exercise/swim advice, too-direct medical escalation language, and FTC/CDC source wording in body copy. All were fixed with softer note-taking language and inline source context.
+- SEO/source/internal-link reviewer `019f1d0c-4cd6-7d01-9af6-26aab9bd2a1a` (Laplace the 3rd) found persona mismatch, source/body claim fit issues, and missing adjacent internal links. All were fixed.
+- Passed `pnpm generate:content` and `pnpm generate:knowledge`.
+- Passed `pnpm verify:seo400-backlog -- --min 251`.
+- Passed `pnpm check:links` with 723 valid routes, 9,272 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 310 unique URLs across 1,219 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,121 claim-shaped findings. Scoped Batch 31 output was 0 findings after softening medical, swim, heat, and privacy body wording.
+- Passed targeted Batch 31 copy-risk scan for internal DataForSEO volume copy, privacy/legal safety promises, generic AI/promo phrasing, product superlatives, workout prescriptions, treatment claims, and unsupported medical escalation wording. Remaining matches were source-frontmatter URLs/claims and intentional "does not promise" guardrail language.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests. Vitest printed the existing non-fatal WebSocket port warning for port 24678 but exited 0.
+- Passed `pnpm build`; build prerendered 723 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 251`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 723`.
+- Extra dist spot check confirmed all 8 Batch 31 route files exist in the extensionless prerender output and contain H1/body content.
+- Current status: 251 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 149 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 32: College and dorm period planning tools
+
+- DFS planning validated a college/dorm/shared-living cluster with broad demand around campus packing and dorm essentials:
+  - `college packing list`: clickstream about 4,236 US monthly searches, informational intent.
+  - `college dorm essentials`: clickstream about 4,116 US monthly searches, commercial/informational intent.
+  - `college dorm checklist`: clickstream about 1,516 US monthly searches, informational intent.
+  - `dorm shower caddy`: about 2,900 US monthly searches in Google keyword data, high commercial competition, campus bathroom intent.
+  - `dorm laundry basket`: about 720 US monthly searches and `dorm laundry bag`: about 390 US monthly searches, high commercial competition but useful for privacy/laundry planning.
+  - `communal bathroom essentials`: about 10 US monthly searches, low competition, high-fit shared-bathroom intent.
+- Source guardrails used CDC clean-hands guidance, CDC hand-sanitizer facts, CDC facility cleaning/laundry guidance, American Cleaning Institute blood-stain guidance, ACOG menstruation-in-adolescents guidance, CDC heavy menstrual bleeding context, FTC mobile health app best practices, and HHS health-app/HIPAA context. Public pages avoid product rankings, product endorsements, dorm/campus policy promises, medical diagnosis, treatment advice, stain-removal guarantees, legal advice, privacy guarantees, and customer-facing DataForSEO volume claims.
+- Added 8 Batch 32 rows to `docs/seo-400/topic-backlog.csv`, then moved them to `drafted-batch-32`:
+  - `college-period-packing-list`
+  - `dorm-period-kit-checklist`
+  - `shared-bathroom-period-plan`
+  - `dorm-laundry-period-stain-plan`
+  - `roommate-period-boundary-script`
+  - `college-move-in-period-health-checklist`
+  - `campus-period-product-refill-plan`
+  - `campus-period-data-privacy-checklist`
+- Drafted 8 Batch 32 pages:
+  - `/free/college-period-packing-list`
+  - `/free/dorm-period-kit-checklist`
+  - `/free/shared-bathroom-period-plan`
+  - `/free/dorm-laundry-period-stain-plan`
+  - `/free/roommate-period-boundary-script`
+  - `/free/college-move-in-period-health-checklist`
+  - `/free/campus-period-product-refill-plan`
+  - `/resources/privacy-in-practice/campus-period-data-privacy-checklist`
+- Sub-agent drafting:
+  - `019f1d14-c3e1-7f50-8d20-3403272eac76` (Hypatia the 3rd) drafted college period packing list and dorm period kit checklist.
+  - `019f1d15-165a-7d22-a02f-3abc228419a3` (Hume the 3rd) drafted shared bathroom period plan and dorm laundry period stain plan.
+  - `019f1d15-7fa4-7b82-b20d-0603fa35abd4` (Galileo the 3rd) drafted roommate period boundary script and college move-in period health checklist.
+  - `019f1d15-d091-7490-a639-f4b6df0dd201` (Bohr the 3rd) drafted campus period product refill plan and campus period data privacy checklist.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 259 unique net-new route paths total. The file has two comment lines above the route list.
+- Integration added sibling links across the Batch 32 campus pages and contextual links to `period-emergency-kit-checklist`, `period-product-refill-plan`, `period-kit-for-school-checklist`, `public-bathroom-period-product-change-plan`, `period-leak-cleanup-plan`, `period-blood-stain-removal-checklist`, `period-blood-on-sheets-laundry-guide`, `period-underwear-leak-notes`, `period-tracking-on-shared-phone`, `shared-apple-id-period-privacy-checklist`, `period-tracker-data-minimization-guide`, `teen-period-tracker-setup-card`, `teen-period-symptoms-doctor-visit-sheet`, `heavy-period-visit-prep-checklist`, `abnormal-bleeding-diary-doctor-visit`, `floriva-for-teens`, and `floriva-for-gynecologist-prep`.
+- Initial orchestrator review softened sanitizer, laundry, medical escalation, roommate-safety, and privacy wording; removed absolutist "do not" phrasing where it was not needed; and changed direct CDC/FTC body phrasing to softer source-backed language.
+- Copy/privacy reviewer `019f1d1c-a85c-7e92-9238-751963b8a9e3` (Euler the 3rd) found one low-risk privacy wording issue in the roommate page. Fixed by changing "keep cycle notes private" and "private period notes" to short local-note language with screenshots/backups/shared-device caveats.
+- SEO/source/internal-link reviewer `019f1d1c-e64b-7473-8085-191fbc07fc75` (Erdos the 3rd) found three internal-link issues around the move-in page, roommate page, and campus refill page. Fixed by adding Batch 32 sibling links in frontmatter and body CTAs.
+- Passed `pnpm generate:content` and `pnpm generate:knowledge`.
+- Passed `pnpm verify:seo400-backlog -- --min 259`.
+- Passed `pnpm check:links` with 731 valid routes, 9,463 internal links checked after review fixes, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 312 unique URLs across 1,250 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,121 claim-shaped findings. Scoped Batch 32 output was 0 findings.
+- Passed targeted Batch 32 copy-risk scan for internal DataForSEO volume copy, internal production labels, TODO/TBD placeholders, privacy/legal safety promises, generic AI/promo phrasing, product superlatives, treatment claims, diagnosis claims, and guarantee language. Remaining matches were source-frontmatter sanitizer claims and intentional "cannot promise" guardrails.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests. Vitest printed the existing non-fatal WebSocket port warning for port 24678 but exited 0.
+- Passed `pnpm build`; build prerendered 731 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 259`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 731`.
+- Extra dist spot check confirmed all 8 Batch 32 route files exist in the extensionless prerender output and contain H1/body content.
+- Current status: 259 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 141 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 33: Care record and portal privacy tools
+
+- DFS planning validated a care-record privacy cluster adjacent to period-tracker privacy and doctor-prep intent:
+  - `MyChart proxy access`: about 390 US monthly searches, low competition, navigational/informational portal intent.
+  - `planned parenthood patient portal`: clickstream about 3,190 US monthly searches, navigational intent showing reproductive-health portal demand.
+  - `medical record privacy`: about 40 US monthly searches, low competition, informational.
+  - `delete health app data` and `prescription privacy`: about 10 US monthly searches each, low competition, informational.
+  - `explanation of benefits privacy` returned informational intent without a reliable volume value, supporting the insurance/EOB subcluster.
+- Source guardrails used HHS HIPAA consumer-rights guidance, HHS HIPAA Privacy Rule summary, HHS notice-of-privacy-practices guidance, HHS family/personal-representative and minors guidance, HHS right-of-access/lab-result guidance, HHS treatment/payment/operations guidance, and FTC mobile health app best practices. Public pages avoid legal advice, medical advice, medication advice, state-specific rule claims, confidentiality promises, portal-product claims, HIPAA overclaims, privacy guarantees, and customer-facing DataForSEO volume claims.
+- Added 8 Batch 33 rows to `docs/seo-400/topic-backlog.csv` with `drafted-batch-33` status:
+  - `patient-portal-period-data-privacy-checklist`
+  - `after-visit-summary-period-data-checklist`
+  - `mychart-proxy-access-period-privacy-checklist`
+  - `teen-patient-portal-period-privacy-checklist`
+  - `insurance-eob-reproductive-health-privacy-checklist`
+  - `reproductive-health-insurance-paper-trail-map`
+  - `lab-results-period-data-privacy-checklist`
+  - `pharmacy-reproductive-health-privacy-checklist`
+- Drafted 8 Batch 33 pages:
+  - `/resources/privacy-in-practice/patient-portal-period-data-privacy-checklist`
+  - `/resources/privacy-in-practice/after-visit-summary-period-data-checklist`
+  - `/resources/privacy-in-practice/mychart-proxy-access-period-privacy-checklist`
+  - `/resources/privacy-in-practice/teen-patient-portal-period-privacy-checklist`
+  - `/resources/privacy-in-practice/insurance-eob-reproductive-health-privacy-checklist`
+  - `/free/reproductive-health-insurance-paper-trail-map`
+  - `/resources/privacy-in-practice/lab-results-period-data-privacy-checklist`
+  - `/free/pharmacy-reproductive-health-privacy-checklist`
+- Sub-agent drafting:
+  - `019f1d24-47dd-7cd3-b414-3afee313a560` (Harvey the 3rd) drafted patient portal period data privacy checklist and after-visit summary period data checklist.
+  - `019f1d24-9830-7d60-8a78-1de2cc8f8644` (Popper the 3rd) drafted MyChart proxy access period privacy checklist and teen patient portal period privacy checklist.
+  - `019f1d24-ddca-7322-9e78-bffa292e99de` (Kierkegaard the 3rd) drafted insurance EOB reproductive health privacy checklist and reproductive health insurance paper trail map.
+  - `019f1d25-2b2e-7ff2-a32e-304af4780380` (Russell the 3rd) drafted lab results period data privacy checklist and pharmacy reproductive health privacy checklist.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 267 unique net-new route paths total. The file has two comment lines above the route list.
+- Integration added sibling links across the Batch 33 portal, insurance, lab, and pharmacy pages and contextual links to `period-tracking-data-for-doctor-appointments`, `telehealth-period-tracking-data-risks`, `period-tracker-data-minimization-guide`, `floriva-for-gynecologist-prep`, `period-tracker-hipaa`, `period-tracking-on-shared-phone`, `teen-period-app-privacy-checklist`, `campus-period-data-privacy-checklist`, `floriva-for-teens`, and `insurance-reproductive-data`.
+- Initial orchestrator review added missing route metadata to the lab and pharmacy pages, aligned persona metadata to existing taxonomy, repaired missing patient-portal sibling links in the proxy/teen pages, removed a direct FTC body mention that triggered claim audit, and softened privacy/insurance phrasing.
+- Copy/privacy reviewer `019f1d2d-11e1-7503-8b58-4b1953a45587` (Epicurus the 3rd) found five wording issues: broad screen-sharing language in the lab page, crop wording that could imply altering a care record, unsupported preview-text comparison in the pharmacy page, medication-advice framing in the MyChart page, and insurance-bypass wording without cost context in the insurance worksheet. All were fixed.
+- SEO/source/internal-link reviewer `019f1d2d-ecbd-7b60-8e61-2c1f8b196516` (Lovelace the 3rd) found no Batch 33 SEO/source/internal-link issues after checking frontmatter, route consistency, target keyword/title fit, source-to-claim fit, related pages, body links, sibling links, generated manifest inclusion, sitemap/llms inclusion, uniqueness, orphan risk, and broken internal paths.
+- Passed `pnpm generate:content` and `pnpm generate:knowledge`.
+- Passed `pnpm verify:seo400-backlog -- --min 267`.
+- Passed `pnpm check:links` with 739 valid routes, 9,605 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 319 unique URLs across 1,282 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output returned to the prior 1,121 claim-shaped findings. Scoped Batch 33 output was 0 findings.
+- Passed targeted Batch 33 body copy-risk scan for internal DataForSEO volume copy, internal production labels, TODO/TBD placeholders, privacy/legal safety promises, generic AI/promo phrasing, product superlatives, diagnosis/treatment claims, medication advice, named abortion medication terms, and guarantee language. Remaining allowed matches were intentional guardrail phrases only; final scan output was 0 findings.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests.
+- Passed `pnpm build`; build prerendered 739 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 267`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 739`.
+- Extra dist spot check confirmed all 8 Batch 33 route files exist in the extensionless prerender output and contain H1/body content.
+- Current status: 267 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 133 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 34: Personal health record and printable tracker templates
+
+- DFS planning validated a printable-template cluster adjacent to doctor-prep, symptom-tracking, and privacy intent:
+  - `sleep diary template`: about 720 US monthly searches, informational intent.
+  - `medication tracker printable`: about 320 US monthly searches, informational/transactional intent.
+  - `period tracker printable`: about 260 US monthly searches, informational/transactional intent.
+  - `symptom tracker template`: about 210 US monthly searches, informational intent.
+  - `health history form template`: about 480 US monthly searches, high competition but relevant personal-record intent.
+  - `health journal template`, `appointment tracker template`, `doctor appointment notes template`, `food symptom diary template`, and `period symptom tracker printable` supported smaller long-tail worksheet intent.
+- Source guardrails used MedlinePlus personal health records and doctor-visit prep, CDC medication safety, HHS HIPAA consumer rights, FTC mobile health app best practices, NHLBI sleep diary and sleep diagnosis context, and NIDDK IBS/food-diary context. Public pages avoid diagnosis claims, treatment advice, medication or dosing advice, diet advice, HIPAA overclaims, privacy guarantees, legal advice, and customer-facing DataForSEO volume claims.
+- Added 8 Batch 34 rows to `docs/seo-400/topic-backlog.csv` with `drafted-batch-34` status:
+  - `personal-cycle-health-record-template`
+  - `period-symptom-tracker-printable`
+  - `doctor-appointment-notes-template-periods`
+  - `medication-and-cycle-notes-list`
+  - `sleep-diary-period-template`
+  - `food-and-cycle-symptom-diary`
+  - `period-pain-diary-template`
+  - `printable-health-template-privacy-checklist`
+- Drafted 8 Batch 34 pages:
+  - `/free/personal-cycle-health-record-template`
+  - `/free/period-symptom-tracker-printable`
+  - `/free/doctor-appointment-notes-template-periods`
+  - `/free/medication-and-cycle-notes-list`
+  - `/free/sleep-diary-period-template`
+  - `/free/food-and-cycle-symptom-diary`
+  - `/free/period-pain-diary-template`
+  - `/resources/privacy-in-practice/printable-health-template-privacy-checklist`
+- Sub-agent drafting:
+  - `019f1d32-fdb1-7ae0-8f83-3b7a945ee136` (Bernoulli the 3rd) drafted personal cycle health record template and period symptom tracker printable.
+  - `019f1d33-447a-7013-954d-e582807ec725` (Planck the 3rd) drafted doctor appointment notes template for periods and medication and cycle notes list.
+  - `019f1d33-90e6-76f0-b865-f5e4e80b2eb8` (Pasteur the 3rd) drafted sleep diary period template and food and cycle symptom diary.
+  - `019f1d33-d7dc-7ae3-b58a-e901008c1bf9` (Faraday the 3rd) drafted period pain diary template and printable health template privacy checklist.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 275 unique net-new route paths total. The file has two comment lines above the route list.
+- Integration normalized persona metadata, added missing `format` metadata, added sibling links between the new personal-record, symptom-tracker, appointment-notes, and medication-list pages, softened direct FTC body mentions into general privacy-guidance wording, and split dense resource paragraphs into shorter third-grade-readable lines.
+- Copy/privacy reviewer `019f1d3c-34de-79f3-baa9-58bc5086f431` (Schrodinger the 3rd) found five readability issues in link-dense paragraphs. All were fixed by splitting resource lists into shorter sentences or bullets. Reviewer found no direct SEO/DFS/search-volume language, fabricated proof, abortion-ban state counts, diagnosis/treatment instructions, medication dosing advice, privacy guarantees, or legal guarantees.
+- SEO/source/internal-link reviewer `019f1d3c-68aa-73f0-a3ec-5b37a4d3a2b6` (Boyle the 3rd) found six missing `format` frontmatter fields and one stale-but-supported NIDDK review date. All were fixed. Reviewer found routes unique, links resolvable, backlog/net-new registrations matching, no obvious route/title duplication, and source claims supported.
+- Passed `pnpm generate:content` and `pnpm generate:knowledge`.
+- Passed `pnpm verify:seo400-backlog -- --min 275`.
+- Passed `pnpm check:links` with 747 valid routes, 9,753 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 325 unique URLs across 1,311 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output remained the prior 1,121 claim-shaped findings. Scoped Batch 34 output was 0 findings.
+- Passed targeted Batch 34 body copy-risk scan for internal DataForSEO volume copy, internal production labels, TODO/TBD placeholders, privacy/legal safety promises, generic AI/promo phrasing, product superlatives, diagnosis/treatment claims, medication advice, named abortion medication terms, and guarantee language. Final scan output was 0 findings.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests. Vitest printed the existing non-fatal WebSocket port warning for port 24678 after completion but exited 0.
+- Passed `pnpm build`; build prerendered 747 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 275`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 747`.
+- Extra dist spot check confirmed all 8 Batch 34 route files exist in the extensionless prerender output and contain H1/body content.
+- Current status: 275 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 125 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 35: Late and missed period context tools
+
+- DFS planning validated a late-period context cluster adjacent to stress, travel, illness, exercise, weight-change, pregnancy-test, and privacy intent:
+  - `can stress delay your period`: about 5,400 US monthly searches, low competition, informational intent.
+  - `missed period stress`: about 2,900 US monthly searches, low competition, informational intent.
+  - `can antibiotics delay your period`: about 1,000 US monthly searches, low competition, informational intent.
+  - `can travel delay your period`: about 480 US monthly searches, low competition, informational intent.
+  - `can exercise make your period late`: about 260 US monthly searches, low competition, informational intent.
+  - `late period tracker`: about 210 US monthly searches, low competition, informational intent.
+  - `can sickness delay your period`: about 140 US monthly searches, low competition, informational intent.
+  - `can weight loss make your period late`: about 70 US monthly searches, low competition, informational intent.
+  - `late period but negative pregnancy test` returned informational/clickstream demand without a reliable Google volume value.
+- Source guardrails used OWH period-problem and pregnancy-test guidance, OWH physical-activity and weight-loss guidance, MedlinePlus absent-period and pregnancy-test guidance, MedlinePlus doctor-conversation guidance, CDC medication-safety context, NHS missed/late-period context, FTC mobile health app best practices, and HHS HIPAA consumer-rights guidance. Public pages avoid pregnancy diagnosis claims, treatment advice, medication advice, antibiotic causation overclaims, weight-loss advice, privacy guarantees, legal advice, and customer-facing DataForSEO volume claims.
+- Added 8 Batch 35 rows to `docs/seo-400/topic-backlog.csv` with `drafted-batch-35` status:
+  - `late-period-context-log`
+  - `stress-missed-period-notes`
+  - `negative-pregnancy-test-late-period-questions`
+  - `travel-late-period-timeline`
+  - `illness-late-period-notes`
+  - `antibiotics-cycle-notes-list`
+  - `exercise-weight-change-period-log`
+  - `late-period-data-privacy-checklist`
+- Drafted 8 Batch 35 pages:
+  - `/free/late-period-context-log`
+  - `/free/stress-missed-period-notes`
+  - `/free/negative-pregnancy-test-late-period-questions`
+  - `/free/travel-late-period-timeline`
+  - `/free/illness-late-period-notes`
+  - `/free/antibiotics-cycle-notes-list`
+  - `/free/exercise-weight-change-period-log`
+  - `/resources/privacy-in-practice/late-period-data-privacy-checklist`
+- Sub-agent drafting:
+  - `019f1d43-c977-7ef0-a160-8ccd303494d9` (Mendel the 3rd) drafted late period context log and stress missed period notes.
+  - `019f1d44-214d-7ae0-ac63-8099e8400e2a` (Aquinas the 3rd) drafted negative pregnancy test late period questions and travel late period timeline.
+  - `019f1d44-7d9a-7f91-b956-94fc86f7b323` (Carson the 3rd) drafted illness late period notes and antibiotics cycle notes list.
+  - `019f1d44-dd40-7462-948c-847068eceeba` (Noether the 3rd) drafted exercise weight change period log and late period data privacy checklist.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 283 unique net-new route paths total. The file has two comment lines above the route list.
+- Integration added sibling links across the Batch 35 late-period pages and contextual links to related late-period, doctor-prep, privacy, symptom-tracking, travel, sleep, medication-list, and printable-health-template pages. Integration also added missing `format` metadata, softened direct privacy-source body mentions, and replaced body terms that could imply diagnosis, pregnancy certainty, or product superlatives.
+- Copy/privacy reviewer `019f1d4c-4512-7e42-a06e-9aadcc4d84f1` (Parfit the 3rd) found four privacy wording issues where page copy could overstate what app settings or Floriva can control. All were fixed by naming specific copies outside Floriva's control, including screenshots, exports, backups, shared devices, messages, portals, and other apps.
+- SEO/source/internal-link reviewer `019f1d4c-7c3e-7222-ad7f-cc2d7cbc3763` (Averroes the 3rd) found no Batch 35 SEO, source, route, registration, or internal-link issues after checking frontmatter, route consistency, target keyword/title fit, source-to-claim fit, related pages, body links, sibling links, uniqueness, orphan risk, and generated inclusion.
+- Passed `pnpm generate:content` and `pnpm generate:knowledge`.
+- Passed `pnpm verify:seo400-backlog -- --min 283`.
+- Passed `pnpm check:links` with 755 valid routes, 9,886 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 331 unique URLs across 1,350 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output remained the prior 1,121 claim-shaped findings. Scoped Batch 35 output was 0 findings.
+- Passed targeted Batch 35 body copy-risk scan for internal DataForSEO volume copy, internal production labels, TODO/TBD placeholders, privacy/legal safety promises, generic AI/promo phrasing, product superlatives, diagnosis/treatment claims, medication advice, named abortion medication terms, and guarantee language. Final scan output was 0 findings.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests. Vitest printed the existing non-fatal WebSocket port warning for port 24678 after completion in one run but exited 0.
+- Passed `pnpm build`; build prerendered 755 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 283`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 755`.
+- Extra dist spot check confirmed all 8 Batch 35 route files exist in the extensionless prerender output and contain H1/body content.
+- Current status: 283 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 117 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 36: Emergency contraception cycle follow-up tools
+
+- DFS planning validated an emergency-contraception follow-up cluster adjacent to late-period, pregnancy-test, pharmacy, and privacy intent:
+  - `period after plan b`: about 1,600 US monthly searches, low competition, informational intent, keyword difficulty 16.
+  - `bleeding a week after plan b is that my period`: about 1,600 US monthly searches, low competition, informational intent.
+  - `plan b messed up my cycle for months`: about 1,000 US monthly searches, low competition, informational intent.
+  - `how late can a plan b make your period`: about 720 US monthly searches, low competition, informational intent.
+  - `late period after plan b`: about 390 US monthly searches, low competition, informational intent.
+  - `heavy period after plan b`: about 260 US monthly searches, low competition, informational intent.
+  - `morning after pill side effects menstrual cycle` appeared in a low-competition side-effect cluster; `signs that plan b didn't work` showed about 4,400 US monthly searches with low competition.
+  - `ella period late`, `emergency contraception privacy`, and `emergency contraception pharmacist questions` were checked as support-intent topics without reliable Google volume.
+- Source guardrails used ACOG emergency contraception FAQ, FDA Plan B One-Step information, FDA ella label, MedlinePlus levonorgestrel, ulipristal, emergency contraception, pregnancy-test, and doctor-prep guidance, OWH pregnancy-test guidance, FTC mobile health app best practices, and HHS HIPAA consumer-rights guidance. Public pages avoid medication instructions, pregnancy diagnosis, test interpretation, treatment advice, legal advice, privacy guarantees, and customer-facing DataForSEO volume claims.
+- Added 8 Batch 36 rows to `docs/seo-400/topic-backlog.csv` with `drafted-batch-36` status:
+  - `emergency-contraception-cycle-follow-up-log`
+  - `bleeding-after-plan-b-notes`
+  - `late-period-after-plan-b-test-questions`
+  - `plan-b-cycle-timeline-two-months`
+  - `ella-period-timing-notes`
+  - `morning-after-pill-side-effect-notes`
+  - `emergency-contraception-data-privacy-checklist`
+  - `emergency-contraception-pharmacist-question-list`
+- Drafted 8 Batch 36 pages:
+  - `/free/emergency-contraception-cycle-follow-up-log`
+  - `/free/bleeding-after-plan-b-notes`
+  - `/free/late-period-after-plan-b-test-questions`
+  - `/free/plan-b-cycle-timeline-two-months`
+  - `/free/ella-period-timing-notes`
+  - `/free/morning-after-pill-side-effect-notes`
+  - `/resources/privacy-in-practice/emergency-contraception-data-privacy-checklist`
+  - `/free/emergency-contraception-pharmacist-question-list`
+- Sub-agent drafting:
+  - `019f1d53-e27d-7063-9727-8aced8fdee1d` (Ptolemy the 3rd) drafted emergency contraception cycle follow-up log and bleeding after Plan B notes.
+  - `019f1d54-30bb-7722-8fa9-149c28721b68` (Poincare the 3rd) drafted late period after Plan B test questions and Plan B two-cycle timeline.
+  - `019f1d54-7b3b-76c0-aa56-cc8cb9068d8d` (Banach the 3rd) drafted ella period timing notes and morning-after pill side effect notes.
+  - `019f1d54-cb9b-79b1-8478-5da20c5d86d7` (Ohm the 3rd) drafted emergency contraception data privacy checklist and emergency contraception pharmacist question list.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 291 unique net-new route paths total. The file has two comment lines above the route list.
+- Registration reviewer `019f1d56-030d-7090-b7de-fb1f6b03650b` (Anscombe the 3rd) found that Batch 36 rows and source MDX existed, planned collection paths matched repo conventions, and no duplicate Batch 36 slugs/routes were present. The reviewer flagged generated runtime registrations as stale before generation; this was resolved by running `pnpm generate:content`, `pnpm generate:knowledge`, and the build.
+- Integration review softened triage-like "ask now" wording into label/clinician question language, removed ambiguous "skip" wording from test-context blanks, and replaced medicine-action guardrails with neutral "this worksheet cannot guide medicine changes" phrasing. This kept the pages useful without acting like medication, diagnosis, emergency-care, legal, or privacy advice.
+- Passed `pnpm generate:content` and `pnpm generate:knowledge`.
+- Passed `pnpm verify:seo400-backlog -- --min 291`.
+- Passed `pnpm check:links` with 763 valid routes, 10,020 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 337 unique URLs across 1,393 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,122 claim-shaped findings, up one from the prior known baseline. Scoped Batch 36 body copy-risk scan returned 0 findings after fixes.
+- Passed targeted Batch 36 body copy-risk scan for internal DataForSEO volume copy, internal production labels, TODO/TBD placeholders, privacy/legal safety promises, generic AI/promo phrasing, product superlatives, diagnosis/treatment claims, medication instructions, named abortion terms, and guarantee language. Final scan output was 0 findings.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests. Vitest printed the existing non-fatal WebSocket port warning for port 24678 after completion but exited 0.
+- Passed `pnpm build`; build prerendered 763 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 291`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 763`.
+- Extra dist spot check confirmed all 8 Batch 36 route files exist in the extensionless prerender output and contain H1/body content.
+- Current status: 291 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 109 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 37: Period blood clot documentation tools
+
+- DFS planning validated a broad period-clot documentation cluster adjacent to heavy-flow, product-change, anemia, pregnancy-question, photo-privacy, and doctor-prep intent:
+  - `period blood clots`: about 49,500 US monthly searches, low competition, keyword difficulty 11.
+  - `jelly-like blood clots during period is it normal`: about 8,100 US monthly searches, low competition.
+  - `period blood clots pictures`: about 2,900 US monthly searches, low competition, keyword difficulty 2.
+  - `how to stop blood clots during period naturally`: about 1,600 US monthly searches, low competition, keyword difficulty 10. Batch 37 handles this demand without home-remedy, treatment, or "how to stop" advice.
+  - `what do large blood clots during period mean`: about 1,600 US monthly searches, low competition.
+  - `period blood clots normal vs abnormal`: about 480 US monthly searches, low competition, keyword difficulty 20.
+  - `tissue like blood clots during period`: about 480 US monthly searches, low competition, keyword difficulty 1.
+  - `period blood clots vs miscarriage`: about 260 US monthly searches, low competition.
+  - `period blood clots when to worry`: about 210 US monthly searches, low competition.
+- Source guardrails used CDC heavy menstrual bleeding, ACOG heavy menstrual bleeding and abnormal uterine bleeding, OWH period-problem and pregnancy-test guidance, MedlinePlus pregnancy-test, anemia, and doctor-prep guidance, FTC mobile health app best practices, and HHS HIPAA consumer guidance. Public pages avoid diagnosis, treatment advice, pregnancy or miscarriage interpretation, "how to stop clots" advice, legal advice, privacy guarantees, urgent-danger ranking, and customer-facing DataForSEO volume claims.
+- Added 9 Batch 37 rows to `docs/seo-400/topic-backlog.csv` with `drafted-batch-37` status:
+  - `period-blood-clot-log`
+  - `jelly-like-period-clot-notes`
+  - `large-period-clot-visit-summary`
+  - `tissue-like-period-clot-notes`
+  - `period-clot-vs-miscarriage-question-list`
+  - `period-clot-photo-privacy-checklist`
+  - `heavy-flow-product-change-clot-tracker`
+  - `period-clot-and-anemia-question-list`
+  - `period-clot-data-privacy-checklist`
+- Drafted 9 Batch 37 pages:
+  - `/free/period-blood-clot-log`
+  - `/free/jelly-like-period-clot-notes`
+  - `/free/large-period-clot-visit-summary`
+  - `/free/tissue-like-period-clot-notes`
+  - `/free/period-clot-vs-miscarriage-question-list`
+  - `/free/period-clot-photo-privacy-checklist`
+  - `/free/heavy-flow-product-change-clot-tracker`
+  - `/free/period-clot-and-anemia-question-list`
+  - `/resources/privacy-in-practice/period-clot-data-privacy-checklist`
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 300 unique net-new route paths total. The file has two comment lines above the route list.
+- Integration softened one test-related line in `period-clot-vs-miscarriage-question-list.mdx` from "repeat or confirm any test" to neutral clinician follow-up wording. This kept the page from reading like test instruction.
+- Batch 37 sidecar reviewer `019f1d62-cec9-7a83-b90a-95e35168d744` (Goodall the 3rd) found no blockers. The reviewer confirmed the scoped MDX does not diagnose, interpret pregnancy or miscarriage status, advise treatment, tell users how to stop clots, rank urgent danger, leak DataForSEO/search-volume text into customer-facing bodies, duplicate routes, or leave broken internal links. Residual risk: ACOG URLs were not as deeply line-verified as the `.gov` and MedlinePlus source pages because browser fetch was less clean.
+- Passed `pnpm generate:content` and `pnpm generate:knowledge`.
+- Passed `pnpm verify:seo400-backlog -- --min 300`.
+- Passed `pnpm check:links` with 772 valid routes, 10,145 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 337 unique URLs across 1,420 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output remained the prior known 1,122 claim-shaped findings.
+- Passed targeted Batch 37 body copy-risk scan for internal DataForSEO volume copy, internal production labels, TODO/TBD placeholders, privacy/legal safety promises, generic AI/promo phrasing, product superlatives, diagnosis/treatment claims, medication or test instructions, home-remedy wording, named abortion terms, and guarantee language. Final scan output was 0 findings after the test-wording fix.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests. Vitest printed the existing non-fatal WebSocket port warning for port 24678 after completion but exited 0.
+- Passed `pnpm build`; build prerendered 772 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 300`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 772`.
+- Extra dist spot check confirmed all 9 Batch 37 route files exist in the extensionless prerender output and contain H1/body content.
+- Current status: 300 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 100 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 38: Period cramp relief documentation tools
+
+- DFS planning validated a high-volume period-cramp support cluster adjacent to heat, night pain, position searches, medicine-label questions, teen school planning, and privacy intent:
+  - `heating pad for period cramps`: about 90,500 US monthly searches, low competition, transactional plus informational intent.
+  - `what helps with period cramps`: about 22,200 US monthly searches, medium competition, informational intent, keyword difficulty 21.
+  - `how to get rid of period cramps`: about 12,100 US monthly searches, low competition, informational intent, keyword difficulty 19. Batch 38 handles this demand as documentation and question prep rather than "get rid of" advice.
+  - `how to relieve period cramps fast`: about 3,600 US monthly searches, medium competition, informational intent, keyword difficulty 15. Batch 38 avoids fast-relief instructions.
+  - `unbearable period pain`: about 1,300 US monthly searches, medium competition, informational intent, keyword difficulty 46.
+  - `severe period cramps but no period`: about 1,000 US monthly searches, low competition.
+  - `period pain relief position`: about 720 US monthly searches, low competition, informational intent, keyword difficulty 8.
+  - `period pain relief tablets`: about 720 US monthly searches, high competition, transactional intent, keyword difficulty 11.
+  - `sleeping positions to relieve cramps`: about 480 US monthly searches, low competition.
+  - `how long can i use a heating pad for cramps`: about 320 US monthly searches, low competition, keyword difficulty 2.
+  - `menstrual cramps wake me up at night`: about 260 US monthly searches, low competition, keyword difficulty 5.
+  - `teenage period pain relief`: about 140 US monthly searches, high competition.
+  - `period cramps at night`: about 110 US monthly searches, low competition, keyword difficulty 9.
+- Source guardrails used ACOG dysmenorrhea/painful periods, ACOG dysmenorrhea and endometriosis in adolescents, MedlinePlus period pain and painful menstrual periods, FDA women and pain medicines, FDA NSAID pregnancy warning, Office on Women's Health menstrual cycle guidance, FTC mobile health app best practices, FTC mobile health apps interactive tool, and HHS health-app/HIPAA context. Public pages avoid diagnosis, treatment protocols, medicine recommendations, dosing, heat-use protocols, position prescriptions, pregnancy or miscarriage interpretation, school legal advice, urgent-danger ranking, legal advice, privacy guarantees, and customer-facing DataForSEO volume claims.
+- Added 9 Batch 38 rows to `docs/seo-400/topic-backlog.csv` with `drafted-batch-38` status:
+  - `period-cramp-relief-evidence-checklist`
+  - `heating-pad-period-cramp-notes`
+  - `period-cramp-night-log`
+  - `period-pain-position-notes`
+  - `severe-period-cramp-visit-summary`
+  - `cramps-but-no-period-visit-notes`
+  - `period-pain-medicine-question-list`
+  - `teen-period-cramp-school-plan`
+  - `period-cramp-data-privacy-checklist`
+- Drafted 9 Batch 38 pages:
+  - `/free/period-cramp-relief-evidence-checklist`
+  - `/free/heating-pad-period-cramp-notes`
+  - `/free/period-cramp-night-log`
+  - `/free/period-pain-position-notes`
+  - `/free/severe-period-cramp-visit-summary`
+  - `/free/cramps-but-no-period-visit-notes`
+  - `/free/period-pain-medicine-question-list`
+  - `/free/teen-period-cramp-school-plan`
+  - `/resources/privacy-in-practice/period-cramp-data-privacy-checklist`
+- Sub-agent drafting:
+  - `019f1d69-ef9f-7343-ab3f-772a35ed445c` (Peirce the 3rd) drafted period cramp relief evidence checklist and heating pad period cramp notes.
+  - `019f1d6a-2d7f-7df2-8ea8-dfe5c676b1ec` (Pascal the 3rd) drafted period cramp night log and period pain position notes.
+  - `019f1d6a-7965-7872-bdf7-084802828f87` (Kepler the 3rd) drafted severe period cramp visit summary, cramps but no period visit notes, period pain medicine question list, teen period cramp school plan, and period cramp data privacy checklist.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 309 unique net-new route paths total. The file has two comment lines above the route list.
+- Integration softened several edge phrases from "contact/call sooner" and "private place" language into neutral contact-instruction and on-device-note wording. This kept the pages from reading like triage advice or privacy guarantees.
+- Batch 38 sidecar reviewer `019f1d75-0ce1-73b2-bf7b-7452cb072be8` (Leibniz the 3rd) found one schema consistency issue: five files were missing `format` frontmatter despite backlog format values. Added `format` to severe period cramp visit summary, cramps but no period visit notes, period pain medicine question list, teen period cramp school plan, and period cramp data privacy checklist. The reviewer found no duplicate routes/slugs, no unresolved related pages, no diagnosis/dosing/medicine recommendation/heat protocol/position prescription/pregnancy or miscarriage interpretation/school legal advice/privacy guarantee/DataForSEO leakage, and judged the pages useful non-programmatic assets.
+- Passed `pnpm generate:content` and `pnpm generate:knowledge`.
+- Passed `pnpm verify:seo400-backlog -- --min 309`; `docs/seo-400/net-new-paths.txt` has 309 unique route paths.
+- Passed `pnpm check:links` with 781 valid routes, 10,285 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 342 unique URLs across 1,450 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,124 claim-shaped findings. The increase from the prior 1,122 baseline is attributable to broad audit-pattern matches in the new privacy page source/frontmatter area, not unguarded Batch 38 body claims.
+- Passed targeted Batch 38 body copy-risk scan for internal DataForSEO volume copy, internal production labels, TODO/TBD placeholders, privacy/legal safety promises, generic AI/promo phrasing, product superlatives, diagnosis/treatment claims, medication instructions, heat-use instructions, position prescriptions, pregnancy or miscarriage interpretation, school legal-advice claims, and guarantee language. Final scan output was 0 findings after softening wording and excluding explicit "not legal advice / cannot promise privacy" disclaimers.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests.
+- Passed `pnpm build`; build prerendered 781 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 309`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 781`.
+- Extra dist spot check confirmed all 9 Batch 38 route files exist in the extensionless prerender output and contain H1/body content.
+- Current status: 309 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 91 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 39: Cycle calculator and calendar planning tools
+
+- DFS planning validated a high-volume cycle calculator and calendar cluster:
+  - `period calculator`: about 60,500 US monthly searches, low competition, informational intent, keyword difficulty 23.
+  - `ovulation calculator`: about 246,000 US monthly searches, low competition, informational intent, keyword difficulty 41. Batch 39 handles this as a question list, not as fertility, pregnancy, or contraception advice.
+  - `period calendar`: about 4,400 US monthly searches, low competition, informational intent, keyword difficulty 30.
+  - `menstrual cycle calculator`: about 2,900 US monthly searches, low competition, keyword difficulty 23.
+  - `how to calculate next period date`: about 2,400 US monthly searches, low competition, informational intent.
+  - `next period calculator`: about 1,600 US monthly searches, low competition, keyword difficulty 20.
+  - `cycle length calculator`: about 880 US monthly searches, low competition, keyword difficulty 23.
+  - `100 percent accurate ovulation calculator`: about 1,000 US monthly searches, medium competition, keyword difficulty 38. Batch 39 explicitly rejects exact-accuracy framing.
+  - `luteal phase calculator`: about 390 US monthly searches, low competition.
+  - `cycle day calculator`: about 70 US monthly searches, low competition, keyword difficulty 31.
+- Source guardrails used Office on Women's Health menstrual cycle pages, MedlinePlus menstruation, ACOG menstrual cycle and first-period guidance, FTC mobile health app best practices, FTC mobile health apps interactive tool, and HHS health-app/HIPAA context. Public pages avoid exact prediction promises, diagnosis, pregnancy interpretation, fertility advice, contraception advice, TTC claims, ovulation confirmation, treatment advice, legal advice, privacy guarantees, and customer-facing DataForSEO volume claims.
+- Added 9 Batch 39 rows to `docs/seo-400/topic-backlog.csv` with `drafted-batch-39` status:
+  - `period-calculator-planning-sheet`
+  - `next-period-date-estimate-worksheet`
+  - `cycle-length-calculator-worksheet`
+  - `menstrual-cycle-calendar-template`
+  - `cycle-day-counting-chart`
+  - `luteal-phase-date-notes`
+  - `period-calendar-privacy-checklist`
+  - `cycle-prediction-data-privacy-checklist`
+  - `ovulation-calculator-question-list`
+- Drafted 9 Batch 39 pages:
+  - `/free/period-calculator-planning-sheet`
+  - `/free/next-period-date-estimate-worksheet`
+  - `/free/cycle-length-calculator-worksheet`
+  - `/free/menstrual-cycle-calendar-template`
+  - `/free/cycle-day-counting-chart`
+  - `/free/luteal-phase-date-notes`
+  - `/free/period-calendar-privacy-checklist`
+  - `/resources/privacy-in-practice/cycle-prediction-data-privacy-checklist`
+  - `/free/ovulation-calculator-question-list`
+- Sub-agent drafting:
+  - `019f1d7c-c4ed-72a2-9016-958317dec0c9` (Aristotle the 3rd) drafted period calculator planning sheet, next period date estimate worksheet, and cycle length calculator worksheet.
+  - `019f1d7d-0bae-7022-ba5d-88b91adf91ea` drafted menstrual cycle calendar template, cycle day counting chart, and luteal phase date notes.
+  - `019f1d7d-55bd-7801-b9a0-9511fdc83026` (Singer the 3rd) drafted period calendar privacy checklist, cycle prediction data privacy checklist, and ovulation calculator question list.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 318 unique net-new route paths total. The file has two comment lines above the route list.
+- Integration softened one privacy phrase in the menstrual cycle calendar template from "private place" to "one place" to avoid implying a privacy guarantee.
+- Integration softened two copy-guardrail phrases from "Best when" to "Useful when" and "works best" to "works well."
+- Batch 39 sidecar reviewer `019f1d83-d16e-7f40-8b75-45325d63a90f` found one issue: generated body output was stale for the two softened phrases. Re-ran `pnpm generate:content` and `pnpm generate:knowledge`; targeted search confirmed the stale generated phrases are gone. The reviewer found no duplicate routes/slugs, no unresolved internal links, no customer-facing DataForSEO/internal labels, and no exact-prediction, diagnosis, pregnancy-interpretation, TTC, contraception, ovulation-confirmation, treatment, legal-advice, or privacy-guarantee violations.
+- Passed `pnpm generate:content` and `pnpm generate:knowledge`.
+- Passed `pnpm verify:seo400-backlog -- --min 318`; `docs/seo-400/net-new-paths.txt` has 318 unique route paths.
+- Passed `pnpm check:links` with 790 valid routes, 10,421 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 345 unique URLs across 1,491 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,128 claim-shaped findings. The increase from the prior 1,124 baseline is attributable to broad audit-pattern matches in new Batch 39 source/frontmatter areas, not unguarded Batch 39 body claims.
+- Passed targeted Batch 39 body copy-risk scan for internal DataForSEO volume copy, internal production labels, TODO/TBD placeholders, privacy/legal/accuracy guarantees, generic AI/promo phrasing, diagnosis, pregnancy interpretation, ovulation confirmation, treatment/dosing claims, TTC claims, contraception/safe-day advice, and guarantee language. Final scan output was 0 findings after copy softening.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests. Vitest printed the existing non-fatal WebSocket port warning for port 24678 after completion but exited 0.
+- Passed `pnpm build`; build prerendered 790 HTML routes. The existing chunk-size warning remains non-blocking.
+- First `pnpm verify:prerendered-content -- --min 318` was started in parallel before the build finished writing new Batch 39 route files and failed with 9 missing files. Re-ran after build completion and it passed.
+- Passed `pnpm verify:prerendered-content -- --min 318`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 790`.
+- Extra dist spot check confirmed all 9 Batch 39 route files exist in the extensionless prerender output and contain H1/body content:
+  - `/free/period-calculator-planning-sheet`
+  - `/free/next-period-date-estimate-worksheet`
+  - `/free/cycle-length-calculator-worksheet`
+  - `/free/menstrual-cycle-calendar-template`
+  - `/free/cycle-day-counting-chart`
+  - `/free/luteal-phase-date-notes`
+  - `/free/period-calendar-privacy-checklist`
+  - `/resources/privacy-in-practice/cycle-prediction-data-privacy-checklist`
+  - `/free/ovulation-calculator-question-list`
+- Current status: 318 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 82 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 40: First period readiness tools
+
+- DFS planning validated first-period readiness demand around calculator, quiz, school-kit, and parent-helper searches:
+  - `when will i get my first period`: about 880 US monthly searches, low competition, informational intent, keyword difficulty 23.
+  - `first period calculator`: about 720 US monthly searches, low competition.
+  - `exact first period quiz`: about 260 US monthly searches, low competition.
+  - `when will i get my first period test 100 accurate`: about 90 US monthly searches, low competition. Batch 40 treats this as overpromising accuracy demand, not as a promise to answer exact timing.
+  - `first period school kit`, `first period emergency kit`, `first period doctor questions`, and `teen period tracker privacy` were handled as support-intent assets tied to the first-period readiness cluster.
+- Source guardrails used ACOG Your First Period, ACOG Menstruation in Girls and Adolescents, MedlinePlus menstruation, MedlinePlus puberty, FTC mobile health app best practices and interactive health-app context, and HHS cell-phone/health-app privacy context. Public pages avoid exact first-period prediction, diagnosis, treatment advice, fertility or sexual advice, product mandates, school legal advice, legal advice, privacy guarantees, age-based panic, and customer-facing DataForSEO volume claims.
+- Added 9 Batch 40 rows to `docs/seo-400/topic-backlog.csv` with `drafted-batch-40` status:
+  - `first-period-calculator-reality-check`
+  - `first-period-signs-notes`
+  - `tween-period-quiz-reality-check`
+  - `first-period-school-kit-checklist`
+  - `first-period-parent-conversation-script`
+  - `first-period-emergency-bag-plan`
+  - `first-period-doctor-question-list`
+  - `first-period-data-privacy-checklist`
+  - `first-period-app-setup-privacy-card`
+- Drafted 9 Batch 40 pages:
+  - `/free/first-period-calculator-reality-check`
+  - `/free/first-period-signs-notes`
+  - `/free/tween-period-quiz-reality-check`
+  - `/free/first-period-school-kit-checklist`
+  - `/free/first-period-parent-conversation-script`
+  - `/free/first-period-emergency-bag-plan`
+  - `/free/first-period-doctor-question-list`
+  - `/resources/privacy-in-practice/first-period-data-privacy-checklist`
+  - `/free/first-period-app-setup-privacy-card`
+- Sub-agent drafting:
+  - `019f1d8a-4fcc-7dc3-be49-d7c15cdb7625` (McClintock the 3rd) drafted first period calculator reality check, first period signs notes, and tween period quiz reality check.
+  - `019f1d8a-a12f-7041-96ba-56070bb31b79` (Socrates the 3rd) drafted first period school kit checklist, first period parent conversation script, and first period emergency bag plan.
+  - `019f1d8a-efdc-7520-a5f2-6f8723b794fd` (Chandrasekhar the 3rd) drafted first period doctor question list, first period data privacy checklist, and first period app setup privacy card.
+- Updated `docs/seo-400/net-new-paths.txt`; it now contains 327 unique net-new route paths total. The file has two comment lines above the route list.
+- Integration softened one app setup phrase from "Good reminder text" to "Plain reminder text" to avoid generic promo wording.
+- Integration also softened `fertility goals` to `fertility fields`, `fits best` to `fits most`, `unlock` to `open`, and two broad help/diagnosis phrases in the parent script to keep copy literal and low-risk.
+- Batch 40 sidecar reviewer `019f1d91-8982-7253-ace4-3e4bb9645073` found no blockers. The reviewer confirmed generated manifest and registration coverage for all 9 routes, no missing scoped internal links, required frontmatter shape, no exact-date promise, no diagnosis framing, no privacy guarantee, and non-coercive parent/teen sharing. Residual risk: repo copy helper `scripts/scan_copy.py` is not present, so copy review used manual review and targeted regex scans.
+- Passed `pnpm generate:content` and `pnpm generate:knowledge`.
+- Passed `pnpm verify:seo400-backlog -- --min 327`; `docs/seo-400/net-new-paths.txt` has 327 unique route paths.
+- Passed `pnpm check:links` with 799 valid routes, 10,553 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 347 unique URLs across 1,531 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,129 claim-shaped findings. The increase from the prior 1,128 baseline is attributable to broad audit-pattern matches in Batch 40 source/frontmatter areas, not unguarded Batch 40 body claims.
+- Passed targeted Batch 40 body copy-risk scan for internal DataForSEO volume copy, internal production labels, TODO/TBD placeholders, privacy/date guarantees, exact first-period prediction, generic promo phrasing, diagnosis, treatment/dosing claims, legal/coercive/privacy claims, fertility/sexual advice, and guarantee language. Final scan output was 0 findings after copy softening.
+- Passed `pnpm typecheck`. It printed the existing non-fatal WebSocket port warning for port 24678 but exited 0.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests.
+- Passed `pnpm build`; build prerendered 799 HTML routes. The existing chunk-size warning remains non-blocking.
+- First `pnpm verify:prerendered-content -- --min 327` was started in parallel before the build finished writing new Batch 40 route files and failed with 9 missing files. Re-ran after build completion and it passed.
+- Passed `pnpm verify:prerendered-content -- --min 327`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 799`.
+- Extra dist spot check confirmed all 9 Batch 40 route files exist in the extensionless prerender output and contain H1/body content:
+  - `/free/first-period-calculator-reality-check`
+  - `/free/first-period-signs-notes`
+  - `/free/tween-period-quiz-reality-check`
+  - `/free/first-period-school-kit-checklist`
+  - `/free/first-period-parent-conversation-script`
+  - `/free/first-period-emergency-bag-plan`
+  - `/free/first-period-doctor-question-list`
+  - `/resources/privacy-in-practice/first-period-data-privacy-checklist`
+  - `/free/first-period-app-setup-privacy-card`
+- Current status: 327 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 73 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 41: Birth control pill, patch, and ring support tools
+
+- DFS planning validated a birth-control support cluster around missed pills, bleeding, spotting, patch questions, ring questions, and reminder privacy:
+  - `missed birth control pill`: about 1,900 US monthly searches, LOW competition, keyword difficulty 14.
+  - `missed pill birth control`: about 1,900 US monthly searches, LOW competition.
+  - `spotting on birth control`: about 3,600 US monthly searches, LOW competition, keyword difficulty 13.
+  - `breakthrough bleeding on birth control`: about 1,900 US monthly searches, LOW competition, keyword difficulty 6.
+  - `nuvaring bleeding`: about 480 US monthly searches, LOW competition, keyword difficulty 6.
+  - `withdrawal bleeding birth control`: about 590 US monthly searches, LOW competition, keyword difficulty 8.
+  - `birth control patch bleeding`: about 70 US monthly searches, LOW competition, keyword difficulty 34.
+  - `birth control patch side effects`: keyword difficulty 30, handled as support intent.
+- Source guardrails used CDC U.S. Selected Practice Recommendations for Contraceptive Use 2024, CDC combined hormonal contraceptive guidance/appendix, MedlinePlus birth-control pill and patch pages, MedlinePlus birth-control overview, FTC mobile health app best practices, FTC Flo Health case context, and HHS HIPAA/consumer-app context. Public pages avoid missed-pill instructions, patch or ring timing rules, dosing, emergency contraception advice, pregnancy interpretation, protection/effectiveness claims, method recommendations, clot-risk triage protocols, legal advice, privacy guarantees, and customer-facing DataForSEO volume claims.
+- Added 9 Batch 41 rows to `docs/seo-400/topic-backlog.csv` with `drafted-batch-41` status:
+  - `birth-control-ring-bleeding-log`
+  - `nuvaring-bleeding-question-list`
+  - `withdrawal-bleeding-birth-control-notes`
+  - `birth-control-patch-bleeding-log`
+  - `birth-control-patch-change-notes`
+  - `birth-control-patch-side-effect-question-list`
+  - `missed-birth-control-pill-question-list`
+  - `birth-control-pill-reminder-privacy-card`
+  - `birth-control-pill-pack-notes`
+- Drafted 9 Batch 41 pages:
+  - `/free/birth-control-ring-bleeding-log`
+  - `/free/nuvaring-bleeding-question-list`
+  - `/free/withdrawal-bleeding-birth-control-notes`
+  - `/free/birth-control-patch-bleeding-log`
+  - `/free/birth-control-patch-change-notes`
+  - `/free/birth-control-patch-side-effect-question-list`
+  - `/free/missed-birth-control-pill-question-list`
+  - `/free/birth-control-pill-reminder-privacy-card`
+  - `/free/birth-control-pill-pack-notes`
+- Sub-agent drafting:
+  - `019f1d98-df83-78a0-a416-0a1aa043ef89` (Linnaeus the 3rd) drafted the missed-pill, pill-reminder privacy, and pill-pack notes pages.
+  - `019f1d99-2e5e-77f0-8d9e-50c37cd941c9` (Volta the 3rd) drafted the patch bleeding, patch change, and patch side-effect pages.
+  - `019f1d99-7a24-70c2-b6bc-87448511a764` (Descartes the 3rd) drafted the ring bleeding, NuvaRing bleeding, and withdrawal bleeding pages.
+- Integration review softened customer-facing copy by replacing one SEO-facing "people search for" phrase, replacing "good fit" with "useful," and changing a pill-pack protection sentence to "does not interpret pregnancy risk." Regeneration confirmed generated body modules matched patched MDX.
+- Batch 41 independent reviewer `019f1da1-46b9-7b50-8332-e156556145f1` (Newton the 3rd) returned `PASS`. The reviewer confirmed no prohibited missed-pill, patch, or ring use instructions, dosing/timing rules, emergency contraception advice, pregnancy interpretation, protection/effectiveness claims, method recommendations, clot-risk triage protocol, legal advice, or privacy guarantees. The reviewer also confirmed exactly 9 `drafted-batch-41` rows, matching net-new paths, route registration in `content-manifest`, single route entries in generated content data/index, generated body files, and resolvable related links.
+- Passed `pnpm generate:content` and `pnpm generate:knowledge`.
+- Passed `pnpm verify:seo400-backlog -- --min 336`; `docs/seo-400/net-new-paths.txt` has 336 unique route paths.
+- Passed `pnpm check:links` with 808 valid routes, 10,683 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 353 unique URLs across 1,562 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output remained 1,129 claim-shaped findings, matching the prior baseline after Batch 40.
+- Passed targeted Batch 41 source, generated-body, and dist scans for internal SEO phrases, internal production labels, TODO/TBD placeholders, AI phrasing, generic hype, privacy/protection guarantees, missed-pill instruction phrases, and stale patched copy.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests. Vitest printed the existing non-fatal WebSocket port warning for port 24678 after completion but exited 0.
+- Passed `pnpm build`; build prerendered 808 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 336`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 808`.
+- Extra dist spot check confirmed all 9 Batch 41 route files exist in the extensionless prerender output and contain H1/body content:
+  - `/free/birth-control-ring-bleeding-log`
+  - `/free/nuvaring-bleeding-question-list`
+  - `/free/withdrawal-bleeding-birth-control-notes`
+  - `/free/birth-control-patch-bleeding-log`
+  - `/free/birth-control-patch-change-notes`
+  - `/free/birth-control-patch-side-effect-question-list`
+  - `/free/missed-birth-control-pill-question-list`
+  - `/free/birth-control-pill-reminder-privacy-card`
+  - `/free/birth-control-pill-pack-notes`
+- Current status: 336 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 64 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 42: Birth control medication, illness, travel, and refill support tools
+
+- DFS planning validated a birth-control support cluster around antibiotics, supplements, St. John's wort, vomiting/diarrhea, travel time zones, and refill privacy:
+  - `do antibiotics affect birth control`: about 2,900 US monthly searches, LOW competition, keyword difficulty 2.
+  - `antibiotics and birth control`: about 2,400 US monthly searches, LOW competition, keyword difficulty 6.
+  - `birth control and antibiotics`: about 2,400 US monthly searches, LOW competition, keyword difficulty 21.
+  - `birth control and diarrhea`: about 480 US monthly searches, LOW competition, keyword difficulty 2.
+  - `diarrhea and birth control pill`: about 110 US monthly searches, LOW competition.
+  - `vomiting after birth control pill`: about 40 US monthly searches, LOW competition, keyword difficulty 19.
+  - `throwing up after birth control pill`: about 40 US monthly searches, LOW competition.
+  - `st john's wort birth control`: about 140 US monthly searches, LOW competition, keyword difficulty 11.
+  - `birth control refill online`: about 110 US monthly searches, MEDIUM competition, keyword difficulty 3.
+  - `birth control pill time zone`: about 20 US monthly searches, LOW competition, keyword difficulty 15.
+  - `birth control drug interactions` and `birth control and supplements` were handled as low-volume support-intent assets.
+- Source guardrails used CDC U.S. Selected Practice Recommendations for Contraceptive Use 2024, MedlinePlus birth-control and medicine/supplement context, NCCIH St. John's wort context, FTC mobile health app best practices, FTC Flo Health case context, and HHS HIPAA/consumer-app context. Public pages avoid antibiotic effectiveness instructions, illness dose instructions, time-zone pill timing rules, emergency contraception advice, pregnancy interpretation, protection/effectiveness claims, method recommendations, legal advice, privacy guarantees, and customer-facing DataForSEO volume claims.
+- Added 9 Batch 42 rows to `docs/seo-400/topic-backlog.csv` with `drafted-batch-42` status:
+  - `birth-control-time-zone-travel-question-list`
+  - `birth-control-refill-gap-planner`
+  - `birth-control-pharmacy-refill-privacy-card`
+  - `st-johns-wort-birth-control-question-card`
+  - `birth-control-vomiting-diarrhea-question-list`
+  - `birth-control-illness-dose-note-sheet`
+  - `antibiotics-birth-control-question-list`
+  - `birth-control-medicine-interaction-checklist`
+  - `birth-control-supplement-disclosure-card`
+- Drafted 9 Batch 42 pages:
+  - `/free/birth-control-time-zone-travel-question-list`
+  - `/free/birth-control-refill-gap-planner`
+  - `/free/birth-control-pharmacy-refill-privacy-card`
+  - `/free/st-johns-wort-birth-control-question-card`
+  - `/free/birth-control-vomiting-diarrhea-question-list`
+  - `/free/birth-control-illness-dose-note-sheet`
+  - `/free/antibiotics-birth-control-question-list`
+  - `/free/birth-control-medicine-interaction-checklist`
+  - `/free/birth-control-supplement-disclosure-card`
+- Sub-agent drafting:
+  - `019f1da4-b2df-79a3-aaab-d428b46e42f2` (Curie the 3rd) drafted the antibiotics, medicine interaction, and supplement disclosure pages.
+  - `019f1da5-0b11-79f0-9886-6fa7b7c178f4` (Bacon the 3rd) drafted the St. John's wort, vomiting/diarrhea, and illness dose note pages.
+  - `019f1da5-6099-7dd0-880b-d8c5f6a5d82d` (Dalton the 3rd) drafted the time-zone travel, refill gap, and pharmacy refill privacy pages.
+- Integration review softened St. John's wort wording from effectiveness-adjacent phrasing to neutral pharmacist/clinician question-prep language, regenerated generated content, and rebuilt prerendered output to remove stale static text.
+- Batch 42 independent reviewer `019f1dac-be5a-7c63-91ab-2daa76119fdf` (Lagrange the 3rd) returned `PASS` after the St. John's wort patch. The reviewer confirmed the prior fail phrases were cleared from scoped source and generated counterparts, and confirmed the remaining neutral interaction flag is acceptable under the guardrails when backed by NCCIH source metadata.
+- Passed `pnpm generate:content` and `pnpm generate:knowledge` through `pnpm build`.
+- Passed `pnpm verify:seo400-backlog -- --min 345`; `docs/seo-400/net-new-paths.txt` has 345 unique route paths.
+- Passed `pnpm check:links` with 817 valid routes, 10,840 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 355 unique URLs across 1,602 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,130 claim-shaped findings.
+- Passed targeted Batch 42 source, generated-body, and dist scans for the prior St. John's wort fail phrases. A broader birth-control scan still finds an intentional Batch 41 warning that search results may not match a user's pill package, which is not part of the Batch 42 St. John's wort issue.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests. Vitest printed the existing non-fatal WebSocket port warning for port 24678 after completion but exited 0.
+- Passed `pnpm build`; build prerendered 817 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 345`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 817`.
+- Extra dist spot check confirmed all 9 Batch 42 route files exist in the extensionless prerender output and contain title/canonical metadata:
+  - `/free/birth-control-time-zone-travel-question-list`
+  - `/free/birth-control-refill-gap-planner`
+  - `/free/birth-control-pharmacy-refill-privacy-card`
+  - `/free/st-johns-wort-birth-control-question-card`
+  - `/free/birth-control-vomiting-diarrhea-question-list`
+  - `/free/birth-control-illness-dose-note-sheet`
+  - `/free/antibiotics-birth-control-question-list`
+  - `/free/birth-control-medicine-interaction-checklist`
+  - `/free/birth-control-supplement-disclosure-card`
+- Current status: 345 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 55 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 43: Cervical screening results, colposcopy, and privacy support tools
+
+- DFS planning validated a cervical-screening support cluster around abnormal Pap results, HPV-positive result notes, colposcopy questions, cervical biopsy results, and screening-record privacy:
+  - `abnormalities in pap smear results`: about 2,400 US monthly searches, LOW competition, keyword difficulty 24.
+  - `pap smear test abnormal results`: about 2,400 US monthly searches, LOW competition, keyword difficulty 29.
+  - `pap smear results`: keyword difficulty 47.
+  - `cervical biopsy results`: keyword difficulty 13.
+  - `colposcopy biopsy`: about 9,900 US monthly searches, LOW competition, keyword difficulty 32.
+  - `colposcopy procedure`: about 8,100 US monthly searches, LOW competition, keyword difficulty 27.
+  - `colposcopy for positive HPV`: about 1,000 US monthly searches, LOW competition, keyword difficulty 4.
+  - `colposcopy and biopsy recovery time`: about 720 US monthly searches, LOW competition, keyword difficulty 4.
+  - `sex after colposcopy`: about 880 US monthly searches, LOW competition, keyword difficulty 8, handled only as a clinic-instruction question context.
+- Source guardrails used NCI abnormal HPV/Pap result context, CDC cervical cancer screening, ACOG cervical cancer screening, ACOG abnormal cervical screening, ACOG colposcopy, HHS HIPAA consumer rights/privacy-rule context, and FTC health-app/data-minimization context. Direct `curl.exe -I -L` checks confirmed the ACOG source URLs returned 200.
+- Public pages avoid diagnosis, result interpretation, follow-up algorithms, treatment advice, procedure-prep instructions, aftercare protocols, sex/tampon/activity timing rules, urgent triage protocols, cancer-risk prediction, STI blame or transmission advice, legal advice, privacy guarantees, and customer-facing DataForSEO volume claims.
+- Added 9 Batch 43 rows to `docs/seo-400/topic-backlog.csv` with `drafted-batch-43` status:
+  - `abnormal-pap-result-question-list`
+  - `hpv-positive-pap-follow-up-notes`
+  - `pap-smear-result-terms-card`
+  - `colposcopy-question-checklist`
+  - `cervical-biopsy-result-notes`
+  - `colposcopy-recovery-note-sheet`
+  - `pap-smear-result-privacy-checklist`
+  - `hpv-result-data-privacy-checklist`
+  - `pap-smear-anxiety-visit-card`
+- Drafted 9 Batch 43 pages:
+  - `/free/abnormal-pap-result-question-list`
+  - `/free/hpv-positive-pap-follow-up-notes`
+  - `/free/pap-smear-result-terms-card`
+  - `/free/colposcopy-question-checklist`
+  - `/free/cervical-biopsy-result-notes`
+  - `/free/colposcopy-recovery-note-sheet`
+  - `/resources/privacy-in-practice/pap-smear-result-privacy-checklist`
+  - `/resources/privacy-in-practice/hpv-result-data-privacy-checklist`
+  - `/free/pap-smear-anxiety-visit-card`
+- Sub-agent drafting:
+  - `019f1db5-87bf-7b82-9a7c-35632a487dff` (Helmholtz the 3rd) drafted the abnormal Pap result, HPV-positive Pap, and Pap result terms pages.
+  - `019f1db7-21ef-71f2-a7e2-aa9bc053cdf7` (Dirac the 3rd) drafted the colposcopy question, cervical biopsy result, and colposcopy recovery pages.
+  - `019f1db9-0915-74d3-9911-34102e2d6d56` (Darwin the 3rd) drafted the Pap result privacy, HPV result privacy, and Pap smear anxiety visit-card pages.
+- Integration review softened biopsy-expectation language from "usually includes biopsy" to "may be discussed or done in some visits," softened broad abnormal-result/cancer wording, and added cross-links across the nine-page cervical-screening cluster.
+- Batch 43 independent reviewer `019f1dc0-9cb2-7e43-86a5-d52f6903ec1c` (Jason the 3rd) returned `PASS`. The reviewer confirmed exactly 9 `drafted-batch-43` rows, 9 matching route paths, single registration in `content-manifest`, generated content data/index coverage, valid-looking related links, no DataForSEO volume leakage in public copy, and guardrail compliance.
+- Passed `pnpm generate:content` and `pnpm generate:knowledge` through `pnpm build`.
+- Passed `pnpm verify:seo400-backlog -- --min 354`; `docs/seo-400/net-new-paths.txt` has 354 unique route paths.
+- Passed `pnpm check:links` with 826 valid routes, 11,021 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 362 unique URLs across 1,638 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,131 claim-shaped findings.
+- Passed targeted Batch 43 source/generated registration scans for route coverage and risky wording. The only targeted matches were explicit "this does not" guardrails, source metadata, and clinic-instruction warnings.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests. Vitest printed the existing non-fatal WebSocket port warning for port 24678 after completion but exited 0.
+- Passed `pnpm build`; build prerendered 826 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 354`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 826`.
+- Extra dist spot check confirmed all 9 Batch 43 route files exist in the extensionless prerender output and contain title, canonical, and H1 metadata:
+  - `/free/abnormal-pap-result-question-list`
+  - `/free/hpv-positive-pap-follow-up-notes`
+  - `/free/pap-smear-result-terms-card`
+  - `/free/colposcopy-question-checklist`
+  - `/free/cervical-biopsy-result-notes`
+  - `/free/colposcopy-recovery-note-sheet`
+  - `/resources/privacy-in-practice/pap-smear-result-privacy-checklist`
+  - `/resources/privacy-in-practice/hpv-result-data-privacy-checklist`
+  - `/free/pap-smear-anxiety-visit-card`
+- Current status: 354 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 46 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 44: Breast change, mammogram, ultrasound, biopsy, and privacy support tools
+
+- DFS planning validated a breast-change and breast-imaging support cluster around cycle-linked breast changes, mammogram/ultrasound result organization, biopsy result notes, mammogram anxiety, and imaging-record privacy:
+  - `fibrocystic breast changes`: about 18,100 US monthly searches, LOW competition, keyword difficulty 21.
+  - `breast cyst symptoms`: about 4,400 US monthly searches, LOW competition, keyword difficulty 23.
+  - `breast lump before period`: about 1,000 US monthly searches, LOW competition.
+  - `breast lump during period`: about 320 US monthly searches, LOW competition, keyword difficulty 2.
+  - `breast lump after period`: about 90 US monthly searches, LOW competition, keyword difficulty 4.
+  - `nipple discharge before period`: about 140 US monthly searches, LOW competition, keyword difficulty 2.
+  - `mammogram results`: keyword difficulty 17.
+  - `abnormal mammogram results`: keyword difficulty 10.
+  - `breast ultrasound results`: keyword difficulty 15.
+  - `breast biopsy results`: keyword difficulty 21.
+  - `mammogram anxiety`: support intent checked and handled as a visit-card topic, not a procedure-instruction page.
+- Source guardrails used Mayo Clinic breast pain/cysts, Cleveland Clinic nipple discharge and clinical breast exam context, NCI mammograms/dense breasts/breast conditions/pathology reports/breast diagnosis, American Cancer Society mammogram callback and pathology report context, ACR mammography lay report letters, CDC mammogram result context, HHS health-record access/HIPAA rights context, and FTC health-app privacy/data-minimization context.
+- Public pages avoid diagnosis, reassurance, self-exam protocols, result interpretation, BI-RADS/category explanation, cancer-risk prediction, treatment advice, procedure/prep/timing rules, urgent triage protocols, legal advice, privacy guarantees, and customer-facing DataForSEO volume claims.
+- Added 9 Batch 44 rows to `docs/seo-400/topic-backlog.csv` with `drafted-batch-44` status:
+  - `breast-lump-cycle-note-sheet`
+  - `breast-cyst-symptom-question-list`
+  - `nipple-discharge-cycle-notes`
+  - `mammogram-result-question-list`
+  - `abnormal-mammogram-result-notes`
+  - `breast-ultrasound-result-questions`
+  - `breast-biopsy-result-notes`
+  - `breast-imaging-result-privacy-checklist`
+  - `mammogram-anxiety-visit-card`
+- Drafted 9 Batch 44 pages:
+  - `/free/breast-lump-cycle-note-sheet`
+  - `/free/breast-cyst-symptom-question-list`
+  - `/free/nipple-discharge-cycle-notes`
+  - `/free/mammogram-result-question-list`
+  - `/free/abnormal-mammogram-result-notes`
+  - `/free/breast-ultrasound-result-questions`
+  - `/free/breast-biopsy-result-notes`
+  - `/resources/privacy-in-practice/breast-imaging-result-privacy-checklist`
+  - `/free/mammogram-anxiety-visit-card`
+- Sub-agent drafting:
+  - `019f1dc5-00d7-7093-89e4-5ca107e6a886` (Nietzsche the 3rd) drafted the breast lump cycle note, breast cyst symptom question, and nipple discharge cycle pages.
+  - `019f1dc6-4e06-7643-b520-966d560f3bee` (Avicenna the 3rd) drafted the mammogram result, abnormal mammogram result, and breast ultrasound result pages.
+  - `019f1dc6-9c27-7f13-b633-e0b56f9cd41c` (Hegel the 3rd) drafted the breast biopsy result, breast imaging result privacy, and mammogram anxiety visit-card pages.
+- Integration review added sibling links across the nine-page cluster, linked breast-change pages to breast-imaging privacy/results pages, and removed/softened advice-like wording around follow-up, care need, and privacy.
+- Batch 44 first independent reviewer `019f1dcf-d463-7f71-9b97-398a2c96ab79` (James the 3rd) found copy-grade issues only. Those were fixed by shortening four descriptions and splitting one dense internal-link sentence.
+- Batch 44 second independent reviewer `019f1dd4-1609-75b2-bc35-53de29a15cb0` (Cicero the 3rd) returned `PASS`.
+- Passed `pnpm generate:content` and `pnpm generate:knowledge` through `pnpm build`.
+- Passed `pnpm verify:seo400-backlog -- --min 363`; `docs/seo-400/net-new-paths.txt` has 363 unique route paths.
+- Passed `pnpm check:links` with 835 valid routes, 11,238 internal links checked after the copy-fix pass, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 375 unique URLs across 1,673 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,131 claim-shaped findings.
+- Passed targeted Batch 44 risky-wording scan; matches were explicit negative caveats and source URLs, not advice or public DataForSEO claims.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests. Vitest printed the existing non-fatal WebSocket port warning for port 24678 after completion but exited 0.
+- Passed `pnpm build`; build prerendered 835 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 363`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 835`.
+- Extra dist spot check confirmed all 9 Batch 44 route files exist in the extensionless prerender output and contain title, canonical, and H1 metadata:
+  - `/free/breast-lump-cycle-note-sheet`
+  - `/free/breast-cyst-symptom-question-list`
+  - `/free/nipple-discharge-cycle-notes`
+  - `/free/mammogram-result-question-list`
+  - `/free/abnormal-mammogram-result-notes`
+  - `/free/breast-ultrasound-result-questions`
+  - `/free/breast-biopsy-result-notes`
+  - `/resources/privacy-in-practice/breast-imaging-result-privacy-checklist`
+  - `/free/mammogram-anxiety-visit-card`
+- Current status: 363 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 37 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 45: Cycle-linked anxiety, panic feelings, low mood, crying, mood swings, and privacy handoff tools
+
+- DFS planning validated a period-mood support cluster around cycle-linked anxiety, panic feelings, low mood, crying, mood swings, privacy, clinician handoff, and support-person communication:
+  - `anxiety before period`: about 1,600 US monthly searches, LOW competition, keyword difficulty 12.
+  - `period anxiety`: about 720 US monthly searches, LOW competition, keyword difficulty 9.
+  - `crying before period`: about 260 US monthly searches, LOW competition, keyword difficulty 26.
+  - `crying before period or pregnant`: about 110 US monthly searches, LOW competition, keyword difficulty 23; handled without pregnancy interpretation.
+  - `depressed before period`: about 1,600 US monthly searches, LOW competition, keyword difficulty 53.
+  - `period depression`: about 1,900 US monthly searches, LOW competition, keyword difficulty 32.
+  - `mood swings before period`: about 590 US monthly searches, LOW competition, keyword difficulty 55.
+  - `mood before period`: about 590 US monthly searches, LOW competition, keyword difficulty 58.
+  - `sad before period`: about 210 US monthly searches, LOW competition, keyword difficulty 14.
+  - `emotional before period`: about 320 US monthly searches, LOW competition, keyword difficulty 25.
+  - Panic-before-period was kept as a support-intent page even though DFS volume was not material.
+- Source guardrails used ACOG PMS guidance, Office on Women's Health PMS/PMDD context, Mayo Clinic PMS and PMS diagnosis context, NIMH anxiety/panic/depression pages, 988 Lifeline context, FTC mobile health-app privacy guidance, and HHS health-app/HIPAA privacy guidance.
+- Public pages avoid diagnosis, treatment, therapy, coping protocols, breathing or grounding instructions, medication advice, crisis-plan replacement, pregnancy interpretation, legal advice, privacy guarantees, and customer-facing DataForSEO volume claims.
+- Added 9 Batch 45 rows to `docs/seo-400/topic-backlog.csv` with `drafted-batch-45` status:
+  - `anxiety-before-period-cycle-log`
+  - `period-anxiety-visit-summary`
+  - `panic-feelings-before-period-notes`
+  - `depressed-before-period-note-sheet`
+  - `crying-before-period-tracker`
+  - `mood-swings-before-period-log`
+  - `period-anxiety-data-privacy-checklist`
+  - `before-period-mood-doctor-message-script`
+  - `cycle-mood-support-person-note`
+- Drafted 9 Batch 45 pages:
+  - `/free/anxiety-before-period-cycle-log`
+  - `/free/period-anxiety-visit-summary`
+  - `/free/panic-feelings-before-period-notes`
+  - `/free/depressed-before-period-note-sheet`
+  - `/free/crying-before-period-tracker`
+  - `/free/mood-swings-before-period-log`
+  - `/resources/privacy-in-practice/period-anxiety-data-privacy-checklist`
+  - `/free/before-period-mood-doctor-message-script`
+  - `/free/cycle-mood-support-person-note`
+- Sub-agent drafting:
+  - `019f1dd8-2c2f-7400-b343-04a308e2dcb8` (Raman the 3rd) drafted the anxiety-before-period cycle log, period-anxiety visit summary, and panic-feelings-before-period notes.
+  - `019f1dd8-7774-76c1-b847-bbffb64e8425` (Feynman the 3rd) drafted the depressed-before-period note sheet, crying-before-period tracker, and mood-swings-before-period log.
+  - `019f1dd8-c37a-7ad2-99d2-11377c1ba6ca` (Rawls the 3rd) drafted the period-anxiety data privacy checklist, before-period mood doctor message script, and cycle-mood support-person note.
+- Integration review added sibling links across the nine-page cluster, linked mood-note pages to the privacy and communication handoff pages, and tightened the 988 wording to avoid replacing emergency help or a crisis plan.
+- Batch 45 independent reviewer `019f1de1-de2a-7832-af60-e36a5530a16f` (Lorentz the 3rd) returned `PASS`.
+- Passed `pnpm generate:content` and `pnpm generate:knowledge` through `pnpm build`.
+- Passed `pnpm verify:seo400-backlog -- --min 372`; `docs/seo-400/net-new-paths.txt` has 372 unique route paths.
+- Passed `pnpm check:links` with 844 valid routes, 11,411 internal links checked, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 379 unique URLs across 1,711 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,132 claim-shaped findings.
+- Passed targeted Batch 45 risky-wording scan; matches were explicit negative caveats and source URLs, not advice or public DataForSEO claims.
+- Passed `git diff --check` over the Batch 45 content and SEO planning files.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests. Vitest printed the existing non-fatal WebSocket port warning for port 24678 after completion but exited 0.
+- Passed `pnpm build`; build prerendered 844 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 372`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 844`.
+- Extra dist spot check confirmed all 9 Batch 45 route files exist in the extensionless prerender output and contain Floriva plus related-link cues:
+  - `/free/anxiety-before-period-cycle-log`
+  - `/free/period-anxiety-visit-summary`
+  - `/free/panic-feelings-before-period-notes`
+  - `/free/depressed-before-period-note-sheet`
+  - `/free/crying-before-period-tracker`
+  - `/free/mood-swings-before-period-log`
+  - `/resources/privacy-in-practice/period-anxiety-data-privacy-checklist`
+  - `/free/before-period-mood-doctor-message-script`
+  - `/free/cycle-mood-support-person-note`
+- Current status: 372 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 28 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 46: Thyroid-period, iron, CBC, ferritin, fatigue bloodwork, and lab-privacy support tools
+
+- DFS planning validated a thyroid-period and heavy-period lab-support cluster around thyroid-related period changes, TSH/T4 result organization, CBC/iron/ferritin question prep, period fatigue bloodwork summaries, and lab-result privacy:
+  - `can thyroid cause irregular periods`: informational intent, keyword difficulty 11.
+  - `missed period thyroid`: informational intent, keyword difficulty 12.
+  - `thyroid and periods`: informational intent, keyword difficulty 17.
+  - `thyroid menstrual cycle`: informational intent, keyword difficulty 14.
+  - `thyroid and heavy periods`: informational intent, keyword difficulty 9.
+  - `tsh test results`: about 480 US monthly searches, LOW competition, keyword difficulty 36.
+  - `cbc blood test results`: about 1,300 US monthly searches, LOW competition, keyword difficulty 24.
+  - `ferritin levels women`: about 2,400 US monthly searches, LOW competition, keyword difficulty 20.
+  - `ferritin test results`: about 140 US monthly searches, LOW competition, keyword difficulty 14.
+  - `iron test results`: about 210 US monthly searches, LOW competition, keyword difficulty 26.
+  - `anemia from heavy periods`: informational intent, keyword difficulty 11.
+  - `hormone blood test results`: about 40 US monthly searches, LOW competition, keyword difficulty 4.
+- Source guardrails used Office on Women's Health thyroid disease context, NIDDK hypothyroidism context, MedlinePlus thyroid/TSH/T4 and doctor-prep context, NHLBI iron-deficiency anemia testing context, CDC heavy menstrual bleeding context, ACOG heavy menstrual bleeding context, HHS HIPAA access/consumer/privacy-rule context, and FTC mobile health app best-practices context.
+- Public pages avoid diagnosis, lab interpretation, treatment advice, medication advice, supplement or diet advice, fertility or pregnancy content, legal advice, HIPAA overclaims, privacy guarantees, and customer-facing DataForSEO volume claims.
+- Added 9 Batch 46 rows to `docs/seo-400/topic-backlog.csv` with `drafted-batch-46` status:
+  - `thyroid-period-change-notes`
+  - `thyroid-irregular-period-question-list`
+  - `thyroid-heavy-period-visit-summary`
+  - `heavy-period-iron-test-question-list`
+  - `ferritin-result-question-card`
+  - `cbc-heavy-period-question-list`
+  - `thyroid-lab-result-organizer`
+  - `period-fatigue-bloodwork-visit-summary`
+  - `thyroid-iron-lab-privacy-checklist`
+- Drafted 9 Batch 46 pages:
+  - `/free/thyroid-period-change-notes`
+  - `/free/thyroid-irregular-period-question-list`
+  - `/free/thyroid-heavy-period-visit-summary`
+  - `/free/heavy-period-iron-test-question-list`
+  - `/free/ferritin-result-question-card`
+  - `/free/cbc-heavy-period-question-list`
+  - `/free/thyroid-lab-result-organizer`
+  - `/free/period-fatigue-bloodwork-visit-summary`
+  - `/resources/privacy-in-practice/thyroid-iron-lab-privacy-checklist`
+- Sub-agent drafting:
+  - `019f1de5-fb41-7d80-8b9d-006e688bf7e5` (Heisenberg the 3rd) drafted the thyroid period-change notes, thyroid irregular-period question list, and thyroid heavy-period visit summary.
+  - `019f1de6-3a4e-75f1-a903-8a635c6ba06d` (Kuhn the 3rd) drafted the heavy-period iron-test question list, ferritin result question card, and CBC heavy-period question list.
+  - `019f1de6-7ac3-7b81-ad50-9a05b4969677` (Turing the 3rd) drafted the thyroid lab result organizer, period fatigue bloodwork visit summary, and thyroid/iron lab privacy checklist.
+- Integration review normalized persona metadata, added missing `format` values, added cluster-wide sibling links, and connected the thyroid, iron/CBC/ferritin, fatigue, and lab-privacy pages to the existing anemia, thyroid, portal, lab privacy, and gynecologist-prep pages.
+- Batch 46 first independent reviewer `019f1df3-a887-7642-a126-e03051c73c35` (Beauvoir the 3rd) failed the batch for fertility/pregnancy/sex and medicine/vitamin/supplement/diet-adjacent wording. The fixes removed those categories, trimmed NIDDK and MedlinePlus source claims, and reran targeted scans.
+- Batch 46 second independent reviewer `019f1df9-3b3d-7e40-9a3e-c1a565391294` (Locke the 3rd) returned `PASS`.
+- Passed `pnpm generate:content` and `pnpm generate:knowledge` after the review fixes.
+- Passed `pnpm verify:seo400-backlog -- --min 381`; `docs/seo-400/net-new-paths.txt` has 381 unique route paths.
+- Passed `pnpm check:links` with 853 valid routes, 11,605 internal links checked after the review fixes, 0 broken internal links, and 0 orphan routes.
+- Ran `node scripts/verify-sources.mjs`; discovered 386 unique URLs across 1,739 references and wrote `docs/research/04-sources-verification-2026-07-01.md`.
+- Ran `node scripts/audit-claims.mjs`; repo-wide output was 1,133 claim-shaped findings.
+- Passed targeted Batch 46 excluded-topic and risky-wording scan; the only retained match was the intentional "not a privacy promise" disclaimer.
+- Passed `git diff --check` over the Batch 46 content and SEO planning files.
+- Passed `pnpm typecheck`.
+- Passed `pnpm lint`.
+- Passed `pnpm test` with 41 test files and 197 tests.
+- Passed `pnpm build`; build prerendered 853 HTML routes. The existing chunk-size warning remains non-blocking.
+- Passed `pnpm verify:prerendered-content -- --min 381`.
+- Passed `pnpm verify:prerendered-content -- --all-sitemap --min 853`.
+- Extra dist spot check confirmed all 9 Batch 46 route files exist in the extensionless prerender output, contain Floriva plus related-link cues, and do not contain DataForSEO or the excluded fertility/pregnancy/sex/medicine/vitamin/supplement wording:
+  - `/free/thyroid-period-change-notes`
+  - `/free/thyroid-irregular-period-question-list`
+  - `/free/thyroid-heavy-period-visit-summary`
+  - `/free/heavy-period-iron-test-question-list`
+  - `/free/ferritin-result-question-card`
+  - `/free/cbc-heavy-period-question-list`
+  - `/free/thyroid-lab-result-organizer`
+  - `/free/period-fatigue-bloodwork-visit-summary`
+  - `/resources/privacy-in-practice/thyroid-iron-lab-privacy-checklist`
+- Current status: 381 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, built, and locally prerender-verified.
+- Not yet done: remaining 19 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 47: Platform spillover privacy and workday period support tools
+
+- DFS planning validated high-demand platform privacy and practical workday support angles that were not already covered as standalone assets:
+  - `hide app on iPhone`: about 1,600 US monthly searches, LOW competition, keyword difficulty 16.
+  - `hide apps on Android`: about 9,900 US monthly searches, LOW competition, keyword difficulty 3.
+  - `Android private space`: about 390 US monthly searches, LOW competition, keyword difficulty 37.
+  - `Samsung Secure Folder`: about 8,100 US monthly searches, LOW competition, keyword difficulty 12.
+  - `iPhone hidden photos`: about 6,600 US monthly searches, LOW competition, keyword difficulty 7.
+  - `Google Photos Locked Folder`: about 2,900 US monthly searches, LOW competition, keyword difficulty 9.
+  - `Google Calendar privacy`: about 90 US monthly searches, LOW competition, keyword difficulty 4.
+  - Workday meeting, sick-day, and long-shift period support intent was selected from a sub-agent gap review as a practical non-duplicate lane.
+- Source guardrails used Apple Support app hiding and Hidden album guidance, Google Android Private Space guidance, Samsung Secure Folder support, Google Photos Locked Folder guidance, Google Calendar sharing and visibility help, FTC mobile health app best practices, MedlinePlus menstruation symptoms, and Mayo Clinic menstrual-cramp care guidance.
+- Public pages avoid privacy guarantees, legal advice, workplace-rights advice, medical advice, diagnosis, treatment plans, product promises, platform security overclaims, and customer-facing DataForSEO volume claims.
+- Added 9 Batch 47 rows to `docs/seo-400/topic-backlog.csv` with `drafted-batch-47` status:
+  - `iphone-hide-period-app-privacy-checklist`
+  - `android-private-space-period-app-checklist`
+  - `samsung-secure-folder-period-app-checklist`
+  - `period-photo-hidden-album-privacy-checklist`
+  - `google-photos-locked-folder-period-screenshots`
+  - `google-calendar-period-privacy-checklist`
+  - `period-at-work-meeting-exit-plan`
+  - `period-sick-day-message-template`
+  - `long-shift-period-break-plan`
+- Drafted 9 Batch 47 pages:
+  - `/resources/privacy-in-practice/iphone-hide-period-app-privacy-checklist`
+  - `/resources/privacy-in-practice/android-private-space-period-app-checklist`
+  - `/resources/privacy-in-practice/samsung-secure-folder-period-app-checklist`
+  - `/resources/privacy-in-practice/period-photo-hidden-album-privacy-checklist`
+  - `/resources/privacy-in-practice/google-photos-locked-folder-period-screenshots`
+  - `/resources/privacy-in-practice/google-calendar-period-privacy-checklist`
+  - `/free/period-at-work-meeting-exit-plan`
+  - `/free/period-sick-day-message-template`
+  - `/free/long-shift-period-break-plan`
+- Sub-agent work:
+  - `019f1dfd-b989-7ab0-b06f-b00e30981f91` (Tesla the 3rd) performed a read-only gap review and identified practical non-duplicate work/school/travel/support opportunities.
+  - `019f1dfe-b6d9-7160-814a-7c3b6b5b5dd3` (Halley the 3rd) drafted the iPhone hide-app, Android Private Space, and Samsung Secure Folder pages.
+  - `019f1dff-0712-7630-a5cf-d77e02b6eeed` (Confucius the 3rd) drafted the Hidden album, Google Photos Locked Folder, and Google Calendar pages.
+- Orchestrator integration added missing route metadata to the three platform pages, removed one absolute "fully private" phrase, normalized one heading, and drafted the three workday support assets.
+- Batch 47 independent reviewer `019f1e07-40ca-7e22-8d16-578a2a20879f` (Archimedes the 3rd) failed the batch for one confusing Android filename sentence. The sentence was fixed from "less clear" to "reveals less than a diagnosis or cycle label." No other issues were reported.
+- Passed `pnpm generate:content`, `pnpm generate:knowledge`, `pnpm verify:seo400-backlog -- --min 390`, `pnpm check:links`, `node scripts/verify-sources.mjs`, `node scripts/audit-claims.mjs`, `pnpm typecheck`, `pnpm lint`, and `pnpm test` after the fix.
+- Current status: 390 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, and locally unit/integration verified.
+- Not yet done: remaining 10 pages, local browser E2E across the finished corpus, deployment, production E2E, and final production URL artifact.
+
+### Batch 48: Final school, travel, event, telehealth, support, and phone-script tools
+
+- DFS planning and sub-agent gap review validated the final practical-support cluster:
+  - `period during exam`: about 10 US monthly searches, LOW competition.
+  - `period on road trip`: about 10 US monthly searches, LOW competition.
+  - `period at work`: about 30 US monthly searches, LOW competition.
+  - Field-trip, uniform, school-nurse, hotel-cleanup, conference, telehealth, support-person, and clinic-phone-call topics were selected from non-duplicate long-tail support intent identified in the read-only gap review.
+- Source guardrails used MedlinePlus menstruation symptom context, Mayo Clinic menstrual-cramp see-care guidance, CDC school hand-hygiene context, American Cleaning Institute blood-stain cleanup guidance, and Telehealth.HHS.gov patient preparation and data privacy guidance.
+- Public pages avoid diagnosis, treatment advice, medical advice, legal advice, school-policy promises, workplace-rights advice, hotel/event policy claims, product promises, stain-removal guarantees, clinic-response promises, privacy guarantees, and customer-facing DataForSEO volume claims.
+- Added 10 Batch 48 rows to `docs/seo-400/topic-backlog.csv` with `drafted-batch-48` status:
+  - `period-uniform-backup-plan`
+  - `period-during-exams-school-plan`
+  - `school-nurse-period-visit-card`
+  - `field-trip-period-pack-checklist`
+  - `period-on-road-trip-planner`
+  - `hotel-period-cleanup-checklist`
+  - `period-at-conference-kit`
+  - `telehealth-period-visit-script`
+  - `support-person-period-pain-note`
+  - `clinic-phone-call-period-script`
+- Drafted 10 Batch 48 pages:
+  - `/free/period-uniform-backup-plan`
+  - `/free/period-during-exams-school-plan`
+  - `/free/school-nurse-period-visit-card`
+  - `/free/field-trip-period-pack-checklist`
+  - `/free/period-on-road-trip-planner`
+  - `/free/hotel-period-cleanup-checklist`
+  - `/free/period-at-conference-kit`
+  - `/free/telehealth-period-visit-script`
+  - `/free/support-person-period-pain-note`
+  - `/free/clinic-phone-call-period-script`
+- Sub-agent drafting:
+  - `019f1e0b-2fc5-7e33-88fa-431bc18e6d72` (Mill the 3rd) drafted the school, uniform, nurse, and field-trip pages.
+  - `019f1e0b-7558-7380-af5f-54ff326e2da0` (Euclid the 3rd) drafted the road-trip, hotel-cleanup, and conference pages.
+  - `019f1e0b-be74-79e1-b97c-2d41578d4d39` (Hubble the 3rd) drafted the telehealth, support-person, and clinic-phone-call pages.
+- Orchestrator integration normalized a few source `primary` flags, removed one "treatment questions" phrase, and changed a privacy-promise FAQ heading to a non-promissory version.
+- Batch 48 independent reviewer `019f1e13-7267-7cd3-8334-03ea920cc6eb` (Carver the 3rd) passed the final 10 pages with no required fixes.
+- Passed final 400-route gates: `pnpm generate:content`, `pnpm generate:knowledge`, `pnpm verify:seo400-backlog -- --min 400`, `git diff --check` scoped to the SEO/content files, `pnpm check:links`, `node scripts/verify-sources.mjs`, `node scripts/audit-claims.mjs`, `pnpm typecheck`, `pnpm lint`, `pnpm test`, `pnpm build`, `pnpm verify:prerendered-content -- --min 400`, and `pnpm verify:prerendered-content -- --all-sitemap --min 872`.
+- Local browser E2E passed across all 400 net-new routes using `node scripts/verify-seo400-browser.mjs --origin http://localhost:4173 --paths docs/seo-400/net-new-paths.txt` on desktop viewport and `node scripts/verify-seo400-browser.mjs --origin http://localhost:4173 --paths docs/seo-400/net-new-paths.txt --mobile` on mobile viewport.
+- Production deploy used explicit Cloudflare Pages production branch upload: `pnpm migrate:remote`, `pnpm verify:deploy-readiness`, `pnpm build`, `node scripts/strip-sourcemaps.mjs`, and `pnpm exec wrangler pages deploy dist --project-name floriva-web --branch master`.
+- Production SEO verification passed with `SEO_VERIFY_ORIGIN=https://floriva.app pnpm verify:seo` after a middleware fix removed duplicate existing JSON-LD scripts before appending the edge-generated JSON-LD payload.
+- Production browser E2E passed across all 400 net-new routes using `node scripts/verify-seo400-browser.mjs --origin https://floriva.app --paths docs/seo-400/net-new-paths.txt` on desktop viewport and `node scripts/verify-seo400-browser.mjs --origin https://floriva.app --paths docs/seo-400/net-new-paths.txt --mobile` on mobile viewport.
+- Final indexer artifact generated and live-verified with `node scripts/export-prod-indexer-urls.mjs --origin https://floriva.app --paths docs/seo-400/net-new-paths.txt --out artifacts/floriva-seo400-prod-urls.txt`; it contains exactly 400 production URLs.
+- Final status: 400 of 400 net-new routes are drafted, internally linked, source-reviewed, copy-reviewed, prerender verified, locally browser-verified, deployed to production, production browser-verified, and exported for indexing.

@@ -1,0 +1,116 @@
+---
+title: "Floriva vs Glow: On-Device Privacy vs Cloud Fertility Tracking"
+description: "Floriva vs Glow compared on privacy, data storage, and features. Glow is cloud-based, settled with the California AG in 2020 for $250K over a data vulnerability, and had a separate API bug in 2024 that exposed data of about 25 million users. Floriva keeps core records local-first."
+ogImage: "/og/comparisons/floriva-vs-glow.png"
+tags:
+  - "comparison"
+  - "glow"
+  - "floriva"
+  - "privacy"
+  - "fertility"
+publishedAt: "2026-05-01"
+updatedAt: "2026-05-01"
+buyerStage: "mofu"
+targetPersona:
+  - "privacy-conscious-user"
+  - "fertility-tracker"
+bluf: "Glow is a fertility and period tracker with community features and partner sharing. It is also cloud-based, requires an account, and has a documented history of security problems: a 2020 California AG settlement for $250K over a data vulnerability, and a 2024 API bug that exposed data of about 25 million users. Floriva keeps core records on your device and does not require an account for core tracking. If fertility features and community matter, Glow offers more. If privacy architecture matters, they are in different categories."
+tableData:
+  name: "Floriva vs Glow Comparison"
+  columns: ["Factor", "Floriva", "Glow"]
+  rows:
+    - ["Data location", "On-device only", "Cloud servers"]
+    - ["Account required", "No", "Yes"]
+    - ["Price", "Paid app (no free tier)", "Free / Premium"]
+    - ["Platform", "iOS + Android", "iOS + Android"]
+    - ["Subpoenable", "No", "Yes"]
+    - ["Security incidents", "None known", "2020 CA AG $250K settlement; 2024 API bug (~25M users)"]
+    - ["Partner sharing", "No", "Yes"]
+    - ["Community features", "No", "Yes (forums)"]
+proscons:
+  - subject: "Floriva"
+    pros:
+      - "Local-first core records, no readable central cycle database"
+      - "No account required for core tracking"
+      - "Encrypted backup file for moving to a new phone"
+    cons:
+      - "No fertility community or partner sharing features"
+      - "Smaller prediction dataset"
+      - "Paid subscription required, no free tier"
+  - subject: "Glow"
+    pros:
+      - "Detailed fertility tracking with partner sharing"
+      - "Community forums for fertility support"
+      - "Free tier available"
+      - "Established app with large user base"
+    cons:
+      - "Cloud-based, data stored on company servers"
+      - "Account required with email"
+      - "2020 CA AG settlement ($250K); 2024 API bug exposed ~25M users' data"
+      - "Data can be subpoenaed from servers"
+faqs:
+  - q: "Did Glow have a data breach?"
+    a: "Glow has had two separate security incidents. In 2016, Consumer Reports found that Glow's Partner Connect feature could share a user's health data with anyone who sent a link request, without the user's confirmation. Glow stated it patched the issue. The California Attorney General settled with Glow in September 2020 for $250,000 over this vulnerability. Separately, in October 2024, a security researcher found an API bug that exposed personal data of about 25 million Glow users, including names, location data, and uploaded images."
+  - q: "Does Glow sell your data?"
+    a: "Check Glow's privacy policy directly for current data sharing practices. The core issue is architectural: Glow stores your data on its servers. That means the data can be shared, subpoenaed, or exposed regardless of current policy commitments."
+  - q: "Can my partner see my Glow data?"
+    a: "Yes. Glow offers partner sharing features. This is a real advantage for couples tracking fertility together, but it requires both partners to have accounts on Glow's cloud infrastructure."
+answers:
+  - q: "Is Glow safe for period tracking?"
+    a: "Glow is a cloud-based period and fertility tracker that stores data on company servers. Consumer Reports found a security vulnerability in 2016. The California AG settled with Glow in 2020 for $250,000 over that issue. A separate API bug in October 2024 exposed data of about 25 million users. The core privacy issue is architectural: Glow holds your data on servers that can be subpoenaed, breached, or accessed through legal process. If fertility features are your priority, Glow is functional. If privacy is your priority, on-device options like Floriva, Euki, or Drip store no readable central cycle database."
+  - q: "What is a more private alternative to Glow?"
+    a: "Privacy-first period trackers keep readable cycle records away from company databases. Floriva keeps core records on your phone and has no sync at all. Euki and Drip are local-only options too. These apps reduce what readable records the company can produce."
+relatedPages:
+  - "/compare/alternatives/glow-app-alternative"
+  - "/resources/best/best-private-period-tracker-apps"
+  - "/resources/guides/what-is-zero-knowledge-period-tracker"
+  - "/resources/guides/how-period-tracker-apps-collect-data"
+---
+
+Glow is built for people actively trying to conceive. It has partner sharing, community forums, and detailed fertility metrics. It is also a cloud-based app that stores your health data on company servers. Those servers have had two documented security incidents: a 2016 vulnerability found by Consumer Reports that led to a $250,000 California AG settlement in 2020, and a separate 2024 API bug that exposed data of about 25 million users.
+
+Floriva is built for people who want core cycle records to stay local-first. No account is required for core tracking, and Floriva has no readable central cycle database. Less fertility-specific depth, more privacy by design.
+
+## The Core Difference
+
+Glow is a cloud app. Your cycle data, fertility markers, symptoms, and partner-shared information live on Glow's servers. You need an account. The company has access to your data.
+
+Floriva is a local-first app. Core records live on your phone. No account is required for core tracking. There is no sync, so no cycle data is transmitted at all.
+
+This is not a policy difference. It is an architecture difference. Glow could change its privacy policy tomorrow and your data would still be on their servers. Floriva has no server at all, so there is nothing there to read.
+
+## Data Architecture
+
+**Glow** requires an email account to start tracking. Your data syncs to Glow's cloud infrastructure. Partner sharing means a second account also has access to your data through Glow's servers. Community features mean your posts and interactions are stored alongside your health data.
+
+In 2016, Consumer Reports found that Glow's Partner Connect feature could share a user's data without their consent. Glow stated it fixed the issue. The California AG settled with Glow in September 2020 for $250,000 over this vulnerability. In October 2024, a security researcher found a separate API bug that exposed personal data of about 25 million Glow users. Both incidents show the risk in cloud-based health apps: when a company stores your data, their security failures are your data exposure.
+
+**Floriva** stores core records in your device's local storage. No account is required for core tracking. There is no sync. If you want your history on a new phone, you export an encrypted backup file, locked with your own passphrase, and move it yourself. Floriva cannot read it.
+
+A [zero-knowledge period tracker](/resources/guides/what-is-zero-knowledge-period-tracker) means the company does not know what you are tracking. Floriva fits that definition. Glow does not.
+
+## Features
+
+Glow has real advantages for fertility-focused users. Partner accounts let couples track together. Community forums provide peer support. Detailed fertility metrics go beyond basic period tracking into ovulation prediction, intercourse logging, and pregnancy probability estimates.
+
+Floriva tracks cycles, symptoms, and patterns without the fertility-community layer. It is a tracking tool, not a social platform. There is no partner sharing, no community, no forums.
+
+If you are actively trying to conceive and value community support, Glow offers features Floriva does not. If you want your data to stay private, Floriva offers guarantees Glow cannot make.
+
+## Pricing
+
+**Glow:** Free tier with basic tracking. Premium subscription for advanced features. The free tier relies on the broader Glow business model, which treats data about its user base as a business asset.
+
+**Floriva:** Paid subscription, no free tier. The subscription is the entire business model. Floriva does not rely on data-related revenue from readable cycle records.
+
+## Who Should Choose Floriva vs Glow
+
+**Choose Glow if:** you are actively trying to conceive, you want partner sharing and community features, and you are comfortable with cloud-based storage. Glow delivers fertility-specific features that on-device trackers do not match.
+
+**Choose Floriva if:** you want your cycle data to stay on your device. If Glow's documented security incidents concern you, if subpoena risk matters, or if you do not want a company holding your reproductive health data, Floriva's architecture removes those concerns. See the full [best private period tracker apps](/resources/best/best-private-period-tracker-apps) list for other on-device options.
+
+## The Privacy Bottom Line
+
+Glow's security record shows what happens when cloud-based health apps have vulnerabilities: your most sensitive data is exposed. Glow has addressed specific issues over the years, but the underlying reality has not changed. Your data is on their servers. Their security problems are your problem.
+
+Floriva has no readable central cycle database to expose in a server-side breach. The privacy guarantee is built into the architecture, not dependent on the quality of the company's security team.

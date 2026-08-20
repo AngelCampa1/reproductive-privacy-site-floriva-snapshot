@@ -1,0 +1,1077 @@
+{
+  "schemaVersion": 1,
+  "runId": "2026-08-07T19-33-12Z",
+  "origin": "http://localhost:4173",
+  "viewport": {
+    "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 2
+  },
+  "reducedMotion": "reduce",
+  "routeCount": 20,
+  "captureCount": 29,
+  "totals": {
+    "error": 0,
+    "warn": 0,
+    "info": 56,
+    "allowlisted": 1682
+  },
+  "byRule": {
+    "tap-target-too-small": {
+      "error": 0,
+      "warn": 0,
+      "info": 0,
+      "allowlisted": 98,
+      "routes": [
+        "/",
+        "/get",
+        "/privacy",
+        "/terms",
+        "/support",
+        "/privacy-features",
+        "/this-route-does-not-exist",
+        "/resources",
+        "/compare",
+        "/resources/guides",
+        "/resources/health",
+        "/free",
+        "/tools/quiz",
+        "/period-tracker-privacy",
+        "/compare/versus",
+        "/compare/alternatives",
+        "/compare/pricing",
+        "/resources/best",
+        "/resources/privacy-in-practice",
+        "/app-guides",
+        "/resources/guides/is-flo-safe-to-use",
+        "/compare/versus/flo-vs-clue-privacy-comparison"
+      ]
+    },
+    "text-too-small": {
+      "error": 0,
+      "warn": 0,
+      "info": 0,
+      "allowlisted": 1584,
+      "routes": [
+        "/",
+        "/get",
+        "/privacy",
+        "/terms",
+        "/support",
+        "/privacy-features",
+        "/this-route-does-not-exist",
+        "/resources",
+        "/compare",
+        "/resources/guides",
+        "/resources/health",
+        "/free",
+        "/tools/quiz",
+        "/period-tracker-privacy",
+        "/compare/versus",
+        "/compare/alternatives",
+        "/compare/pricing",
+        "/resources/best",
+        "/resources/privacy-in-practice",
+        "/app-guides",
+        "/resources/guides/is-flo-safe-to-use",
+        "/compare/versus/flo-vs-clue-privacy-comparison"
+      ]
+    },
+    "contained-overflow": {
+      "error": 0,
+      "warn": 0,
+      "info": 54,
+      "allowlisted": 0,
+      "routes": [
+        "/compare/versus/flo-vs-clue-privacy-comparison"
+      ]
+    },
+    "scroller-scrolls": {
+      "error": 0,
+      "warn": 0,
+      "info": 2,
+      "allowlisted": 0,
+      "routes": [
+        "/compare/versus/flo-vs-clue-privacy-comparison"
+      ]
+    }
+  },
+  "byRoute": [
+    {
+      "route": "/",
+      "state": "loaded",
+      "status": 200,
+      "archetype": "home",
+      "metrics": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "docScrollWidth": 390,
+        "fullPageHeight": 11177,
+        "stickyHeaderHeight": null,
+        "stickyHeaderBottom": null,
+        "fixedCoverageRatio": 0,
+        "interactiveCount": 35,
+        "scrollerCount": 0,
+        "revealStuck": 0,
+        "fontSizeHistogram": {
+          "12": 30,
+          "13": 2,
+          "14": 13,
+          "15": 13,
+          "16": 35,
+          "18": 8,
+          "20": 1,
+          "24": 8,
+          "30": 3,
+          "36": 1,
+          "42": 2
+        }
+      },
+      "findingCountsBySeverity": {
+        "allowlisted": 38
+      }
+    },
+    {
+      "route": "/get",
+      "state": "loaded",
+      "status": 200,
+      "archetype": "get-app (hero + QR)",
+      "metrics": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "docScrollWidth": 390,
+        "fullPageHeight": 3085,
+        "stickyHeaderHeight": null,
+        "stickyHeaderBottom": null,
+        "fixedCoverageRatio": 0,
+        "interactiveCount": 31,
+        "scrollerCount": 0,
+        "revealStuck": 0,
+        "fontSizeHistogram": {
+          "12": 12,
+          "14": 6,
+          "15": 4,
+          "16": 26,
+          "20": 1,
+          "22": 2,
+          "24": 1,
+          "42": 1
+        }
+      },
+      "findingCountsBySeverity": {
+        "allowlisted": 13
+      }
+    },
+    {
+      "route": "/privacy",
+      "state": "loaded",
+      "status": 200,
+      "archetype": "static-knowledge",
+      "metrics": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "docScrollWidth": 390,
+        "fullPageHeight": 9081,
+        "stickyHeaderHeight": null,
+        "stickyHeaderBottom": null,
+        "fixedCoverageRatio": 0,
+        "interactiveCount": 32,
+        "scrollerCount": 0,
+        "revealStuck": 0,
+        "fontSizeHistogram": {
+          "12": 12,
+          "14": 6,
+          "15": 4,
+          "16": 52,
+          "20": 1,
+          "22": 15,
+          "24": 1,
+          "28": 1,
+          "40": 1
+        }
+      },
+      "findingCountsBySeverity": {
+        "allowlisted": 13
+      }
+    },
+    {
+      "route": "/terms",
+      "state": "loaded",
+      "status": 200,
+      "archetype": "static-knowledge",
+      "metrics": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "docScrollWidth": 390,
+        "fullPageHeight": 2659,
+        "stickyHeaderHeight": null,
+        "stickyHeaderBottom": null,
+        "fixedCoverageRatio": 0,
+        "interactiveCount": 28,
+        "scrollerCount": 0,
+        "revealStuck": 0,
+        "fontSizeHistogram": {
+          "12": 9,
+          "14": 6,
+          "15": 2,
+          "16": 23,
+          "20": 1,
+          "22": 1,
+          "24": 1,
+          "40": 1
+        }
+      },
+      "findingCountsBySeverity": {
+        "allowlisted": 10
+      }
+    },
+    {
+      "route": "/support",
+      "state": "loaded",
+      "status": 200,
+      "archetype": "static-knowledge",
+      "metrics": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "docScrollWidth": 390,
+        "fullPageHeight": 3440,
+        "stickyHeaderHeight": null,
+        "stickyHeaderBottom": null,
+        "fixedCoverageRatio": 0,
+        "interactiveCount": 32,
+        "scrollerCount": 0,
+        "revealStuck": 0,
+        "fontSizeHistogram": {
+          "12": 12,
+          "14": 6,
+          "15": 4,
+          "16": 29,
+          "20": 1,
+          "22": 2,
+          "24": 1,
+          "28": 1,
+          "40": 1
+        }
+      },
+      "findingCountsBySeverity": {
+        "allowlisted": 13
+      }
+    },
+    {
+      "route": "/privacy-features",
+      "state": "loaded",
+      "status": 200,
+      "archetype": "static-knowledge",
+      "metrics": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "docScrollWidth": 390,
+        "fullPageHeight": 3676,
+        "stickyHeaderHeight": null,
+        "stickyHeaderBottom": null,
+        "fixedCoverageRatio": 0,
+        "interactiveCount": 32,
+        "scrollerCount": 0,
+        "revealStuck": 0,
+        "fontSizeHistogram": {
+          "12": 12,
+          "14": 6,
+          "15": 4,
+          "16": 31,
+          "20": 1,
+          "22": 2,
+          "24": 1,
+          "28": 1,
+          "40": 1
+        }
+      },
+      "findingCountsBySeverity": {
+        "allowlisted": 13
+      }
+    },
+    {
+      "route": "/this-route-does-not-exist",
+      "state": "loaded",
+      "status": 200,
+      "archetype": "404",
+      "metrics": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "docScrollWidth": 390,
+        "fullPageHeight": 2680,
+        "stickyHeaderHeight": null,
+        "stickyHeaderBottom": null,
+        "fixedCoverageRatio": 0,
+        "interactiveCount": 32,
+        "scrollerCount": 0,
+        "revealStuck": 0,
+        "fontSizeHistogram": {
+          "12": 10,
+          "14": 6,
+          "15": 2,
+          "16": 25,
+          "20": 1,
+          "24": 1,
+          "40": 1
+        }
+      },
+      "findingCountsBySeverity": {
+        "allowlisted": 11
+      }
+    },
+    {
+      "route": "/resources",
+      "state": "loaded",
+      "status": 200,
+      "archetype": "hub-pillar",
+      "metrics": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "docScrollWidth": 390,
+        "fullPageHeight": 10442,
+        "stickyHeaderHeight": null,
+        "stickyHeaderBottom": null,
+        "fixedCoverageRatio": 0,
+        "interactiveCount": 67,
+        "scrollerCount": 0,
+        "revealStuck": 0,
+        "fontSizeHistogram": {
+          "12": 82,
+          "13": 1,
+          "14": 6,
+          "15": 24,
+          "16": 47,
+          "17": 20,
+          "20": 1,
+          "23": 3,
+          "24": 3,
+          "27": 4,
+          "28": 1,
+          "32": 1
+        }
+      },
+      "findingCountsBySeverity": {
+        "allowlisted": 85
+      }
+    },
+    {
+      "route": "/compare",
+      "state": "loaded",
+      "status": 200,
+      "archetype": "hub-pillar",
+      "metrics": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "docScrollWidth": 390,
+        "fullPageHeight": 10901,
+        "stickyHeaderHeight": null,
+        "stickyHeaderBottom": null,
+        "fixedCoverageRatio": 0,
+        "interactiveCount": 67,
+        "scrollerCount": 0,
+        "revealStuck": 0,
+        "fontSizeHistogram": {
+          "12": 77,
+          "13": 1,
+          "14": 6,
+          "15": 24,
+          "16": 47,
+          "17": 20,
+          "20": 1,
+          "23": 3,
+          "24": 3,
+          "27": 4,
+          "28": 1,
+          "32": 1
+        }
+      },
+      "findingCountsBySeverity": {
+        "allowlisted": 80
+      }
+    },
+    {
+      "route": "/resources/guides",
+      "state": "loaded",
+      "status": 200,
+      "archetype": "hub-pillar",
+      "metrics": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "docScrollWidth": 390,
+        "fullPageHeight": 18595,
+        "stickyHeaderHeight": null,
+        "stickyHeaderBottom": null,
+        "fixedCoverageRatio": 0,
+        "interactiveCount": 115,
+        "scrollerCount": 0,
+        "revealStuck": 0,
+        "fontSizeHistogram": {
+          "12": 177,
+          "13": 1,
+          "14": 6,
+          "15": 77,
+          "16": 39,
+          "17": 73,
+          "20": 1,
+          "23": 3,
+          "24": 3,
+          "27": 2,
+          "28": 1,
+          "32": 1
+        }
+      },
+      "findingCountsBySeverity": {
+        "allowlisted": 181
+      }
+    },
+    {
+      "route": "/resources/health",
+      "state": "loaded",
+      "status": 200,
+      "archetype": "hub-pillar",
+      "metrics": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "docScrollWidth": 390,
+        "fullPageHeight": 12046,
+        "stickyHeaderHeight": null,
+        "stickyHeaderBottom": null,
+        "fixedCoverageRatio": 0,
+        "interactiveCount": 75,
+        "scrollerCount": 0,
+        "revealStuck": 0,
+        "fontSizeHistogram": {
+          "12": 93,
+          "13": 1,
+          "14": 6,
+          "15": 29,
+          "16": 50,
+          "17": 25,
+          "20": 1,
+          "23": 3,
+          "24": 3,
+          "27": 5,
+          "28": 1,
+          "32": 1
+        }
+      },
+      "findingCountsBySeverity": {
+        "allowlisted": 97
+      }
+    },
+    {
+      "route": "/free",
+      "state": "loaded",
+      "status": 200,
+      "archetype": "hub-pillar",
+      "metrics": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "docScrollWidth": 390,
+        "fullPageHeight": 9958,
+        "stickyHeaderHeight": null,
+        "stickyHeaderBottom": null,
+        "fixedCoverageRatio": 0,
+        "interactiveCount": 74,
+        "scrollerCount": 0,
+        "revealStuck": 0,
+        "fontSizeHistogram": {
+          "12": 93,
+          "13": 1,
+          "14": 6,
+          "15": 38,
+          "16": 37,
+          "17": 34,
+          "20": 1,
+          "23": 3,
+          "24": 3,
+          "27": 1,
+          "28": 1,
+          "32": 1
+        }
+      },
+      "findingCountsBySeverity": {
+        "allowlisted": 96
+      }
+    },
+    {
+      "route": "/tools/quiz",
+      "state": "loaded",
+      "status": 200,
+      "archetype": "hub-pillar",
+      "metrics": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "docScrollWidth": 390,
+        "fullPageHeight": 7043,
+        "stickyHeaderHeight": null,
+        "stickyHeaderBottom": null,
+        "fixedCoverageRatio": 0,
+        "interactiveCount": 52,
+        "scrollerCount": 0,
+        "revealStuck": 0,
+        "fontSizeHistogram": {
+          "12": 49,
+          "13": 1,
+          "14": 6,
+          "15": 16,
+          "16": 37,
+          "17": 12,
+          "20": 1,
+          "23": 3,
+          "24": 3,
+          "27": 1,
+          "28": 1,
+          "32": 1
+        }
+      },
+      "findingCountsBySeverity": {
+        "allowlisted": 52
+      }
+    },
+    {
+      "route": "/period-tracker-privacy",
+      "state": "loaded",
+      "status": 200,
+      "archetype": "hub-state-tier",
+      "metrics": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "docScrollWidth": 390,
+        "fullPageHeight": 13254,
+        "stickyHeaderHeight": null,
+        "stickyHeaderBottom": null,
+        "fixedCoverageRatio": 0,
+        "interactiveCount": 90,
+        "scrollerCount": 0,
+        "revealStuck": 0,
+        "fontSizeHistogram": {
+          "12": 77,
+          "13": 1,
+          "14": 6,
+          "15": 51,
+          "16": 43,
+          "17": 47,
+          "20": 1,
+          "23": 3,
+          "24": 3,
+          "27": 4,
+          "28": 1,
+          "32": 1
+        }
+      },
+      "findingCountsBySeverity": {
+        "allowlisted": 80
+      }
+    },
+    {
+      "route": "/compare/versus",
+      "state": "loaded",
+      "status": 200,
+      "archetype": "hub-plain",
+      "metrics": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "docScrollWidth": 390,
+        "fullPageHeight": 11164,
+        "stickyHeaderHeight": null,
+        "stickyHeaderBottom": null,
+        "fixedCoverageRatio": 0,
+        "interactiveCount": 75,
+        "scrollerCount": 0,
+        "revealStuck": 0,
+        "fontSizeHistogram": {
+          "12": 94,
+          "13": 1,
+          "14": 6,
+          "15": 38,
+          "16": 36,
+          "17": 34,
+          "20": 1,
+          "23": 3,
+          "24": 3,
+          "27": 1,
+          "28": 1,
+          "32": 1
+        }
+      },
+      "findingCountsBySeverity": {
+        "allowlisted": 98
+      }
+    },
+    {
+      "route": "/compare/alternatives",
+      "state": "loaded",
+      "status": 200,
+      "archetype": "hub-plain",
+      "metrics": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "docScrollWidth": 390,
+        "fullPageHeight": 10150,
+        "stickyHeaderHeight": null,
+        "stickyHeaderBottom": null,
+        "fixedCoverageRatio": 0,
+        "interactiveCount": 69,
+        "scrollerCount": 0,
+        "revealStuck": 0,
+        "fontSizeHistogram": {
+          "12": 82,
+          "13": 1,
+          "14": 6,
+          "15": 32,
+          "16": 36,
+          "17": 28,
+          "20": 1,
+          "23": 3,
+          "24": 3,
+          "27": 1,
+          "28": 1,
+          "32": 1
+        }
+      },
+      "findingCountsBySeverity": {
+        "allowlisted": 86
+      }
+    },
+    {
+      "route": "/compare/pricing",
+      "state": "loaded",
+      "status": 200,
+      "archetype": "hub-plain",
+      "metrics": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "docScrollWidth": 390,
+        "fullPageHeight": 7585,
+        "stickyHeaderHeight": null,
+        "stickyHeaderBottom": null,
+        "fixedCoverageRatio": 0,
+        "interactiveCount": 55,
+        "scrollerCount": 0,
+        "revealStuck": 0,
+        "fontSizeHistogram": {
+          "12": 54,
+          "13": 1,
+          "14": 6,
+          "15": 18,
+          "16": 36,
+          "17": 14,
+          "20": 1,
+          "23": 3,
+          "24": 3,
+          "27": 1,
+          "28": 1,
+          "32": 1
+        }
+      },
+      "findingCountsBySeverity": {
+        "allowlisted": 58
+      }
+    },
+    {
+      "route": "/resources/best",
+      "state": "loaded",
+      "status": 200,
+      "archetype": "hub-plain",
+      "metrics": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "docScrollWidth": 390,
+        "fullPageHeight": 12055,
+        "stickyHeaderHeight": null,
+        "stickyHeaderBottom": null,
+        "fixedCoverageRatio": 0,
+        "interactiveCount": 82,
+        "scrollerCount": 0,
+        "revealStuck": 0,
+        "fontSizeHistogram": {
+          "12": 108,
+          "13": 1,
+          "14": 6,
+          "15": 45,
+          "16": 36,
+          "17": 41,
+          "20": 1,
+          "23": 3,
+          "24": 3,
+          "27": 1,
+          "28": 1,
+          "32": 1
+        }
+      },
+      "findingCountsBySeverity": {
+        "allowlisted": 112
+      }
+    },
+    {
+      "route": "/resources/privacy-in-practice",
+      "state": "loaded",
+      "status": 200,
+      "archetype": "hub-plain (97 entries — densest)",
+      "metrics": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "docScrollWidth": 390,
+        "fullPageHeight": 6170,
+        "stickyHeaderHeight": null,
+        "stickyHeaderBottom": null,
+        "fixedCoverageRatio": 0,
+        "interactiveCount": 49,
+        "scrollerCount": 0,
+        "revealStuck": 0,
+        "fontSizeHistogram": {
+          "12": 42,
+          "13": 1,
+          "14": 6,
+          "15": 12,
+          "16": 36,
+          "17": 8,
+          "20": 1,
+          "23": 3,
+          "24": 3,
+          "27": 1,
+          "28": 1,
+          "32": 1
+        }
+      },
+      "findingCountsBySeverity": {
+        "allowlisted": 46
+      }
+    },
+    {
+      "route": "/app-guides",
+      "state": "loaded",
+      "status": 200,
+      "archetype": "hub-plain",
+      "metrics": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "docScrollWidth": 390,
+        "fullPageHeight": 9859,
+        "stickyHeaderHeight": null,
+        "stickyHeaderBottom": null,
+        "fixedCoverageRatio": 0,
+        "interactiveCount": 69,
+        "scrollerCount": 0,
+        "revealStuck": 0,
+        "fontSizeHistogram": {
+          "12": 83,
+          "13": 1,
+          "14": 6,
+          "15": 33,
+          "16": 37,
+          "17": 29,
+          "20": 1,
+          "23": 3,
+          "24": 3,
+          "27": 1,
+          "28": 1,
+          "32": 1
+        }
+      },
+      "findingCountsBySeverity": {
+        "allowlisted": 86
+      }
+    },
+    {
+      "route": "/",
+      "state": "megamenu-open",
+      "status": 200,
+      "archetype": "home",
+      "metrics": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "docScrollWidth": 390,
+        "fullPageHeight": 11177,
+        "stickyHeaderHeight": null,
+        "stickyHeaderBottom": null,
+        "fixedCoverageRatio": 0,
+        "interactiveCount": 53,
+        "scrollerCount": 1,
+        "revealStuck": 0,
+        "fontSizeHistogram": {
+          "12": 34,
+          "13": 2,
+          "14": 30,
+          "15": 13,
+          "16": 36,
+          "18": 8,
+          "20": 1,
+          "24": 8,
+          "25": 1,
+          "30": 3,
+          "36": 1,
+          "42": 2
+        }
+      },
+      "findingCountsBySeverity": {
+        "allowlisted": 42
+      }
+    },
+    {
+      "route": "/period-tracker-privacy",
+      "state": "megamenu-open",
+      "status": 200,
+      "archetype": "hub-state-tier",
+      "metrics": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "docScrollWidth": 390,
+        "fullPageHeight": 13254,
+        "stickyHeaderHeight": null,
+        "stickyHeaderBottom": null,
+        "fixedCoverageRatio": 0,
+        "interactiveCount": 108,
+        "scrollerCount": 1,
+        "revealStuck": 0,
+        "fontSizeHistogram": {
+          "12": 81,
+          "13": 1,
+          "14": 23,
+          "15": 51,
+          "16": 44,
+          "17": 47,
+          "20": 1,
+          "23": 3,
+          "24": 3,
+          "25": 1,
+          "27": 4,
+          "28": 1,
+          "32": 1
+        }
+      },
+      "findingCountsBySeverity": {
+        "allowlisted": 84
+      }
+    },
+    {
+      "route": "/resources/guides/is-flo-safe-to-use",
+      "state": "megamenu-open",
+      "status": 200,
+      "archetype": "content-article",
+      "metrics": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "docScrollWidth": 390,
+        "fullPageHeight": 14243,
+        "stickyHeaderHeight": null,
+        "stickyHeaderBottom": null,
+        "fixedCoverageRatio": 0,
+        "interactiveCount": 77,
+        "scrollerCount": 1,
+        "revealStuck": 0,
+        "fontSizeHistogram": {
+          "12": 36,
+          "14": 23,
+          "15": 9,
+          "16": 46,
+          "17": 44,
+          "18": 1,
+          "19": 4,
+          "20": 5,
+          "23": 4,
+          "24": 3,
+          "25": 1,
+          "26": 5,
+          "28": 1,
+          "35": 1
+        }
+      },
+      "findingCountsBySeverity": {
+        "allowlisted": 48
+      }
+    },
+    {
+      "route": "/",
+      "state": "details-open",
+      "status": 200,
+      "archetype": "home",
+      "metrics": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "docScrollWidth": 390,
+        "fullPageHeight": 11804,
+        "stickyHeaderHeight": null,
+        "stickyHeaderBottom": null,
+        "fixedCoverageRatio": 0,
+        "interactiveCount": 35,
+        "scrollerCount": 0,
+        "revealStuck": 0,
+        "fontSizeHistogram": {
+          "12": 30,
+          "13": 2,
+          "14": 13,
+          "15": 13,
+          "16": 38,
+          "18": 8,
+          "20": 1,
+          "24": 8,
+          "30": 3,
+          "36": 1,
+          "42": 2
+        }
+      },
+      "findingCountsBySeverity": {
+        "allowlisted": 38
+      }
+    },
+    {
+      "route": "/resources/guides/is-flo-safe-to-use",
+      "state": "details-open",
+      "status": 200,
+      "archetype": "content-article",
+      "metrics": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "docScrollWidth": 390,
+        "fullPageHeight": 15313,
+        "stickyHeaderHeight": null,
+        "stickyHeaderBottom": null,
+        "fixedCoverageRatio": 0,
+        "interactiveCount": 59,
+        "scrollerCount": 0,
+        "revealStuck": 0,
+        "fontSizeHistogram": {
+          "12": 32,
+          "14": 6,
+          "15": 9,
+          "16": 49,
+          "17": 44,
+          "18": 1,
+          "19": 4,
+          "20": 5,
+          "23": 4,
+          "24": 3,
+          "26": 5,
+          "28": 1,
+          "35": 1
+        }
+      },
+      "findingCountsBySeverity": {
+        "allowlisted": 44
+      }
+    },
+    {
+      "route": "/compare/versus/flo-vs-clue-privacy-comparison",
+      "state": "details-open",
+      "status": 200,
+      "archetype": "content-comparison",
+      "metrics": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "docScrollWidth": 390,
+        "fullPageHeight": 15888,
+        "stickyHeaderHeight": null,
+        "stickyHeaderBottom": null,
+        "fixedCoverageRatio": 0,
+        "interactiveCount": 60,
+        "scrollerCount": 1,
+        "revealStuck": 0,
+        "fontSizeHistogram": {
+          "12": 43,
+          "14": 10,
+          "15": 8,
+          "16": 113,
+          "17": 13,
+          "18": 3,
+          "19": 6,
+          "20": 3,
+          "23": 6,
+          "24": 6,
+          "26": 4,
+          "28": 1,
+          "35": 1
+        }
+      },
+      "findingCountsBySeverity": {
+        "info": 28,
+        "allowlisted": 56
+      }
+    },
+    {
+      "route": "/resources/guides/is-flo-safe-to-use",
+      "state": "modal-open",
+      "status": 200,
+      "archetype": "content-article",
+      "metrics": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "docScrollWidth": 390,
+        "fullPageHeight": 14243,
+        "stickyHeaderHeight": null,
+        "stickyHeaderBottom": null,
+        "fixedCoverageRatio": 0,
+        "interactiveCount": 63,
+        "scrollerCount": 1,
+        "revealStuck": 0,
+        "fontSizeHistogram": {
+          "12": 33,
+          "14": 6,
+          "15": 9,
+          "16": 49,
+          "17": 44,
+          "18": 2,
+          "19": 4,
+          "20": 5,
+          "23": 4,
+          "24": 3,
+          "26": 5,
+          "28": 1,
+          "32": 1,
+          "35": 1
+        }
+      },
+      "findingCountsBySeverity": {
+        "allowlisted": 45
+      }
+    },
+    {
+      "route": "/compare/versus/flo-vs-clue-privacy-comparison",
+      "state": "modal-open",
+      "status": 200,
+      "archetype": "content-comparison",
+      "metrics": {
+        "viewportWidth": 390,
+        "viewportHeight": 844,
+        "docScrollWidth": 390,
+        "fullPageHeight": 14432,
+        "stickyHeaderHeight": null,
+        "stickyHeaderBottom": null,
+        "fixedCoverageRatio": 0,
+        "interactiveCount": 64,
+        "scrollerCount": 2,
+        "revealStuck": 0,
+        "fontSizeHistogram": {
+          "12": 44,
+          "14": 10,
+          "15": 8,
+          "16": 112,
+          "17": 13,
+          "18": 4,
+          "19": 6,
+          "20": 3,
+          "23": 6,
+          "24": 6,
+          "26": 4,
+          "28": 1,
+          "32": 1,
+          "35": 1
+        }
+      },
+      "findingCountsBySeverity": {
+        "info": 28,
+        "allowlisted": 57
+      }
+    },
+    {
+      "route": "/",
+      "state": "focus",
+      "status": 200,
+      "archetype": "skip-link",
+      "metrics": {},
+      "findingCountsBySeverity": {}
+    }
+  ],
+  "_note": "Per-finding detail (1682 allowlisted entries) trimmed for repo size; regenerate with pnpm verify:mobile-layout:fast."
+}

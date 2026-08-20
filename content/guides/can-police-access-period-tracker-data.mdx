@@ -1,0 +1,84 @@
+---
+title: "Can Police Access Your Period Tracker Data"
+description: "In states with abortion bans, police can subpoena period tracker data from cloud apps. Device-first apps reduce what a company can produce."
+ogImage: "/og/guides/can-police-access-period-tracker-data.png"
+tags:
+  - "guide"
+publishedAt: "2026-03-21"
+updatedAt: "2026-03-21"
+buyerStage: "tofu"
+targetPersona:
+  - "flo-refugee"
+  - "post-roe-tracker"
+  - "paper-tracker"
+  - "privacy-conscious-user"
+bluf: "Police can subpoena period tracker data from companies that store it on servers. Flo, Clue, Natural Cycles, and most major apps store data server-side and must comply with valid court orders. Floriva keeps core records on your device and has no readable central cycle database. Euki and Drip are local-only."
+definitions:
+  - term: "Subpoena"
+    definition: "A court-issued order requiring a person or organization to produce specific documents or data. Companies that receive valid subpoenas are legally obligated to comply. The key variable for period tracker users is whether the company holds any data to turn over."
+  - term: "Search warrant"
+    definition: "A court order authorizing law enforcement to search a specific location or device for evidence. A search warrant for a phone could allow law enforcement to access a period tracker app installed on it, regardless of where data is stored, device or cloud."
+  - term: "Third-party doctrine"
+    definition: "A US legal principle holding that information voluntarily shared with a third party loses Fourth Amendment protection. Data you share with a period tracking app company may be considered voluntarily shared with that third party, reducing your constitutional privacy protections compared to data kept only on your device."
+answers:
+  - q: "Can law enforcement get my period tracker data?"
+    a: "If your period tracker stores readable data on company servers, law enforcement can subpoena that data with a valid court order. The company must comply. There is no HIPAA protection for consumer apps, period trackers are not healthcare providers. If your tracker keeps data only on your device, law enforcement would need a warrant for your physical phone, not a subpoena to the app company."
+  - q: "Has period tracker data actually been used in a legal case?"
+    a: "We are not aware of a documented US case where period tracker data itself was subpoenaed or used as evidence in an abortion-related prosecution. Law enforcement has sought other digital evidence, including search history, text messages, and location data, in abortion-related investigations in states with abortion restrictions. Period tracker data, including pregnancy tracking and missed period logs, is the kind of evidence prosecutors could seek if a cloud app holds it."
+  - q: "Does Flo have to give police my data?"
+    a: "If law enforcement presents Flo with a valid subpoena or court order for a user's data, Flo is legally required to comply. Flo stores cycle data on its servers. Flo's Anonymous Mode does not prevent this, it may reduce identifiability, but the data still exists on Flo's servers. Flo's privacy policy acknowledges it may share data 'to comply with legal obligations.'"
+  - q: "What period tracker can't police access through the company?"
+    a: "Apps that keep readable data off company servers reduce what the app company can turn over. Floriva keeps core records on your device and has no sync at all. Euki (iOS/Android) and Drip (Android) are local-only. Law enforcement can still seek a warrant for your physical phone."
+faqs:
+  - q: "Do I need to be in a state with an abortion ban to be at risk?"
+    a: "Not necessarily. Prosecutors in restrictive states have sought data on individuals who traveled out of state for abortions. Location data and digital records have been relevant in such cases. If you live in a state with abortion access but travel to care or communicate with someone in a restrictive state, cloud-based app data could still be sought."
+  - q: "Does deleting the app protect me?"
+    a: "Deleting the app from your phone does not delete data from the company's servers. You need to submit a formal deletion request through the app's account settings. Even after deletion, there may be a retention window before data is permanently removed. Data already shared with third-party analytics providers may persist with those companies."
+  - q: "What about my phone's built-in Health app?"
+    a: "Apple's Health app stores data on-device and in iCloud. iCloud data can be accessed via a warrant to Apple. Data stored only on your device (without iCloud backup) is more protected, as law enforcement would need physical access to your phone. Apple has implemented end-to-end encryption for iCloud backups via Advanced Data Protection, enabling this provides stronger protection."
+relatedPages:
+  - /resources/best/best-private-period-tracker-apps
+  - /compare/alternatives/flo-app-alternative
+  - /resources/guides/period-tracker-safe-after-roe-v-wade
+  - /resources/guides/period-tracker-hipaa
+  - /resources/guides/on-device-storage-period-tracker
+  - /period-tracker-privacy/reproductive-data-privacy-laws-texas
+  - /free/post-dobbs-digital-safety-kit-hub
+---
+
+## How Subpoenas Work With Period Tracker Apps
+
+A subpoena is a legal order requiring a company or person to produce specific records. In the context of period trackers, a prosecutor could subpoena an app company for records associated with a specific user's account: cycle logs, pregnancy tracking entries, login timestamps, IP addresses, and location data if the app collected it.
+
+The company receiving the subpoena must comply if the subpoena is valid. There is no HIPAA protection here: consumer period tracking apps are not healthcare providers and are not covered by HIPAA. The primary legal protection is FTC Section 5, which governs deceptive practices, not government data access.
+
+Whether the company holds any data at all determines what it can produce.
+
+## What Happens When Law Enforcement Subpoenas a Cloud-Based App
+
+Cloud-based period trackers (Flo, Clue, Natural Cycles, Glow, Ovia, Stardust) store user data on company servers. Cross-device sync, cloud-trained cycle predictions, and account-based access all depend on it.
+
+When law enforcement presents a valid court order, these companies must produce what they hold. Their privacy policies acknowledge this: search for "legal obligations" or "law enforcement" in any major period tracker's privacy policy and you will find this disclosure.
+
+Flo's Anonymous Mode reduces the linkage between cycle data and user identity, but the data still exists on Flo's servers. It can still be produced in response to a court order targeting that data.
+
+## What On-Device Storage Actually Protects
+
+When a period tracker stores readable data only on your device, the company has no readable cycle database to produce. The company has less to produce when it does not hold readable records.
+
+Law enforcement can still seek a warrant for your physical phone. But that requires:
+- A specific legal target (you, or your device)
+- Probable cause
+- A court order
+
+This is significantly harder to obtain than a third-party subpoena to an app company, which can be issued without your knowledge or the kind of individualized suspicion required for a search warrant.
+
+## The Third-Party Doctrine Problem
+
+Under established US law, information you voluntarily share with a third party (including an app company) has reduced constitutional protection. The Supreme Court's third-party doctrine has historically meant that data held by a company on your behalf is accessible to law enforcement without the same warrant requirements that apply to your own home or device.
+
+Data you share with an app company becomes the company's data, legally accessible through normal investigative tools. Data that stays on your device never reaches that third party, so it retains stronger Fourth Amendment protection.
+
+## What Floriva Does Differently
+
+Floriva stores core cycle data in encrypted local storage on your device. No account is required, and Floriva has no sync at all. The only way data leaves your device is if you choose to export an encrypted backup file yourself. Floriva has no readable central cycle database to produce. Device access is a separate legal path.

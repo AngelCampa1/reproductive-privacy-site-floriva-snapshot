@@ -1,0 +1,78 @@
+---
+title: "How to Read a Period App Privacy Policy: What Matters"
+description: "Privacy policies are long and vague by design. This guide covers the specific clauses that determine how your period data is used, shared, and protected."
+ogImage: "/og/guides/understanding-period-app-data-policies.png"
+tags:
+  - "guide"
+publishedAt: "2026-03-31"
+updatedAt: "2026-03-31"
+buyerStage: "tofu"
+targetPersona:
+  - "flo-refugee"
+bluf: "Period app privacy policies share certain patterns: they are written by legal teams to minimize liability, not to inform users. The key clauses are data storage location, third-party sharing, data retention, and what happens when the company is acquired. Flo's privacy policy said one thing; embedded SDKs did another. Reading the policy is necessary but not sufficient."
+definitions:
+  - term: "Data Controller"
+    definition: "Under GDPR, the entity that determines the purposes and means of processing personal data. The app company is typically the data controller. This matters because the controller is responsible for data protection obligations. Multiple data controllers for your data (the app company plus analytics partners) means multiple entities have processing rights."
+  - term: "Data Processor"
+    definition: "An entity that processes data on behalf of a data controller. Third-party analytics providers (Google Firebase, Facebook Analytics) are data processors when they process your data on behalf of the app. The distinction matters because processors have their own access to your data."
+  - term: "Legitimate Interest"
+    definition: "A GDPR basis for processing data without explicit consent, used when the company claims a legitimate business reason. Companies often use 'legitimate interest' to justify analytics and service improvement data collection. This claim is not always audited and can be used to justify broad data processing."
+  - term: "Service Providers"
+    definition: "Third parties that help deliver the app's service. Privacy policies typically list categories of service providers (analytics, infrastructure, customer support) rather than specific companies. 'Analytics service providers' can mean Facebook, Google, and others without naming them."
+answers:
+  - question: "What clauses in a privacy policy tell me where my data is stored"
+    answer: "Look for the 'data storage,' 'data processing,' or 'international transfers' sections. Phrases like 'stored on our servers,' 'cloud-based infrastructure,' or 'processed in the United States' indicate server-side storage. On-device storage will be explicitly stated as 'stored locally on your device' or 'not transmitted to our servers.' If you cannot find a clear statement about storage location, assume server-side."
+  - question: "What does 'we do not sell your data' actually mean in a privacy policy"
+    answer: "In most privacy policies, 'we do not sell your data' means the company does not transfer your raw data to third parties for monetary compensation in a direct sale transaction. It typically does not cover: sharing data with analytics providers for service improvement, sharing data with advertising partners for ad targeting, and data processing by third-party SDKs embedded in the app. The FTC found that Flo shared health data with Facebook and Google while a similar claim was in its privacy policy. The sharing happened through SDKs, not through a data sale."
+  - question: "What should I look for in the 'third parties' section"
+    answer: "Look for categories of third parties rather than just named companies. 'Analytics providers,' 'advertising partners,' and 'business partners' are categories that can cover many specific companies. If the policy names specific analytics providers, check those providers' own data handling practices. If it only lists categories, you need technical tools (like Exodus Privacy for Android apps) to identify the actual companies."
+  - question: "What does the acquisition clause tell me about my data"
+    answer: "Almost every privacy policy has a clause like 'if we are acquired, your data may be transferred to the acquiring company.' This means any privacy commitments you are relying on can be revised by a future owner. An app with good privacy practices today can be acquired by a company with different practices. On-device trackers are immune to this risk because there is no readable central cycle database to transfer."
+faqs:
+  - q: "How long do period apps keep my data after I delete my account?"
+    a: "Retention policies vary. Flo's policy states backups may retain deleted account data for up to 90 days. GDPR requires data to be deleted within a reasonable time after a deletion request but does not specify a number. Some companies retain data indefinitely in aggregate or anonymized form. Look for the 'data retention' section of the privacy policy. If it says data is retained 'for as long as necessary for business purposes,' that is effectively indefinite."
+  - q: "What does GDPR compliance mean in a period app's privacy policy?"
+    a: "GDPR compliance means the company has committed to the requirements of the EU General Data Protection Regulation: lawful basis for processing, data minimization, purpose limitation, user rights (access, deletion, portability), and limitations on transfers to non-adequate jurisdictions. For users outside the EU, GDPR compliance at a company often means the company applies GDPR-equivalent protections globally, but this is voluntary unless required by law."
+  - q: "Are health apps covered by HIPAA?"
+    a: "Generally no. HIPAA (Health Insurance Portability and Accountability Act) applies to covered entities: healthcare providers, health plans, and healthcare clearinghouses, and their business associates. Period tracker apps that are not operated by these entities are not covered by HIPAA. This is why the FTC's authority, not HIPAA, governed the Flo enforcement action. The lack of HIPAA coverage is a significant gap in US reproductive health app privacy protection."
+  - q: "What is the difference between anonymized data and deleted data?"
+    a: "Anonymized data has identifying information removed so it cannot be linked back to a specific person. Some companies retain anonymized data after account deletion for research or product improvement. Deleted data is removed entirely. Privacy policies often distinguish between these, retaining anonymized data indefinitely while committing to delete personal data. If anonymization is done poorly, it can be reversed. True deletion removes the risk."
+relatedPages:
+  - "/resources/guides/how-to-audit-period-app-privacy"
+  - "/resources/guides/switching-from-flo-complete-guide"
+  - "/resources/guides/period-tracking-without-cloud"
+  - "/resources/best/best-period-trackers-no-data-sharing"
+  - "/compare/alternatives/flo-app-alternative"
+---
+
+## Why Privacy Policies Are Hard to Read
+
+Privacy policies are legal documents written primarily to satisfy regulatory requirements and limit company liability. They are not written to help users understand what actually happens to their data. Length, technical language, and vague category descriptions are features of this format, not bugs.
+
+That said, the information you need is in there. You just need to know where to look and what the standard evasions mean.
+
+## The Sections That Actually Matter
+
+**Data collection**: What specific data does the app collect? Look for a list of data categories. A period tracker should collect cycle dates and symptom logs. If it also collects device identifiers, location data, or usage behavior, that collection is happening regardless of whether you think it is necessary.
+
+**Data storage**: Where is your data stored? Look for statements about servers, cloud storage, or local storage. If you cannot find a clear statement, call the company's support and ask. "We use industry-standard security" is not an answer to "where is my data stored."
+
+**Third-party sharing**: Who else gets your data This section uses category language by design. "Analytics providers," "advertising partners," and "service providers" cover a wide range of specific companies. Use technical tools (Exodus Privacy for Android) to identify the actual companies with embedded code in the app.
+
+**Data retention**: How long is your data kept after account deletion. This matters for how much exposure remains after you leave an app.
+
+**Acquisition clause**: What happens to your data if the company is sold. The answer is almost always "it may be transferred to the acquiring company." Any privacy policy commitment you rely on can be revised by a new owner.
+
+## The Flo Lesson
+
+Flo's privacy policy at the time of the FTC enforcement action stated it would not share health information with third parties. The FTC found that data was shared with Facebook, Google, and Flurry through embedded analytics SDKs.
+
+The policy was written about Flo's own data handling decisions. The SDKs operated under their own terms, transmitting data as analytics SDKs do. There was no single person at Flo who decided to share health data with Facebook. The SDK did what it was built to do, and Flo had not fully accounted for what that meant for health data.
+
+This means reading the privacy policy is necessary but not sufficient. You also need to understand what code is embedded in the app and what that code transmits. The privacy policy does not cover third-party SDK behavior unless the policy explicitly addresses it, and most do not.
+
+## What On-Device Apps Change
+
+An on-device tracker's privacy policy is structurally simpler because there is less to describe. If no data leaves your device, there is no server-side storage to disclose, no third-party sharing to describe (because there is nothing to share), and no retention policy that matters (because the company never has your data). The policy for an on-device tracker is substantially shorter and more legible than for a cloud-based app, because the data architecture constrains what the policy can even say.
+
+Floriva's privacy policy reflects this: the most important statement is that your cycle data is stored on your device and not transmitted to Floriva's servers. Everything else follows from that architectural fact.

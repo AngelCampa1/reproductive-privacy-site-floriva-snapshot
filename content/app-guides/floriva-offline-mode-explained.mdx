@@ -1,0 +1,122 @@
+---
+title: "How Floriva's Offline Mode Works"
+description: "Floriva works fully offline with no internet required for any core tracking function. How data storage, backup, and device loss work, and why this architecture exists."
+ogImage: "/og/app-guides/floriva-offline-mode-explained.png"
+publishedAt: "2026-04-29"
+updatedAt: "2026-04-29"
+buyerStage: "bofu"
+targetPersona:
+  - "health-tracker"
+  - "privacy-conscious"
+bluf: "Floriva stores core tracking data on your device. No internet connection is required to log periods, symptoms, notes, or other supported fields. Floriva has no sync and no servers that hold your data. On Android, Floriva's data is deliberately left out of Google's device backup, so the app cannot rely on it for recovery. On iOS, standard iCloud device backup does include Floriva's data, if you have iCloud Backup turned on. Either way, Floriva's own encrypted backup file is the recovery method built for this, and it works the same way on both platforms. This guide explains how offline storage works, how to set up a backup, and what happens if your device is lost."
+tags:
+  - "privacy"
+  - "offline"
+  - "data-storage"
+  - "guide"
+relatedPages:
+  - /resources/guides/period-tracker-data-minimization-guide
+  - /resources/guides/does-apple-health-share-period-data
+  - /compare/versus/privacy-first-period-apps-2026-ranked
+  - /resources/privacy-in-practice/who-can-legally-get-your-period-data
+answers:
+  - q: "Does Floriva ever send my period data to a server?"
+    a: "No. Floriva does not include a server that receives or stores user health data. When you log a period, symptom, or BBT reading, that data is written to local storage on your device. It does not pass through any network request to a Floriva endpoint. There is no Floriva account, no user database, and no readable central copy of your tracking data."
+  - q: "What happens to my data if I lose my phone?"
+    a: "It depends on your platform and whether you made a Floriva backup file. On Android, Floriva's data is deliberately excluded from Google's device backup, so a device backup will not bring it back. On iOS, standard iCloud device backup does include Floriva's data if you have iCloud Backup turned on, so restoring from an iCloud backup can recover it. On either platform, the reliable way to recover your history is Floriva's own encrypted backup file, made ahead of time and stored somewhere separate from the phone. Without that file, and without a working iCloud backup on iOS, data on a lost or wiped phone is gone for good."
+  - q: "If Floriva shuts down, do I lose my data?"
+    a: "No. Because your data lives on your device rather than Floriva's servers, the app shutting down does not cause data loss. You keep access to your logged data as long as it is on your device or in your device backup. You would lose the app's features if you can no longer download it, but the underlying data is not tied to the app's continued operation."
+  - q: "Can Floriva data be subpoenaed or obtained through legal process?"
+    a: "Because Floriva does not operate servers that hold user data, there is no Floriva database for law enforcement to subpoena. A legal request served to Floriva would return no user health records. The data that does exist is on your device, subject to device seizure. On Android, Floriva's data is excluded from Google's device backup, so there is no copy on Google's servers to request. On iOS, if you have iCloud Backup turned on, your Floriva data is currently included in that backup, so it could in principle be reached through a request served to Apple. This is still a very different situation from apps that store data in their own cloud, since neither Apple nor Google can read the app's own encrypted backup file if you make one."
+---
+
+## Why "Offline" Means Something Specific Here
+
+Most apps use "offline mode" to describe the ability to use limited features without internet while still syncing data to a server when connectivity returns. That's not what Floriva means.
+
+Floriva's offline design means the app performs all core functions using only data stored on your device. That includes logging periods, symptoms, BBT, cervical mucus, notes, and cycle calculations. There is no background sync to a server. There is no Floriva account required. There is no telemetry that sends your health entries anywhere.
+
+This is a deliberate design choice. Period tracking data is reproductive health data. In a legal environment where that data has been used in abortion-related criminal investigations, the safest architecture is one where the data doesn't exist anywhere outside your device.
+
+## What "Data on Device" Means Technically
+
+When you log a period start date in Floriva, that entry is written to the app's local database stored in your device's app data directory. This is a sandboxed storage location that:
+
+- Is only accessible to the Floriva app and, with your permission, your device's operating system
+- Does not sync to any remote server operated by Floriva
+- Is protected by your device's encryption when the device is locked
+- Is included in Apple's standard iCloud device backup on iOS. Is deliberately left out of Google's device backup on Android
+
+On iOS, app data is stored in the app's container, protected by iOS Data Protection encryption. On Android, app data lives in internal storage, protected by Android's file-based encryption. Your device passcode and Face ID or fingerprint, the ones that unlock your phone, are what control access to this encrypted data.
+
+That protection is separate from Floriva's own optional app lock, the Face ID or fingerprint prompt you can turn on inside Floriva itself. The app lock only gates the screen. It stops someone from opening the app on your unlocked phone, but it does not add encryption and does not hold a key to anything. It cannot stand between an attacker and your data the way your phone's own passcode does. Your device lock screen is the real barrier. Floriva's app lock is a second, weaker layer on top of it.
+
+None of this data is transmitted over a network connection to Floriva or any analytics platform. Opening the app, logging data, and reviewing your cycle history all happen on-device.
+
+## Internet Connectivity: What It's Used For
+
+Floriva does not require internet for any core tracking function. If you open the app on airplane mode, you can:
+
+- Log a period start or end
+- Enter symptom data
+- Log a BBT reading
+- Write notes
+- View your cycle history
+- See cycle phase calculations
+- Review your symptom trends
+
+There is no feature that fails or becomes unavailable due to lack of internet. The app does not display "waiting to sync" states because there is nothing to sync.
+
+## How Backup Works
+
+Floriva has no cloud component, so recovery does not depend on a Floriva server. It depends on either your device's own backup system or Floriva's own encrypted backup file, and the two behave differently by platform.
+
+**Floriva's encrypted backup file (works the same on iOS and Android)**:
+1. Open Floriva's backup settings and choose to create a backup
+2. Set a passphrase, at least 12 characters, and confirm it twice
+3. Floriva writes an encrypted file containing your data
+4. Move that file off your device, to a computer, a cloud drive you control, or a USB drive
+5. To restore, import the file on your new device and enter your passphrase
+
+Floriva cannot recover this passphrase. If you lose it, the backup file cannot be opened. Store it somewhere safe, separate from the file itself.
+
+**Device backup on iOS (iCloud)**:
+Floriva's data is currently included in Apple's standard iCloud device backup, if you have iCloud Backup turned on for your device (Settings > [Your Name] > iCloud > iCloud Backup). Restoring a new iPhone from that backup restores Floriva's local data along with it. This is not something Floriva does. It is Apple's standard mechanism, and it means the data is not confined to your device the way the "on-device" pitch implies, unless you have Advanced Data Protection turned on.
+
+**Device backup on Android (Google)**:
+Floriva's data is deliberately left out of Google's device backup. Android's system-level "Back up to Google Drive" setting will not bring your Floriva history back to a new phone, because Floriva excludes its database from that mechanism on purpose. On Android, the encrypted backup file above is the only way to move your history to a new device.
+
+## What Happens When Your Device Is Lost
+
+If your phone is lost or stolen:
+
+1. **Remote wipe**: Use Find My (iOS) or Find My Device (Android) to remotely wipe your device. This deletes everything, including your Floriva data. After wiping, local app data is gone from the lost device.
+2. **Restore from your Floriva backup file**: If you made one and stored it somewhere other than the lost phone, import it into Floriva on your new device and enter your passphrase. This works the same on iOS and Android and does not depend on your phone's own backup settings.
+3. **Restore from iCloud (iOS only)**: If you had iCloud Backup turned on, restoring a new iPhone from that backup can also bring Floriva's data back. This path does not exist on Android, since Floriva's data is excluded from Google's backup.
+4. **If neither exists**: Without a Floriva backup file, and without a usable iCloud backup on iOS, data logged since your last backup, or all of it, is not recoverable. On Android without a backup file, a lost phone means a lost history.
+
+If you want your history protected against losing your phone, make a Floriva backup file and keep it somewhere separate from the device. That is the one method guaranteed to work regardless of platform.
+
+## Why This Architecture Exists
+
+The most common pattern for period tracking apps is: user logs data, data is sent to company servers, company stores user health data, company's privacy policy governs what happens to it.
+
+That pattern has produced documented problems. The FTC found in 2021 that Flo Health sent detailed period and fertility data to Facebook and Google. Vice reported in 2019 that the same data flows occurred across multiple major period apps. Legal advocates have documented cases where prosecutors sought health app data through warrants served on companies.
+
+When data lives on a company's servers, those servers are subject to:
+- Hacks and data breaches
+- Warrants and subpoenas served on the company
+- Sale or disclosure under the company's privacy policy
+- Exposure through third-party analytics partners
+
+When data lives only on your device, none of those vectors apply to Floriva itself. A subpoena served on Floriva would not return your health records because Floriva does not hold them. This is the design intent of the offline-first architecture. On iOS, standard iCloud backup is a real exception worth knowing about: if it is turned on, your Floriva data leaves the device through Apple's system, not Floriva's, and could in principle be reached through a request served to Apple. Android has no equivalent exception, since Floriva's data is excluded from Google's backup.
+
+## What This Means for You
+
+The tradeoff of local storage is that you are responsible for your own backup. Floriva's own encrypted backup file is built for this: you set a passphrase, export the file, and move it somewhere off your phone. That is the reliable, cross-platform way to protect your history.
+
+Device backups add a second layer, but they behave differently by platform. On iOS, standard iCloud backup currently includes Floriva's data, if you have it turned on. On Android, it deliberately does not, so you cannot rely on it for Floriva.
+
+The benefit of on-device storage is that your period history, symptom logs, fertility observations, and health patterns are stored in a system you control, not on a company's servers. That's a technical reality about where the data lives, not a marketing claim about values, with the iCloud exception noted above.
+
+Make a Floriva backup file, store your passphrase somewhere safe and separate from the file, and move the file off your phone. That is the step that protects you against device loss on either platform.

@@ -1,0 +1,230 @@
+/* Buttons, store links, and the download CTA band. Repo canon: every
+   button-styled control stays a full pill (999px / var(--radius-pill)). */
+
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.1rem;
+  padding: 0.86rem 1.15rem;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  line-height: 1.2;
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.button-link:hover {
+  transform: translateY(-2px);
+}
+
+.button-link--primary {
+  background: var(--berry);
+  color: var(--on-berry);
+  box-shadow: var(--shadow-soft);
+}
+
+.button-link--secondary {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.button-link--secondary:hover {
+  background: var(--berry-soft);
+}
+
+.store-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.store-buttons--compact {
+  margin-top: 0;
+}
+
+.store-buttons--secondary {
+  margin-top: 1rem;
+}
+
+.store-buttons--secondary .store-button {
+  min-width: min(100%, 12.5rem);
+  padding: 0.85rem 1rem;
+}
+
+/* "Coming soon" state — flat, muted, and deliberately non-interactive.
+   No hover lift: this pill isn't a live link. */
+.store-button {
+  min-width: min(100%, 15rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  align-items: flex-start;
+  padding: 1rem 1.15rem;
+  border-radius: var(--radius-pill);
+  background: var(--canvas-deep);
+  color: var(--ink-mute);
+  cursor: default;
+}
+
+.store-button__eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: currentColor;
+  margin: 0;
+}
+
+.store-button__title {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: currentColor;
+}
+
+.store-button__meta {
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: currentColor;
+}
+
+/* Live store CTAs — brand pills (own artwork, not official Apple/Google
+   badge SVGs: that artwork can't legally be reshaped into pill geometry).
+   Both stores render the same solid ink pill; Apple's guidelines still ask
+   for the App Store link to appear first when both are shown. The global
+   reduced-motion block in base.css zeroes the transition. */
+.store-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 3.25rem;
+  padding: 0.65rem 1.5rem;
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  color: var(--canvas);
+  box-shadow: var(--shadow-soft);
+  text-decoration: none;
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.store-pill:hover {
+  transform: translateY(-1px);
+}
+
+.store-pill:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.store-pill__icon {
+  width: 1.4rem;
+  height: 1.4rem;
+  flex-shrink: 0;
+}
+
+.store-pill--android .store-pill__icon {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.store-pill__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.08rem;
+  line-height: 1;
+}
+
+/* 0.75rem (12px), not 0.625rem (10px). This is the live store CTA — the
+   primary conversion target on the site — and at 10px uppercase, letter-spaced
+   and at 0.75 opacity it sat under the mobile legibility floor. It only renders
+   when the store availability API says the listings are live, so `vite preview`
+   (no Functions) shows the "Coming soon" variant instead and never exercised
+   this rule locally; it surfaced auditing production. */
+.store-pill__eyebrow {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--canvas);
+  opacity: 0.75;
+}
+
+.store-pill__store {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: var(--canvas);
+}
+
+.download-cta {
+  padding-block: var(--space-8) var(--space-5);
+}
+
+/* Paper panel treatment — this band appears on nearly every page, so it
+   reads as one calm, recognizable card rather than a bare content block. */
+.download-cta .reveal {
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1.8rem, 4vw, 3rem);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-card);
+  background: var(--paper);
+  box-shadow: var(--shadow-soft);
+}
+
+.download-cta h2 {
+  font-family: var(--font-display);
+  font-weight: 450;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.75rem, 2.6vw, 2.6rem);
+  max-width: 38rem;
+}
+
+.download-cta__body {
+  color: var(--ink-soft);
+  line-height: 1.7;
+  max-width: 42rem;
+  margin: 0;
+}
+
+.download-cta__store-buttons {
+  margin-top: 0.6rem;
+}
+
+.download-cta__lead-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 0.4rem;
+  font-weight: 600;
+  color: var(--berry);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  text-decoration-thickness: 1px;
+}
+
+.download-cta__lead-link:hover {
+  color: var(--ink);
+}
+
+@media (max-width: 720px) {
+  .button-link {
+    width: 100%;
+  }
+
+  .store-buttons--secondary .store-button {
+    width: 100%;
+  }
+}

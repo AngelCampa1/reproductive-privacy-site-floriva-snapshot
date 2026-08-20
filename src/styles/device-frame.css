@@ -1,0 +1,54 @@
+/* DeviceFrame — pure-CSS iPhone bezel around a real app screenshot, and
+   PhoneShowcase — the editorial two-column section that pairs it with copy. */
+
+.device-frame {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  max-width: var(--frame-width, 380px);
+  margin-inline: auto;
+  padding: 10px;
+  background: var(--ink);
+  border-radius: 56px;
+  box-shadow: var(--shadow-soft);
+}
+
+/* Subtle inner hairline highlight on the bezel. */
+.device-frame::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: 55px;
+  border: 1px solid rgba(244, 236, 224, 0.08);
+  pointer-events: none;
+}
+
+/* Dynamic island, CSS only — overlays the top of the screenshot. */
+.device-frame::after {
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  z-index: 2;
+  width: 28%;
+  height: 26px;
+  transform: translateX(-50%);
+  background: var(--ink);
+  border-radius: var(--radius-pill);
+  pointer-events: none;
+}
+
+.device-frame__picture {
+  position: relative;
+  z-index: 1;
+  display: block;
+  overflow: hidden;
+  border-radius: 46px;
+}
+
+.device-frame__screen {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 46px;
+}

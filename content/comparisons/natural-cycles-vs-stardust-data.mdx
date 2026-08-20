@@ -1,0 +1,111 @@
+---
+title: "Natural Cycles vs Stardust: Data Practices Compared"
+description: "Natural Cycles is a GDPR-covered Swedish medical device. Stardust is a US app that updated its privacy practices after 2022 scrutiny. Here's what each does with your data and when each is the better choice."
+ogImage: "/og/comparisons/natural-cycles-vs-stardust-data.png"
+publishedAt: "2026-04-29"
+updatedAt: "2026-04-29"
+buyerStage: "mofu"
+targetPersona:
+  - "privacy-conscious"
+  - "health-tracker"
+bluf: "Natural Cycles operates under Swedish law and GDPR as an FDA-cleared medical device. Its regulatory framework constrains data practices more than US-based apps face. Stardust is a US app that had documented advertising SDK issues in 2022 and updated its practices afterward. For users choosing between these two: Natural Cycles has stronger structural protections. Stardust has stronger consumer features and US jurisdiction with improved (but not verified-at-architecture-level) practices."
+tags:
+  - Natural Cycles
+  - Stardust
+  - period app comparison
+  - privacy
+  - data practices
+  - period tracker
+relatedPages:
+  - /compare/versus/floriva-vs-natural-cycles
+  - /compare/versus/floriva-vs-stardust-comparison
+  - /compare/versus/privacy-first-period-apps-2026-ranked
+  - /resources/guides/period-app-privacy-red-flags
+  - /resources/guides/state-health-privacy-laws-after-hipaa
+answers:
+  - q: "Is Natural Cycles safer than Stardust for privacy"
+    a: "From a data protection standpoint, yes. Natural Cycles is incorporated in Sweden, processes data under GDPR as a medical device, and has stronger regulatory constraints on how it can use and share data. Stardust had documented advertising tracker issues in 2022 and is incorporated in the US, where period app data has weaker legal protection. Stardust's current practices are improved; Natural Cycles' structural protections are more established."
+  - q: "What does Natural Cycles require to use"
+    a: "Natural Cycles requires an account (email address), a daily basal body temperature measurement (with a thermometer accurate to two decimal places), and a subscription (~$100/year or ~$13/month). An optional LH test strip add-on is available. It is designed as a contraceptive tool, users follow the app's green/red day fertility designations."
+  - q: "What has changed about Stardust's privacy practices"
+    a: "Following scrutiny in summer 2022, Stardust removed identified advertising attribution SDK integrations, updated its privacy policy, and CEO Rachel Moranis publicly addressed the concerns. The app's current version should be verified against Exodus Privacy for current SDK presence. Stardust also added encryption for data at rest and updated its legal terms to more explicitly limit law enforcement cooperation."
+  - q: "Can US law enforcement access Natural Cycles data"
+    a: "Accessing Natural Cycles data is harder for US law enforcement than accessing a US company's data. Natural Cycles is Swedish, so US law enforcement would need to route a request through MLAT (Mutual Legal Assistance Treaty) or other international legal mechanisms. Sweden (and the EU generally) applies more restrictive standards to law enforcement data requests for health information than US law does. This adds friction and is not a perfect protection, but it requires more steps than a direct subpoena to a US company."
+definitions:
+  - term: "GDPR medical device requirements"
+    definition: "Medical devices regulated under EU MDR (Medical Device Regulation) and FDA have both device-specific regulatory requirements and GDPR data protection requirements to comply with. For Natural Cycles: FDA De Novo clearance requires demonstrating safety and effectiveness as a contraceptive; GDPR requires lawful basis for processing health data, explicit consent, data minimization, and user rights. A regulated medical device faces overlapping compliance obligations that consumer apps do not face, creating stronger accountability."
+  - term: "Encryption at rest"
+    definition: "Encryption of stored data on a server or device such that the encrypted data cannot be read without the decryption key. Stardust updated to include encryption at rest following 2022 scrutiny. Encryption at rest protects against unauthorized access (breaches, hacks) but does not protect against authorized access, a company holding the decryption keys can decrypt data in response to legal requests. Encryption at rest is baseline security hygiene, not a privacy architecture solution."
+---
+
+Natural Cycles and Stardust approached each other on the competitive map post-Dobbs, both positioned as alternatives to surveillance-heavy mainstream apps. Their actual data practices are quite different.
+
+## Natural Cycles: Regulated Medical Device Data Practices
+
+Natural Cycles occupies an unusual position: it is an FDA-cleared medical device (Class II, contraceptive) and an EU-incorporated company subject to GDPR. This dual regulatory status means its data practices are constrained by both:
+
+**FDA medical device requirements:** As a cleared contraceptive device, Natural Cycles must maintain specific records, cannot make unsupported efficacy claims, and is subject to FDA post-market surveillance. This does not directly govern data privacy but creates accountability around product claims.
+
+**GDPR (Sweden/EU):** Health data processed by Natural Cycles is special category data requiring explicit consent. Users have access, correction, and deletion rights. Data transfers to non-EU countries (including the US) require adequate protections. Data can only be used for the purposes users consented to.
+
+**What Natural Cycles has stated:**
+- Does not sell user data
+- Does not use health data for advertising
+- Processes data to provide the contraceptive service and for product improvement
+- Has faced regulatory attention from Swedish Data Protection Authority for specific data practices (analytics data sharing with Facebook for advertising, found to require GDPR consent mechanism updates)
+
+The Swedish DPA finding (2019) is instructive: even a GDPR-covered company can have practices that require correction. The outcome was an updated consent mechanism, not a fine. This is how GDPR enforcement typically works for first-time issues.
+
+**Current assessment:** Natural Cycles has structural protections from GDPR and medical device regulation that constrain its data practices more than US-based apps face. Not perfect; better than most.
+
+## Stardust: Post-Scrutiny US App
+
+Stardust's story after June 2022 is the clearest documented example of what privacy scrutiny produces in the US app market:
+
+1. Dobbs → privacy concerns → users seek alternatives → Stardust surges in downloads
+2. Press and researchers analyze the app → find advertising attribution SDK (AppsFlyer) → publish findings
+3. User backlash → CEO responds publicly → app updates → SDK removed
+4. Stardust updates privacy policy, adds encryption at rest, revises terms
+
+The process worked. Stardust's current version is better than its pre-scrutiny version. The limitation: this process is reactive and depends on continued attention. Without ongoing scrutiny, changes could reverse.
+
+**Current Stardust assessment (verify independently):**
+- Verify SDK presence via Exodus Privacy for current APK version
+- Privacy policy now more explicitly limits law enforcement cooperation
+- Still US-incorporated, still cloud-based, still requires phone number for registration
+
+## Direct Comparison
+
+| Dimension | Natural Cycles | Stardust |
+|-----------|---------------|---------|
+| Jurisdiction | Sweden (EU, GDPR) | US |
+| Medical device status | FDA-cleared Class II | None |
+| Primary use | Contraception | Cycle tracking/community |
+| Data framework | GDPR (health data special category) | US law (no specific health app protection) |
+| Past issues | Swedish DPA (analytics consent, 2019) | Advertising SDKs (2022) |
+| Current practice assessment | Strong (structural + regulatory) | Improved (verify current state) |
+| Account credential | Email | Phone number |
+| Law enforcement data access difficulty | High (MLAT required) | Medium (standard US subpoena) |
+| Subscription required | Yes (~$100/year) | Freemium |
+
+## When Natural Cycles Is the Right Choice
+
+- You want FDA-cleared contraceptive use
+- You prefer algorithmic green/red day determination over learning FAM rules yourself
+- Stronger structural data protection matters to you
+- You're comfortable with a subscription cost for a contraceptive service
+
+## When Stardust Is the Right Choice
+
+- Community and social features matter to you
+- You prefer a freemium model
+- You want a US-based company with improved (if not structurally strongest) privacy practices
+- You're using the app primarily for cycle awareness, not contraception
+
+## Neither Is Right For
+
+Users who want less readable server-side data. Both Natural Cycles and Stardust store data on company servers and can respond to legal process. For architecture-level privacy, a local-first app is the only option.
+
+## What This Means for Floriva Users
+
+The Natural Cycles vs. Stardust comparison shows a spectrum: regulatory structure (Natural Cycles), responsive improvement (Stardust), architectural elimination (Floriva). The strongest data protection is not better compliance. It is not having the data at all.

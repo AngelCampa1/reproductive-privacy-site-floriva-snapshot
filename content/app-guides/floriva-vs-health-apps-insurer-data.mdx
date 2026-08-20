@@ -1,0 +1,102 @@
+---
+title: "How Floriva Differs From Apps That Share Data With Insurers"
+description: "Apps connected to health platforms may expose cycle data to insurers. Floriva keeps core cycle records local-first and has no readable central cycle database."
+ogImage: "/og/app-guides/floriva-vs-health-apps-insurer-data.png"
+tags:
+  - "guide"
+publishedAt: "2026-04-28"
+updatedAt: "2026-04-28"
+buyerStage: "bofu"
+targetPersona:
+  - "privacy-conscious-user"
+  - "post-roe-tracker"
+  - "flo-refugee"
+bluf: "Period tracker data is not covered by HIPAA. That means it can be shared with insurers, employers, or data brokers without your knowledge unless you read the privacy policy carefully. Floriva keeps core records on your device and has no readable central cycle database to sell or disclose."
+steps:
+  - title: "Check whether your current app connects to a health platform"
+    content: "Many period trackers offer optional integration with Apple Health, Google Fit, or employer wellness programs. These integrations can route your cycle data to platforms accessible to insurers or employers. Check your app's Settings for any active health platform connections."
+  - title: "Review whether your app has a wellness or employer program"
+    content: "Some femtech apps have corporate wellness or insurance partnership programs. Check whether your app markets to employers or insurers in addition to individual users. If it does, read the privacy policy to understand how employee user data is treated."
+  - title: "Understand what 'anonymized' means in practice"
+    content: "Apps that claim to share only 'anonymized' or 'aggregated' data often do so in ways that can be re-identified. Reproductive health data combined with age and location is particularly re-identifiable. 'Anonymized' is not a legal protection; it is a technical description that may not hold."
+  - title: "Verify whether your app is HIPAA covered"
+    content: "Period tracker apps are generally not covered entities under HIPAA. This means your cycle data lacks the legal protections that apply to data held by your doctor or hospital. Any app that does not explicitly state it operates as a HIPAA Business Associate is not bound by HIPAA's restrictions on disclosure."
+  - title: "Switch to Floriva to reduce server exposure"
+    content: "Floriva keeps core records on-device. There is no sync, so no cycle data is transmitted at all. That means there is no readable central cycle database to share with insurers, data brokers, or wellness platforms."
+answers:
+  - q: "Can a period tracker app share my data with my health insurer?"
+    a: "Period tracker data is not covered by HIPAA. Apps that store readable data on servers can share it under the terms of their privacy policy, which most users do not read. Some apps have explicit insurance or employer wellness partnerships. Floriva has no readable central cycle database to share."
+  - q: "What is the difference between HIPAA-covered health data and period tracker data?"
+    a: "HIPAA applies to data held by healthcare providers, health plans, and their business associates. Period tracking apps are not in those categories. Your cycle data in Flo or a similar app has the legal protections of a commercial app's privacy policy, not HIPAA's restrictions on disclosure."
+  - q: "Does Floriva connect to Apple Health or Google Fit?"
+    a: "Check current Floriva settings for any health platform integrations. If Floriva offers optional health platform connections, those are opt-in only. The app keeps records on-device and makes no network calls."
+relatedPages:
+  - /resources/guides/period-tracker-hipaa
+  - /resources/guides/femtech-data-monetization
+  - /resources/guides/how-period-tracker-apps-collect-data
+  - /resources/guides/on-device-storage-period-tracker
+  - /compare/alternatives/flo-app-alternative
+  - /resources/best/best-private-period-tracker-apps
+faqs:
+  - q: "Can a period tracker app share my data with my health insurer?"
+    a: "Period tracker data is not covered by HIPAA. Apps that store readable data on servers can share it under the terms of their privacy policy. Some apps have explicit insurance or employer wellness partnerships. Floriva has no readable central cycle database to share."
+  - q: "Does Floriva store data on my device only?"
+    a: "Floriva keeps cycle records on your device. There is no sync. Deleting the app removes local records from that device."
+  - q: "What is the difference between HIPAA-covered health data and period tracker data?"
+    a: "HIPAA applies to data held by healthcare providers, health plans, and their business associates. Period tracking apps are not in those categories. Your cycle data in a cloud app has the legal protections of a commercial app's privacy policy, not HIPAA's restrictions on disclosure."
+  - q: "Do I need an account to use Floriva?"
+    a: "No account is required for core tracking. You can use Floriva without a sign-in or email address."
+---
+
+## The HIPAA gap most users do not know about
+
+Most people assume their health data has legal protections. For data held by doctors, hospitals, and health insurers, that is largely true. HIPAA restricts disclosure and requires breach notification. But those protections apply to covered entities: healthcare providers, health plans, and the business associates that work with them.
+
+Period tracking apps are not covered entities. They are commercial software products. [Period tracker data is not covered by HIPAA](/resources/guides/period-tracker-hipaa), and the legal standard governing what an app can do with your cycle data is the company's own privacy policy, which users agree to but rarely read.
+
+This gap matters because it means an app can, in principle, share your cycle data with an insurer, data broker, or employer wellness platform without violating any health privacy law. The constraint is whatever the privacy policy says and whatever state consumer protection laws apply.
+
+## How data reaches insurers in practice
+
+The pathways are not always obvious.
+
+### Health platform integrations
+
+Many period trackers offer integration with Apple Health, Google Fit, or Samsung Health. These integrations are typically marketed as convenience features: see all your health data in one place. What users may not consider is that those health platform ecosystems have their own data-sharing relationships. Connecting a period tracker to a health platform creates a data flow that the period tracker's privacy policy does not fully govern.
+
+Employer wellness programs that plug into corporate health platforms can access health platform data depending on what employees consent to when enrolling.
+
+### Data broker pipelines
+
+[Femtech data monetization](/resources/guides/femtech-data-monetization) is a documented business model. Apps that store cycle data on servers can license that data to data brokers, typically under "anonymized" or "aggregated" claims. Reproductive health data combined with demographic attributes and location is notoriously difficult to anonymize in practice. The FTC has taken action against companies that overclaimed the protection of anonymized health data.
+
+### Corporate wellness programs
+
+Some femtech companies have programs that market period tracking to employers as a women's health benefit. When employees use these programs, the employer, and their insurance carrier, may have visibility into program participation data or aggregate health metrics. The terms vary by program.
+
+## What Flo's enforcement history demonstrates
+
+Flo's 2021 FTC enforcement action documented that Flo shared menstruation and pregnancy-related data with Facebook, Google, and Flurry through embedded SDKs. The data sharing was not mentioned in the privacy policy users saw. A class action settled in 2025 for $59.5M over claims arising from that conduct.
+
+The mechanism was not an insurer partnership. It was advertising technology embedded in the app that transmitted user data alongside ad targeting signals. The underlying issue was that Flo held user data on servers, and that data was accessible to third parties who had code running inside the app.
+
+The Flo case is the clearest documented example of what can happen when a period tracker stores sensitive data on servers: the data becomes available to parties the user did not anticipate, through mechanisms the user did not see.
+
+## Floriva's structural difference
+
+Floriva does not hold a readable central database of cycle records. Core records stay on your device. There is no sync, so no cycle data is transmitted at all. That means there is no readable cycle database to sell, share with wellness programs, or disclose to insurers.
+
+That matters. A privacy policy can be updated, violated, or overridden by a legal process. A design that does not hold the data in the first place is not subject to any of those pressures.
+
+If an insurer or data broker wanted your readable Floriva records, they would need access to your device or to a copy you chose to export. Floriva does not keep a readable central cycle database.
+
+## What to check if you are using another app
+
+If you use a period tracker that stores data on a server, check:
+
+1. Whether the app connects to Apple Health, Google Fit, or an employer wellness platform
+2. Whether the company markets to employers or insurers (look for a "for employers" or "enterprise" page)
+3. What the privacy policy says about data sharing with third parties, partners, and "affiliates"
+4. Whether the app uses advertising SDKs (common in free apps)
+
+The answers will tell you how much of your cycle data is moving beyond the app. For a full comparison of privacy practices across the major period trackers, see our [guide to how period tracker apps collect data](/resources/guides/how-period-tracker-apps-collect-data).

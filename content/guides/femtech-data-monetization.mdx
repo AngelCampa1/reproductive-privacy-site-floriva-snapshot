@@ -1,0 +1,118 @@
+---
+title: "How Femtech Apps Monetize Your Health Data"
+description: "Free period tracker apps have a business model. Explains how femtech companies monetize health data, what the FTC enforcement record shows."
+ogImage: "/og/guides/femtech-data-monetization.png"
+tags:
+  - "guide"
+publishedAt: "2026-03-21"
+updatedAt: "2026-04-02"
+buyerStage: "tofu"
+targetPersona:
+  - "flo-refugee"
+  - "post-roe-tracker"
+  - "paper-tracker"
+  - "privacy-conscious-user"
+bluf: "Free femtech apps typically generate revenue through advertising, data licensing, or both. The FTC enforcement action against Flo in 2021 and the $59.5M class action settled in September 2025 confirmed that period data had been shared with Facebook and Google for ad targeting. Premom faced FTC action in 2023 for sharing data with Chinese analytics firms. This is not a theoretical risk."
+definitions:
+  - term: "Femtech"
+    definition: "A category of technology products and services focused on women's health, including period tracking apps, fertility monitors, pregnancy apps, and menopause management tools. The femtech sector attracts significant venture investment, and many products are free to download, raising questions about their business model."
+  - term: "Data monetization"
+    definition: "The practice of generating revenue from data collected about users. Methods include selling user data directly to data brokers, sharing data with advertising platforms to enable targeted ads, licensing anonymized or aggregated data to researchers or insurers, and using data to build behavioral profiles that inform product development or marketing."
+  - term: "Behavioral advertising"
+    definition: "Online advertising that targets users based on inferred characteristics derived from behavioral data, browsing history, app usage, purchase patterns, and health information. Period tracking data can inform inferences about pregnancy status, fertility intent, contraception use, and health conditions, all of which are valuable to advertisers."
+  - term: "Third-party SDK"
+    definition: "A software development kit provided by an external company and embedded in an app. SDKs typically provide functionality (analytics, advertising, crash reporting) but also send data back to the SDK provider. Many period tracker apps embed multiple SDKs from advertising and analytics companies."
+steps:
+  - title: "Check your app's privacy policy for the data sharing section"
+    content: "Search for 'third parties', 'partners', 'advertising', and 'service providers'. This section lists who receives your data and for what purpose. If it references 'advertising partners' or 'improving our services', your data is likely being transmitted to external companies."
+  - title: "Use Exodus Privacy to scan for embedded trackers (Android)"
+    content: "Exodus Privacy is a free tool that analyzes Android app packages and lists every third-party tracker SDK embedded in the app. A period tracker with five or more advertising and analytics trackers is sending data to those companies every time you use it."
+  - title: "Review your ad preferences on Google and Meta"
+    content: "Check your Google ad interest profile (myaccount.google.com/data-and-privacy) and Meta ad preferences (facebook.com/ads/preferences). If you see interests related to pregnancy, fertility, or reproductive health that you did not explicitly add, this is evidence that health data has reached these platforms."
+  - title: "Check your iOS App Privacy Report or Android network logs"
+    content: "iOS 15 and later includes an App Privacy Report showing which domains apps contact. An on-device period tracker should show minimal or no external domain contacts. A cloud-connected tracker will show contacts with its own servers and potentially third-party analytics domains."
+answers:
+  - q: "How do free period tracker apps make money?"
+    a: "Free period tracker apps typically generate revenue through one or more of: advertising (showing ads in the app, often targeted based on health data), data licensing (selling aggregated or individual user data to researchers, insurers, or marketers), premium subscriptions (using the free tier to acquire users and upsell to a paid plan), and pharmaceutical or fertility industry partnerships. The mix varies by app, and the privacy implications depend heavily on which revenue streams the app relies on."
+  - q: "Did Flo really sell my data?"
+    a: "The FTC enforcement action against Flo in 2021 found that Flo shared users' health data, including menstrual cycle and pregnancy information, with Facebook and Google despite its privacy policy stating it would not share health data for advertising purposes. Flo did not publicly admit to 'selling' data in the direct sense, but sharing data with advertising platforms for the purpose of ad targeting is functionally equivalent. A $59.5M class action settlement was reported by Reuters in September 2025."
+  - q: "What did the Premom FTC case reveal?"
+    a: "The FTC's 2023 action against Premom (Easy Healthcare Corporation) found that the ovulation tracking app shared sensitive health data with two analytics companies, Umeng and Jiguang, both associated with Chinese technology companies, without user knowledge or consent. The case established that embedding analytics SDKs that transmit health data to third parties without adequate disclosure is an unfair practice under FTC Section 5."
+  - q: "How big is the period tracking app market?"
+    a: "The period tracking app market was valued at $749 million to $1.69 billion in 2023-2024 (estimates vary by research firm), projected to reach $1.7 to $5.1 billion by 2030-2032, with a CAGR of 9-20%. Flo dominates the space with approximately 70 million MAU by late 2024 and revenue of approximately $275M, achieving unicorn valuation. Flo's monthly in-app revenue (~$8.8M) dwarfs Natural Cycles (~$950K) and Clue (~$600K)."
+  - q: "How common is data sharing among period tracker apps?"
+    a: "A 2022 JMIR study (Alfawzan et al., n=23 apps) found 87% of popular women's mHealth apps shared data with third parties and 61% allowed location tracking. Only 52% requested user consent before collecting data. Separately, a 2020 PoPETs study (Shipp and Blasco, n=30 apps) found 66% of menstrual apps did not even mention collecting period data in their privacy policies. Mozilla issued warning labels for 18 of 25 reproductive health apps reviewed, and ORCHA found 84% of 25 period trackers shared data with third parties."
+faqs:
+  - q: "Are paid period tracker apps safer than free ones?"
+    a: "Not necessarily. A UC Berkeley study (2020, n=998 apps) found that 48% of paid app versions bundled identical third-party tracking libraries as their free counterparts. Among the 20% of users who preferred paid apps, only 6% cited security or privacy as the reason. A paid subscription model reduces the incentive to monetize data, but the tracking infrastructure often remains."
+  - q: "What is 'anonymized' health data and is it actually anonymous?"
+    a: "Companies often claim that shared data is 'anonymized' or 'de-identified.' Research has repeatedly shown that health and behavioral data can be re-identified, matched back to specific individuals, using combinations of data points that seem innocuous alone. Period tracking data combined with location, device ID, and browsing history can be sufficient for re-identification. 'Anonymized' in a privacy policy is not a guarantee of actual anonymity."
+  - q: "What can I do to reduce data monetization exposure?"
+    a: "Use an app that stores data only on your device and requires no account. Fewer data points at the company end means fewer data points to monetize. If you use a cloud-connected app, review and limit its permissions, opt out of advertising where the option exists, and submit a data minimization or deletion request."
+pricingStats:
+  - stat: "$59.5M"
+    source: "Flo Health + Google + Flurry combined class action settlement, September 2025"
+    sourceUrl: "https://www.reuters.com/sustainability/boards-policy-regulation/google-flo-health-pay-56-million-period-tracking-app-privacy-case-2025-09-25/"
+  - stat: "$275M"
+    source: "Flo estimated annual revenue by late 2024 (unicorn valuation, Business of Apps / Sensor Tower)"
+  - stat: "$8.8M"
+    source: "Flo monthly in-app revenue estimate (vs. Natural Cycles ~$950K, Clue ~$600K), Business of Apps"
+relatedPages:
+  - /compare/alternatives/flo-app-alternative
+  - /compare/alternatives/clue-alternative-no-cloud
+  - /resources/best/best-private-period-tracker-apps
+  - /resources/best/best-period-tracker-apps-no-data-selling
+  - /resources/guides/how-period-tracker-apps-collect-data
+  - /period-tracker-privacy/reproductive-data-privacy-laws-california
+  - /resources/guides/data-brokers-reproductive-health
+---
+
+## The Market Behind the Apps
+
+The period tracking app market was valued at $749 million to $1.69 billion in 2023-2024 (estimates vary by research firm), projected to reach $1.7 to $5.1 billion by 2030-2032, with a CAGR of 9-20%.
+
+Flo dominates. The company grew from 48 million MAU in June 2022 to 70 million by late 2024. Revenue reached approximately $275M, earning a unicorn valuation ($1B+). For context on scale: Flo's monthly in-app revenue runs approximately $8.8M, compared to Natural Cycles (~$950K) and Clue (~$600K).
+
+| App | Monthly Active Users | Est. Monthly In-App Revenue | Valuation |
+|---|---|---|---|
+| Flo | ~70M (late 2024) | ~$8.8M | $1B+ (unicorn) |
+| Natural Cycles | Not publicly disclosed | ~$950K | Not publicly disclosed |
+| Clue | Not publicly disclosed | ~$600K | Not publicly disclosed |
+
+## The Business Model Behind Free Apps
+
+If a period tracker app costs nothing to download, the question worth asking is: what is the business model? App development, server infrastructure, and customer support are not free. Something is funding the operation.
+
+For most free femtech apps, the answer involves health data in some form. This does not mean every free app is acting in bad faith. Some operate primarily on subscription revenue using a freemium model, and some have stronger data practices than others. But the incentive structure is real: health data about fertility, pregnancy, and reproductive cycles has documented commercial value.
+
+## What the Enforcement Record Shows
+
+Two FTC cases provide concrete evidence of how period data has been monetized:
+
+### Flo Health (2021)
+
+The FTC found that Flo shared users' menstrual and pregnancy data with Facebook and Google, enabling those platforms to target advertising based on health information. The sharing occurred despite Flo's privacy policy representations to the contrary. The subsequent $59.5M class action settlement (Reuters, September 2025) reflects the scale of affected users.
+
+### Premom (2023)
+
+The FTC found that Premom embedded analytics SDKs from Umeng and Jiguang, two companies with ties to Chinese technology firms, that transmitted sensitive health data without user awareness. The case highlighted how third-party SDK embedding is a mechanism for data monetization that operates largely invisibly to users.
+
+## How Widespread Is Data Sharing
+
+The research literature paints a consistent picture. A 2022 JMIR study (Alfawzan et al., n=23 apps) found 87% of popular women's mHealth apps shared data with third parties. 61% allowed location tracking. Only 52% requested user consent before collecting data.
+
+A 2020 PoPETs study (Shipp and Blasco, n=30 apps) found 66% of menstrual apps did not even mention collecting period data in their privacy policies. The apps collected the data; the policies did not disclose it.
+
+Mozilla issued warning labels for 18 of 25 reproductive health apps it reviewed. ORCHA, a health app evaluation organization, found 84% of 25 period trackers shared data with third parties.
+
+Paying for an app does not fix this. A UC Berkeley study (2020, n=998 apps) found 48% of paid app versions bundled identical third-party tracking libraries as their free counterparts. Among the 20% of users who preferred paid apps, only 6% cited security or privacy as the reason.
+
+The result is measurable erosion in trust. Rock Health's annual consumer survey (n=8,000+ annually) found willingness to share health data with health tech companies fell from 25% in 2020 to 14% in 2023.
+
+## Auditing Your Current App
+
+The steps above give you a practical method for understanding what your current period tracker is sending. The combination of reading the privacy policy, scanning for embedded trackers, and checking your ad profiles gives a reasonably complete picture of your data exposure.
+
+## The Alternative
+
+An app that generates revenue through a direct subscription and stores no server-side health data has no data to monetize. The business model is aligned with user privacy: revenue comes from users who pay for the product, not from the data those users generate. This alignment is structural, not just a policy commitment.

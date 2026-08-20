@@ -1,0 +1,108 @@
+---
+title: "Period App Account Security: Protecting Your Most Sensitive Data"
+description: "Period app security goes beyond passwords. Reproductive health data in cloud accounts is a high-value breach target. Here is how to reduce your exposure."
+ogImage: "/og/guides/period-app-account-security.png"
+publishedAt: "2026-04-29"
+updatedAt: "2026-04-29"
+buyerStage: "mofu"
+targetPersona:
+  - "privacy-conscious"
+bluf: "Period app accounts contain your reproductive health history, fertility intent, and cycle patterns. This data is more sensitive than most financial records. The security baseline is simple: unique email address, strong unique password, 2FA where available. But account security does not protect against the underlying problem. Server-side records exist regardless of how secure your password is."
+tags:
+  - period app security
+  - period app privacy
+  - period tracker account
+  - reproductive data breach
+  - health data security
+relatedPages:
+  - /resources/privacy-in-practice/lock-down-period-data-on-your-phone
+  - /resources/guides/period-app-privacy-red-flags
+  - /resources/guides/period-tracker-data-minimization-guide
+  - /compare/versus/privacy-first-period-apps-2026-ranked
+answers:
+  - q: "Does my period app have 2FA"
+    a: "Most major period apps do not offer two-factor authentication as of early 2026. Flo did not offer 2FA as a standard account feature. Clue did not offer 2FA. Natural Cycles offers 2FA in some account configurations. The absence of 2FA in apps that store sensitive reproductive health data is a meaningful security gap. A compromised password alone is sufficient to access years of cycle history, fertility intent logs, and condition disclosures. Check your app's account or security settings to see whether a 2FA option exists."
+  - q: "What should I do if my period app is hacked"
+    a: "First, check whether your email appears in a data breach using Have I Been Pwned (haveibeenpwned.com). Second, change the password for the period app account immediately, and change it for any other account using the same password. Third, review which OAuth tokens or connected apps have access to your period app account and revoke any you don't recognize. Fourth, consider submitting a formal account deletion request under CCPA or GDPR, this creates a legal obligation to delete your data, not just remove your access. Fifth, if your period app account was connected to Google or Apple for sign-in, review those account security settings as well."
+  - q: "How do I delete my period app account"
+    a: "Deleting the app from your phone does not delete your account or data on the company's servers. Account deletion requires an explicit in-app or web-based request. In Flo: Settings → Profile → Delete account. In Clue: Settings → Account → Delete account. In Natural Cycles: Account settings → Delete account. Under CCPA (California) and GDPR (EU), you have a legal right to request deletion of your personal data after account closure. Submit a data deletion request separately from account deletion if the option is available, and keep a record of the request date."
+  - q: "Is using the same email for a period app risky"
+    a: "Yes, in two ways. First, if the period app is breached, the email address is exposed. If you use that same email for banking, healthcare, or other sensitive accounts, the breach becomes a cross-service risk. Second, your email address is part of your identity, it links your reproductive health records to you specifically, removing any anonymization the app might claim to provide for health data. A service-specific email alias isolates the breach surface to the period app only."
+  - q: "Does deleting the app delete my data"
+    a: "No. Deleting a mobile app removes the local app and its cache from your device but does not affect your account or data on the company's servers. Your cycle logs, fertility intent, and profile data remain in the company's database until you submit an account deletion request and, separately, a data deletion request. This distinction matters: the app being gone from your phone does not mean your reproductive health history is gone from company servers."
+definitions:
+  - term: "Email Alias"
+    definition: "A unique, throwaway email address that forwards to your real inbox. Services like Apple's Hide My Email (part of iCloud+), SimpleLogin, and Addy.io generate aliases that can be deactivated individually. Using a unique alias for each sensitive service, including period apps, means a breach of that service exposes only the alias, not your real email address, and the alias can be deleted if it starts receiving spam or phishing attempts."
+  - term: "OAuth Token"
+    definition: "An authorization credential that allows one service to access another on your behalf, for example, signing into a period app using 'Sign in with Google.' OAuth tokens persist after you stop using an app and can grant ongoing access to your account. Reviewing and revoking OAuth tokens periodically (in your Google account's security settings, or your Apple ID settings) removes access from apps you no longer use."
+  - term: "Data Deletion Request"
+    definition: "A formal request to a company to delete your personal data under CCPA (for California residents) or GDPR (for EU residents). Unlike account deletion, which removes your access to the account, a data deletion request legally obligates the company to delete the underlying data records. Most apps have a data deletion request form in their privacy policy or account settings. Keep the confirmation email as a record."
+---
+
+Period app credentials sit in an unusual risk category. The information behind them, cycle history, fertility intent, condition disclosures, conception attempts, medication logs, is more sensitive in its implications than most financial account data. A credit card breach creates financial liability. A period app breach creates a record of your reproductive health that can be reviewed by employers, insurers, legal proceedings, and law enforcement with the right warrant or subpoena.
+
+Understanding period app security means understanding two distinct problems. The first is credential security: the username and password protecting your account. The second is the underlying architecture problem: the data exists on a company server regardless of how secure your credentials are.
+
+Credential security is solvable. The architecture problem requires choosing a different kind of app.
+
+## Why Period App Credentials Deserve Special Treatment
+
+The cross-contamination risk distinguishes reproductive health accounts from most others. If your email address is linked to a period app and that app is breached, the exposed information is not just an email address. It is an email address associated with reproductive health records, fertility status, and cycle patterns. Combined with name or location data in the breach, this creates a deanonymized health profile.
+
+The risk intensifies when the same email address is used across multiple services. This is the standard credential reuse problem amplified: your period app breach doesn't just expose your reproductive data, it exposes a handle that cross-references your identity across all services using the same address.
+
+A 2021 investigation by Privacy International found that several period and fertility apps shared identifying information (including email addresses, advertising IDs, and health data) with third-party analytics platforms, contrary to their privacy policy claims. Flo Health reached an FTC settlement in 2021 related to sharing user health data with Facebook and Google after representing to users that data would be kept private. The FTC settlement required Flo to notify users whose data was shared and to obtain third-party audits. These documented cases establish that the credential security problem is not hypothetical, breaches and unauthorized sharing have occurred.
+
+## The Unique Email Strategy
+
+Using a service-specific email alias for period app registration is the single most effective credential-level security step. The mechanism: a unique alias (generated by Apple Hide My Email, SimpleLogin, Addy.io, or similar) forwards to your real inbox and can be deactivated independently. The app receives the alias; your real email address never appears in their systems.
+
+The benefits are concrete:
+- A breach of the period app exposes only the alias, not your real email
+- If the alias starts receiving phishing or spam, you know exactly which service was compromised
+- Deactivating the alias is faster and cleaner than trying to change email addresses in an app after a breach
+- Your real identity is not linked to your reproductive health records in the company's database
+
+Apple's Hide My Email feature (available with any iCloud+ subscription) generates on-device aliases and manages them in Settings → Apple ID → iCloud. SimpleLogin and Addy.io are third-party alternatives that work across platforms.
+
+## Password Hygiene for Sensitive Health Accounts
+
+Unique passwords per service is standard security practice, but it matters more here than in most contexts. If a period app credential appears in a breach and the password is unique to that account, the exposure stops there. If the password is reused elsewhere, the breach becomes a master key.
+
+A password manager (1Password, Bitwarden, Dashlane) handles unique password generation and storage. One specific risk worth noting: iCloud Keychain on a shared Apple ID family account may expose saved passwords to other family members. If your period app credentials are saved in iCloud Keychain and your Apple ID is part of a Family Sharing plan, verify whether Keychain data is shared (it is not shared by default in standard Family Sharing, but verify your specific setup in Settings → Passwords & Accounts).
+
+## 2FA Availability in Period Apps
+
+Two-factor authentication adds a second verification layer that makes a compromised password insufficient to access an account. Its absence in apps that store sensitive health data is a notable security gap.
+
+As of early 2026: Flo did not offer 2FA for standard accounts. Clue did not offer 2FA. Natural Cycles offered 2FA in some configurations. This situation may change, check your app's Account or Security settings directly to see the current state.
+
+Where 2FA is available, use it. Prefer authenticator apps (Google Authenticator, Authy, 1Password's built-in OTP) over SMS-based 2FA. SMS 2FA is vulnerable to SIM-swapping attacks, which have been used to compromise health and financial accounts.
+
+The absence of 2FA in an app that stores reproductive health data should be treated as a red flag in app selection, not just a missing convenience feature.
+
+## What Happens in a Breach: Response Steps
+
+If your period app reports a breach, or if your email appears in Have I Been Pwned under a reproductive health app:
+
+1. Change the period app password immediately. Use a new unique password if you haven't been.
+2. Change passwords on any other account using the same password or similar passwords.
+3. Review OAuth tokens: if you signed into the period app using "Sign in with Google" or Apple, review connected apps in your Google Account Security settings or Apple ID settings and revoke the period app's access.
+4. Submit an explicit account deletion request through the app's settings. Deleting the app from your phone does not delete the server record.
+5. Submit a separate data deletion request if the app provides the option, under CCPA (California residents) and GDPR (EU residents), this is a legal right with a 30-day compliance window.
+6. Monitor for phishing: after a health data breach, targeted phishing attempts using the breached health data (fake appointment reminders, insurance claims) are a known follow-on risk.
+
+## Account Deletion Is Not Data Deletion
+
+This distinction causes significant confusion. Closing a period app account removes your ability to log in and access your data. It does not necessarily delete the underlying records from the company's databases. Those records may be retained for months or years under data retention policies.
+
+A data deletion request is a separate action. Most apps provide this through their privacy policy page or account deletion flow. Under CCPA, California residents can demand deletion of personal data. Under GDPR, EU residents have the same right (the "right to erasure"). Both frameworks require a response within 30 days. Keep a copy of the request and the confirmation.
+
+The path for major apps (confirm with current in-app navigation, as interfaces change):
+- **Flo**: Settings → Profile → Account → Delete account, then submit a data deletion request through Flo's privacy form
+- **Clue**: Settings → Account → Delete account; data deletion requests go through their support channel
+- **Natural Cycles**: Account settings → Delete account; GDPR deletion requests via their privacy contact
+
+## What This Means for Floriva Users
+
+Floriva core tracking does not require an account, and there is no sync. That lowers the risk of email reuse, weak passwords, and account takeover for your cycle history. Billing or support may still create account-like access points, so protect those if you use them. Floriva has no readable central cycle database for core records. That is the key difference from cloud-first period apps.

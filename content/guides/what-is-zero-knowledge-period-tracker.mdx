@@ -1,0 +1,79 @@
+---
+title: "What Is a Zero-Knowledge Period Tracker"
+description: "Zero-knowledge period tracking means the app cannot read your data even if forced to. What the term means and how it differs from encrypted cloud storage."
+ogImage: "/og/guides/what-is-zero-knowledge-period-tracker.png"
+tags:
+  - "guide"
+publishedAt: "2026-03-21"
+updatedAt: "2026-04-01"
+buyerStage: "tofu"
+targetPersona:
+  - "flo-refugee"
+  - "post-roe-tracker"
+  - "paper-tracker"
+  - "privacy-conscious-user"
+bluf: "A zero-knowledge period tracker is a cycle tracking app where the developer cannot read your health data. Core records stay local-first, and the strongest version of this has no sync at all, so nothing leaves the device automatically. This is an architectural constraint, not a policy promise. Most apps that claim zero-knowledge use the term loosely. True zero-knowledge means any server involved cannot read your health data."
+definitions:
+  - term: "Zero-knowledge proof"
+    definition: "A cryptographic method where one party can prove they know something without revealing the underlying data. In period tracking, it means the app can function without the server ever seeing your health information."
+  - term: "On-device storage"
+    definition: "Core records stored on your phone or tablet instead of in a readable company database. If company servers are breached or served with legal process, there is less readable company-held cycle data to expose or produce."
+  - term: "End-to-end encryption"
+    definition: "Encryption applied before data leaves your device, so only the intended recipient (you) can decrypt it. Not the same as zero-knowledge, an E2EE system can still store encrypted blobs on a server that the company theoretically holds keys for."
+answers:
+  - q: "What does zero-knowledge mean for a period tracker?"
+    a: "In a zero-knowledge period tracker, your health data never reaches the company's servers in readable form. The app processes everything locally on your device. There is no readable database entry for your cycle dates, symptoms, or flow data, so there is less company-held data to sell, produce through legal process, or expose in a breach."
+  - q: "How is zero-knowledge different from encrypted cloud storage?"
+    a: "Encrypted cloud storage means your data is scrambled before it is uploaded, but the company often holds the encryption keys. If they are compelled by a court order or choose to hand over data to a partner, they can decrypt it. Zero-knowledge means the server never receives the data at all. The encryption happens on your device and the key never leaves it."
+  - q: "Which period tracker apps are actually zero-knowledge?"
+    a: "Very few apps meet a strict zero-knowledge standard. Most store data on servers and rely on privacy policies rather than architecture to protect it. On-device-first apps, especially ones that do not require an account or readable cloud sync for core tracking, come closest because they reduce the readable server-side surface."
+faqs:
+  - q: "Is zero-knowledge the same as no internet connection required?"
+    a: "Not exactly, but there is overlap. A zero-knowledge app should work fully offline for data entry and analysis. Some may still use the internet for app updates or anonymous analytics, but your health data should never be one of those transmissions."
+  - q: "Can a zero-knowledge app still be hacked?"
+    a: "If core health records are not stored in a readable company database, a company server breach has less cycle data to expose. Your device itself could be compromised if someone has physical access or installs malware, but that is a different threat model from the server-side breaches that have affected major period tracking companies."
+  - q: "Why do apps claim zero-knowledge when they are not?"
+    a: "The term is loosely defined and not regulated. Companies sometimes use it to mean they do not sell data, or that data is encrypted in transit, rather than the cryptographic definition. Reading the technical architecture section of a privacy policy, not just the marketing claims, is the only way to verify."
+relatedPages:
+  - /compare/alternatives/flo-app-alternative
+  - /compare/alternatives/clue-alternative-no-cloud
+  - /resources/best/best-private-period-tracker-apps
+  - /resources/best/best-period-tracker-apps-no-data-selling
+  - /compare/versus/flo-vs-clue-privacy-comparison
+  - /resources/guides/flo-period-tracker-lawsuit-settlement
+  - /resources/guides/is-flo-safe-to-use
+---
+
+## What Zero-Knowledge Actually Means
+
+The term "zero-knowledge" originates in cryptography, where it describes a proof system in which one party can verify a claim without learning anything beyond the claim itself. Applied to period tracking, it means the service cannot learn your health data, even if ordered to produce it.
+
+This is different from a privacy policy. A privacy policy is a legal promise. Zero-knowledge is an architectural constraint. A company can violate its privacy policy and later settle an enforcement action. It cannot violate physics.
+
+## Why Most "Private" Apps Do Not Qualify
+
+The majority of period tracker apps, including those that market themselves as privacy-focused, store data on servers. They may encrypt it. They may promise not to sell it. But the data exists on infrastructure they control, which means it can be:
+
+- Accessed by employees
+- Included in a data breach
+- Handed over under a court order or subpoena
+- Shared with third-party SDKs embedded in the app
+
+The FTC enforcement action against Flo Health in 2021 and the subsequent $59.5M class action settlement (reported by Reuters, September 2025) illustrate that privacy policies alone are not protection. The data existed on servers, and it was shared.
+
+## On-Device vs. Cloud: The Architectural Difference
+
+A local-first period tracker keeps core records in your phone's storage. When you delete the app, local app data is removed from that device. Backups, exports, encrypted backup files, billing, support, and anti-abuse records are separate.
+
+Cloud-backed apps, even with strong encryption, have a server component. That server is a legal target. Your data, even encrypted, represents a record that courts can compel disclosure of, and companies can comply with by handing over keys.
+
+## What to Look For When Evaluating an App
+
+Before trusting any app's privacy claims, check:
+
+1. Does the app require an account? If yes, it has a server component.
+2. Does the app sync across devices? Cross-device sync requires a server.
+3. Does the privacy policy mention "we never store your data on our servers"? Look for specifics, not vague reassurances.
+4. Is the app open source Independent code review is the strongest form of verification.
+
+On-device, no-account apps represent the closest practical implementation of zero-knowledge for period tracking available today.

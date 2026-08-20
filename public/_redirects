@@ -1,0 +1,18 @@
+# Everything routed through Functions (public/_routes.json includes /*) already gets
+# a single-hop www->apex redirect from functions/_middleware.ts. The paths in the
+# _routes.json "exclude" list bypass Functions and would otherwise serve 200 on both
+# hosts, so they need explicit rules here. Keep this list in sync with that exclude list.
+https://www.floriva.app/favicon.png https://floriva.app/favicon.png 301
+https://www.floriva.app/favicon.svg https://floriva.app/favicon.svg 301
+https://www.floriva.app/icons.svg https://floriva.app/icons.svg 301
+https://www.floriva.app/logo-icon.png https://floriva.app/logo-icon.png 301
+https://www.floriva.app/logo-mark.png https://floriva.app/logo-mark.png 301
+https://www.floriva.app/logo-source-approved.png https://floriva.app/logo-source-approved.png 301
+https://www.floriva.app/logo.svg https://floriva.app/logo.svg 301
+https://www.floriva.app/logo-dark.svg https://floriva.app/logo-dark.svg 301
+https://www.floriva.app/logo-light.svg https://floriva.app/logo-light.svg 301
+https://www.floriva.app/sitemap.xml https://floriva.app/sitemap.xml 301
+https://www.floriva.app/robots.txt https://floriva.app/robots.txt 301
+https://www.floriva.app/llms.txt https://floriva.app/llms.txt 301
+/pricing /get 301
+/api/* /api/:splat 200

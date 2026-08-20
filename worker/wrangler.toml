@@ -1,0 +1,36 @@
+# floriva-email Worker — owns all outbound email via the Cloudflare Email Service
+# `EMAIL` send binding (a Workers-only feature) plus the cron-driven nurture drip.
+# The Pages project (floriva-web) reaches the /internal/send route over a service
+# binding; the scheduled() handler runs the sequence sweep.
+name = "floriva-email"
+main = "src/index.ts"
+compatibility_date = "2026-04-21"
+
+# Not publicly reachable. Pages calls /internal/send over the EMAIL_WORKER service
+# binding and the drip runs on cron, so the *.workers.dev URL is disabled to avoid
+# exposing an authenticated send endpoint on the open internet.
+workers_dev = false
+
+# Cloudflare Email Service send binding. Requires floriva.app configured for Email
+# Sending (DKIM/SPF verified) in the Cloudflare dashboard — see docs/lead-magnet-delivery.md.
+[[send_email]]
+name = "EMAIL"
+
+# Nurture sweep cadence. Day-granularity offsets mean 15-minute resolution is ample
+# and keeps each run's due batch small.
+[triggers]
+crons = ["*/15 * * * *"]
+
+# Same database the Pages Functions write leads/enrollments into.
+[[d1_databases]]
+binding = "LEAD_MAGNET_DB"
+database_name = "floriva-db"
+database_id = "1d694584-7b01-479a-bba7-b67d303b13cd"
+
+[vars]
+EMAIL_FROM = "Floriva <angel.campa@floriva.app>"
+EMAIL_REPLY_TO = "angel.campa@floriva.app"
+SITE_ORIGIN = "https://floriva.app"
+
+# Secret set via `wrangler secret put INTERNAL_SEND_SECRET --config worker/wrangler.toml`
+# (must match the value on the Pages project).

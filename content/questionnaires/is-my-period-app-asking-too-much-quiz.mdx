@@ -1,0 +1,197 @@
+---
+title: "Is My Period App Asking Too Much?"
+description: "Use this permission and account self-check to see whether your period app asks for more data than it needs."
+publishedAt: "2026-06-30"
+updatedAt: "2026-06-30"
+buyerStage: "mofu"
+targetPersona:
+  - "privacy-conscious"
+  - "period-app-switcher"
+tags:
+  - quiz
+  - permissions
+  - privacy audit
+  - period tracker
+  - account security
+schema: "Article"
+bluf: "A period app may be asking too much if it requires an account, asks for broad permissions, syncs to cloud or health hubs by default, shows private notifications, or makes deletion hard to find."
+answers:
+  - q: "How do I know if my period app asks for too much data?"
+    a: "Check whether it needs an account, location, contacts, broad health access, ad tracking, cloud sync, or social login. If the app cannot explain why it needs the data, treat that as a warning sign."
+  - q: "What permissions should a period app need?"
+    a: "Basic cycle tracking can work with very few permissions. Calendar reminders may need notifications. Optional export may need file access. Most period apps do not need location, contacts, microphone, or broad photo access."
+  - q: "What should I do if my app scores high risk?"
+    a: "Export data you want to keep, turn off extra permissions, delete old cloud data if you can, and consider switching to an app with local storage and no required account."
+faqs:
+  - q: "Is every permission request bad?"
+    a: "No. Some requests have a clear use. The problem is broad access that does not match the feature you use."
+  - q: "Can a privacy policy make broad permissions safe?"
+    a: "A policy helps, but settings matter too. If the app does not need access, turn it off."
+  - q: "Is this quiz medical advice?"
+    a: "No. It helps you review privacy risk. It does not diagnose or treat anything."
+definitions:
+  - term: "Permission"
+    definition: "A phone setting that lets an app access data or hardware, such as location, contacts, Health, camera, or notifications."
+  - term: "Cloud sync"
+    definition: "A feature that copies app data to company or cloud servers so it can be restored or used on other devices."
+  - term: "Data minimization"
+    definition: "The practice of collecting only the data needed for a clear purpose."
+relatedPages:
+  - /resources/privacy-in-practice/lock-down-period-data-on-your-phone
+  - /free/period-app-privacy-audit-kit
+  - /resources/guides/period-app-privacy-red-flags
+  - /resources/guides/how-period-tracker-apps-collect-data
+  - /resources/guides/what-is-zero-knowledge-period-tracker
+sources:
+  - id: "ftc-flo-2021"
+    claim: "The FTC alleged that Flo shared users' health data with Facebook, Google, and outside analytics providers after promising to keep it private."
+    url: "https://www.ftc.gov/news-events/news/press-releases/2021/01/developer-popular-womens-fertility-tracking-app-settles-ftc-allegations-it-misled-consumers-about"
+    publisher: "Federal Trade Commission"
+    publishedAt: "2021-01-13"
+    primary: true
+  - id: "ftc-premom-2023"
+    claim: "The FTC case page for Premom's developer says the final order bars the company from sharing health data for advertising."
+    url: "https://www.ftc.gov/legal-library/browse/cases-proceedings/202-3186-easy-healthcare-corporation-us-v"
+    publisher: "Federal Trade Commission"
+    publishedAt: "2023-06-26"
+    primary: true
+---
+
+Period apps often ask for more than period dates. Some ask for an account. Some ask for location. Some ask to sync with health hubs. Some ask to track you across apps.
+
+That matters because privacy failures have already been documented. The FTC alleged that Flo shared users' health data with Facebook, Google, and analytics providers after privacy promises. The FTC also charged Premom's developer with deceiving users by sharing sensitive personal information with third parties. This self-check turns those failures into settings you can review on your own phone.
+
+This self-check helps you decide if the request matches the job.
+
+Keep score as you go.
+
+- 0 points: low concern
+- 1 point: check the setting
+- 2 points: strong warning
+
+## Question 1: Does the app require an account?
+
+- 0 points: No account is needed.
+- 1 point: Account is optional.
+- 2 points: Account is required before you can track.
+
+Why it matters: an account can tie cycle data to your email, phone number, or social login.
+
+## Question 2: Does the app ask for location?
+
+- 0 points: It never asks.
+- 1 point: It asks, but the feature is optional.
+- 2 points: It asks without a clear reason.
+
+Basic cycle tracking does not need your location.
+
+## Question 3: Does it ask for contacts?
+
+- 0 points: It never asks.
+- 1 point: It asks only for a sharing feature you use.
+- 2 points: It asks even though you do not use sharing.
+
+Contacts can reveal people close to you. A period tracker should not need them for a calendar.
+
+## Question 4: Does it ask for Apple Health, Health Connect, or Google Fit?
+
+- 0 points: It does not ask.
+- 1 point: It asks for narrow read or write access.
+- 2 points: It asks for broad health access.
+
+Health access can move cycle data between apps. Use the [phone period data audit](/resources/privacy-in-practice/lock-down-period-data-on-your-phone) if you are unsure what is turned on.
+
+## Question 5: Does it ask to track you across apps?
+
+- 0 points: It does not ask.
+- 1 point: It asks and you denied it.
+- 2 points: It asks and pushes you to allow it.
+
+Ad tracking does not help you know when your period may start.
+
+## Question 6: Does it sync to the cloud by default?
+
+- 0 points: No cloud sync.
+- 1 point: Cloud sync is optional and clear.
+- 2 points: Cloud sync is required or hard to turn off.
+
+Cloud sync can help with backup. It also creates a server copy. Read [how period tracker apps collect data](/resources/guides/how-period-tracker-apps-collect-data) if you want the full model.
+
+## Question 7: Does it show private text in notifications?
+
+- 0 points: Notifications are off or vague.
+- 1 point: You can hide details.
+- 2 points: It shows clear period or fertility text by default.
+
+Lock screen text can be seen by someone near you.
+
+## Question 8: Does it make deletion easy?
+
+- 0 points: Delete account and export data are easy to find.
+- 1 point: One of those options is hard to find.
+- 2 points: You cannot find either option.
+
+You should be able to leave without guessing.
+
+## Question 9: Does it ask for intimate details you do not use?
+
+- 0 points: You can skip optional fields.
+- 1 point: It asks but does not require them.
+- 2 points: It pressures you to fill them in.
+
+Symptom notes, sex logs, mood notes, and pregnancy intent can be sensitive. Only enter what you need.
+
+## Question 10: Does the app explain why it needs each data type?
+
+- 0 points: The app explains requests in plain words.
+- 1 point: Some requests are explained.
+- 2 points: The app gives vague or no reasons.
+
+Clear asks build trust. Vague asks should slow you down.
+
+## Add your score
+
+Add the points from all 10 questions.
+
+This is a practical settings check, not a legal, medical, or security risk score. Use the result to pick your next action.
+
+### 0 to 4: Few settings to review
+
+The app asks for little data, or you have turned off most access. Still check your settings every few months.
+
+Next step: use the [period app privacy audit checklist](/free/period-app-privacy-audit-kit).
+
+### 5 to 10: Review soon
+
+The app may be asking for more than you need. Review permissions. Turn off sync and access you do not use. Export data you want to keep.
+
+Next step: read the [period app privacy red flags](/resources/guides/period-app-privacy-red-flags).
+
+### 11 to 16: Audit before adding more data
+
+The app has several risk signs. Do a full audit before you keep using it. Check account deletion, health hub access, cloud sync, and notification previews.
+
+Next step: review [what a zero-knowledge period tracker means](/resources/guides/what-is-zero-knowledge-period-tracker).
+
+### 17 to 20: Leave plan needed
+
+The app asks for a lot of data or makes control hard. Export what you need. Delete what you can. Consider moving to local tracking.
+
+Next step: use the full [phone period data audit](/resources/privacy-in-practice/lock-down-period-data-on-your-phone).
+
+## A simple rule
+
+If a period app asks for data, the request should pass this test:
+
+- What feature needs this?
+- Can I use the app without it?
+- Can I turn it off later?
+- Can I delete data already shared?
+
+If you cannot answer those questions, pause before adding more data.
+
+## Where Floriva fits
+
+Floriva is built around a smaller ask. For basic tracking, it does not require a cloud account and does not need broad health hub sync. That makes the privacy audit shorter.
+
+You still own the choice. The right app is the one whose data asks you can understand.

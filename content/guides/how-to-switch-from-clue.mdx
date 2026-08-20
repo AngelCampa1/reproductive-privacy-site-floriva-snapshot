@@ -1,0 +1,109 @@
+---
+title: "How to Switch from Clue to a Private Period Tracker"
+description: "Export your Clue cycle history, delete the account under GDPR, file a formal data request, and move to a local-first tracker with less readable company-held data."
+ogImage: "/og/guides/how-to-switch-from-clue.png"
+tags:
+  - "guide"
+  - "migration"
+publishedAt: "2026-04-16"
+updatedAt: "2026-04-16"
+buyerStage: "mofu"
+targetPersona:
+  - "privacy-conscious-user"
+  - "post-roe-tracker"
+bluf: "Clue has the cleanest record among major period trackers, but cloud storage still means subpoena risk. Here's how to export your cycle history and switch to an on-device app."
+steps:
+  - title: "Export your cycle history"
+    content: "In Clue, tap the menu icon (three lines), then Settings, then Data Management, then Export Data. Clue emails a download link within 24-48 hours. The export is a CSV covering cycle dates, symptom tags, and tracked categories."
+  - title: "Delete your account (not just the app)"
+    content: "Open Settings, go to Privacy, then tap Delete Account. Clue is GDPR-based, so the deletion flow includes explicit confirmation steps. Uninstalling alone leaves your data on Clue's servers in Berlin."
+  - title: "Verify deletion"
+    content: "Wait 24-48 hours. Try to log in with your old Clue credentials. A successful deletion returns an 'account not found' error. If login still works, the request did not complete and you should repeat step 2."
+  - title: "Submit a CCPA/GDPR data deletion request"
+    content: "Email data-requests@helloclue.com. Subject: 'GDPR Data Deletion Request.' State your Clue account email and invoke your right under GDPR Article 17 (right to erasure) or CCPA Section 1798.105 if you are in California. Clue must respond within 30 days (GDPR) or 45 days (CCPA)."
+  - title: "Choose your replacement tracker"
+    content: "Privacy-first options: Floriva (paid, polished, local-first with no sync and an encrypted backup file), Euki (free, nonprofit-maintained, local-only), Drip (free, open-source, community-maintained, local-only). All three reduce company-held readable cycle records."
+  - title: "Start logging in the new app"
+    content: "Open the Clue CSV in any spreadsheet. Enter your last 3-6 cycle start dates into the new tracker. Most prediction algorithms need 2-3 recorded cycles to stabilize, so seeding from Clue's history avoids a warm-up period of less accurate forecasts."
+timeEstimate: "30 minutes"
+difficulty: "beginner"
+definitions:
+  - term: "Account deletion vs. app deletion"
+    definition: "Deleting the app removes it from your phone. Deleting the account removes your data from the company's servers. These are different actions."
+  - term: "CCPA/GDPR deletion request"
+    definition: "Legal right to request complete deletion of your personal data from a company. Applies in California (CCPA) and the EU/UK (GDPR)."
+answers:
+  - q: "How do I switch from Clue without losing my cycle history"
+    a: "Export the CSV from Clue (Settings, Data Management, Export Data) before deleting the account. Open the CSV in a spreadsheet to read your cycle start dates. Enter the last 3-6 start dates into your new tracker to seed the prediction algorithm."
+  - q: "Does uninstalling Clue delete my data"
+    a: "No. Uninstalling only removes the app from your device. Your data remains on Clue's servers until you delete the account and submit a deletion request."
+  - q: "What's the best replacement for Clue"
+    a: "Floriva, Euki, and Drip are the common picks. All three keep cycle data on-device rather than on a company server. Euki and Drip are free. Floriva is paid and focuses on polish. The right pick depends on budget and whether you want a nonprofit, open-source, or commercial maintainer behind the app."
+faqs:
+  - q: "Clue is GDPR-compliant, so why switch"
+    a: "GDPR compliance means Clue follows rules about how cloud data is handled. It does not change the fact that cloud data exists. A server holding cycle data can be subpoenaed, breached, or subjected to a policy change. An on-device tracker removes the server from the equation entirely, which is a stronger privacy posture than any compliance regime can offer."
+  - q: "Can Clue data be subpoenaed for a reproductive-rights case in the US"
+    a: "Clue is Berlin-based, which provides some distance from US subpoenas, but not immunity. US courts can seek mutual legal assistance treaty (MLAT) cooperation for data held abroad, and Clue has stated it would challenge such requests. The challenge is not a guarantee. On-device tracking removes the subpoena target because there is no readable central copy to produce."
+  - q: "Will I lose my period predictions when I switch"
+    a: "Temporarily. Every tracker needs 2-3 recorded cycles to calibrate its prediction algorithm. Seeding the new app with your last 3-6 cycle start dates from the Clue export minimizes the calibration gap. After two full cycles with the new app, predictions are usually back to baseline accuracy."
+relatedPages:
+  - /compare/alternatives/clue-alternative-no-cloud/
+  - /resources/guides/clue-privacy-deep-dive/
+  - /resources/guides/what-happens-period-data-delete-app/
+  - /resources/best/best-private-period-tracker-apps/
+  - /resources/guides/on-device-storage-period-tracker/
+---
+
+## Why switch from Clue
+
+Clue has the cleanest privacy record among the major period trackers. No FTC enforcement action, no class action settlement, no documented history of selling data to advertisers. Berlin-based and GDPR-native, Clue built its brand on being the responsible option in a category where responsibility was scarce.
+
+That record is real. It is also a weaker protection than most users know.
+
+Clue stores your cycle history on its servers. A server copy of your data exists whether or not Clue behaves responsibly with it. A server copy can be subpoenaed. It can be breached. It can be caught up in a policy change or an acquisition. The strongest privacy guarantee Clue can offer is "we handle your data carefully." An on-device tracker offers a different guarantee: "there is no off-device copy to handle."
+
+If you are on Clue because it felt like the safest cloud tracker, and you are now thinking through subpoena risk after Dobbs or data-broker sales after the Flo settlement, this guide is the clean exit. For more context on what Clue does and does not do with your data, see our [Clue alternative overview](/compare/alternatives/clue-alternative-no-cloud/).
+
+## Step 1: Export your cycle history
+
+In Clue, tap the menu icon (three horizontal lines) in the top-left, then Settings, then Data Management, then Export Data. Clue emails a download link within 24-48 hours. The export is a CSV with cycle dates, symptom tags, and tracked categories.
+
+Open the CSV in any spreadsheet. You only need the cycle start dates for the migration, but keep the full file in case you want fertility or symptom context later.
+
+## Step 2: Delete your account
+
+Go back to Settings, then Privacy, then Delete Account. Clue's GDPR-compliant flow requires explicit confirmation. Read the prompts carefully and complete each step. Once Clue confirms the deletion, the account is queued for removal from active systems.
+
+Our [Clue privacy deep dive](/resources/guides/clue-privacy-deep-dive/) walks through the full policy and what deletion actually covers.
+
+## Step 3: Submit a CCPA/GDPR data request
+
+Email data-requests@helloclue.com with the subject "GDPR Data Deletion Request." In the body, state your Clue account email and invoke your right under GDPR Article 17 (right to erasure) or CCPA Section 1798.105 if you are a California resident. Ask for confirmation that backups and any derivative datasets are also purged.
+
+Clue has 30 days under GDPR and 45 days under CCPA to respond. Save the email thread. This is the formal record that compels backup purging.
+
+## Step 4: Verify deletion
+
+Wait 24-48 hours after step 2. Attempt to log in with your old Clue credentials. A deleted account returns an "account not found" or "invalid credentials" error. If login still works, the deletion did not process and step 2 should be repeated.
+
+For a broader read on what "deletion" means across period apps, see our guide on [what happens to period data when you delete an app](/resources/guides/what-happens-period-data-delete-app/).
+
+## Step 5: Choose your replacement
+
+Three on-device trackers cover most Clue refugees:
+
+**Floriva** is paid, polished, and oriented around privacy as architecture. Core records stay on your phone. There is no sync, so nothing is transmitted. Pricing is a flat annual fee.
+
+**Euki** is free and maintained by a reproductive health nonprofit. No account, no sync, no server. Less refined interface than Floriva or Clue, but the data posture is strong.
+
+**Drip** is free and open-source, community-maintained. Good pick for users who want to audit the code or contribute.
+
+All three are in our [private period tracker roundup](/resources/best/best-private-period-tracker-apps/), where the tradeoffs between polish, cost, and maintenance model are broken down in more detail.
+
+## Step 6: Start fresh in the new app
+
+Open the Clue CSV and pull your last 3-6 cycle start dates. Enter them into the new app during setup. Prediction algorithms need 2-3 recorded cycles to stabilize, and seeding the history cuts the warm-up period significantly.
+
+Once the new tracker has enough history to feel accurate, delete the Clue CSV. The data you did not want on a server should not linger on your local disk either.
+
+If you want more detail on how on-device storage actually works and why it changes the privacy model, our [on-device storage explainer](/resources/guides/on-device-storage-period-tracker/) covers the architecture.

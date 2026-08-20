@@ -1,0 +1,54 @@
+:root {
+  color-scheme: light;
+  /* Bone & Berry — canonical tokens from floriva-app src/theme/tokens.ts */
+  --canvas: #F4ECE0;
+  --canvas-deep: #EAE0D0;
+  --paper: #FBF5EB;
+  --ink: #1A1410;
+  --ink-soft: #3D2E26;
+  --ink-mute: #7A6A5E;
+  --rule: #D9CCBB;
+  --berry: #923030;
+  --on-berry: #F4ECE0;
+  --berry-soft: #E8D2CB;
+  --moss: #6E8E6B;
+  --moss-soft: #D5DBC7;
+  /* Focus ring: was the same hex as --berry, so a focused berry-fill button
+     rendered an invisible berry-on-berry ring. --focus stays the brand color
+     but every focus-visible rule now pairs it with a bone halo (box-shadow)
+     so the ring reads on both bone and berry surfaces. */
+  --focus: #923030;
+  --focus-halo: #FBF5EB;
+  --radius-md: 16px;
+  --radius-card: 24px;
+  --radius-pill: 999px;
+  --shadow-soft: 0 6px 16px rgba(26, 20, 16, 0.06);
+  --shadow-strong: 0 6px 16px rgba(26, 20, 16, 0.08);
+  --font-display: "Newsreader", Georgia, serif;
+  --font-body: "Inter Tight", "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+
+  /* Sticky header height, desktop/tablet. Below 720px the header switches to
+     `position: relative` (see header-footer.css), so base.css zeroes this
+     back out at that same breakpoint — see the --header-h override there. */
+  --header-h: 77px;
+
+  /* Preserved from the previous token set — spacing scale and easing curves. */
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.25, 1, 0.5, 1);
+
+  /* Motion durations — three tiers collapsed from six literal values that
+     were scattered across the stylesheets (160ms/180ms/0.15s as one tier,
+     220ms/240ms as another, 700ms alone). */
+  --duration-fast: 180ms;
+  --duration-base: 220ms;
+  --duration-slow: 700ms;
+}

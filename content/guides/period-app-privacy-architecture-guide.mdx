@@ -1,0 +1,83 @@
+---
+title: "How Period Tracker Privacy Architecture Actually Works"
+description: "Period tracking app privacy depends on architecture. Covers on-device storage, E2E encryption, zero-knowledge design, and why policies are not enough."
+ogImage: "/og/guides/period-app-privacy-architecture-guide.png"
+tags:
+  - "guide"
+publishedAt: "2026-03-30"
+updatedAt: "2026-04-01"
+buyerStage: "tofu"
+targetPersona:
+  - "privacy-conscious-user"
+bluf: "Period tracker privacy depends on architecture, not policy. Local-first storage (Floriva, Drip) means the company has less readable health data. End-to-end encryption means the company may store encrypted data it cannot read. Server-side storage with a privacy policy (Flo, Clue) means the company can hold readable data. Local-first storage reduces company-side sharing, sale, breach, and legal-request risk."
+definitions:
+  - term: "On-Device Storage"
+    definition: "Core health records are stored in the phone's local storage (SQLite database, encrypted filesystem, or similar). The app does not depend on a readable central health-data database for core tracking."
+  - term: "End-to-End Encryption (E2EE)"
+    definition: "Data is encrypted on your device before being sent to a server. The server stores encrypted blobs it cannot decrypt. Only your device holds the decryption key. If the server is breached or subpoenaed, the data is unreadable without your key. This is how Signal handles messages."
+  - term: "Zero-Knowledge Architecture"
+    definition: "A system design where the service provider cannot read user data at any point, even if compelled by a court order or subpoena. In period tracking, this means health data never leaves the user's device in readable form. The developer holds no keys and stores no records."
+  - term: "Server-Side Storage With Policy"
+    definition: "Data is sent to and stored on company servers in readable form, protected only by the company's privacy policy and internal access controls. This is how Flo and Clue operate. The company can technically access, share, or be compelled to produce your data."
+tableData:
+  name: "Period Tracker Privacy Architecture Comparison"
+  description: "How different storage approaches protect your reproductive health data"
+  columns: ["Approach", "Data Location", "Company Access", "Subpoena Risk", "Breach Risk", "Example Apps"]
+  rows:
+    - ["Server-side storage", "Company servers", "Full access", "High", "High", "Flo, Clue (legacy), Glow"]
+    - ["On-device storage", "Mostly your phone", "Low", "Lower (company)", "Lower (server)", "Floriva, Drip"]
+    - ["End-to-end encrypted server", "Encrypted on servers", "Cannot read", "Low, encrypted data only", "Low", "Apple Health iCloud sync"]
+    - ["Zero-knowledge design", "Device-held records", "Low", "Low", "Low", "Floriva, Euki"]
+answers:
+  - question: "What is the technical difference between on-device and cloud-based period trackers"
+    answer: "On-device: core cycle data is stored in the phone's local database, which reduces readable company-held records. Cloud-based: your data is sent via HTTPS to company servers, stored in a database the company controls, and accessible to employees with database access, law enforcement with a subpoena, and attackers in a breach."
+  - question: "Why don't all period trackers use on-device storage"
+    answer: "Three business reasons. First, advertising revenue requires user data on servers for targeting. Second, cross-device sync requires a server intermediary. Third, aggregate data sales (to researchers, pharma companies) require centralized access to user datasets. On-device storage eliminates all three revenue streams, which is why free ad-supported trackers never use it."
+  - question: "Is end-to-end encryption as good as on-device storage"
+    answer: "Almost, but not quite. E2EE means the company stores your data but cannot read it. The risk is key management: if the encryption implementation has flaws, if the company holds a recovery key, or if a future update changes the encryption scheme, the protection can be silently weakened. On-device storage is simpler and has fewer failure modes because there is no readable central cycle database at all."
+faqs:
+  - q: "How do I verify that an app actually uses on-device storage"
+    a: "Three approaches. First, check if the app works in airplane mode. On-device apps function fully offline. Second, monitor network traffic using tools like Charles Proxy or mitmproxy to see what data the app sends. Third, for open-source apps like Drip, read the source code. For closed-source apps, network monitoring is the most accessible verification method."
+  - q: "Does Floriva use encryption"
+    a: "Floriva encrypts your local database using your device's built-in encryption (iOS Data Protection, Android file-based encryption). Since no data leaves your device, there is no network encryption to discuss. Your phone's lock screen passcode is the access control."
+  - q: "What about Apple Health's encryption"
+    a: "Apple Health uses end-to-end encryption for iCloud Health data sync. Apple cannot decrypt this data on their servers. However, a device with your Apple ID credentials can decrypt it. If you use Apple Health for cycle tracking, this is a reasonable E2EE implementation, though on-device-only is still structurally simpler."
+relatedPages:
+  - "/resources/best/best-privacy-first-period-trackers"
+  - "/resources/guides/end-to-end-encryption-period-tracker"
+  - "/resources/guides/what-is-zero-knowledge-period-tracker"
+---
+
+## The Three Privacy Architecture Tiers
+
+Not all privacy is equal, and the differences are technical, not rhetorical. Period trackers fall into three architectural categories, and the category determines the actual privacy you get regardless of what the privacy policy says.
+
+Tier 1 is on-device or local-first storage. Core records stay on your phone instead of a readable company database. This is how Floriva and Drip work. The privacy benefit is structural: there is less readable company-held data to share, sell, breach, or produce in response to legal demands.
+
+Tier 2 is end-to-end encryption with server storage. Your data is encrypted on your device, sent to a server as an encrypted blob, and stored there. The server cannot decrypt it. This is how Apple Health's iCloud sync works. The privacy guarantee depends on the quality of the encryption implementation and the company not holding a backdoor key.
+
+Tier 3 is server-side storage with a privacy policy. Your data is sent to company servers in readable form. The company promises (via privacy policy) not to misuse it. This is how Flo and Clue work. The privacy guarantee is a legal document that can be changed, violated, or overridden by court order.
+
+## Why Architecture Beats Policy
+
+Flo's privacy policy explicitly stated that user health data would not be shared with third parties. The FTC found that Flo shared data with Facebook and Google for advertising purposes despite this policy. The company paid $59.5M in settlement. The policy existed. It was violated. Users had no way to know.
+
+An on-device tracker can make company-side sharing much harder because core records are not sitting in a readable central database. The architecture reduces risk instead of asking you to trust only a policy. This is the difference between a promise and a constraint.
+
+## How On-Device Storage Works Technically
+
+When you log a period start date in Floriva, the app writes that data to a local SQLite database in your phone's application sandbox. This database is accessible only to the Floriva app and is encrypted by your phone's operating system (iOS Data Protection or Android file-based encryption). The app makes no HTTP requests containing health data. There is no API endpoint, no user account database, no analytics pipeline.
+
+When you open the app, it reads from the local database, runs prediction algorithms locally, and displays the results. The entire cycle from input to output happens on your hardware without any network activity.
+
+## The Third-Party SDK Problem
+
+Even apps that claim privacy often embed third-party SDKs (software development kits) from companies like Google (Firebase Analytics), Facebook (Meta SDK), or advertising networks. These SDKs can collect device identifiers, usage patterns, and sometimes health-adjacent data independently of the app's own data handling.
+
+We built Floriva with zero third-party SDKs. No analytics, no crash reporting services, no ad networks. This is a business trade-off because analytics help us understand how people use the app. But including analytics code creates a data collection channel that undermines the on-device promise.
+
+## What to Check When Evaluating Any Privacy Claim
+
+Four verification steps. First, does the app work in airplane mode If core features require internet, data is being sent somewhere. Second, does the app require an account or email Any identifier creates a link between you and your data on a server. Third, what SDKs are embedded On iOS, check the App Privacy Nutrition Label. On Android, check the Data Safety section. Fourth, is the code open-source Open-source apps like Drip allow direct verification of privacy claims.
+
+Privacy is not a marketing claim. It is a technical property that can be verified.

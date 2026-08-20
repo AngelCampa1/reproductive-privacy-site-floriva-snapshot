@@ -1,0 +1,135 @@
+---
+title: "Best Period Trackers With No Data Sharing in 2026"
+description: "Ranked by architecture, not marketing claims. These period tracker apps store data on your device and don't share it with advertisers or data brokers."
+ogImage: "/og/listicles/best-period-trackers-no-data-sharing.png"
+tags:
+  - "comparison"
+publishedAt: "2026-03-31"
+updatedAt: "2026-03-31"
+buyerStage: "mofu"
+targetPersona:
+  - "flo-refugee"
+category: "Period Tracker Apps"
+qualifier: "No Data Sharing"
+bluf: "Period trackers that genuinely share no data are those that never have your data on a server. Floriva, Euki, and Drip all use on-device storage with no third-party analytics. Clue has no documented data-selling but still uses server storage. Flo settled a $59.5M combined action in 2025 for confirmed data sharing."
+tools:
+  - name: "Floriva"
+    summary: "On-device storage, no account required, no third-party SDKs. iOS and Android. Paid app, no free tier."
+    pros:
+      - "Data stored on-device, no server to share from"
+      - "No account or email required"
+      - "No embedded analytics or advertising SDKs"
+      - "Encrypted backup file for moving to a new phone"
+    cons:
+      - "Paid subscription required (no free tier)"
+      - "Smaller prediction dataset than established apps"
+    pricing: "Paid app (no free tier)"
+    verdict: "The strongest privacy architecture among full-featured trackers. On-device storage means no data to share, not a promise not to share it."
+  - name: "Euki"
+    summary: "Nonprofit developer. On-device, no account, free. iOS and Android."
+    pros:
+      - "Nonprofit structure removes commercial data incentive"
+      - "On-device storage"
+      - "No account or email required"
+      - "Free"
+    cons:
+      - "Limited feature set"
+      - "No cross-device sync"
+      - "Less frequent development updates"
+    pricing: "Free"
+    verdict: "Best free option. Nonprofit structure and on-device storage together make data sharing both structurally and commercially implausible."
+  - name: "Drip"
+    summary: "Open source, Android only. No accounts, no server, no analytics. Free."
+    pros:
+      - "Open source, privacy claims independently verifiable on GitHub"
+      - "No accounts, analytics, or server component"
+      - "Free"
+    cons:
+      - "Android only"
+      - "Minimal features"
+      - "No cross-device sync"
+    pricing: "Free"
+    verdict: "Best for verifiable privacy. Open source code is the only way to confirm no-sharing claims without trusting a company's word."
+  - name: "Clue"
+    summary: "Berlin-based, GDPR-compliant, no documented data-selling. Server-based. Free tier available."
+    pros:
+      - "No documented history of data selling"
+      - "GDPR compliance limits commercial sharing"
+      - "No advertising business model"
+      - "Free tier"
+    cons:
+      - "Server-based, data exists on Clue's servers"
+      - "Account required"
+      - "GDPR limits commercial use but not court orders"
+    pricing: "Free / $9.99/mo"
+    verdict: "Best among server-based apps. Clean record and no-ads model are real advantages. Not the same as no-sharing by architecture."
+  - name: "Flo Health"
+    summary: "FTC enforcement action 2021. $59.5M combined settlement 2025. Documented data sharing with Facebook and Google."
+    pros:
+      - "Large user base, mature prediction algorithm"
+      - "Comprehensive features"
+      - "Anonymous Mode available (paid)"
+    cons:
+      - "FTC enforcement action for data sharing (2021)"
+      - "$59.5M combined settlement (2025)"
+      - "Cloud-based architecture"
+      - "Privacy requires paid subscription"
+    pricing: "Free / $4.99/mo"
+    verdict: "Not recommended for users concerned about data sharing. The FTC enforcement action documents confirmed sharing of reproductive health data with advertising platforms."
+tableData:
+  name: "Period tracker no-data-sharing comparison"
+  columns: ["App", "On-Device Storage", "Account Required", "Documented Violations", "Price"]
+  rows:
+    - ["Floriva", "Yes", "No", "None", "Paid app (no free tier)"]
+    - ["Euki", "Yes", "No", "None", "Free"]
+    - ["Drip", "Yes (Android)", "No", "None", "Free"]
+    - ["Clue", "No (server)", "Yes", "None", "Free / $9.99/mo"]
+    - ["Flo", "No (server)", "Yes", "FTC 2021, $59.5M 2025", "Free / $4.99/mo"]
+answers:
+  - q: "Which period tracker apps do not share data?"
+    a: "Apps with the strongest no-sharing architecture include Floriva (local-first, iOS and Android, paid app with no free tier), Euki (on-device, nonprofit, free), and Drip (on-device, open source, Android only, free). These apps keep core records away from readable company databases. Clue has no documented data-selling history but stores data server-side. Flo has documented FTC enforcement for data sharing in 2021 and a $59.5M combined settlement in 2025."
+  - q: "What makes a period tracker safe from data sharing?"
+    a: "Three criteria matter most: local-first storage for core records, no embedded third-party analytics SDKs that transmit health events, and no account requirement for core tracking. Apps that meet all three criteria reduce readable company-side data. Apps that meet only policy criteria may not share your data, but the architecture permits more exposure."
+faqs:
+  - q: "Is there a period tracker with no data collection at all?"
+    a: "Drip (Android) and Euki (iOS and Android) collect no data. Data stays on your device. No analytics, no crash reporting that transmits health context, no account creation. Floriva also collects no readable central cycle database. These are the trackers where 'no data collection' is a technical description, not a marketing promise."
+  - q: "Do any period tracker apps use health data for advertising?"
+    a: "The FTC found that Flo shared reproductive health data with Facebook and Google advertising platforms in 2021. Flo settled a $59.5M combined action over this in 2025. Other apps like Clue and Natural Cycles do not operate advertising businesses and have no documented data-selling history. Apps with ad-supported free tiers are more likely to have data-sharing structures by business model necessity."
+pricingStats:
+  - stat: "Flo Health paid a $59.5M combined settlement for sharing reproductive health data without user consent"
+    source: "Reuters / FTC, September 2025"
+    sourceUrl: "https://www.reuters.com/technology/flo-health-google-flurry-settle-privacy-lawsuit-595-million-2025-09-25/"
+  - stat: "Floriva is a paid app with local-first architecture, keeping core records away from readable company databases"
+    source: "Floriva pricing"
+    sourceUrl: "https://floriva.app/get"
+relatedPages:
+  - "/compare/versus/flo-vs-clue-privacy-comparison"
+  - "/resources/best/best-privacy-first-health-apps"
+  - "/resources/best/best-offline-period-trackers"
+  - "/resources/guides/how-to-audit-period-app-privacy"
+  - "/compare/alternatives/clue-alternative-no-cloud"
+---
+
+## How We Ranked These Apps
+
+The ranking here is based on architecture, not marketing claims or privacy policy language. The only period tracker that cannot share your data is one that never has your data on a server in the first place.
+
+Every app on this list was evaluated on: whether it uses on-device or server-based storage, whether it requires account creation, whether it embeds third-party analytics or advertising SDKs, and whether it has a documented history of data sharing violations.
+
+Policy claims, privacy certifications, and company statements were noted but not treated as equivalent to architectural controls. Flo had privacy policy claims. The FTC found those claims were not reflected in actual behavior. Architecture cannot be overridden by a policy change.
+
+## Why the Architecture Distinction Matters
+
+The FTC's 2021 enforcement action against Flo documented a pattern that is structurally possible in any cloud-based app with embedded third-party SDKs. The analytics code transmitted health data to advertising platforms independently of what Flo's privacy policy said. Flo may not have intended to share data in the way the FTC described. The SDKs did what they were designed to do.
+
+This is why on-device storage with no third-party SDKs is the only architecture that cannot produce an FTC enforcement scenario. There is no data on a server to share accidentally. There are no third-party SDKs to transmit data independently of company policy.
+
+## The Free Options
+
+Users who want no-data-sharing and do not want to pay have two good options. Euki is developed by a reproductive health nonprofit and uses on-device storage with no account required. Drip is open source on Android, meaning the no-data claim can be independently verified. Both are functional period trackers with core cycle tracking and symptom logging.
+
+Neither matches the feature depth of commercial apps, and neither offers cross-device sync. For users who primarily need cycle prediction and reminders, both cover the core use case.
+
+## The Paid Option With On-Device Storage
+
+Floriva is the paid option in this category. It covers more features than the free on-device trackers and is the only one of the three with an encrypted backup file for moving data to a new phone, on both iOS and Android.

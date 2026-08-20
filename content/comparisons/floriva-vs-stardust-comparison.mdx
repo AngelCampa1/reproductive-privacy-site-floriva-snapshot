@@ -1,0 +1,103 @@
+---
+title: "Floriva vs Stardust: Features, Privacy, and Data Compared"
+description: "Stardust markets itself as privacy-focused after Dobbs. Floriva is local-first with no readable central records. Here's an honest comparison of what each app does and what 'privacy-focused' actually means in each case."
+ogImage: "/og/comparisons/floriva-vs-stardust-comparison.png"
+publishedAt: "2026-04-29"
+updatedAt: "2026-04-29"
+buyerStage: "mofu"
+targetPersona:
+  - "privacy-conscious"
+  - "data-sensitive"
+bluf: "Stardust surged in downloads after the Dobbs decision, marketing itself as the privacy alternative to Flo. An independent analysis found Stardust's app contained third-party tracking SDKs despite its privacy marketing, raising questions about the gap between stated policy and actual data collection. Floriva's privacy approach is architectural, no readable central records, not marketing-based. The comparison is less about features than about what 'private' actually means."
+tags:
+  - Stardust
+  - Floriva
+  - comparison
+  - privacy
+  - period tracker
+  - data sharing
+relatedPages:
+  - /compare/versus/floriva-vs-clue-privacy
+  - /compare/versus/privacy-first-period-apps-2026-ranked
+  - /resources/guides/period-app-privacy-red-flags
+  - /resources/guides/period-tracker-data-minimization-guide
+  - /resources/privacy-in-practice/who-can-legally-get-your-period-data
+answers:
+  - q: "Is Stardust actually private"
+    a: "Stardust's privacy claims were scrutinized after the Dobbs decision. The app's marketing positioned it as a private period tracker, but 2022 analyses by tech press (Vice/Motherboard reporting by Joseph Cox) and independent privacy researchers found the app contained third-party SDKs including an advertising attribution tracker (AppsFlyer) at the time. Stardust subsequently updated its app and privacy practices. Whether current Stardust versions maintain or have removed these trackers is worth independently verifying. Use Exodus Privacy to check current SDK presence."
+  - q: "What is the difference between Floriva and Stardust"
+    a: "The core difference is architectural. Stardust is a cloud-based app. Data is stored on servers, accounts are required, and despite privacy marketing, the fundamental infrastructure creates the same legal exposure as other cloud apps. Floriva stores data locally with no readable central records. The privacy differences that matter in practice (subpoena exposure, breach exposure, data broker risk) are driven by architecture, not by marketing positioning."
+  - q: "How can I check if Stardust has tracking SDKs"
+    a: "For Android: Exodus Privacy (exodus-privacy.eu.org) catalogs SDKs detected in Android apps. Search for 'Stardust' in their database to see current SDK analysis. Note that Exodus analyzes specific APK versions. Check the date of the analysis and compare to the current app version. For iOS: use a network analyzer like mitmproxy or Charles Proxy to monitor what traffic the app sends; this requires technical setup. App Store privacy labels are self-reported and may not list specific SDKs."
+  - q: "Which app is better for cycle tracking features"
+    a: "Both apps cover period date logging, symptom tracking, and cycle prediction. Stardust has social features and a more polished consumer UI. Floriva focuses on local-first cycle notes and pattern review for users who want less company-held data. Feature preference depends on what you're tracking for: social community vs. private cycle review."
+definitions:
+  - term: "SDK audit"
+    definition: "Analysis of an app's compiled code to identify embedded third-party libraries (SDKs). Tools like Exodus Privacy do this automatically for Android apps by decompiling APKs. An SDK audit reveals what third-party services the app sends data to, which is often not disclosed in privacy policies. SDKs can include advertising networks, analytics platforms, crash reporters, and attribution trackers, each with their own data collection behavior."
+  - term: "Privacy marketing vs. privacy architecture"
+    definition: "Privacy marketing refers to how a company positions its privacy practices in its branding and statements. Privacy architecture refers to how data actually flows in the technical system. A company can have strong privacy marketing with weak architecture (cloud storage, SDK trackers, required accounts) or minimal marketing with strong architecture (local-only storage, no accounts, no SDKs). The Stardust controversy illustrated the gap: the marketing claimed privacy while the architecture included trackers. Architecture is verifiable; marketing is not."
+---
+
+Stardust became one of the most downloaded apps in the App Store in the days after the Dobbs decision in June 2022, driven by its positioning as a privacy-first period tracker at exactly the moment reproductive privacy concerns peaked.
+
+The scrutiny that followed was instructive.
+
+## What Happened With Stardust Post-Dobbs
+
+Within days of Stardust's surge, tech press (including Joseph Cox at Vice/Motherboard) and independent privacy researchers analyzed the app's data practices. Their finding: Stardust contained third-party SDK integrations, including AppsFlyer, an advertising attribution tracker, that were inconsistent with its privacy-first marketing. The app also required a phone number for registration, linking cycle data to a more identifiable credential than an email address.
+
+Stardust subsequently updated its app, removed some trackers, and revised its privacy policy. CEO Rachel Moranis addressed the criticism and committed to improvements.
+
+**The lesson:** Privacy marketing is responsive to scrutiny. Apps update their practices when attention is focused on them. The more durable question is whether an app's architecture creates meaningful privacy, independent of what the current marketing says.
+
+## Current Status (Verify Before Relying)
+
+Since Stardust has updated its app multiple times, any specific claims about current SDK presence should be independently verified:
+
+1. **Exodus Privacy** (exodus-privacy.eu.org): Search for Stardust; check the date of the most recent analysis against the current app version
+2. **App Store Privacy Label**: Check the "Data Linked to You" and "Data Used to Track You" sections in the App Store listing
+3. **Privacy Policy**: Check for named analytics and advertising partners
+
+If Stardust's current version contains no advertising attribution SDKs and its privacy policy has explicit, specific commitments, it may be a reasonable option for users who want a social-feature-rich app.
+
+## Side-by-Side Comparison
+
+| Dimension | Stardust | Floriva |
+|-----------|----------|---------|
+| Storage | Cloud (US) | Local device only |
+| Account required | Yes (phone number) | No |
+| SDK history | Advertising trackers found 2022 (since updated) | No advertising SDKs |
+| Social features | Yes (community, partner sharing) | No |
+| US subpoena exposure | Server records on US servers | No readable central records |
+| Phone number linkage | Yes (registration requirement) | No |
+| Horoscope/astrology features | Yes | No |
+| Fertility notes | Limited | Check current app fields |
+| Privacy architecture type | Policy-based | Architecture-based |
+
+## The Phone Number Problem
+
+Stardust requires a phone number for registration. This is a more identity-linked credential than email. Email accounts can be pseudonymous; phone numbers are tied to real identity in most cases through carrier records. A subpoena for Stardust records about a specific phone number is more directly actionable than a subpoena for records about an email address that may be pseudonymous.
+
+## What "Privacy" Means in Each Case
+
+**Stardust's privacy approach:** Policy-based. Commitments in the privacy policy, updates in response to scrutiny, stated intent not to sell or misuse data. Subject to change with ownership, financial pressure, or insufficient enforcement.
+
+**Floriva's privacy approach:** Architectural. No readable server records means there is less company-held data to produce after legal demands, ownership changes, or policy revisions. This is not because Floriva would not comply with a valid legal demand. It is because there is less company-held data to produce.
+
+## Who Each Is Right For
+
+**Stardust is better if:**
+- You want social features and a community
+- You want astrology-integrated cycle content
+- You are comfortable with cloud storage and account-based apps
+- You are not in a legally sensitive reproductive health situation
+
+**Floriva is better if:**
+- Architectural privacy matters to you (no readable central records, not policy-based)
+- You want local-first cycle and fertility notes
+- You do not want your phone number linked to your health data
+- Legal risk from reproductive health data is a concern
+
+## What This Means for Floriva Users
+
+The Stardust case is a useful benchmark for evaluating any "privacy-focused" period app: verify claims against architecture, check current SDK presence rather than trusting marketing statements, and understand that policy-based privacy is responsive to pressure while architecture-based privacy is not dependent on it.

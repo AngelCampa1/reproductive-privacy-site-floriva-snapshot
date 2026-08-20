@@ -1,0 +1,121 @@
+---
+title: "How Private Is Your Period Tracker?"
+description: "Audit your current period tracking app's privacy practices with this seven-question self-assessment covering data storage, sharing, and legal exposure."
+ogImage: "/og/questionnaires/how-private-is-your-period-tracker.png"
+tags:
+  - "quiz"
+  - "privacy audit"
+  - "period tracker"
+publishedAt: "2026-05-01"
+updatedAt: "2026-05-01"
+buyerStage: "mofu"
+targetPersona:
+  - "privacy-seeker"
+  - "flo-refugee"
+schema: "Article"
+bluf: "Most people don't know what their period tracker does with their data. This seven-question audit tells you whether your app is protecting you or exposing you."
+answers:
+  - q: "How do I know if my period tracker is private?"
+    a: "Check six things: whether it requires an account, where data is stored, what third-party SDKs it includes, whether it's been involved in data incidents, its business model, and what its privacy policy says about law enforcement requests."
+faqs:
+  - q: "Is Flo private after the FTC settlement?"
+    a: "Flo added an Anonymous Mode and obtained ISO 27001/27701 certifications after the 2021 FTC consent order. However, the app still stores data on its servers, which means it remains subpoena-accessible."
+  - q: "What makes a period tracker truly private?"
+    a: "On-device storage with no account requirement and no third-party analytics SDKs. If the company never has your data, it cannot hand it over."
+definitions:
+  - term: "Third-party SDK"
+    definition: "Software code from another company embedded in an app, often for analytics, advertising, or crash reporting. Each SDK is a potential data-sharing channel."
+  - term: "Subpoena"
+    definition: "A legal order compelling a company to produce records. If your cycle data is on a company's server, it can be subpoenaed."
+relatedPages:
+  - "/resources/best/best-private-period-tracker-apps"
+  - "/resources/guides/what-is-zero-knowledge-period-tracker"
+  - "/period-tracker-privacy/reproductive-data-privacy-laws-texas"
+  - "/tools/quiz/how-much-data-have-you-shared"
+---
+
+You downloaded a period tracker. You've been logging cycles for months or years. But do you know where that data actually goes?
+
+This audit covers the seven things that determine whether your tracker is private or just says it is. Answer each question about your current app, then check your score.
+
+## Question 1: Does Your App Require an Account?
+
+**Did you create a username, email login, or social sign-in to use the app?**
+
+- **Option A: Yes, an account was required.** Your data is tied to an identity the company controls. This is the baseline for server-stored, identifiable health data.
+- **Option B: Optional account, but I created one.** Same exposure as Option A, but the app at least offers an alternative path.
+- **Option C: No account needed.** The app works without any identity attached. This is structurally more private.
+
+Account creation is the first gate. Once you've attached an email or phone number to your cycle data, that link exists on the company's servers.
+
+## Question 2: Where Is Your Data Stored?
+
+**Check your app's privacy policy or settings. Where does cycle data live?**
+
+- **Option A: On the company's servers (cloud).** Flo, Clue, Ovia, Glow, and most mainstream trackers work this way. Your data exists on computers you don't control.
+- **Option B: On my device only.** The app does not upload cycle data to any server. Floriva and Drip use this model.
+- **Option C: I don't know.** This is the most common answer, and it's a problem.
+
+If you answered C, check your app's privacy policy for phrases like "we collect," "stored on our servers," or "cloud sync." If the app offers a web dashboard or cross-device sync without end-to-end encryption, your data is server-stored.
+
+## Question 3: What Third-Party SDKs Does Your App Include?
+
+**Has your app been flagged for including advertising or analytics trackers?**
+
+- **Option A: I don't know and haven't checked.** Most people haven't. Reports from organizations like the Norwegian Consumer Council, Privacy International, and Mozilla have documented what's inside popular apps.
+- **Option B: The app includes analytics SDKs like Google Analytics, Facebook SDK, or AppsFlyer.** These SDKs transmit device identifiers, usage patterns, and sometimes health-adjacent data to third parties.
+- **Option C: The app has no third-party tracking SDKs.** Rare, but some privacy-focused apps ship without analytics packages.
+
+The Norwegian Consumer Council's 2020 "Out of Control" report found that 10 popular apps collectively shared personal information with at least 135 third-party advertising and profiling companies. The presence of these SDKs matters even if the company says it doesn't share "health data." Device IDs and usage patterns are still data.
+
+## Question 4: Has Your App Had a Data Incident?
+
+**Has your app company been subject to regulatory action, data breaches, or investigative reporting about data practices?**
+
+- **Option A: Yes.** Flo settled with the FTC in 2021. Premom was charged by the FTC in 2023 for sharing data with analytics firms. These incidents are documented and public.
+- **Option B: Not that I know of.** Absence of a public incident doesn't guarantee clean practices, but it's better than a confirmed one.
+- **Option C: The app is too new or too small to have been investigated.** Small apps can be better or worse. There's simply less scrutiny.
+
+Past incidents reveal what a company does when it thinks nobody is watching.
+
+## Question 5: What Is the Business Model?
+
+**How does your app make money?**
+
+- **Option A: Ads.** You are the product. Ad-supported apps have financial incentive to collect behavioral data.
+- **Option B: Freemium subscriptions.** The free tier may still collect data. The paid tier may or may not change that.
+- **Option C: One-time purchase or fully free with no ads.** Check what funds ongoing development. Open-source community support and one-time purchases are the cleanest models.
+
+A free app with no ads, no subscription, and no open-source community is funding itself somehow. Find out how.
+
+## Question 6: What Does the Privacy Policy Say About Law Enforcement?
+
+**Does the privacy policy address government or law enforcement data requests?**
+
+- **Option A: The policy says the company complies with valid legal process.** This is standard. It means a subpoena or court order can compel data disclosure.
+- **Option B: The policy is vague or silent on this.** Vagueness is not protection.
+- **Option C: The app structurally cannot comply because it doesn't have your data.** On-device-only apps have nothing to hand over.
+
+Option C is the only answer that provides structural protection rather than policy-based protection. Policies can change. Architecture cannot be retroactively weakened.
+
+## Question 7: Can You Export and Delete Your Data?
+
+**Does the app let you export your full history and permanently delete your account?**
+
+- **Option A: Yes to both.** Good. This is the minimum for any app holding your health data.
+- **Option B: Export only, or delete only, but not both.** Partial data rights are incomplete data rights.
+- **Option C: Neither, or I can't find the option.** This is a red flag.
+
+If you can't get your data out, you're locked in. If you can't delete it, it exists on someone else's servers indefinitely.
+
+## Your Results
+
+**Count how many times you answered A or B on Questions 1-6, and C on Question 7.**
+
+**0-1 risk answers:** Your tracker has strong privacy architecture. Verify by checking the [zero-knowledge explainer](/resources/guides/what-is-zero-knowledge-period-tracker).
+
+**2-3 risk answers:** Your tracker has meaningful gaps. The data exposure may be acceptable to you, but you should understand what you're accepting. Read [how much data you've shared](/tools/quiz/how-much-data-have-you-shared).
+
+**4-5 risk answers:** Your tracker has significant privacy weaknesses. If you live in a restrictive state, these gaps are legal vulnerabilities. Review [privacy by state](/period-tracker-privacy).
+
+**6-7 risk answers:** Your tracker offers minimal privacy protection. Your cycle data is identifiable, server-stored, and accessible to third parties and law enforcement. Consider [switching](/tools/quiz/should-you-switch-period-trackers) to a tracker with [on-device storage](/resources/best/best-private-period-tracker-apps).

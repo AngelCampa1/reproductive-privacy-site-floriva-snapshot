@@ -1,0 +1,154 @@
+/* BentoGrid — varied-size feature grid. 12-col desktop, gap var(--space-4).
+   Sizes intentionally differ (sm/md/wide/tall) to avoid the uniform-tile
+   look; don't force every cell to the same span or height. */
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-4);
+}
+
+.bento-cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--space-2);
+  padding: var(--space-5);
+  border-radius: var(--radius-card);
+  border: none;
+  box-shadow: none;
+  transition:
+    box-shadow var(--duration-base) var(--ease-out),
+    transform var(--duration-base) var(--ease-out);
+}
+
+/* Same card-hover language as .content-card/.guided-entry-card (base.css):
+   a 4px lift plus escalation to --shadow-strong. */
+.bento-cell:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-strong);
+}
+
+.bento-cell--paper {
+  background: var(--paper);
+}
+
+.bento-cell--berry-soft {
+  background: var(--berry-soft);
+}
+
+.bento-cell--moss-soft {
+  background: var(--moss-soft);
+}
+
+.bento-cell--canvas-deep {
+  background: var(--canvas-deep);
+}
+
+/* Spans — 12-col desktop grid. */
+.bento-cell--sm {
+  grid-column: span 3;
+}
+
+.bento-cell--md {
+  grid-column: span 4;
+}
+
+.bento-cell--wide {
+  grid-column: span 6;
+}
+
+.bento-cell--tall {
+  grid-column: span 3;
+  grid-row: span 2;
+}
+
+.bento-cell__eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--berry);
+  margin: 0;
+}
+
+.bento-cell__title {
+  font-family: var(--font-display);
+  font-weight: 450;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+  color: var(--ink);
+  margin: 0;
+}
+
+.bento-cell__body {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.bento-cell__stat {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin: var(--space-2) 0 0;
+}
+
+.bento-cell__stat-value {
+  font-family: var(--font-mono);
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.bento-cell__stat-label {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--ink-mute);
+}
+
+@media (max-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .bento-cell--wide {
+    grid-column: span 6;
+  }
+
+  .bento-cell--sm,
+  .bento-cell--md {
+    grid-column: span 3;
+  }
+
+  .bento-cell--tall {
+    grid-column: span 3;
+    grid-row: span 2;
+  }
+}
+
+@media (max-width: 720px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bento-cell,
+  .bento-cell--sm,
+  .bento-cell--md,
+  .bento-cell--wide,
+  .bento-cell--tall {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bento-cell {
+    transition: none;
+  }
+}

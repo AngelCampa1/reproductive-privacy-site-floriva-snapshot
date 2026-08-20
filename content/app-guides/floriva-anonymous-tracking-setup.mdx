@@ -1,0 +1,114 @@
+---
+title: "Setting Up Anonymous Tracking in Floriva: Step-by-Step"
+description: "How to configure Floriva for maximum anonymity, no account for core tracking, no name, no health platform connections, and what each setting controls."
+ogImage: "/og/app-guides/floriva-anonymous-tracking-setup.png"
+tags:
+  - "guide"
+publishedAt: "2026-04-28"
+updatedAt: "2026-04-28"
+buyerStage: "bofu"
+targetPersona:
+  - "post-roe-tracker"
+  - "privacy-conscious-user"
+bluf: "Floriva does not require an account, so the default setup is already more anonymous than most period trackers. These steps lock down the remaining surface area: health platform connections, cloud backup inclusion, and device-level access to app data."
+steps:
+  - title: "Download without creating an account"
+    content: "Use the current Floriva download link and install the app. When the app opens, skip any optional account creation. You do not need an email address, phone number, or username for core tracking. If the app prompts you to create an account for optional features, decline and continue without one."
+  - title: "Do not enter your real name"
+    content: "If Floriva asks for a name during setup, you can enter anything. The name is for app use, not as a cloud profile for core tracking. Use a nickname, initials, or nothing at all if the field accepts an empty entry."
+  - title: "Decline any health platform integration"
+    content: "If the app prompts you to connect to Apple Health or Google Fit, decline. These connections route data through platform ecosystems with their own data handling. For anonymous tracking, keep Floriva isolated to its own on-device storage."
+  - title: "Know how backup works on each platform"
+    content: "On Android, Floriva's data is already excluded from Google's device backup by design. There is nothing to turn off. On iOS, Floriva's data is currently included in standard iCloud device backup if you have iCloud Backup turned on for your phone, since there is no per-app setting that removes it. If you share an Apple ID or iCloud backup account with someone else, the only reliable way to keep Floriva's data out of that backup is to turn off iCloud Backup for the device, or use a separate Apple ID."
+  - title: "Set a separate app lock"
+    content: "Your device lock screen protects all apps. For an additional layer, use your device's app lock feature to require a separate passcode or biometric to open Floriva. On iOS, Screen Time can restrict app access. On Android, many devices have native app lock in Settings, Security."
+  - title: "Review notification settings"
+    content: "Floriva notifications (period reminders, symptom logging prompts) appear on your lock screen by default. If you share a device or want notifications to be private, go to your device's notification settings for Floriva and set them to show only when the device is unlocked, or disable them entirely."
+answers:
+  - q: "Does Floriva track me if I do not create an account?"
+    a: "Floriva's local-first architecture means core cycle records stay on your device. Without an account, there is no user profile for core tracking. There is no sync, so no cycle data is transmitted at all."
+  - q: "Is Floriva actually anonymous if I downloaded it from the App Store?"
+    a: "Apple or Google may record the download against your store account. This tells the store that you downloaded a period tracking app. The content of what you log in the app is not visible to them through Floriva unless you choose a separate platform backup or health integration."
+  - q: "What is the most important anonymous setup step?"
+    a: "Skipping account creation and declining health platform integrations are the two steps that prevent data from leaving your device. Device-level lock and disabling backup are secondary protections against local access."
+relatedPages:
+  - /resources/guides/on-device-storage-period-tracker
+  - /resources/guides/how-period-tracker-apps-collect-data
+  - /resources/guides/can-police-access-period-tracker-data
+  - /resources/guides/period-tracker-hipaa
+  - /app-guides/floriva-data-deletion-guide
+  - /resources/best/best-private-period-tracker-apps
+faqs:
+  - q: "Do I need an account to use Floriva?"
+    a: "No account is required for core tracking. Floriva works offline with no sign-in, which means no email address or personal details are needed for the baseline setup."
+  - q: "Does Floriva store data on my device only?"
+    a: "Yes. Floriva uses on-device storage and has no central cycle database. The app makes no network calls, so nothing leaves your device unless you export or back it up yourself."
+  - q: "What is the most important step for anonymous Floriva setup?"
+    a: "Skipping account creation and declining health platform integrations are the two steps that prevent data from leaving your device. Device-level lock and disabling cloud backup are secondary protections against local access."
+  - q: "Can I use Floriva without connecting it to Apple Health or Google Fit?"
+    a: "Yes. Health platform integration is optional. For anonymous tracking, decline any prompt to connect to Apple Health or Google Fit. These integrations route data through platform ecosystems with their own data handling."
+---
+
+## What "anonymous tracking" actually means here
+
+True anonymity is a spectrum, not a binary. This guide covers the practical steps to minimize the data trail from Floriva, which is already small by design, without overstating what is achievable.
+
+What you can control with these steps:
+- Whether any data leaves your device through Floriva's infrastructure (it cannot. The app has no sync and no network calls)
+- Whether health platform integrations route your data through Apple or Google ecosystems
+- Whether device backups include app data accessible on a shared account
+- Whether someone with physical access to your phone can open the app
+
+What you cannot control through app settings:
+- Whether the App Store or Google Play logged that you downloaded a period tracking app (they do, against your account)
+- Whether your device's operating system logs that the app was opened
+
+Most users are concerned about data brokers and app companies, intimate partner surveillance, or legal requests. These steps address the first two significantly and the third as much as app settings allow.
+
+## The default Floriva setup is already more private than most apps
+
+Floriva keeps core data on your device and requires no account for core tracking. That gives it a smaller exposure surface than cloud-connected trackers before you change any settings. Flo, Clue, and similar apps store data on servers by default. Flo's 2021 FTC enforcement action documented data sharing with Facebook and Google. Floriva has no sync at all.
+
+The steps below address the remaining surface area.
+
+## Step-by-step anonymous setup
+
+### No account, no name
+
+Floriva does not require an account. This is the most important setting: there is no account to require, and no sync or cloud backup prompt to skip.
+
+If the app asks for a name during onboarding, enter whatever you like. The name is for app use. It does not create a user profile for core tracking.
+
+### Health platform connections
+
+Apple Health and Google Fit are platform-level health data aggregators. Connecting Floriva to either of them routes your cycle data through Apple's or Google's data infrastructure, which has its own data handling terms and can be accessed by apps with health platform permissions.
+
+For anonymous tracking, keep Floriva isolated. Do not accept the prompt to connect to a health platform. If you have already connected it, revoke the permission: on iOS in Settings, Health, Apps, Floriva; on Android in Settings, Google Fit or Health Connect.
+
+### Cloud backup exclusion
+
+Device backups are a frequently overlooked exposure point, and the two platforms behave differently here.
+
+On Android, Floriva excludes its own data from Google's device backup, so this is handled for you automatically.
+
+On iOS, that protection does not currently exist inside the app: if you have iCloud Backup turned on for your device, Floriva's local data is included in that backup like most other apps' data. There is no per-app toggle that removes just Floriva from it. If your iCloud backup account is shared with or accessible to someone else, the reliable options are to turn off iCloud Backup for the device entirely, or to use a separate Apple ID that only you control.
+
+### Lock screen and notification hygiene
+
+Your device's lock screen is the primary barrier between your Floriva data and anyone with your device. Use a passcode or biometric authentication. Do not use a pattern unlock, which can be observed.
+
+Floriva's push notifications may display cycle reminders or tracking prompts on your lock screen. If you share a home with others or use your device in shared spaces, review your notification privacy settings. On iOS: Settings, Notifications, Floriva, Show Previews, When Unlocked. This prevents notification content from appearing on the lock screen.
+
+## What this setup protects against
+
+After completing these steps, your Floriva setup:
+
+- Stores no readable cycle records on Floriva servers
+- Creates no account linkable to your identity
+- Routes no data through Apple Health or Google Fit ecosystems
+- Excludes app data from device cloud backup
+- Requires device authentication to view
+
+The remaining exposure is physical: someone with access to your unlocked device can open the app. An additional app lock (step 5 above) addresses this without requiring a Floriva-specific feature.
+
+For the complete picture of how period trackers handle data and what legal access looks like, see our guides on [how period tracker apps collect data](/resources/guides/how-period-tracker-apps-collect-data) and [whether police can access period tracker data](/resources/guides/can-police-access-period-tracker-data).

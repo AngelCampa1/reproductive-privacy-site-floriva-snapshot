@@ -1,0 +1,113 @@
+---
+title: "How to Switch from Natural Cycles to a Private Tracker"
+description: "Switching from Natural Cycles? Here's the export, deletion, and CCPA/GDPR process, plus the medical-use caveat to discuss with your doctor."
+ogImage: "/og/guides/how-to-switch-from-natural-cycles.png"
+tags:
+  - "guide"
+  - "migration"
+publishedAt: "2026-04-16"
+updatedAt: "2026-04-16"
+buyerStage: "mofu"
+targetPersona:
+  - "privacy-conscious-user"
+  - "post-roe-tracker"
+bluf: "Natural Cycles is FDA-cleared as birth control. Switching for privacy or cost is fine, but if you're using it as contraception, consult your doctor first. Here's the export and deletion process."
+steps:
+  - title: "Consult your doctor if you use NC as contraception"
+    content: "Natural Cycles is FDA-cleared as a digital contraceptive. Most private trackers are not. If you currently rely on NC for birth control, talk with your clinician before switching so you can plan a different contraceptive method. This is not medical advice."
+  - title: "Export your cycle history"
+    content: "In Natural Cycles, tap your profile icon, then Settings, then Export Data. NC emails a CSV with cycle dates, basal body temperature readings, and fertility window history within 24-48 hours."
+  - title: "Delete your account (not just the app)"
+    content: "Open Settings, go to Profile, then Delete Account. Because NC is FDA-cleared, medical-record retention policies may apply, so some data may be retained in de-identified form for regulatory purposes. The deletion still removes your identifiable account."
+  - title: "Verify deletion"
+    content: "Wait 48 hours. Try to log in with your old NC credentials. A deleted account returns an authentication error. If login still works, the deletion did not process and step 3 should be repeated."
+  - title: "Submit a CCPA/GDPR data deletion request"
+    content: "Email support@naturalcycles.com with subject 'GDPR/CCPA Data Deletion Request.' State your account email and invoke GDPR Article 17 (if you are in the EU or UK) or CCPA Section 1798.105 (if you are in California). Acknowledge that FDA-cleared device records may require partial retention and ask for confirmation of what is kept vs. purged."
+  - title: "Choose your replacement tracker"
+    content: "Floriva is on-device and polished, if you are switching for privacy. Euki is free, on-device, and reproductive-health-focused. Neither is FDA-cleared as contraception. If you are switching for cost and still want basal body temperature fertility tracking, log BBT manually in whichever tracker you pick."
+  - title: "Start logging in the new app"
+    content: "Open the NC CSV and pull your last 3-6 cycle start dates, plus any BBT readings you want to retain. Enter them into the new tracker. Prediction algorithms need 2-3 recorded cycles to stabilize, so seeding the history reduces the warm-up period."
+timeEstimate: "30-45 minutes"
+difficulty: "beginner"
+definitions:
+  - term: "Account deletion vs. app deletion"
+    definition: "Deleting the app removes it from your phone. Deleting the account removes your data from the company's servers. These are different actions."
+  - term: "CCPA/GDPR deletion request"
+    definition: "Legal right to request complete deletion of your personal data from a company. Applies in California (CCPA) and the EU/UK (GDPR)."
+  - term: "FDA-cleared digital contraceptive"
+    definition: "An app that has been reviewed by the FDA and cleared as a Class II medical device for contraceptive use. Natural Cycles was the first such app cleared in the US in 2018. Clearance means the app met FDA's effectiveness and labeling standards for contraception."
+answers:
+  - q: "How do I switch from Natural Cycles without losing my cycle history?"
+    a: "Export the CSV from NC (Settings, Export Data) before deleting the account. The export includes cycle dates and basal body temperature readings. Enter the last 3-6 cycle start dates into your new tracker to seed the prediction algorithm."
+  - q: "Does uninstalling Natural Cycles delete my data?"
+    a: "No. Uninstalling only removes the app from your device. Your data remains on Natural Cycles' servers until you delete the account and submit a deletion request."
+  - q: "What's the best replacement for Natural Cycles?"
+    a: "That depends on why you are switching. For privacy with a polished interface, Floriva keeps cycle data on-device. For free and on-device, Euki is a common pick. Neither is FDA-cleared as contraception, so if you are currently using NC for birth control, switching apps means switching methods and you should involve your clinician."
+faqs:
+  - q: "Can I still use the fertility-awareness method without Natural Cycles?"
+    a: "Yes. The fertility-awareness method predates NC. What NC adds is an algorithm that interprets your basal body temperature readings and predicts fertile windows. You can log BBT manually in any tracker and apply fertility-awareness rules on your own, or with a clinician's guidance. This is a different use pattern than NC's one-tap interpretation."
+  - q: "Why does NC cost more than free trackers?"
+    a: "The price funds the FDA-cleared algorithm, clinical studies, and regulatory compliance. Free trackers like Euki and Drip do not carry those costs because they do not claim contraceptive efficacy. If you do not need the contraceptive claim, you are paying for a certification you do not use. That is a common reason users switch even when privacy is not the main concern."
+  - q: "Will Natural Cycles keep my data for FDA compliance?"
+    a: "NC's privacy policy indicates that records associated with FDA-cleared device use may be retained in de-identified form for regulatory reporting. This is different from identifiable account data, which the account deletion removes. The CCPA/GDPR request in step 5 is how you get a specific answer about what NC retains in your case."
+relatedPages:
+  - /compare/alternatives/natural-cycles-alternative-privacy/
+  - /resources/guides/what-happens-period-data-delete-app/
+  - /resources/best/best-private-period-tracker-apps/
+  - /resources/guides/on-device-storage-period-tracker/
+  - /resources/guides/period-tracking-legal-safety-guide/
+---
+
+## Why switch from Natural Cycles
+
+Natural Cycles sits in a different category than Flo or Clue. It is an FDA-cleared digital contraceptive marketed on clinical effectiveness rather than convenience. Users who choose NC are usually paying for the contraceptive claim, not for cycle tracking alone.
+
+The two most common reasons users switch are cost and privacy. NC is expensive if you stopped relying on it for birth control and are mostly using it for cycle forecasting. And while NC's privacy posture is better than Flo's, it still stores cycle and basal body temperature data on company servers. That server-side copy carries the same subpoena, breach, and policy-change risk as any cloud tracker.
+
+If you are switching for privacy, on-device trackers resolve the server-side risk. If you are switching for cost, free on-device trackers remove the annual fee. Either way, a clean migration keeps your history portable and minimizes surprise.
+
+For more on NC's specific privacy tradeoffs, see our [Natural Cycles privacy alternative overview](/compare/alternatives/natural-cycles-alternative-privacy/).
+
+### Important: if you use NC as contraception, talk to your doctor first
+
+Natural Cycles is cleared by the FDA as a Class II contraceptive device. Euki, Floriva, Drip, and most other private trackers are not. If you currently rely on NC as your birth control method, switching apps means switching contraceptive methods, and that decision belongs with your clinician. Nothing in this guide is medical advice. Plan the method change with a doctor before you delete the NC account, not after.
+
+## Step 1: Export your cycle history
+
+In Natural Cycles, tap your profile icon in the top-left, then Settings, then Export Data. NC emails a CSV within 24-48 hours. The export covers cycle dates, basal body temperature readings, and fertility window history.
+
+Open the CSV in a spreadsheet. The cycle start dates and BBT log are what you will use to seed the new tracker in step 7.
+
+## Step 2: Delete your account
+
+Go back to Settings, then Profile, then Delete Account. NC confirms through email verification. Because NC is FDA-cleared, some data may be retained in de-identified form for regulatory reporting, but the identifiable account is removed.
+
+## Step 3: Submit a CCPA/GDPR data request
+
+Email support@naturalcycles.com with subject "GDPR/CCPA Data Deletion Request." State your NC account email and invoke your right under GDPR Article 17 (EU/UK) or CCPA Section 1798.105 (California). Because NC is an FDA-cleared medical device, explicitly ask for a breakdown of what is deleted vs. what is retained under medical-record rules. This gives you a written record for your own files.
+
+NC has 30 days to respond under GDPR and 45 days under CCPA. Save the full email thread.
+
+## Step 4: Verify deletion
+
+Wait 48 hours after step 2. Try to log in with your old NC credentials. A deleted account returns an authentication error. If login still works, the deletion did not process and step 2 should be repeated.
+
+For context on what "deletion" actually covers across cycle trackers, see our guide on [what happens to period data when you delete an app](/resources/guides/what-happens-period-data-delete-app/).
+
+## Step 5: Choose your replacement
+
+The right replacement depends on why you are switching.
+
+**Floriva** is paid, polished, and on-device. Cycle data stays on the phone. Good fit if you want a tracker that looks and feels like NC without the cloud storage or the annual subscription cost.
+
+**Euki** is free, on-device, and maintained by a reproductive health nonprofit. Good fit if you want zero cost and are comfortable with a less polished interface.
+
+Neither is FDA-cleared as contraception. If you were using NC for birth control and cleared the method change with your doctor in step 1, either option works for cycle tracking alone. The [private period tracker roundup](/resources/best/best-private-period-tracker-apps/) has the full comparison.
+
+## Step 6: Start fresh in the new app
+
+Open the NC CSV. Pull your last 3-6 cycle start dates and any BBT readings you want to retain. Enter the cycle start dates during the new app's setup flow. If the tracker supports BBT logging, you can carry forward those readings as well.
+
+Prediction algorithms need 2-3 recorded cycles to stabilize. Seeding the history cuts the warm-up period. Once the new app has enough recorded cycles to feel accurate, delete the NC CSV from your local disk. The data you did not want on a server should not sit unprotected on your computer either.
+
+For a deeper read on why on-device storage changes the privacy model, see the [on-device storage explainer](/resources/guides/on-device-storage-period-tracker/).

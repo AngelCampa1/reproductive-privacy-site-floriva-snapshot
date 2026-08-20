@@ -1,0 +1,110 @@
+---
+title: "Why HIPAA Doesn't Protect Your Period Tracker Data"
+description: "HIPAA only covers healthcare providers and insurers, not consumer period tracker apps. Here is why your cycle data falls into a legal gap and what state laws attempt to fill it."
+ogImage: "/og/guides/hipaa-period-tracker-deep-dive.png"
+tags:
+  - "guide"
+  - "hipaa"
+  - "legal"
+publishedAt: "2026-05-01"
+updatedAt: "2026-05-01"
+buyerStage: "tofu"
+targetPersona:
+  - "privacy-conscious-user"
+  - "post-roe-tracker"
+schema: "Article"
+bluf: "HIPAA applies only to covered entities: healthcare providers, health plans, and healthcare clearinghouses. Consumer health apps like period trackers are not covered entities. Your cycle data in Flo, Clue, or any consumer app has zero HIPAA protection regardless of how sensitive it is."
+definitions:
+  - term: "Covered entity"
+    definition: "Under HIPAA, an organization that provides healthcare, processes health insurance claims, or acts as a healthcare clearinghouse. Hospitals, doctors' offices, and insurance companies are covered entities. App developers and tech companies generally are not."
+  - term: "Protected Health Information (PHI)"
+    definition: "Individually identifiable health information held or transmitted by a covered entity. The same medical information held by a non-covered entity, such as a period tracking app, is not PHI under HIPAA and receives no HIPAA protection."
+  - term: "Business Associate Agreement (BAA)"
+    definition: "A contract between a covered entity and a vendor that handles PHI on its behalf. BAAs extend HIPAA obligations to vendors. Consumer app companies do not sign BAAs because they are not handling PHI for covered entities."
+answers:
+  - q: "Is period tracker data protected by HIPAA?"
+    a: "No. HIPAA only applies to covered entities such as hospitals, doctors, and insurers. Consumer period tracker apps are not covered entities, so the data you enter, cycle dates, symptoms, fertility information, has no HIPAA protection. This is true regardless of how medically sensitive the data is."
+  - q: "What laws do protect period tracker data?"
+    a: "State consumer privacy laws provide the most relevant protections. California's CCPA/CPRA, Washington's My Health My Data Act, and similar state laws give users rights to access, delete, and restrict the sale of health data held by consumer apps. The FTC also has authority under Section 5 to act against deceptive privacy practices. No federal law specifically protects consumer health app data."
+faqs:
+  - q: "Does the HIPAA reproductive privacy rule help?"
+    a: "The HHS proposed a reproductive privacy rule in 2023 to prevent disclosure of reproductive health information for prosecution purposes. However, a federal court vacated the rule in 2024. Even if it had survived, it would only have applied to covered entities, not consumer apps. See our coverage of the vacated rule for details."
+  - q: "If my doctor recommends a period tracker, does that make it HIPAA-covered?"
+    a: "No. A doctor's recommendation does not make an app a covered entity. The app becomes HIPAA-relevant only if the doctor's office directly contracts with the app company under a Business Associate Agreement to handle patient records. Consumer-facing period trackers do not operate under BAAs."
+  - q: "Does GDPR protect period data better than HIPAA?"
+    a: "GDPR applies to all organizations processing personal data of EU residents, regardless of whether they are healthcare providers. Health data is a special category under GDPR requiring explicit consent. This gives EU users broader protection than US users, whose period tracker data sits in a legal gap between HIPAA and weak general privacy law."
+relatedPages:
+  - "/resources/guides/how-period-tracker-apps-collect-data"
+  - "/resources/guides/what-is-zero-knowledge-period-tracker"
+  - "/resources/best/best-private-period-tracker-apps"
+  - "/resources/guides/state-health-privacy-laws-after-hipaa"
+  - "/resources/guides/eu-vs-us-period-data-privacy"
+---
+
+## The HIPAA Misconception
+
+Most people assume that any health-related data receives HIPAA protection. That assumption is wrong, and it creates a false sense of security around period tracking apps.
+
+HIPAA, the Health Insurance Portability and Accountability Act of 1996, was designed to regulate how healthcare providers, insurers, and clearinghouses handle patient records. It was written before smartphones existed, before app stores existed, and before the concept of a consumer health app was imaginable. The law defines specific types of organizations, called "covered entities," and applies only to them.
+
+Period tracker apps are not covered entities. They are consumer software products. The health data you enter into Flo, Clue, Natural Cycles, or any other period tracker receives exactly the same legal protection as the data you enter into a note-taking app: essentially none at the federal level.
+
+## What HIPAA Actually Covers
+
+HIPAA's coverage is narrow and entity-based, not data-based. This is the critical distinction.
+
+**Covered entities** include:
+- Healthcare providers who transmit health information electronically (doctors, hospitals, clinics, pharmacies)
+- Health plans (insurance companies, HMOs, employer-sponsored plans)
+- Healthcare clearinghouses (entities that process nonstandard health information into standard formats)
+
+**Business associates** are vendors that handle protected health information on behalf of covered entities. They are also bound by HIPAA through contractual agreements called BAAs.
+
+A period tracking app company is none of these things. It does not provide healthcare. It does not process insurance claims. It does not operate under a BAA with your doctor. The fact that it handles data that is medically sensitive does not bring it under HIPAA's umbrella.
+
+## The Gap in Practice
+
+This gap produces concrete consequences:
+
+**No breach notification requirement**: When a covered entity suffers a data breach involving health records, HIPAA requires notification to affected individuals and HHS. Period tracker companies have no such obligation under federal law (though some state laws impose breach notification requirements).
+
+**No data minimization standard**: HIPAA requires covered entities to limit use of PHI to the minimum necessary for a given purpose. Period tracker companies can collect as much data as their privacy policy permits, and privacy policies are written by the company's lawyers.
+
+**No right of access under HIPAA**: HIPAA gives patients a right to access their medical records from covered entities. You have no HIPAA-based right to demand your data from a period tracker company. (State privacy laws like CCPA may provide this right separately.)
+
+**No enforcement by HHS Office for Civil Rights**: The OCR enforces HIPAA violations against covered entities. It has no jurisdiction over consumer app companies. Enforcement falls to the FTC under its general authority over deceptive practices, which is why the [Flo](/resources/guides/flo-period-tracker-lawsuit-settlement) and [Premom](/resources/guides/premom-data-sharing-ftc) cases were FTC actions, not HIPAA actions.
+
+## What State Laws Fill (and Don't)
+
+Several states have enacted laws that partially close the HIPAA gap for consumer health data:
+
+**Washington's My Health My Data Act (2023)**: The broadest state-level protection for consumer health data. It requires consent before collecting, sharing, or selling health data, defines "consumer health data" to include reproductive and sexual health information, creates a private right of action allowing individuals to sue, and applies to any entity collecting health data from Washington residents, not just covered entities.
+
+**California's CCPA/CPRA**: Gives California residents rights to know what data is collected, delete it, and opt out of its sale. Health data is included. The California Privacy Protection Agency can enforce violations. However, CCPA does not specifically target health apps, it applies to all businesses meeting certain thresholds.
+
+**Connecticut, Nevada, and other states**: Several states have enacted consumer privacy laws with health data provisions of varying strength. Coverage and enforcement mechanisms differ significantly.
+
+**The patchwork problem**: A user in Texas has different legal protections than a user in Washington. Most states have no consumer health data law at all. This means the same data in the same app receives different legal protection depending on where you live. This is not legal advice, consult an attorney for guidance specific to your jurisdiction and situation.
+
+## The Proposed Federal Reproductive Privacy Rule
+
+In 2023, HHS proposed modifications to HIPAA to prevent covered entities from disclosing reproductive health information in response to investigations or legal proceedings related to reproductive healthcare obtained lawfully. This was a response to concerns that health records could be used to identify individuals who obtained abortions in states where the procedure is restricted.
+
+However, this rule [was vacated by a federal court in 2024](/resources/guides/hipaa-reproductive-privacy-rule-vacated). Even if it had survived legal challenge, it would only have applied to covered entities. It would not have protected data in consumer period tracking apps.
+
+## Why Architecture Matters More Than Law
+
+The legal framework for consumer health data is fragmented, inconsistent, and still changing. New state laws are being proposed and challenged. Federal legislation remains uncertain. Court decisions continue to reshape the boundaries.
+
+Relying on the law to protect your period data means relying on a system that was not designed for this purpose and is not keeping pace with the technology.
+
+The architectural alternative is straightforward: if your period data never leaves your device, the question of which law protects it on a company's server becomes irrelevant. [On-device-only storage](/resources/guides/on-device-storage-period-tracker) does not depend on HIPAA coverage, state privacy laws, or corporate privacy policies. The data exists in one place, your phone, and is subject only to the security of that device.
+
+This is not a substitute for better privacy law. It is a recognition that better privacy law may take years to arrive, and your data is being collected now.
+
+## What You Can Do Today
+
+1. **Stop assuming HIPAA protects you.** If you use a consumer period tracker, your data has no federal health privacy protection.
+2. **Check your state's laws.** Washington, California, and Connecticut offer stronger protections than most states. Know what rights you have where you live.
+3. **Exercise existing rights.** If your state has a consumer privacy law, use it. Submit [data access and deletion requests](/resources/guides/foia-your-own-health-data) to any period tracker you have used.
+4. **Choose architecture over promises.** A company's privacy policy is a legal document that can change. An app that stores nothing on servers cannot leak what it does not have.

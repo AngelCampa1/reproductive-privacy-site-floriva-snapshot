@@ -1,0 +1,110 @@
+---
+title: "Best Period Trackers After the Flo Privacy Scandal (2026)"
+description: "We ranked 5 period trackers for users leaving Flo after the FTC settlement. Criteria: storage model, SDK presence, data-sharing risk."
+ogImage: "/og/listicles/best-period-trackers-after-flo-privacy-scandal.png"
+tags:
+  - "comparison"
+publishedAt: "2026-03-30"
+updatedAt: "2026-03-30"
+buyerStage: "mofu"
+targetPersona:
+  - "flo-refugee"
+bluf: "After Flo's $59.5M combined settlement for selling user health data, the best replacement is Floriva: on-device storage, no account required, no third-party SDKs. Drip is the open-source alternative for users who want to verify the code themselves. Clue and Glow still store data on company servers."
+category: "Period Trackers"
+qualifier: "Flo Alternatives"
+tools:
+  - name: "Floriva"
+    summary: "Privacy-first period tracker with on-device-only storage. No account, no cloud, no ads."
+    pros: ["All data stored on-device only", "No account or email required", "No third-party analytics SDKs", "Free core tracking"]
+    cons: ["No cloud backup (by design)", "Newer app", "No community features"]
+    pricing: "Free (premium features planned)"
+    verdict: "Best overall replacement for Flo users who want privacy as architecture, not policy. Core records stay on your phone."
+  - name: "Drip"
+    summary: "Open-source cycle tracker. Code is publicly auditable."
+    pros: ["Open-source code on GitHub", "On-device storage", "No account required", "Free"]
+    cons: ["Basic interface", "No iOS app (Android + web only)", "Limited prediction accuracy", "Small development team"]
+    pricing: "Free (open-source)"
+    verdict: "Best for users who want to verify privacy claims by reading the source code. Limited by platform availability and polish."
+  - name: "Euki"
+    summary: "Reproductive health app built by International Planned Parenthood Federation. On-device storage."
+    pros: ["On-device storage", "Built by a health nonprofit", "Includes contraception info", "No account required"]
+    cons: ["Less accurate predictions", "Limited symptom tracking", "Infrequent updates", "Basic interface"]
+    pricing: "Free"
+    verdict: "Credible privacy option backed by a known health organization. Tracking features are more basic than Flo's."
+  - name: "Clue"
+    summary: "Popular period tracker with server-side storage. Claims GDPR compliance."
+    pros: ["Polished interface", "Good prediction accuracy", "Active development", "Research partnerships"]
+    cons: ["Data stored on company servers", "Account required", "Third-party SDKs present", "Subscription model for full features"]
+    pricing: "Free (limited) / $10/month (Clue Plus)"
+    verdict: "Better privacy policy than Flo, but still stores your data on their servers. Not architecturally private."
+  - name: "Glow"
+    summary: "Fertility and period tracker with community features. Server-based storage."
+    pros: ["Fertility tracking features", "Community forums", "Partner sharing"]
+    cons: ["Data stored on company servers", "History of security vulnerabilities", "Ad-supported free tier", "Account required"]
+    pricing: "Free (ads) / $60/year (Premium)"
+    verdict: "Not recommended for privacy-conscious users. Glow has had documented security vulnerabilities exposing user data."
+tableData:
+  name: "Period Tracker Privacy Comparison"
+  description: "Privacy architecture comparison for period tracking apps"
+  columns:
+    - "App"
+    - "Data Storage"
+    - "Account Required"
+    - "Third-Party SDKs"
+  rows:
+    - ["Floriva", "On-device only", "No", "None"]
+    - ["Drip", "On-device only", "No", "None"]
+    - ["Euki", "On-device only", "No", "None"]
+    - ["Clue", "Company servers", "Yes", "Yes"]
+    - ["Glow", "Company servers", "Yes", "Yes (ads)"]
+answers:
+  - question: "Which period tracker is the most private after the Flo scandal"
+    answer: "Floriva keeps core records on-device and has no sync, so nothing leaves your phone unless you export it yourself. Drip and Euki are also local-only. Of these, Floriva has the most polished tracking experience. Drip is open-source and auditable. Euki is backed by a health nonprofit."
+  - question: "Is Clue safer than Flo"
+    answer: "Clue has a better track record than Flo and is based in Germany (stronger GDPR enforcement). However, Clue still stores your data on their servers and requires an account. If your concern is architectural privacy rather than policy promises, on-device trackers like Floriva are structurally safer."
+  - question: "Why not just use Apple Health or Google Fit for period tracking"
+    answer: "Apple Health stores cycle data on-device with end-to-end encrypted iCloud backup if enabled. Google Fit stores data on Google servers. Apple Health is a reasonable option for iPhone users who trust Apple's encryption. It lacks the dedicated prediction algorithms and symptom tracking depth of a purpose-built period tracker."
+faqs:
+  - q: "Can I transfer my Flo data to Floriva?"
+    a: "Not automatically. Floriva does not connect to Flo's servers. Export your data from Flo first, then manually enter your recent cycle start dates in Floriva. After 2-3 cycles, predictions are accurate."
+  - q: "Are free period trackers safe?"
+    a: "Free and safe are not mutually exclusive, but you need to check the business model. Flo was free because it monetized your data. Drip is free because it is volunteer-maintained open source. Floriva is a paid app with no free tier. You pay directly and the business model does not depend on selling your data."
+  - q: "What happens to my Floriva data if I lose my phone?"
+    a: "It is gone. On-device-only storage means no cloud backup. This is intentional: a backup that exists on a server is data that can be subpoenaed, hacked, or sold. You can manually re-enter cycle dates on a new device."
+pricingStats:
+  - stat: "Flo Health paid a $59.5M combined settlement for sharing reproductive health data without user consent"
+    source: "Reuters / FTC, September 2025"
+    sourceUrl: "https://www.reuters.com/technology/flo-health-google-flurry-settle-privacy-lawsuit-595-million-2025-09-25/"
+  - stat: "Euki and Drip are free on-device alternatives with no way to carry data to a new phone. Floriva is a paid app for those who want an encrypted backup file for that instead"
+    source: "App pricing"
+    sourceUrl: "https://www.eukiapp.com/"
+relatedPages:
+  - "/resources/guides/switching-from-flo-complete-guide"
+  - "/resources/guides/how-period-tracker-apps-collect-data"
+  - "/compare/alternatives/clue-alternative-no-cloud"
+  - "/free/period-app-privacy-audit-kit"
+---
+
+## How We Evaluated
+
+We tested each app on three things: where your data is physically stored, what third-party code is embedded in the app, and whether an account or email is required to use it. These are the structural privacy questions that matter more than any privacy policy language. A policy can change. Architecture cannot be changed without rebuilding the app.
+
+We did not evaluate prediction accuracy as a primary factor because all five apps produce reasonable cycle predictions after 3+ recorded cycles. The privacy architecture is what separates them.
+
+## The Privacy Architecture Spectrum
+
+Period trackers fall into two categories. On-device trackers store everything on your phone and have no server component. Server-based trackers upload your data to company infrastructure. The difference matters because data on a server can be accessed by the company, shared with partners, subpoenaed by law enforcement, or exposed in a breach. Data on your device can only be accessed by someone with physical access to your unlocked phone.
+
+Floriva, Drip, and Euki are on-device. Clue and Glow are server-based. This is the most important distinction in the comparison.
+
+## Why Server-Based Trackers Keep Using Servers
+
+The business reason is straightforward: user data on servers enables advertising targeting, aggregate analytics sales, and research partnerships. Clue partners with academic researchers and shares anonymized data sets. Glow's free tier is ad-supported, which requires tracking user behavior for ad targeting.
+
+On-device trackers give up these revenue streams entirely. That is why they tend to be either open-source volunteer projects (Drip), nonprofit-backed (Euki), or planning to charge for premium features directly (Floriva). The funding model determines the data model.
+
+## Our Recommendation
+
+If you are leaving Flo because of the privacy scandal, switching to another server-based tracker solves the Flo-specific problem but not the structural one. The next FTC enforcement action could involve any app that stores health data on company servers. On-device storage eliminates the category of risk entirely.
+
+We built Floriva because we believe period tracking should work like a calculator: it runs on your device, does its job, and does not phone home. Your cycle data is not a monetization opportunity.

@@ -1,0 +1,171 @@
+---
+title: 'Drip vs Clue: Open Source On-Device vs GDPR Server App'
+description: 'Drip is Android-only, open source, and fully on-device. Clue is GDPR-compliant and stores data server-side. Here''s what that means for privacy.'
+ogImage: /og/comparisons/drip-vs-clue.png
+tags:
+  - comparison
+  - drip
+  - clue
+publishedAt: '2026-03-21'
+updatedAt: '2026-03-21'
+buyerStage: mofu
+targetPersona:
+  - flo-refugee
+  - post-roe-tracker
+  - paper-tracker
+  - privacy-conscious-user
+bluf: 'Drip stores data only on your Android device, requires no account, and is open source. Clue requires an account and server-side storage, GDPR compliance limits commercial data use but doesn''t prevent legal compulsion. The core tradeoff is features and platform availability vs architectural privacy.'
+competitorA:
+  name: Drip
+  slug: drip
+  pricing: Free
+  pros:
+    - 'Open source, fully auditable codebase'
+    - 'On-device storage, no account required'
+    - Free with no ads and no data collection
+  cons:
+    - 'Android-only, no iOS support'
+    - Minimal feature set
+    - No cross-device sync
+    - Less active development
+competitorB:
+  name: Clue
+  slug: clue
+  pricing: Free / Plus $9.99/mo or $59.99/yr
+  pros:
+    - iOS and Android with cross-device sync
+    - 'GDPR-compliant, Berlin-based'
+    - Research-backed predictions and cycle analysis
+    - Ad-free free tier
+  cons:
+    - Requires account creation and server-side storage
+    - 'GDPR protects against commercial misuse, not subpoenas'
+    - Premium tier required for full feature access
+verdict: 'Floriva is the best overall choice because it brings on-device storage to both iOS and Android with a more complete tracker and an encrypted backup file for switching phones. Drip remains the best open-source Android fallback. Clue has stronger cloud features and cross-device sync than Drip, but it still stores data server-side.'
+tableData:
+  name: 'Drip vs Clue vs Floriva: Platform and Privacy'
+  columns:
+    - Feature
+    - Floriva
+    - Drip
+    - Clue
+  rows:
+    - - iOS
+      - 'Yes'
+      - 'No'
+      - 'Yes'
+    - - Android
+      - 'Yes'
+      - 'Yes'
+      - 'Yes'
+    - - On-device storage
+      - 'Yes'
+      - 'Yes'
+      - 'No'
+    - - Account required
+      - 'No'
+      - 'No'
+      - 'Yes'
+    - - Open source
+      - 'No'
+      - 'Yes'
+      - 'No'
+    - - Cross-device sync
+      - 'No'
+      - 'No'
+      - 'Yes'
+    - - Move data to a new phone
+      - Encrypted backup file (manual)
+      - No, re-enter by hand
+      - Automatic (cloud account)
+    - - GDPR compliant
+      - 'N/A, no server data'
+      - N/A
+      - 'Yes'
+    - - Data can be subpoenaed
+      - 'No'
+      - 'No'
+      - 'Yes'
+    - - Price
+      - Paid app (no free tier)
+      - Free
+      - Free / $9.99/mo
+proscons:
+  - subject: Floriva
+    pros:
+      - On-device storage on both iOS and Android
+      - No account required
+      - Encrypted backup file for moving to a new phone
+      - Auditable privacy model
+    cons:
+      - 'Paid subscription required, not free'
+      - Not open source
+  - subject: Drip
+    pros:
+      - Open source and auditable
+      - 'On-device only, less company-held data to request'
+      - 'No account, no ads, no data selling'
+    cons:
+      - Android-only
+      - Very limited feature set
+      - No sync or backup between devices
+  - subject: Clue
+    pros:
+      - iOS and Android
+      - Strong feature set with research-backed cycle tracking
+      - 'GDPR compliance, no ad-supported model'
+    cons:
+      - 'Server-based storage, subpoena risk exists'
+      - Account required
+      - Premium tier needed for full features
+answers:
+  - q: What is Drip period tracker?
+    a: 'Drip is a free, open-source period tracker for Android. It stores all data on your device with no account required and no sync of any kind. The source code is publicly available, which means the data handling can be independently audited. Drip''s main limitations are that it is Android-only and has a minimal feature set compared to commercial trackers.'
+  - q: Is Clue private enough for sensitive health data?
+    a: 'Clue has a better privacy track record than most commercial period trackers. It is GDPR-compliant, Berlin-based, has no ad-supported model on the free tier, and has not faced FTC enforcement actions like Flo or Premom. However, Clue stores data server-side. GDPR protects against commercial data misuse but does not prevent law enforcement access via court order. For users in states with abortion restrictions, this distinction matters.'
+  - q: Can I use Drip on iPhone?
+    a: 'No. Drip is Android-only. iPhone users looking for on-device, account-free period tracking should consider Euki (free, iOS + Android) or Floriva (paid app with no free tier, iOS + Android, with an encrypted backup file for switching phones).'
+faqs:
+  - q: Is Drip period tracker still active?
+    a: 'Drip is an active open-source project, though development velocity is lower than commercial apps. The codebase is maintained and the app works. For users whose priority is auditable, open-source privacy, Drip remains a viable option for Android.'
+  - q: Does Clue require an account?
+    a: 'Yes. Clue requires an email account to use the app. This links your cycle data to your identity on Clue''s servers. This is the structural reason Clue''s data can be accessed via legal process, despite its GDPR compliance and clean commercial data handling record.'
+  - q: What period tracker is best for Android?
+    a: 'For Android users prioritizing privacy, Floriva is the strongest overall choice because it combines on-device storage with a more complete tracker. Drip is the open-source Android fallback if price and code auditability matter most. Clue is the best server-based fallback for Android with its clean enforcement record and GDPR compliance. Flo is the most feature-rich free option but has a documented history of data sharing violations.'
+pricingStats:
+  - stat: 'Drip is completely free with no subscription, ads, or in-app purchases'
+    source: Drip app (open source)
+    sourceUrl: 'https://bloodyhealth.gitlab.io/'
+  - stat: Flo Health paid a $59.5M combined settlement for sharing reproductive health data without user consent
+    source: 'Reuters / FTC, September 2025'
+    sourceUrl: 'https://www.reuters.com/technology/flo-health-google-flurry-settle-privacy-lawsuit-595-million-2025-09-25/'
+relatedPages:
+  - /resources/best/best-private-period-tracker-apps
+  - /resources/guides/how-period-tracker-apps-collect-data
+  - /compare/pricing/spot-on-period-tracker-cost
+  - /compare/alternatives/clue-alternative-no-cloud
+---
+
+## The privacy spectrum in period tracking
+
+Period trackers span a spectrum from fully server-dependent (Flo, Glow) to fully on-device (Drip). Clue sits closer to the private end of the server-based category. Drip is at the fully private end.
+
+Understanding where each app sits on this spectrum requires understanding what "privacy" means in this context: not just whether an app sells your data commercially, but whether the data is structurally accessible to third parties at all.
+
+## Drip: architectural privacy, limited scope
+
+Drip is open source and Android-only. The code is on GitHub, you can read exactly what it does. Data is stored locally on the device. No account, no sync, no server. From a privacy standpoint, this is as strong as it gets: there is nothing to subpoena because there is nothing on a server.
+
+The trade-off is scope. Drip covers basic cycle logging. It doesn't have the depth of symptom tracking, mood logging, or health insights that Clue offers. And if you're on iOS, Drip isn't an option.
+
+## Clue: strongest server-based option
+
+Clue is the most privacy-conscious of the major commercial period trackers. Berlin-based, GDPR-compliant, no ads, no documented enforcement history. The free tier is genuinely functional.
+
+The limitation is structural: Clue requires an account, and your data lives on Clue's servers. GDPR limits what Clue can do with your data commercially, but a German court order or a US legal request (depending on jurisdiction and data sharing agreements) could compel access.
+
+## Cross-device sync: the gap both leave open
+
+Neither Drip nor Clue handles the cross-device problem in a way that preserves on-device privacy. Drip has no sync at all. Clue syncs via its servers, trading privacy for convenience.
+
+Floriva does not sync either. Its answer is an encrypted backup file: you set a passphrase, export the file, and move it to a new device yourself. It is manual, not automatic, but it gives you a way to carry your history over without adding a server-side exposure risk.

@@ -1,0 +1,40 @@
+Copyright (c) 2026 Angel Campa. All rights reserved.
+
+This repository is published for portfolio review and evaluation. Reading the
+source is the intended use.
+
+No permission is granted to use, copy, modify, merge, publish, distribute,
+sublicense, or sell this software or the accompanying content, in whole or in
+part, for any purpose. No warranty of any kind is offered.
+
+EXCEPTIONS
+
+  Fonts. The variable font files under public/fonts/ are the work of their
+  respective authors and are licensed under the SIL Open Font License 1.1, not
+  by this notice. The full text of each license ships alongside the fonts in
+  public/fonts/licenses/. See THIRD-PARTY-LICENSES.md for the version and
+  attribution of each family.
+
+  Dependencies. Third-party packages listed in package.json are governed by
+  their own licenses and are not redistributed here.
+
+  Cited material. Content under content/ and docs/research/ quotes and links
+  to third-party sources, including regulatory filings and news reporting.
+  Those sources remain the property of their publishers and are cited in place.
+  Factual claims are attributed; the surrounding writing is not licensed for
+  reuse.
+
+TRADEMARKS
+
+  "Floriva", along with the associated logos and wordmarks under public/, is a
+  trademark of Angel Campa and is not licensed by this notice. Other product and
+  company names mentioned in content/ and docs/ are the trademarks of their
+  respective owners and are referred to descriptively.
+
+A NOTE ON WHY
+
+  GitHub will show this repository as having no recognized license, because
+  "all rights reserved" is not an OSI-approved one. That is deliberate. The
+  code is here to be read and assessed, and the 446-document content corpus
+  under content/ is the part that would be least appropriate to hand over for
+  reuse.

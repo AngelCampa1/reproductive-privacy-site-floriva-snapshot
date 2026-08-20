@@ -1,0 +1,103 @@
+---
+title: "Drip Period App Cost: Free and Open Source, But Android Only"
+description: "Drip is free, open-source, and on-device for Android. We cover what 'free and open source' means in practice, the iOS gap, and how Floriva compares."
+ogImage: "/og/pricing-breakdowns/drip-period-app-cost.png"
+tags:
+  - "pricing"
+  - "drip"
+publishedAt: "2026-03-21"
+updatedAt: "2026-03-21"
+buyerStage: "mofu"
+targetPersona:
+  - "flo-refugee"
+  - "post-roe-tracker"
+  - "paper-tracker"
+  - "privacy-conscious-user"
+bluf: "Drip is free, fully open source, and stores data on your device, strong privacy credentials for technically-minded Android users. The limitation is Android-only, no sync, and no iOS support. Floriva is a paid app with no free tier and works on both platforms. It has no sync either, but it does offer an encrypted backup file for moving data to a new phone."
+competitor:
+  name: "Drip"
+  slug: "drip"
+  pricing: "Free"
+tiers:
+  - name: "Free"
+    price: "$0/mo"
+    features:
+      - "Full cycle tracking with no paid tier"
+      - "Open-source codebase (auditable by anyone)"
+      - "On-device storage with no server component"
+      - "No account required"
+      - "Android only"
+hiddenCosts:
+  - "Android only: iOS users cannot use Drip"
+  - "Open source requires trusting your own audit or a third party's, most users cannot verify the code themselves"
+  - "No cross-device sync: switching or losing an Android phone means losing all tracking history"
+  - "No thermometer or wearable integration"
+  - "Limited community support compared to commercially-maintained apps"
+tableData:
+  name: "Drip vs Floriva comparison"
+  columns: ["Feature", "Drip", "Floriva"]
+  rows:
+    - ["Price", "$0", "Paid app (no free tier)"]
+    - ["Open source", "Yes", "No"]
+    - ["On-device storage", "Yes", "Yes"]
+    - ["Account required", "No", "No"]
+    - ["Cross-device sync", "No", "No"]
+    - ["Move data to a new phone", "No, re-enter by hand", "Encrypted backup file (manual)"]
+    - ["iOS support", "No", "Yes"]
+    - ["Android support", "Yes", "Yes"]
+pricingStats:
+  - stat: "Drip is fully open source and free, source code available on GitHub for independent audit"
+    source: "Drip GitHub repository"
+    sourceUrl: "https://github.com/bloodyhealth/drip"
+  - stat: "Floriva is a paid app with no free tier; the difference between Drip and Floriva is the subscription itself and added iOS support"
+    source: "Floriva pricing"
+answers:
+  - q: "Is Drip period app actually private"
+    a: "Yes. Drip is open source and stores all data on your device with no server component. Anyone can inspect the code to verify no data is transmitted. This is the highest standard of verifiable privacy, you do not have to trust the company's policy because you can read the implementation."
+  - q: "Why does Drip only work on Android"
+    a: "Drip is developed as a React Native app with open-source focus. The project has maintained Android support as its primary target. iOS development requires Apple developer accounts, platform-specific compliance, and ongoing maintenance costs that a free open-source project with no revenue model is harder to sustain."
+  - q: "Can I use Drip on an iPhone"
+    a: "No. Drip does not support iOS. iPhone users looking for open-source or on-device period tracking need to look at alternatives. Floriva supports both iOS and Android."
+faqs:
+  - q: "Where can I find the Drip source code"
+    a: "Drip's source code is available on GitHub at github.com/bloodyhealth/drip. The repository includes the full codebase, allowing anyone to audit what data is stored and confirm no external transmissions occur."
+  - q: "Does Drip have a paid version"
+    a: "No. Drip is entirely free with no paid tier. There is no premium version."
+  - q: "Is Drip still maintained"
+    a: "As of early 2026, the Drip repository shows ongoing activity. Open-source projects are community-dependent, active maintenance is not guaranteed long-term, but the codebase can be forked and continued by contributors."
+  - q: "What is the difference between Drip and Euki"
+    a: "Both are free and use on-device storage. Drip is fully open source (auditable), while Euki is nonprofit-developed but not fully open source. Drip is Android-only; Euki supports both iOS and Android. Neither offers cross-device sync."
+relatedPages:
+  - "/compare/versus/euki-vs-drip-privacy-trackers"
+  - "/resources/best/best-private-period-tracker-apps"
+  - "/resources/best/best-period-tracker-apps-no-data-selling"
+  - "/resources/guides/how-period-tracker-apps-collect-data"
+  - "/compare/alternatives/clue-alternative-no-cloud"
+---
+
+## Open Source Means Verifiable Privacy
+
+Drip is the only widely used period tracker where the privacy claim can be checked by anyone. Open source means anyone can read the code and confirm that data stays on the device. You do not have to trust Drip's privacy policy. You can read the code itself.
+
+Flo, Clue, Natural Cycles, and Stardust all make policy-based privacy claims. Drip makes an architectural claim anyone can verify.
+
+For Android users who are comfortable with open-source software, Drip is the strongest privacy option at any price.
+
+## The iOS Gap
+
+Drip does not support iOS. If you have an iPhone, Drip is not an option.
+
+The iOS gap comes from the economics of open-source development. Apple's platform requires ongoing developer account fees, App Store review, and platform-specific maintenance. A free app with no revenue model cannot easily cover those costs.
+
+## What Floriva's Subscription Adds on iOS
+
+Floriva uses the same core approach as Drip: on-device storage, no account required, no server. The privacy guarantee is the same.
+
+Floriva adds:
+
+- **iOS support**: works on iPhone and Android
+- **Encrypted backup file**: no automatic sync, but you can export your data, protected by your own passphrase, and move it to a new phone yourself
+- **Commercial maintenance**: subscriptions fund ongoing iOS and Android development
+
+If you use Android and are fine with open-source software, Drip is a solid pick. If you are on iOS, or you want your data to survive a phone change, Floriva fills the gap.
+

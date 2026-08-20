@@ -1,0 +1,115 @@
+---
+title: "Floriva vs Drip: Paid Privacy vs Open-Source Privacy"
+description: "Floriva vs Drip, both privacy-first period trackers. Drip is free, open-source, local-only, and Android-only. Floriva is paid, local-first, and lets you move data to a new phone with an encrypted backup file."
+ogImage: "/og/comparisons/floriva-vs-drip.png"
+tags:
+  - "comparison"
+  - "drip"
+  - "floriva"
+  - "privacy"
+  - "open-source"
+publishedAt: "2026-05-01"
+updatedAt: "2026-05-01"
+buyerStage: "mofu"
+targetPersona:
+  - "privacy-conscious-user"
+  - "open-source-advocate"
+bluf: "Floriva keeps data on-device, works on iOS and Android, and lets you move your history to a new phone with an encrypted backup file. Drip is the top open-source option, but it is Android-only with a minimal interface and no backup. If you want a full tracker, choose Floriva. If free, auditable Android-only tracking is your only requirement, Drip is the better fit."
+tableData:
+  name: "Floriva vs Drip Comparison"
+  columns: ["Factor", "Floriva", "Drip"]
+  rows:
+    - ["Data location", "Local-first", "On-device only"]
+    - ["Account required", "No", "No"]
+    - ["Price", "Paid app (no free tier)", "Free"]
+    - ["Platform", "iOS + Android", "Android only"]
+    - ["Company-held readable records", "No central cycle database", "No readable central records"]
+    - ["Open source", "No", "Yes (GPLv3)"]
+    - ["Cross-device sync", "None", "None"]
+    - ["Move data to a new phone", "Encrypted backup file (manual)", "No, re-enter by hand"]
+    - ["UI polish", "Modern", "Minimal/functional"]
+proscons:
+  - subject: "Floriva"
+    pros:
+      - "iOS and Android support"
+      - "Encrypted backup file for moving to a new phone"
+      - "Polished interface with detailed symptom tracking"
+    cons:
+      - "Paid subscription required"
+      - "Closed source, privacy claims rely on trust"
+      - "Newer app with smaller prediction dataset"
+  - subject: "Drip"
+    pros:
+      - "Completely free"
+      - "Open-source, anyone can audit the code"
+      - "No corporate entity can change privacy terms"
+      - "Community-maintained"
+    cons:
+      - "Android only, no iOS version"
+      - "Minimal interface with limited features"
+      - "No backup, no way to carry data to a new phone"
+      - "Small development team, infrequent updates"
+faqs:
+  - q: "Is Drip available for iPhone?"
+    a: "No. Drip is Android-only. There are no announced plans for an iOS version. iPhone users looking for an on-device tracker should consider Floriva or Euki."
+  - q: "Can I verify Drip's privacy claims?"
+    a: "Yes. Drip is open-source under GPLv3. The source code is on GitHub. Anyone with technical knowledge can audit exactly what the app does with your data. You do not need to trust the developer's claims."
+  - q: "Why would I pay for Floriva when Drip is free?"
+    a: "Drip is Android-only with a minimal interface. If you use an iPhone, Drip is not an option. If you want a way to move your data to a new phone, a cleaner UI, or detailed symptom tracking, Floriva covers those. The subscription funds full-time development."
+answers:
+  - q: "What is the best open-source period tracker?"
+    a: "Drip is the top open-source period tracker. It is free, stores all data on-device, and its source code is auditable under GPLv3. The limits are Android-only, a minimal feature set, and no backup. Floriva is the better pick when you need iOS support, an encrypted backup file for switching phones, and more tracking features."
+  - q: "Is Floriva or Drip more private?"
+    a: "Both reduce company-held data. The difference is verifiability: Drip is open source, so you can read the code and confirm privacy claims. Floriva is closed source, so its privacy depends on trusting the company. Floriva has no readable central cycle database; Drip has no readable central records."
+relatedPages:
+  - "/compare/alternatives/drip-app-alternative"
+  - "/resources/best/best-private-period-tracker-apps"
+  - "/resources/guides/what-is-zero-knowledge-period-tracker"
+  - "/compare/versus/period-tracker-privacy-showdown-2026"
+---
+
+Drip and Floriva take different approaches to private period tracking. Drip is open source, so anyone can confirm it is private. Floriva is cross-platform and polished, so people actually use it. Both reduce company-held data by keeping core records local.
+
+## The Core Difference
+
+Drip is a free, open-source period tracker built by community contributors. Its source code is public. Anyone can read it, audit it, or fork it. You do not take the developer's word for it. You read the code.
+
+Floriva is a closed-source app funded by subscriptions. It has a clean UI, an encrypted backup file for moving to a new phone, regular updates, and a dedicated development team. Its privacy model for core tracking is local-first and no-account. But you trust the company's claims rather than verifying them yourself.
+
+## Data Architecture
+
+**Drip** stores all data in local device storage. No network calls for user data. No account creation. No analytics SDKs. Because the code is open, you can confirm this by reading the source. The app contains no server communication code for user data.
+
+**Floriva** stores core records on-device and has no sync. To move data to a new phone, you export an encrypted backup file, protected by a passphrase only you know, and import it yourself. Floriva cannot read it. No account is required for core tracking. Since Floriva is closed source, these claims rest on the company's representations rather than auditable code.
+
+Both reduce the company subpoena target. Drip has no readable central records. Floriva has no readable central cycle database. The difference is how you verify that.
+
+## Features
+
+Drip is intentionally minimal. It tracks periods, temperature, mucus, and a small set of symptoms. The interface is functional rather than designed. Charts are basic. Predictions use standard calendar and symptom-thermal methods.
+
+Floriva offers more: detailed symptom logging, pattern analysis, cycle predictions, and a designed interface with visual data presentation. The experience gap between the two is real. Floriva is a consumer product. Drip is a privacy tool.
+
+Neither app includes social features, community forums, or health content libraries. Both focus on tracking.
+
+For users who want a [zero-knowledge period tracker](/resources/guides/what-is-zero-knowledge-period-tracker), both qualify. The question is whether you want minimal-and-verifiable or polished-and-trusted.
+
+## Pricing
+
+**Drip:** Free. No premium tier. Community-maintained with volunteer development. The risk: volunteer projects can stall. If the maintainers move on, updates stop. The app would keep working but would not receive bug fixes or OS updates.
+
+**Floriva:** Paid subscription, no free tier. Subscription funds ongoing development. Paying users expect updates, so the model creates a direct reason to keep building.
+
+## Who Should Choose Floriva vs Drip
+
+**Choose Drip if:** you are on Android, you value open-source verification over polish, you want a free tracker with no corporate entity behind it, or you can audit code and want to verify privacy claims yourself.
+
+**Choose Floriva if:** you use an iPhone (Drip is not available), you want a real way to carry your data to a new phone, you prefer a cleaner interface, or you want a dedicated team maintaining the product. Check the [best private period tracker apps](/resources/best/best-private-period-tracker-apps) for a full comparison.
+
+## The Privacy Bottom Line
+
+Drip offers something Floriva cannot: proof. Open-source code is the highest standard of privacy verification. You do not need to trust anyone. You read the code.
+
+Floriva offers something Drip cannot: iOS support and an app that does not require privacy expertise to use. Most people will not audit source code. They want an app that works on their phone and does not store their data on someone else's server.
+
+Both are privacy-first trackers. The choice depends on whether you value verifiability or usability, and whether you own an iPhone.

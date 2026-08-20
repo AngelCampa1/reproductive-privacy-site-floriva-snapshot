@@ -1,0 +1,94 @@
+---
+title: "How Period Tracker Apps Collect and Use Your Data"
+description: "Period tracker apps collect far more than cycle dates. What data is collected, how it is used, and what FTC actions against Flo and Premom revealed."
+ogImage: "/og/guides/how-period-tracker-apps-collect-data.png"
+tags:
+  - "guide"
+publishedAt: "2026-03-21"
+updatedAt: "2026-04-01"
+buyerStage: "tofu"
+targetPersona:
+  - "flo-refugee"
+  - "post-roe-tracker"
+  - "paper-tracker"
+  - "privacy-conscious-user"
+bluf: "Period tracker apps routinely collect cycle dates, symptoms, sexual activity logs, and mood data, then share it with advertisers, analytics firms, and data brokers. The FTC enforcement action against Flo in 2021 confirmed this is not a theoretical risk. A separate $59.5M class action settled in September 2025 (Reuters)."
+definitions:
+  - term: "Data broker"
+    definition: "A company that aggregates personal information from multiple sources and sells it to third parties, typically advertisers, insurers, or researchers. Data brokers often receive health information from app developers through third-party SDKs embedded in the app."
+  - term: "Behavioral advertising"
+    definition: "Advertising targeted to users based on inferred characteristics, health status, purchasing intent, demographic profile, derived from data collected across apps and websites. Period data can be used to infer pregnancy status, fertility treatments, and reproductive health conditions."
+  - term: "Health data"
+    definition: "Any information relating to the physical or mental health of an individual. In the context of period tracker apps, this includes cycle dates, flow intensity, symptoms, mood, sexual activity, contraception use, and pregnancy status. Consumer health apps are generally not protected by HIPAA."
+steps:
+  - title: "Open your phone's app privacy settings"
+    content: "On iOS, go to Settings > Privacy & Security. On Android, go to Settings > Privacy. Look for the app in question and review what permissions it holds, camera, microphone, location, health data, contacts."
+  - title: "Read the data sharing section of the privacy policy"
+    content: "Search the privacy policy for 'third parties', 'partners', 'service providers', and 'advertising'. These sections list who receives your data. If the policy says data is shared for 'improving services' or 'analytics', that often means third-party SDKs."
+  - title: "Check for third-party SDKs using a tool"
+    content: "Tools like Exodus Privacy (for Android) scan an app's APK and list every third-party tracker embedded in it. A high tracker count is a signal that data is being sent to multiple parties beyond the app developer."
+  - title: "Review your ad preferences on major platforms"
+    content: "Check your Google ad settings and Meta ad preferences. If you see ads for fertility products, pregnancy items, or reproductive health after using a period tracker, it is evidence that data has reached advertising networks."
+  - title: "Submit a data deletion request"
+    content: "Under GDPR (EU users), CCPA (California users), or the app's own privacy policy, you can request deletion of your data. Most major apps have a data export and deletion option in account settings. Note that deletion of your account does not guarantee deletion of data already shared with third parties."
+tableData:
+  name: "Data Collection Comparison: Major Period Tracker Apps"
+  description: "What data major period tracker apps collect and share, based on FTC findings and published privacy policies"
+  columns: ["App", "Cycle Data", "Health Symptoms", "Sexual Activity", "Location", "3rd-Party SDKs", "FTC Action"]
+  rows:
+    - ["Flo", "Yes, stored server-side", "Yes", "Yes", "Optional", "Facebook, Google, Flurry (pre-2019)", "Yes, 2021 consent order"]
+    - ["Premom", "Yes, stored server-side", "Yes (fertility)", "No", "No", "Umeng, Jiguang (Chinese firms)", "Yes, 2023 order"]
+    - ["Clue", "Yes, stored server-side", "Yes", "Yes", "No", "Research partners", "No"]
+    - ["Natural Cycles", "Yes, stored server-side", "Yes", "Yes", "No", "Some analytics", "No"]
+    - ["Floriva", "Yes, device only", "Yes, device only", "Yes, device only", "No", "None", "No"]
+answers:
+  - q: "What data does Flo collect?"
+    a: "According to Flo's privacy policy and the FTC's findings, Flo collected menstrual cycle dates, pregnancy status, sexual activity, mood, symptoms, and usage data. The FTC enforcement action in 2021 found that Flo shared this data with Facebook and Google despite promising not to, data that could be used to infer health status and target advertising."
+  - q: "What does 'data sold to advertisers' actually mean?"
+    a: "In practice, period tracker data reaches advertisers through multiple mechanisms: direct sale of user profiles, sharing via third-party SDKs embedded in the app, and sharing with data brokers who aggregate and resell it. The end result is that a woman who logs a missed period may see pregnancy product ads within days, not because anyone read her diary, but because her behavioral data was processed automatically."
+  - q: "Did the Flo class action settlement cover all US users?"
+    a: "The $59.5M class action settlement reported by Reuters in September 2025 covered affected US users. Eligibility and claim procedures were defined in the settlement terms. Settlement amounts in class actions of this type are typically small per-user, but the enforcement signal to the industry is significant."
+faqs:
+  - q: "Is Clue safer than Flo?"
+    a: "Clue is based in Germany and subject to GDPR, which provides stronger baseline protections than US law. However, Clue still stores data on servers and shares some data with research partners. GDPR compliance is a meaningful safeguard but not the same as on-device-only architecture."
+  - q: "Does deleting the app delete my data?"
+    a: "Deleting the app removes it from your device but does not automatically delete data stored on the company's servers. You need to submit a separate deletion request through the app's account settings or via email to the company's privacy team before uninstalling."
+  - q: "What was the Premom FTC enforcement action about?"
+    a: "In 2023, the FTC took enforcement action against Premom, an ovulation tracking app, for sharing sensitive health data with two Chinese analytics firms, Umeng and Jiguang, without user consent. The case established that sharing reproductive health data with third-party analytics providers without disclosure is an unfair and deceptive practice under FTC Section 5."
+relatedPages:
+  - /compare/alternatives/flo-app-alternative
+  - /compare/alternatives/clue-alternative-no-cloud
+  - /resources/best/best-private-period-tracker-apps
+  - /resources/best/best-period-tracker-apps-no-data-selling
+  - /compare/pricing/flo-premium-pricing-worth-privacy-risk
+  - /period-tracker-privacy/reproductive-data-privacy-laws-texas
+  - /resources/guides/data-brokers-reproductive-health
+---
+
+## What Period Tracker Apps Actually Collect
+
+The visible data is only part of the picture. When you log a period date, a mood, or a symptom, the app records that entry. It also typically records when you opened the app, what you tapped, how long you spent on each screen, and device identifiers that link this session to your broader digital profile.
+
+This behavioral layer, not just the health data itself, is what makes period tracking data valuable to advertisers. Combined with external data from brokers, a detailed profile of a user's reproductive health, lifestyle, and purchasing behavior can be assembled from what looks like a simple cycle log.
+
+## The FTC Enforcement Record
+
+Two enforcement actions show what the law covers:
+
+### Flo Health (2021)
+
+The FTC found that Flo shared health data, including menstrual and pregnancy information, with Facebook and Google for advertising purposes, despite its privacy policy stating it would not. The FTC entered a consent order requiring Flo to obtain user consent before sharing health data. A $59.5M class action settlement followed in September 2025.
+
+### Premom (2023)
+
+The FTC found that Premom shared sensitive reproductive health data with two analytics firms, Umeng and Jiguang, without user awareness or consent. The action resulted in a ban on sharing health data with third parties for advertising.
+
+Both cases confirm that the privacy risks of period tracking apps are not speculative. They have resulted in documented enforcement.
+
+## How to Audit Your Current App
+
+Use the steps above to review what your current period tracker is sending and to whom. The combination of checking app permissions, reading the data sharing section of the privacy policy, and scanning for embedded trackers gives a reasonably complete picture of your exposure.
+
+## The Alternative: Data That Never Leaves Your Device
+
+The most direct way to prevent this data collection is to use an app that never transmits health data to a server in the first place. On-device-only apps have no server to breach, no company to serve with a court order, and no advertising network to feed. The trade-off is no cross-device sync and no cloud backup, but for many users, that trade is worth making.

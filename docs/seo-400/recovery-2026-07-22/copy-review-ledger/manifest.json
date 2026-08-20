@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "frozenBaseSha": "f204145a4859897407278af1876bbdf1992edcb3",
+  "baseline": {
+    "json": {
+      "path": "docs/seo-400/recovery-2026-07-22/claims-baseline.json",
+      "sha256": "c0c03ff896763fb385950e486d9b80f68095626a4a386e8692b1f6fe9266c92a"
+    },
+    "csv": {
+      "path": "docs/seo-400/recovery-2026-07-22/claims-baseline.csv",
+      "sha256": "898d7db2088de14bc46c8046a196a4f8f754b7c0cf3b95d475a3587ae6220235"
+    },
+    "rows": 1010,
+    "byRisk": {
+      "HIGH": 641,
+      "MED": 98,
+      "LOW": 271
+    },
+    "scannedFiles": 535,
+    "scannerConfigHash": "e8cd847fd14f4d9854ae328352ad1f93f72e83217586df8bc295879bc055c99c"
+  }
+}

@@ -1,0 +1,28 @@
+# core.autocrlf=true rewrites these to CRLF on checkout, and vitest fails to
+# parse .mjs modules with CRLF endings ("SyntaxError: Invalid or unexpected
+# token" when a .test.ts imports one). That made scripts/prepare-pages-rollback
+# .test.ts fail on any fresh clone while passing locally, purely because the
+# working copy happened to have LF. Pin the line endings so the on-disk form is
+# deterministic across machines.
+*.mjs text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+
+# Hash-verified artifacts, and the same failure class as above. The copy-review
+# ledger manifest records a sha256 over these exact bytes, so a CRLF checkout
+# silently invalidates it and fails claim-remediation.test.ts on a fresh clone
+# while passing on whichever machine happened to write the file with LF.
+docs/seo-400/recovery-2026-07-22/claims-baseline.json text eol=lf
+docs/seo-400/recovery-2026-07-22/claims-baseline.csv  text eol=lf
+
+# Build output that happens to be committed. `pnpm generate:content` emits the
+# whole src/site/generated tree from content/**/*.mdx, and it is roughly 111k
+# lines against ~23k lines of hand-written app source. Without these markers
+# GitHub reports the repository as mostly generated TypeScript and buries every
+# real diff under a regenerated one.
+src/site/generated/**       linguist-generated=true
+src/site/content-manifest.ts linguist-generated=true
+public/public-knowledge.json linguist-generated=true
+public/sitemap.xml          linguist-generated=true
+public/llms.txt             linguist-generated=true
+pnpm-lock.yaml              linguist-generated=true

@@ -1,0 +1,555 @@
+---
+title: "Lock Down Period Data on Your Phone"
+description: "One checklist for iPhone and Android. Find every copy of your cycle data, cut app permissions, hide alerts, and fix backups and shared accounts."
+publishedAt: "2026-07-31"
+updatedAt: "2026-07-31"
+buyerStage: "mofu"
+targetPersona:
+  - "privacy-conscious"
+  - "iphone-user"
+  - "android-user"
+tags:
+  - privacy audit
+  - iPhone
+  - Android
+  - Apple Health
+  - Health Connect
+  - period tracker
+schema: "Article"
+bluf: "Your phone can hold more than one copy of your cycle data. The app has a copy. Apple Health or Health Connect may have a copy. Photos, calendars, alerts, and backups can hold more. Work through this list once. Then repeat it after you switch phones or try a new app."
+answers:
+  - q: "How do I find period data on my phone?"
+    a: "Search your phone for period, cycle, ovulation, fertility, and pregnancy. Then check Apple Health or Health Connect, app permissions, notification previews, photos, calendar entries, and backup settings. Check old store downloads too, because an app you deleted may still have a live account."
+  - q: "Does deleting a period app delete my data?"
+    a: "Often no. Deleting the app removes it from your phone. It may not delete data the company stores on its servers. Open the app first. Export what you want. Delete the account. Then uninstall."
+  - q: "Where do I turn off health app access?"
+    a: "On iPhone, open Settings, then Privacy and Security, then Health. You can also open the Health app, tap your photo, tap Privacy, then tap Apps. On Android, open Health Connect, then Permissions and data, then App permissions."
+faqs:
+  - q: "Does hiding an app hide the alerts too?"
+    a: "Not always. A hidden app can still be given away by a plain lock screen alert. Fix the alerts as well as the icon."
+  - q: "Does a VPN stop a period app from collecting my data?"
+    a: "No. A VPN hides your traffic on the way out. It does not change what the app does with your data once it arrives at the company."
+  - q: "Does turning off health access delete old data?"
+    a: "No. Turning off access limits what happens next. Data already stored or already copied by another app can stay where it is."
+  - q: "Is it safe to track my period on a shared phone?"
+    a: "It depends on who can unlock the phone, see notifications, review app activity, or control the account. A shared phone can expose period data through app history, lock screen alerts, backups, family tools, and account access."
+  - q: "Do app settings hide period data from school device management?"
+    a: "Do not count on that. App privacy settings may limit the app, but they do not control school device tools, browser logs, backups, or lock screen alerts."
+  - q: "Is this legal or medical advice?"
+    a: "No. This is a privacy checklist. Talk to a lawyer or a clinician for personal questions."
+definitions:
+  - term: "Health app access"
+    definition: "Permission that lets an app read from or write to Apple Health or Health Connect."
+  - term: "Server-side data"
+    definition: "Data kept by the app company, not only on your phone."
+  - term: "Notification preview"
+    definition: "The text from an alert that can show on your lock screen."
+  - term: "Store privacy label"
+    definition: "The App Store or Google Play section where a developer lists what data the app collects and shares."
+  - term: "Advertising ID"
+    definition: "A phone ID you can reset. Ad systems can use it to link app activity."
+relatedPages:
+  - /resources/privacy-in-practice/who-can-legally-get-your-period-data
+  - /resources/privacy-in-practice/protect-your-symptom-and-condition-data
+  - /resources/privacy-in-practice/period-tracker-data-portability-export
+  - /resources/privacy-in-practice/reset-ad-id-after-period-apps
+  - /resources/privacy-in-practice/partner-access-period-tracker-data
+  - /resources/privacy-in-practice/period-tracker-immigration-risk
+sources:
+  - id: "ftc-flo-2021"
+    claim: "The FTC alleged that Flo shared users' health data with Facebook, Google, and analytics providers after telling users it would keep that data private."
+    url: "https://www.ftc.gov/news-events/news/press-releases/2021/01/developer-popular-womens-fertility-tracking-app-settles-ftc-allegations-it-misled-consumers-about"
+    publisher: "Federal Trade Commission"
+    publishedAt: "2021-01-13"
+    accessedAt: "2026-07-31"
+    primary: true
+  - id: "ftc-mobile-health-app-best-practices-2026"
+    claim: "FTC guidance for mobile health apps includes privacy by design, data minimization, access controls, security testing, and clear choices."
+    url: "https://www.ftc.gov/business-guidance/resources/mobile-health-app-developers-ftc-best-practices"
+    publisher: "Federal Trade Commission"
+    accessedAt: "2026-07-31"
+    primary: true
+  - id: "hhs-health-apps-hipaa-2026"
+    claim: "HHS says health app rules depend on the nature of an app, including its function, the data it collects, and the services it provides."
+    url: "https://www.hhs.gov/hipaa/for-professionals/special-topics/health-apps/index.html"
+    publisher: "U.S. Department of Health and Human Services"
+    publishedAt: "2026-04-22"
+    accessedAt: "2026-07-31"
+    primary: true
+  - id: "apple-health-app-access-2026"
+    claim: "Apple says iPhone users can review Health-compatible apps from the Health app profile screen under Privacy > Apps and turn read or write permissions on or off by data category."
+    url: "https://support.apple.com/guide/iphone/share-your-health-data-iph5ede58c3d/ios"
+    publisher: "Apple Support"
+    accessedAt: "2026-07-31"
+    primary: true
+  - id: "apple-lock-hide-app-2026"
+    claim: "Apple says locking or hiding an app on iPhone requires Face ID, Touch ID, or a passcode. Apple also says information inside a locked app will not appear in some other places, such as notification previews, search, and Siri suggestions."
+    url: "https://support.apple.com/guide/iphone/lock-or-hide-or-an-app-iph00f208d05/ios"
+    publisher: "Apple Support"
+    accessedAt: "2026-07-31"
+    primary: true
+  - id: "apple-hidden-photos-2026"
+    claim: "Apple says hidden photos and videos move to the Hidden album, do not appear in Library, other albums, or widgets, and the Hidden album is locked by default on iOS 16, iPadOS 16.1, macOS Ventura, and later."
+    url: "https://support.apple.com/en-us/104987"
+    publisher: "Apple Support"
+    accessedAt: "2026-07-31"
+    primary: true
+  - id: "apple-notification-previews-2026"
+    claim: "Apple says iPhone users can choose when notification previews appear, including Always, When Unlocked, or Never."
+    url: "https://support.apple.com/en-gb/guide/iphone/iph7c3d96bab/ios"
+    publisher: "Apple Support"
+    accessedAt: "2026-07-31"
+    primary: true
+  - id: "apple-location-services-2026"
+    claim: "Apple says iPhone users can review app location access in Settings > Privacy & Security > Location Services and turn Precise Location on or off for an app."
+    url: "https://support.apple.com/en-us/102647"
+    publisher: "Apple Support"
+    accessedAt: "2026-07-31"
+    primary: true
+  - id: "apple-app-tracking-2026"
+    claim: "Apple says App Tracking Transparency lets users choose whether apps can track activity across other companies' apps and websites for ads or sharing with data brokers."
+    url: "https://support.apple.com/en-us/102420"
+    publisher: "Apple Support"
+    accessedAt: "2026-07-31"
+    primary: true
+  - id: "apple-icloud-backup-2025"
+    claim: "Apple says iCloud Backup can include device settings, Home Screen layout, app organization, and app data for downloaded apps when that data is not already synced to iCloud."
+    url: "https://support.apple.com/en-us/108770"
+    publisher: "Apple Support"
+    publishedAt: "2025-05-01"
+    accessedAt: "2026-07-31"
+    primary: true
+  - id: "apple-family-sharing-2026"
+    claim: "Apple says Family Sharing can share Apple services, help locate devices, share location, and manage a child's device with Screen Time and parental controls."
+    url: "https://support.apple.com/en-us/108380"
+    publisher: "Apple Support"
+    accessedAt: "2026-07-31"
+    primary: true
+  - id: "apple-supervised-device-2026"
+    claim: "Apple says a supervised device can have an organization profile that controls what features the device can access."
+    url: "https://support.apple.com/en-us/102291"
+    publisher: "Apple Support"
+    accessedAt: "2026-07-01"
+    primary: true
+  - id: "apple-configuration-profiles-2026"
+    claim: "Apple says configuration profiles define settings for corporate or school networks or accounts, and users can review profiles in VPN & Device Management."
+    url: "https://support.apple.com/guide/iphone/install-or-remove-configuration-profiles-iph6c493b19/ios"
+    publisher: "Apple Support"
+    accessedAt: "2026-07-01"
+    primary: true
+  - id: "apple-mdm-education-2026"
+    claim: "Apple says MDM can configure devices, send profiles and commands, monitor compliance with organization policies, and remotely wipe or lock devices."
+    url: "https://support.apple.com/guide/deployment-education/choose-a-mobile-device-management-solution-edu1c1be3511/web"
+    publisher: "Apple Support"
+    accessedAt: "2026-07-01"
+    primary: true
+  - id: "apple-app-privacy-details-2026"
+    claim: "Apple says developers provide App Privacy details about data they and their third-party partners collect."
+    url: "https://developer.apple.com/app-store/app-privacy-details/"
+    publisher: "Apple Developer"
+    accessedAt: "2026-07-31"
+    primary: true
+  - id: "google-health-connect-app-permissions-2026"
+    claim: "Google says Health Connect app permissions let users review connected apps and turn specific read and write permissions on or off under Permissions and data > App permissions."
+    url: "https://support.google.com/android/answer/12201230?hl=en"
+    publisher: "Google Android Help"
+    accessedAt: "2026-07-31"
+    primary: true
+  - id: "android-private-space-2026"
+    claim: "Google says Private Space can be opened from All Apps or Settings, uses a Private Space lock or screen lock, and can be hidden when locked."
+    url: "https://support.google.com/android/answer/15341885?hl=en"
+    publisher: "Google Android Help"
+    accessedAt: "2026-07-31"
+    primary: true
+  - id: "samsung-secure-folder-2026"
+    claim: "Samsung says Secure Folder can hide personal data and photos behind a PIN, password, pattern, or fingerprint and includes lock, auto-lock, and settings options."
+    url: "https://www.samsung.com/us/support/answer/ANS10001401/"
+    publisher: "Samsung US Support"
+    accessedAt: "2026-07-31"
+    primary: true
+  - id: "google-photos-locked-folder-2026"
+    claim: "Google says Locked Folder uses device screen lock and has a Back up Locked Folder setting that can be turned on or off."
+    url: "https://support.google.com/photos/answer/10694388?co=GENIE.Platform%3DAndroid&hl=en"
+    publisher: "Google Photos Help"
+    accessedAt: "2026-07-31"
+    primary: true
+  - id: "google-calendar-sharing-2026"
+    claim: "Google Calendar lets people choose who to share a calendar with from Settings and sharing."
+    url: "https://support.google.com/calendar/answer/37082?co=GENIE.Platform%3DDesktop&hl=en"
+    publisher: "Google Calendar Help"
+    accessedAt: "2026-07-31"
+    primary: true
+  - id: "google-calendar-visibility-2026"
+    claim: "Google Calendar supports visibility choices such as default, public, and private for tasks and events where available."
+    url: "https://support.google.com/calendar/answer/34580?co=GENIE.Platform%3DDesktop&hl=en"
+    publisher: "Google Calendar Help"
+    accessedAt: "2026-07-31"
+    primary: true
+  - id: "android-notifications-2026"
+    claim: "Google says Android users can control app notifications and lock screen notification content in settings."
+    url: "https://support.google.com/android/answer/9079661?hl=en"
+    publisher: "Google Android Help"
+    accessedAt: "2026-07-31"
+    primary: true
+  - id: "google-location-permissions-2026"
+    claim: "Google says Android users can grant an app approximate location, precise location, or both, depending on app permission settings."
+    url: "https://support.google.com/accounts/answer/6179507?hl=en"
+    publisher: "Google Account Help"
+    accessedAt: "2026-07-31"
+    primary: true
+  - id: "google-android-ad-id-2026"
+    claim: "Google says Android users can reset or delete the advertising ID, and apps may still have their own settings."
+    url: "https://support.google.com/googleplay/android-developer/answer/6048248?hl=en"
+    publisher: "Google Play Console Help"
+    accessedAt: "2026-07-31"
+    primary: true
+  - id: "google-play-data-safety-2026"
+    claim: "Google says the Play Store Data safety section explains developer statements about app data collection, sharing, and security practices."
+    url: "https://support.google.com/googleplay/answer/11416267?hl=en"
+    publisher: "Google Play Help"
+    accessedAt: "2026-07-31"
+    primary: true
+  - id: "google-family-link-2026"
+    claim: "Google Family Link can help parents manage a child's device, location, apps, and account settings."
+    url: "https://support.google.com/families/answer/7103413?hl=en"
+    publisher: "Google Families Help"
+    accessedAt: "2026-06-30"
+    primary: true
+  - id: "hotline-tech-safety-2026"
+    claim: "The National Domestic Violence Hotline warns that devices and accounts can be monitored and urges people to use a safer device when seeking help."
+    url: "https://www.thehotline.org/plan-for-safety/internet-safety/"
+    publisher: "National Domestic Violence Hotline"
+    accessedAt: "2026-06-30"
+    primary: false
+  - id: "nnedv-safety-net-2026"
+    claim: "NNEDV's Safety Net project offers survivor resources for safer technology use and digital safety planning."
+    url: "https://www.techsafety.org/resources-survivors"
+    publisher: "NNEDV Safety Net"
+    accessedAt: "2026-06-30"
+    primary: false
+  - id: "mozilla-period-apps-2022"
+    claim: "Mozilla reviewed popular period and pregnancy tracking apps after Dobbs and warned that many had weak privacy practices."
+    url: "https://www.mozillafoundation.org/en/privacynotincluded/articles/in-post-roe-v-wade-era-mozilla-labels-18-of-25-popular-period-and-pregnancy-tracking-tech-with-privacy-not-included-warning/"
+    publisher: "Mozilla Foundation"
+    publishedAt: "2022-08-17"
+    accessedAt: "2026-07-31"
+    primary: false
+---
+
+Most people think their cycle data lives in one place. It usually lives in more than one.
+
+The app has a copy. Apple Health or Health Connect may have a second copy. A screenshot sits in Photos. A refill reminder sits in a calendar. A lock screen alert says the rest out loud. A backup keeps all of it after you delete the app.
+
+This is not a worry with no basis. The FTC alleged that Flo shared users' health data with Facebook, Google, and analytics providers after telling users it would keep that data private. Mozilla reviewed popular period and pregnancy apps and warned that many had weak privacy practices. So this checklist looks at the app and at the quiet phone settings around it.
+
+Work through it once. Repeat it when you switch phones or try a new app.
+
+## Before you start: who else controls this phone?
+
+Read this part first. The steps below assume the phone is yours alone.
+
+Mark every line that is true.
+
+- [ ] Someone else knows the phone passcode.
+- [ ] Someone else owns the Apple ID or Google account.
+- [ ] The phone is in Apple Family Sharing or Google Family Link.
+- [ ] The phone is a school, work, or parent-owned device.
+- [ ] Someone else can see lock screen alerts.
+- [ ] Someone else can install, delete, or block apps.
+- [ ] The phone backs up to a shared cloud account.
+- [ ] You would be unsafe if someone found cycle data.
+
+If you checked any line, treat the phone as shared. Did you check the last line? Then app hiding tools are not enough on their own.
+
+### If someone unsafe controls the phone
+
+Do not start by changing settings in front of them. That can create new risk.
+
+Use a lower-risk path if you can:
+
+- Use a phone they do not control.
+- Use paper kept outside the shared space.
+- Use a code in a planner if that will not put you at risk.
+- Ask a local advocate to help you plan.
+
+Has someone had unsupervised access to your phone? Then check for these:
+
+- [ ] Screen time restrictions or monitoring software.
+- [ ] A profile under Settings, General, VPN and Device Management on iOS.
+- [ ] An unknown app with location and notification access.
+
+An installed profile can provide monitoring access.
+
+The National Domestic Violence Hotline publishes tech safety resources. So does NNEDV. Use a safe device or private browsing path first.
+
+- National Domestic Violence Hotline: 1-800-799-7233, or text START to 88788. Website: thehotline.org.
+- NNEDV Safety Net: techsafety.org has survivor resources for safer technology use.
+- Coalition Against Stalkerware: stopstalkerware.org has help detecting and removing monitoring software.
+
+### If the phone is school, work, or parent managed
+
+A managed device has rules a personal phone does not. Do not assume app settings cover the whole device.
+
+Apple says a supervised device can have an organization profile. That profile controls what features the device can access. Apple says MDM can send profiles and commands. It can set device rules and check policy compliance. It can also remotely lock or wipe devices.
+
+- [ ] Check who owns the device.
+- [ ] Check who manages the account.
+- [ ] On iPhone or iPad, check Settings, General, VPN & Device Management.
+- [ ] Check whether app installs are logged.
+- [ ] Check whether location sharing is on.
+- [ ] Check whether backups go to a school or family account.
+
+Do not remove a school profile just to hide period tracking. It may break school access or alert someone. Ask a trusted adult if you are unsure.
+
+On Android, read your device policy. Then check settings for any school or work account or management app.
+
+For work phones, keep it simple. Use a personal device for personal health tracking. Keep work and personal apps entirely separate.
+
+Do you need privacy from a parent or school? Or from an employer? Then a managed device is the wrong place for period data.
+
+## 1. Find every copy first
+
+Start with the apps you still have.
+
+- [ ] Open search on your phone.
+- [ ] Search "period."
+- [ ] Search "cycle."
+- [ ] Search "ovulation."
+- [ ] Search "fertility."
+- [ ] Search "pregnancy."
+- [ ] Search "health."
+- [ ] On iPhone, open App Library and check Health and Fitness.
+
+On Android, you can also list every app. Open Settings, tap Apps, then tap See all apps. Search or scroll for period, cycle, fertility, ovulation, pregnancy, and health apps.
+
+Also search your launcher. Some phones hide apps in folders or app drawers.
+
+Now find the apps you forgot. An app you deleted years ago can still have a live account.
+
+On iPhone: App Store, tap your photo, tap Purchased, tap My Purchases, then check **Not on This iPhone**.
+
+On Android: Play Store, tap your photo, tap Manage apps and device, tap Manage, then filter by **Not installed**.
+
+Write down every name. For each one, ask a single question: did I make an account?
+
+If yes, search your email for the app name. Look for sign-up mail, receipts, or privacy notices. Those emails tell you which accounts are still open.
+
+## 2. Close accounts in the right order
+
+Deleting the app is the last step, not the first. Uninstalling removes the app from your phone. It may not delete data the company holds.
+
+Do it in this order:
+
+1. Open the app.
+2. Export anything you want to keep.
+3. Turn off cloud sync.
+4. Delete the account inside the app.
+5. Confirm the deletion. Note any timeframe the app states for data removal.
+6. Ask for a confirmation email. If the app sends none, email the company's privacy address.
+7. Wait for the stated deletion period.
+8. Uninstall.
+
+Do not skip steps 5 through 7. Uninstalling first leaves your data on the company's servers.
+
+Then check one more door. Go to your Google Account, open Security, and open **Your connections to third-party apps and services**. Old period or fertility apps can still be linked there. Remove access you no longer need.
+
+Removing Google access may not delete the app's own account. Treat it as one step, not the whole cleanup.
+
+## 3. Turn off health app access
+
+Apple Health and Health Connect are separate stores of your cycle data. Other apps can be allowed to read them.
+
+**iPhone.** Apple says you can review Health-compatible apps from the Health app profile screen. Look under Privacy, then Apps. You can turn read or write permission on or off by category.
+
+- [ ] Settings, then Privacy and Security, then Health.
+- [ ] Tap each app. Review what it can read. Review what it can write.
+- [ ] Health app, tap your photo, tap Privacy, tap Apps. Review the same list.
+- [ ] Look for cycle, period, reproductive health, symptoms, ovulation, sexual activity, and fertility.
+- [ ] To clear the data itself: Health, Browse, Cycle Tracking, scroll down, Delete All Cycle Tracking Data.
+
+**Android.** Google says Health Connect lets you review connected apps. You can turn read and write permissions on or off. Look under Permissions and data, then App permissions.
+
+- [ ] Open Settings and search "Health Connect."
+- [ ] Tap Permissions and data, then App permissions.
+- [ ] Tap each app. Review menstrual cycle and reproductive health access.
+- [ ] To clear data: Health Connect, then Data and access. You can delete by category, by app, or all at once.
+
+Menu names can vary by phone. Settings may not show Health Connect. If so, open the Health Connect app if it is installed.
+
+Health Connect is not Google Fit. If you used older apps, open Google Fit. Tap your photo, then Settings. Tap Manage connected apps. Remove what you do not use.
+
+One caution. Turning off access changes what happens next. It does not erase data another app already copied.
+
+## 4. Cut permissions the app does not need
+
+Period tracking rarely needs broad access to your phone.
+
+**iPhone.** Apple says you can review app location access. Go to Settings, Privacy and Security, then Location Services. You can turn Precise Location on or off per app.
+
+- [ ] Settings, Privacy and Security, Location Services. Set the app to Never, or While Using. Turn Precise Location off.
+- [ ] Settings, then the app name. Check Photos, Contacts, Bluetooth, and Background App Refresh.
+- [ ] Settings, Privacy and Security, Tracking. Apple says this controls whether apps may track your activity across other companies' apps and websites.
+
+**Android.** Google says you can give an app approximate location, precise location, or both.
+
+- [ ] Settings, Location, App location permissions. Set the app to Not allowed if you do not need it.
+- [ ] Use approximate location when it is enough. Turn off precise location for apps that do not need it.
+- [ ] Settings, Apps, the app name, Permissions. Deny Contacts, Photos, Camera, Microphone, and Nearby devices unless you need them.
+- [ ] Settings, Google, All services, Ads, Ads privacy. Review ad topics and ad measurement.
+- [ ] Google says you can reset or delete the advertising ID in Android settings. Apps may still have their own settings.
+
+Menu names can vary by phone. Search Settings for "location permission" if you need to.
+
+If the app works without a permission, leave it off.
+
+## 5. Fix the alerts before you hide the icon
+
+A lock screen can say more than the app ever shows.
+
+**iPhone.** Apple says you can choose when previews appear: Always, When Unlocked, or Never.
+
+- [ ] Settings, Notifications, then the app.
+- [ ] Set Show Previews to When Unlocked or Never.
+- [ ] Turn off lock screen alerts if you share space.
+
+**Android.** Google says you can control app notifications and what shows on the lock screen.
+
+- [ ] Settings, Notifications, App notifications, then the app.
+- [ ] Hide sensitive content on the lock screen.
+- [ ] Turn off lock screen alerts if you share space.
+
+Then check the other screens that mirror your phone: watch, tablet, laptop, and car display.
+
+Rewrite the reminder text if the app lets you.
+
+| Use text like this | Not text like this |
+|---|---|
+| Check app | Period due |
+| Log today | Ovulation today |
+| Health note | Fertile window |
+| Quick note | Pregnancy test |
+
+Plain reminder text can still be noticed. Use it only if it is safe.
+
+## 6. Hide the app itself
+
+This helps when someone may glance at your phone. It does not stop someone who has your passcode.
+
+**iPhone.** Apple says locking or hiding an app needs Face ID, Touch ID, or a passcode. Apple also says information inside a locked app will not show up in notification previews, search, or Siri suggestions. Touch and hold the app icon, then choose the lock or hide option if your phone offers it.
+
+**Android Private Space.** Google says Private Space opens from All Apps or Settings. It uses its own lock or the screen lock. Google says it can be hidden when locked. Open Settings, search "Private Space," set it up, move the app in, and lock it. Google also notes limits. Some activity or data can still be visible outside the space. Phone menus can vary. If you do not see Private Space, your phone or Android version may not support it.
+
+**Samsung Secure Folder.** Samsung says Secure Folder can hide personal data and photos. It sits behind a PIN, password, pattern, or fingerprint. It has lock and auto-lock settings. Open Settings, search "Secure Folder," pick a lock, move the app and files in, and set a short auto-lock time. This is a Samsung feature, not a general Android one.
+
+Test it once. Lock it, then try to open it.
+
+Someone may ask why an app is locked. Use a plain script if that happens.
+
+> I lock health apps because my phone shows too much on screen. I do it for all private apps.
+
+Or, if you use a locked space:
+
+> I keep private apps separate. I do it for health, money, and notes.
+
+## 7. Photos, screenshots, and calendars
+
+These are the copies people forget.
+
+**Photos.** Apple says hidden photos move to the Hidden album. They do not show in Library, other albums, or widgets. Apple also says the Hidden album is locked by default on iOS 16, iPadOS 16.1, macOS Ventura, and later. Check the album on your own device to see how it behaves.
+
+Google says Locked Folder uses your device screen lock and has a **Back up Locked Folder** setting you can turn on or off.
+
+- [ ] Check the Hidden album or Locked Folder.
+- [ ] Check Recently Deleted.
+- [ ] Check the Screenshots folder for leftover copies.
+- [ ] Check Downloads and your Files app.
+- [ ] Check shared albums, partner albums, and family albums.
+- [ ] Photos can carry time and place. Strip location before you send one.
+
+**Calendars.** Google says you choose who to share a calendar with from Settings and sharing. Google also supports visibility choices such as default, public, and private for events and tasks where available.
+
+- [ ] Check who your calendar is shared with.
+- [ ] Rename entries that spell out period, refill, clinic, or test.
+- [ ] Set sensitive entries to private if your calendar offers it.
+- [ ] Check saved places and recent searches in your maps app. Remove clinic names from favorites.
+
+Private visibility may help. It does not fix a shared account, shared device, screenshot, or alert.
+
+## 8. Backups and shared accounts
+
+A backup can keep app data alive after you delete the app.
+
+Apple says iCloud Backup can include device settings, home screen layout, and app organization. It can also include app data for apps that do not already sync to iCloud.
+
+- [ ] iPhone: Settings, your name, iCloud, iCloud Backup. Then iCloud, Apps Using iCloud.
+- [ ] Android: Settings, search "Backup." Check which account backs up this phone.
+- [ ] Check the app's own sync or backup setting.
+
+Turning backup off now does not prove old copies are gone. And it does not delete data inside an app account.
+
+Shared accounts need their own pass. Apple says Family Sharing can share Apple services and help locate devices. It can share location. It can also manage a child's device with Screen Time and parental controls.
+
+- [ ] Does anyone else know the account password?
+- [ ] Are there trusted phone numbers or recovery contacts you did not add?
+- [ ] Which devices are signed in?
+- [ ] Is purchase sharing or location sharing on?
+- [ ] Is the phone backing up to someone else's account?
+
+Family Sharing does not mean every person sees every health note. It does mean your account may be tied to family tools. A shared account, a shared device, and a shared backup can each create exposure.
+
+## 9. Read the store label, then read further
+
+Apple says developers provide App Privacy details about data they and their partners collect. Google says the Play Data safety section explains developer statements about collection, sharing, and security.
+
+Both are disclosures written by the developer. Treat them as a first look, not proof.
+
+On iPhone, check App Privacy. Look at Health and Fitness, Sensitive Info, and Contact Info. Then look at Identifiers, Location, Usage Data, and Data Used to Track You.
+
+On Android, check Data safety. Look at Data collected, Data shared, Health and fitness data, Personal info, Device IDs, and Location. Check whether a delete option exists.
+
+Then open the privacy policy and search it for "ads," "analytics," "partners," and "share."
+
+## 10. What a VPN does and does not do
+
+A VPN hides your traffic from your network and hides your IP from the site you reach.
+
+It does not change what the app does after your data arrives. If a period app sends cycle data to the company's servers, that data still arrives and is still stored. A VPN also does nothing about your account, your logged entries, or your backups.
+
+Pick the VPN with care. A VPN company can see your traffic. You are moving trust from your internet provider to that company.
+
+Avoid free VPNs. Many make money by logging and selling your browsing data. That defeats the purpose.
+
+Use a VPN for what it is good at. Do not treat it as a privacy fix for an app that keeps your data.
+
+## 11. Paper is still an option
+
+Paper does not sync, back up, or send anything anywhere. It also cannot be searched by you, and it can be found, lost, or photographed.
+
+A common middle path is two layers. Keep dates and short scores in an app. Keep the most private notes somewhere else.
+
+If an app says it stores data "on device," check the claim yourself. Does it require an account? Does it work with the network off? Does it offer export without sync? Does the store label list data shared with third parties? FTC guidance for health app developers points to data minimization, access limits, and clear choices. You can use that same list to judge an app.
+
+Keep one thing in mind. HHS says the rules for a health app depend on what the app does. They also depend on what data it collects and what services it provides. Being a health app does not mean medical privacy law covers it.
+
+## Your finished audit
+
+You are done when you can answer all of these:
+
+- [ ] Is this phone shared, monitored, or managed by someone else?
+- [ ] Which apps hold my cycle data right now?
+- [ ] Which old apps still have accounts?
+- [ ] Which apps can read Apple Health or Health Connect?
+- [ ] Which apps can write to them?
+- [ ] Can anything private show on my lock screen?
+- [ ] Where are my screenshots and photos?
+- [ ] What does my calendar say out loud?
+- [ ] Which backups may hold cycle data?
+- [ ] Who else can reach my account?
+
+Keep the notes. Next time this takes ten minutes instead of an hour.
+
+## What Floriva changes
+
+Floriva is built so there is less to audit. Basic cycle tracking does not need a cloud account, and your data stays on your device.
+
+That does not replace the steps above. Your phone still has photos, alerts, calendars, backups, and shared accounts. If an app you use offers an optional sync feature, check its settings too. See [what Floriva does with your data](/privacy-features).

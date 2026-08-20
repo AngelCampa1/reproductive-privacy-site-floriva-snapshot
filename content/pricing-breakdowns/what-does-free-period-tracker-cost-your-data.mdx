@@ -1,0 +1,119 @@
+---
+title: "What Does a Free Period Tracker Actually Cost The Data Price"
+description: "Free period trackers are paid for with data: advertising targeting, health data broker sales, analytics SDK sharing, and legal exposure. The FTC's action against Flo documented exactly how this works."
+ogImage: "/og/pricing-breakdowns/what-does-free-period-tracker-cost-your-data.png"
+publishedAt: "2026-04-29"
+updatedAt: "2026-04-29"
+buyerStage: "mofu"
+targetPersona:
+  - "privacy-conscious"
+  - "data-sensitive"
+bluf: "Free period trackers operate on one of two models: advertising (your data builds profiles that generate ad revenue) or venture capital (your data is an asset being built toward sale or monetization). The FTC's 2021 action against Flo documented both models in practice: Flo stated it wouldn't sell data while transmitting health information to Facebook, AppsFlyer, and Google through analytics SDKs. The real cost of a free period tracker is not zero, it's your reproductive health data as a commercial and legal asset."
+tags:
+  - free period tracker
+  - data cost
+  - privacy
+  - FTC
+  - Flo
+  - health data
+relatedPages:
+  - /resources/guides/period-app-privacy-red-flags
+  - /compare/versus/privacy-first-period-apps-2026-ranked
+  - /resources/guides/period-tracker-data-minimization-guide
+  - /compare/pricing/floriva-pricing-and-value
+  - /resources/privacy-in-practice/who-can-legally-get-your-period-data
+answers:
+  - q: "Are free period tracker apps really free"
+    a: "No. Free period trackers are paid for through one or more mechanisms: advertising revenue from health data-informed targeting, data sharing with analytics SDKs (which serve the same advertising function without technically 'selling' data), venture capital investment backed by the data asset being built, or health data broker sales. The Flo FTC settlement documented that Flo transmitted user health data to Facebook, AppsFlyer, and Google despite stating 'we will never sell your personal data', because sharing via SDK doesn't technically meet the definition of 'sell.'"
+  - q: "What does Flo do with your data"
+    a: "Prior to 2021: Flo transmitted health-specific behavioral data to Facebook SDK, AppsFlyer, and Google Analytics through in-app events. Post-FTC settlement: Flo updated practices to require user consent for third-party health data sharing. Flo still stores data server-side, still requires account creation, and still operates as a US-based company without specific legal protections for reproductive health data. The FTC settlement addressed past SDK sharing; it didn't change Flo's fundamental architecture."
+  - q: "How do health data brokers use period app data"
+    a: "Health data brokers collect personal data from apps, wearables, and other sources and sell it to third parties for advertising, insurance risk assessment, employer screening, and credit decisions. In 2023, the FTC published a report documenting how data brokers aggregate and sell sensitive health information including reproductive health data. Period app data, when it reaches data broker databases through advertising SDK data flows, can end up in profiles sold to insurance companies assessing risk or employers screening candidates."
+  - q: "What's the difference between selling data and sharing via SDK"
+    a: "The legal and policy distinction: many companies commit to 'not selling' user data, which they define as transferring data for monetary consideration. Sharing data with analytics SDKs (like Facebook SDK) doesn't involve a direct monetary payment to the period app company, instead, the advertising attribution or analytics service receives data as part of an integration arrangement. The practical effect on your data is identical (it reaches Facebook or Google's servers and informs their advertising infrastructure) but it technically complies with 'no sell' language."
+definitions:
+  - term: "Health data broker"
+    definition: "A company that collects health-related information from multiple sources, apps, wearables, medical records when accessible, public records, and inferred data, and sells curated datasets to third parties. The FTC's 2023 report 'Protecting Privacy in an Era of Health Data Brokers' documented 13 brokers' practices, finding that data including reproductive health status was being sold without consumer knowledge. Health data brokers are not HIPAA covered entities and are subject to limited federal regulation."
+  - term: "Analytics SDK data flow"
+    definition: "The mechanism by which behavioral data from a period app reaches advertising networks without a direct data sale. When a period app integrates an advertising attribution SDK (AppsFlyer, Adjust, etc.) or analytics SDK (Facebook SDK, Mixpanel), those SDKs automatically transmit event data to the SDK provider's servers. The event data can include in-app actions that carry health context (e.g., 'user viewed pregnancy section'). The SDK provider receives this data as part of its service, not as a purchased dataset, but uses it to build user profiles."
+---
+
+"Free" is a price point. It is not a business model.
+
+Every app requires servers, developers, bandwidth, and support staff. These cost money. When an app is free to the user, the money comes from somewhere else. Where it comes from determines what you are actually paying.
+
+## The Three Business Models Behind Free Period Apps
+
+### Model 1: Advertising Revenue From Health-Informed Targeting
+
+The most common model for large free apps: the app collects behavioral data, analytics SDKs send that data to advertising networks, and those networks use it to show you targeted ads across the web.
+
+The period app does not necessarily "sell" your data in the legal sense. Instead:
+- You use Flo's free tier and log that you are trying to conceive
+- Flo's Facebook SDK sends an event to Facebook's servers
+- Facebook adds this to your advertising profile
+- You start seeing targeted ads for fertility supplements, OB/GYN practices, and pregnancy gear
+- Advertisers pay Facebook for showing these ads to you
+- Facebook keeps the revenue; Flo gets analytics tools and attribution data in exchange
+
+The period app company does not receive money for your specific record. It receives something more valuable: advertising tools and an analytics platform, paid for collectively by the behavioral data all users provide.
+
+This is what the FTC documented in its Flo action.
+
+### Model 2: Venture Capital Plus Data Asset Value
+
+Some apps do not need to be profitable on advertising. They are funded by venture capital, and the data accumulated during growth is itself the asset. The business plan: build a large user base with health data, then monetize through a company sale (Ovia was acquired by Labcorp), health data licensing for research, B2B enterprise health services, or eventually advertising.
+
+The user in this model is a long-term data asset, not an immediate revenue source. This creates a real risk: the data you entered while the app was "private" may be used differently when the company sells or pivots.
+
+### Model 3: Freemium With Premium Tier
+
+Some free apps are genuinely free-to-start with a paid premium tier. The free tier may still include analytics SDKs and data collection, but the primary monetization is subscription conversion, not data sales.
+
+This is the best "free" model from a user perspective, though the free tier still creates server-side records and may still include advertising SDKs.
+
+## The Flo Case: What "Free" Actually Cost
+
+The FTC's complaint against Flo Health (settled January 2021) provides the clearest documented example of how free period tracking is monetized.
+
+**What Flo said:** "We will never sell your personal data."
+
+**What Flo did:** Integrated Facebook Analytics, AppsFlyer, and Google Analytics SDKs. These SDKs received event data including whether users were pregnant, whether they were trying to conceive, and other health-specific behavioral signals.
+
+**How it worked technically:** When a Flo user opened a pregnancy-related feature or entered pregnancy-related information, the app sent SDK events that included health context. These events went to Facebook's servers as part of the SDK integration, not as a "sale" of data, but as routine analytics behavior.
+
+**What Facebook did with it:** Added it to advertising profiles. Flo users who disclosed pregnancy information in Flo started seeing targeted ads on Facebook and Instagram related to pregnancy, babies, and parenting.
+
+**What the FTC found:** Unfair and deceptive practices. The company stated data would not be shared while sharing it via SDK integrations.
+
+**The settlement:** Flo was required to notify affected users and obtain affirmative express consent for future third-party health data sharing. No fine; behavioral requirements only.
+
+## The Real Cost Accounting
+
+| Cost Category | Free App (ad-supported) | Paid App (Floriva-model) |
+|---------------|------------------------|--------------------------|
+| Monthly subscription | $0 | $X/month |
+| Advertising targeting from health data | Health profile built; targeted ads received | None |
+| Data broker exposure | Possible through SDK data flows | None |
+| Legal exposure (subpoena) | Server records accessible to law enforcement | No readable central records |
+| Breach exposure | Health data on company server at risk | No readable central records |
+| Insurance/employer risk | Health data could reach these via brokers | None |
+
+The actual "free" cost is not quantifiable because it depends on how the advertising targeting affects your experience, whether your data ends up in broker databases, whether law enforcement ever issues a legal request, and whether the company is breached.
+
+The potential costs are real. The FTC documented them. Unlike a subscription fee, they do not appear on any pricing page.
+
+## When Free Apps Are Acceptable
+
+Not everyone's health data carries the same risk. For many users:
+- Reproductive health legal risk is minimal
+- Advertising targeting is an acceptable tradeoff for free software
+- Their situation does not create law enforcement inquiry risk
+
+For these users, free apps with improved practices, such as post-FTC Flo or EU-based Clue's free tier, may be acceptable. The cost is real but may be an acceptable tradeoff.
+
+For users in legally sensitive situations, with immigration concerns, who have experienced stalking, or who want architectural privacy: the subscription cost of an app that does not hold your data is the cheaper option when you do the full cost accounting.
+
+## What This Means for Floriva Users
+
+Floriva's subscription model exists because the data is not the product. The subscription supports the product directly. There are no advertising SDKs, no health data for advertising networks, no readable central records to breach or subpoena. The cost is visible on the pricing page. The costs you are not paying are visible in the FTC's Flo complaint.

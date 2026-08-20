@@ -1,0 +1,94 @@
+---
+title: "Premom FTC Enforcement: Data Sharing With Chinese Firms"
+description: "The FTC charged Premom for sharing reproductive health data with Chinese analytics firms. Second FTC action against a period tracker after Flo."
+ogImage: "/og/guides/premom-data-sharing-ftc.png"
+tags:
+  - "guide"
+publishedAt: "2026-04-01"
+updatedAt: "2026-04-01"
+buyerStage: "tofu"
+targetPersona:
+  - "flo-refugee"
+  - "post-roe-tracker"
+  - "privacy-conscious-user"
+bluf: "In May 2023, the FTC charged Premom, a fertility tracking app, for sharing users' sensitive health data with third-party analytics firms, including Chinese companies, without consent. The FTC proposed barring Premom from sharing health data for advertising purposes. This is the second FTC enforcement action against a period/fertility tracker, after Flo Health in 2021."
+definitions:
+  - term: "Health Breach Notification Rule"
+    definition: "An FTC rule requiring companies that handle personal health records to notify consumers when their health data is breached or shared without authorization. The FTC applied this rule to Premom because health apps that are not covered by HIPAA still fall under FTC jurisdiction. Premom's sharing of health data with analytics firms triggered notification requirements under this rule."
+  - term: "Third-party analytics"
+    definition: "Software services embedded in apps that collect and process user data for advertising targeting, audience measurement, or behavioral profiling. In Premom's case, the FTC found that third-party analytics SDKs transmitted users' reproductive health information to companies whose primary business was advertising and data brokering."
+  - term: "Data localization"
+    definition: "The practice of storing data within the borders of the country where it was collected, rather than transmitting it to servers in other jurisdictions. The Premom case raised data localization concerns because user health data was transmitted to analytics companies based in China, where US privacy protections do not apply and data access by foreign governments is a documented risk."
+answers:
+  - q: "What did Premom do with user data?"
+    a: "The FTC found that Premom shared users' sensitive reproductive health information, including fertility and pregnancy data, with third-party analytics companies, including firms based in China. The data was transmitted through embedded SDKs without users' knowledge or meaningful consent. The FTC stated that Premom 'deceived users by sharing their sensitive personal information with third parties' despite privacy promises to the contrary."
+  - q: "Was Premom fined by the FTC?"
+    a: "The FTC proposed barring Premom from sharing health data for advertising purposes. The AMA reported in July 2023 that the FTC charged Premom for violating the Health Breach Notification Rule by sharing data with Chinese analytics firms. The enforcement action focused on prohibiting future data sharing rather than imposing a specific monetary fine, though the FTC's proposed order carried the force of law."
+  - q: "Is Premom safe to use now?"
+    a: "The FTC order, if finalized, would bar Premom from sharing health data for advertising. However, Premom remains a server-based app. Your data is stored on Premom's servers, which can be accessed via subpoena or court order. The FTC action addressed one type of risk (unauthorized data sharing with third parties) but did not change the underlying architecture. On-device trackers eliminate both risks: no data to share and no server to subpoena."
+faqs:
+  - q: "How is the Premom case similar to the Flo case?"
+    a: "Both cases involve the same pattern: a fertility or period tracking app that promised to keep health data private but shared it with third parties through embedded SDKs. Flo shared data with Facebook and Google (FTC action 2021, $59.5M settlement 2025). Premom shared data with Chinese analytics firms (FTC action 2023). Both apps were server-based. Both relied on policy promises that were violated. The pattern demonstrates that policy-based privacy protections fail when the underlying architecture allows data to leave the app."
+  - q: "What is the Health Breach Notification Rule?"
+    a: "The Health Breach Notification Rule is an FTC rule that requires companies handling personal health records to notify consumers when their data is breached or improperly shared. It applies to health apps that are not covered by HIPAA, which includes most period trackers. The California Law Review has noted that 'menstruation-tracking apps are not bound by the Health Insurance Portability and Accountability Act (HIPAA) because they are not healthcare providers.' The Health Breach Notification Rule fills part of that gap."
+  - q: "Why does it matter that Premom shared data with Chinese companies?"
+    a: "Data localization matters because data transmitted to companies in other countries is subject to those countries' laws and government access practices. US privacy protections do not apply to data held by foreign companies. The FTC specifically highlighted the Chinese analytics firms in its enforcement action, signaling that cross-border health data transfers carry heightened regulatory scrutiny."
+  - q: "How many period tracker apps has the FTC taken action against?"
+    a: "Two. Flo Health in January 2021 (for sharing reproductive data with Facebook and Google via SDKs) and Premom in May 2023 (for sharing reproductive data with third-party analytics firms including Chinese companies). Both were server-based apps. Both shared data despite privacy policy promises. No on-device period tracker has faced FTC enforcement because on-device architecture does not create a mechanism for data sharing."
+relatedPages:
+  - /compare/alternatives/premom-app-alternative
+  - /resources/guides/does-flo-sell-your-data
+  - /resources/guides/flo-period-tracker-lawsuit-settlement
+  - /resources/guides/period-tracker-hipaa
+  - /resources/best/best-period-tracker-apps-no-data-selling
+---
+
+In May 2023, the FTC charged Premom, an ovulation and fertility tracking app, for sharing users' sensitive reproductive health data with third-party analytics companies, including firms based in China. This is the second FTC enforcement action against a period or fertility tracking app, following the Flo Health case in 2021.
+
+## What the FTC Found
+
+The FTC stated that Premom "deceived users by sharing their sensitive personal information with third parties" despite telling users their data would remain private. The data was transmitted through embedded third-party analytics SDKs, the same mechanism the FTC identified in the Flo case two years earlier.
+
+The FTC proposed barring Premom from sharing health data for advertising purposes under the Health Breach Notification Rule.
+
+Source: [FTC press release, May 2023](https://www.ftc.gov/news-events/news/press-releases/2023/05/ovulation-tracking-app-premom-will-be-barred-sharing-health-data-advertising-under-proposed-ftc)
+
+## The China Dimension
+
+The AMA reported in July 2023 that the FTC charged Premom for violating the Health Breach Notification Rule specifically for sharing user data with Chinese analytics firms. This added a data localization dimension to the enforcement action.
+
+When health data is transmitted to companies based in other countries, US privacy protections no longer apply. The data is subject to the laws and government access practices of the receiving country. This is a risk that server-based health apps create by design: any SDK that transmits data to external servers introduces a cross-border data flow.
+
+Source: [AMA, July 2023](https://www.ama-assn.org/practice-management/hipaa/ftc-wants-big-fine-ovulation-tracker-app-shared-user-data)
+
+## The Pattern: Two Enforcement Actions, Same Architecture
+
+Flo and Premom share the same failure mode:
+
+1. Server-based app stores health data
+2. Third-party SDKs embedded for analytics or advertising
+3. SDKs transmit health data to external companies
+4. Privacy policy claims data is not shared
+5. FTC finds deceptive practices
+
+Flo shared data with Facebook and Google. Premom shared data with Chinese analytics firms. The recipients differed. The architecture and the outcome were the same.
+
+The California Law Review noted that "menstruation-tracking apps are not bound by the Health Insurance Portability and Accountability Act (HIPAA) because they are not healthcare providers." This means period trackers operate in a regulatory gap where the FTC's enforcement authority, not HIPAA, is the primary check on data practices.
+
+Source: [California Law Review, January 2024](https://www.californialawreview.org/print/leak-the-legal-consequences-of-data-misuse-in-menstruation-tracking-apps)
+
+## What This Means for Period Tracker Privacy
+
+Two FTC enforcement actions against fertility and period trackers in three years (2021, 2023) establish a pattern. Both involved server-based apps. Both involved embedded SDKs. Both involved privacy policies that were violated.
+
+The enforcement actions punish the violation after it occurs. They do not prevent it. The FTC can order a company to stop sharing data, but it cannot retroactively unsend data that has already been transmitted.
+
+On-device architecture prevents the violation from being possible. If core records stay on your phone, there are no SDKs to intercept it, no servers to share it from, and no cross-border transfers to worry about.
+
+## The Architectural Alternative
+
+Floriva stores all cycle data on your device. No Floriva server holds your reproductive health data. There are no third-party analytics SDKs embedded in the app.
+
+Other on-device options: Euki (free, nonprofit) stores data locally with no account required. Drip (free, open source, Android only) has no server at all; the code is publicly auditable.
+
+The FTC has taken enforcement action against two server-based fertility trackers. No on-device tracker has been subject to FTC action because the architecture does not create a mechanism for the violations the FTC investigates.

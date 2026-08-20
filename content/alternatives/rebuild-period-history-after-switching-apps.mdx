@@ -1,0 +1,131 @@
+---
+title: "How to Rebuild Your Period History After Switching Apps"
+description: "Switched period trackers and worried about losing your cycle history? Reconstruct it from exports, medical records, and secondary sources in under an hour."
+ogImage: "/og/alternatives/rebuild-period-history-after-switching-apps.png"
+tags:
+  - "guide"
+publishedAt: "2026-04-28"
+updatedAt: "2026-04-28"
+buyerStage: "bofu"
+targetPersona:
+  - "flo-refugee"
+  - "post-roe-tracker"
+  - "privacy-conscious-user"
+bluf: "Switching period trackers does not mean starting from zero. If you have an export file from your old app, you can seed your new tracker in under 15 minutes. If you deleted first and forgot to export, there are four other sources for reconstructing your cycle history. This guide covers all of them."
+steps:
+  - title: "Check for an export file from your old app"
+    content: "Most major period trackers allow data export before account deletion. If you have a ZIP or CSV from Flo, Clue, Glow, Stardust, or another app, open it and find the cycle start dates. You need the last 3-6 to seed most tracker prediction algorithms."
+  - title: "Request data from your old app if you haven't exported yet"
+    content: "If your account still exists, request an export before deleting. In Flo: Settings, Privacy, Request My Data. In Clue: Settings, Data Management, Export Data. In Glow: Settings, Privacy & Data, Request Data Export. In Stardust: Settings, Privacy & Data, Download My Data."
+  - title: "Check healthcare records for cycle history"
+    content: "If you've had annual exams, prenatal visits, or OB/GYN appointments in the last 1-3 years, your last menstrual period (LMP) date is often recorded at intake. Request records from your provider or log into your patient portal. These dates can anchor your reconstruction."
+  - title: "Reconstruct from secondary sources"
+    content: "Photos, calendar entries, notes apps, and even financial records (pharmacy purchases, subscription charges) can help pin down cycle dates. Look for photos from events where you remember being on your period, or check whether you have notes with dates."
+  - title: "Enter what you have and let the app calibrate"
+    content: "Enter whatever cycle start dates you have recovered, even if it's only 1-2. A good tracking app improves its predictions as you log new cycles. After 2-3 recorded cycles in the new app, predictions stabilize. You do not need years of history to get useful forecasts."
+answers:
+  - q: "How many past cycles do I need to enter to get accurate predictions?"
+    a: "Most tracking algorithms can generate useful predictions after 2 to 3 recorded cycles. Entering 3 to 6 historical cycle start dates from your export gives the algorithm a starting baseline and shortens the warm-up period. You do not need years of history. Recency matters more than volume."
+  - q: "What if I deleted my old account without exporting?"
+    a: "Check healthcare provider records for LMP (last menstrual period) dates from recent visits, look through photos and calendar entries for dates you can pin down, and start logging in the new app right away. The app will calibrate from current cycles even without a history import."
+  - q: "Can I import my Clue CSV into Floriva directly?"
+    a: "Direct CSV import depends on the app's import feature. Check Floriva's onboarding for an import option. If direct import is not available, open the CSV in a spreadsheet, find the cycle start date column, and manually enter the last 3 to 6 dates during setup. This takes about 5 minutes."
+faqs:
+  - q: "How many past cycles do I need to seed a new tracker with?"
+    a: "Three to six cycle start dates give most prediction algorithms enough baseline data to generate useful forecasts. You do not need months or years of history. Recency matters more than volume. Enter your most recent cycles first. Most on-device trackers, including Floriva, generate initial predictions from as few as one cycle date and refine accuracy as you log new cycles."
+  - q: "What if I deleted my old period tracker before exporting?"
+    a: "Four recovery sources can help: healthcare provider records (LMP dates are recorded at most gynecology and primary care visits), your phone's native health app (Apple Health or Google Fit may have period data written by your old tracker), calendar or notes app entries, and pharmacy purchase records for corroborating dates. Enter whatever you recover and start logging new cycles right away. Your tracker will calibrate within 2 to 3 cycles."
+  - q: "Does period tracking history carry over automatically when switching apps?"
+    a: "No. There is no automatic data portability between period trackers. Each app uses its own data format, and direct import is rarely supported. The standard approach is to export from your old app (which produces a CSV or JSON), read the cycle start dates from that file, and enter them manually during your new tracker's onboarding. Most apps ask for historical cycle data as part of setup."
+  - q: "How long until my new tracker predictions are as accurate as my old app?"
+    a: "Typically 2 to 3 cycles. If you entered 3 to 6 historical cycle start dates during setup, your first prediction will be reasonable but may have a wider confidence window. After you record one new cycle in the app, accuracy improves. After 2 to 3 new cycles, predictions are generally comparable to a well-calibrated app. Historical seed data speeds this up. Without it, calibration takes longer."
+relatedPages:
+  - /resources/guides/on-device-storage-period-tracker
+  - /compare/alternatives/clue-data-export-then-what
+  - /resources/privacy-in-practice/period-tracker-data-portability-export
+  - /app-guides/floriva-anonymous-tracking-setup
+  - /resources/best/best-private-period-tracker-apps
+  - /resources/guides/how-period-tracker-apps-collect-data
+---
+
+## The two scenarios: you have an export, or you don't
+
+Rebuilding your period history after switching apps is mostly a reading comprehension problem if you exported first, and a detective problem if you didn't. Both are solvable.
+
+The good news: modern cycle prediction algorithms are more capable than most users expect. You don't need three years of perfect data to get accurate predictions. You need 2-3 complete cycle records. If you can provide that from an export, healthcare records, or reconstruction, your new app will be useful within a month.
+
+Here's how to work through each scenario.
+
+## If you have an export file
+
+This is the best-case scenario, and the shortest path.
+
+**Flo exports** arrive as a ZIP file. Inside is typically a JSON or CSV with cycle dates, symptom logs, and account metadata. Open the cycle log file and look for `cycle_start` entries or the equivalent. Sort by date descending and note the last 3-6 dates.
+
+**Clue exports** are a CSV with columns for date, category, and logged data. Filter or sort the spreadsheet to show rows where the `period` or `cycle_start` category is logged. Note the dates.
+
+**Glow, Stardust, Natural Cycles, and most other trackers** export in similar CSV or JSON formats. The specific column names vary, but cycle start dates are always present in the export. Open the file in a spreadsheet app and search for the relevant column.
+
+**What you actually need from the export:** cycle start dates only. Everything else, symptoms, mood, fertility notes, is nice context but not what the new tracker's algorithm uses for prediction calibration.
+
+Enter these dates during your new tracker's onboarding. Floriva and Euki both include a cycle history step in their setup flows. Enter dates from most recent to oldest.
+
+For specifics on reading Clue's CSV format, see our [post-Clue-export guide](/compare/alternatives/clue-data-export-then-what).
+
+## If you deleted without exporting
+
+This is frustrating but not catastrophic. Here are four sources of cycle history you may not have considered.
+
+### Healthcare records
+
+Any recent visit to a gynecologist, primary care provider, or OB/GYN includes an intake form that asks for your last menstrual period (LMP). These dates are recorded in your medical chart.
+
+Request records from your provider for the last 1-3 years. Most providers offer patient portals where you can access visit summaries. Look for the "Chief Complaint" or "History" section. LMP is typically recorded there.
+
+This gives you verifiable cycle start dates that are independent of any app. Even two or three dates from different visits are useful for anchoring your reconstruction.
+
+### Photos and calendar entries
+
+Look through your photo library for events where you remember being on your period. Concerts, trips, significant family events, the memory of "I was miserable at that thing" combined with an exact date from a photo creates a usable data point.
+
+Check your calendar for any entries you made at the time, including appointments, notes, or reminders. Some people note period start dates on their calendars even when they use an app.
+
+Look in notes apps (Apple Notes, Notion, phone memos) for any date-anchored health notes.
+
+### Financial records
+
+Pharmacy purchases of period products, birth control prescriptions filled, or gynecology appointments paid for all carry dates. Bank and credit card statements from the last 2-3 years can surface dates you can cross-reference with calendar memory.
+
+This is a secondary source, you're looking for corroborating dates, not primary records. But if you need to anchor a specific month and you know you bought something relevant, the statement gives you the date.
+
+### App notification history (if you still have the old phone)
+
+If you deleted the app but still have the same phone, look in your phone's notification history (on Android, some launchers retain this). If you received period reminders or predictions from the old app, those notifications may contain dates.
+
+On iPhone, this option is more limited, but if you used the Health app's period tracking feature alongside a third-party app, check Health app data, some apps write back to Apple Health, and that data may still be there even if the source app is deleted.
+
+## Entering history in your new on-device tracker
+
+Once you have whatever cycle start dates you've recovered, even if it's only one or two, enter them during your new tracker's setup.
+
+Most on-device trackers handle sparse history gracefully. Floriva's algorithm generates predictions from as few as one cycle date and refines them as you log subsequent periods. The predictions will be less precise at first and will stabilize after 2-3 new cycles.
+
+**What to enter:**
+- Cycle start dates (the first day of bleeding)
+- Approximate cycle length if you remember it (if not, 28 days is a starting default that the app will refine)
+- You do not need to enter every symptom, flow level, or note from your old app, the prediction engine runs on cycle dates
+
+**What to expect:**
+- First prediction: moderate accuracy, wide confidence window
+- After 1 new cycle logged: tighter predictions
+- After 2-3 new cycles logged: comparable accuracy to a seeded import
+
+Don't let imperfect history keep you from switching. The privacy risk of remaining in a cloud-based app while you wait for a clean historical record is more concrete than the inconvenience of a few months of less precise predictions.
+
+## Protecting the history you've rebuilt
+
+Once you've entered your historical dates into your new on-device tracker, that history lives on your phone. Back it up using the tracker's built-in backup feature (most on-device trackers offer encrypted local backup or optional encrypted cloud backup that you control) rather than relying on the app developer's server.
+
+If you're using Floriva, see our [Floriva anonymous tracking setup guide](/app-guides/floriva-anonymous-tracking-setup) for configuring backup and data controls from the start.
+
+For more on how data portability works across different period tracker export formats, see our [data portability guide](/resources/privacy-in-practice/period-tracker-data-portability-export).

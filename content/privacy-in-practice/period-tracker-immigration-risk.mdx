@@ -1,0 +1,130 @@
+---
+title: "Period Tracking Apps and Immigration Risk: What Data Can Be Requested"
+description: "US immigration enforcement can issue administrative subpoenas for data held by US companies without a court order. A period app account tied to a real identity is a discoverable record. Here's what the risk actually is."
+ogImage: "/og/privacy-in-practice/period-tracker-immigration-risk.png"
+publishedAt: "2026-04-29"
+updatedAt: "2026-04-29"
+buyerStage: "mofu"
+targetPersona:
+  - "privacy-conscious"
+  - "data-sensitive"
+bluf: "Immigration enforcement agencies (ICE, CBP) can issue administrative subpoenas, called summonses or civil investigative demands, for records held by US companies without requiring a judge's approval. A period tracking app account linked to a real identity, email address, or phone number is a records source accessible through this legal channel. Local-first tracking with no account reduces this exposure because the company has fewer readable records."
+tags:
+  - immigration
+  - privacy
+  - period tracker
+  - health data
+  - data privacy
+  - ICE
+relatedPages:
+  - /resources/guides/period-tracker-data-minimization-guide
+  - /resources/guides/period-app-privacy-red-flags
+  - /resources/guides/state-health-privacy-laws-after-hipaa
+  - /resources/privacy-in-practice/who-can-legally-get-your-period-data
+  - /resources/privacy-in-practice/lock-down-period-data-on-your-phone
+answers:
+  - q: "Can immigration enforcement access period app data?"
+    a: "Yes, if the data exists on a US company's servers. US immigration agencies (ICE, CBP) can issue administrative subpoenas and civil investigative demands to US companies without obtaining a court order. If a period tracking app holds your records and you have an account tied to your identity, those records could be requested through administrative legal process. The company receiving the request has limited ability to refuse a valid administrative subpoena."
+  - q: "What information can be obtained from a period tracking app?"
+    a: "Records a period tracking app might hold include: the email address and phone number used for registration, IP addresses used to log in (which reveal location), period dates and cycle lengths, health conditions selected (pregnancy status, fertility intent, symptoms), device identifiers, and any sync data. Combined, these records could reveal location patterns, health status, and a timeline of biological events."
+  - q: "Does using a VPN protect period tracking data?"
+    a: "A VPN masks your IP address from the app's servers, making it harder to link your logins to a specific location. It does not protect data already stored on the company's servers (account details, cycle records), and it doesn't help if you've already logged in to an account tied to your identity. VPNs are part of a layered approach but not a substitute for not creating records in the first place."
+  - q: "What is the safest way to track periods if immigration status is a concern?"
+    a: "Local-first tracking with no account is the highest-protection option: core data stays on your device, the company has fewer readable records, and an administrative subpoena to a company has less to retrieve. If you must use an account-based app, use an email address not tied to your identity, a prepaid phone number for verification, and avoid entering identifying information. Delete the account before traveling internationally or if your legal situation becomes sensitive."
+definitions:
+  - term: "Administrative subpoena"
+    definition: "A legal demand for records issued by a federal agency under statutory authority, without requiring court approval. Federal agencies including ICE (Immigration and Customs Enforcement), CBP (Customs and Border Protection), DEA, FBI, and others have administrative subpoena authority. A company receiving a valid administrative subpoena must produce responsive records unless the request is successfully challenged in court. Administrative subpoenas are distinct from search warrants and grand jury subpoenas, which require judicial involvement."
+  - term: "Civil investigative demand (CID)"
+    definition: "A type of administrative demand used by federal agencies in civil investigations to compel production of documents and data. Like administrative subpoenas, CIDs do not require court approval. They are commonly used by the FTC, DOJ, and certain immigration enforcement contexts. A company receiving a CID for user records must produce them unless it can demonstrate a valid legal objection, which few companies have resources or incentive to mount against federal agencies."
+---
+
+The intersection of immigration enforcement and reproductive health data is not a hypothetical risk. It is a consequence of legal authorities that already exist and are actively used.
+
+## The Legal Authority
+
+US immigration agencies operate under broad administrative subpoena authority. ICE (Immigration and Customs Enforcement) can issue administrative summonses to compel production of business records under 8 U.S.C. § 1225 and related statutes. These subpoenas do not require a judge's approval and do not require ICE to demonstrate probable cause in advance.
+
+This is not unique to immigration enforcement. Most federal agencies have some form of administrative subpoena authority. The practical significance is that a US company (including any period tracking app incorporated or operated in the US) can receive a valid legal demand for user records from immigration enforcement without any court involvement.
+
+**What the company must do:** Produce responsive records or mount a legal challenge. Challenging an administrative subpoena is possible but resource-intensive and rarely successful unless the demand is overbroad or lacks legal basis. Most companies receiving administrative subpoenas comply.
+
+## What Records Exist in a Period App Account
+
+A typical period tracking app with an account system may hold:
+
+**Identity records:**
+- Email address used for registration
+- Phone number (if used for verification)
+- Name (if provided)
+- Payment method (if a paid subscription)
+- Social login association (Apple ID, Google account, Facebook)
+
+**Location records:**
+- IP addresses used to log in, which can be mapped to approximate geographic location
+- Timezone settings
+- Location permissions data (if location access was granted)
+
+**Health records:**
+- Period dates and cycle lengths
+- Symptoms logged (nausea, cramps, mood changes)
+- Health conditions selected (PCOS, endometriosis, etc.)
+- Pregnancy status or fertility intent
+- Sexual activity log (if entered)
+
+**Behavioral records:**
+- When the app was used
+- Which features were accessed
+- In-app purchases (which may indicate health status)
+
+Combined, these records can reveal where you have been (IP geolocation), your health status, your reproductive status, and a timeline of biological events. All of this could be used as evidence in legal proceedings.
+
+## Why Immigration Context Is Specific
+
+The specific immigration concern is that cycle and health data could be used to corroborate other information in an immigration proceeding, identify a person's presence in a specific location at a specific time, or establish identity. IP addresses logged over time create a location history; cycle data establishes biological facts about the account holder.
+
+For undocumented individuals, mixed-status households, or people with pending immigration proceedings, this data represents exposure that exists simply by using an account-based app.
+
+Additionally, US immigration enforcement has broad authority at the border. Devices can be searched at border crossings without a warrant under the border search exception to the Fourth Amendment. Apps with locally stored cycle data could be visible during a border device inspection.
+
+## Reducing Exposure
+
+### Minimum viable approach
+
+Use a period tracking app that does not require an account for core tracking. Many apps offer anonymous local-first tracking; Floriva is one. No account means less account-linked company data and fewer readable records to subpoena from the company.
+
+### If an account is required by your current app
+
+- Use an email address not linked to your real identity (a throwaway or pseudonymous address)
+- Use a prepaid number for phone verification if required
+- Avoid entering identifying information in app profiles
+- Disable location permissions for the app
+- Disable cloud sync if it exists as a separate option from account creation
+
+### Before travel or sensitive situations
+
+If your immigration situation is actively being reviewed, or before international travel (where device searches may occur):
+- Review which apps on your device hold health data
+- Consider deleting period app accounts you're not actively using (and verify deletion, not just app removal)
+- Consider moving to a local-only app before travel
+
+### Device protection at border crossings
+
+For the border device inspection scenario:
+- Device encryption with a strong passcode protects locally stored data from cursory inspection
+- Biometric unlock (Face ID, fingerprint) can be disabled before a border crossing by powering off the device. Officers can compel fingerprints more easily than passcodes in some jurisdictions.
+- Local-only health apps with device encryption provide the most protection during device searches
+
+## What "No Records Held" Actually Protects Against
+
+An administrative subpoena to a company for your records works like this:
+1. Agency identifies the company holding records about you
+2. Serves the company with a legal demand for those records
+3. Company produces records (typically within 14-30 days)
+
+If the company holds fewer readable records, because the app is local-first with no account, step 3 produces less. The subpoena is directed at the company; if the company has little readable cycle data, there is less company-held data to produce.
+
+This is meaningfully different from protecting your device (which requires physical access) or encrypting data the company holds (which only protects against breaches, not legal process).
+
+## What This Means for Floriva Users
+
+No account requirement for core tracking, less readable server-side data, and local-first records are not optional privacy features. They are the architecture that gives Floriva less readable company-held cycle data to produce in response to an administrative subpoena. The protection is not just a policy; it is a structural reduction in company-side exposure.

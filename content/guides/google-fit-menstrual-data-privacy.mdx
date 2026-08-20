@@ -1,0 +1,114 @@
+---
+title: "Google Fit and Period Data Privacy: What You Need to Know"
+description: "Google Fit and Google Health Connect don't store period data by default, but apps that sync through them do. Google's data policies allow advertising use in ways Apple's don't. Here's what the risk actually is."
+ogImage: "/og/guides/google-fit-menstrual-data-privacy.png"
+publishedAt: "2026-04-29"
+updatedAt: "2026-04-29"
+buyerStage: "mofu"
+targetPersona:
+  - "privacy-conscious"
+  - "health-tracker"
+bluf: "Google Fit and its successor Google Health Connect act as data interchange platforms, they don't collect your period data themselves unless you enter it directly into a Google app. The risk is the apps that use Google Health Connect as a sync layer: they have their own privacy policies governing what they do with your cycle data. Google's broader data policies differ meaningfully from Apple's. Google does use aggregate health signals for advertising in some contexts, and Health Connect data flows through Google's infrastructure."
+tags:
+  - Google Fit
+  - Google Health Connect
+  - period data privacy
+  - Android
+  - health data
+  - privacy
+relatedPages:
+  - /resources/guides/does-apple-health-share-period-data
+  - /resources/guides/period-app-privacy-red-flags
+  - /resources/privacy-in-practice/lock-down-period-data-on-your-phone
+  - /resources/guides/period-tracker-data-minimization-guide
+  - /resources/privacy-in-practice/who-can-legally-get-your-period-data
+answers:
+  - q: "Does Google Fit collect period data?"
+    a: "Google Fit allows apps to write menstrual health data to its platform, but this requires explicit user permission and is only populated if you grant a period tracking app permission to write to Google Fit. If you've never entered cycle data in a Google app and haven't granted any app write access to Fit's menstrual health category, Google Fit doesn't have your period data. The question is whether you've granted any app those permissions."
+  - q: "What is Google Health Connect?"
+    a: "Google Health Connect is the successor to Google Fit on Android (available since Android 14, rolled out broadly in 2023-2024). It replaces Fit's data interchange role, apps can read and write health data to Health Connect with user permission, and it acts as a central health data hub similar to Apple HealthKit. Period tracking apps on Android increasingly use Health Connect rather than Google Fit for data sync."
+  - q: "Is Google's health data policy as strong as Apple's?"
+    a: "No. Apple's policies explicitly prohibit using health data for advertising and do not allow selling it. Google's policies are more complex: Google states it doesn't sell personal information, but Google's advertising model is built on using behavioral signals across its services. Google's own Health Connect data policies prohibit using health data for advertising, but the data flows through Google's infrastructure and is subject to Google's broader privacy framework. The risk profiles are different."
+  - q: "How do I stop apps from accessing my period data through Google?"
+    a: "On Android: go to Settings > Privacy > Health Connect (or search for 'Health Connect' in Settings). You'll see which apps have access to which data types. Remove access for any app you don't want sharing your cycle data. Additionally, in any period tracking app's settings, look for sync or integration options and disable Google Fit or Health Connect sync. Note that disabling sync does not delete data already uploaded to an app's servers."
+definitions:
+  - term: "Google Health Connect"
+    definition: "Android's centralized health data interchange platform, replacing Google Fit's data layer role. It stores health data (including menstrual health) locally on the Android device and provides a permission system for apps to read and write categories of health data with user consent. Available as a system service on Android 14+ and as a downloadable app on Android 9+. Data stored in Health Connect is on-device; apps that read it may then upload it to their own servers."
+  - term: "Health Connect data types"
+    definition: "Health Connect organizes health data into defined categories. Relevant to menstrual health: MenstruationFlow, MenstruationPeriod, OvulationTestResult, SexualActivity, CervicalMucus, IntermenstrualBleeding, and related reproductive health types. Granting an app permission to read these types allows it to access all corresponding records in your Health Connect database. Each category requires a separate permission grant, visible in the Health Connect permissions screen."
+---
+
+Google's health data story is more complicated than Apple's. Not because Google is necessarily malicious, but because Google's core business model depends on data in ways Apple's does not, and that creates structural differences in how their health data policies work.
+
+## How Google Fit and Health Connect Actually Work
+
+Neither Google Fit nor Google Health Connect automatically collects your period data. They're platforms that apps use to exchange health data, with your permission.
+
+**How data gets into Google Fit/Health Connect:**
+1. You use a period tracking app that requests permission to write to Google Fit/Health Connect
+2. You grant that permission
+3. The app writes your cycle data to Google's health platform
+4. That data is now stored in Google's infrastructure
+
+If you've never granted any app write access to the menstrual health category, there's no cycle data in Google Fit or Health Connect.
+
+**How data gets out:**
+Apps can request read access to health data categories from Google Health Connect. If you grant a second app (say, a general health tracking app) read access to the menstrual health category, it can read any cycle data written by other apps. This cross-app data sharing is the intended purpose of the platform, but it means cycle data can propagate to apps you may not have directly given it to.
+
+## The Differences Between Google and Apple on Health Data
+
+Both Apple and Google have explicit policies against selling health data. But the policies diverge in important ways.
+
+**Apple HealthKit Developer Guidelines:**
+- Explicitly prohibits using health data for advertising, marketing, or selling to data brokers
+- Prohibits sharing health data with third parties without explicit user consent for each disclosure
+- Violations result in App Store removal. Apple has enforced these rules
+
+**Google Health Connect Developer Program Policies:**
+- Explicitly prohibits using health data for advertising or advertising targeting
+- Prohibits selling health data to third parties
+- States health data must be used only for the user health or fitness purpose the user has consented to
+
+On paper, these policies are similar. The structural difference: Google's primary revenue source is advertising, and health data flows through Google's infrastructure. Google's broader privacy policies and data processing terms apply to data in its systems. Apple's primary revenue source is hardware and services, and its business model creates different incentives around data.
+
+The practical risk for period data on Android is not "Google reading your cycle data." It is the apps that use Health Connect as a sync layer, which may have weaker privacy policies of their own.
+
+## The Real Risk: Apps Using Health Connect as a Backend
+
+Many period tracking apps on Android use Google Health Connect to sync data across devices or backup cycle logs. This means:
+- Your cycle data is transmitted from the app to Google's Health Connect infrastructure
+- The app also stores cycle data on its own servers
+- Both stores are now potential exposure points
+
+The app's privacy policy governs what it does with data on its servers. If that app has analytics SDKs, advertising partners, or makes data available for "research," your cycle data could move further.
+
+**The documented example:** Flo Health's FTC settlement (2021) arose partly from sharing health data with analytics SDKs, including Facebook Analytics and AppsFlyer, despite claiming not to share data with third parties. Those SDKs operated outside Flo's official data-sharing relationships and weren't explicitly covered by its privacy policy. The FTC action resulted in Flo being required to notify users and obtain affirmative express consent for future sharing.
+
+This kind of SDK-level data sharing can happen regardless of whether the app uses Google Health Connect, but it shows the gap between stated policy and actual practice.
+
+## Auditing Your Android Health Connect Permissions
+
+### On Android 14+ (native Health Connect):
+1. Go to **Settings** > **Privacy** > **Health Connect**
+2. Tap **App permissions**
+3. Review each app's read and write access by category
+4. Revoke access for apps you don't need or trust
+
+### On Android 9-13 (Health Connect as downloadable app):
+1. Open the **Health Connect** app
+2. Tap **App permissions**
+3. Same review and revocation process
+
+### Additionally:
+- In each period tracking app, look for Google Fit or Health Connect sync settings and disable if not needed
+- For apps you're removing, check if they have an account deletion option, uninstalling doesn't delete server-side data
+
+## Specific Risk: Google Account Associations
+
+If you use a period tracking app that requires a Google account login or integrates with Google Sign-In, your cycle data may be associated with your Google identity. This is a different risk from Health Connect: it means the period tracking app knows who you are (via your Google account), and that link persists even after you revoke Health Connect permissions.
+
+Apps that allow anonymous use or don't require email/account creation avoid this association.
+
+## What This Means for Floriva Users
+
+On Android, Floriva stores cycle data locally without requiring Google account login or Google Health Connect sync. No data passes through Google's infrastructure. The tradeoff (no cross-device sync) is deliberate: cross-device sync requires a server, and a server creates a record.

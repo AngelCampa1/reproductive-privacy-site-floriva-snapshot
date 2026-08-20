@@ -1,0 +1,103 @@
+/* On-device architecture diagram (Phase 2, task A2) */
+
+.on-device-diagram {
+  margin: 0;
+  max-width: 32rem;
+}
+
+.on-device-diagram__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.on-device-diagram__svg text {
+  font-family: var(--font-body);
+}
+
+.on-device-diagram__link {
+  stroke: var(--ink-mute);
+  stroke-width: 2;
+  stroke-dasharray: 5 6;
+  stroke-linecap: round;
+  opacity: 0.7;
+}
+
+.on-device-diagram__break {
+  stroke: var(--berry);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.on-device-diagram__cloud {
+  fill: var(--paper);
+  fill-opacity: 0.5;
+  stroke: var(--ink-mute);
+  stroke-opacity: 0.6;
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.on-device-diagram__cloud-label {
+  fill: var(--ink-mute);
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.on-device-diagram__phone {
+  fill: var(--paper);
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+
+.on-device-diagram__screen {
+  fill: var(--canvas);
+  stroke: var(--rule);
+  stroke-width: 1;
+}
+
+.on-device-diagram__mark--berry {
+  fill: var(--berry);
+}
+
+.on-device-diagram__mark--moss {
+  fill: var(--moss);
+}
+
+.on-device-diagram__mark--rule {
+  fill: none;
+  stroke: var(--rule);
+  stroke-width: 1.5;
+}
+
+.on-device-diagram__today {
+  fill: var(--berry-soft);
+  opacity: 0.85;
+}
+
+.on-device-diagram__badge {
+  fill: var(--moss);
+  stroke: var(--paper);
+  stroke-width: 3;
+}
+
+.on-device-diagram__badge-keyhole {
+  fill: var(--paper);
+}
+
+.on-device-diagram__pill {
+  fill: var(--moss-soft);
+}
+
+.on-device-diagram__pill-label {
+  fill: var(--ink);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.on-device-diagram__caption {
+  margin: var(--space-3) 0 0;
+  color: var(--ink-mute);
+  font-size: 0.8125rem;
+  text-align: center;
+}

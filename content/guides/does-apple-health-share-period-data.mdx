@@ -1,0 +1,105 @@
+---
+title: "Does Apple Health Share Your Period Data"
+description: "Apple Health stores cycle data on-device and doesn't sell it under its policies. But third-party apps with Apple Health read access can transmit your data to their servers. Here's how to audit your exposure."
+ogImage: "/og/guides/does-apple-health-share-period-data.png"
+publishedAt: "2026-04-29"
+updatedAt: "2026-04-29"
+buyerStage: "mofu"
+targetPersona:
+  - "privacy-conscious"
+  - "health-tracker"
+bluf: "Apple Health stores menstrual cycle data on-device by default and encrypts it via iCloud Health Sync when cloud backup is enabled. Apple does not sell or share this data under its stated privacy policies. The exposure risk is not Apple itself, it's the third-party apps you've granted Apple Health read access to. Any app with health data read access can pull your cycle data and transmit it to its own servers under its own (potentially different) privacy policy."
+tags:
+  - Apple Health
+  - period data privacy
+  - data sharing
+  - period tracker
+  - health data
+  - privacy
+relatedPages:
+  - /resources/guides/google-fit-menstrual-data-privacy
+  - /resources/guides/period-app-privacy-red-flags
+  - /resources/privacy-in-practice/lock-down-period-data-on-your-phone
+  - /resources/guides/period-tracker-data-minimization-guide
+  - /resources/privacy-in-practice/who-can-legally-get-your-period-data
+answers:
+  - q: "Does Apple Health share period data?"
+    a: "Apple Health does not share health data with third parties under its privacy policy. Cycle data entered in Apple's native Cycle Tracking app is stored on-device and, if iCloud backup is enabled, encrypted in iCloud with end-to-end encryption in most regions. Apple cannot access end-to-end encrypted health data even with a legal request. However, third-party apps that you grant Apple Health read access to can pull your cycle data and are governed by their own privacy policies, not Apple's."
+  - q: "How do I check which apps have access to my Apple Health data?"
+    a: "Go to Settings > Health > Data Access & Devices (or Settings > Privacy & Security > Health on some iOS versions). You'll see a list of apps that have requested health data access. Tap any app to see exactly which data types it can read and write. Remove access for any app you don't actively use or don't trust with health data. This is the most important audit you can do for Apple Health privacy."
+  - q: "Is Apple Health data protected from law enforcement?"
+    a: "Data stored on your device with device encryption is protected: law enforcement would need the device passcode or court order to unlock it. iCloud-synced Health data uses end-to-end encryption in supported regions (including the US, UK, and EU), meaning Apple cannot access it and cannot produce it in response to a subpoena. However, data shared with third-party apps is only as protected as those apps' server security and legal policies, not Apple's."
+  - q: "Should I use Apple Health to track my period?"
+    a: "Using Apple's native Cycle Tracking app with iCloud Health Sync disabled provides the strongest privacy: data stays on-device, Apple doesn't have it, and it can't be subpoenaed from Apple. If you sync to iCloud, the encryption is strong but iCloud backup keys may exist depending on your backup settings. The highest-risk scenario is granting a third-party period app access to read your Apple Health cycle data, that data then flows to the third party's servers under their policy."
+definitions:
+  - term: "End-to-end encryption (E2EE) in iCloud Health"
+    definition: "Apple implemented end-to-end encryption for Health app data stored in iCloud, meaning the data is encrypted with keys derived from your device passcode that Apple does not hold. Even with a valid legal request, Apple cannot decrypt or produce this data. E2EE for Health data is available in iCloud Advanced Data Protection when enabled; in standard iCloud, some health data categories are E2EE and some are not. Check Apple's current support documentation for which categories are covered."
+  - term: "HealthKit read access"
+    definition: "Apple's framework for health data sharing between apps. When a third-party app requests HealthKit access, iOS shows a permission dialog listing what types of data it wants to read or write. Approving read access for 'Reproductive Health' or 'Menstrual Cycle Data' allows the app to query all cycle-related data you've entered in Apple Health, including period dates, symptoms, ovulation predictions, and cervical mucus observations, which the app can then transmit to its servers."
+---
+
+Apple's privacy reputation is largely deserved, for first-party data. The complexity with period data is that it often passes through third-party apps that use Apple Health as a data conduit, and Apple's policies govern Apple's data, not theirs.
+
+## What Apple Does With Your Data
+
+Apple's Health app on iOS stores menstrual cycle data locally on your device. Apple does not:
+- Sell health data to advertisers
+- Use health data to profile you for advertising
+- Share health data with third parties without your explicit permission
+
+The Apple Privacy Policy and the specific HealthKit developer guidelines prohibit using health data for advertising or selling it to data brokers. These are contractual commitments Apple enforces on app developers, violating them can result in removal from the App Store.
+
+**iCloud Health Sync:** If you back up your iPhone to iCloud and Health data is included in the backup, your cycle data is stored in iCloud. Apple uses end-to-end encryption for Health app data, meaning the decryption keys are derived from your device passcode and are not held by Apple. In practice, this means Apple cannot produce your Health data in response to a subpoena. There is nothing for them to hand over.
+
+**Important caveat:** The strength of this protection depends on your iCloud settings and iOS version. Apple's iCloud Advanced Data Protection (available since iOS 16.2) extends E2EE coverage to additional data categories. The specific health categories covered under standard iCloud vs. Advanced Data Protection may vary, check Apple's current support documentation for the definitive list.
+
+## The Real Risk: Third-Party App Access
+
+The more significant privacy consideration is the apps you've granted Apple Health access to.
+
+When you install a period tracking app on iOS and it requests access to your Health data, you're granting it the ability to read cycle data you've logged, either in that app or in Apple's native Cycle Tracking app. The app can then:
+1. Store that data on its own servers
+2. Share it with its own analytics partners, advertising partners, or third parties per its own privacy policy
+3. Respond to subpoenas and legal requests under its own legal obligations, not Apple's
+
+This is how Flo, Clue, Natural Cycles, and most other period tracking apps work on iOS: they use HealthKit as a data layer, which means your data exists both in Apple Health (protected) and on the app's servers (under the app's policy).
+
+## How to Audit Your Health App Permissions
+
+### Step 1: Check Which Apps Have Access
+
+1. Open **Settings** on your iPhone
+2. Tap **Privacy & Security** → **Health**
+3. You'll see a list of apps that have requested Health data access
+4. Tap each app to see the specific data types it can read or write
+
+Alternatively: Open the **Health** app → tap your profile photo (top right) → **Privacy** → **Apps**
+
+### Step 2: Review Each App's Access
+
+For each app with cycle data access, ask:
+- Do I still use this app
+- Do I trust this app's privacy policy
+- Does this app need to read Health data to function
+
+Some apps request broad health access unnecessarily. A step-counting app doesn't need to read your cycle data; if it's granted that access, remove it.
+
+### Step 3: Remove Access You Don't Need
+
+Tap any app in the Health permissions list → toggle off data categories you don't want it to access. Or toggle off all categories if you want to remove the app's access entirely.
+
+**Important:** Removing HealthKit access from an app does not delete data already stored on the app's servers. It only prevents future data transfer. To remove previously shared data, you'd need to use the app's data deletion feature or contact the company directly.
+
+### Step 4: Consider iCloud Advanced Data Protection
+
+If you use iCloud backup and want the strongest encryption for your health data, enable iCloud Advanced Data Protection: **Settings** → [Your Name] → **iCloud** → **Advanced Data Protection**. This requires enabling iCloud Recovery Contact or Recovery Key (because Apple cannot recover your account if you lose access).
+
+## What "On-Device" Actually Means
+
+A period tracking app that describes itself as "on-device" or "private" may not be using Apple Health at all. It may store its own database locally on the device, outside the HealthKit ecosystem. This is actually better for privacy in some respects: no HealthKit integration means no data passes through Apple's frameworks, and no app can read it via HealthKit access.
+
+The tradeoff: data isn't available to other apps that might use it (like some health tracking or calendar apps), and it doesn't transfer via iCloud Health Sync to other devices.
+
+## What This Means for Floriva Users
+
+Floriva stores tracking data locally on your device without requiring an Apple Health integration. No HealthKit read or write permissions are requested, which means the data doesn't enter Apple's health framework at all and can't be accessed by other apps via HealthKit. This is a deliberate architecture choice: the data should be yours and only yours.

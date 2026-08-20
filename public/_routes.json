@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "include": ["/*"],
+  "exclude": [
+    "/favicon.png",
+    "/favicon.svg",
+    "/icons.svg",
+    "/logo-icon.png",
+    "/logo-mark.png",
+    "/logo-source-approved.png",
+    "/logo.svg",
+    "/logo-dark.svg",
+    "/logo-light.svg"
+  ]
+}

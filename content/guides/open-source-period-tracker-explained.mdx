@@ -1,0 +1,88 @@
+---
+title: "What Does Open Source Mean for a Period Tracker App"
+description: "Open source period trackers let anyone inspect the code and verify privacy claims. What open source means, its limits, and how to evaluate one."
+ogImage: "/og/guides/open-source-period-tracker-explained.png"
+tags:
+  - "guide"
+publishedAt: "2026-03-21"
+updatedAt: "2026-03-21"
+buyerStage: "tofu"
+targetPersona:
+  - "flo-refugee"
+  - "post-roe-tracker"
+  - "paper-tracker"
+  - "privacy-conscious-user"
+bluf: "An open-source period tracker makes its source code publicly available, allowing researchers, security professionals, and technically capable users to verify what the app actually does, not just what the developer claims it does. This is meaningful for privacy verification, but open source alone does not guarantee safety."
+definitions:
+  - term: "Open source software"
+    definition: "Software whose source code is made publicly available under a license that allows anyone to view, inspect, modify, and distribute it. Open source code can be audited by independent parties, which is how privacy and security claims can be independently verified rather than accepted on trust."
+  - term: "Code audit"
+    definition: "A systematic review of source code by a qualified reviewer, typically a security researcher or independent developer, looking for security vulnerabilities, data handling issues, or discrepancies between documented behavior and actual behavior. Code audits of period trackers can verify whether data is transmitted to servers, what encryption is used, and whether third-party SDKs are embedded."
+  - term: "Reproducible builds"
+    definition: "A build process that produces identical output from the same source code, allowing the published app in an app store to be independently verified as matching the publicly available source code. Without reproducible builds, an app can publish open source code while distributing a closed-source binary with different behavior."
+tableData:
+  name: "Open Source vs. Proprietary Period Tracker Comparison"
+  description: "How open source code availability affects privacy verification and trust"
+  columns: ["Property", "Open Source App", "Closed Source App"]
+  rows:
+    - ["Code inspectable by users", "Yes, publicly available", "No, trust required"]
+    - ["Independent security audit possible", "Yes, anyone can audit", "Only with company cooperation"]
+    - ["Privacy claims verifiable", "Yes, code matches (or contradicts) claims", "No, policy only"]
+    - ["False claims detectable", "Yes, researchers can expose discrepancies", "Only after FTC enforcement or breach"]
+    - ["Example apps", "Drip (Android), Euki", "Flo, Clue, Natural Cycles, Stardust"]
+    - ["Reproducible builds", "Possible, not all implement it", "Not applicable"]
+answers:
+  - q: "Is Drip open source"
+    a: "Drip by Blooming Health is open source, with code available on GitHub. This allows the community to inspect how data is handled and verify privacy claims. Open source status does not mean the app has been professionally audited, but it makes independent review possible."
+  - q: "Can I trust an open-source period tracker"
+    a: "Open source improves trustworthiness by enabling independent verification, but it does not guarantee safety on its own. A few things to check: Has the code been independently audited by a security researcher? Are the builds reproducible so you can verify the app store version matches the source? Is the project actively maintained? An open-source app with a recent professional audit and reproducible builds is significantly more trustworthy than one that publishes code but has not been independently reviewed."
+  - q: "What can I verify in open-source period tracker code"
+    a: "With access to source code, a technically capable reviewer can verify: whether data is transmitted to any remote servers, what third-party libraries are included and what they do, how data is stored on the device, what encryption is applied, and whether there are any backdoors or undisclosed data collection routines. These are the exact questions relevant to period tracker privacy."
+faqs:
+  - q: "Does open source mean the app is free to use"
+    a: "Open source refers to code availability, not price. An open-source app can be free or paid. The two are independent. Floriva, for example, is a paid app, open source code would mean its privacy claims are verifiable, while the subscription funds development without relying on data monetization."
+  - q: "What is the reproducible builds problem"
+    a: "Publishing open source code does not guarantee that the app distributed through app stores matches that code. A developer could open-source one version of the app while distributing a different version. Reproducible builds address this by making it possible to compile the source code and verify that the resulting binary is identical to the published app. Only a small number of apps implement this."
+  - q: "Are closed-source period trackers necessarily untrustworthy"
+    a: "Not necessarily. Some closed-source apps have strong privacy practices and third-party audited security. However, their privacy claims require trust in developer statements because independent verification is not possible. For users whose threat model requires verified privacy rather than promised privacy, open source with reproducible builds is the stronger option."
+relatedPages:
+  - /resources/best/best-private-period-tracker-apps
+  - /resources/best/best-period-tracker-apps-no-data-selling
+  - /compare/alternatives/euki-app-alternative
+  - /resources/guides/what-is-zero-knowledge-period-tracker
+  - /resources/guides/end-to-end-encryption-period-tracker
+---
+
+## Why Open Source Matters for Privacy Claims
+
+Every period tracker app makes privacy claims. Most do so in a privacy policy, a legal document that is difficult to verify and changes over time.
+
+Open source code is a different kind of claim. Instead of "we promise not to share your data," it is "here is the exact code running on your device, inspect it yourself." For users who want verified privacy rather than promised privacy, this distinction is significant.
+
+The FTC enforcement action against Flo in 2021 and the $59.5M class action settlement demonstrate that privacy policies are not self-enforcing. Open source code, particularly when combined with independent security audits, provides a verification mechanism that legal text does not.
+
+## What Open Source Enables
+
+When period tracker code is publicly available:
+
+**Security researchers** can review it and publish findings. A researcher who discovers that the app is transmitting data to an undisclosed server can document and publicize that finding, creating accountability that closed-source apps do not face.
+
+**Privacy advocates** can verify whether stated data practices match implementation. If the privacy policy says no data leaves your device, the code should show no network transmission of health data.
+
+**Technically capable users** can review the code themselves, or review published audits, before trusting the app with their health information.
+
+**Developers** can fork the codebase and create modified versions if they identify issues with the original.
+
+## The Limits of Open Source
+
+Open source is not a magic safety guarantee. Important caveats:
+
+**Most users cannot read code.** Open source provides the possibility of verification, not verification itself. The value depends on independent security researchers and auditors actually reviewing the code.
+
+**App store distribution may differ from source.** Without reproducible builds, there is no way to confirm the app store version matches the published source code.
+
+**Open source does not address business model.** An open-source app can still require an account, sync to servers, or have a data monetization strategy. The code verifies implementation; the business model determines incentives.
+
+## Evaluating an Open-Source Period Tracker
+
+The key questions: Where is the code hosted, and when was it last updated? Has an independent security researcher published a review? Are builds reproducible? Do the data handling routines in the code match what the privacy policy states? An app that answers these questions well provides a higher level of verifiable privacy than one that relies on policy promises alone.

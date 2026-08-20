@@ -1,0 +1,116 @@
+---
+title: "Clue Says It Won't Comply With Subpoenas: The Evidence"
+description: "Clue pledges GDPR protection and defiance of law enforcement. Investigations found 135 third-party data recipients and opt-out ad sharing."
+ogImage: "/og/guides/clue-privacy-deep-dive.png"
+tags:
+  - "guide"
+publishedAt: "2026-04-02"
+updatedAt: "2026-04-02"
+buyerStage: "tofu"
+targetPersona:
+  - "flo-refugee"
+  - "privacy-conscious-user"
+schema: "Article"
+bluf: "Clue (BioWink GmbH, Berlin) has 100+ million downloads and 10-11 million monthly users. Its leadership pledged post-Dobbs: 'We will never turn your private health data over to any authority.' In November 2024, Clue's CEO stated publicly: 'If we are ever subpoenaed, we will not comply.' But the Norwegian Consumer Council found Clue's data flowing to 135 third-party companies. Vice/Motherboard found Clue user data purchasable for $100 from a data broker. Mozilla gave Clue a warning label for single-character passwords and opt-out ad sharing. GDPR is real protection, but the gap between Clue's pledges and documented findings deserves a closer look."
+definitions:
+  - term: "GDPR"
+    definition: "The General Data Protection Regulation is EU law governing how companies collect, store, and share personal data. It requires explicit consent for data processing, grants users the right to access and delete their data, and imposes fines up to 4% of global revenue for violations. Because Clue operates from Berlin, user data falls under GDPR jurisdiction regardless of where the user lives."
+  - term: "DSAR"
+    definition: "A Data Subject Access Request is a formal demand under GDPR requiring a company to disclose all personal data it holds on the requesting individual. Privacy International filed a DSAR against Clue in 2020 and found that every interaction with the app was stored and linked to user ID, device ID, and location data."
+  - term: "MLAT"
+    definition: "A Mutual Legal Assistance Treaty is a bilateral agreement between countries that enables law enforcement in one country to request evidence held in another. US prosecutors seeking Clue's data from German servers would need to go through the US-Germany MLAT process, which is slower and more restrictive than a domestic subpoena but is not impossible."
+answers:
+  - q: "Has Clue ever complied with a law enforcement data request?"
+    a: "Clue has not publicly disclosed receiving or complying with any law enforcement request for user reproductive health data. However, Clue's privacy policy states that data may be shared 'for legal requirements, when required by law, legal process, or government request.' The policy also acknowledges that 'the risk of such disclosure... cannot be eliminated.' The gap between the CEO's public pledge of noncompliance and the privacy policy's legal compliance language has not been tested in court."
+  - q: "Can US law enforcement get Clue data from Germany?"
+    a: "Not through a standard domestic subpoena. US law enforcement seeking data held on German servers would need to use the US-Germany Mutual Legal Assistance Treaty (MLAT) process or attempt to compel production through other international legal mechanisms. GDPR adds a layer of protection because German authorities would evaluate whether the request complies with EU data protection standards. This is meaningfully harder than subpoenaing a US-based company, but it is not a guarantee of noncompliance."
+  - q: "Did Clue share user data with 135 companies?"
+    a: "The Norwegian Consumer Council's January 2020 report 'Out of Control' analyzed ten apps, including Clue, and found that they collectively fed data to at least 135 third-party advertising and profiling companies. The shared data included Android Advertising IDs, IP addresses, device identifiers, and demographic information. The report did not attribute a specific count to Clue alone, but Clue was one of the ten apps in the data pipeline."
+faqs:
+  - q: "Is Clue safer than Flo for period tracking privacy?"
+    a: "Clue has a meaningfully better privacy track record than Flo. Clue has no FTC consent decree, no documented sharing of in-app health data with Facebook or Google for advertising, and GDPR jurisdiction provides structural legal protection. But Clue stores data on company servers, shares technical data with advertising networks on an opt-out basis, and its privacy policy permits disclosure for legal requirements. Flo's post-FTC reforms (Anonymous Mode, dual ISO 27001/27701 certification) have narrowed the gap on paper, though Flo's history of sharing health data with advertisers remains a permanent mark."
+  - q: "Does on-device storage eliminate the risks documented in Clue's investigations?"
+    a: "Yes, structurally. The Norwegian Consumer Council findings, the data broker purchases, and the Mozilla warnings all depend on data existing on company servers and flowing to third parties. An on-device-only period tracker has no readable central cycle database to share with 135 companies, no advertising IDs to appear in data broker inventories, and no server-side passwords to evaluate. The risks documented in Clue's case cannot exist when the data never leaves the device."
+relatedPages:
+  - /compare/alternatives/clue-alternative-no-cloud
+  - /compare/versus/flo-vs-clue-privacy-comparison
+  - /resources/best/best-private-period-tracker-apps
+  - /resources/guides/what-is-zero-knowledge-period-tracker
+  - /compare/alternatives/flo-app-alternative
+---
+
+## The Pledge
+
+After the Dobbs decision in June 2022, Clue's leadership published a statement: "We promise you that we will never turn your private health data over to any authority that could use it against you."
+
+In November 2024, Clue's CEO stated publicly: "If we are ever subpoenaed, we will not comply."
+
+These are strong public commitments. They are also statements from executives, not legal guarantees. Clue's actual privacy policy says something different. The question is what happens when the pledge meets a court order.
+
+## Norwegian Consumer Council "Out of Control" (January 2020)
+
+The Norwegian Consumer Council published its "Out of Control" report in January 2020, analyzing data practices across ten popular apps. Clue was among them. The report found that these ten apps collectively fed user data to at least 135 third-party advertising and profiling companies.
+
+The data shared included Android Advertising IDs, IP addresses, device identifiers, and demographic information. These identifiers allow advertising networks to build profiles of individual users across apps and websites. An Advertising ID linked to a period tracking app tells the ad network that the device owner tracks their menstrual cycle. Combined with other data points, it can indicate pregnancy, fertility treatment, or pregnancy loss.
+
+The Norwegian Consumer Council filed formal complaints with the Norwegian Data Protection Authority based on these findings. The report was one of the first large-scale investigations to document the scope of data sharing in health-adjacent consumer apps.
+
+## Privacy International DSAR (December 2020)
+
+Privacy International filed a Data Subject Access Request against Clue under GDPR, compelling the company to disclose all personal data it held on the researcher. The results showed that every interaction with the Clue app was stored on servers and linked to the user's ID, device ID, and location data.
+
+The location data was precise enough to identify the researcher's borough of residence. For an app that collects menstrual cycle data, location precision at the borough level means the company holds both reproductive health information and geographic identifiers tied to the same account.
+
+When Privacy International asked Clue for a complete list of third parties with access to user data, Clue initially failed to provide it. The company later acknowledged this was "an oversight." Under GDPR, companies are required to disclose all third-party data recipients upon request. An incomplete response to a DSAR is not a technicality; it is a compliance failure.
+
+## Vice/Motherboard Investigation (May 2022)
+
+One month before Dobbs, reporters at Vice's Motherboard purchased data from Narrative, a data broker, for approximately $100. The purchased dataset identified Android devices that had the Clue app installed.
+
+The data consisted of advertising IDs, not in-app health data like cycle logs or symptom entries. But advertising IDs tied to a specific app install are enough to identify individuals. An advertising ID is a persistent identifier linked to a device. Combined with other commercially available data (location history, app usage patterns), it can identify a specific person.
+
+The Motherboard investigation proved that Clue user identities were circulating in commercial data markets. Narrative subsequently removed all pregnancy and menstruation app install data from its marketplace after the report published. But the data had already been available for purchase, and there is no mechanism to recall data that was previously sold.
+
+## Mozilla "Privacy Not Included" (August 2022)
+
+Mozilla's privacy review program evaluated Clue in August 2022, two months after Dobbs, and gave it a warning label. The reviewers cited extensive data collection, opt-out (not opt-in) ad data sharing, and failure to meet minimum security standards.
+
+The security finding was specific: Clue accepted single-character passwords. A password like "1" met Clue's requirements. For an app storing sensitive reproductive health data, minimum password requirements are a basic security measure. Accepting single-character passwords means that brute-force attacks on user accounts would be trivial.
+
+Mozilla's warning label placed Clue alongside apps with documented privacy failures, not alongside apps meeting privacy best practices. For an app whose primary marketing message after Dobbs was privacy protection, the Mozilla evaluation contradicted that positioning.
+
+## What Clue's Privacy Policy Actually Says
+
+Clue's privacy policy, as written, permits several forms of data sharing that its public pledges do not mention.
+
+The policy states that Clue shares "a minimal amount of technical data with advertising networks," including device identifiers and date of birth. This sharing is on an opt-out basis, meaning it happens by default unless the user finds and disables it. Opt-out data sharing with advertising networks is the opposite of privacy-by-default.
+
+On law enforcement, the policy states that data may be shared "for legal requirements, when required by law, legal process, or government request." The policy further acknowledges that "the risk of such disclosure... cannot be eliminated."
+
+Compare this to the CEO's public statement: "If we are ever subpoenaed, we will not comply." The privacy policy says compliance will happen when legally required. The CEO says it will not. These statements cannot both be true when tested.
+
+## GDPR Is Real but Not Absolute
+
+Clue's GDPR jurisdiction is genuine protection. Because BioWink GmbH operates from Berlin, user data is stored on EU servers under EU law. GDPR imposes strict requirements on data processing, grants users deletion rights, and creates barriers to cross-border law enforcement requests.
+
+No US court can directly compel a German company to produce data from German servers. US law enforcement seeking Clue data would need to use the US-Germany Mutual Legal Assistance Treaty process, which requires the request to satisfy both US and German legal standards. German authorities would evaluate whether the request complies with GDPR before approving it.
+
+This is meaningfully better protection than what US-based apps provide. A domestic subpoena to Flo or Stardust is fast and routine. An MLAT request to Germany is slow, uncertain, and subject to GDPR review.
+
+But GDPR protection has limits. No GDPR enforcement action has been filed against BioWink for the data practices documented in the Norwegian Consumer Council report or the Privacy International DSAR findings. Unlike Flo, which underwent a $59.5 million FTC settlement and subsequently obtained dual ISO 27001/27701 certification, Clue has no independent third-party privacy certification on public record.
+
+GDPR also does not prevent Clue from sharing data with advertising networks under its own privacy policy. The opt-out ad sharing documented by Mozilla operates within the bounds of GDPR's consent framework, as long as Clue classifies advertising data sharing under legitimate interest or obtains consent through its terms of service.
+
+## The Bottom Line
+
+Clue is meaningfully better than Flo on privacy history. It has no FTC enforcement action, no documented sharing of in-app health data with Facebook or Google for advertising, and GDPR jurisdiction provides a real legal barrier to US law enforcement access.
+
+But cloud-based storage means Clue holds your reproductive health data on servers. The company's own privacy policy permits data sharing for legal requirements and with advertising networks. Documented investigations found user data flowing to over a hundred third-party companies, user identities available for purchase from data brokers, and security standards that failed Mozilla's minimum bar.
+
+The CEO's pledge of noncompliance with subpoenas is a statement of intent, not a structural guarantee. Pledges are policy. Policy can change with new leadership, new legal pressure, or new business circumstances. The Norwegian Consumer Council findings, the data broker purchases, and the single-character passwords all occurred while Clue was publicly marketing itself as a privacy-first app.
+
+## What Floriva Does Differently
+
+Floriva stores all cycle data in encrypted local storage on your device. No readable cycle data is transmitted for core tracking. There is no sync, so no cycle data is transmitted at all. There is no readable central cycle database to share with advertising networks, no user identities to appear in data broker inventories, and no database to produce in response to a subpoena or MLAT request.
+
+Floriva's privacy protection does not depend on a CEO's pledge, a privacy policy's language, or GDPR enforcement. It depends on architecture: the data does not exist anywhere except your device. A pledge not to comply with a subpoena is unnecessary when there is nothing on the server to subpoena.
